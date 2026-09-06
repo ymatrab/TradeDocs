@@ -37,7 +37,12 @@ jobs:
       - run: npm run check:licenses
       - run: npm audit --audit-level=high
       - run: npm sbom --sbom-format cyclonedx > sbom.json
-      - run: npm run build
+      - name: Build with Vercel production foundation configuration
+        run: npm run build
+        env:
+          APP_ENV: ''
+          APPLICATION_MODE: foundation
+          VERCEL_ENV: production
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
