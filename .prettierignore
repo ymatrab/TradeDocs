@@ -1,0 +1,9 @@
+package-lock.json
+.next
+node_modules
+coverage
+playwright-report
+test-results
+tmp
+src/lib/database.types.ts
+

@@ -1,0 +1,52 @@
+{
+  "name": "tradedocs",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.11.1",
+  "engines": { "node": "24.19.x", "npm": "11.11.x" },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "next typegen && tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "check:licenses": "node scripts/check-licenses.mjs",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run test:integration && npm run check:boundaries && npm run check:secrets && npm run check:licenses && npm run build",
+    "db:types": "supabase gen types typescript --local > src/lib/database.types.ts",
+    "db:test": "supabase test db"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.7.0",
+    "@supabase/supabase-js": "2.57.4",
+    "clsx": "2.1.1",
+    "decimal.js": "10.6.0",
+    "lucide-react": "1.41.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "0.0.1",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.4",
+    "prettier": "3.9.6",
+    "supabase": "2.116.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}
