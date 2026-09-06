@@ -19,7 +19,7 @@ All three parallel workers reported an account usage limit. Database source was 
 - **No local app/server, database, build, lint/typecheck or test execution.** Docker was opened before the constraint arrived and was quit immediately afterward; no database was started.
 - Dependency metadata/lockfile resolution used `--package-lock-only --ignore-scripts`; it did not install/run the application. The final registry audit response reported zero known vulnerabilities after updating Supabase CLI and Vitest pins. This is not runtime or comprehensive security validation.
 - No browser UI review or PDF output rendering for the app. Only the supplied specification was extracted and its Task01 page visually read.
-- No remote repository, CI run, Vercel/Supabase project, credential, deployment or human approval was created.
+- Private GitHub repository `ymatrab/TradeDocs` is connected on `main`; the initial remote quality workflow was queued after the first push. No Vercel/Supabase project, credential, deployment or human approval was created.
 
 ## Resume order
 
