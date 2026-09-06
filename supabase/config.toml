@@ -1,0 +1,32 @@
+# Local execution is intentionally not performed in this session.
+# CI must validate migrations against a disposable Supabase environment.
+project_id = "tradedocs"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[db.migrations]
+enabled = true
+
+[db.seed]
+enabled = false
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = []
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+[storage]
+enabled = true
+file_size_limit = "20MiB"
