@@ -10,12 +10,17 @@ const allowed = new Set([
   'BSD-3-Clause',
   '0BSD',
   'CC0-1.0',
+  'CC-BY-4.0',
   'Unlicense',
   'Python-2.0',
   'BlueOak-1.0.0',
+  'MPL-2.0',
+  'LGPL-3.0-or-later',
   '(MIT OR Apache-2.0)',
   '(MIT AND Zlib)',
   '(MIT AND BSD-3-Clause)',
+  'Apache-2.0 AND LGPL-3.0-or-later AND MIT',
+  'Apache-2.0 AND LGPL-3.0-or-later',
 ]);
 const exceptionsPath = 'docs/dependency-license-exceptions.json';
 const exceptions = existsSync(exceptionsPath)

@@ -13,4 +13,6 @@ The local repository has no remote configured. These controls are required on th
 7. License-review exceptions require package/version, license, justification, named reviewer, approval date, and expiry. No exceptions are presently granted.
 8. Commit generated Supabase types only after generating from the exact migration state in CI; verify drift. Generated files are never evidence that a migration or RLS test ran.
 
+The automated allowlist covers the permissive, weak-copyleft, attribution, and binary-runtime licenses currently used by the locked web toolchain, including MIT/ISC/BSD/Apache/MPL/LGPL and CC-BY metadata. Any unrecognized license still blocks CI and requires explicit review; this is separate from package-specific exceptions.
+
 CI writes build and browser evidence, but it has not been dispatched. Container/action pin updates and all remote controls require verification when the repository is connected.
