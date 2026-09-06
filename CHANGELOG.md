@@ -10,6 +10,7 @@
 - Added a non-customer foundation screen, recovery routes and CI browser/accessibility test definitions.
 - Added CI quality gates, dependency updates, license policy and redacted secret scanning.
 - Allowed compatible npm 11 releases supplied by Vercel and added an explicit closed-foundation deployment mode; service mode retains the production configuration and approval gates.
+- Added repository-owned Vercel framework, clean-install, and build settings after the production-equivalent remote build passed.
 
 ### Verification status
 
