@@ -44,6 +44,10 @@ jobs:
           APP_URL: ''
           APPLICATION_MODE: foundation
           VERCEL_ENV: production
+          # The hosting project may still carry another application's database identity.
+          SUPABASE_URL: https://leftoverproject.supabase.co
+          SUPABASE_ANON_KEY: synthetic-public-build-key
+          SUPABASE_SERVICE_ROLE_KEY: synthetic-service-build-key
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

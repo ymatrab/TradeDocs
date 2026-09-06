@@ -32,6 +32,46 @@ describe('environment configuration', () => {
     expect(env.APP_ENV).toBe('production');
   });
 
+  it('builds the Vercel foundation despite database variables left by another application', () => {
+    const env = validateDeploymentEnv(
+      {
+        APP_ENV: '',
+        APP_URL: '',
+        VERCEL_ENV: 'production',
+        SUPABASE_URL: 'https://leftoverproject.supabase.co',
+        SUPABASE_ANON_KEY: 'synthetic-public-test-key',
+        SUPABASE_SERVICE_ROLE_KEY: 'synthetic-service-test-key',
+      },
+      true,
+    );
+    expect(env.APP_ENV).toBe('production');
+    expect(env.APPLICATION_MODE).toBe('foundation');
+  });
+
+  it('never hands a foundation deployment the database credentials of another application', () => {
+    const env = parseServerEnv({
+      APP_ENV: 'test',
+      SUPABASE_URL: 'https://leftoverproject.supabase.co',
+      SUPABASE_ANON_KEY: 'synthetic-public-test-key',
+      SUPABASE_SERVICE_ROLE_KEY: 'synthetic-service-test-key',
+      SUPABASE_PROJECT_REF: 'leftoverproject',
+      SUPABASE_ENVIRONMENT: 'test',
+    });
+    expect(env.SUPABASE_URL).toBeUndefined();
+    expect(env.SUPABASE_ANON_KEY).toBeUndefined();
+    expect(env.SUPABASE_SERVICE_ROLE_KEY).toBeUndefined();
+  });
+
+  it('still requires complete database configuration from a service deployment', () => {
+    expect(() =>
+      parseServerEnv({
+        APP_ENV: 'test',
+        APPLICATION_MODE: 'service',
+        SUPABASE_ANON_KEY: 'synthetic-public-test-key',
+      }),
+    ).toThrow(ConfigurationError);
+  });
+
   it('does not allow a foundation deployment to enable customer capabilities', () => {
     expect(() =>
       parseServerEnv({
@@ -47,7 +87,12 @@ describe('environment configuration', () => {
     const value = 'private-account-secret-invalid-url';
     let message = '';
     try {
-      parseServerEnv({ APP_ENV: 'test', APP_URL: value, SUPABASE_URL: value });
+      parseServerEnv({
+        APP_ENV: 'test',
+        APPLICATION_MODE: 'service',
+        APP_URL: value,
+        SUPABASE_URL: value,
+      });
     } catch (error) {
       expect(error).toBeInstanceOf(ConfigurationError);
       message = (error as Error).message;
@@ -60,6 +105,7 @@ describe('environment configuration', () => {
     expect(() =>
       parseServerEnv({
         APP_ENV: 'preview',
+        APPLICATION_MODE: 'service',
         APP_URL: 'https://preview.example.com',
         SUPABASE_URL: 'https://productionproject.supabase.co',
         SUPABASE_PROJECT_REF: 'productionproject',

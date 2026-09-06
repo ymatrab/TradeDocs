@@ -221,9 +221,28 @@ export class ConfigurationError extends Error {
   }
 }
 
+/**
+ * Database identity supplied by the hosting project. A foundation deployment declares that it
+ * uses no database, so these belong to service mode alone; a hosting project may still carry
+ * them for another application, and they must neither configure nor fail a build that never
+ * reads them.
+ */
+const databaseVariables = new Set([
+  'SUPABASE_URL',
+  'SUPABASE_ANON_KEY',
+  'SUPABASE_SERVICE_ROLE_KEY',
+  'SUPABASE_PROJECT_REF',
+  'SUPABASE_ENVIRONMENT',
+  'PRODUCTION_SUPABASE_PROJECT_REF',
+]);
+
 export function parseServerEnv(input: EnvironmentInput): ServerEnv {
+  // Any value other than the declared service mode leaves the database unconfigured and unused.
+  const usesDatabase = input.APPLICATION_MODE === 'service';
   const normalized = Object.fromEntries(
-    Object.entries(input).map(([key, value]) => [key, value === '' ? undefined : value]),
+    Object.entries(input)
+      .filter(([key]) => usesDatabase || !databaseVariables.has(key))
+      .map(([key, value]) => [key, value === '' ? undefined : value]),
   );
   const result = serverEnvSchema.safeParse(normalized);
   if (!result.success) {

@@ -14,7 +14,7 @@ A commercial shipment workspace and reusable trade-document platform, built agai
 
 The complete delivery contract is in [REQUIREMENTS.md](docs/delivery/REQUIREMENTS.md). Open decisions are in [DECISIONS_REQUIRED.md](docs/delivery/DECISIONS_REQUIRED.md). [ROADMAP.md](ROADMAP.md) retains all 25 tasks; a source checkpoint is not acceptance evidence.
 
-Vercel may deploy the current closed screen with the default `APPLICATION_MODE=foundation`. That mode cannot enable customer payment, email, or regulated-document capabilities. Set `APPLICATION_MODE=service` only after the required environment values, tests, operational controls, and named launch approvals exist.
+Vercel may deploy the current closed screen with the default `APPLICATION_MODE=foundation`. That mode cannot enable customer payment, email, or regulated-document capabilities, and it ignores every Supabase variable the hosting project may still carry for another application. Set `APPLICATION_MODE=service` only after the required environment values, tests, operational controls, and named launch approvals exist.
 
 ## Remote verification path
 

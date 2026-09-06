@@ -28,6 +28,7 @@ it('unconfigured readiness fails without contacting a provider', async () => {
 
 it('configured readiness reflects the real auth dependency result without revealing its body', async () => {
   vi.stubEnv('APP_ENV', 'test');
+  vi.stubEnv('APPLICATION_MODE', 'service');
   vi.stubEnv('SUPABASE_URL', 'http://127.0.0.1:54321');
   vi.stubEnv('SUPABASE_ANON_KEY', 'synthetic-public-test-key');
   vi.stubEnv('SUPABASE_PROJECT_REF', 'syntheticproject');
