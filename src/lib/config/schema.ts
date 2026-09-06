@@ -17,6 +17,7 @@ const flag = z.enum(['true', 'false']).default('false').transform((value) => val
 export const serverEnvSchema = z
   .object({
     APP_ENV: environment,
+    APPLICATION_MODE: z.enum(['foundation', 'service']).default('foundation'),
     APP_URL: z.url().optional(),
     VERCEL_ENV: z.enum(['development', 'preview', 'production']).optional(),
     SUPABASE_URL: z.url().optional(),
@@ -51,6 +52,7 @@ export const serverEnvSchema = z
   .superRefine((value, context) => {
     const deployed = !['local', 'test'].includes(value.APP_ENV);
     const production = value.APP_ENV === 'production';
+    const serviceMode = value.APPLICATION_MODE === 'service';
     const addIssue = (field: keyof typeof value, message: string) => {
       context.addIssue({ code: 'custom', path: [field], message });
     };
@@ -72,12 +74,12 @@ export const serverEnvSchema = z
       'SUPABASE_ENVIRONMENT',
     ] as const;
     const anySupabaseField = supabaseFields.some((field) => Boolean(value[field]));
-    if (deployed || anySupabaseField) {
+    if ((deployed && serviceMode) || anySupabaseField) {
       for (const field of supabaseFields) {
         if (!value[field]) addIssue(field, 'Required for configured database access.');
       }
     }
-    if (deployed) {
+    if (deployed && serviceMode) {
       const required = [
         'APP_URL',
         'SUPABASE_SERVICE_ROLE_KEY',
@@ -143,7 +145,10 @@ export const serverEnvSchema = z
     if (!production && value.ENABLE_TRANSACTIONAL_EMAIL && !value.EMAIL_SANDBOX_RECIPIENT) {
       addIssue('EMAIL_SANDBOX_RECIPIENT', 'Non-production delivery requires a sandbox recipient.');
     }
-    if (production) {
+    if (!serviceMode && (value.ENABLE_PAYMENTS || value.ENABLE_REGULATED_DOCUMENTS || value.ENABLE_TRANSACTIONAL_EMAIL)) {
+      addIssue('APPLICATION_MODE', 'Foundation deployments cannot enable customer capabilities.');
+    }
+    if (production && serviceMode) {
       for (const field of [
         'RESEND_API_KEY',
         'EMAIL_FROM',
@@ -187,7 +192,17 @@ export function parseServerEnv(input: EnvironmentInput): ServerEnv {
 
 /** Called by next.config at build and by instrumentation at server startup. */
 export function validateDeploymentEnv(input: EnvironmentInput, productionRuntime: boolean): ServerEnv {
-  const env = parseServerEnv({ ...input, APP_ENV: input.APP_ENV ?? (productionRuntime ? undefined : 'local') });
+  const inferredEnvironment =
+    input.VERCEL_ENV === 'production'
+      ? 'production'
+      : input.VERCEL_ENV === 'preview'
+        ? 'preview'
+        : input.VERCEL_ENV === 'development'
+          ? 'local'
+          : productionRuntime
+            ? undefined
+            : 'local';
+  const env = parseServerEnv({ ...input, APP_ENV: input.APP_ENV ?? inferredEnvironment });
   if (productionRuntime && env.APP_ENV === 'local') {
     throw new ConfigurationError(['APP_ENV']);
   }

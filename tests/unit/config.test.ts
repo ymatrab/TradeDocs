@@ -15,7 +15,20 @@ describe('environment configuration', () => {
   });
 
   it('rejects production without credentials and a release approval', () => {
-    expect(() => parseServerEnv({ APP_ENV: 'production' })).toThrow(ConfigurationError);
+    expect(() => parseServerEnv({ APP_ENV: 'production', APPLICATION_MODE: 'service' })).toThrow(ConfigurationError);
+  });
+
+  it('allows Vercel to build the closed foundation without service credentials', () => {
+    const env = validateDeploymentEnv({ VERCEL_ENV: 'production' }, true);
+    expect(env.APP_ENV).toBe('production');
+    expect(env.APPLICATION_MODE).toBe('foundation');
+    expect(env.LAUNCH_APPROVED).toBe(false);
+  });
+
+  it('does not allow a foundation deployment to enable customer capabilities', () => {
+    expect(() => parseServerEnv({
+      APP_ENV: 'test', APPLICATION_MODE: 'foundation', ENABLE_REGULATED_DOCUMENTS: 'true', REGULATED_DOCUMENTS_APPROVED: 'true',
+    })).toThrow(ConfigurationError);
   });
 
   it('does not include invalid secret-bearing URLs in configuration errors', () => {
