@@ -2,12 +2,12 @@
 
 Status: source authored; acceptance pending remote verification. Owner: engineering role proposed, named owner pending. Source: PDF page 7. Session constraint: no local runs.
 
-| Acceptance criterion | Source implementation | Required evidence / current status |
-| --- | --- | --- |
-| Fresh setup reproduces from documented steps | README, pinned runtimes/package manager, lockfile, Next/TS/Tailwind config | Clean CI install/build not executed |
+| Acceptance criterion                                  | Source implementation                                                                                                 | Required evidence / current status                    |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Fresh setup reproduces from documented steps          | README, pinned runtimes/package manager, lockfile, Next/TS/Tailwind config                                            | Clean CI install/build not executed                   |
 | Required living documents have owners/review triggers | Root product/architecture/security/legal/SEO/analytics/operations/test/design/data/runbook contracts and ADR template | Files authored; named operational assignments pending |
-| Build/lint/typecheck/smoke pass in a clean checkout | Quality gates workflow; Playwright foundation/reload/missing route/axe/mobile cases | All execution pending; no pass claimed |
-| No credential or copied competitor asset | Original CSS/icons; names-only `.env.example`; gitignore; secret checks and full-history Gitleaks CI | Scan execution pending; original PDF preserved |
+| Build/lint/typecheck/smoke pass in a clean checkout   | Quality gates workflow; Playwright foundation/reload/missing route/axe/mobile cases                                   | All execution pending; no pass claimed                |
+| No credential or copied competitor asset              | Original CSS/icons; names-only `.env.example`; gitignore; secret checks and full-history Gitleaks CI                  | Scan execution pending; original PDF preserved        |
 
 ## Scope and impact
 

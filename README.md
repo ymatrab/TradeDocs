@@ -28,15 +28,15 @@ Do not paste credentials in chat or commit `.env` files. Vendor values belong in
 
 ## Repository map
 
-| Path | Purpose |
-| --- | --- |
-| `src/app` | Server routes, layouts and UI |
-| `src/components` | Accessible shared interface |
-| `src/lib/config` | Typed environment validation and server-only secrets |
-| `src/lib/security` | Privacy and abuse-prevention primitives |
-| `supabase` | Versioned database and storage access policy |
-| `tests` | Written verification suites, execution pending |
-| `docs/delivery` | Acceptance matrix, evidence status and open decisions |
-| `.github/workflows` | Remote quality/release gates |
+| Path                | Purpose                                               |
+| ------------------- | ----------------------------------------------------- |
+| `src/app`           | Server routes, layouts and UI                         |
+| `src/components`    | Accessible shared interface                           |
+| `src/lib/config`    | Typed environment validation and server-only secrets  |
+| `src/lib/security`  | Privacy and abuse-prevention primitives               |
+| `supabase`          | Versioned database and storage access policy          |
+| `tests`             | Written verification suites, execution pending        |
+| `docs/delivery`     | Acceptance matrix, evidence status and open decisions |
+| `.github/workflows` | Remote quality/release gates                          |
 
 Repository scripts exist for reproducibility, but this session does not execute them locally. Consult [TEST_PLAN.md](TEST_PLAN.md), [OPERATIONS.md](OPERATIONS.md), and [RUNBOOK.md](RUNBOOK.md) before running or deploying this system.

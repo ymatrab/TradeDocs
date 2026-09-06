@@ -15,7 +15,9 @@ describe('environment configuration', () => {
   });
 
   it('rejects production without credentials and a release approval', () => {
-    expect(() => parseServerEnv({ APP_ENV: 'production', APPLICATION_MODE: 'service' })).toThrow(ConfigurationError);
+    expect(() => parseServerEnv({ APP_ENV: 'production', APPLICATION_MODE: 'service' })).toThrow(
+      ConfigurationError,
+    );
   });
 
   it('allows Vercel to build the closed foundation without service credentials', () => {
@@ -26,9 +28,14 @@ describe('environment configuration', () => {
   });
 
   it('does not allow a foundation deployment to enable customer capabilities', () => {
-    expect(() => parseServerEnv({
-      APP_ENV: 'test', APPLICATION_MODE: 'foundation', ENABLE_REGULATED_DOCUMENTS: 'true', REGULATED_DOCUMENTS_APPROVED: 'true',
-    })).toThrow(ConfigurationError);
+    expect(() =>
+      parseServerEnv({
+        APP_ENV: 'test',
+        APPLICATION_MODE: 'foundation',
+        ENABLE_REGULATED_DOCUMENTS: 'true',
+        REGULATED_DOCUMENTS_APPROVED: 'true',
+      }),
+    ).toThrow(ConfigurationError);
   });
 
   it('does not include invalid secret-bearing URLs in configuration errors', () => {
@@ -45,16 +52,19 @@ describe('environment configuration', () => {
   });
 
   it('rejects a preview configured with the production project', () => {
-    expect(() => parseServerEnv({
-      APP_ENV: 'preview', APP_URL: 'https://preview.example.com',
-      SUPABASE_URL: 'https://productionproject.supabase.co',
-      SUPABASE_PROJECT_REF: 'productionproject',
-      PRODUCTION_SUPABASE_PROJECT_REF: 'productionproject',
-      SUPABASE_ENVIRONMENT: 'preview',
-      SUPABASE_ANON_KEY: 'synthetic-public-test-key',
-      SUPABASE_SERVICE_ROLE_KEY: 'synthetic-service-test-key',
-      RATE_LIMIT_KEY_SECRET: 'synthetic-rate-test-key-more-than-32-characters',
-    })).toThrow(ConfigurationError);
+    expect(() =>
+      parseServerEnv({
+        APP_ENV: 'preview',
+        APP_URL: 'https://preview.example.com',
+        SUPABASE_URL: 'https://productionproject.supabase.co',
+        SUPABASE_PROJECT_REF: 'productionproject',
+        PRODUCTION_SUPABASE_PROJECT_REF: 'productionproject',
+        SUPABASE_ENVIRONMENT: 'preview',
+        SUPABASE_ANON_KEY: 'synthetic-public-test-key',
+        SUPABASE_SERVICE_ROLE_KEY: 'synthetic-service-test-key',
+        RATE_LIMIT_KEY_SECRET: 'synthetic-rate-test-key-more-than-32-characters',
+      }),
+    ).toThrow(ConfigurationError);
   });
 
   it('does not enable payment or regulated capabilities from a feature flag alone', () => {

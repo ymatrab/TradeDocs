@@ -6,7 +6,8 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: { default: 'TradeDocs', template: '%s · TradeDocs' },
-  description: 'A shipment workspace for reusable company, customer, product, and trade document data.',
+  description:
+    'A shipment workspace for reusable company, customer, product, and trade document data.',
   robots: { index: false, follow: false },
 };
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

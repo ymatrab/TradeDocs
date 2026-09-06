@@ -12,18 +12,18 @@ Required gates in authorized CI/cloud environments: formatting, lint, strict Typ
 
 ## Coverage by risk
 
-| Area | Required meaningful tests |
-| --- | --- |
-| Foundation/configuration | Clean setup/build/lint/typecheck/smoke, tracked/history secret scan, invalid env fails fast; configuration matrix and server-only boundaries |
-| Identity/data | Anonymous/member/admin/owner/service matrix; two tenants; invitation replay/session fixation; last owner; lifecycle jobs; all exposed relations/functions/storage |
-| Security | IDOR/BOLA, concurrency limits, malicious uploads, SSRF/encoding, CSRF posture, headers, log/Sentry redaction |
-| Billing/email | Provider sandbox contracts; invalid/signed/replayed/out-of-order webhook events; currency rounding; refund/dispute/reconciliation; duplicate checkout/mail; suppression/expiry |
-| Analytics/SEO | Payload PII checks; consent denied/granted; purchase dedupe; route crawl; canonical/robots/schema/sitemap; private-route exclusion |
-| Master data/shipments | CSV encodings/invalid rows/atomic rollback; merge/archive; multilingual inputs; concurrent edit; clone identity; dependency/stale graph |
-| Schemas/calculations | Required-field matrices; override provenance; immutable revisions; decimal/property/unit tests; conversion lineage; package allocation totals |
-| PDFs/sets | Every type at 1/3/10 pages; 100-line stress; Unicode/logos; original-version regeneration; hashes/manifests; ZIP traversal/collision; partial retry/quota |
-| Official-status controls | Persistent UI/PDF/email legal labels; unsupported-jurisdiction blocks; endorsement evidence/audit; flag-disable/source-change drills |
-| Admin/release | Server-side role/mask/reveal controls; reason/audit; idempotent retries; CI intentional failure; migration compatibility; preview isolation; rollback/restore/load |
+| Area                     | Required meaningful tests                                                                                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Foundation/configuration | Clean setup/build/lint/typecheck/smoke, tracked/history secret scan, invalid env fails fast; configuration matrix and server-only boundaries                                   |
+| Identity/data            | Anonymous/member/admin/owner/service matrix; two tenants; invitation replay/session fixation; last owner; lifecycle jobs; all exposed relations/functions/storage              |
+| Security                 | IDOR/BOLA, concurrency limits, malicious uploads, SSRF/encoding, CSRF posture, headers, log/Sentry redaction                                                                   |
+| Billing/email            | Provider sandbox contracts; invalid/signed/replayed/out-of-order webhook events; currency rounding; refund/dispute/reconciliation; duplicate checkout/mail; suppression/expiry |
+| Analytics/SEO            | Payload PII checks; consent denied/granted; purchase dedupe; route crawl; canonical/robots/schema/sitemap; private-route exclusion                                             |
+| Master data/shipments    | CSV encodings/invalid rows/atomic rollback; merge/archive; multilingual inputs; concurrent edit; clone identity; dependency/stale graph                                        |
+| Schemas/calculations     | Required-field matrices; override provenance; immutable revisions; decimal/property/unit tests; conversion lineage; package allocation totals                                  |
+| PDFs/sets                | Every type at 1/3/10 pages; 100-line stress; Unicode/logos; original-version regeneration; hashes/manifests; ZIP traversal/collision; partial retry/quota                      |
+| Official-status controls | Persistent UI/PDF/email legal labels; unsupported-jurisdiction blocks; endorsement evidence/audit; flag-disable/source-change drills                                           |
+| Admin/release            | Server-side role/mask/reveal controls; reason/audit; idempotent retries; CI intentional failure; migration compatibility; preview isolation; rollback/restore/load             |
 
 ## Human-visible inspection
 

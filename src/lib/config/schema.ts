@@ -11,7 +11,10 @@ export const applicationEnvironments = [
 const environment = z.enum(applicationEnvironments);
 const optionalText = z.string().min(1).optional();
 const optionalSecret = z.string().min(16).optional();
-const flag = z.enum(['true', 'false']).default('false').transform((value) => value === 'true');
+const flag = z
+  .enum(['true', 'false'])
+  .default('false')
+  .transform((value) => value === 'true');
 
 /** Pure schema: this module never reads process.env and may be imported by tooling. */
 export const serverEnvSchema = z
@@ -23,9 +26,15 @@ export const serverEnvSchema = z
     SUPABASE_URL: z.url().optional(),
     SUPABASE_ANON_KEY: optionalSecret,
     SUPABASE_SERVICE_ROLE_KEY: optionalSecret,
-    SUPABASE_PROJECT_REF: z.string().regex(/^[a-z0-9]{8,32}$/).optional(),
+    SUPABASE_PROJECT_REF: z
+      .string()
+      .regex(/^[a-z0-9]{8,32}$/)
+      .optional(),
     SUPABASE_ENVIRONMENT: environment.optional(),
-    PRODUCTION_SUPABASE_PROJECT_REF: z.string().regex(/^[a-z0-9]{8,32}$/).optional(),
+    PRODUCTION_SUPABASE_PROJECT_REF: z
+      .string()
+      .regex(/^[a-z0-9]{8,32}$/)
+      .optional(),
     RESEND_API_KEY: optionalSecret,
     EMAIL_FROM: optionalText,
     EMAIL_SANDBOX_RECIPIENT: z.email().optional(),
@@ -95,19 +104,33 @@ export const serverEnvSchema = z
     }
     if (value.SUPABASE_URL) {
       let url: URL | undefined;
-      try { url = new URL(value.SUPABASE_URL); } catch { addIssue('SUPABASE_URL', 'Must be a valid service URL.'); }
+      try {
+        url = new URL(value.SUPABASE_URL);
+      } catch {
+        addIssue('SUPABASE_URL', 'Must be a valid service URL.');
+      }
       if (url) {
-      const hostedProject = `${value.SUPABASE_PROJECT_REF}.supabase.co`;
-      const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname);
-      if (url.hostname !== hostedProject && !(loopback && !deployed)) {
-        addIssue('SUPABASE_URL', 'Must identify the configured hosted project or a local test service.');
-      }
-      if (url.pathname !== '/' || url.search || url.hash || url.username || url.password) {
-        addIssue('SUPABASE_URL', 'Must be a service origin without credentials, path, query or fragment.');
-      }
+        const hostedProject = `${value.SUPABASE_PROJECT_REF}.supabase.co`;
+        const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname);
+        if (url.hostname !== hostedProject && !(loopback && !deployed)) {
+          addIssue(
+            'SUPABASE_URL',
+            'Must identify the configured hosted project or a local test service.',
+          );
+        }
+        if (url.pathname !== '/' || url.search || url.hash || url.username || url.password) {
+          addIssue(
+            'SUPABASE_URL',
+            'Must be a service origin without credentials, path, query or fragment.',
+          );
+        }
       }
     }
-    if (!production && value.SUPABASE_PROJECT_REF && value.PRODUCTION_SUPABASE_PROJECT_REF === value.SUPABASE_PROJECT_REF) {
+    if (
+      !production &&
+      value.SUPABASE_PROJECT_REF &&
+      value.PRODUCTION_SUPABASE_PROJECT_REF === value.SUPABASE_PROJECT_REF
+    ) {
       addIssue('SUPABASE_PROJECT_REF', 'Non-production must not use the production project.');
     }
     if (production && value.SUPABASE_PROJECT_REF !== value.PRODUCTION_SUPABASE_PROJECT_REF) {
@@ -118,7 +141,12 @@ export const serverEnvSchema = z
       const raw = value[field];
       if (!raw) continue;
       let url: URL;
-      try { url = new URL(raw); } catch { addIssue(field, 'Must be a valid service URL.'); continue; }
+      try {
+        url = new URL(raw);
+      } catch {
+        addIssue(field, 'Must be a valid service URL.');
+        continue;
+      }
       if (deployed && url.protocol !== 'https:') {
         addIssue(field, 'Deployed services require HTTPS.');
       }
@@ -133,19 +161,33 @@ export const serverEnvSchema = z
       }
     }
 
-    if (value.ENABLE_PAYMENTS && (!value.PAYMENTS_APPROVED || value.PAYMENT_PROVIDER === 'disabled' || !value.PAYMENT_API_KEY || !value.PAYMENT_WEBHOOK_SECRET)) {
+    if (
+      value.ENABLE_PAYMENTS &&
+      (!value.PAYMENTS_APPROVED ||
+        value.PAYMENT_PROVIDER === 'disabled' ||
+        !value.PAYMENT_API_KEY ||
+        !value.PAYMENT_WEBHOOK_SECRET)
+    ) {
       addIssue('ENABLE_PAYMENTS', 'Requires an approved, fully configured payment provider.');
     }
     if (value.ENABLE_REGULATED_DOCUMENTS && !value.REGULATED_DOCUMENTS_APPROVED) {
       addIssue('ENABLE_REGULATED_DOCUMENTS', 'Requires a recorded legal and regulatory approval.');
     }
-    if (value.ENABLE_TRANSACTIONAL_EMAIL && (!value.EMAIL_DELIVERY_APPROVED || !value.RESEND_API_KEY || !value.EMAIL_FROM)) {
+    if (
+      value.ENABLE_TRANSACTIONAL_EMAIL &&
+      (!value.EMAIL_DELIVERY_APPROVED || !value.RESEND_API_KEY || !value.EMAIL_FROM)
+    ) {
       addIssue('ENABLE_TRANSACTIONAL_EMAIL', 'Requires approved and configured email delivery.');
     }
     if (!production && value.ENABLE_TRANSACTIONAL_EMAIL && !value.EMAIL_SANDBOX_RECIPIENT) {
       addIssue('EMAIL_SANDBOX_RECIPIENT', 'Non-production delivery requires a sandbox recipient.');
     }
-    if (!serviceMode && (value.ENABLE_PAYMENTS || value.ENABLE_REGULATED_DOCUMENTS || value.ENABLE_TRANSACTIONAL_EMAIL)) {
+    if (
+      !serviceMode &&
+      (value.ENABLE_PAYMENTS ||
+        value.ENABLE_REGULATED_DOCUMENTS ||
+        value.ENABLE_TRANSACTIONAL_EMAIL)
+    ) {
       addIssue('APPLICATION_MODE', 'Foundation deployments cannot enable customer capabilities.');
     }
     if (production && serviceMode) {
@@ -163,7 +205,8 @@ export const serverEnvSchema = z
       ] as const) {
         if (!value[field]) addIssue(field, 'Required before production deployment.');
       }
-      if (!value.LAUNCH_APPROVED) addIssue('LAUNCH_APPROVED', 'Requires the approved release checklist.');
+      if (!value.LAUNCH_APPROVED)
+        addIssue('LAUNCH_APPROVED', 'Requires the approved release checklist.');
     }
   });
 
@@ -184,14 +227,19 @@ export function parseServerEnv(input: EnvironmentInput): ServerEnv {
   );
   const result = serverEnvSchema.safeParse(normalized);
   if (!result.success) {
-    const fields = [...new Set(result.error.issues.map((issue) => issue.path[0]?.toString() ?? 'APP_ENV'))].sort();
+    const fields = [
+      ...new Set(result.error.issues.map((issue) => issue.path[0]?.toString() ?? 'APP_ENV')),
+    ].sort();
     throw new ConfigurationError(fields);
   }
   return result.data;
 }
 
 /** Called by next.config at build and by instrumentation at server startup. */
-export function validateDeploymentEnv(input: EnvironmentInput, productionRuntime: boolean): ServerEnv {
+export function validateDeploymentEnv(
+  input: EnvironmentInput,
+  productionRuntime: boolean,
+): ServerEnv {
   const inferredEnvironment =
     input.VERCEL_ENV === 'production'
       ? 'production'

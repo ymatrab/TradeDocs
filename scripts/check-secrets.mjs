@@ -12,7 +12,9 @@ const files = execFileSync('git', ['ls-files', '-z']).toString().split('\0').fil
 let failed = false;
 for (const file of files) {
   if (/\.(pdf|png|jpg|woff2)$/.test(file)) continue;
-  const body = execFileSync('git', ['show', `:${file}`], { maxBuffer: 20 * 1024 * 1024 }).toString();
+  const body = execFileSync('git', ['show', `:${file}`], {
+    maxBuffer: 20 * 1024 * 1024,
+  }).toString();
   if (patterns.some((pattern) => pattern.test(body))) {
     console.error(`Possible credential in ${file}; value withheld.`);
     failed = true;

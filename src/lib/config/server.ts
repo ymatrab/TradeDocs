@@ -13,7 +13,12 @@ export function getServerEnv(): ServerEnv {
 export function hasSupabaseConfiguration(): boolean {
   try {
     const env = getServerEnv();
-    return Boolean(env.SUPABASE_URL && env.SUPABASE_ANON_KEY && env.SUPABASE_PROJECT_REF && env.SUPABASE_ENVIRONMENT);
+    return Boolean(
+      env.SUPABASE_URL &&
+      env.SUPABASE_ANON_KEY &&
+      env.SUPABASE_PROJECT_REF &&
+      env.SUPABASE_ENVIRONMENT,
+    );
   } catch {
     return false;
   }

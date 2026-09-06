@@ -1,4 +1,5 @@
-const sensitiveKey = /password|passwd|secret|token|authorization|cookie|api.?key|service.?role|email|phone|address|iban|swift|bank|passport|national.?id|tax.?id|ip.?address|user.?agent|document.?content|payload|request.?body/i;
+const sensitiveKey =
+  /password|passwd|secret|token|authorization|cookie|api.?key|service.?role|email|phone|address|iban|swift|bank|passport|national.?id|tax.?id|ip.?address|user.?agent|document.?content|payload|request.?body/i;
 const bearer = /\bBearer\s+[^\s,;]+/gi;
 const jwt = /\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b/g;
 const email = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi;
@@ -34,10 +35,12 @@ export function redact(value: unknown): unknown {
     if (entry instanceof Error) return { name: sanitizeText(entry.name), message: '[REDACTED]' };
     if (Array.isArray(entry)) return entry.slice(0, 50).map((item) => visit(item, depth + 1));
     return Object.fromEntries(
-      Object.entries(entry).slice(0, 50).map(([key, item]) => [
-        key,
-        sensitiveKey.test(key) ? '[REDACTED]' : visit(item, depth + 1),
-      ]),
+      Object.entries(entry)
+        .slice(0, 50)
+        .map(([key, item]) => [
+          key,
+          sensitiveKey.test(key) ? '[REDACTED]' : visit(item, depth + 1),
+        ]),
     );
   };
   return visit(value, 0);

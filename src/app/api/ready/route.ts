@@ -25,6 +25,9 @@ export async function GET(): Promise<Response> {
   }
   return Response.json(
     { status: ready ? 'ready' : 'unavailable' },
-    { status: ready ? 200 : 503, headers: { 'Cache-Control': 'no-store', ...(ready ? {} : { 'Retry-After': '30' }) } },
+    {
+      status: ready ? 200 : 503,
+      headers: { 'Cache-Control': 'no-store', ...(ready ? {} : { 'Retry-After': '30' }) },
+    },
   );
 }

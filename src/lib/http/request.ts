@@ -19,11 +19,18 @@ export class HttpError extends Error {
 export function assertSameOrigin(request: Request, expectedOrigin?: string): void {
   if (['GET', 'HEAD', 'OPTIONS'].includes(request.method.toUpperCase())) return;
   const canonical = expectedOrigin ?? getServerEnv().APP_URL;
-  if (!canonical) throw new HttpError(503, 'SERVICE_UNAVAILABLE', 'This service is not configured.');
+  if (!canonical)
+    throw new HttpError(503, 'SERVICE_UNAVAILABLE', 'This service is not configured.');
   const origin = request.headers.get('origin');
   const site = request.headers.get('sec-fetch-site');
   try {
-    if (!origin || origin === 'null' || origin !== new URL(origin).origin || new URL(origin).origin !== new URL(canonical).origin || (site && site !== 'same-origin' && site !== 'none')) {
+    if (
+      !origin ||
+      origin === 'null' ||
+      origin !== new URL(origin).origin ||
+      new URL(origin).origin !== new URL(canonical).origin ||
+      (site && site !== 'same-origin' && site !== 'none')
+    ) {
       throw new Error('origin_mismatch');
     }
   } catch {
@@ -46,7 +53,11 @@ export async function readJsonBody<T extends z.ZodType>(
   }
   const contentEncoding = request.headers.get('content-encoding');
   if (contentEncoding && contentEncoding.toLowerCase() !== 'identity') {
-    throw new HttpError(415, 'UNSUPPORTED_ENCODING', 'Compressed request bodies are not supported.');
+    throw new HttpError(
+      415,
+      'UNSUPPORTED_ENCODING',
+      'Compressed request bodies are not supported.',
+    );
   }
   const declaredSize = request.headers.get('content-length');
   if (declaredSize && (!/^\d+$/.test(declaredSize) || Number(declaredSize) > maxBytes)) {
@@ -93,7 +104,8 @@ export async function readJsonBody<T extends z.ZodType>(
     throw new HttpError(400, 'INVALID_JSON', 'Provide valid JSON.');
   }
   const result = schema.safeParse(parsed);
-  if (!result.success) throw new HttpError(422, 'VALIDATION_FAILED', 'Check the submitted fields and try again.');
+  if (!result.success)
+    throw new HttpError(422, 'VALIDATION_FAILED', 'Check the submitted fields and try again.');
   return result.data;
 }
 
@@ -101,11 +113,19 @@ export function errorResponse(error: unknown): Response {
   if (error instanceof HttpError) {
     return Response.json(
       { error: { code: error.code, message: error.publicMessage } },
-      { status: error.status, headers: { 'Cache-Control': 'no-store', ...Object.fromEntries(new Headers(error.headers)) } },
+      {
+        status: error.status,
+        headers: { 'Cache-Control': 'no-store', ...Object.fromEntries(new Headers(error.headers)) },
+      },
     );
   }
   return Response.json(
-    { error: { code: 'SERVICE_UNAVAILABLE', message: 'This service is temporarily unavailable. Please try again.' } },
+    {
+      error: {
+        code: 'SERVICE_UNAVAILABLE',
+        message: 'This service is temporarily unavailable. Please try again.',
+      },
+    },
     { status: 503, headers: { 'Cache-Control': 'no-store', 'Retry-After': '30' } },
   );
 }

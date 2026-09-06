@@ -2,7 +2,10 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { GET as health } from '@/app/api/health/route';
 import { GET as readiness } from '@/app/api/ready/route';
 
-afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+});
 
 it('liveness is minimal and uncached', async () => {
   const response = health();

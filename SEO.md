@@ -8,14 +8,14 @@ Proposed owner: SEO/Editorial Lead with Legal Reviewer; named assignments pendin
 
 Final route names are set during Tasks 09/22. Every built route must be inventoried with intent, canonical, index eligibility, sitemap membership, content owner and review date.
 
-| Planned route family | Indexation contract |
-| --- | --- |
-| Product, document/template, functioning free generator/calculator | Eligible only with unique substantive value and accurate capability claims |
-| Workflow hubs, glossary, Incoterms topics, guides, help | Eligible after editorial/source review; no thin generated country/port/HS pages |
-| Pricing, security, approved legal/trust pages | Eligible when actual policies/capabilities are approved and visible |
-| Auth, workspace, billing, admin, private shipment/document preview | Noindex and absent from sitemap; authentication protects data |
+| Planned route family                                                                    | Indexation contract                                                                |
+| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Product, document/template, functioning free generator/calculator                       | Eligible only with unique substantive value and accurate capability claims         |
+| Workflow hubs, glossary, Incoterms topics, guides, help                                 | Eligible after editorial/source review; no thin generated country/port/HS pages    |
+| Pricing, security, approved legal/trust pages                                           | Eligible when actual policies/capabilities are approved and visible                |
+| Auth, workspace, billing, admin, private shipment/document preview                      | Noindex and absent from sitemap; authentication protects data                      |
 | Expiring share links, anonymous drafts, filters, search parameters, duplicate templates | Noindex, excluded from sitemap and IndexNow; private values excluded from metadata |
-| Preview/staging/component showcase | Noindex with appropriate access/deployment protections |
+| Preview/staging/component showcase                                                      | Noindex with appropriate access/deployment protections                             |
 
 Robots directives are not authorization. Never include customer IDs, document text or trade values in public metadata, OpenGraph, canonical URLs or search previews. Use meaningful server-rendered public content, correct canonical links, breadcrumbs, redirects, 404/410 behavior and sitemap indexes. Structured data must match visible content; do not fabricate ratings, testimonials or functionality.
 

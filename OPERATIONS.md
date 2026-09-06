@@ -12,14 +12,14 @@ Public pages target p75 LCP ≤2.5 s, INP ≤200 ms and CLS ≤0.1. Instrument p
 
 ## Ownership and telemetry to establish
 
-| Capability | Proposed responsible role | Required signals and response |
-| --- | --- | --- |
-| Auth/database/tenant policy | Identity/data owner | Availability, permission anomalies, export/delete failure; restrict access on isolation incident |
-| Checkout/webhooks/entitlements | Payments owner with Finance | Signature failures, lag, mismatch, refunds/disputes; reconcile daily |
-| PDF/sets/storage | Document/platform owner | Per-type failures, queue age, partial sets, object growth/hash failure; scoped retry |
-| Email | Messaging owner | Delivery failures, suppression, complaint/bounce rates; pause eligible sends |
-| Abuse | Security owner | Rate-limit/Turnstile anomalies, malicious uploads; tuned restriction and recovery |
-| SEO/analytics/regulatory | Editorial/analytics/legal owners | Crawl failures, event reconciliation, stale sources; reviewed correction |
+| Capability                     | Proposed responsible role        | Required signals and response                                                                    |
+| ------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Auth/database/tenant policy    | Identity/data owner              | Availability, permission anomalies, export/delete failure; restrict access on isolation incident |
+| Checkout/webhooks/entitlements | Payments owner with Finance      | Signature failures, lag, mismatch, refunds/disputes; reconcile daily                             |
+| PDF/sets/storage               | Document/platform owner          | Per-type failures, queue age, partial sets, object growth/hash failure; scoped retry             |
+| Email                          | Messaging owner                  | Delivery failures, suppression, complaint/bounce rates; pause eligible sends                     |
+| Abuse                          | Security owner                   | Rate-limit/Turnstile anomalies, malicious uploads; tuned restriction and recovery                |
+| SEO/analytics/regulatory       | Editorial/analytics/legal owners | Crawl failures, event reconciliation, stale sources; reviewed correction                         |
 
 Each alert needs a concrete threshold, window, severity, named responder/deputy, escalation and runbook before activation. Thresholds depend on staging/load evidence; they are unresolved launch decisions. Associate Sentry releases with commit IDs and redact all logs/breadcrumbs. Health/readiness endpoints reveal no secrets. Configure synthetic shipment → set → purchase → PDF → email → history checks with controlled recipients/accounts.
 

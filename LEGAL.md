@@ -18,12 +18,12 @@ States must distinguish draft, awaiting review, approved, expired/superseded and
 
 ## Approval checkpoints
 
-| Trigger | Required named reviewer/evidence |
-| --- | --- |
-| New country/chamber workflow, legal document name or endorsement handling | Qualified trade/legal approval of source-backed copy and visible outputs |
-| Incoterms content or new rules/calculators | Source/version/licensing review; formula/assumption evidence; affected-version map |
-| Customer policies or commercial launch | Product/legal approval of actual terms, privacy notice, refunds, pricing/entitlements and support |
-| New residency/subprocessor/retention or deletion behavior | Privacy/operations review of data map, executable periods and customer disclosures |
-| Official-status ambiguity or changed authoritative guidance | Disable affected feature promptly; assess customers/artifacts; reviewed correction and rollout |
+| Trigger                                                                   | Required named reviewer/evidence                                                                  |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| New country/chamber workflow, legal document name or endorsement handling | Qualified trade/legal approval of source-backed copy and visible outputs                          |
+| Incoterms content or new rules/calculators                                | Source/version/licensing review; formula/assumption evidence; affected-version map                |
+| Customer policies or commercial launch                                    | Product/legal approval of actual terms, privacy notice, refunds, pricing/entitlements and support |
+| New residency/subprocessor/retention or deletion behavior                 | Privacy/operations review of data map, executable periods and customer disclosures                |
+| Official-status ambiguity or changed authoritative guidance               | Disable affected feature promptly; assess customers/artifacts; reviewed correction and rollout    |
 
 Before launch, obtain actual approved terms/privacy/cookie and commercial policies for the chosen business and jurisdictions. Do not generate invented policy text to satisfy route completeness. Production credentials, legal/regulatory sign-off and go-live require named human decisions recorded in the repository; an AI cannot self-approve. Task 24 must evidence a source-change drill, monthly review and quarterly workflow review. See [DECISIONS.md](DECISIONS.md) for staged registry dependencies.

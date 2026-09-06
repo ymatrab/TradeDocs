@@ -14,7 +14,10 @@ export function buildContentSecurityPolicy({
   const connectOrigins = ["'self'", 'https://challenges.cloudflare.com'];
   if (supabaseUrl) {
     const service = new URL(supabaseUrl);
-    connectOrigins.push(service.origin, `${service.protocol === 'https:' ? 'wss:' : 'ws:'}//${service.host}`);
+    connectOrigins.push(
+      service.origin,
+      `${service.protocol === 'https:' ? 'wss:' : 'ws:'}//${service.host}`,
+    );
   }
   if (development) connectOrigins.push('ws://localhost:*', 'ws://127.0.0.1:*');
   const directives = [
@@ -41,10 +44,15 @@ export function securityHeaders(production: boolean): { key: string; value: stri
     { key: 'X-Content-Type-Options', value: 'nosniff' },
     { key: 'X-Frame-Options', value: 'DENY' },
     { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-    { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=(), browsing-topics=()' },
+    {
+      key: 'Permissions-Policy',
+      value: 'camera=(), microphone=(), geolocation=(), payment=(), browsing-topics=()',
+    },
     { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
     { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
     { key: 'X-DNS-Prefetch-Control', value: 'off' },
-    ...(production ? [{ key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' }] : []),
+    ...(production
+      ? [{ key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' }]
+      : []),
   ];
 }

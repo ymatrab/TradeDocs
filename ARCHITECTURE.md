@@ -44,14 +44,14 @@ Test environments use synthetic fixtures. The target architecture includes local
 
 ## Failure behavior to implement in Task 02
 
-| Service failure | Required behavior |
-| --- | --- |
-| Auth/database | Deny protected writes; explain retry; do not fall back to unauthenticated access |
-| Payments | Preserve pending order; grant no access from redirects; retry reconciliation |
-| PDF/storage | Persist per-artifact failure; resume job safely; retain immutable prior files |
-| Email | Queue retry/suppression state; expose delivery status without duplicating sends |
+| Service failure        | Required behavior                                                                |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| Auth/database          | Deny protected writes; explain retry; do not fall back to unauthenticated access |
+| Payments               | Preserve pending order; grant no access from redirects; retry reconciliation     |
+| PDF/storage            | Persist per-artifact failure; resume job safely; retain immutable prior files    |
+| Email                  | Queue retry/suppression state; expose delivery status without duplicating sends  |
 | Rate limiter/Turnstile | Apply documented fail-closed rules for risky operations with accessible recovery |
-| Analytics/indexing | Preserve core workflows; retry bounded eligible submissions |
-| Observability | Avoid leaking content in fallback logs; alert on telemetry loss |
+| Analytics/indexing     | Preserve core workflows; retry bounded eligible submissions                      |
+| Observability          | Avoid leaking content in fallback logs; alert on telemetry loss                  |
 
 Store ownership/classification is in [DATABASE.md](DATABASE.md); security controls in [SECURITY.md](SECURITY.md); SLO/recovery decisions in [OPERATIONS.md](OPERATIONS.md). Task 02 must turn each target into tested configuration, request/data flows and evidence.

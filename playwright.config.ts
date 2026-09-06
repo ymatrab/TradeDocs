@@ -7,7 +7,11 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], ['html', { open: 'never' }]],
-  use: { baseURL: process.env.E2E_BASE_URL ?? 'http://127.0.0.1:3000', trace: 'retain-on-failure', screenshot: 'only-on-failure' },
+  use: {
+    baseURL: process.env.E2E_BASE_URL ?? 'http://127.0.0.1:3000',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+  },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
@@ -15,8 +19,13 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['iPhone 13'] } },
   ],
   // The user requested no local runs. CI alone may start a test server.
-  webServer: process.env.CI && !process.env.E2E_BASE_URL ? {
-    command: 'npm run start', url: 'http://127.0.0.1:3000', reuseExistingServer: false,
-    env: { APP_ENV: 'test', APP_URL: 'http://127.0.0.1:3000' },
-  } : undefined,
+  webServer:
+    process.env.CI && !process.env.E2E_BASE_URL
+      ? {
+          command: 'npm run start',
+          url: 'http://127.0.0.1:3000',
+          reuseExistingServer: false,
+          env: { APP_ENV: 'test', APP_URL: 'http://127.0.0.1:3000' },
+        }
+      : undefined,
 });
