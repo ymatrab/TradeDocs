@@ -1,25 +1,83 @@
 @import 'tailwindcss';
 
+/* ---------------------------------------------------------------------------
+   Tokens. Values are recorded with measured contrast ratios in DESIGN_SYSTEM.md.
+   The palette is inherited from the Task 01 foundation screen and formalised
+   here; no value is invented that the documentation does not also record.
+--------------------------------------------------------------------------- */
 @theme inline {
   --color-ink: #152c3e;
-  --color-muted: #5b6874;
-  --color-accent: #bd4218;
-  --color-surface: #f5f7fa;
+  --color-slate: #5b6874;
+  --color-rust: #bd4218;
+  --color-link: #17608a;
+  --color-focus: #087ca7;
+  --color-danger: #a62424;
+  --color-success: #1f6b45;
+  --color-caution: #8a5a00;
+  --color-paper: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-control: #7d8b98;
+  --color-rule: #cbd5dd;
   --font-sans: Arial, Helvetica, sans-serif;
 }
 
 :root {
   color-scheme: light;
+
+  --ink: #152c3e;
+  --ink-raised: #28495e;
+  --slate: #5b6874;
+  --rust: #bd4218;
+  --rust-deep: #983512;
+  --link: #17608a;
+  --focus: #087ca7;
+  --danger: #a62424;
+  --success: #1f6b45;
+  --caution: #8a5a00;
+  --paper: #f5f7fa;
+  --surface: #ffffff;
+  --surface-sunken: #eef2f6;
+  --control: #7d8b98;
+  --rule: #cbd5dd;
+
+  /* Trade documents are set in workhorse grotesques. A system stack matches the
+     subject and requests no font file, so nothing can shift after paint. */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-data: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  --step--1: 12px;
+  --step-0: 15px;
+  --step-1: 17px;
+  --step-2: 22px;
+  --step-3: 28px;
+  --caption: 11px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius: 4px;
+  --radius-lg: 6px;
   --sidebar-width: 246px;
+  --topbar-height: 56px;
+  --measure: 68ch;
 }
+
 * {
   box-sizing: border-box;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
   margin: 0;
-  background: #f5f7fa;
-  color: #152c3e;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.55;
 }
@@ -28,6 +86,7 @@ input,
 select,
 textarea {
   font: inherit;
+  color: inherit;
 }
 button,
 a,
@@ -47,103 +106,70 @@ a {
   color: inherit;
 }
 :focus-visible {
-  outline: 3px solid #087ca7;
-  outline-offset: 4px;
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
-.skip-link {
-  position: fixed;
-  left: 16px;
-  top: -100px;
-  z-index: 100;
-  background: white;
-  padding: 12px 20px;
+svg {
+  flex: none;
 }
-.skip-link:focus {
-  top: 12px;
-}
-.foundation {
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-}
-.foundation article {
-  max-width: 640px;
-  width: 100%;
-  background: white;
-  padding: clamp(24px, 5vw, 60px);
-  border: 1px solid #dfe5ea;
-  border-top: 5px solid #bd4218;
-}
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 12px;
-  font-weight: 700;
-  color: #5b6874;
-}
+
 h1,
 h2,
 h3,
-p {
+h4,
+p,
+figure,
+ul,
+ol {
   margin-top: 0;
 }
 h1 {
   font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.035em;
 }
 h2 {
-  font-size: 22px;
-  line-height: 1.3;
+  font-size: var(--step-2);
+  line-height: 1.25;
   letter-spacing: -0.02em;
 }
 h3 {
-  font-size: 17px;
+  font-size: var(--step-1);
+  line-height: 1.3;
 }
 .muted {
-  color: #5b6874;
+  color: var(--slate);
 }
-.button {
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background: #152c3e;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  min-height: 44px;
-  padding: 10px 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
+.measure {
+  max-width: var(--measure);
 }
-.button:hover {
-  background: #28495e;
+
+/* Box captions are the vernacular of a customs form: a small uppercase label
+   sitting above the value it names. The same treatment labels field boxes,
+   table groupings and shell sections so one idea covers the whole product. */
+.caption,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--caption);
+  font-weight: 700;
+  color: var(--slate);
+  line-height: 1.4;
 }
-.button.secondary {
-  background: #fff;
-  color: #152c3e;
-  border-color: #c9d3dc;
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-size: var(--step--1);
 }
-.button.secondary:hover {
-  background: #edf2f7;
+.data {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
 }
-.button.danger {
-  background: #a62424;
+.numeric {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
 }
-.button.accent {
-  background: #bd4218;
-}
-.button.accent:hover {
-  background: #983512;
-}
-.text-link {
-  text-underline-offset: 4px;
-  color: #17608a;
-  font-weight: 600;
-}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -151,10 +177,481 @@ h3 {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  padding: 12px 20px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+.btn {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 600;
+  font-size: 14px;
+  min-height: 44px;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:hover:not(:disabled) {
+  background: var(--ink-raised);
+}
+.btn.secondary {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--control);
+}
+.btn.secondary:hover:not(:disabled) {
+  background: var(--surface-sunken);
+}
+.btn.quiet {
+  background: transparent;
+  color: var(--ink);
+  border-color: transparent;
+}
+.btn.quiet:hover:not(:disabled) {
+  background: var(--surface-sunken);
+}
+.btn.danger {
+  background: var(--danger);
+}
+.btn.danger:hover:not(:disabled) {
+  background: #8d1e1e;
+}
+.btn.accent {
+  background: var(--rust);
+}
+.btn.accent:hover:not(:disabled) {
+  background: var(--rust-deep);
+}
+.btn.compact {
+  min-height: 34px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.btn.block {
+  width: 100%;
+}
+.text-link {
+  color: var(--link);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+/* --- Field boxes --------------------------------------------------------- */
+/* The signature primitive. Trade paperwork is a grid of numbered, bordered
+   boxes, each captioned in its corner. Reusing that grid for the workspace
+   means the screen and the printed document share one structure. */
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.field-box {
+  background: var(--surface);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.field-box > .field-box-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.field-box-ordinal {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 700;
+  color: var(--rust);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0 4px;
+  line-height: 1.5;
+}
+.field-box-value {
+  font-size: var(--step-0);
+  overflow-wrap: anywhere;
+}
+.field-box-value.empty {
+  color: var(--slate);
+}
+.field-box.span-2 {
+  grid-column: span 2;
+}
+@media (max-width: 640px) {
+  .field-box.span-2 {
+    grid-column: span 1;
+  }
+}
+
+/* --- Status ------------------------------------------------------------- */
+/* Status never depends on colour: every stamp carries a word and a glyph. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 3px 7px;
+  white-space: nowrap;
+}
+.status.draft {
+  color: var(--slate);
+}
+.status.final {
+  color: var(--success);
+}
+.status.stale {
+  color: var(--caution);
+}
+.status.superseded {
+  color: var(--slate);
+  border-style: dashed;
+}
+.status.voided {
+  color: var(--danger);
+  text-decoration: line-through;
+}
+.status.archived {
+  color: var(--slate);
+  background: var(--surface-sunken);
+}
+.status.endorsed {
+  color: var(--rust);
+  border-width: 2px;
+}
+
+/* --- Forms --------------------------------------------------------------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.field > label {
+  font-weight: 600;
+  font-size: 14px;
+}
+.field .requirement {
+  font-weight: 400;
+  color: var(--slate);
+}
+.input,
+.textarea,
+.select {
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 10px 12px;
+  min-height: 44px;
+  width: 100%;
+  font-size: var(--step-0);
+}
+.textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  background: var(--surface-sunken);
+  cursor: not-allowed;
+}
+.input[aria-invalid='true'],
+.textarea[aria-invalid='true'],
+.select[aria-invalid='true'] {
+  border-color: var(--danger);
+  border-width: 2px;
+}
+.hint {
+  font-size: var(--step--1);
+  color: var(--slate);
+}
+.error-text {
+  font-size: var(--step--1);
+  color: var(--danger);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-height: 44px;
+  padding: 6px 0;
+}
+.choice input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--ink);
+  flex: none;
+}
+
+/* --- Tables -------------------------------------------------------------- */
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.table caption {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px var(--space-4);
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.table.compact th,
+.table.compact td {
+  padding: 6px var(--space-3);
+}
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--control);
+  font-size: var(--caption);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  white-space: nowrap;
+}
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.table td.numeric,
+.table th.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.table .unit {
+  color: var(--slate);
+  font-size: var(--step--1);
+  margin-left: 3px;
+}
+.empty-value {
+  color: var(--slate);
+}
+
+/* --- Panels, callouts, states ------------------------------------------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.panel-head {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.panel-body {
+  padding: var(--space-4);
+}
+.callout {
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--slate);
+  background: var(--surface);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+}
+.callout.legal {
+  border-left-color: var(--rust);
+}
+.callout.warning {
+  border-left-color: var(--caution);
+}
+.callout.danger {
+  border-left-color: var(--danger);
+}
+.callout.success {
+  border-left-color: var(--success);
+}
+.callout h3 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.callout p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.state {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+.state p {
+  margin-bottom: 0;
+  max-width: 46ch;
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-sunken), #e2e8ee, var(--surface-sunken));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 2px;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* --- Tabs ---------------------------------------------------------------- */
+.tablist {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+}
+.tab {
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 10px var(--space-3);
+  min-height: 44px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--slate);
+  white-space: nowrap;
+}
+.tab[aria-selected='true'] {
+  color: var(--ink);
+  border-bottom-color: var(--rust);
+}
+
+/* --- Dialog, menu, toast ------------------------------------------------- */
+.dialog {
+  border: 1px solid var(--control);
+  border-top: 5px solid var(--rust);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  width: min(560px, calc(100vw - 32px));
+  color: var(--ink);
+  background: var(--surface);
+}
+.dialog::backdrop {
+  background: rgb(21 44 62 / 0.55);
+}
+.dialog-head,
+.dialog-foot {
+  padding: var(--space-4);
+}
+.dialog-head {
+  border-bottom: 1px solid var(--rule);
+}
+.dialog-foot {
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.dialog-body {
+  padding: var(--space-4);
+}
+.menu-wrap {
+  position: relative;
+  display: inline-block;
+}
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 40;
+  min-width: 220px;
+  background: var(--surface);
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  padding: var(--space-1);
+  display: flex;
+  flex-direction: column;
+}
+.menu button {
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: 10px var(--space-3);
+  min-height: 40px;
+  border-radius: 2px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.menu button:hover {
+  background: var(--surface-sunken);
+}
+.toast-region {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: min(400px, calc(100vw - 32px));
+}
+.toast {
+  background: var(--surface);
+  border: 1px solid var(--control);
+  border-left: 4px solid var(--ink);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 14px;
+}
+.toast.success {
+  border-left-color: var(--success);
+}
+.toast.danger {
+  border-left-color: var(--danger);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -164,21 +661,271 @@ h3 {
     transition: none !important;
   }
 }
+
+/* --- Shells -------------------------------------------------------------- */
+/* A standalone centred card for pages that carry no navigation: the closed
+   foundation notice, 404 and the error boundary. */
+.foundation {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+}
+.foundation article {
+  max-width: 640px;
+  width: 100%;
+  background: var(--surface);
+  padding: clamp(24px, 5vw, 60px);
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--rust);
+}
+
+.public-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+.bar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+.wordmark .rule {
+  width: 3px;
+  height: 22px;
+  background: var(--rust);
+}
+.public-nav {
+  display: flex;
+  gap: var(--space-2);
+  margin-left: auto;
+  align-items: center;
+}
+.public-nav a {
+  padding: 8px 12px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+.public-nav a:hover {
+  background: var(--surface-sunken);
+}
+.public-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  margin-top: var(--space-7);
+}
+.public-footer .bar-inner {
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--slate);
+}
+.public-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-5);
+}
+.disclosure-bar {
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 13px;
+}
+.disclosure-bar .bar-inner {
+  padding: var(--space-2) var(--space-5);
+  gap: var(--space-2);
+}
+
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+.app-sidebar {
+  background: var(--ink);
+  color: var(--surface);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.app-sidebar .wordmark {
+  color: var(--surface);
+}
+.app-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.app-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-3);
+  min-height: 44px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+.app-sidebar nav a:hover {
+  background: rgb(255 255 255 / 0.09);
+}
+.app-sidebar nav a[aria-current='page'] {
+  background: rgb(255 255 255 / 0.13);
+  border-left-color: var(--rust);
+}
+.app-sidebar .caption {
+  color: #a9b8c5;
+}
+.app-topbar {
+  height: var(--topbar-height);
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-4);
+}
+.app-main {
+  padding: var(--space-5);
+  min-width: 0;
+}
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 38px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--slate);
+  font-size: 14px;
+  min-width: 220px;
+}
+kbd {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 1px 5px;
+  background: var(--surface-sunken);
+  color: var(--slate);
+}
+.command-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1);
+  max-height: 320px;
+  overflow-y: auto;
+}
+.command-list button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 10px var(--space-3);
+  min-height: 44px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 14px;
+}
+.command-list button:hover,
+.command-list button[data-active='true'] {
+  background: var(--surface-sunken);
+}
+
+.mobile-nav {
+  display: none;
+}
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .app-sidebar {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .public-nav {
+    display: none;
+  }
+  .bar-inner,
+  .public-main {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
+/* --- Print --------------------------------------------------------------- */
+/* Trade documents get printed. Navigation, controls and shells are removed;
+   document identity, units, totals and disclosures are retained. */
 @media print {
   body {
-    background: white;
+    background: var(--surface);
+    font-size: 11pt;
   }
   nav,
   aside,
-  .no-print,
-  .skip-link {
+  .app-sidebar,
+  .app-topbar,
+  .public-header,
+  .public-nav,
+  .mobile-nav,
+  .toast-region,
+  .skip-link,
+  .search-trigger,
+  .no-print {
     display: none !important;
+  }
+  .app-shell {
+    display: block;
+  }
+  .app-main,
+  .public-main,
+  .foundation {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0;
   }
   a {
     text-decoration: none;
   }
-  main {
-    margin: 0 !important;
-    padding: 0 !important;
+  .panel,
+  .table-scroll,
+  .box-grid,
+  .field-box {
+    border-color: #000;
+    break-inside: avoid;
+  }
+  .table thead th {
+    position: static;
+    background: transparent;
+    color: #000;
+  }
+  .status {
+    border-color: #000 !important;
+    color: #000 !important;
   }
 }

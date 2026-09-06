@@ -14,7 +14,7 @@ export default function ErrorPage({
         <p className="muted">
           Please try again. Contact your workspace administrator if the problem continues.
         </p>
-        <button className="button" onClick={reset}>
+        <button className="btn" onClick={reset}>
           Try again
         </button>
       </article>

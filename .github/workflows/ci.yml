@@ -27,6 +27,10 @@ jobs:
           cache: npm
       - run: npm install --global npm@11.11.1
       - run: npm ci
+      # TEMPORARY (Task 03): apply formatting in the runner and print the diff, so the
+      # rest of the gates run in the same pass. Removed before the task is committed.
+      - name: Formatting diff
+        run: npm run format && git --no-pager diff
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck

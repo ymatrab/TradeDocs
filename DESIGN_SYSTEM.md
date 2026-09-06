@@ -1,6 +1,6 @@
 # Design system
 
-Status: proposed foundation direction; full component library and authenticated/public shells are Task 03 deliverables. Exact shipped tokens/variants must be recorded with that task's evidence.
+Status: implemented by Task 03. Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/_design`, which returns 404 in production.
 
 Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-09-06.
 
@@ -23,3 +23,42 @@ Verify at 360 px mobile, tablet and large desktop; test current and previous maj
 ## Visual acceptance
 
 Task 03 captures visual snapshots for core states at three viewports, automated axe checks and keyboard E2E, followed by actual visual inspection. Task 18 adds all document types at 1/3/10 pages, Unicode/logo/long-table cases, repeated headers, no clipping/orphan totals and non-removable legal labels. Review every changed baseline; do not approve image diffs merely because tests pass. Provide accessible document alternatives where feasible and record limitations accurately.
+
+## Shipped tokens
+
+Defined in `src/app/globals.css`. Ratios are computed against the two backgrounds every token is
+allowed to sit on: `--surface` (`#ffffff`) and `--paper` (`#f5f7fa`). Text tokens meet WCAG 2.2 AA
+(4.5:1); the focus ring and control border are non-text and meet 3:1.
+
+| Token | Value | Role | On surface | On paper | Meets |
+| --- | --- | --- | --- | --- | --- |
+| `--ink` | `#152c3e` | Body text, primary action, sidebar ground | 14.37 | 13.39 | AAA text |
+| `--slate` | `#5b6874` | Captions, hints, units, absent values | 5.71 | 5.32 | AA text |
+| `--rust` | `#bd4218` | Document identity, box ordinals, active rules | 5.31 | 4.95 | AA text |
+| `--link` | `#17608a` | Inline links | 6.83 | 6.36 | AA text |
+| `--danger` | `#a62424` | Errors, void, destructive actions | 7.24 | 6.75 | AA text |
+| `--success` | `#1f6b45` | Final state, successful outcomes | 6.47 | 6.03 | AA text |
+| `--caution` | `#8a5a00` | Stale state, warnings | 5.93 | 5.52 | AA text |
+| `--focus` | `#087ca7` | Focus ring only | 4.72 | 4.40 | 3:1 non-text |
+| `--control` | `#7d8b98` | Input, select and secondary-button borders | 3.49 | 3.25 | 3:1 non-text |
+| `--rule` | `#cbd5dd` | Decorative separators and box grid lines | 1.49 | 1.39 | Decorative; never the sole carrier of meaning |
+
+Reversed pairs used by the authenticated shell: `#ffffff` on `--ink` is 14.37:1, and the sidebar
+section caption `#a9b8c5` on `--ink` is 7.08:1.
+
+Type is set in a system grotesque stack (`Arial, Helvetica, sans-serif`) with a monospace stack for
+references and codes. No font file is requested, so no text can reflow after first paint. Numeric
+contexts set `font-variant-numeric: tabular-nums` so quantities, weights and totals align in a
+column.
+
+## Signature primitive: the field box
+
+A bill of lading, a commercial invoice and a certificate of origin are all grids of numbered,
+bordered boxes, each captioned in its corner. `BoxGrid` and `FieldBox` reproduce that grid, so the
+screen a user fills in and the document they print share one structure and a field can be named by
+its box number in either place. The same caption treatment labels tables, panels and shell
+sections, which keeps one idea covering the whole product rather than three competing ones.
+
+Status is the second product-specific primitive. Every state carries a word, a glyph and a border
+treatment together, so it survives greyscale printing and colour-vision differences; no state is
+ever expressed as colour alone.
