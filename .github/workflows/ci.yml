@@ -41,6 +41,7 @@ jobs:
         run: npm run build
         env:
           APP_ENV: ''
+          APP_URL: ''
           APPLICATION_MODE: foundation
           VERCEL_ENV: production
       - run: npx playwright install --with-deps chromium firefox webkit

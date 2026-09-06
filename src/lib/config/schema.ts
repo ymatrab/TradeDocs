@@ -240,6 +240,7 @@ export function validateDeploymentEnv(
   input: EnvironmentInput,
   productionRuntime: boolean,
 ): ServerEnv {
+  const explicitEnvironment = input.APP_ENV?.trim() || undefined;
   const inferredEnvironment =
     input.VERCEL_ENV === 'production'
       ? 'production'
@@ -250,7 +251,7 @@ export function validateDeploymentEnv(
           : productionRuntime
             ? undefined
             : 'local';
-  const env = parseServerEnv({ ...input, APP_ENV: input.APP_ENV ?? inferredEnvironment });
+  const env = parseServerEnv({ ...input, APP_ENV: explicitEnvironment ?? inferredEnvironment });
   if (productionRuntime && env.APP_ENV === 'local') {
     throw new ConfigurationError(['APP_ENV']);
   }

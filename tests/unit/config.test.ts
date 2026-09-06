@@ -21,7 +21,7 @@ describe('environment configuration', () => {
   });
 
   it('allows Vercel to build the closed foundation without service credentials', () => {
-    const env = validateDeploymentEnv({ VERCEL_ENV: 'production' }, true);
+    const env = validateDeploymentEnv({ APP_ENV: '', VERCEL_ENV: 'production' }, true);
     expect(env.APP_ENV).toBe('production');
     expect(env.APPLICATION_MODE).toBe('foundation');
     expect(env.LAUNCH_APPROVED).toBe(false);
