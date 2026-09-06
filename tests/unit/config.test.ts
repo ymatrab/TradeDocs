@@ -27,6 +27,11 @@ describe('environment configuration', () => {
     expect(env.LAUNCH_APPROVED).toBe(false);
   });
 
+  it('trusts Vercel deployment identity over a stale application environment', () => {
+    const env = validateDeploymentEnv({ APP_ENV: 'test', VERCEL_ENV: 'production' }, true);
+    expect(env.APP_ENV).toBe('production');
+  });
+
   it('does not allow a foundation deployment to enable customer capabilities', () => {
     expect(() =>
       parseServerEnv({

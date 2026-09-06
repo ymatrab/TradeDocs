@@ -241,17 +241,20 @@ export function validateDeploymentEnv(
   productionRuntime: boolean,
 ): ServerEnv {
   const explicitEnvironment = input.APP_ENV?.trim() || undefined;
-  const inferredEnvironment =
+  const vercelEnvironment =
     input.VERCEL_ENV === 'production'
       ? 'production'
       : input.VERCEL_ENV === 'preview'
         ? 'preview'
         : input.VERCEL_ENV === 'development'
           ? 'local'
-          : productionRuntime
-            ? undefined
-            : 'local';
-  const env = parseServerEnv({ ...input, APP_ENV: explicitEnvironment ?? inferredEnvironment });
+          : undefined;
+  const fallbackEnvironment = productionRuntime ? undefined : 'local';
+  // VERCEL_ENV is platform-owned and takes precedence over stale project variables.
+  const env = parseServerEnv({
+    ...input,
+    APP_ENV: vercelEnvironment ?? explicitEnvironment ?? fallbackEnvironment,
+  });
   if (productionRuntime && env.APP_ENV === 'local') {
     throw new ConfigurationError(['APP_ENV']);
   }
