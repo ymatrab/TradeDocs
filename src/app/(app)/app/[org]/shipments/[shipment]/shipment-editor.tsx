@@ -7,7 +7,12 @@ import { Field, Input, Select } from '@/components/primitives/form';
 import { Callout, Panel } from '@/components/primitives/feedback';
 import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/table';
 import { DocumentStatus } from '@/components/document/status';
-import { addItem, generateDocument, removeItem, updateShipment } from '../../../../shipment-actions';
+import {
+  addItem,
+  generateDocument,
+  removeItem,
+  updateShipment,
+} from '../../../../shipment-actions';
 import type { ActionState } from '../../../../actions';
 
 type Item = {
@@ -148,7 +153,11 @@ export function ShipmentEditor({
                 />
               )}
             </Field>
-            <Field id="country_of_destination" label="Country of destination" hint="Two-letter code.">
+            <Field
+              id="country_of_destination"
+              label="Country of destination"
+              hint="Two-letter code."
+            >
               {({ id, describedBy }) => (
                 <Input
                   id={id}
@@ -205,7 +214,10 @@ export function ShipmentEditor({
                   <tr key={item.id}>
                     <td>{item.description}</td>
                     <td className="data">{item.hs_code ?? <EmptyValue label="No HS code" />}</td>
-                    <NumericCell value={Number(item.quantity).toLocaleString('en-GB')} unit={item.unit} />
+                    <NumericCell
+                      value={Number(item.quantity).toLocaleString('en-GB')}
+                      unit={item.unit}
+                    />
                     <NumericCell value={Number(item.unit_price).toFixed(4)} />
                     <NumericCell
                       value={(Number(item.quantity) * Number(item.unit_price)).toLocaleString(
@@ -219,7 +231,12 @@ export function ShipmentEditor({
                         <input type="hidden" name="org" value={org} />
                         <input type="hidden" name="shipment" value={shipmentId} />
                         <input type="hidden" name="item" value={item.id} />
-                        <Button type="submit" tone="quiet" compact aria-label={`Remove ${item.description}`}>
+                        <Button
+                          type="submit"
+                          tone="quiet"
+                          compact
+                          aria-label={`Remove ${item.description}`}
+                        >
                           <Trash2 size={15} aria-hidden="true" />
                         </Button>
                       </form>
@@ -278,11 +295,20 @@ export function ShipmentEditor({
               </Field>
               <Field id="unit_price" label="Unit price">
                 {({ id }) => (
-                  <Input id={id} name="unit_price" type="number" step="0.0001" min="0" defaultValue="0" />
+                  <Input
+                    id={id}
+                    name="unit_price"
+                    type="number"
+                    step="0.0001"
+                    min="0"
+                    defaultValue="0"
+                  />
                 )}
               </Field>
               <Field id="net_weight_kg" label="Net weight (kg)" requirement="Optional">
-                {({ id }) => <Input id={id} name="net_weight_kg" type="number" step="0.001" min="0" />}
+                {({ id }) => (
+                  <Input id={id} name="net_weight_kg" type="number" step="0.001" min="0" />
+                )}
               </Field>
               <Field id="package_count" label="Packages" requirement="Optional">
                 {({ id }) => <Input id={id} name="package_count" type="number" step="1" min="0" />}
@@ -300,7 +326,10 @@ export function ShipmentEditor({
       <Panel title="Documents">
         <div style={{ display: 'grid', gap: 16 }}>
           <Result state={documentState} />
-          <form action={documentAction} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}>
+          <form
+            action={documentAction}
+            style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}
+          >
             <input type="hidden" name="org" value={org} />
             <input type="hidden" name="shipment" value={shipmentId} />
             <div style={{ minWidth: 220 }}>
@@ -316,7 +345,12 @@ export function ShipmentEditor({
                 )}
               </Field>
             </div>
-            <Button type="submit" tone="accent" pending={documentPending} pendingLabel="Generating…">
+            <Button
+              type="submit"
+              tone="accent"
+              pending={documentPending}
+              pendingLabel="Generating…"
+            >
               Generate document
             </Button>
           </form>
@@ -338,7 +372,8 @@ export function ShipmentEditor({
                   <tr key={document.id}>
                     <td className="data">{document.number}</td>
                     <td>
-                      {documentTypes.find((type) => type.kind === document.kind)?.label ?? document.kind}
+                      {documentTypes.find((type) => type.kind === document.kind)?.label ??
+                        document.kind}
                     </td>
                     <td>
                       <DocumentStatus

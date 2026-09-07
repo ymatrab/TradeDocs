@@ -65,8 +65,8 @@ export default async function ShipmentPage({
         </BoxGrid>
 
         <Callout tone="legal" title="Preparation only">
-          Documents generated here are prepared from your own data. They are not issued,
-          endorsed, certified or cleared by any authority.
+          Documents generated here are prepared from your own data. They are not issued, endorsed,
+          certified or cleared by any authority.
         </Callout>
 
         <ShipmentEditor

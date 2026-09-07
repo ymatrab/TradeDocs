@@ -45,7 +45,10 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
                 {shipments.map((shipment) => (
                   <tr key={shipment.id}>
                     <td>
-                      <Link className="text-link data" href={`/app/${org}/shipments/${shipment.id}`}>
+                      <Link
+                        className="text-link data"
+                        href={`/app/${org}/shipments/${shipment.id}`}
+                      >
                         {shipment.reference}
                       </Link>
                     </td>

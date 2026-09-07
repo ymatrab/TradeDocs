@@ -18,7 +18,11 @@ export function CreateShipmentForm({ org }: { org: string }) {
         </Callout>
       ) : null}
       <div
-        style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))' }}
+        style={{
+          display: 'grid',
+          gap: 16,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+        }}
       >
         <Field
           id="reference"
@@ -26,7 +30,13 @@ export function CreateShipmentForm({ org }: { org: string }) {
           hint="Your own reference, unique within this organization."
         >
           {({ id, describedBy }) => (
-            <Input id={id} name="reference" required maxLength={60} aria-describedby={describedBy} />
+            <Input
+              id={id}
+              name="reference"
+              required
+              maxLength={60}
+              aria-describedby={describedBy}
+            />
           )}
         </Field>
         <Field id="currency" label="Currency" hint="Three-letter code, such as EUR.">

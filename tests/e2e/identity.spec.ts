@@ -205,5 +205,8 @@ test('a shipment produces a downloadable document set', async ({ page }) => {
   await page.getByLabel('Port of loading').fill('Rotterdam');
   await page.getByRole('button', { name: 'Save shipment' }).click();
   await expect(page.getByText('Documents generated before now are marked stale.')).toBeVisible();
-  await expect(page.getByText('Stale').first()).toBeVisible();
+  // Scoped to the documents table: 'Stale' also appears in the command palette's suggestions.
+  await expect(
+    page.getByRole('region', { name: /Documents generated/ }).getByText('Stale'),
+  ).toBeVisible();
 });

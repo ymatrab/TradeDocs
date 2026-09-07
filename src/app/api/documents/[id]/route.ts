@@ -11,10 +11,7 @@ export const runtime = 'nodejs';
  * Authorization is the row policy's: the query runs as the caller, so a document belonging
  * to another organization simply is not found. The route never widens that.
  */
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const client = await createClient();
   const { data: document } = await client

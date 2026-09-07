@@ -55,9 +55,10 @@ export async function createShipment(
 
   if (error || !data) {
     return {
-      error: error?.code === '23505'
-        ? 'A shipment with that reference already exists.'
-        : 'That shipment could not be created.',
+      error:
+        error?.code === '23505'
+          ? 'A shipment with that reference already exists.'
+          : 'That shipment could not be created.',
     };
   }
   revalidatePath(`/app/${parsed.data.org}/shipments`);
@@ -156,13 +157,11 @@ export async function addItem(_previous: ActionState, formData: FormData): Promi
 }
 
 export async function removeItem(_previous: ActionState, formData: FormData): Promise<ActionState> {
-  const parsed = z
-    .object({ org: uuid, shipment: uuid, item: uuid })
-    .safeParse({
-      org: read(formData, 'org'),
-      shipment: read(formData, 'shipment'),
-      item: read(formData, 'item'),
-    });
+  const parsed = z.object({ org: uuid, shipment: uuid, item: uuid }).safeParse({
+    org: read(formData, 'org'),
+    shipment: read(formData, 'shipment'),
+    item: read(formData, 'item'),
+  });
   if (!parsed.success) return { error: 'Check the line.' };
 
   const client = await createClient();
