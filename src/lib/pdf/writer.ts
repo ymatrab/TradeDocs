@@ -1,15 +1,12 @@
+import { TrueTypeFont } from './truetype';
+
 /**
- * A minimal PDF writer.
+ * A minimal PDF writer with an embedded Unicode font.
  *
- * Trade documents are text, rules and tables on a fixed page, which PDF's base-14 fonts
- * render without embedding anything. Writing this directly keeps the product free of a
- * rendering dependency and its cold-start cost, and keeps the output byte-stable so the same
- * snapshot always produces the same file.
- *
- * Limitation, stated rather than hidden: base-14 Helvetica is encoded with WinAnsi, which
- * covers Latin-1 only. Characters outside it are transliterated where there is an obvious
- * equivalent and replaced with '?' otherwise. Embedding a Unicode face is the upgrade path
- * when non-Latin scripts have to appear on a document.
+ * Trade documents carry party names, addresses and goods descriptions in whatever script the
+ * parties use, so the base-14 fonts are not enough: they are Latin-1 only and would silently
+ * mangle a Polish or Ukrainian consignee. The renderer embeds a real face instead and writes
+ * text as glyph identifiers, subsetting the font to the glyphs a document actually uses.
  */
 
 export const PAGE_WIDTH = 595.28; // A4 at 72dpi
@@ -17,62 +14,55 @@ export const PAGE_HEIGHT = 841.89;
 
 export type FontName = 'regular' | 'bold';
 
-// Advance widths per 1000 units for ASCII 32..126.
-const HELVETICA = [
-  278, 278, 355, 556, 556, 889, 667, 191, 333, 333, 389, 584, 278, 333, 278, 278, 556, 556, 556,
-  556, 556, 556, 556, 556, 556, 556, 278, 278, 584, 584, 584, 556, 1015, 667, 667, 722, 722, 667,
-  611, 778, 722, 278, 500, 667, 556, 833, 722, 778, 667, 778, 722, 667, 611, 722, 667, 944, 667,
-  667, 611, 278, 278, 278, 469, 556, 333, 556, 556, 500, 556, 556, 278, 556, 556, 222, 222, 500,
-  222, 833, 556, 556, 556, 556, 333, 500, 278, 556, 500, 722, 500, 500, 500, 334, 260, 334, 584,
-];
-const HELVETICA_BOLD = [
-  278, 333, 474, 556, 556, 889, 722, 238, 333, 333, 389, 584, 278, 333, 278, 278, 556, 556, 556,
-  556, 556, 556, 556, 556, 556, 556, 333, 333, 584, 584, 584, 611, 975, 722, 722, 722, 722, 667,
-  611, 778, 722, 278, 556, 722, 611, 833, 722, 778, 667, 778, 722, 667, 611, 722, 667, 944, 667,
-  667, 611, 333, 278, 333, 584, 556, 333, 556, 611, 556, 611, 556, 333, 611, 611, 278, 278, 556,
-  278, 889, 611, 611, 611, 611, 389, 556, 333, 611, 556, 778, 556, 556, 500, 389, 280, 389, 584,
-];
+const REPLACEMENT = 0xfffd;
 
-const transliterations: Record<string, string> = {
-  '‘': "'",
-  '’': "'",
-  '“': '"',
-  '”': '"',
-  '–': '-',
-  '—': '-',
-  '…': '...',
-  ' ': ' ',
-  '−': '-',
-};
+/** The two faces a document uses, and the glyphs each has been asked for. */
+export class FontSet {
+  private readonly used: Record<FontName, Map<number, number>> = {
+    regular: new Map(),
+    bold: new Map(),
+  };
 
-/** Reduces a string to what WinAnsi can represent, without emitting broken glyphs. */
-export function toWinAnsi(value: string): string {
-  let out = '';
-  for (const character of value.normalize('NFC')) {
-    const replacement = transliterations[character];
-    if (replacement !== undefined) {
-      out += replacement;
-      continue;
+  constructor(
+    readonly regular: TrueTypeFont,
+    readonly bold: TrueTypeFont,
+  ) {}
+
+  face(name: FontName): TrueTypeFont {
+    return name === 'bold' ? this.bold : this.regular;
+  }
+
+  /**
+   * Maps text to glyphs, recording what the subset must contain. A character the face cannot
+   * represent becomes the replacement glyph rather than a wrong one.
+   */
+  encode(text: string, name: FontName): { glyphs: number[]; width: number } {
+    const face = this.face(name);
+    const glyphs: number[] = [];
+    let width = 0;
+    for (const character of text.normalize('NFC')) {
+      const codePoint = character.codePointAt(0) ?? REPLACEMENT;
+      const resolved = face.has(codePoint) ? codePoint : REPLACEMENT;
+      const glyph = face.glyphFor(resolved);
+      glyphs.push(glyph.id);
+      width += face.widthOf(glyph.id);
+      this.used[name].set(glyph.id, resolved);
     }
-    const code = character.codePointAt(0) ?? 63;
-    out += code >= 32 && code <= 255 ? character : '?';
+    return { glyphs, width };
   }
-  return out;
-}
 
-export function measure(text: string, size: number, font: FontName = 'regular'): number {
-  const widths = font === 'bold' ? HELVETICA_BOLD : HELVETICA;
-  let total = 0;
-  for (const character of toWinAnsi(text)) {
-    const code = character.charCodeAt(0);
-    const width = code >= 32 && code <= 126 ? widths[code - 32] : 556;
-    total += width ?? 556;
+  measure(text: string, size: number, name: FontName = 'regular'): number {
+    return (this.encode(text, name).width * size) / 1000;
   }
-  return (total * size) / 1000;
+
+  usedGlyphs(name: FontName): Map<number, number> {
+    return this.used[name];
+  }
 }
 
 /** Breaks text to a width at word boundaries, keeping a word that cannot fit on its own line. */
 export function wrap(
+  fonts: FontSet,
   text: string,
   width: number,
   size: number,
@@ -83,7 +73,7 @@ export function wrap(
     let line = '';
     for (const word of paragraph.split(/\s+/).filter(Boolean)) {
       const candidate = line ? `${line} ${word}` : word;
-      if (measure(candidate, size, font) <= width || !line) {
+      if (fonts.measure(candidate, size, font) <= width || !line) {
         line = candidate;
       } else {
         lines.push(line);
@@ -95,19 +85,10 @@ export function wrap(
   return lines.length > 0 ? lines : [''];
 }
 
-function escapeText(value: string): string {
-  let out = '';
-  for (const character of toWinAnsi(value)) {
-    const code = character.charCodeAt(0);
-    if (character === '(' || character === ')' || character === '\\') out += `\\${character}`;
-    else if (code < 32 || code > 126) out += `\\${code.toString(8).padStart(3, '0')}`;
-    else out += character;
-  }
-  return out;
-}
-
 export class Page {
   private readonly operations: string[] = [];
+
+  constructor(private readonly fonts: FontSet) {}
 
   text(
     value: string,
@@ -117,11 +98,13 @@ export class Page {
   ): void {
     if (!value) return;
     const { size = 9, font = 'regular', align = 'left' } = options;
-    const resource = font === 'bold' ? '/F2' : '/F1';
-    const width = measure(value, size, font);
+    const { glyphs, width: rawWidth } = this.fonts.encode(value, font);
+    const width = (rawWidth * size) / 1000;
     const start = align === 'right' ? x - width : align === 'center' ? x - width / 2 : x;
+    const hex = glyphs.map((glyph) => glyph.toString(16).padStart(4, '0')).join('');
+    const resource = font === 'bold' ? '/F2' : '/F1';
     this.operations.push(
-      `BT ${resource} ${size} Tf 1 0 0 1 ${start.toFixed(2)} ${y.toFixed(2)} Tm (${escapeText(value)}) Tj ET`,
+      `BT ${resource} ${size} Tf 1 0 0 1 ${start.toFixed(2)} ${y.toFixed(2)} Tm <${hex}> Tj ET`,
     );
   }
 
@@ -142,48 +125,156 @@ export class Page {
   }
 }
 
-/** Assembles pages into a PDF file with a correct cross-reference table. */
-export function renderPdf(pages: readonly Page[]): Uint8Array {
-  const encoder = new TextEncoder();
-  const objects: string[] = [];
-  const pageCount = pages.length;
-  // 1 catalog, 2 page tree, then a content stream and a page object per page, then two fonts.
-  const contentIds = pages.map((_, index) => 3 + index * 2);
-  const pageIds = pages.map((_, index) => 4 + index * 2);
-  const fontRegularId = 3 + pageCount * 2;
-  const fontBoldId = fontRegularId + 1;
+function bytes(value: string): Uint8Array {
+  return new TextEncoder().encode(value);
+}
 
-  objects.push(`<< /Type /Catalog /Pages 2 0 R >>`);
-  objects.push(
-    `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pageCount} >>`,
+function concat(parts: readonly Uint8Array[]): Uint8Array {
+  const total = parts.reduce((sum, part) => sum + part.byteLength, 0);
+  const out = new Uint8Array(total);
+  let cursor = 0;
+  for (const part of parts) {
+    out.set(part, cursor);
+    cursor += part.byteLength;
+  }
+  return out;
+}
+
+/** Lets a reader search and copy text out of the document rather than seeing glyph numbers. */
+function toUnicodeCMap(used: Map<number, number>): string {
+  const entries = [...used.entries()].filter(([, codePoint]) => codePoint !== 0);
+  const lines = entries.map(
+    ([glyph, codePoint]) =>
+      `<${glyph.toString(16).padStart(4, '0')}> <${codePoint
+        .toString(16)
+        .padStart(4, '0')
+        .toUpperCase()}>`,
   );
+  const chunks: string[] = [];
+  for (let index = 0; index < lines.length; index += 100) {
+    const slice = lines.slice(index, index + 100);
+    chunks.push(`${slice.length} beginbfchar\n${slice.join('\n')}\nendbfchar`);
+  }
+  return [
+    '/CIDInit /ProcSet findresource begin',
+    '12 dict begin',
+    'begincmap',
+    '/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def',
+    '/CMapName /Adobe-Identity-UCS def',
+    '/CMapType 2 def',
+    '1 begincodespacerange',
+    '<0000> <FFFF>',
+    'endcodespacerange',
+    ...chunks,
+    'endcmap',
+    'CMapName currentdict /CMap defineresource pop',
+    'end',
+    'end',
+  ].join('\n');
+}
 
-  pages.forEach((page, index) => {
-    const stream = page.build();
-    objects.push(`<< /Length ${encoder.encode(stream).length} >>\nstream\n${stream}\nendstream`);
-    objects.push(
-      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE_WIDTH.toFixed(2)} ${PAGE_HEIGHT.toFixed(2)}] ` +
-        `/Resources << /Font << /F1 ${fontRegularId} 0 R /F2 ${fontBoldId} 0 R >> >> ` +
-        `/Contents ${contentIds[index]} 0 R >>`,
+function widthArray(face: TrueTypeFont, used: Map<number, number>): string {
+  const ids = [...used.keys()].sort((a, b) => a - b);
+  const runs: string[] = [];
+  let index = 0;
+  while (index < ids.length) {
+    const start = ids[index] as number;
+    const widths: string[] = [];
+    let previous = start - 1;
+    while (index < ids.length && (ids[index] as number) === previous + 1) {
+      widths.push(face.widthOf(ids[index] as number).toFixed(0));
+      previous = ids[index] as number;
+      index += 1;
+    }
+    runs.push(`${start} [${widths.join(' ')}]`);
+  }
+  return runs.join(' ');
+}
+
+/** Assembles pages and the embedded font subsets into a PDF file. */
+export function renderPdf(pages: readonly Page[], fonts: FontSet): Uint8Array {
+  const objects: { body: string; stream?: Uint8Array }[] = [];
+  const add = (body: string, stream?: Uint8Array): number => {
+    objects.push({ body, stream });
+    return objects.length; // object numbers are 1-based
+  };
+
+  const catalogId = add('');
+  const pagesId = add('');
+
+  const fontIds: Record<FontName, number> = { regular: 0, bold: 0 };
+  for (const name of ['regular', 'bold'] as const) {
+    const face = fonts.face(name);
+    const used = fonts.usedGlyphs(name);
+    // A face a document never used still needs an object, because the page resources name it.
+    const subset = face.subset(used.keys());
+    const fileId = add(`<< /Length ${subset.byteLength} /Length1 ${subset.byteLength} >>`, subset);
+    const unicode = bytes(toUnicodeCMap(used));
+    const unicodeId = add(`<< /Length ${unicode.byteLength} >>`, unicode);
+    const scale = 1000 / face.unitsPerEm;
+    const descriptorId = add(
+      `<< /Type /FontDescriptor /FontName /NotoSans${name === 'bold' ? '-Bold' : ''} ` +
+        `/Flags 4 /FontBBox [${face.bbox.map((value) => Math.round(value * scale)).join(' ')}] ` +
+        `/ItalicAngle 0 /Ascent ${Math.round(face.ascent * scale)} ` +
+        `/Descent ${Math.round(face.descent * scale)} /CapHeight ${Math.round(face.capHeight * scale)} ` +
+        `/StemV ${name === 'bold' ? 140 : 80} /FontFile2 ${fileId} 0 R >>`,
     );
-  });
+    const descendantId = add(
+      `<< /Type /Font /Subtype /CIDFontType2 /BaseFont /NotoSans${name === 'bold' ? '-Bold' : ''} ` +
+        `/CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >> ` +
+        `/FontDescriptor ${descriptorId} 0 R /DW 1000 /W [${widthArray(face, used)}] ` +
+        `/CIDToGIDMap /Identity >>`,
+    );
+    fontIds[name] = add(
+      `<< /Type /Font /Subtype /Type0 /BaseFont /NotoSans${name === 'bold' ? '-Bold' : ''} ` +
+        `/Encoding /Identity-H /DescendantFonts [${descendantId} 0 R] /ToUnicode ${unicodeId} 0 R >>`,
+    );
+  }
 
-  objects.push(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>`);
-  objects.push(
-    `<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>`,
-  );
+  const pageIds: number[] = [];
+  for (const page of pages) {
+    const stream = bytes(page.build());
+    const contentId = add(`<< /Length ${stream.byteLength} >>`, stream);
+    pageIds.push(
+      add(
+        `<< /Type /Page /Parent ${pagesId} 0 R ` +
+          `/MediaBox [0 0 ${PAGE_WIDTH.toFixed(2)} ${PAGE_HEIGHT.toFixed(2)}] ` +
+          `/Resources << /Font << /F1 ${fontIds.regular} 0 R /F2 ${fontIds.bold} 0 R >> >> ` +
+          `/Contents ${contentId} 0 R >>`,
+      ),
+    );
+  }
 
-  let body = '%PDF-1.4\n';
+  objects[catalogId - 1] = { body: `<< /Type /Catalog /Pages ${pagesId} 0 R >>` };
+  objects[pagesId - 1] = {
+    body: `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pageIds.length} >>`,
+  };
+
+  const chunks: Uint8Array[] = [bytes('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n')];
+  let length = chunks[0]?.byteLength ?? 0;
   const offsets: number[] = [];
+
   objects.forEach((object, index) => {
-    offsets.push(encoder.encode(body).length);
-    body += `${index + 1} 0 obj\n${object}\nendobj\n`;
+    offsets.push(length);
+    const head = bytes(`${index + 1} 0 obj\n${object.body}\n`);
+    chunks.push(head);
+    length += head.byteLength;
+    if (object.stream) {
+      const open = bytes('stream\n');
+      const close = bytes('\nendstream\n');
+      chunks.push(open, object.stream, close);
+      length += open.byteLength + object.stream.byteLength + close.byteLength;
+    }
+    const tail = bytes('endobj\n');
+    chunks.push(tail);
+    length += tail.byteLength;
   });
 
-  const xrefOffset = encoder.encode(body).length;
-  body += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
-  for (const offset of offsets) body += `${offset.toString().padStart(10, '0')} 00000 n \n`;
-  body += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xrefOffset}\n%%EOF`;
+  const xrefOffset = length;
+  let xref = `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (const offset of offsets) xref += `${offset.toString().padStart(10, '0')} 00000 n \n`;
+  xref += `trailer\n<< /Size ${objects.length + 1} /Root ${catalogId} 0 R >>\nstartxref\n${xrefOffset}\n%%EOF`;
+  chunks.push(bytes(xref));
 
-  return encoder.encode(body);
+  return concat(chunks);
 }

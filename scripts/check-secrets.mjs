@@ -11,7 +11,7 @@ const patterns = [
 const files = execFileSync('git', ['ls-files', '-z']).toString().split('\0').filter(Boolean);
 let failed = false;
 for (const file of files) {
-  if (/\.(pdf|png|jpg|woff2)$/.test(file)) continue;
+  if (/\.(pdf|png|jpg|woff2|ttf|otf)$/.test(file)) continue;
   const body = execFileSync('git', ['show', `:${file}`], {
     maxBuffer: 20 * 1024 * 1024,
   }).toString();

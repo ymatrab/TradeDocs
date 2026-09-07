@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import { Page, PAGE_HEIGHT, PAGE_WIDTH, measure, renderPdf, wrap } from './writer';
+import { FontSet, Page, PAGE_HEIGHT, PAGE_WIDTH, renderPdf, wrap } from './writer';
+import { createFontSet } from './fonts';
 
 /**
  * Renders a stored document snapshot as a PDF.
@@ -197,7 +198,7 @@ function drawBox(page: Page, x: number, y: number, width: number, height: number
   page.text(caption.toUpperCase(), x + 6, y - 11, { size: 6, font: 'bold' });
 }
 
-export function renderTradeDocument(input: unknown): Uint8Array {
+export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
   const snapshot = snapshotSchema.parse(input);
   const columns = columnsFor(snapshot.kind);
   const fixed = columns.reduce((total, column) => total + column.width, 0);
@@ -206,11 +207,11 @@ export function renderTradeDocument(input: unknown): Uint8Array {
   );
 
   const pages: Page[] = [];
-  let page = new Page();
+  let page = new Page(fonts);
   let cursor = 0;
 
   const startPage = (continued: boolean): void => {
-    page = new Page();
+    page = new Page(fonts);
     pages.push(page);
     cursor = PAGE_HEIGHT - MARGIN;
 
@@ -296,7 +297,7 @@ export function renderTradeDocument(input: unknown): Uint8Array {
   for (const item of snapshot.items) {
     const descriptionColumn = layout[0];
     if (!descriptionColumn) break;
-    const lines = wrap(item.description, descriptionColumn.width - 12, 8.5);
+    const lines = wrap(fonts, item.description, descriptionColumn.width - 12, 8.5);
     const rowHeight = Math.max(lines.length * 10 + 6, 18);
 
     // Keep room for the totals block and the disclosure.
@@ -358,7 +359,7 @@ export function renderTradeDocument(input: unknown): Uint8Array {
     cursor -= 8;
     page.text('MARKS AND NUMBERS', MARGIN, cursor, { size: 6.5, font: 'bold' });
     cursor -= 10;
-    for (const line of wrap(snapshot.shipment.marks_and_numbers, CONTENT_WIDTH, 8.5)) {
+    for (const line of wrap(fonts, snapshot.shipment.marks_and_numbers, CONTENT_WIDTH, 8.5)) {
       page.text(line, MARGIN, cursor, { size: 8.5 });
       cursor -= 10;
     }
@@ -368,7 +369,7 @@ export function renderTradeDocument(input: unknown): Uint8Array {
   pages.forEach((rendered, index) => {
     let y = MARGIN + 26;
     rendered.line(MARGIN, y + 12, PAGE_WIDTH - MARGIN, y + 12, 0.5, 0.72);
-    for (const line of wrap(DISCLOSURE, CONTENT_WIDTH - 90, 6.5)) {
+    for (const line of wrap(fonts, DISCLOSURE, CONTENT_WIDTH - 90, 6.5)) {
       rendered.text(line, MARGIN, y, { size: 6.5 });
       y -= 8;
     }
@@ -378,7 +379,7 @@ export function renderTradeDocument(input: unknown): Uint8Array {
     });
   });
 
-  return renderPdf(pages);
+  return renderPdf(pages, fonts);
 }
 
 /** Exported for tests: the width a description column receives for a given document type. */
@@ -388,4 +389,4 @@ export function descriptionWidth(kind: DocumentSnapshot['kind']): number {
   return CONTENT_WIDTH - fixed - 24;
 }
 
-export { measure, titles };
+export { titles };

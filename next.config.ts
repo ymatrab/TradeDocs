@@ -11,6 +11,9 @@ export default function nextConfig(phase: string): NextConfig {
   return {
     poweredByHeader: false,
     reactStrictMode: true,
+    // The PDF route reads the embedded faces at runtime; tracing cannot infer that from a
+    // path built at call time, so the files are named explicitly.
+    outputFileTracingIncludes: { '/api/documents/[id]': ['./src/lib/pdf/fonts/*.ttf'] },
     experimental: { serverActions: { bodySizeLimit: '1mb' } },
     async headers() {
       return [
