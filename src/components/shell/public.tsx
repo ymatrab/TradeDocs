@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ShieldAlert } from 'lucide-react';
 
 const navigation = [
-  { href: '/', label: 'Overview' },
-  { href: '/design-system', label: 'Design system' },
+  { href: '/#how', label: 'How it works' },
+  { href: '/#pricing', label: 'Pricing' },
 ] as const;
 
 function Wordmark({ className }: { className?: string }) {
@@ -17,9 +17,8 @@ function Wordmark({ className }: { className?: string }) {
 }
 
 /**
- * Every public surface carries the boundary statement. TradeDocs prepares
- * documents; it does not issue, endorse or clear them, and the interface says
- * so before a visitor reads anything else.
+ * Every public surface carries the boundary statement. TradeDocs prepares documents; it
+ * does not issue, endorse or clear them, and the site says so before it says anything else.
  */
 export function DisclosureBar() {
   return (
@@ -35,7 +34,14 @@ export function DisclosureBar() {
   );
 }
 
-export function PublicShell({ children }: { children: ReactNode }) {
+export function PublicShell({
+  children,
+  /** Marketing pages lay out their own full-bleed sections. */
+  contained = true,
+}: {
+  children: ReactNode;
+  contained?: boolean;
+}) {
   return (
     <>
       <header className="public-header">
@@ -48,11 +54,15 @@ export function PublicShell({ children }: { children: ReactNode }) {
                 {item.label}
               </Link>
             ))}
+            <Link href="/sign-in">Sign in</Link>
+            <Link href="/sign-up" className="btn compact" style={{ marginLeft: 8 }}>
+              Get started
+            </Link>
           </nav>
           <MobileNav />
         </div>
       </header>
-      <main id="main-content" className="public-main">
+      <main id="main-content" className={contained ? 'public-main' : undefined}>
         {children}
       </main>
       <footer className="public-footer">
@@ -68,8 +78,8 @@ export function PublicShell({ children }: { children: ReactNode }) {
 }
 
 /**
- * Disclosure-based mobile navigation: a native `<details>` needs no script and
- * cannot desynchronise its expanded state from what is on screen.
+ * Disclosure-based mobile navigation: a native `<details>` needs no script and cannot
+ * desynchronise its expanded state from what is on screen.
  */
 export function MobileNav() {
   return (
@@ -81,6 +91,12 @@ export function MobileNav() {
             {item.label}
           </Link>
         ))}
+        <Link href="/sign-in" className="btn quiet compact">
+          Sign in
+        </Link>
+        <Link href="/sign-up" className="btn compact">
+          Get started
+        </Link>
       </nav>
     </details>
   );

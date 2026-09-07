@@ -43,6 +43,7 @@
   /* Trade documents are set in workhorse grotesques. A system stack matches the
      subject and requests no font file, so nothing can shift after paint. */
   --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: var(--font-display), Arial, Helvetica, sans-serif;
   --font-data: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
 
   --step--1: 12px;
@@ -122,6 +123,12 @@ figure,
 ul,
 ol {
   margin-top: 0;
+}
+h1,
+h2,
+h3,
+.wordmark {
+  font-family: var(--font-heading);
 }
 h1 {
   font-size: clamp(28px, 3vw, 40px);
@@ -952,4 +959,275 @@ kbd {
     border-color: #000 !important;
     color: #000 !important;
   }
+}
+
+/* --- Marketing ----------------------------------------------------------- */
+/* The public site carries more weight than the workspace: it has to argue, not just
+   present. It stays in the same palette so the product a visitor signs into looks like
+   the site that sold it to them. */
+.section {
+  padding: clamp(56px, 8vw, 104px) var(--space-5);
+}
+.section > .inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.section.dark {
+  background: var(--ink);
+  color: var(--surface);
+}
+.section.dark .muted {
+  color: #a9b8c5;
+}
+.section.dark h2,
+.section.dark h3 {
+  color: var(--surface);
+}
+.section.tinted {
+  background: var(--surface);
+  border-block: 1px solid var(--rule);
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--caption);
+  font-weight: 700;
+  color: var(--rust);
+  margin-bottom: var(--space-4);
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--rust);
+}
+.section.dark .section-label {
+  color: #f0a184;
+}
+.section.dark .section-label::before {
+  background: #f0a184;
+}
+
+.hero {
+  padding: clamp(40px, 6vw, 88px) var(--space-5) clamp(56px, 8vw, 96px);
+}
+.hero .inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+}
+@media (max-width: 940px) {
+  .hero .inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.hero h1 {
+  font-size: clamp(38px, 5.4vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-4);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--rust);
+}
+.lede {
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.5;
+  color: var(--slate);
+  max-width: 54ch;
+}
+.cta-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: var(--space-5);
+}
+.btn.large {
+  min-height: 52px;
+  padding: 14px 26px;
+  font-size: 16px;
+}
+.assurance {
+  font-size: 13px;
+  color: var(--slate);
+  margin-top: var(--space-3);
+}
+
+/* The hero visual is the product's actual claim: one shipment, three documents that
+   cannot disagree. It is built from the real field-box primitive, not a picture of one. */
+.doc-stack {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+}
+.doc-sheet {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--ink);
+  padding: var(--space-4);
+  box-shadow: 0 18px 40px -28px rgb(21 44 62 / 0.55);
+}
+.doc-sheet.accent {
+  border-top-color: var(--rust);
+}
+.doc-sheet-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.doc-sheet-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.doc-line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 13px;
+  padding: 3px 0;
+}
+.doc-line .label {
+  color: var(--slate);
+}
+.doc-line .value {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-data);
+}
+.doc-line.tied .value {
+  background: #fdeee7;
+  box-shadow: 0 0 0 3px #fdeee7;
+  border-radius: 2px;
+  color: var(--rust-deep);
+  font-weight: 700;
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.step {
+  border-top: 2px solid var(--rule);
+  padding-top: var(--space-4);
+}
+.step .n {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 700;
+  color: var(--rust);
+  letter-spacing: 0.1em;
+}
+.step h3 {
+  margin: var(--space-2) 0 var(--space-2);
+  font-size: var(--step-1);
+}
+.step p {
+  color: var(--slate);
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.section.dark .step {
+  border-top-color: rgb(255 255 255 / 0.22);
+}
+.section.dark .step p {
+  color: #a9b8c5;
+}
+
+.doc-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.doc-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+.doc-card p {
+  color: var(--slate);
+  font-size: 14px;
+  margin: 0;
+}
+.doc-card .icon {
+  color: var(--rust);
+}
+
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--rust);
+  padding: clamp(24px, 4vw, 40px);
+  max-width: 460px;
+}
+.price-amount {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.checklist li {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-size: 15px;
+}
+.checklist svg {
+  color: var(--success);
+  margin-top: 3px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--rule);
+  padding: var(--space-4) 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: var(--step-1);
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: '+';
+  font-family: var(--font-data);
+  color: var(--rust);
+  flex: none;
+}
+.faq details[open] summary::after {
+  content: '−';
+}
+.faq p {
+  margin: var(--space-3) 0 0;
+  color: var(--slate);
+  max-width: 72ch;
 }
