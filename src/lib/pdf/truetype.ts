@@ -194,8 +194,10 @@ export class TrueTypeFont {
       }
       cursor += 4;
       cursor += flags & 1 ? 4 : 2; // ARG_1_AND_2_ARE_WORDS
-      if (flags & 8) cursor += 2; // WE_HAVE_A_SCALE
-      else if (flags & 0x40) cursor += 4; // X_AND_Y_SCALE
+      if (flags & 8)
+        cursor += 2; // WE_HAVE_A_SCALE
+      else if (flags & 0x40)
+        cursor += 4; // X_AND_Y_SCALE
       else if (flags & 0x80) cursor += 8; // TWO_BY_TWO
       if (!(flags & 0x20)) return; // MORE_COMPONENTS
     }
@@ -272,7 +274,8 @@ function checksum(data: Uint8Array): number {
   if (remainder) {
     let tail = 0;
     for (let index = 0; index < 4; index += 1) {
-      tail = (tail << 8) | (index < remainder ? (data[data.byteLength - remainder + index] ?? 0) : 0);
+      tail =
+        (tail << 8) | (index < remainder ? (data[data.byteLength - remainder + index] ?? 0) : 0);
     }
     sum = (sum + tail) >>> 0;
   }

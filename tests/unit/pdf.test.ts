@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createFontSet } from '@/lib/pdf/fonts';
 import { wrap } from '@/lib/pdf/writer';
-import { renderTradeDocument, type DocumentSnapshot } from '@/lib/pdf/trade-document';
+import { renderTradeDocument } from '@/lib/pdf/trade-document';
 
 const fonts = createFontSet();
 
