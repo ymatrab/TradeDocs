@@ -32,7 +32,10 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         {toasts.map((toast) => {
           const Icon = icon[toast.tone];
           return (
-            <div key={toast.id} className={toast.tone === 'neutral' ? 'toast' : `toast ${toast.tone}`}>
+            <div
+              key={toast.id}
+              className={toast.tone === 'neutral' ? 'toast' : `toast ${toast.tone}`}
+            >
               <Icon size={17} aria-hidden="true" />
               <span>{toast.message}</span>
             </div>

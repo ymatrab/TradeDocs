@@ -13,15 +13,36 @@ export const documentStates = [
 
 export type DocumentState = (typeof documentStates)[number];
 
-const presentation: Record<DocumentState, { label: string; icon: typeof Stamp; meaning: string }> = {
-  draft: { label: 'Draft', icon: FilePen, meaning: 'Being prepared. Not issued.' },
-  stale: { label: 'Stale', icon: Clock, meaning: 'The shipment changed after this revision was rendered.' },
-  final: { label: 'Final', icon: FileCheck2, meaning: 'Locked to a shipment revision and reproducible.' },
-  superseded: { label: 'Superseded', icon: Layers, meaning: 'A later revision replaces this one.' },
-  voided: { label: 'Voided', icon: CircleSlash, meaning: 'Withdrawn. Retained for the audit trail.' },
-  archived: { label: 'Archived', icon: Archive, meaning: 'Closed and kept for retention.' },
-  endorsed: { label: 'Endorsed', icon: Stamp, meaning: 'Recorded as endorsed outside TradeDocs.' },
-};
+const presentation: Record<DocumentState, { label: string; icon: typeof Stamp; meaning: string }> =
+  {
+    draft: { label: 'Draft', icon: FilePen, meaning: 'Being prepared. Not issued.' },
+    stale: {
+      label: 'Stale',
+      icon: Clock,
+      meaning: 'The shipment changed after this revision was rendered.',
+    },
+    final: {
+      label: 'Final',
+      icon: FileCheck2,
+      meaning: 'Locked to a shipment revision and reproducible.',
+    },
+    superseded: {
+      label: 'Superseded',
+      icon: Layers,
+      meaning: 'A later revision replaces this one.',
+    },
+    voided: {
+      label: 'Voided',
+      icon: CircleSlash,
+      meaning: 'Withdrawn. Retained for the audit trail.',
+    },
+    archived: { label: 'Archived', icon: Archive, meaning: 'Closed and kept for retention.' },
+    endorsed: {
+      label: 'Endorsed',
+      icon: Stamp,
+      meaning: 'Recorded as endorsed outside TradeDocs.',
+    },
+  };
 
 /**
  * Status is carried by a word, a glyph and a border treatment together, so it

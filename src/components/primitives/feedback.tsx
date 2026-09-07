@@ -101,7 +101,9 @@ export function ErrorState({
 }
 
 export function Skeleton({ width = '100%', height = 14 }: { width?: string; height?: number }) {
-  return <span className="skeleton" style={{ width, height, display: 'block' }} aria-hidden="true" />;
+  return (
+    <span className="skeleton" style={{ width, height, display: 'block' }} aria-hidden="true" />
+  );
 }
 
 /** Announces that a region is loading without moving focus. */

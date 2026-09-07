@@ -3,7 +3,13 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 export type ButtonTone = 'primary' | 'secondary' | 'quiet' | 'accent' | 'danger';
 
 function classes(tone: ButtonTone, compact?: boolean, block?: boolean, extra?: string): string {
-  return ['btn', tone === 'primary' ? '' : tone, compact ? 'compact' : '', block ? 'block' : '', extra ?? '']
+  return [
+    'btn',
+    tone === 'primary' ? '' : tone,
+    compact ? 'compact' : '',
+    block ? 'block' : '',
+    extra ?? '',
+  ]
     .filter(Boolean)
     .join(' ');
 }

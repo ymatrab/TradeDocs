@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <PublicShell>
       <p className="eyebrow">Engineering foundation</p>
-      <h1 style={{ maxWidth: '18ch', marginBottom: 16 }}>
+      <h1 style={{ maxWidth: '24ch', marginBottom: 16 }}>
         One shipment. One connected document set.
       </h1>
       <p className="measure muted" style={{ fontSize: 17, marginBottom: 32 }}>
@@ -18,8 +18,16 @@ export default function Home() {
       </p>
 
       <BoxGrid label="What a prepared document carries">
-        <FieldBox ordinal="1" caption="Captured once" value="Parties, addresses, products and packing" />
-        <FieldBox ordinal="2" caption="Reused across" value="Invoice, packing list, delivery note, origin" />
+        <FieldBox
+          ordinal="1"
+          caption="Captured once"
+          value="Parties, addresses, products and packing"
+        />
+        <FieldBox
+          ordinal="2"
+          caption="Reused across"
+          value="Invoice, packing list, delivery note, origin"
+        />
         <FieldBox ordinal="3" caption="Locked to" value="A numbered shipment revision" />
         <FieldBox ordinal="4" caption="Current state">
           <DocumentStatus state="draft" describe />

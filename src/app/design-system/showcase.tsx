@@ -5,7 +5,13 @@ import { Download, Trash2 } from 'lucide-react';
 import { Button, LinkButton } from '@/components/primitives/button';
 import { Choice, Combobox, Field, Input, Select, Textarea } from '@/components/primitives/form';
 import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/table';
-import { Callout, EmptyState, ErrorState, LoadingBlock, Panel } from '@/components/primitives/feedback';
+import {
+  Callout,
+  EmptyState,
+  ErrorState,
+  LoadingBlock,
+  Panel,
+} from '@/components/primitives/feedback';
 import { Dialog } from '@/components/primitives/dialog';
 import { Menu } from '@/components/primitives/menu';
 import { Tabs } from '@/components/primitives/tabs';
@@ -14,7 +20,15 @@ import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { DocumentStatus, documentStates, stateMeaning } from '@/components/document/status';
 import { AppShell } from '@/components/shell/app';
 
-function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+function Section({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <section aria-labelledby={id} style={{ marginBottom: 40 }}>
       <h2 id={id} style={{ marginBottom: 16 }}>
@@ -26,7 +40,11 @@ function Section({ id, title, children }: { id: string; title: string; children:
 }
 
 function Row({ children }: { children: React.ReactNode }) {
-  return <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>{children}</div>;
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      {children}
+    </div>
+  );
 }
 
 function Controls() {
@@ -62,7 +80,10 @@ function Controls() {
           <Menu
             label="More"
             actions={[
-              { label: 'Duplicate shipment', onSelect: () => notify('neutral', 'Shipment duplicated.') },
+              {
+                label: 'Duplicate shipment',
+                onSelect: () => notify('neutral', 'Shipment duplicated.'),
+              },
               {
                 label: 'Delete draft',
                 icon: <Trash2 size={15} aria-hidden="true" />,
@@ -109,7 +130,13 @@ function Controls() {
 function Forms() {
   return (
     <Section id="forms" title="Forms">
-      <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+      <div
+        style={{
+          display: 'grid',
+          gap: 16,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+        }}
+      >
         <Field id="consignee" label="Consignee" hint="The party receiving the goods.">
           {({ id, describedBy }) => (
             <Input id={id} aria-describedby={describedBy} defaultValue="Nordwind Handels GmbH" />
@@ -146,8 +173,14 @@ function Forms() {
         <Field id="marks" label="Marks and numbers">
           {({ id, describedBy }) => <Textarea id={id} aria-describedby={describedBy} />}
         </Field>
-        <Field id="disabled-field" label="Shipment reference" hint="Set when the shipment is created.">
-          {({ id, describedBy }) => <Input id={id} aria-describedby={describedBy} disabled value="SHP-2026-0184" readOnly />}
+        <Field
+          id="disabled-field"
+          label="Shipment reference"
+          hint="Set when the shipment is created."
+        >
+          {({ id, describedBy }) => (
+            <Input id={id} aria-describedby={describedBy} disabled value="SHP-2026-0184" readOnly />
+          )}
         </Field>
       </div>
       <fieldset style={{ border: '1px solid var(--rule)', padding: 16, margin: 0 }}>
@@ -155,7 +188,13 @@ function Forms() {
         <Choice id="ci" label="Commercial invoice" defaultChecked />
         <Choice id="pl" label="Packing list" hint="Derived from the packages you record." />
         <Choice id="co" label="Certificate of origin" type="radio" name="optional" />
-        <Choice id="none" label="No additional document" type="radio" name="optional" defaultChecked />
+        <Choice
+          id="none"
+          label="No additional document"
+          type="radio"
+          name="optional"
+          defaultChecked
+        />
       </fieldset>
     </Section>
   );
@@ -267,7 +306,10 @@ function DocumentPrimitives() {
       <Panel title="Document lifecycle">
         <div style={{ display: 'grid', gap: 10 }}>
           {documentStates.map((state) => (
-            <div key={state} style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <div
+              key={state}
+              style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}
+            >
               <DocumentStatus state={state} />
               <span className="muted" style={{ fontSize: 14 }}>
                 {stateMeaning(state)}
@@ -293,7 +335,13 @@ function States() {
       <Callout tone="success" title="Document set complete">
         All four documents match the current shipment revision.
       </Callout>
-      <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+      <div
+        style={{
+          display: 'grid',
+          gap: 16,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        }}
+      >
         <Panel title="Empty">
           <EmptyState
             title="No shipments yet"
@@ -315,9 +363,23 @@ function States() {
       <Tabs
         label="Shipment detail"
         items={[
-          { id: 'summary', label: 'Summary', content: <p className="measure muted">Parties, transport and totals for this shipment.</p> },
-          { id: 'items', label: 'Items', content: <p className="measure muted">Line items, quantities and weights.</p> },
-          { id: 'history', label: 'History', content: <p className="measure muted">Every revision and who made it.</p> },
+          {
+            id: 'summary',
+            label: 'Summary',
+            content: (
+              <p className="measure muted">Parties, transport and totals for this shipment.</p>
+            ),
+          },
+          {
+            id: 'items',
+            label: 'Items',
+            content: <p className="measure muted">Line items, quantities and weights.</p>,
+          },
+          {
+            id: 'history',
+            label: 'History',
+            content: <p className="measure muted">Every revision and who made it.</p>,
+          },
         ]}
       />
     </Section>

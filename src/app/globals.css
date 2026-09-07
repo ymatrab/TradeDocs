@@ -264,11 +264,13 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
 }
 .field-box {
   background: var(--surface);
+  /* Each box carries its own rule. Neighbouring rules meet in the 1px gap and read
+     as one shared line, while a row that does not fill leaves no stray panel behind.
+     A shadow rather than a border keeps this out of scrollable overflow. */
+  box-shadow: 0 0 0 1px var(--rule);
   padding: var(--space-3) var(--space-4) var(--space-4);
   display: flex;
   flex-direction: column;
@@ -931,9 +933,14 @@ kbd {
   }
   .panel,
   .table-scroll,
-  .box-grid,
-  .field-box {
+  .box-grid {
     border-color: #000;
+    break-inside: avoid;
+  }
+  /* Print engines may drop shadows, so the box rule becomes a real outline on paper. */
+  .field-box {
+    box-shadow: none;
+    outline: 1px solid #000;
     break-inside: avoid;
   }
   .table thead th {

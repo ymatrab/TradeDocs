@@ -10,7 +10,13 @@ const viewports = [
 test('showcase renders every component group and passes axe', async ({ page }) => {
   await page.goto('/design-system');
   await expect(page.getByRole('heading', { name: 'Design system', level: 1 })).toBeVisible();
-  for (const section of ['Actions', 'Forms', 'Tables', 'Document primitives', 'States and disclosure']) {
+  for (const section of [
+    'Actions',
+    'Forms',
+    'Tables',
+    'Document primitives',
+    'States and disclosure',
+  ]) {
     await expect(page.getByRole('heading', { name: section, level: 2 })).toBeVisible();
   }
   expect(
@@ -95,7 +101,9 @@ test('keyboard reaches the content and the skip link comes first', async ({ page
 
 test('the public page carries its boundary statement and passes axe', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByText('It is not a customs broker, carrier, chamber or issuing authority.')).toBeVisible();
+  await expect(
+    page.getByText('It is not a customs broker, carrier, chamber or issuing authority.'),
+  ).toBeVisible();
   expect(
     (
       await new AxeBuilder({ page })
@@ -120,7 +128,15 @@ test('print hides navigation and keeps document identity', async ({ page }) => {
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.app-sidebar')).toBeHidden();
   await expect(page.locator('.search-trigger')).toBeHidden();
-  await expect(page.getByText('CI-2026-0184').first()).toBeVisible();
+  // Identity, units, totals and the mandatory disclosure must survive onto paper.
+  await expect(
+    page.getByLabel('Commercial invoice header').getByText('CI-2026-0184'),
+  ).toBeVisible();
+  const items = page.getByRole('region', { name: 'Shipment items' });
+  await expect(items).toContainText('4,380.00');
+  await expect(items).toContainText('kg');
+  await expect(items).toContainText('20,740.75');
+  await expect(page.getByRole('heading', { name: 'Preparation only' })).toBeVisible();
 });
 
 test('visual reference at three viewports', async ({ page }, testInfo) => {

@@ -30,18 +30,18 @@ Defined in `src/app/globals.css`. Ratios are computed against the two background
 allowed to sit on: `--surface` (`#ffffff`) and `--paper` (`#f5f7fa`). Text tokens meet WCAG 2.2 AA
 (4.5:1); the focus ring and control border are non-text and meet 3:1.
 
-| Token | Value | Role | On surface | On paper | Meets |
-| --- | --- | --- | --- | --- | --- |
-| `--ink` | `#152c3e` | Body text, primary action, sidebar ground | 14.37 | 13.39 | AAA text |
-| `--slate` | `#5b6874` | Captions, hints, units, absent values | 5.71 | 5.32 | AA text |
-| `--rust` | `#bd4218` | Document identity, box ordinals, active rules | 5.31 | 4.95 | AA text |
-| `--link` | `#17608a` | Inline links | 6.83 | 6.36 | AA text |
-| `--danger` | `#a62424` | Errors, void, destructive actions | 7.24 | 6.75 | AA text |
-| `--success` | `#1f6b45` | Final state, successful outcomes | 6.47 | 6.03 | AA text |
-| `--caution` | `#8a5a00` | Stale state, warnings | 5.93 | 5.52 | AA text |
-| `--focus` | `#087ca7` | Focus ring only | 4.72 | 4.40 | 3:1 non-text |
-| `--control` | `#7d8b98` | Input, select and secondary-button borders | 3.49 | 3.25 | 3:1 non-text |
-| `--rule` | `#cbd5dd` | Decorative separators and box grid lines | 1.49 | 1.39 | Decorative; never the sole carrier of meaning |
+| Token       | Value     | Role                                          | On surface | On paper | Meets                                         |
+| ----------- | --------- | --------------------------------------------- | ---------- | -------- | --------------------------------------------- |
+| `--ink`     | `#152c3e` | Body text, primary action, sidebar ground     | 14.37      | 13.39    | AAA text                                      |
+| `--slate`   | `#5b6874` | Captions, hints, units, absent values         | 5.71       | 5.32     | AA text                                       |
+| `--rust`    | `#bd4218` | Document identity, box ordinals, active rules | 5.31       | 4.95     | AA text                                       |
+| `--link`    | `#17608a` | Inline links                                  | 6.83       | 6.36     | AA text                                       |
+| `--danger`  | `#a62424` | Errors, void, destructive actions             | 7.24       | 6.75     | AA text                                       |
+| `--success` | `#1f6b45` | Final state, successful outcomes              | 6.47       | 6.03     | AA text                                       |
+| `--caution` | `#8a5a00` | Stale state, warnings                         | 5.93       | 5.52     | AA text                                       |
+| `--focus`   | `#087ca7` | Focus ring only                               | 4.72       | 4.40     | 3:1 non-text                                  |
+| `--control` | `#7d8b98` | Input, select and secondary-button borders    | 3.49       | 3.25     | 3:1 non-text                                  |
+| `--rule`    | `#cbd5dd` | Decorative separators and box grid lines      | 1.49       | 1.39     | Decorative; never the sole carrier of meaning |
 
 Reversed pairs used by the authenticated shell: `#ffffff` on `--ink` is 14.37:1, and the sidebar
 section caption `#a9b8c5` on `--ink` is 7.08:1.

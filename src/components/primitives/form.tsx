@@ -42,8 +42,18 @@ export function Field({ id, label, hint, error, requirement, children }: FieldPr
   );
 }
 
-export function Input({ invalid, className, ...rest }: ComponentPropsWithoutRef<'input'> & { invalid?: boolean }) {
-  return <input {...rest} aria-invalid={invalid || undefined} className={['input', className].filter(Boolean).join(' ')} />;
+export function Input({
+  invalid,
+  className,
+  ...rest
+}: ComponentPropsWithoutRef<'input'> & { invalid?: boolean }) {
+  return (
+    <input
+      {...rest}
+      aria-invalid={invalid || undefined}
+      className={['input', className].filter(Boolean).join(' ')}
+    />
+  );
 }
 
 export function Textarea({
@@ -67,7 +77,11 @@ export function Select({
   ...rest
 }: ComponentPropsWithoutRef<'select'> & { invalid?: boolean }) {
   return (
-    <select {...rest} aria-invalid={invalid || undefined} className={['select', className].filter(Boolean).join(' ')}>
+    <select
+      {...rest}
+      aria-invalid={invalid || undefined}
+      className={['select', className].filter(Boolean).join(' ')}
+    >
       {children}
     </select>
   );
@@ -82,7 +96,11 @@ export function Combobox({
   options,
   invalid,
   ...rest
-}: ComponentPropsWithoutRef<'input'> & { id: string; options: readonly string[]; invalid?: boolean }) {
+}: ComponentPropsWithoutRef<'input'> & {
+  id: string;
+  options: readonly string[];
+  invalid?: boolean;
+}) {
   return (
     <>
       <Input {...rest} id={id} list={`${id}-options`} invalid={invalid} />
