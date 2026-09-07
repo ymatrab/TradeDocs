@@ -59,6 +59,42 @@ jobs:
             test-results/
             sbom.json
           retention-days: 30
+  database:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # A disposable Supabase stack in the runner. The no-local-runs instruction forbids
+      # starting a database on the developer machine, and no production or shared project
+      # is reachable from here, so every migration and policy is proved against this.
+      - name: Start a disposable Supabase stack
+        run: npx supabase start
+      - name: Prove tenant isolation and role authority with pgTAP
+        run: npx supabase test db
+      - name: Generate database types
+        run: npx supabase gen types typescript --local > database.types.generated.ts
+      - name: Fail if the committed types are stale
+        run: |
+          if [ -f src/lib/database.types.ts ]; then
+            diff -u src/lib/database.types.ts database.types.generated.ts \
+              || { echo "::error::Generated types are stale. Commit the regenerated file."; exit 1; }
+          else
+            echo "::warning::No committed types yet. Take them from the database-evidence artifact."
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: database-evidence
+          path: database.types.generated.ts
+          retention-days: 30
+      - if: always()
+        run: npx supabase stop --no-backup
+
   secret-history:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
