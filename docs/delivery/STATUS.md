@@ -7,6 +7,7 @@ The complete 25-task product is **not built or accepted**. This checkpoint prese
 - Task01 repository/toolchain/documentation foundation, dependency lock, original foundation screen and recovery routes.
 - Task02 typed environment isolation/validation, startup guard, server-only configuration, security headers/CSP, liveness and auth-dependency readiness.
 - Task03 design system, document primitives, public and authenticated shells, command palette, print styles and the production-gated showcase; verified remotely with 61 Playwright cases, axe and inspected visual references.
+- Task04 identity, organizations, invitations and account lifecycle; verified remotely against a disposable Supabase stack with 21 pgTAP access assertions and 10 browser cases including cross-tenant access and invitation replay. Purge worker, invitation delivery and credential rate limiting remain open; see docs/delivery/task-04.md.
 - Security prerequisites: bounded JSON/origin checks, safe redirect paths, log redaction and a fail-closed distributed limiter adapter. Its database RPC is still absent.
 - Written config/security/health/E2E/accessibility suites and GitHub quality workflow.
 - Complete requirements/dependency matrix and open business/operations/legal decision register.

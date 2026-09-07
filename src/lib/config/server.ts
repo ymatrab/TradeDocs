@@ -1,13 +1,17 @@
 import 'server-only';
 
-import { parseServerEnv, type ServerEnv } from './schema';
+import { validateDeploymentEnv, type ServerEnv } from './schema';
 
-/** Secrets remain in server-only modules; return an explicit public projection if needed. */
+/**
+ * Secrets remain in server-only modules; return an explicit public projection if needed.
+ *
+ * The environment is resolved by the same function the build and the startup guard use, so
+ * a request cannot disagree with them about which environment it is running in. Resolving it
+ * separately here meant a host that supplies VERCEL_ENV but no APP_ENV parsed at build and
+ * then threw on every request.
+ */
 export function getServerEnv(): ServerEnv {
-  return parseServerEnv({
-    ...process.env,
-    APP_ENV: process.env.APP_ENV ?? (process.env.NODE_ENV === 'production' ? undefined : 'local'),
-  });
+  return validateDeploymentEnv(process.env, process.env.NODE_ENV === 'production');
 }
 
 export function hasSupabaseConfiguration(): boolean {

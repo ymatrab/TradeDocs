@@ -30,3 +30,21 @@ Every audit event includes actor, tenant, action, target, timestamp, correlation
 ## Release and incident rules
 
 Any cross-tenant access, exploitable secret, payment integrity failure or misleading official-document behavior blocks release. Never weaken authentication, RLS, verification, limits, validation, audit or privacy to pass a test. On discovery, preserve redacted evidence, restrict the affected capability, assign an incident owner and use [RUNBOOK.md](RUNBOOK.md). Named human security/privacy/legal reviewers determine notification obligations; no deadline or legal advice is invented here. Security reporting contact and escalation roster must be approved and published before launch.
+
+## Identity controls (Task 04)
+
+Credentials never reach the browser bundle: there is no client-side database client, and every
+authentication call is a Server Action or Route Handler. Sign-in, magic link and password reset
+return the same answer whether or not an address has an account, so none of them can be used to
+enumerate accounts. Sign-out is POST only, so a foreign page cannot end a session by embedding a
+link. Scheduling an account deletion requires the password again; an unattended open session is
+not sufficient for a destructive request.
+
+Only the SHA-256 digest of an invitation token is stored, and the token is returned to the
+inviter exactly once. A leaked database therefore yields no usable invitation link. Acceptance
+locks the row, checks expiry, revocation and prior use, and verifies the caller's own address
+matches the invited one.
+
+Authorization is not implemented in page code. Row policies and database routines decide every
+outcome, so an API route, background job or console session added later inherits the same
+boundary instead of needing the check re-implemented correctly.

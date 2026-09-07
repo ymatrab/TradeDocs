@@ -36,3 +36,28 @@ For every exposed table, view and function record SELECT/INSERT/UPDATE/DELETE/EX
 ## Change and recovery policy
 
 Use versioned Supabase migrations, synthetic seeds and generated database types; never hand-edit generated types. Validate clean reset, forward migration and compatibility with both application versions during rollout. Destructive changes need explicit backup and migration/rollback notes before execution. Restore drills must include relational data, private artifacts, object metadata, schema versions and payment reconciliation; see [RUNBOOK.md](RUNBOOK.md). Data export and deletion jobs are idempotent, auditable and privacy-safe, with approved legal holds and retained-record explanations.
+
+## Implemented schema (Task 04)
+
+The identity subset of the quarantined draft is now executable under `supabase/migrations`:
+`profiles`, `organizations`, `memberships`, `invitations`, `audit_events` and
+`account_deletion_requests`. The remaining draft tables stay in `supabase/drafts` until Task 11.
+
+Access is fail-closed by construction. The first migration enables row level security on every
+table and revokes all privileges from `anon` and `authenticated`; the second grants only the
+specific access each role is entitled to. `anon` receives no grant on any tenant table, so
+PostgreSQL refuses those tables before row policies are consulted.
+
+Membership tests run through `private.is_member` and `private.has_org_role`, which are security
+definer and pinned to an empty search path. A policy on `memberships` that queried `memberships`
+would recurse; the helper reads it once with row security bypassed and the policy consumes the
+boolean.
+
+No table accepts a direct insert. Operations spanning more than one row are routines, so
+creating an organization also creates its first owner and accepting an invitation also consumes
+it, each within one transaction. A trigger refuses any change that would leave an organization
+without an owner.
+
+Every change is proved in CI against a disposable stack: `supabase/tests/identity_rls.test.sql`
+asserts the access matrix and the invitation and ownership rules, and generated types are
+regenerated and compared so a schema change cannot land without its types.
