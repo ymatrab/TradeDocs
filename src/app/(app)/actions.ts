@@ -137,8 +137,29 @@ export async function acceptInvitation(
   redirect(`/app/${data}/members`);
 }
 
-export async function requestAccountDeletion(): Promise<ActionState> {
+/**
+ * Scheduling a deletion is destructive enough to require the password again. A session
+ * left open on a shared machine must not be enough to queue someone's account for removal.
+ */
+export async function requestAccountDeletion(
+  _previous: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const password = read(formData, 'password');
+  if (!password) return { error: 'Enter your password to confirm.' };
+
   const client = await createClient();
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user?.email) return { error: 'Sign in again, then retry.' };
+
+  const { error: reauthError } = await client.auth.signInWithPassword({
+    email: user.email,
+    password,
+  });
+  if (reauthError) return { error: 'That password is not correct.' };
+
   const { error } = await client.rpc('request_account_deletion', { grace: '30 days' });
   if (error) return { error: 'That request could not be recorded.' };
   revalidatePath('/app/account');

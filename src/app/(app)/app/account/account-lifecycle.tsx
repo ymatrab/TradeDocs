@@ -1,21 +1,22 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useActionState, useState, useTransition } from 'react';
 import { Button } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { Dialog } from '@/components/primitives/dialog';
+import { Field, Input } from '@/components/primitives/form';
 import { cancelAccountDeletion, requestAccountDeletion, type ActionState } from '../../actions';
 
 export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boolean }) {
-  const [state, setState] = useState<ActionState>({});
+  const [deleteState, deleteAction, deletePending] = useActionState<ActionState, FormData>(
+    requestAccountDeletion,
+    {},
+  );
+  const [cancelState, setCancelState] = useState<ActionState>({});
+  const [cancelPending, startCancel] = useTransition();
   const [confirming, setConfirming] = useState(false);
-  const [pending, startTransition] = useTransition();
 
-  const run = (action: () => Promise<ActionState>) => {
-    startTransition(async () => {
-      setState(await action());
-    });
-  };
+  const state = deleteState.error || deleteState.notice ? deleteState : cancelState;
 
   return (
     <div style={{ display: 'grid', gap: 16 }}>
@@ -40,9 +41,13 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
         {deletionScheduled ? (
           <Button
             tone="secondary"
-            pending={pending}
+            pending={cancelPending}
             pendingLabel="Withdrawing…"
-            onClick={() => run(cancelAccountDeletion)}
+            onClick={() =>
+              startCancel(async () => {
+                setCancelState(await cancelAccountDeletion());
+              })
+            }
           >
             Withdraw the deletion request
           </Button>
@@ -64,19 +69,42 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
               Keep my account
             </Button>
             <Button
+              type="submit"
+              form="confirm-deletion"
               tone="danger"
-              pending={pending}
+              pending={deletePending}
               pendingLabel="Scheduling…"
-              onClick={() => {
-                setConfirming(false);
-                run(requestAccountDeletion);
-              }}
             >
               Schedule deletion
             </Button>
           </>
         }
-      />
+      >
+        <form
+          id="confirm-deletion"
+          action={(formData) => {
+            setConfirming(false);
+            deleteAction(formData);
+          }}
+        >
+          <Field
+            id="confirm-password"
+            label="Confirm with your password"
+            hint="An open session is not enough to queue an account for removal."
+          >
+            {({ id, describedBy }) => (
+              <Input
+                id={id}
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                aria-describedby={describedBy}
+              />
+            )}
+          </Field>
+        </form>
+      </Dialog>
     </div>
   );
 }

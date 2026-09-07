@@ -3,10 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 // Service-mode suite. It runs only where a database is configured; the foundation gate
 // starts no database and skips this file.
-test.skip(
-  process.env.APPLICATION_MODE !== 'service',
-  'Identity requires a configured database.',
-);
+test.skip(process.env.APPLICATION_MODE !== 'service', 'Identity requires a configured database.');
 
 const run = Date.now();
 let sequence = 0;
@@ -60,7 +57,9 @@ test('an unknown password reports nothing about whether the account exists', asy
   ).toBeVisible();
 });
 
-test('a signed-out visitor is sent to sign in rather than shown the workspace', async ({ page }) => {
+test('a signed-out visitor is sent to sign in rather than shown the workspace', async ({
+  page,
+}) => {
   await page.goto('/app');
   await expect(page).toHaveURL(/\/sign-in$/);
 });
@@ -134,6 +133,15 @@ test('account deletion is queued and can be withdrawn', async ({ page }) => {
   await signUp(page, newEmail());
   await page.goto('/app/account');
   await page.getByRole('button', { name: 'Delete my account' }).click();
+  // A sensitive action asks for the password again, even inside a live session.
+  await page.getByRole('button', { name: 'Schedule deletion' }).click();
+  await expect(page.getByText('Enter your password to confirm.')).toBeVisible();
+  await page.getByRole('button', { name: 'Delete my account' }).click();
+  await page.getByLabel('Confirm with your password').fill('wrong-password-entirely');
+  await page.getByRole('button', { name: 'Schedule deletion' }).click();
+  await expect(page.getByText('That password is not correct.')).toBeVisible();
+  await page.getByRole('button', { name: 'Delete my account' }).click();
+  await page.getByLabel('Confirm with your password').fill(password);
   await page.getByRole('button', { name: 'Schedule deletion' }).click();
   await expect(page.getByText('Deletion is scheduled.')).toBeVisible();
   await page.getByRole('button', { name: 'Withdraw the deletion request' }).click();
