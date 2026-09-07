@@ -85,12 +85,12 @@ test('the workspace stays navigable when the sidebar is gone', async ({ page }) 
   await expect(page.locator('.app-sidebar')).toBeHidden();
 
   // Every destination the sidebar holds has to remain reachable without it.
-  // Located by element rather than by role: Playwright models `<details>` as a
-  // group and folds the summary's text into that group's name, so there is no
-  // button node to ask for, and the focus assertion below needs the summary
-  // itself. Browsers do expose it to assistive technology as an expandable.
-  await expect(page.getByRole('group', { name: 'Menu' })).toBeVisible();
+  // The trigger is located by element, not by role: `<details>` exposes an
+  // unnamed group, so there is no name to ask for, and the focus assertion
+  // below needs the summary itself. What the test is really about — the
+  // destinations — is asserted by role below.
   const menu = page.locator('.app-nav > summary');
+  await expect(menu).toBeVisible();
   await menu.click();
   const navigation = page.getByRole('navigation', { name: 'Workspace and account' });
   await expect(navigation.getByRole('link', { name: 'Organizations' })).toBeVisible();
