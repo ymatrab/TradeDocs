@@ -85,8 +85,12 @@ test('the workspace stays navigable when the sidebar is gone', async ({ page }) 
   await expect(page.locator('.app-sidebar')).toBeHidden();
 
   // Every destination the sidebar holds has to remain reachable without it.
-  const menu = page.getByRole('button', { name: 'Menu' });
-  await expect(menu).toBeVisible();
+  // Located by element rather than by role: Playwright models `<details>` as a
+  // group and folds the summary's text into that group's name, so there is no
+  // button node to ask for, and the focus assertion below needs the summary
+  // itself. Browsers do expose it to assistive technology as an expandable.
+  await expect(page.getByRole('group', { name: 'Menu' })).toBeVisible();
+  const menu = page.locator('.app-nav > summary');
   await menu.click();
   const navigation = page.getByRole('navigation', { name: 'Workspace and account' });
   await expect(navigation.getByRole('link', { name: 'Organizations' })).toBeVisible();
