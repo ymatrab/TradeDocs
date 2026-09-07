@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getUser } from '@/lib/supabase/server';
+import { notFound } from 'next/navigation';
+import { getUser, isDatabaseConfigured } from '@/lib/supabase/server';
 import { AcceptForm } from './accept-form';
 
 export const dynamic = 'force-dynamic';
@@ -11,6 +12,7 @@ export default async function AcceptInvitationPage({
 }: {
   searchParams: Promise<{ token?: string }>;
 }) {
+  if (!isDatabaseConfigured()) notFound();
   const { token } = await searchParams;
   const user = await getUser();
 

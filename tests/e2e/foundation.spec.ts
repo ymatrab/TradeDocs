@@ -33,3 +33,14 @@ test('health discloses no configuration and is never cached', async ({ request }
   expect(response.headers()['cache-control']).toContain('no-store');
   expect(await response.json()).toEqual({ status: 'ok' });
 });
+
+test('the workspace is absent from a foundation deployment rather than broken', async ({
+  page,
+}) => {
+  // Without a database there is no workspace to serve. It must report a missing route, not
+  // a server error, which would suggest something had failed instead of being out of scope.
+  for (const route of ['/app', '/sign-in', '/invitations/accept']) {
+    const response = await page.goto(route);
+    expect(response?.status(), `${route} should be absent, not failing`).toBe(404);
+  }
+});

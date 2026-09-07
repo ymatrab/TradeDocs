@@ -51,3 +51,12 @@ export async function getUser() {
   } = await client.auth.getUser();
   return user;
 }
+
+/**
+ * Whether this deployment has a database at all. A foundation deployment does not, so the
+ * surfaces that need one report a missing route rather than failing with a server error.
+ */
+export function isDatabaseConfigured(): boolean {
+  const env = getServerEnv();
+  return Boolean(env.SUPABASE_URL && env.SUPABASE_ANON_KEY);
+}
