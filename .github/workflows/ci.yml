@@ -27,11 +27,6 @@ jobs:
           cache: npm
       - run: npm install --global npm@11.11.1
       - run: npm ci
-      # TEMPORARY (Task 03): the no-local-runs constraint means Prettier cannot be run
-      # here, so the runner formats, saves the exact patch as evidence, and keeps the
-      # formatted tree so every later gate runs in the same pass. Removed before commit.
-      - name: Formatting patch
-        run: npm run format && git --no-pager diff > format.patch
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
@@ -63,7 +58,6 @@ jobs:
             playwright-report/
             test-results/
             sbom.json
-            format.patch
           retention-days: 30
   secret-history:
     runs-on: ubuntu-24.04
