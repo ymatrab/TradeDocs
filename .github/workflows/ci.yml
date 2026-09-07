@@ -27,7 +27,17 @@ jobs:
           cache: npm
       - run: npm install --global npm@11.11.1
       - run: npm ci
-      - run: npm run format:check
+      # Formatting cannot be run on the developer machine under the no-local-runs rule, so
+      # the runner formats, records the exact patch as evidence, and lets the remaining gates
+      # run on the formatted tree. The job still fails at the end, so the gate holds.
+      - name: Formatting
+        run: |
+          npm run format
+          if ! git diff --quiet; then
+            git --no-pager diff > format.patch
+            echo "::error::Formatting drift. Apply the format.patch artifact."
+            echo "FORMAT_DRIFT=1" >> "$GITHUB_ENV"
+          fi
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run test:unit
@@ -50,6 +60,9 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: synthetic-service-build-key
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
+      - name: Fail if formatting drifted
+        if: env.FORMAT_DRIFT == '1'
+        run: exit 1
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -58,6 +71,7 @@ jobs:
             playwright-report/
             test-results/
             sbom.json
+            format.patch
           retention-days: 30
   database:
     runs-on: ubuntu-24.04
