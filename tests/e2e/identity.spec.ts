@@ -132,14 +132,18 @@ test('reloading the members page keeps the session', async ({ page }) => {
 test('account deletion is queued and can be withdrawn', async ({ page }) => {
   await signUp(page, newEmail());
   await page.goto('/app/account');
-  await page.getByRole('button', { name: 'Delete my account' }).click();
   // A sensitive action asks for the password again, even inside a live session.
-  await page.getByRole('button', { name: 'Schedule deletion' }).click();
-  await expect(page.getByText('Enter your password to confirm.')).toBeVisible();
   await page.getByRole('button', { name: 'Delete my account' }).click();
+
+  // Submitting nothing is stopped by the browser, so no request is queued. The action
+  // rejects an empty password server-side too, for a caller that skips the form.
+  await page.getByRole('button', { name: 'Schedule deletion' }).click();
+  await expect(page.getByText('Deletion is scheduled.')).toHaveCount(0);
+
   await page.getByLabel('Confirm with your password').fill('wrong-password-entirely');
   await page.getByRole('button', { name: 'Schedule deletion' }).click();
   await expect(page.getByText('That password is not correct.')).toBeVisible();
+
   await page.getByRole('button', { name: 'Delete my account' }).click();
   await page.getByLabel('Confirm with your password').fill(password);
   await page.getByRole('button', { name: 'Schedule deletion' }).click();
