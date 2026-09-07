@@ -167,3 +167,43 @@ test('the identity screens pass axe at a mobile viewport', async ({ page }) => {
     true,
   );
 });
+
+test('a shipment produces a downloadable document set', async ({ page }) => {
+  await signUp(page, newEmail());
+  const org = await createOrganization(page, 'Kestrel Shipping');
+
+  await page.goto(`/app/${org}/shipments`);
+  await page.getByLabel('Shipment reference').fill('SHP-2026-0001');
+  await page.getByRole('button', { name: 'Create shipment' }).click();
+  await page.waitForURL(/\/shipments\/[0-9a-f-]{36}$/);
+
+  // A document cannot be produced from an empty shipment.
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText('Add at least one line before generating a document.')).toBeVisible();
+
+  await page.getByLabel('Description of goods').fill('Industrial bearing housing, cast iron');
+  await page.getByLabel('Quantity').fill('1200');
+  await page.getByLabel('Unit price').fill('15.50');
+  await page.getByLabel('Net weight (kg)').fill('4380');
+  await page.getByRole('button', { name: 'Add line' }).click();
+  await expect(page.getByText('Line added.')).toBeVisible();
+
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText('Document generated.')).toBeVisible();
+
+  // The generated document is a real PDF served under the caller's own access.
+  const row = page.getByRole('region', { name: /Documents generated/ });
+  const href = await row.getByRole('link', { name: /PDF/ }).first().getAttribute('href');
+  expect(href).toMatch(/^\/api\/documents\//);
+  const response = await page.request.get(href as string);
+  expect(response.status()).toBe(200);
+  expect(response.headers()['content-type']).toContain('application/pdf');
+  const body = await response.body();
+  expect(body.subarray(0, 8).toString('latin1')).toBe('%PDF-1.4');
+
+  // Editing the shipment leaves the sent document intact but visibly stale.
+  await page.getByLabel('Port of loading').fill('Rotterdam');
+  await page.getByRole('button', { name: 'Save shipment' }).click();
+  await expect(page.getByText('Documents generated before now are marked stale.')).toBeVisible();
+  await expect(page.getByText('Stale').first()).toBeVisible();
+});

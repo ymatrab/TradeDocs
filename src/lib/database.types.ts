@@ -99,6 +99,128 @@ export type Database = {
           },
         ]
       }
+      companies: {
+        Row: {
+          address_line1: string | null
+          address_line2: string | null
+          city: string | null
+          country_code: string | null
+          created_at: string
+          email: string | null
+          id: string
+          kind: string
+          legal_name: string | null
+          name: string
+          org_id: string
+          phone: string | null
+          postal_code: string | null
+          region: string | null
+          registration_number: string | null
+          tax_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          country_code?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          kind?: string
+          legal_name?: string | null
+          name: string
+          org_id: string
+          phone?: string | null
+          postal_code?: string | null
+          region?: string | null
+          registration_number?: string | null
+          tax_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          country_code?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          kind?: string
+          legal_name?: string | null
+          name?: string
+          org_id?: string
+          phone?: string | null
+          postal_code?: string | null
+          region?: string | null
+          registration_number?: string | null
+          tax_number?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "companies_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      documents: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          kind: string
+          number: string
+          org_id: string
+          shipment_id: string
+          shipment_revision: number
+          snapshot: Json
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          kind: string
+          number: string
+          org_id: string
+          shipment_id: string
+          shipment_revision: number
+          snapshot: Json
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          kind?: string
+          number?: string
+          org_id?: string
+          shipment_id?: string
+          shipment_revision?: number
+          snapshot?: Json
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "documents_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "documents_shipment_id_fkey"
+            columns: ["shipment_id"]
+            isOneToOne: false
+            referencedRelation: "shipments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       invitations: {
         Row: {
           accepted_at: string | null
@@ -178,6 +300,35 @@ export type Database = {
           },
         ]
       }
+      numbering_sequences: {
+        Row: {
+          next_value: number
+          org_id: string
+          period: string
+          scope: string
+        }
+        Insert: {
+          next_value?: number
+          org_id: string
+          period: string
+          scope: string
+        }
+        Update: {
+          next_value?: number
+          org_id?: string
+          period?: string
+          scope?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "numbering_sequences_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       organizations: {
         Row: {
           created_at: string
@@ -229,6 +380,173 @@ export type Database = {
         }
         Relationships: []
       }
+      shipment_items: {
+        Row: {
+          country_of_origin: string | null
+          created_at: string
+          description: string
+          gross_weight_kg: number | null
+          hs_code: string | null
+          id: string
+          net_weight_kg: number | null
+          org_id: string
+          package_count: number | null
+          package_kind: string | null
+          position: number
+          quantity: number
+          shipment_id: string
+          unit: string
+          unit_price: number
+        }
+        Insert: {
+          country_of_origin?: string | null
+          created_at?: string
+          description: string
+          gross_weight_kg?: number | null
+          hs_code?: string | null
+          id?: string
+          net_weight_kg?: number | null
+          org_id: string
+          package_count?: number | null
+          package_kind?: string | null
+          position?: number
+          quantity: number
+          shipment_id: string
+          unit?: string
+          unit_price?: number
+        }
+        Update: {
+          country_of_origin?: string | null
+          created_at?: string
+          description?: string
+          gross_weight_kg?: number | null
+          hs_code?: string | null
+          id?: string
+          net_weight_kg?: number | null
+          org_id?: string
+          package_count?: number | null
+          package_kind?: string | null
+          position?: number
+          quantity?: number
+          shipment_id?: string
+          unit?: string
+          unit_price?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipment_items_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipment_items_shipment_id_fkey"
+            columns: ["shipment_id"]
+            isOneToOne: false
+            referencedRelation: "shipments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      shipments: {
+        Row: {
+          consignee_id: string | null
+          country_of_destination: string | null
+          country_of_origin: string | null
+          created_at: string
+          created_by: string | null
+          currency: string
+          exporter_id: string | null
+          id: string
+          incoterm: string | null
+          incoterm_place: string | null
+          marks_and_numbers: string | null
+          notify_id: string | null
+          org_id: string
+          port_of_discharge: string | null
+          port_of_loading: string | null
+          reference: string
+          revision: number
+          shipped_on: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consignee_id?: string | null
+          country_of_destination?: string | null
+          country_of_origin?: string | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string
+          exporter_id?: string | null
+          id?: string
+          incoterm?: string | null
+          incoterm_place?: string | null
+          marks_and_numbers?: string | null
+          notify_id?: string | null
+          org_id: string
+          port_of_discharge?: string | null
+          port_of_loading?: string | null
+          reference: string
+          revision?: number
+          shipped_on?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consignee_id?: string | null
+          country_of_destination?: string | null
+          country_of_origin?: string | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string
+          exporter_id?: string | null
+          id?: string
+          incoterm?: string | null
+          incoterm_place?: string | null
+          marks_and_numbers?: string | null
+          notify_id?: string | null
+          org_id?: string
+          port_of_discharge?: string | null
+          port_of_loading?: string | null
+          reference?: string
+          revision?: number
+          shipped_on?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipments_consignee_id_fkey"
+            columns: ["consignee_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipments_exporter_id_fkey"
+            columns: ["exporter_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipments_notify_id_fkey"
+            columns: ["notify_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipments_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -250,6 +568,10 @@ export type Database = {
         Returns: string
       }
       export_account_data: { Args: never; Returns: Json }
+      generate_document: {
+        Args: { document_kind: string; target_shipment: string }
+        Returns: string
+      }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
     }
     Enums: {

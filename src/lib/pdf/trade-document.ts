@@ -135,13 +135,26 @@ function columnsFor(kind: DocumentSnapshot['kind']): Column[] {
   if (kind === 'packing_list') {
     return [
       description,
-      { header: 'Packages', width: 66, align: 'right', value: (item) =>
-        item.package_count ? `${item.package_count} ${item.package_kind ?? ''}`.trim() : '—' },
+      {
+        header: 'Packages',
+        width: 66,
+        align: 'right',
+        value: (item) =>
+          item.package_count ? `${item.package_count} ${item.package_kind ?? ''}`.trim() : '—',
+      },
       quantity,
-      { header: 'Net kg', width: 62, align: 'right', value: (item) =>
-        item.net_weight_kg == null ? '—' : decimal(item.net_weight_kg, 3) },
-      { header: 'Gross kg', width: 62, align: 'right', value: (item) =>
-        item.gross_weight_kg == null ? '—' : decimal(item.gross_weight_kg, 3) },
+      {
+        header: 'Net kg',
+        width: 62,
+        align: 'right',
+        value: (item) => (item.net_weight_kg == null ? '—' : decimal(item.net_weight_kg, 3)),
+      },
+      {
+        header: 'Gross kg',
+        width: 62,
+        align: 'right',
+        value: (item) => (item.gross_weight_kg == null ? '—' : decimal(item.gross_weight_kg, 3)),
+      },
     ];
   }
   if (kind === 'delivery_note') {
@@ -154,7 +167,12 @@ function columnsFor(kind: DocumentSnapshot['kind']): Column[] {
     description,
     hs,
     quantity,
-    { header: 'Unit price', width: 72, align: 'right', value: (item) => decimal(item.unit_price, 4) },
+    {
+      header: 'Unit price',
+      width: 72,
+      align: 'right',
+      value: (item) => decimal(item.unit_price, 4),
+    },
     { header: 'Amount', width: 84, align: 'right', value: (item) => decimal(item.line_total) },
   ];
 }
@@ -258,7 +276,8 @@ export function renderTradeDocument(input: unknown): Uint8Array {
   const terms: [string, string][] = [
     [
       'Incoterm 2020',
-      [snapshot.shipment.incoterm, snapshot.shipment.incoterm_place].filter(Boolean).join(' ') || '—',
+      [snapshot.shipment.incoterm, snapshot.shipment.incoterm_place].filter(Boolean).join(' ') ||
+        '—',
     ],
     ['Port of loading', snapshot.shipment.port_of_loading || '—'],
     ['Port of discharge', snapshot.shipment.port_of_discharge || '—'],
@@ -294,10 +313,15 @@ export function renderTradeDocument(input: unknown): Uint8Array {
           page.text(line, x + 6, cursor - 10 - lineIndex * 10, { size: 8.5 });
         });
       } else {
-        page.text(column.value(item, snapshot.shipment.currency), isRight ? x + column.width - 6 : x + 6, cursor - 10, {
-          size: 8.5,
-          align: isRight ? 'right' : 'left',
-        });
+        page.text(
+          column.value(item, snapshot.shipment.currency),
+          isRight ? x + column.width - 6 : x + 6,
+          cursor - 10,
+          {
+            size: 8.5,
+            align: isRight ? 'right' : 'left',
+          },
+        );
       }
       x += column.width;
     });
@@ -314,7 +338,10 @@ export function renderTradeDocument(input: unknown): Uint8Array {
     totals.push(['Total gross weight', `${decimal(snapshot.totals.gross_weight_kg, 3)} kg`]);
   }
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
-    totals.push(['Total amount', `${decimal(snapshot.totals.value)} ${snapshot.shipment.currency}`]);
+    totals.push([
+      'Total amount',
+      `${decimal(snapshot.totals.value)} ${snapshot.shipment.currency}`,
+    ]);
   }
   for (const [label, value] of totals) {
     const bold = label.startsWith('Total amount') || totals.length === 1;
