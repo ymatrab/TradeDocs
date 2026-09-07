@@ -46,8 +46,32 @@ allowed to sit on: `--surface` (`#ffffff`) and `--paper` (`#f5f7fa`). Text token
 Reversed pairs used by the authenticated shell: `#ffffff` on `--ink` is 14.37:1, and the sidebar
 section caption `#a9b8c5` on `--ink` is 7.08:1.
 
-Type is set in a system grotesque stack (`Arial, Helvetica, sans-serif`) with a monospace stack for
-references and codes. No font file is requested, so no text can reflow after first paint. Numeric
+A reversed marketing section redefines the text tokens rather than patching one selector at a time,
+so a component placed on that ground inherits legible values instead of rendering slate on navy.
+Background roles (`--rust`, `--danger`, `--success`) are deliberately not redefined: they sit behind
+white text, and lightening them would break it.
+
+| Token on `--ink` | Value                     | Role                              | Ratio | Meets        |
+| ---------------- | ------------------------- | --------------------------------- | ----- | ------------ |
+| `--slate`        | `#a9b8c5`                 | Captions, hints, secondary prose  | 7.08  | AA text      |
+| `--link`         | `#8fc7e8`                 | Inline links                      | 7.87  | AA text      |
+| `--control`      | `#7f929f`                 | Input and secondary-button border | 4.46  | 3:1 non-text |
+| `--rule`         | `rgb(255 255 255 / 0.22)` | Decorative separators             | —     | Decorative   |
+
+Every control darkens on `:active`, because a tap has to answer before the server does. The pressed
+grounds are measured against the text they carry.
+
+| Token               | Value     | Carries        | Ratio |
+| ------------------- | --------- | -------------- | ----- |
+| `--ink-pressed`     | `#0c1d29` | `#ffffff` text | 17.17 |
+| `--danger-pressed`  | `#741818` | `#ffffff` text | 11.13 |
+| `--rust-pressed`    | `#7d2b0d` | `#ffffff` text | 9.45  |
+| `--surface-pressed` | `#e2e8ee` | `--ink` text   | 11.64 |
+
+Body text is set in a system grotesque stack (`Arial, Helvetica, sans-serif`), with a monospace
+stack for references and codes, so no font file stands between the reader and the words. Headings
+use Archivo, self-hosted at build time by `next/font` with a size-matched fallback and
+`font-display: swap`; the fallback is metric-matched, so the swap costs no layout shift. Numeric
 contexts set `font-variant-numeric: tabular-nums` so quantities, weights and totals align in a
 column.
 
@@ -61,4 +85,22 @@ sections, which keeps one idea covering the whole product rather than three comp
 
 Status is the second product-specific primitive. Every state carries a word, a glyph and a border
 treatment together, so it survives greyscale printing and colour-vision differences; no state is
-ever expressed as colour alone.
+ever expressed as colour alone. Two lifecycles use it: documents (draft, stale, final, superseded,
+voided, archived, endorsed) and shipments (draft, confirmed, shipped, closed). A value the schema
+has grown but the interface has not been taught renders as itself, marked unrecognised, rather than
+being silently drawn as something it is not.
+
+The meaning of a state travels in two forms — a `title` a pointer can reveal, and text only
+assistive technology reads. `title` alone reaches neither a keyboard nor a touch screen, so it is
+never the only copy.
+
+## Navigation below the sidebar breakpoint
+
+The authenticated sidebar is a wide-screen affordance, not the navigation itself. Under 900 px it is
+replaced by a topbar disclosure carrying the same destinations, the account links and sign-out, so no
+page of the workspace becomes unreachable on a phone. Both disclosures close on navigation, on
+Escape — which returns focus to the control that opened them — and on a pointer landing outside.
+
+Destructive actions confirm before they act, and the confirmation stays open until the action has
+actually succeeded: a rejected password or a refused removal keeps the user's input where they can
+correct it, instead of dropping them onto a page-level message with nothing left to edit.

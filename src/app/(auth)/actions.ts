@@ -4,8 +4,14 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import { getServerEnv } from '@/lib/config/server';
+import { fieldErrors, summaryOf } from '@/lib/form-errors';
 
-export type FormState = { error?: string; notice?: string };
+export type FormState = {
+  error?: string;
+  notice?: string;
+  /** Messages keyed by form field name, so each lands beside the control it rejects. */
+  fields?: Record<string, string>;
+};
 
 const credentials = z.object({
   email: z.email('Enter a valid email address.'),
@@ -34,13 +40,22 @@ export async function signIn(_previous: FormState, formData: FormData): Promise<
     email: read(formData, 'email'),
     password: read(formData, 'password'),
   });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check your details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check your details.'), fields };
+  }
 
   const client = await createClient();
   const { error } = await client.auth.signInWithPassword(parsed.data);
   // The same message for an unknown address and a wrong password: distinguishing them
   // tells an attacker which addresses hold accounts.
-  if (error) return { error: 'That email and password combination does not match an account.' };
+  if (error) {
+    return {
+      error: 'That email and password combination does not match an account.',
+      // Neither field is individually wrong, so neither carries its own message;
+      // saying which one was would tell an attacker what they wanted to know.
+    };
+  }
   redirect('/app');
 }
 
@@ -49,14 +64,20 @@ export async function signUp(_previous: FormState, formData: FormData): Promise<
     email: read(formData, 'email'),
     password: read(formData, 'password'),
   });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check your details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check your details.'), fields };
+  }
 
   const client = await createClient();
   const { data, error } = await client.auth.signUp({
     ...parsed.data,
     options: { emailRedirectTo: callbackUrl() },
   });
-  if (error) return { error: 'That account could not be created. Try a different address.' };
+  if (error) {
+    const message = 'That account could not be created. Try a different address.';
+    return { error: message, fields: { email: message } };
+  }
   if (!data.session) {
     return { notice: 'Check your email to confirm the address, then sign in.' };
   }
@@ -65,7 +86,10 @@ export async function signUp(_previous: FormState, formData: FormData): Promise<
 
 export async function sendMagicLink(_previous: FormState, formData: FormData): Promise<FormState> {
   const parsed = emailOnly.safeParse({ email: read(formData, 'email') });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check your details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check your details.'), fields };
+  }
 
   const client = await createClient();
   await client.auth.signInWithOtp({
@@ -81,7 +105,10 @@ export async function requestPasswordReset(
   formData: FormData,
 ): Promise<FormState> {
   const parsed = emailOnly.safeParse({ email: read(formData, 'email') });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check your details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check your details.'), fields };
+  }
 
   const client = await createClient();
   await client.auth.resetPasswordForEmail(parsed.data.email, {
@@ -94,7 +121,10 @@ export async function updatePassword(_previous: FormState, formData: FormData): 
   const parsed = z
     .object({ password: z.string().min(12, 'Use at least 12 characters.').max(200) })
     .safeParse({ password: read(formData, 'password') });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check your details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check your details.'), fields };
+  }
 
   const client = await createClient();
   const {
@@ -103,6 +133,9 @@ export async function updatePassword(_previous: FormState, formData: FormData): 
   if (!user) return { error: 'This reset link has expired. Request a new one.' };
 
   const { error } = await client.auth.updateUser({ password: parsed.data.password });
-  if (error) return { error: 'That password could not be set. Try a different one.' };
+  if (error) {
+    const message = 'That password could not be set. Try a different one.';
+    return { error: message, fields: { password: message } };
+  }
   redirect('/app');
 }

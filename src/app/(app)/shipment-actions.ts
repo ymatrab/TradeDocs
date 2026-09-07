@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
+import { fieldErrors, summaryOf } from '@/lib/form-errors';
 
 const uuid = z.uuid();
 const optionalText = (max: number) =>
@@ -40,7 +41,10 @@ export async function createShipment(
       reference: read(formData, 'reference'),
       currency: read(formData, 'currency') || 'EUR',
     });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check the details.'), fields };
+  }
 
   const client = await createClient();
   const { data, error } = await client
@@ -54,12 +58,11 @@ export async function createShipment(
     .single();
 
   if (error || !data) {
-    return {
-      error:
-        error?.code === '23505'
-          ? 'A shipment with that reference already exists.'
-          : 'That shipment could not be created.',
-    };
+    if (error?.code === '23505') {
+      const message = 'A shipment with that reference already exists.';
+      return { error: message, fields: { reference: message } };
+    }
+    return { error: 'That shipment could not be created.' };
   }
   revalidatePath(`/app/${parsed.data.org}/shipments`);
   redirect(`/app/${parsed.data.org}/shipments/${data.id}`);
@@ -92,7 +95,10 @@ export async function updateShipment(
       country_of_destination: read(formData, 'country_of_destination').toUpperCase(),
       marks_and_numbers: read(formData, 'marks_and_numbers'),
     });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check the details.'), fields };
+  }
 
   const { org, shipment, ...fields } = parsed.data;
   const client = await createClient();
@@ -139,7 +145,10 @@ export async function addItem(_previous: ActionState, formData: FormData): Promi
       gross_weight_kg: read(formData, 'gross_weight_kg') || undefined,
       package_count: read(formData, 'package_count') || undefined,
     });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the line.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check the line.'), fields };
+  }
 
   const { org, shipment, ...item } = parsed.data;
   const client = await createClient();

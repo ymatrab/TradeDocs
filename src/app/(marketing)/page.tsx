@@ -76,7 +76,7 @@ export default function Home() {
           <div>
             <p className="section-label">Shipment workspace</p>
             <h1>
-              Trade documents that <em>agree</em> with each other.
+              Trade documents that <span className="accent">agree</span> with each other.
             </h1>
             <p className="lede">
               Enter a shipment once. TradeDocs produces the invoice, the packing list and everything

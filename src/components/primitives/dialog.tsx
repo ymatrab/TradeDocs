@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useId, useRef, type ReactNode } from 'react';
 
 /**
  * Native `<dialog>` in modal mode. The browser owns the focus trap, Escape and
@@ -23,6 +23,9 @@ export function Dialog({
   children?: ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  // Two dialogs can be mounted at once — the command palette lives in the topbar of
+  // every authenticated page — so the labelling ids have to be per instance.
+  const base = useId();
 
   useEffect(() => {
     const element = ref.current;
@@ -35,15 +38,15 @@ export function Dialog({
     <dialog
       ref={ref}
       className="dialog"
-      aria-labelledby="dialog-title"
-      aria-describedby={description ? 'dialog-description' : undefined}
+      aria-labelledby={`${base}-title`}
+      aria-describedby={description ? `${base}-description` : undefined}
       onClose={onClose}
       onCancel={onClose}
     >
       <div className="dialog-head">
-        <h2 id="dialog-title">{title}</h2>
+        <h2 id={`${base}-title`}>{title}</h2>
         {description ? (
-          <p className="muted" id="dialog-description" style={{ marginBottom: 0 }}>
+          <p className="muted" id={`${base}-description`} style={{ marginBottom: 0 }}>
             {description}
           </p>
         ) : null}

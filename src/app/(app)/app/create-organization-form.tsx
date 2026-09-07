@@ -1,17 +1,22 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useRef } from 'react';
 import { Button } from '@/components/primitives/button';
 import { Field, Input } from '@/components/primitives/form';
 import { Callout } from '@/components/primitives/feedback';
+import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
+import { showsSummary } from '@/lib/form-errors';
 import { createOrganization, type ActionState } from '../actions';
 
 export function CreateOrganizationForm() {
   const [state, action, pending] = useActionState<ActionState, FormData>(createOrganization, {});
+  const form = useRef<HTMLFormElement>(null);
+  useInvalidFocus(form, state.fields);
+
   return (
-    <form action={action} style={{ display: 'grid', gap: 16, maxWidth: 460 }} noValidate>
-      {state.error ? (
-        <Callout tone="danger" title="That did not work">
+    <form ref={form} action={action} style={{ display: 'grid', gap: 16, maxWidth: 460 }} noValidate>
+      {showsSummary(state) ? (
+        <Callout tone="danger" title="That did not work" live>
           {state.error}
         </Callout>
       ) : null}
@@ -19,9 +24,17 @@ export function CreateOrganizationForm() {
         id="organization-name"
         label="Organization name"
         hint="Your company as it should appear on prepared documents."
+        error={state.fields?.name}
       >
-        {({ id, describedBy }) => (
-          <Input id={id} name="name" required maxLength={160} aria-describedby={describedBy} />
+        {({ id, describedBy, invalid }) => (
+          <Input
+            id={id}
+            name="name"
+            required
+            maxLength={160}
+            invalid={invalid}
+            aria-describedby={describedBy}
+          />
         )}
       </Field>
       <div>

@@ -1,11 +1,18 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState, useRef } from 'react';
 import { Button } from '@/components/primitives/button';
+import { ConfirmButton } from '@/components/primitives/confirm';
 import { Callout } from '@/components/primitives/feedback';
-import { Dialog } from '@/components/primitives/dialog';
 import { Field, Input } from '@/components/primitives/form';
+import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
 import { updateAccountLifecycle, type ActionState } from '../../actions';
+
+const CONFIRM_FORM = 'confirm-deletion';
+
+const DELETION_NOTICE =
+  'Nothing is destroyed today. Your account is queued for removal in 30 days, and you ' +
+  'can withdraw the request at any point during that period.';
 
 export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boolean }) {
   // One action for both outcomes, so the latest result is always the one on screen.
@@ -13,17 +20,21 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
     updateAccountLifecycle,
     {},
   );
-  const [confirming, setConfirming] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+  useInvalidFocus(form, state.fields);
 
   return (
     <div style={{ display: 'grid', gap: 16 }}>
-      {state.error ? (
-        <Callout tone="danger" title="That did not work">
+      {/* Every way the deletion can fail happens inside the confirmation, so its
+          messages stay there, beside the field that has to change. Only the
+          withdrawal, which has no dialog, reports out here. */}
+      {deletionScheduled && state.error ? (
+        <Callout tone="danger" title="That did not work" live>
           {state.error}
         </Callout>
       ) : null}
       {state.notice ? (
-        <Callout tone="success" title="Done">
+        <Callout tone="success" title="Done" live>
           {state.notice}
         </Callout>
       ) : null}
@@ -43,60 +54,41 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
             </Button>
           </form>
         ) : (
-          <Button tone="danger" onClick={() => setConfirming(true)}>
-            Delete my account
-          </Button>
+          <ConfirmButton
+            form={CONFIRM_FORM}
+            trigger="Delete my account"
+            title="Delete your account?"
+            description={DELETION_NOTICE}
+            confirm="Schedule deletion"
+            cancel="Keep my account"
+            pending={pending}
+            failed={Boolean(state.error)}
+            error={state.fields?.password ? undefined : state.error}
+          >
+            <form id={CONFIRM_FORM} ref={form} action={action}>
+              <input type="hidden" name="intent" value="schedule" />
+              <Field
+                id="confirm-password"
+                label="Confirm with your password"
+                hint="An open session is not enough to queue an account for removal."
+                error={state.fields?.password}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                  />
+                )}
+              </Field>
+            </form>
+          </ConfirmButton>
         )}
       </div>
-
-      <Dialog
-        open={confirming}
-        onClose={() => setConfirming(false)}
-        title="Delete your account?"
-        description="Nothing is destroyed today. Your account is queued for removal in 30 days, and you can withdraw the request at any point during that period."
-        footer={
-          <>
-            <Button tone="secondary" onClick={() => setConfirming(false)}>
-              Keep my account
-            </Button>
-            <Button
-              type="submit"
-              form="confirm-deletion"
-              tone="danger"
-              pending={pending}
-              pendingLabel="Scheduling…"
-            >
-              Schedule deletion
-            </Button>
-          </>
-        }
-      >
-        <form
-          id="confirm-deletion"
-          action={(formData) => {
-            setConfirming(false);
-            action(formData);
-          }}
-        >
-          <input type="hidden" name="intent" value="schedule" />
-          <Field
-            id="confirm-password"
-            label="Confirm with your password"
-            hint="An open session is not enough to queue an account for removal."
-          >
-            {({ id, describedBy }) => (
-              <Input
-                id={id}
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                aria-describedby={describedBy}
-              />
-            )}
-          </Field>
-        </form>
-      </Dialog>
     </div>
   );
 }

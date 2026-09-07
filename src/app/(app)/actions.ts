@@ -4,8 +4,15 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
+import { fieldErrors, summaryOf } from '@/lib/form-errors';
 
-export type ActionState = { error?: string; notice?: string; token?: string };
+export type ActionState = {
+  error?: string;
+  notice?: string;
+  token?: string;
+  /** Messages keyed by form field name, so each lands beside the control it rejects. */
+  fields?: Record<string, string>;
+};
 
 const uuid = z.uuid();
 
@@ -29,7 +36,10 @@ export async function createOrganization(
     .min(1, 'Enter an organization name.')
     .max(160, 'Use 160 characters or fewer.')
     .safeParse(read(formData, 'name'));
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the name.' };
+  if (!parsed.success) {
+    const message = parsed.error.issues[0]?.message ?? 'Check the name.';
+    return { error: message, fields: { name: message } };
+  }
 
   const client = await createClient();
   const { data, error } = await client.rpc('create_organization', {
@@ -55,7 +65,10 @@ export async function inviteMember(
       email: read(formData, 'email'),
       role: read(formData, 'role'),
     });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check the details.'), fields };
+  }
 
   const client = await createClient();
   const { data, error } = await client.rpc('create_invitation', {
@@ -79,7 +92,10 @@ export async function changeRole(_previous: ActionState, formData: FormData): Pr
       user: read(formData, 'user'),
       role: read(formData, 'role'),
     });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Check the details.' };
+  if (!parsed.success) {
+    const fields = fieldErrors(parsed.error);
+    return { error: summaryOf(fields, 'Check the details.'), fields };
+  }
 
   const client = await createClient();
   const { error } = await client
@@ -142,7 +158,10 @@ export async function acceptInvitation(
  * left open on a shared machine must not be enough to queue someone's account for removal.
  */
 async function scheduleDeletion(password: string): Promise<ActionState> {
-  if (!password) return { error: 'Enter your password to confirm.' };
+  if (!password) {
+    const message = 'Enter your password to confirm.';
+    return { error: message, fields: { password: message } };
+  }
 
   const client = await createClient();
   const {
@@ -154,7 +173,10 @@ async function scheduleDeletion(password: string): Promise<ActionState> {
     email: user.email,
     password,
   });
-  if (reauthError) return { error: 'That password is not correct.' };
+  if (reauthError) {
+    const message = 'That password is not correct.';
+    return { error: message, fields: { password: message } };
+  }
 
   const { error } = await client.rpc('request_account_deletion', { grace: '30 days' });
   if (error) return { error: 'That request could not be recorded.' };

@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, EmptyState } from '@/components/primitives/feedback';
 import { DataTable, NumericCell } from '@/components/primitives/table';
+import { ShipmentStatus } from '@/components/document/status';
 import { CreateShipmentForm } from './create-shipment-form';
 
 export const metadata: Metadata = { title: 'Shipments' };
@@ -52,7 +53,9 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
                         {shipment.reference}
                       </Link>
                     </td>
-                    <td>{shipment.status}</td>
+                    <td>
+                      <ShipmentStatus state={shipment.status} />
+                    </td>
                     <td className="data">{shipment.currency}</td>
                     <NumericCell value={String(shipment.revision)} />
                   </tr>

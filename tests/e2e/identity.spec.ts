@@ -35,7 +35,7 @@ test('a new account can sign up, create an organization and own it', async ({ pa
   await expect(page.getByRole('heading', { name: 'Organizations', level: 1 })).toBeVisible();
   await createOrganization(page, 'Meridian Components');
   await expect(page.getByRole('heading', { name: 'Meridian Components', level: 1 })).toBeVisible();
-  await expect(page.getByRole('region', { name: /People in/ })).toContainText('owner');
+  await expect(page.getByRole('region', { name: /People in/ })).toContainText('Owner');
 });
 
 test('a password below the minimum is refused with a specific reason', async ({ page }) => {
@@ -118,8 +118,16 @@ test('an invitation admits its recipient once and then cannot be replayed', asyn
 test('the last owner cannot leave the organization', async ({ page }) => {
   await signUp(page, newEmail());
   await createOrganization(page, 'Solent Exporters');
-  await page.getByRole('button', { name: 'Leave' }).click();
-  await expect(page.getByText('An organization must keep at least one owner.')).toBeVisible();
+  // Leaving is destructive, so the button opens a confirmation rather than acting.
+  await page.getByRole('button', { name: 'Leave', exact: true }).click();
+  const confirmation = page.getByRole('dialog');
+  await expect(confirmation).toBeVisible();
+  await confirmation.getByRole('button', { name: 'Leave the organization' }).click();
+  // The refusal is reported inside the confirmation, which stays open.
+  await expect(confirmation).toBeVisible();
+  await expect(
+    confirmation.getByText('An organization must keep at least one owner.'),
+  ).toBeVisible();
 });
 
 test('reloading the members page keeps the session', async ({ page }) => {
@@ -142,11 +150,15 @@ test('account deletion is queued and can be withdrawn', async ({ page }) => {
 
   await page.getByLabel('Confirm with your password').fill('wrong-password-entirely');
   await page.getByRole('button', { name: 'Schedule deletion' }).click();
-  await expect(page.getByText('That password is not correct.')).toBeVisible();
+  // A rejected password leaves the confirmation open, with the message on the field
+  // that has to change rather than on a page the user has been thrown back to.
+  const confirmation = page.getByRole('dialog');
+  await expect(confirmation).toBeVisible();
+  await expect(confirmation.getByText('That password is not correct.')).toBeVisible();
 
-  await page.getByRole('button', { name: 'Delete my account' }).click();
   await page.getByLabel('Confirm with your password').fill(password);
   await page.getByRole('button', { name: 'Schedule deletion' }).click();
+  await expect(confirmation).not.toBeVisible();
   await expect(page.getByText('Deletion is scheduled.')).toBeVisible();
   await page.getByRole('button', { name: 'Withdraw the deletion request' }).click();
   await expect(page.getByText('Deletion withdrawn.')).toBeVisible();

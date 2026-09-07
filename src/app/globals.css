@@ -40,6 +40,14 @@
   --control: #7d8b98;
   --rule: #cbd5dd;
 
+  /* Pressed grounds. A tap has to answer before the server does, so every
+     control darkens on :active. Ratios against white text, or --ink on the two
+     light values: 17.17, 11.13, 9.45 and 11.64. */
+  --ink-pressed: #0c1d29;
+  --surface-pressed: #e2e8ee;
+  --rust-pressed: #7d2b0d;
+  --danger-pressed: #741818;
+
   /* Trade documents are set in workhorse grotesques. A system stack matches the
      subject and requests no font file, so nothing can shift after paint. */
   --font-body: Arial, Helvetica, sans-serif;
@@ -221,6 +229,9 @@ h3 {
 .btn:hover:not(:disabled) {
   background: var(--ink-raised);
 }
+.btn:active:not(:disabled) {
+  background: var(--ink-pressed);
+}
 .btn.secondary {
   background: var(--surface);
   color: var(--ink);
@@ -228,6 +239,9 @@ h3 {
 }
 .btn.secondary:hover:not(:disabled) {
   background: var(--surface-sunken);
+}
+.btn.secondary:active:not(:disabled) {
+  background: var(--surface-pressed);
 }
 .btn.quiet {
   background: transparent;
@@ -237,11 +251,17 @@ h3 {
 .btn.quiet:hover:not(:disabled) {
   background: var(--surface-sunken);
 }
+.btn.quiet:active:not(:disabled) {
+  background: var(--surface-pressed);
+}
 .btn.danger {
   background: var(--danger);
 }
 .btn.danger:hover:not(:disabled) {
   background: #8d1e1e;
+}
+.btn.danger:active:not(:disabled) {
+  background: var(--danger-pressed);
 }
 .btn.accent {
   background: var(--rust);
@@ -249,10 +269,28 @@ h3 {
 .btn.accent:hover:not(:disabled) {
   background: var(--rust-deep);
 }
+.btn.accent:active:not(:disabled) {
+  background: var(--rust-pressed);
+}
 .btn.compact {
   min-height: 34px;
   padding: 6px 12px;
   font-size: 13px;
+  position: relative;
+}
+/* Dense rows want a small button; a finger wants 44px. The control keeps its
+   compact drawing and carries the larger hit area on a pseudo-element, so table
+   density and the touch minimum stop being a trade-off. */
+.btn.compact::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  min-width: 44px;
+  height: 100%;
+  min-height: 44px;
 }
 .btn.block {
   width: 100%;
@@ -355,6 +393,24 @@ h3 {
   color: var(--rust);
   border-width: 2px;
 }
+.status.confirmed {
+  color: var(--link);
+}
+.status.shipped {
+  color: var(--success);
+  border-style: double;
+  border-width: 3px;
+}
+.status.closed {
+  color: var(--slate);
+  background: var(--surface-sunken);
+}
+/* A state the schema has grown but the interface has not been taught yet. It is
+   named and marked as unrecognised rather than quietly drawn as something else. */
+.status.unknown {
+  color: var(--slate);
+  border-style: dotted;
+}
 
 /* --- Forms --------------------------------------------------------------- */
 .field {
@@ -426,8 +482,13 @@ h3 {
 }
 
 /* --- Tables -------------------------------------------------------------- */
+/* A cap is what makes the sticky header below actually stick: `position: sticky`
+   resolves against this scrollport, and an uncapped box never scrolls vertically,
+   so the rule was inert. Short tables never reach the cap and keep their natural
+   height; long ones scroll with their column names still on screen. */
 .table-scroll {
   overflow-x: auto;
+  max-block-size: min(70vh, 680px);
   border: 1px solid var(--rule);
   background: var(--surface);
 }
@@ -455,6 +516,7 @@ h3 {
 .table thead th {
   position: sticky;
   top: 0;
+  z-index: 1;
   background: var(--surface-sunken);
   border-bottom: 1px solid var(--control);
   font-size: var(--caption);
@@ -516,8 +578,12 @@ h3 {
 .callout.success {
   border-left-color: var(--success);
 }
-.callout h3 {
+/* Callout takes a heading level so it does not skip one in its surrounding
+   outline; the treatment has to follow whichever level it was given. */
+.callout :is(h2, h3, h4) {
   font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
   margin-bottom: 2px;
 }
 .callout p {
@@ -623,7 +689,7 @@ h3 {
   border: 0;
   text-align: left;
   padding: 10px var(--space-3);
-  min-height: 40px;
+  min-height: 44px;
   border-radius: 2px;
   font-size: 14px;
   display: flex;
@@ -632,6 +698,9 @@ h3 {
 }
 .menu button:hover {
   background: var(--surface-sunken);
+}
+.menu button:active {
+  background: var(--surface-pressed);
 }
 .toast-region {
   position: fixed;
@@ -642,6 +711,16 @@ h3 {
   flex-direction: column;
   gap: var(--space-2);
   max-width: min(400px, calc(100vw - 32px));
+}
+/* Both regions are always in the document so an inserted message is announced;
+   an empty one must not occupy space or catch a tap. */
+.toast-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.toast-stack:empty {
+  display: none;
 }
 .toast {
   background: var(--surface);
@@ -659,6 +738,27 @@ h3 {
 }
 .toast.danger {
   border-left-color: var(--danger);
+}
+.toast-dismiss {
+  margin-left: auto;
+  margin-block: -6px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--slate);
+}
+.toast-dismiss:hover {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+.toast-dismiss:active {
+  background: var(--surface-pressed);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -796,12 +896,36 @@ h3 {
 .app-sidebar nav a:hover {
   background: rgb(255 255 255 / 0.09);
 }
+.app-sidebar nav a:active {
+  background: rgb(255 255 255 / 0.18);
+}
 .app-sidebar nav a[aria-current='page'] {
   background: rgb(255 255 255 / 0.13);
   border-left-color: var(--rust);
 }
 .app-sidebar .caption {
   color: #a9b8c5;
+}
+.nav-caption {
+  margin-bottom: var(--space-2);
+}
+/* Leaving sits behind a rule, away from the destinations above it. */
+.nav-signout {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid rgb(255 255 255 / 0.16);
+}
+.nav-signout .btn {
+  width: 100%;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  color: inherit;
+}
+.app-title {
+  font-size: 17px;
+  margin: 0;
+  letter-spacing: -0.02em;
+  min-width: 0;
 }
 .app-topbar {
   height: var(--topbar-height);
@@ -820,7 +944,8 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  min-height: 38px;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0 var(--space-3);
   border: 1px solid var(--control);
   border-radius: var(--radius);
@@ -828,6 +953,12 @@ h3 {
   color: var(--slate);
   font-size: 14px;
   min-width: 220px;
+}
+.search-trigger:hover {
+  background: var(--surface-sunken);
+}
+.search-trigger:active {
+  background: var(--surface-pressed);
 }
 .search-trigger-label {
   margin-right: auto;
@@ -849,11 +980,9 @@ kbd {
   max-height: 320px;
   overflow-y: auto;
 }
-.command-list button {
+.command-list a {
   width: 100%;
   text-align: left;
-  background: none;
-  border: 0;
   padding: 10px var(--space-3);
   min-height: 44px;
   border-radius: var(--radius);
@@ -861,14 +990,96 @@ kbd {
   align-items: center;
   gap: var(--space-3);
   font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
 }
-.command-list button:hover,
-.command-list button[data-active='true'] {
+.command-list a:hover {
   background: var(--surface-sunken);
 }
+.command-list a:active {
+  background: var(--surface-pressed);
+}
 
+/* Disclosure navigation. Anchored rather than inline so opening the menu does
+   not shove the page it sits above. */
+.nav-disclosure {
+  position: relative;
+}
+.nav-disclosure > summary {
+  list-style: none;
+}
+.nav-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.nav-disclosure > nav {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 6px);
+  min-width: 232px;
+  background: var(--surface);
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  display: grid;
+  gap: 2px;
+  box-shadow: 0 18px 40px -28px rgb(21 44 62 / 0.55);
+}
+/* The public disclosure carries buttons, which only need to fill the width. */
+.nav-disclosure > nav .btn {
+  justify-content: flex-start;
+  gap: var(--space-3);
+  width: 100%;
+}
+/* The workspace disclosure carries bare links, and reproduces the sidebar row so
+   the same destination looks like itself at either width. */
+.app-nav > nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: 10px var(--space-3);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+}
+.app-nav > nav a:hover {
+  background: var(--surface-sunken);
+}
+.app-nav > nav a:active {
+  background: var(--surface-pressed);
+}
+.app-nav > nav a[aria-current='page'] {
+  background: var(--surface-sunken);
+  box-shadow: inset 3px 0 0 var(--rust);
+}
+.nav-disclosure .nav-caption {
+  color: var(--slate);
+  padding: var(--space-2) var(--space-3) 0;
+  margin-bottom: 0;
+}
+.nav-disclosure .nav-signout {
+  border-top-color: var(--rule);
+}
+.nav-disclosure .nav-signout .btn {
+  color: var(--danger);
+}
 .mobile-nav {
   display: none;
+  margin-left: auto;
+}
+/* The workspace disclosure replaces the sidebar, so it appears only when the
+   sidebar is gone. */
+.app-nav {
+  display: none;
+}
+.app-nav > nav {
+  left: 0;
+}
+.mobile-nav > nav {
+  right: 0;
 }
 @media (max-width: 900px) {
   .app-shell {
@@ -877,22 +1088,24 @@ kbd {
   .app-sidebar {
     display: none;
   }
-  .mobile-nav {
+  .mobile-nav,
+  .app-nav {
     display: block;
   }
   .public-nav {
     display: none;
   }
-  /* The trigger keeps its accessible name and collapses to its icon. */
+  /* The trigger keeps its accessible name and collapses to its icon, but not
+     below the size a finger needs. */
   .search-trigger {
-    min-width: 0;
+    min-width: 44px;
+    justify-content: center;
   }
   .search-trigger-label,
   .search-trigger kbd {
     display: none;
   }
-  .app-topbar h1 {
-    min-width: 0;
+  .app-title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -919,6 +1132,7 @@ kbd {
   .public-header,
   .public-nav,
   .mobile-nav,
+  .nav-disclosure,
   .toast-region,
   .skip-link,
   .search-trigger,
@@ -950,10 +1164,21 @@ kbd {
     outline: 1px solid #000;
     break-inside: avoid;
   }
+  .table-scroll {
+    max-block-size: none;
+    overflow: visible;
+  }
   .table thead th {
     position: static;
     background: transparent;
     color: #000;
+  }
+  /* Repeat column names on every page a long table spills onto. */
+  .table thead {
+    display: table-header-group;
+  }
+  .table tr {
+    break-inside: avoid;
   }
   .status {
     border-color: #000 !important;
@@ -972,12 +1197,18 @@ kbd {
   max-width: 1180px;
   margin: 0 auto;
 }
+/* A reversed ground redefines the text tokens rather than patching one selector
+   at a time, so anything placed here inherits legible values instead of silently
+   rendering slate on navy. Ratios against --ink: slate 7.08, link 7.87, control
+   4.46. Background roles (--rust, --danger, --success) are deliberately left
+   alone: they are drawn behind white text and lightening them would break it. */
 .section.dark {
+  --slate: #a9b8c5;
+  --link: #8fc7e8;
+  --control: #7f929f;
+  --rule: rgb(255 255 255 / 0.22);
   background: var(--ink);
   color: var(--surface);
-}
-.section.dark .muted {
-  color: #a9b8c5;
 }
 .section.dark h2,
 .section.dark h3 {
@@ -1004,6 +1235,8 @@ kbd {
   height: 2px;
   background: var(--rust);
 }
+/* The eyebrow is the one text use of rust, so it is lightened here by hand
+   rather than through the token, which stays a background role. 6.93 on --ink. */
 .section.dark .section-label {
   color: #f0a184;
 }
@@ -1033,8 +1266,9 @@ kbd {
   letter-spacing: -0.04em;
   margin-bottom: var(--space-4);
 }
-.hero h1 em {
-  font-style: normal;
+/* Colour, not emphasis: `<em>` here would announce stress the sentence does not
+   carry, so the word is a plain span that is merely drawn differently. */
+.hero h1 .accent {
   color: var(--rust);
 }
 .lede {
@@ -1140,12 +1374,7 @@ kbd {
   margin-bottom: 0;
   font-size: 15px;
 }
-.section.dark .step {
-  border-top-color: rgb(255 255 255 / 0.22);
-}
-.section.dark .step p {
-  color: #a9b8c5;
-}
+
 
 .doc-card {
   background: var(--surface);
@@ -1201,10 +1430,12 @@ kbd {
 
 .faq details {
   border-bottom: 1px solid var(--rule);
-  padding: var(--space-4) 0;
 }
 .faq summary {
   cursor: pointer;
+  padding: var(--space-4) 0;
+  min-height: 44px;
+  align-items: center;
   font-weight: 700;
   font-family: var(--font-heading);
   font-size: var(--step-1);
@@ -1226,8 +1457,11 @@ kbd {
 .faq details[open] summary::after {
   content: '−';
 }
+.faq summary:hover {
+  color: var(--rust);
+}
 .faq p {
-  margin: var(--space-3) 0 0;
+  margin: 0 0 var(--space-4);
   color: var(--slate);
   max-width: 72ch;
 }

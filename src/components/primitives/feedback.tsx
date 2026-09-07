@@ -21,17 +21,29 @@ export function Callout({
   title,
   /** Set so the callout does not skip a level in its surrounding outline. */
   level = 3,
+  /**
+   * Set when the callout reports the outcome of something the user just did, so
+   * the result is announced. Leave unset for standing disclosure, which is
+   * already on the page when it is read.
+   */
+  live,
   children,
 }: {
   tone?: CalloutTone;
   title: string;
   level?: 2 | 3 | 4;
+  live?: boolean;
   children: ReactNode;
 }) {
   const Icon = calloutIcon[tone];
   const Heading: 'h2' | 'h3' | 'h4' = `h${level}`;
+  const announces = live ? (tone === 'danger' ? 'assertive' : 'polite') : undefined;
   return (
-    <div className={tone === 'neutral' ? 'callout' : `callout ${tone}`}>
+    <div
+      className={tone === 'neutral' ? 'callout' : `callout ${tone}`}
+      role={live ? (tone === 'danger' ? 'alert' : 'status') : undefined}
+      aria-live={announces}
+    >
       <Icon size={18} aria-hidden="true" />
       <div>
         <Heading>{title}</Heading>

@@ -17,7 +17,13 @@ import { Menu } from '@/components/primitives/menu';
 import { Tabs } from '@/components/primitives/tabs';
 import { ToastProvider, useToast } from '@/components/primitives/toast';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
-import { DocumentStatus, documentStates, stateMeaning } from '@/components/document/status';
+import {
+  DocumentStatus,
+  ShipmentStatus,
+  documentStates,
+  shipmentStates,
+  stateMeaning,
+} from '@/components/document/status';
 import { AppShell } from '@/components/shell/app';
 
 function Section({
@@ -294,7 +300,7 @@ function DocumentPrimitives() {
         </FieldBox>
         <FieldBox ordinal="5" caption="Incoterm 2020" value="FOB Rotterdam" />
         <FieldBox ordinal="6" caption="Status">
-          <DocumentStatus state="final" describe />
+          <DocumentStatus state="final" />
         </FieldBox>
         <FieldBox
           ordinal="7"
@@ -316,6 +322,19 @@ function DocumentPrimitives() {
               </span>
             </div>
           ))}
+        </div>
+      </Panel>
+      <Panel title="Shipment lifecycle">
+        <div style={{ display: 'grid', gap: 10 }}>
+          {shipmentStates.map((state) => (
+            <div key={state} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <ShipmentStatus state={state} />
+            </div>
+          ))}
+          {/* A value the schema has grown but the interface has not been taught. */}
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+            <ShipmentStatus state="held_at_customs" />
+          </div>
         </div>
       </Panel>
     </Section>

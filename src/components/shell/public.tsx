@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ShieldAlert } from 'lucide-react';
+import { NavDisclosure } from '@/components/shell/nav-disclosure';
 
 const navigation = [
   { href: '/#how', label: 'How it works' },
@@ -55,7 +56,7 @@ export function PublicShell({
               </Link>
             ))}
             <Link href="/sign-in">Sign in</Link>
-            <Link href="/sign-up" className="btn compact" style={{ marginLeft: 8 }}>
+            <Link href="/sign-up" className="btn compact header-cta">
               Get started
             </Link>
           </nav>
@@ -78,26 +79,24 @@ export function PublicShell({
 }
 
 /**
- * Disclosure-based mobile navigation: a native `<details>` needs no script and cannot
- * desynchronise its expanded state from what is on screen.
+ * Disclosure-based mobile navigation: a native `<details>` cannot desynchronise its
+ * expanded state from what is on screen, and `NavDisclosure` adds the one behaviour
+ * the element lacks — closing once the visitor has gone somewhere.
  */
 export function MobileNav() {
   return (
-    <details className="mobile-nav" style={{ marginLeft: 'auto' }}>
-      <summary className="btn secondary compact">Menu</summary>
-      <nav aria-label="Primary, mobile" style={{ paddingTop: 8, display: 'grid', gap: 4 }}>
-        {navigation.map((item) => (
-          <Link key={item.href} href={item.href} className="btn quiet compact">
-            {item.label}
-          </Link>
-        ))}
-        <Link href="/sign-in" className="btn quiet compact">
-          Sign in
+    <NavDisclosure className="mobile-nav" summary="Menu" label="Primary, mobile">
+      {navigation.map((item) => (
+        <Link key={item.href} href={item.href} className="btn quiet">
+          {item.label}
         </Link>
-        <Link href="/sign-up" className="btn compact">
-          Get started
-        </Link>
-      </nav>
-    </details>
+      ))}
+      <Link href="/sign-in" className="btn quiet">
+        Sign in
+      </Link>
+      <Link href="/sign-up" className="btn">
+        Get started
+      </Link>
+    </NavDisclosure>
   );
 }

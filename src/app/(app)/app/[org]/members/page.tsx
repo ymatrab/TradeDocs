@@ -4,6 +4,7 @@ import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { DataTable, EmptyValue } from '@/components/primitives/table';
+import { roleLabel } from '@/lib/labels';
 import { MemberRow } from './member-row';
 import { InviteForm } from './invite-form';
 
@@ -94,7 +95,7 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
                     {invitations.map((invitation) => (
                       <tr key={invitation.id}>
                         <td>{invitation.email}</td>
-                        <td>{invitation.role}</td>
+                        <td>{roleLabel(invitation.role)}</td>
                         <td className="data">
                           {new Date(invitation.expires_at).toISOString().slice(0, 10)}
                         </td>

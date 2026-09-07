@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, EmptyState, Callout } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
+import { roleLabel } from '@/lib/labels';
 import { CreateOrganizationForm } from './create-organization-form';
 
 export const metadata: Metadata = { title: 'Organizations' };
@@ -31,21 +32,25 @@ export default async function OrganizationsPage() {
                 <tr>
                   <th scope="col">Organization</th>
                   <th scope="col">Your role</th>
-                  <th scope="col">Members</th>
+                  <th scope="col">
+                    <span className="sr-only">Actions</span>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {organizations.map((organization) => (
                   <tr key={organization.id}>
                     <td>
-                      <Link className="text-link" href={`/app/${organization.id}/members`}>
+                      <Link className="text-link" href={`/app/${organization.id}`}>
                         {organization.name}
                       </Link>
                     </td>
-                    <td>{roleFor.get(organization.id) ?? 'member'}</td>
+                    <td>{roleLabel(roleFor.get(organization.id) ?? 'member')}</td>
                     <td>
+                      {/* A second link in the row has to go somewhere the first does
+                          not, or it is two names for one destination. */}
                       <Link className="text-link" href={`/app/${organization.id}/members`}>
-                        Manage
+                        Members
                       </Link>
                     </td>
                   </tr>

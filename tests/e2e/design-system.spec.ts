@@ -79,6 +79,61 @@ test('the menu opens, acts and closes on Escape', async ({ page }) => {
   await expect(trigger).toHaveAttribute('aria-expanded', 'false');
 });
 
+test('the workspace stays navigable when the sidebar is gone', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/design-system');
+  await expect(page.locator('.app-sidebar')).toBeHidden();
+
+  // Every destination the sidebar holds has to remain reachable without it.
+  const menu = page.getByRole('button', { name: 'Menu' });
+  await expect(menu).toBeVisible();
+  await menu.click();
+  const navigation = page.getByRole('navigation', { name: 'Workspace and account' });
+  await expect(navigation.getByRole('link', { name: 'Organizations' })).toBeVisible();
+  await expect(navigation.getByRole('link', { name: 'Account' })).toBeVisible();
+  await expect(navigation.getByRole('button', { name: 'Sign out' })).toBeVisible();
+
+  // Escape dismisses it and hands focus back to the control that opened it.
+  await page.keyboard.press('Escape');
+  await expect(navigation).toBeHidden();
+  await expect(menu).toBeFocused();
+});
+
+test('the menu moves between its items with the arrow keys', async ({ page }) => {
+  await page.goto('/design-system');
+  await page.getByRole('button', { name: 'More' }).click();
+  const items = page.getByRole('menuitem');
+  // Opening puts focus on the first item, which is what role="menu" promises.
+  await expect(items.first()).toBeFocused();
+  await page.keyboard.press('ArrowDown');
+  await expect(items.nth(1)).toBeFocused();
+  await page.keyboard.press('Home');
+  await expect(items.first()).toBeFocused();
+});
+
+test('no control offers a touch target under 44 pixels', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/design-system');
+  const undersized = await page.evaluate(() => {
+    // Buttons, link buttons and the search trigger. Inline links inside prose are
+    // deliberately excluded: WCAG exempts them, and padding them would break the
+    // line they sit in.
+    const controls = '.btn, .search-trigger, .app-sidebar nav a, .menu button';
+    return [...document.querySelectorAll<HTMLElement>(controls)]
+      .filter((element) => element.offsetParent !== null)
+      .map((element) => {
+        // A compact control keeps its small drawing and carries the hit area on a
+        // pseudo-element, so the larger of the two is what a finger gets.
+        const drawn = element.getBoundingClientRect().height;
+        const extended = parseFloat(getComputedStyle(element, '::after').minHeight) || 0;
+        const name = element.textContent?.trim().slice(0, 40) || element.tagName;
+        return { name, height: Math.max(drawn, extended) };
+      })
+      .filter((entry) => entry.height < 44);
+  });
+  expect(undersized).toEqual([]);
+});
+
 test('a pending action announces itself and reports the result', async ({ page }) => {
   await page.goto('/design-system');
   const save = page.getByRole('button', { name: 'Save draft' });
