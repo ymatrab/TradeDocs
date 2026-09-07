@@ -27,7 +27,13 @@ export function InviteForm({ org }: { org: string }) {
         </Callout>
       ) : null}
 
-      <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+      <div
+        style={{
+          display: 'grid',
+          gap: 16,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        }}
+      >
         <Field id="invite-email" label="Email address">
           {({ id, describedBy }) => (
             <Input id={id} name="email" type="email" required aria-describedby={describedBy} />

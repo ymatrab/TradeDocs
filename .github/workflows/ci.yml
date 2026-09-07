@@ -27,10 +27,6 @@ jobs:
           cache: npm
       - run: npm install --global npm@11.11.1
       - run: npm ci
-      # TEMPORARY (Task 04): format in the runner and publish the exact patch, so formatting,
-      # lint, typecheck and the build are all reported by a single pass. Removed before commit.
-      - name: Formatting patch
-        run: npm run format && git --no-pager diff > format.patch
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
@@ -62,7 +58,6 @@ jobs:
             playwright-report/
             test-results/
             sbom.json
-            format.patch
           retention-days: 30
   database:
     runs-on: ubuntu-24.04
@@ -92,11 +87,43 @@ jobs:
           else
             echo "::warning::No committed types yet. Take them from the database-evidence artifact."
           fi
+      - name: Publish the disposable stack's credentials to later steps
+        run: |
+          npx supabase status -o env | grep -E '^[A-Z_]+=' > stack.env
+          set -a; . ./stack.env; set +a
+          echo "::add-mask::$ANON_KEY"
+          echo "::add-mask::$SERVICE_ROLE_KEY"
+          {
+            echo "SUPABASE_URL=$API_URL"
+            echo "SUPABASE_ANON_KEY=$ANON_KEY"
+            echo "SUPABASE_SERVICE_ROLE_KEY=$SERVICE_ROLE_KEY"
+          } >> "$GITHUB_ENV"
+          rm -f stack.env
+      - name: Build the service application
+        run: npm run build
+        env:
+          APP_ENV: test
+          APP_URL: http://127.0.0.1:3000
+          APPLICATION_MODE: service
+          SUPABASE_PROJECT_REF: localtestproject
+          SUPABASE_ENVIRONMENT: test
+      - run: npx playwright install --with-deps chromium
+      - name: Prove identity, tenancy and lifecycle against the running application
+        run: npx playwright test tests/e2e/identity.spec.ts --project=chromium
+        env:
+          APP_ENV: test
+          APP_URL: http://127.0.0.1:3000
+          APPLICATION_MODE: service
+          SUPABASE_PROJECT_REF: localtestproject
+          SUPABASE_ENVIRONMENT: test
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: database-evidence
-          path: database.types.generated.ts
+          path: |
+            database.types.generated.ts
+            playwright-report/
+            test-results/
           retention-days: 30
       - if: always()
         run: npx supabase stop --no-backup

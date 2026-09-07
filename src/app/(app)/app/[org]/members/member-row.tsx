@@ -55,7 +55,13 @@ export function MemberRow({
               <option value="admin">admin</option>
               <option value="member">member</option>
             </select>
-            <Button type="submit" tone="secondary" compact pending={rolePending} pendingLabel="Saving…">
+            <Button
+              type="submit"
+              tone="secondary"
+              compact
+              pending={rolePending}
+              pendingLabel="Saving…"
+            >
               Save
             </Button>
           </form>
