@@ -8,7 +8,7 @@ const viewports = [
 ] as const;
 
 test('showcase renders every component group and passes axe', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   await expect(page.getByRole('heading', { name: 'Design system', level: 1 })).toBeVisible();
   for (const section of ['Actions', 'Forms', 'Tables', 'Document primitives', 'States and disclosure']) {
     await expect(page.getByRole('heading', { name: section, level: 2 })).toBeVisible();
@@ -23,7 +23,7 @@ test('showcase renders every component group and passes axe', async ({ page }) =
 });
 
 test('a field states its own validation failure', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   const invalid = page.getByLabel('HS code');
   await expect(invalid).toHaveAttribute('aria-invalid', 'true');
   // The message must be associated, not merely adjacent.
@@ -33,12 +33,12 @@ test('a field states its own validation failure', async ({ page }) => {
 });
 
 test('an absent value is stated rather than left blank', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   await expect(page.getByText('No HS code recorded')).toBeAttached();
 });
 
 test('dialog traps nothing and returns focus to its invoker', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   const invoker = page.getByRole('button', { name: 'Open dialog' });
   await invoker.click();
   const dialog = page.getByRole('dialog');
@@ -50,7 +50,7 @@ test('dialog traps nothing and returns focus to its invoker', async ({ page }) =
 });
 
 test('tabs move with arrow keys and expose the selected panel', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   const summary = page.getByRole('tab', { name: 'Summary' });
   await summary.focus();
   await expect(summary).toHaveAttribute('aria-selected', 'true');
@@ -62,7 +62,7 @@ test('tabs move with arrow keys and expose the selected panel', async ({ page })
 });
 
 test('the menu opens, acts and closes on Escape', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   const trigger = page.getByRole('button', { name: 'More' });
   await trigger.click();
   await expect(trigger).toHaveAttribute('aria-expanded', 'true');
@@ -74,7 +74,7 @@ test('the menu opens, acts and closes on Escape', async ({ page }) => {
 });
 
 test('a pending action announces itself and reports the result', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   const save = page.getByRole('button', { name: 'Save draft' });
   await save.click();
   await expect(page.getByRole('button', { name: 'Working…' })).toHaveAttribute('aria-busy', 'true');
@@ -82,7 +82,7 @@ test('a pending action announces itself and reports the result', async ({ page }
 });
 
 test('reloading the showcase restores it unchanged', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Design system', level: 1 })).toBeVisible();
 });
@@ -108,7 +108,7 @@ test('the public page carries its boundary statement and passes axe', async ({ p
 test('no viewport scrolls horizontally', async ({ page }) => {
   for (const viewport of viewports) {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
-    await page.goto('/_design');
+    await page.goto('/design-system');
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true);
@@ -116,7 +116,7 @@ test('no viewport scrolls horizontally', async ({ page }) => {
 });
 
 test('print hides navigation and keeps document identity', async ({ page }) => {
-  await page.goto('/_design');
+  await page.goto('/design-system');
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.app-sidebar')).toBeHidden();
   await expect(page.locator('.search-trigger')).toBeHidden();
@@ -125,7 +125,7 @@ test('print hides navigation and keeps document identity', async ({ page }) => {
 
 test('visual reference at three viewports', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'chromium', 'One engine is enough for visual reference.');
-  for (const route of ['/', '/_design']) {
+  for (const route of ['/', '/design-system']) {
     for (const viewport of viewports) {
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
       await page.goto(route);

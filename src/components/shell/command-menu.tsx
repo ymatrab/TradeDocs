@@ -36,10 +36,15 @@ export function CommandMenu() {
 
   return (
     <>
-      <button type="button" className="search-trigger" onClick={() => setOpen(true)}>
+      <button
+        type="button"
+        className="search-trigger"
+        onClick={() => setOpen(true)}
+        aria-label="Search shipments and documents"
+      >
         <Search size={15} aria-hidden="true" />
-        Search shipments and documents
-        <kbd style={{ marginLeft: 'auto' }}>Ctrl K</kbd>
+        <span className="search-trigger-label">Search shipments and documents</span>
+        <kbd>Ctrl K</kbd>
       </button>
       <Dialog
         open={open}

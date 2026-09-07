@@ -19,18 +19,22 @@ const calloutIcon = {
 export function Callout({
   tone = 'neutral',
   title,
+  /** Set so the callout does not skip a level in its surrounding outline. */
+  level = 3,
   children,
 }: {
   tone?: CalloutTone;
   title: string;
+  level?: 2 | 3 | 4;
   children: ReactNode;
 }) {
   const Icon = calloutIcon[tone];
+  const Heading: 'h2' | 'h3' | 'h4' = `h${level}`;
   return (
     <div className={tone === 'neutral' ? 'callout' : `callout ${tone}`}>
       <Icon size={18} aria-hidden="true" />
       <div>
-        <h3>{title}</h3>
+        <Heading>{title}</Heading>
         <p className="muted">{children}</p>
       </div>
     </div>

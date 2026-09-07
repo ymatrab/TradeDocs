@@ -1,5 +1,5 @@
 import { afterEach, expect, it, vi } from 'vitest';
-import DesignSystemPage from '@/app/_design/page';
+import DesignSystemPage from '@/app/design-system/page';
 
 afterEach(() => {
   vi.unstubAllEnvs();

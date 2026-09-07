@@ -51,7 +51,7 @@ function Controls() {
               setTimeout(() => {
                 setPending(false);
                 notify('success', 'Draft saved.');
-              }, 900);
+              }, 2000);
             }}
           >
             Save draft

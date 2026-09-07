@@ -4,7 +4,7 @@ import { ShieldAlert } from 'lucide-react';
 
 const navigation = [
   { href: '/', label: 'Overview' },
-  { href: '/_design', label: 'Design system' },
+  { href: '/design-system', label: 'Design system' },
 ] as const;
 
 function Wordmark({ className }: { className?: string }) {

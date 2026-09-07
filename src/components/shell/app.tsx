@@ -11,10 +11,10 @@ const sections = [
   {
     caption: 'Workspace',
     items: [
-      { href: '/_design', label: 'Dashboard', icon: LayoutDashboard },
-      { href: '/_design', label: 'Shipments', icon: Package },
-      { href: '/_design', label: 'Documents', icon: FileStack },
-      { href: '/_design', label: 'Directory', icon: Users },
+      { href: '/design-system', label: 'Dashboard', icon: LayoutDashboard },
+      { href: '/design-system', label: 'Shipments', icon: Package },
+      { href: '/design-system', label: 'Documents', icon: FileStack },
+      { href: '/design-system', label: 'Directory', icon: Users },
     ],
   },
 ] as const;

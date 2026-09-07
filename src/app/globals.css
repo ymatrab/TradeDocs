@@ -820,6 +820,9 @@ h3 {
   font-size: 14px;
   min-width: 220px;
 }
+.search-trigger-label {
+  margin-right: auto;
+}
 kbd {
   font-family: var(--font-data);
   font-size: var(--caption);
@@ -870,6 +873,20 @@ kbd {
   }
   .public-nav {
     display: none;
+  }
+  /* The trigger keeps its accessible name and collapses to its icon. */
+  .search-trigger {
+    min-width: 0;
+  }
+  .search-trigger-label,
+  .search-trigger kbd {
+    display: none;
+  }
+  .app-topbar h1 {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .bar-inner,
   .public-main {

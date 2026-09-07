@@ -27,7 +27,7 @@ export default function Home() {
       </BoxGrid>
 
       <div style={{ marginTop: 32, display: 'grid', gap: 16, maxWidth: 760 }}>
-        <Callout tone="legal" title="This environment is not open for customer use">
+        <Callout tone="legal" level={2} title="This environment is not open for customer use">
           The platform is being built from its production specification. No account, shipment or
           document can be created here yet.
         </Callout>

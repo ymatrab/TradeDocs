@@ -1,6 +1,6 @@
 # Design system
 
-Status: implemented by Task 03. Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/_design`, which returns 404 in production.
+Status: implemented by Task 03. Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/design-system`, which returns 404 in production.
 
 Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-09-06.
 
