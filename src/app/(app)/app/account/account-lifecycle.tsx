@@ -1,22 +1,19 @@
 'use client';
 
-import { useActionState, useState, useTransition } from 'react';
+import { useActionState, useState } from 'react';
 import { Button } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { Dialog } from '@/components/primitives/dialog';
 import { Field, Input } from '@/components/primitives/form';
-import { cancelAccountDeletion, requestAccountDeletion, type ActionState } from '../../actions';
+import { updateAccountLifecycle, type ActionState } from '../../actions';
 
 export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boolean }) {
-  const [deleteState, deleteAction, deletePending] = useActionState<ActionState, FormData>(
-    requestAccountDeletion,
+  // One action for both outcomes, so the latest result is always the one on screen.
+  const [state, action, pending] = useActionState<ActionState, FormData>(
+    updateAccountLifecycle,
     {},
   );
-  const [cancelState, setCancelState] = useState<ActionState>({});
-  const [cancelPending, startCancel] = useTransition();
   const [confirming, setConfirming] = useState(false);
-
-  const state = deleteState.error || deleteState.notice ? deleteState : cancelState;
 
   return (
     <div style={{ display: 'grid', gap: 16 }}>
@@ -39,18 +36,12 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
 
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         {deletionScheduled ? (
-          <Button
-            tone="secondary"
-            pending={cancelPending}
-            pendingLabel="Withdrawing…"
-            onClick={() =>
-              startCancel(async () => {
-                setCancelState(await cancelAccountDeletion());
-              })
-            }
-          >
-            Withdraw the deletion request
-          </Button>
+          <form action={action}>
+            <input type="hidden" name="intent" value="withdraw" />
+            <Button type="submit" tone="secondary" pending={pending} pendingLabel="Withdrawing…">
+              Withdraw the deletion request
+            </Button>
+          </form>
         ) : (
           <Button tone="danger" onClick={() => setConfirming(true)}>
             Delete my account
@@ -72,7 +63,7 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
               type="submit"
               form="confirm-deletion"
               tone="danger"
-              pending={deletePending}
+              pending={pending}
               pendingLabel="Scheduling…"
             >
               Schedule deletion
@@ -84,9 +75,10 @@ export function AccountLifecycle({ deletionScheduled }: { deletionScheduled: boo
           id="confirm-deletion"
           action={(formData) => {
             setConfirming(false);
-            deleteAction(formData);
+            action(formData);
           }}
         >
+          <input type="hidden" name="intent" value="schedule" />
           <Field
             id="confirm-password"
             label="Confirm with your password"

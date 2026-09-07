@@ -141,11 +141,7 @@ export async function acceptInvitation(
  * Scheduling a deletion is destructive enough to require the password again. A session
  * left open on a shared machine must not be enough to queue someone's account for removal.
  */
-export async function requestAccountDeletion(
-  _previous: ActionState,
-  formData: FormData,
-): Promise<ActionState> {
-  const password = read(formData, 'password');
+async function scheduleDeletion(password: string): Promise<ActionState> {
   if (!password) return { error: 'Enter your password to confirm.' };
 
   const client = await createClient();
@@ -166,10 +162,24 @@ export async function requestAccountDeletion(
   return { notice: 'Deletion is scheduled. You can withdraw it during the grace period.' };
 }
 
-export async function cancelAccountDeletion(): Promise<ActionState> {
+async function withdrawDeletion(): Promise<ActionState> {
   const client = await createClient();
   const { error } = await client.rpc('cancel_account_deletion');
   if (error) return { error: 'There is no deletion request to withdraw.' };
   revalidatePath('/app/account');
   return { notice: 'Deletion withdrawn. Your account stays open.' };
+}
+
+/**
+ * Both lifecycle outcomes share one action, so the screen has a single message to show.
+ * Holding a result per action meant whichever ran first kept the display for good.
+ */
+export async function updateAccountLifecycle(
+  _previous: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const intent = read(formData, 'intent');
+  if (intent === 'withdraw') return withdrawDeletion();
+  if (intent === 'schedule') return scheduleDeletion(read(formData, 'password'));
+  return { error: 'That request was not recognised.' };
 }
