@@ -1,59 +1,77 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { FileStack, LayoutDashboard, Package, Users } from 'lucide-react';
+import { FileStack, LayoutDashboard, LogOut, Package, UserCog, Users } from 'lucide-react';
 import { CommandMenu } from '@/components/shell/command-menu';
 
 /**
- * The authenticated shell. Routes are placeholders until the tasks that own
- * them land; the shell exists now so later tasks add pages, not chrome.
+ * The authenticated shell. Workspace links carry the organization in the path, so the
+ * tenant a page acts on is never implied by hidden state.
  */
-const sections = [
-  {
-    caption: 'Workspace',
-    items: [
-      { href: '/design-system', label: 'Dashboard', icon: LayoutDashboard },
-      { href: '/design-system', label: 'Shipments', icon: Package },
-      { href: '/design-system', label: 'Documents', icon: FileStack },
-      { href: '/design-system', label: 'Directory', icon: Users },
-    ],
-  },
-] as const;
-
 export function AppShell({
   title,
-  current = 'Dashboard',
+  current,
+  orgId,
   children,
 }: {
   title: string;
   current?: string;
+  orgId?: string;
   children: ReactNode;
 }) {
+  const workspace = orgId
+    ? [
+        { href: `/app/${orgId}`, label: 'Overview', icon: LayoutDashboard },
+        { href: `/app/${orgId}/shipments`, label: 'Shipments', icon: Package },
+        { href: `/app/${orgId}/documents`, label: 'Documents', icon: FileStack },
+        { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
+      ]
+    : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
+
   return (
     <div className="app-shell">
       <aside className="app-sidebar">
-        <Link href="/" className="wordmark">
+        <Link href="/app" className="wordmark">
           <span className="rule" aria-hidden="true" />
           TradeDocs
         </Link>
-        {sections.map((section) => (
-          <div key={section.caption}>
-            <p className="caption" style={{ marginBottom: 8 }}>
-              {section.caption}
-            </p>
-            <nav aria-label={section.caption}>
-              {section.items.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  aria-current={item.label === current ? 'page' : undefined}
-                >
-                  <item.icon size={17} aria-hidden="true" />
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        ))}
+        <div>
+          <p className="caption" style={{ marginBottom: 8 }}>
+            Workspace
+          </p>
+          <nav aria-label="Workspace">
+            {workspace.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                aria-current={item.label === current ? 'page' : undefined}
+              >
+                <item.icon size={17} aria-hidden="true" />
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div style={{ marginTop: 'auto' }}>
+          <p className="caption" style={{ marginBottom: 8 }}>
+            Account
+          </p>
+          <nav aria-label="Account">
+            <Link href="/app/account" aria-current={current === 'Account' ? 'page' : undefined}>
+              <UserCog size={17} aria-hidden="true" />
+              Account
+            </Link>
+          </nav>
+          <form action="/auth/sign-out" method="post" style={{ marginTop: 4 }}>
+            <button
+              type="submit"
+              className="btn quiet compact"
+              style={{ color: 'inherit', width: '100%', justifyContent: 'flex-start', gap: 12 }}
+            >
+              <LogOut size={17} aria-hidden="true" />
+              Sign out
+            </button>
+          </form>
+        </div>
       </aside>
       <div style={{ minWidth: 0 }}>
         <header className="app-topbar">

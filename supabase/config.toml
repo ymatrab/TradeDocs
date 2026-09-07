@@ -22,10 +22,17 @@ enabled = false
 
 [auth]
 enabled = true
-site_url = "http://localhost:3000"
-additional_redirect_urls = []
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["http://127.0.0.1:3000/auth/callback"]
 enable_signup = true
 enable_anonymous_sign_ins = false
+
+# Local and CI only. A deployed environment MUST require email confirmation; that is set on
+# the hosted project, and Task 25 checks it before launch.
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+double_confirm_changes = true
 
 [storage]
 enabled = true
