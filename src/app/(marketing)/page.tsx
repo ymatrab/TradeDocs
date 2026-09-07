@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Check, FileCheck2, FileSpreadsheet, FileText, Package, Stamp } from 'lucide-react';
+import {
+  ArrowRight,
+  Check,
+  FileCheck2,
+  FileSpreadsheet,
+  FileText,
+  Package,
+  Stamp,
+} from 'lucide-react';
 import { LinkButton } from '@/components/primitives/button';
 
 export const metadata: Metadata = {
