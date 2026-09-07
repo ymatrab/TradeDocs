@@ -32,22 +32,26 @@ Task 03 delivers presentation only. No database, authentication, tenant data or 
 Verification ran entirely in GitHub Actions; the no-local-runs instruction stayed in force and no
 application, browser or build was started on the developer machine.
 
-| Item | Result |
-| --- | --- |
-| Gate run | [34069861800](https://github.com/ymatrab/TradeDocs/actions/runs/34069861800) — all gates green |
-| Playwright | 61 tests passed across chromium, firefox, webkit and the mobile project |
-| Accessibility | axe (wcag2a, wcag2aa, wcag21aa, wcag22aa) clean on `/` and `/design-system` |
-| Visual reference | `test-results/visual/*.png` at 360, 768 and 1440 for both routes; downloaded and inspected |
-| Contrast | Every shipped token measured and recorded in `DESIGN_SYSTEM.md` |
+- Gate run [34069861800](https://github.com/ymatrab/TradeDocs/actions/runs/34069861800): every gate green.
+- Playwright: 61 tests passed across chromium, firefox, webkit and the mobile project.
+- Accessibility: axe (wcag2a, wcag2aa, wcag21aa, wcag22aa) clean on `/` and `/design-system`.
+- Visual reference: `test-results/visual/*.png` at 360, 768 and 1440 for both routes, downloaded and inspected.
+- Contrast: every shipped token measured and recorded in `DESIGN_SYSTEM.md`.
 
 ### Defects found and fixed during verification
 
-| Defect | Cause | Fix |
-| --- | --- | --- |
-| Showcase route returned 404 everywhere | `src/app/_design` is a private folder: the App Router excludes underscore-prefixed directories from routing | Route renamed to `/design-system` |
-| Print test failed in all four engines | The assertion matched the closed dialog's copy of the invoice reference, which is correctly hidden | Assertion scoped to the field-box grid and widened to identity, units, totals and the mandatory disclosure |
-| Unfilled box-grid row rendered a stray grey panel | `gap` over a rule-coloured background paints the gap wherever a cell is missing | Each box carries its own rule as a shadow; neighbouring rules meet in the gap and an unfilled row leaves nothing behind |
-| Headline orphaned a single word at tablet width | Measure was set to 18ch | Widened to 24ch |
+- **The showcase route returned 404 in every engine.** `src/app/_design` is a private folder: the App
+  Router excludes underscore-prefixed directories from routing. Renamed to `/design-system`.
+- **The print case failed in all four engines.** The assertion matched the closed dialog's copy of the
+  invoice reference, which is correctly hidden. Scoped to the field-box grid and widened to cover
+  identity, units, totals and the mandatory disclosure.
+- **An unfilled box-grid row painted a stray grey panel.** A `gap` over a rule-coloured background
+  paints the gap wherever a cell is missing. Each box now carries its own rule as a shadow, so
+  neighbouring rules meet in the gap and an unfilled row leaves nothing behind.
+- **The headline orphaned a single word at tablet width.** The measure was widened from 18ch to 24ch.
+
+The first two were found by the remote gates, and the last two by inspecting the captured
+screenshots. Neither would have been caught by reading the code.
 
 ### Known limitations
 
