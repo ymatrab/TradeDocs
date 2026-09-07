@@ -29,10 +29,7 @@ export function summaryOf(fields: Record<string, string>, fallback: string): str
  * message word for word: two copies of one sentence, and the reader has to work
  * out that they are the same problem. The field keeps it; the summary steps back.
  */
-export function showsSummary(state: {
-  error?: string;
-  fields?: Record<string, string>;
-}): boolean {
+export function showsSummary(state: { error?: string; fields?: Record<string, string> }): boolean {
   if (!state.error) return false;
   return !state.fields || Object.keys(state.fields).length > 1;
 }

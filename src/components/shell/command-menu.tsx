@@ -1,11 +1,23 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { Dialog } from '@/components/primitives/dialog';
 
 type Command = { label: string; href: string; keywords?: string };
+
+/**
+ * Which modifier this keyboard actually carries. The platform cannot change
+ * while the page is open, so there is nothing to subscribe to; the value is read
+ * once on the client and defaults to the non-Apple spelling on the server, which
+ * has no way to know. Reading it through a store rather than an effect keeps the
+ * first paint honest without a second render pass.
+ */
+const APPLE_KEYBOARD = /mac|iphone|ipad/i;
+const neverChanges = () => () => {};
+const readsAsApple = () => APPLE_KEYBOARD.test(navigator.platform || navigator.userAgent);
+const unknownOnServer = () => false;
 
 /**
  * Search and command share one surface, reached by pointer or by the shortcut.
@@ -17,14 +29,8 @@ type Command = { label: string; href: string; keywords?: string };
 export function CommandMenu({ orgId }: { orgId?: string }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const [onMac, setOnMac] = useState(false);
   const input = useRef<HTMLInputElement>(null);
-
-  // Read after mount: the server has no way to know which keyboard this is, and
-  // rendering the wrong modifier is worse than rendering it a frame late.
-  useEffect(() => {
-    setOnMac(/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent));
-  }, []);
+  const onMac = useSyncExternalStore(neverChanges, readsAsApple, unknownOnServer);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {

@@ -56,8 +56,8 @@ export default async function DocumentsPage({ params }: { params: Promise<{ org:
     <AppShell title="Documents" current="Documents" orgId={org}>
       <div style={{ display: 'grid', gap: 24, maxWidth: 1040 }}>
         <Callout tone="legal" title="Preparation only">
-          These documents are prepared from your own data. They are not issued, endorsed,
-          certified or cleared by any authority.
+          These documents are prepared from your own data. They are not issued, endorsed, certified
+          or cleared by any authority.
         </Callout>
 
         <Panel title="Documents">

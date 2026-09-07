@@ -15,12 +15,7 @@ export function InviteForm({ org }: { org: string }) {
   useInvalidFocus(form, state.fields);
 
   return (
-    <form
-      ref={form}
-      action={action}
-      style={{ display: 'grid', gap: 16, maxWidth: 560 }}
-      noValidate
-    >
+    <form ref={form} action={action} style={{ display: 'grid', gap: 16, maxWidth: 560 }} noValidate>
       <input type="hidden" name="org" value={org} />
       {showsSummary(state) ? (
         <Callout tone="danger" title="That did not work" live>
