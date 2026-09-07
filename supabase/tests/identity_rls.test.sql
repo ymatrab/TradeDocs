@@ -58,7 +58,14 @@ select is((select count(*)::int from attempted), 0, 'another tenant''s organizat
 -- Anonymous callers.
 set local role anon;
 set local request.jwt.claims = '{"role":"anon"}';
-select is((select count(*)::int from public.organizations), 0, 'an anonymous caller reads no organization');
+-- Stronger than an empty result: the anonymous role holds no grant, so the table is
+-- unreachable and row policies are never even consulted.
+select throws_ok(
+  $$select count(*) from public.organizations$$,
+  '42501',
+  null,
+  'an anonymous caller cannot reach the organizations table at all'
+);
 select throws_ok(
   $$select public.create_organization('Anonymous Co')$$,
   '42501',

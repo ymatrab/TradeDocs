@@ -74,10 +74,11 @@ jobs:
       # is reachable from here, so every migration and policy is proved against this.
       - name: Start a disposable Supabase stack
         run: npx supabase start
-      - name: Prove tenant isolation and role authority with pgTAP
-        run: npx supabase test db
+      # Generated before the proof so a failing assertion still publishes usable types.
       - name: Generate database types
         run: npx supabase gen types typescript --local > database.types.generated.ts
+      - name: Prove tenant isolation and role authority with pgTAP
+        run: npx supabase test db
       - name: Fail if the committed types are stale
         run: |
           if [ -f src/lib/database.types.ts ]; then
