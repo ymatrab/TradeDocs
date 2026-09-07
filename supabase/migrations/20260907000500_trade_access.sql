@@ -53,17 +53,19 @@ returns text
   set search_path = ''
 as $$
 declare
-  period text := to_char(now(), 'YYYY');
+  -- Named so it cannot be read as the column of the same name: PL/pgSQL resolves an
+  -- ambiguous identifier by raising rather than guessing.
+  current_period text := to_char(now(), 'YYYY');
   allocated integer;
 begin
   insert into public.numbering_sequences (org_id, scope, period, next_value)
-  values (target_org, target_scope, period, 2)
+  values (target_org, target_scope, current_period, 2)
   on conflict (org_id, scope, period)
     do update set next_value = public.numbering_sequences.next_value + 1
   returning case when xmax = 0 then 1 else public.numbering_sequences.next_value - 1 end
   into allocated;
 
-  return prefix || '-' || period || '-' || lpad(allocated::text, 4, '0');
+  return prefix || '-' || current_period || '-' || lpad(allocated::text, 4, '0');
 end;
 $$;
 

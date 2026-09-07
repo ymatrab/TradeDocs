@@ -79,9 +79,9 @@ export default function Home() {
               Trade documents that <em>agree</em> with each other.
             </h1>
             <p className="lede">
-              Enter a shipment once. TradeDocs produces the invoice, the packing list and
-              everything else from that single record — so the quantities, weights and values match
-              on every page you send.
+              Enter a shipment once. TradeDocs produces the invoice, the packing list and everything
+              else from that single record — so the quantities, weights and values match on every
+              page you send.
             </p>
             <div className="cta-row">
               <LinkButton href="/sign-up" tone="accent" className="large">
