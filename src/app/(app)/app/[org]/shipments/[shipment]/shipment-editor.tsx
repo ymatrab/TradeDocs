@@ -1,23 +1,17 @@
 'use client';
 
 import { useActionState, useRef } from 'react';
-import { Download, Trash2 } from 'lucide-react';
-import { Button, LinkButton } from '@/components/primitives/button';
+import { Trash2 } from 'lucide-react';
+import { Button } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
-import { Callout, Panel } from '@/components/primitives/feedback';
+import { Panel } from '@/components/primitives/feedback';
 import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/table';
-import { DocumentStatus, type DocumentState } from '@/components/document/status';
 import { ConfirmButton } from '@/components/primitives/confirm';
+import { ActionResult as Result } from '@/components/primitives/action-result';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
-import { documentKindLabel, documentKindLabels } from '@/lib/labels';
-import { showsSummary } from '@/lib/form-errors';
-import {
-  addItem,
-  generateDocument,
-  removeItem,
-  updateShipment,
-} from '../../../../shipment-actions';
+import { addItem, removeItem, updateShipment } from '../../../../shipment-actions';
 import type { ActionState } from '../../../../actions';
+import { CatalogPicker, type CatalogEntry } from './catalog-picker';
 
 type Item = {
   id: string;
@@ -28,14 +22,6 @@ type Item = {
   unit: string;
   unit_price: string;
   net_weight_kg: string | null;
-};
-
-type GeneratedDocument = {
-  id: string;
-  kind: string;
-  number: string;
-  status: string;
-  stale: boolean;
 };
 
 const incoterms = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
@@ -55,17 +41,6 @@ function figure(value: number, max = 2, min = max): string {
   });
 }
 
-/**
- * A document's own status outranks staleness: a superseded or voided revision is
- * that, whether or not the shipment has since moved on. Only a document the
- * schema still calls current can be reported as stale or final.
- */
-function renderedState(document: GeneratedDocument): DocumentState {
-  if (document.status === 'voided') return 'voided';
-  if (document.status === 'superseded') return 'superseded';
-  return document.stale ? 'stale' : 'final';
-}
-
 function removalNotice(description: string): string {
   return (
     `“${description}” comes off this shipment and its totals recalculate. ` +
@@ -74,38 +49,20 @@ function removalNotice(description: string): string {
   );
 }
 
-function Result({ state }: { state: ActionState }) {
-  if (showsSummary(state)) {
-    return (
-      <Callout tone="danger" title="That did not work" live>
-        {state.error}
-      </Callout>
-    );
-  }
-  if (state.notice) {
-    return (
-      <Callout tone="success" title="Done" live>
-        {state.notice}
-      </Callout>
-    );
-  }
-  return null;
-}
-
 export function ShipmentEditor({
   org,
   shipmentId,
   shipment,
   items,
   totals,
-  documents,
+  catalog,
 }: {
   org: string;
   shipmentId: string;
   shipment: Record<string, string | number | null>;
   items: Item[];
   totals: { quantity: number; value: number; net: number };
-  documents: GeneratedDocument[];
+  catalog: CatalogEntry[];
 }) {
   const [detailState, detailAction, detailPending] = useActionState<ActionState, FormData>(
     updateShipment,
@@ -116,11 +73,6 @@ export function ShipmentEditor({
     removeItem,
     {},
   );
-  const [documentState, documentAction, documentPending] = useActionState<ActionState, FormData>(
-    generateDocument,
-    {},
-  );
-
   const currency = String(shipment.currency ?? 'EUR');
   const detailForm = useRef<HTMLFormElement>(null);
   const itemForm = useRef<HTMLFormElement>(null);
@@ -338,6 +290,26 @@ export function ShipmentEditor({
             </p>
           )}
 
+          {/* Two ways in, in the order they are worth reaching for. Anything shipped more
+              than once belongs in the catalog, where its HS code and weights are stated
+              once and cannot drift between shipments; the form below stays for the line
+              that genuinely happens only here. */}
+          <div style={{ display: 'grid', gap: 12 }}>
+            <h3 className="caption" style={{ margin: 0 }}>
+              Add from the catalog
+            </h3>
+            <CatalogPicker org={org} shipmentId={shipmentId} catalog={catalog} />
+          </div>
+
+          <div style={{ display: 'grid', gap: 12 }}>
+            <h3 className="caption" style={{ margin: 0 }}>
+              Or enter a one-off line
+            </h3>
+            <p className="muted" style={{ margin: 0 }}>
+              Typed here, these values live on this shipment only.
+            </p>
+          </div>
+
           <form ref={itemForm} action={itemAction} style={{ display: 'grid', gap: 16 }} noValidate>
             <input type="hidden" name="org" value={org} />
             <input type="hidden" name="shipment" value={shipmentId} />
@@ -458,79 +430,6 @@ export function ShipmentEditor({
         </div>
       </Panel>
 
-      <Panel title="Documents">
-        <div style={{ display: 'grid', gap: 16 }}>
-          <Result state={documentState} />
-          <form
-            action={documentAction}
-            style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}
-          >
-            <input type="hidden" name="org" value={org} />
-            <input type="hidden" name="shipment" value={shipmentId} />
-            <div style={{ minWidth: 220 }}>
-              <Field id="kind" label="Document type">
-                {({ id }) => (
-                  <Select id={id} name="kind" defaultValue="commercial_invoice">
-                    {Object.entries(documentKindLabels).map(([kind, label]) => (
-                      <option key={kind} value={kind}>
-                        {label}
-                      </option>
-                    ))}
-                  </Select>
-                )}
-              </Field>
-            </div>
-            <Button
-              type="submit"
-              tone="accent"
-              pending={documentPending}
-              pendingLabel="Generating…"
-            >
-              Generate document
-            </Button>
-          </form>
-
-          {documents.length > 0 ? (
-            <DataTable caption="Documents generated from this shipment">
-              <thead>
-                <tr>
-                  <th scope="col">Number</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">State</th>
-                  <th scope="col">
-                    <span className="sr-only">Download</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {documents.map((document) => (
-                  <tr key={document.id}>
-                    <td className="data">{document.number}</td>
-                    <td>{documentKindLabel(document.kind)}</td>
-                    <td>
-                      <DocumentStatus state={renderedState(document)} />
-                    </td>
-                    <td>
-                      <LinkButton
-                        href={`/api/documents/${document.id}`}
-                        tone="secondary"
-                        compact
-                        download
-                      >
-                        <Download size={15} aria-hidden="true" /> PDF
-                      </LinkButton>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </DataTable>
-          ) : (
-            <p className="muted" style={{ marginBottom: 0 }}>
-              No documents yet. Generate one once the shipment has at least one line.
-            </p>
-          )}
-        </div>
-      </Panel>
     </>
   );
 }

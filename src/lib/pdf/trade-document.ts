@@ -76,6 +76,44 @@ export const snapshotSchema = z.object({
     packages: numeric,
     value: numeric,
   }),
+  /**
+   * Present only on snapshots taken after packing was modelled. An older document must
+   * still render exactly as it did, so this is optional rather than defaulted.
+   */
+  packages: z
+    .array(
+      z.object({
+        position: z.number(),
+        kind: z.string(),
+        package_count: z.number(),
+        length_cm: numeric.nullable().optional(),
+        width_cm: numeric.nullable().optional(),
+        height_cm: numeric.nullable().optional(),
+        net_weight_kg: numeric.nullable().optional(),
+        gross_weight_kg: numeric.nullable().optional(),
+        volume_m3: numeric.nullable().optional(),
+        marks: z.string().nullable().optional(),
+        contents: z
+          .array(
+            z.object({
+              position: z.number(),
+              description: z.string(),
+              quantity: numeric,
+              unit: z.string(),
+            }),
+          )
+          .optional(),
+      }),
+    )
+    .optional(),
+  packing_totals: z
+    .object({
+      packages: numeric,
+      gross_weight_kg: numeric,
+      net_weight_kg: numeric,
+      volume_m3: numeric,
+    })
+    .optional(),
 });
 
 export type DocumentSnapshot = z.infer<typeof snapshotSchema>;
@@ -330,13 +368,111 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.4, 0.82);
   }
 
+  // How the goods are packed, on the documents whose readers load and check the truck.
+  // Drawn from explicitly described packages; when none were described the document falls
+  // back to the per-line carton counts, which is all it ever had.
+  const packedOn = snapshot.kind === 'packing_list' || snapshot.kind === 'delivery_note';
+  const packing = packedOn ? (snapshot.packages ?? []) : [];
+
+  if (packing.length > 0) {
+    if (cursor < MARGIN + 150) startPage(true);
+    cursor -= 14;
+    page.text('PACKING', MARGIN, cursor, { size: 6.5, font: 'bold' });
+    cursor -= 12;
+
+    const packColumns: [string, number, boolean][] = [
+      ['Package', CONTENT_WIDTH - 300, false],
+      ['Qty', 40, true],
+      ['Dimensions (cm)', 110, false],
+      ['Volume m³', 55, true],
+      ['Net kg', 45, true],
+      ['Gross kg', 50, true],
+    ];
+
+    const packHeader = (): void => {
+      page.rect(MARGIN, cursor - 13, CONTENT_WIDTH, 16);
+      let x = MARGIN;
+      for (const [header, width, right] of packColumns) {
+        page.text(header.toUpperCase(), right ? x + width - 6 : x + 6, cursor - 8, {
+          size: 6.5,
+          font: 'bold',
+          align: right ? 'right' : 'left',
+        });
+        x += width;
+      }
+      cursor -= 17;
+      page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.8, 0.35);
+    };
+    packHeader();
+
+    for (const box of packing) {
+      const contents = box.contents ?? [];
+      const rowHeight = 14 + contents.length * 9 + (box.marks ? 9 : 0);
+      if (cursor - rowHeight < MARGIN + 80) {
+        startPage(true);
+        packHeader();
+      }
+
+      const size =
+        box.length_cm != null && box.width_cm != null && box.height_cm != null
+          ? `${decimal(box.length_cm, 1)} × ${decimal(box.width_cm, 1)} × ${decimal(box.height_cm, 1)}`
+          : '—';
+      const values: string[] = [
+        `${box.position}. ${box.kind}`,
+        decimal(box.package_count, 0),
+        size,
+        box.volume_m3 == null ? '—' : decimal(box.volume_m3, 3),
+        box.net_weight_kg == null ? '—' : decimal(box.net_weight_kg, 3),
+        box.gross_weight_kg == null ? '—' : decimal(box.gross_weight_kg, 3),
+      ];
+
+      let x = MARGIN;
+      packColumns.forEach(([, width, right], index) => {
+        page.text(values[index] ?? '', right ? x + width - 6 : x + 6, cursor - 10, {
+          size: 8.5,
+          align: right ? 'right' : 'left',
+        });
+        x += width;
+      });
+      let detail = cursor - 20;
+      if (box.marks) {
+        page.text(box.marks, MARGIN + 12, detail, { size: 7 });
+        detail -= 9;
+      }
+      // Contents are what makes this a packing list rather than a dimension table.
+      for (const content of contents) {
+        page.text(
+          `${decimal(content.quantity, 3)} ${content.unit} · ${content.description}`,
+          MARGIN + 12,
+          detail,
+          { size: 7 },
+        );
+        detail -= 9;
+      }
+      cursor -= rowHeight;
+      page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.4, 0.82);
+    }
+  }
+
   // Totals. Every document type states the figures its readers reconcile against.
   cursor -= 6;
   const totals: [string, string][] = [['Total quantity', decimal(snapshot.totals.quantity, 3)]];
   if (snapshot.kind === 'packing_list') {
-    totals.push(['Total packages', decimal(snapshot.totals.packages, 0)]);
-    totals.push(['Total net weight', `${decimal(snapshot.totals.net_weight_kg, 3)} kg`]);
-    totals.push(['Total gross weight', `${decimal(snapshot.totals.gross_weight_kg, 3)} kg`]);
+    // Described packages are the measured truth and take precedence; the per-line counts
+    // are an estimate that only stands in when nothing was described.
+    const packed = packing.length > 0 ? snapshot.packing_totals : undefined;
+    totals.push(['Total packages', decimal(packed?.packages ?? snapshot.totals.packages, 0)]);
+    totals.push([
+      'Total net weight',
+      `${decimal(packed?.net_weight_kg ?? snapshot.totals.net_weight_kg, 3)} kg`,
+    ]);
+    totals.push([
+      'Total gross weight',
+      `${decimal(packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg, 3)} kg`,
+    ]);
+    if (packed && Number(packed.volume_m3) > 0) {
+      totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
+    }
   }
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
     totals.push([
