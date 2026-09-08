@@ -6,59 +6,68 @@
    here; no value is invented that the documentation does not also record.
 --------------------------------------------------------------------------- */
 @theme inline {
-  --color-ink: #152c3e;
-  --color-slate: #5b6874;
-  --color-rust: #bd4218;
-  --color-link: #17608a;
-  --color-focus: #087ca7;
+  --color-ink: #0d1f2b;
+  --color-slate: #54646f;
+  --color-rust: #c2410c;
+  --color-link: #0e6ba8;
+  --color-focus: #0e7fb5;
   --color-danger: #a62424;
   --color-success: #1f6b45;
   --color-caution: #8a5a00;
-  --color-paper: #f5f7fa;
+  --color-paper: #f6f8fa;
   --color-surface: #ffffff;
   --color-control: #7d8b98;
-  --color-rule: #cbd5dd;
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-rule: #dfe5ea;
+  --font-sans: var(--font-text), 'Inter', system-ui, sans-serif;
 }
 
 :root {
   color-scheme: light;
 
-  --ink: #152c3e;
-  --ink-raised: #28495e;
-  --slate: #5b6874;
-  --rust: #bd4218;
-  --rust-deep: #983512;
-  --link: #17608a;
-  --focus: #087ca7;
+  /* Ink is a marine near-black rather than a grey: on a page of tables it keeps the
+     product feeling like shipping rather than like a spreadsheet. Every value below is
+     measured against its ground; see DESIGN_SYSTEM.md. */
+  --ink: #0d1f2b;
+  --ink-raised: #1c3a52;
+  --slate: #54646f;
+  --rust: #c2410c;
+  --rust-deep: #9a3412;
+  --link: #0e6ba8;
+  --focus: #0e7fb5;
   --danger: #a62424;
   --success: #1f6b45;
   --caution: #8a5a00;
-  --paper: #f5f7fa;
+  --paper: #f6f8fa;
   --surface: #ffffff;
   --surface-sunken: #eef2f6;
   --control: #7d8b98;
-  --rule: #cbd5dd;
+  --rule: #dfe5ea;
+
+  /* The reversed ground. A dark band behind the opening and closing of a page is what
+     separates a product that looks considered from one that looks like a form. */
+  --canvas: #0b1b26;
+  --canvas-raised: #122b3a;
+  --canvas-muted: #9db3c0;
+  --amber: #f0a02a;
 
   /* Pressed grounds. A tap has to answer before the server does, so every
-     control darkens on :active. Ratios against white text, or --ink on the two
-     light values: 17.17, 11.13, 9.45 and 11.64. */
-  --ink-pressed: #0c1d29;
+     control darkens on :active. */
+  --ink-pressed: #061219;
   --surface-pressed: #e2e8ee;
-  --rust-pressed: #7d2b0d;
+  --rust-pressed: #7c2d0c;
   --danger-pressed: #741818;
 
-  /* Trade documents are set in workhorse grotesques. A system stack matches the
-     subject and requests no font file, so nothing can shift after paint. */
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-heading: var(--font-display), Arial, Helvetica, sans-serif;
-  --font-data: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+  /* Archivo carries headings at heavy weights, Inter sets running text, and every code
+     or figure is monospaced so a reader can compare it character by character. */
+  --font-body: var(--font-text), 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-display), var(--font-text), system-ui, sans-serif;
+  --font-data: var(--font-code), ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --step--1: 12px;
-  --step-0: 15px;
-  --step-1: 17px;
-  --step-2: 22px;
-  --step-3: 28px;
+  --step--1: 13px;
+  --step-0: 16px;
+  --step-1: 18px;
+  --step-2: 24px;
+  --step-3: 32px;
   --caption: 11px;
 
   --space-1: 4px;
@@ -69,8 +78,16 @@
   --space-6: 32px;
   --space-7: 48px;
 
-  --radius: 4px;
-  --radius-lg: 6px;
+  /* Forms are square and tables are square; the things that float above them are not.
+     Two radii, each earned. */
+  --radius: 6px;
+  --radius-lg: 12px;
+
+  /* Depth, used sparingly: a raised surface is a real claim that something sits above
+     the page, so only cards and menus make it. */
+  --shadow-raised: 0 1px 2px rgb(13 31 43 / 0.05), 0 6px 16px -8px rgb(13 31 43 / 0.16);
+  --shadow-lifted: 0 2px 4px rgb(13 31 43 / 0.06), 0 18px 40px -18px rgb(13 31 43 / 0.28);
+
   --sidebar-width: 246px;
   --topbar-height: 56px;
   --measure: 68ch;
@@ -139,14 +156,16 @@ h3,
   font-family: var(--font-heading);
 }
 h1 {
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.15;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.08;
   letter-spacing: -0.035em;
 }
 h2 {
-  font-size: var(--step-2);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 h3 {
   font-size: var(--step-1);
@@ -216,9 +235,11 @@ h3 {
   background: var(--ink);
   color: var(--surface);
   font-weight: 600;
-  font-size: 14px;
-  min-height: 44px;
-  padding: 10px 18px;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  min-height: 46px;
+  padding: 11px 22px;
+  box-shadow: var(--shadow-raised);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -546,6 +567,9 @@ h3 {
 .panel {
   background: var(--surface);
   border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
 }
 .panel-head {
   padding: var(--space-3) var(--space-4);
@@ -779,18 +803,26 @@ h3 {
   display: grid;
   place-items: center;
   padding: var(--space-5);
+  background:
+    radial-gradient(60rem 40rem at 50% -10%, rgb(14 107 168 / 0.10), transparent 60%),
+    var(--paper);
 }
 .foundation article {
-  max-width: 640px;
+  max-width: 560px;
   width: 100%;
   background: var(--surface);
-  padding: clamp(24px, 5vw, 60px);
+  padding: clamp(28px, 5vw, 52px);
   border: 1px solid var(--rule);
-  border-top: 5px solid var(--rust);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lifted);
 }
 
 .public-header {
-  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgb(255 255 255 / 0.82);
+  backdrop-filter: saturate(1.6) blur(12px);
   border-bottom: 1px solid var(--rule);
 }
 .bar-inner {
@@ -1142,6 +1174,29 @@ kbd {
   .app-shell {
     display: block;
   }
+  /* Paper has no elevation, and a reversed ground prints as a solid block of toner.
+     Both are screen affordances; on paper they are waste and worse legibility. */
+  .panel,
+  .doc-card,
+  .doc-sheet,
+  .btn,
+  .foundation article {
+    box-shadow: none !important;
+  }
+  .hero,
+  .section.dark,
+  .foundation {
+    background: var(--surface) !important;
+    color: var(--ink) !important;
+  }
+  .hero h1,
+  .hero h2,
+  .hero .section-label,
+  .section.dark h2,
+  .section.dark h3,
+  .section.dark .section-label {
+    color: var(--ink) !important;
+  }
   .app-main,
   .public-main,
   .foundation {
@@ -1207,7 +1262,7 @@ kbd {
   --link: #8fc7e8;
   --control: #7f929f;
   --rule: rgb(255 255 255 / 0.22);
-  background: var(--ink);
+  background: var(--canvas);
   color: var(--surface);
 }
 .section.dark h2,
@@ -1236,16 +1291,34 @@ kbd {
   background: var(--rust);
 }
 /* The eyebrow is the one text use of rust, so it is lightened here by hand
-   rather than through the token, which stays a background role. 6.93 on --ink. */
-.section.dark .section-label {
+   rather than through the token, which stays a background role. */
+.section.dark .section-label,
+.hero .section-label {
   color: #f0a184;
 }
-.section.dark .section-label::before {
+.section.dark .section-label::before,
+.hero .section-label::before {
   background: #f0a184;
 }
 
 .hero {
-  padding: clamp(40px, 6vw, 88px) var(--space-5) clamp(56px, 8vw, 96px);
+  --slate: var(--canvas-muted);
+  --link: #8fc7e8;
+  --rule: rgb(255 255 255 / 0.16);
+  padding: clamp(56px, 8vw, 112px) var(--space-5) clamp(64px, 9vw, 120px);
+  background:
+    radial-gradient(48rem 32rem at 12% -20%, rgb(240 160 42 / 0.16), transparent 62%),
+    radial-gradient(52rem 36rem at 88% 0%, rgb(14 107 168 / 0.28), transparent 60%),
+    var(--canvas);
+  color: var(--surface);
+}
+.hero h1,
+.hero h2 {
+  color: var(--surface);
+}
+/* The eyebrow is a small light on a dark ground; slate would disappear into it. */
+.hero .eyebrow {
+  color: var(--amber);
 }
 .hero .inner {
   max-width: 1180px;
@@ -1269,13 +1342,13 @@ kbd {
 /* Colour, not emphasis: `<em>` here would announce stress the sentence does not
    carry, so the word is a plain span that is merely drawn differently. */
 .hero h1 .accent {
-  color: var(--rust);
+  color: var(--amber);
 }
 .lede {
-  font-size: clamp(17px, 1.6vw, 20px);
-  line-height: 1.5;
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.55;
   color: var(--slate);
-  max-width: 54ch;
+  max-width: 56ch;
 }
 .cta-row {
   display: flex;
@@ -1303,11 +1376,28 @@ kbd {
   gap: var(--space-3);
 }
 .doc-sheet {
+  --slate: #54646f;
+  --rule: #dfe5ea;
   background: var(--surface);
+  color: var(--ink);
   border: 1px solid var(--rule);
   border-top: 4px solid var(--ink);
-  padding: var(--space-4);
-  box-shadow: 0 18px 40px -28px rgb(21 44 62 / 0.55);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.10),
+    0 24px 48px -20px rgb(0 0 0 / 0.55);
+}
+/* Staggered, so the three read as one set of sheets rather than three unrelated cards.
+   The offsets are decorative and collapse on narrow screens, where the horizontal room
+   they need does not exist. */
+@media (min-width: 941px) {
+  .doc-sheet:nth-child(2) {
+    margin-left: var(--space-5);
+  }
+  .doc-sheet:nth-child(3) {
+    margin-left: calc(var(--space-5) * 2);
+  }
 }
 .doc-sheet.accent {
   border-top-color: var(--rust);
@@ -1324,15 +1414,15 @@ kbd {
 .doc-sheet-title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: -0.01em;
 }
 .doc-line {
   display: flex;
   justify-content: space-between;
   gap: var(--space-3);
-  font-size: 13px;
-  padding: 3px 0;
+  font-size: 14px;
+  padding: 4px 0;
 }
 .doc-line .label {
   color: var(--slate);
@@ -1378,18 +1468,39 @@ kbd {
 .doc-card {
   background: var(--surface);
   border: 1px solid var(--rule);
-  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  box-shadow: var(--shadow-raised);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+a.doc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lifted);
+  border-color: var(--control);
+}
+@media (prefers-reduced-motion: reduce) {
+  .doc-card {
+    transition: none;
+  }
+  a.doc-card:hover {
+    transform: none;
+  }
 }
 .doc-card h3 {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
+  letter-spacing: -0.015em;
 }
 .doc-card p {
   color: var(--slate);
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.55;
   margin: 0;
 }
 .doc-card .icon {

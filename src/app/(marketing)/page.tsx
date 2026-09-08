@@ -147,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section dark">
+      <section className="section tinted">
         <div className="inner">
           <p className="section-label">The problem</p>
           <h2 style={{ maxWidth: '20ch', fontSize: 'clamp(26px, 3.4vw, 40px)' }}>

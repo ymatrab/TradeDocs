@@ -1,15 +1,38 @@
 import type { Metadata } from 'next';
-import { Archivo } from 'next/font/google';
+import { Archivo, Inter, JetBrains_Mono } from 'next/font/google';
 import { getPublicBaseUrl, isIndexable } from '@/lib/http/base-url';
 import './globals.css';
 
-// Self-hosted at build time with a size-matched fallback, so a real typeface costs no
-// layout shift. Archivo is a sturdy grotesque: it reads as industrial rather than startup,
-// and its tabular figures keep quantities and totals aligned.
+/**
+ * Three faces, each with a job, all self-hosted at build time so a real typeface costs no
+ * layout shift.
+ *
+ * Archivo carries the headlines at heavy weights — a sturdy grotesque that reads as
+ * industrial rather than startup. Inter sets the running text, because dense trade data
+ * needs a face drawn for screens. JetBrains Mono takes every code and figure: an HS code,
+ * a container number and a document number are strings a reader compares character by
+ * character, and a proportional face makes that harder than it needs to be.
+ *
+ * The previous setup loaded Archivo and then set every word in Arial, which is why the
+ * product looked dated regardless of anything else on the page.
+ */
 const display = Archivo({
   subsets: ['latin'],
+  weight: ['600', '700', '800'],
   display: 'swap',
   variable: '--font-display',
+});
+
+const body = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-text',
+});
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-code',
 });
 
 // Per-request CSP nonces must never be cached in a static HTML artifact.
@@ -41,7 +64,7 @@ export function generateMetadata(): Metadata {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={display.variable}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

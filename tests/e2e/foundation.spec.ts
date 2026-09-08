@@ -39,8 +39,24 @@ test('the workspace is absent from a foundation deployment rather than broken', 
 }) => {
   // Without a database there is no workspace to serve. It must report a missing route, not
   // a server error, which would suggest something had failed instead of being out of scope.
-  for (const route of ['/app', '/sign-in', '/invitations/accept']) {
+  // Nothing public links to either of these, so a 404 is the honest answer.
+  for (const route of ['/app', '/invitations/accept']) {
     const response = await page.goto(route);
     expect(response?.status(), `${route} should be absent, not failing`).toBe(404);
   }
+});
+
+test('a signup link answers honestly instead of looking broken', async ({ page }) => {
+  // Every marketing page carries a "Create a free account" button pointing here. On a
+  // deployment with no database a 404 reads as a broken link rather than as a product
+  // that is not open yet, so these routes answer and explain.
+  for (const route of ['/sign-up', '/sign-in']) {
+    const response = await page.goto(route);
+    expect(response?.status(), `${route} should answer, not 404`).toBe(200);
+    await expect(page.getByRole('heading', { name: 'Accounts aren’t open.' })).toBeVisible();
+  }
+
+  // The offer it makes instead has to actually work.
+  await page.getByRole('link', { name: 'Use the free tools' }).click();
+  await expect(page).toHaveURL('/tools');
 });
