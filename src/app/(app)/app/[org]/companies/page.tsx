@@ -49,9 +49,7 @@ export default async function CompaniesPage({
               <Link
                 className="text-link"
                 href={
-                  showingArchived
-                    ? `/app/${org}/companies`
-                    : `/app/${org}/companies?show=archived`
+                  showingArchived ? `/app/${org}/companies` : `/app/${org}/companies?show=archived`
                 }
               >
                 {showingArchived ? 'Show active' : 'Show archived'}

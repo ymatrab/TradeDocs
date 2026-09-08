@@ -73,7 +73,9 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     } catch {
       // One unrenderable snapshot is a defect in that document, not grounds to deny the
       // operator the rest of a set they are probably about to send.
-      manifest.push(`SKIPPED  ${document.number}  (${documentKindLabel(document.kind)}) — could not be rendered`);
+      manifest.push(
+        `SKIPPED  ${document.number}  (${documentKindLabel(document.kind)}) — could not be rendered`,
+      );
       continue;
     }
 

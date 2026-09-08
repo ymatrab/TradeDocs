@@ -46,8 +46,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     code: 'FCA',
     name: 'Free Carrier',
     mode: 'any',
-    riskPasses:
-      'When the goods are handed to the carrier the buyer nominated, at the named place.',
+    riskPasses: 'When the goods are handed to the carrier the buyer nominated, at the named place.',
     sellerCosts: 'Delivery to that named place, and export clearance.',
     exportClearance: 'seller',
     importClearance: 'buyer',

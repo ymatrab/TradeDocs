@@ -36,7 +36,10 @@ test('the free generator produces a real PDF for a visitor with no account', asy
   await page.goto('/tools/invoice-generator');
 
   await page.getByLabel('Document number').fill('INV-TEST-1');
-  await page.getByRole('region', { name: 'Issued by' }).getByLabel('Company name').fill('Finch Ltd');
+  await page
+    .getByRole('region', { name: 'Issued by' })
+    .getByLabel('Company name')
+    .fill('Finch Ltd');
   await page
     .getByRole('region', { name: 'Addressed to' })
     .getByLabel('Company name')

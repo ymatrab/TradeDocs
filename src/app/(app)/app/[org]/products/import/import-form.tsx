@@ -38,16 +38,16 @@ export function ImportForm({ org }: { org: string }) {
         ) : null}
         {state.ignored && state.ignored.length > 0 ? (
           <Callout tone="warning" title="Some columns were not used">
-            {state.ignored.join(', ')}. Everything else was read. Rename a column if it should
-            have been imported.
+            {state.ignored.join(', ')}. Everything else was read. Rename a column if it should have
+            been imported.
           </Callout>
         ) : null}
 
         <div className="field">
           <label htmlFor="file">Choose a CSV file</label>
           <p className="hint" id="file-hint">
-            Exported from a spreadsheet. Comma, semicolon and tab separated files are all
-            accepted, as are quoted descriptions and European decimal commas.
+            Exported from a spreadsheet. Comma, semicolon and tab separated files are all accepted,
+            as are quoted descriptions and European decimal commas.
           </p>
           <input
             type="file"
@@ -73,7 +73,9 @@ export function ImportForm({ org }: { org: string }) {
               invalid={invalid}
               aria-describedby={describedBy}
               className="textarea data"
-              placeholder={'sku,description,hs_code,origin,unit,unit price\nA-100,Cotton tea towel,630260,IN,pcs,2.40'}
+              placeholder={
+                'sku,description,hs_code,origin,unit,unit price\nA-100,Cotton tea towel,630260,IN,pcs,2.40'
+              }
             />
           )}
         </Field>
@@ -89,8 +91,8 @@ export function ImportForm({ org }: { org: string }) {
         <Panel title="Rows to correct">
           <div style={{ display: 'grid', gap: 12 }}>
             <p className="muted">
-              Row numbers count the products under your heading row, so row 1 is the first
-              product. Fix these and import the file again.
+              Row numbers count the products under your heading row, so row 1 is the first product.
+              Fix these and import the file again.
             </p>
             <DataTable caption="Rows that were rejected" density="compact">
               <thead>

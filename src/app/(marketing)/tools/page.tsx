@@ -47,8 +47,8 @@ export default function ToolsPage() {
         <p className="eyebrow">Free, no account needed</p>
         <h1>Trade tools</h1>
         <p className="lede">
-          The calculations and references that come up before a shipment is booked. Each one runs
-          in your browser: nothing you type about a consignment is sent to us or stored.
+          The calculations and references that come up before a shipment is booked. Each one runs in
+          your browser: nothing you type about a consignment is sent to us or stored.
         </p>
       </section>
 
@@ -68,8 +68,8 @@ export default function ToolsPage() {
         <h2>Why these are free</h2>
         <p className="measure">
           They are the questions people search for on the way to a bigger problem: a set of trade
-          documents that has to agree with itself. If the calculators are useful on their own,
-          good. If they show you that we know the work, better.
+          documents that has to agree with itself. If the calculators are useful on their own, good.
+          If they show you that we know the work, better.
         </p>
       </section>
     </>

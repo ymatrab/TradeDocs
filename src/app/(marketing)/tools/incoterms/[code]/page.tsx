@@ -77,9 +77,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
       </section>
 
       <section className="section">
-        <h2>
-          Other {term.mode === 'sea' ? 'maritime' : 'any-mode'} rules
-        </h2>
+        <h2>Other {term.mode === 'sea' ? 'maritime' : 'any-mode'} rules</h2>
         <div className="doc-stack">
           {others.map((entry) => (
             <Link
@@ -106,9 +104,9 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
         <h2>Putting {term.code} on a document</h2>
         <p className="measure">
           The rule belongs on the invoice with its named place — {term.code} on its own does not
-          identify a delivery point. TradeDocs carries the term and the place from the shipment
-          onto every document generated from it, so an invoice and a packing list cannot state
-          different terms.
+          identify a delivery point. TradeDocs carries the term and the place from the shipment onto
+          every document generated from it, so an invoice and a packing list cannot state different
+          terms.
         </p>
         <div className="cta-row">
           <LinkButton href="/sign-up">Create a free account</LinkButton>

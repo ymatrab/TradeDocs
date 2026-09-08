@@ -57,9 +57,7 @@ export default async function ProductsPage({
               <Link
                 className="text-link"
                 href={
-                  showingArchived
-                    ? `/app/${org}/products`
-                    : `/app/${org}/products?show=archived`
+                  showingArchived ? `/app/${org}/products` : `/app/${org}/products?show=archived`
                 }
               >
                 {showingArchived ? 'Show active' : 'Show archived'}

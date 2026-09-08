@@ -18,13 +18,46 @@ const HEADINGS = [
 ] as const;
 
 const EXAMPLES = [
-  ['A-100', 'Cotton tea towel, 50 x 70 cm', '630260', 'IN', 'pcs', '2.40', '0.12', '0.14', 'carton'],
-  ['A-101', 'Cotton tea towel, 40 x 60 cm', '630260', 'IN', 'pcs', '1.95', '0.09', '0.11', 'carton'],
-  ['B-220', 'Ceramic mug, 350 ml, printed', '691200', 'PT', 'pcs', '3.10', '0.31', '0.38', 'carton'],
+  [
+    'A-100',
+    'Cotton tea towel, 50 x 70 cm',
+    '630260',
+    'IN',
+    'pcs',
+    '2.40',
+    '0.12',
+    '0.14',
+    'carton',
+  ],
+  [
+    'A-101',
+    'Cotton tea towel, 40 x 60 cm',
+    '630260',
+    'IN',
+    'pcs',
+    '1.95',
+    '0.09',
+    '0.11',
+    'carton',
+  ],
+  [
+    'B-220',
+    'Ceramic mug, 350 ml, printed',
+    '691200',
+    'PT',
+    'pcs',
+    '3.10',
+    '0.31',
+    '0.38',
+    'carton',
+  ],
 ] as const;
 
 export function GET() {
-  const body = toCsv(HEADINGS, EXAMPLES.map((row) => [...row]));
+  const body = toCsv(
+    HEADINGS,
+    EXAMPLES.map((row) => [...row]),
+  );
 
   // U+FEFF: without it Excel reads the file as its local codepage and mangles accents.
   return new Response(`\uFEFF${body}`, {

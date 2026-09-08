@@ -176,8 +176,8 @@ export function PackingPanel({
                             const item = byItem.get(content.item_id);
                             return (
                               <li key={content.id}>
-                                {showQuantity(content.quantity)}{' '}
-                                {item?.unit ?? ''} — {item?.description ?? 'Removed line'}{' '}
+                                {showQuantity(content.quantity)} {item?.unit ?? ''} —{' '}
+                                {item?.description ?? 'Removed line'}{' '}
                                 <form
                                   action={dropAction}
                                   style={{ display: 'inline' }}
@@ -246,8 +246,7 @@ export function PackingPanel({
                 <ul style={{ marginTop: 8, marginBottom: 0, paddingLeft: 18 }}>
                   {unreconciled.map(({ item, packed }) => (
                     <li key={item.id}>
-                      {item.description}: {showQuantity(packed)} of{' '}
-                      {showQuantity(item.quantity)}{' '}
+                      {item.description}: {showQuantity(packed)} of {showQuantity(item.quantity)}{' '}
                       {item.unit} allocated
                       {packed > item.quantity ? ' — more packed than invoiced' : ''}
                     </li>
@@ -263,9 +262,9 @@ export function PackingPanel({
           </>
         ) : (
           <p className="muted" style={{ marginBottom: 0 }}>
-            No packages described yet. Add them to state dimensions, marks and volume on the
-            packing list, and to check that what is packed matches what is invoiced. A shipment
-            can be documented without this.
+            No packages described yet. Add them to state dimensions, marks and volume on the packing
+            list, and to check that what is packed matches what is invoiced. A shipment can be
+            documented without this.
           </p>
         )}
 
@@ -300,11 +299,7 @@ export function PackingPanel({
                   />
                 )}
               </Field>
-              <Field
-                id="package_count_new"
-                label="How many"
-                error={addState.fields?.package_count}
-              >
+              <Field id="package_count_new" label="How many" error={addState.fields?.package_count}>
                 {({ id, invalid }) => (
                   <Input
                     id={id}

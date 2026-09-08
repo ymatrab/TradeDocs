@@ -31,9 +31,12 @@ export default async function ImportPage({ params }: { params: Promise<{ org: st
           Column headings are matched loosely, so <span className="data">HS Code</span>,{' '}
           <span className="data">hs_code</span> and <span className="data">Tariff code</span> all
           land in the same field. A product code that already exists is updated rather than
-          duplicated. If any row is unusable, nothing at all is written and every problem is
-          listed at once. <Link className="text-link" href="/api/catalog-template">Download a
-          template</Link> to start from.
+          duplicated. If any row is unusable, nothing at all is written and every problem is listed
+          at once.{' '}
+          <Link className="text-link" href="/api/catalog-template">
+            Download a template
+          </Link>{' '}
+          to start from.
         </Callout>
 
         <Panel title="Import">

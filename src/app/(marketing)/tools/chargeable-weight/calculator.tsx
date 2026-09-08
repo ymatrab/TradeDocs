@@ -87,11 +87,7 @@ export function ChargeableWeightCalculator() {
                 </Select>
               )}
             </Field>
-            <Field
-              id="rule"
-              label="How it ships"
-              hint={VOLUMETRIC_RULES[rule].note}
-            >
+            <Field id="rule" label="How it ships" hint={VOLUMETRIC_RULES[rule].note}>
               {({ id, describedBy }) => (
                 <Select
                   id={id}

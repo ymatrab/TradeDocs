@@ -43,12 +43,7 @@ export function CbmCalculator() {
     <div style={{ display: 'grid', gap: 24 }}>
       <Panel title="Your cartons">
         <div style={{ display: 'grid', gap: 20 }}>
-          <CartonRows
-            cartons={cartons}
-            unit={unit}
-            onChange={setCartons}
-            onUnitChange={setUnit}
-          />
+          <CartonRows cartons={cartons} unit={unit} onChange={setCartons} onUnitChange={setUnit} />
           <div style={{ maxWidth: 240 }}>
             <Field
               id="gross"
@@ -113,11 +108,7 @@ export function CbmCalculator() {
                       value={grossKg > 0 ? `${decimal(option.weightUsed * 100, 1)}%` : '—'}
                     />
                     <td>
-                      {option.fits
-                        ? grossKg > 0
-                          ? option.limitedBy
-                          : 'volume'
-                        : 'Does not fit'}
+                      {option.fits ? (grossKg > 0 ? option.limitedBy : 'volume') : 'Does not fit'}
                     </td>
                   </tr>
                 ))}

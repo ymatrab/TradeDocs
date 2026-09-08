@@ -90,7 +90,10 @@ function toItem(entry: z.infer<typeof line>, index: number) {
 export async function POST(request: NextRequest) {
   const body = await request.text();
   if (body.length > MAX_BODY_BYTES) {
-    return NextResponse.json({ error: 'That document is too large for this tool.' }, { status: 413 });
+    return NextResponse.json(
+      { error: 'That document is too large for this tool.' },
+      { status: 413 },
+    );
   }
 
   let payload: unknown;

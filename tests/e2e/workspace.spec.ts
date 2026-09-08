@@ -109,7 +109,9 @@ test('a line keeps the values it captured when the catalog changes afterwards', 
   await page.goto(productUrl);
   await page.getByLabel('Unit price').fill('9.99');
   await page.getByRole('button', { name: 'Save changes' }).click();
-  await expect(page.getByText('Lines already added to a shipment keep their own values.')).toBeVisible();
+  await expect(
+    page.getByText('Lines already added to a shipment keep their own values.'),
+  ).toBeVisible();
 
   // The line that was already added does not move with it. This is the whole point of
   // copying rather than linking: an invoice cannot be rewritten by a later price change.

@@ -58,10 +58,7 @@ export default function IncotermsPage() {
             {INCOTERMS.map((term) => (
               <tr key={term.code}>
                 <td>
-                  <Link
-                    className="text-link"
-                    href={`/tools/incoterms/${term.code.toLowerCase()}`}
-                  >
+                  <Link className="text-link" href={`/tools/incoterms/${term.code.toLowerCase()}`}>
                     <span className="data">{term.code}</span> — {term.name}
                   </Link>
                 </td>
@@ -97,8 +94,8 @@ export default function IncotermsPage() {
         <h2>On the document itself</h2>
         <p className="measure">
           The rule you agree has to appear on the invoice, with the named place beside it — “FCA
-          Rotterdam” means something; “FCA” alone does not. TradeDocs carries the term and its
-          place on every document generated from a shipment, so the set cannot state two different
+          Rotterdam” means something; “FCA” alone does not. TradeDocs carries the term and its place
+          on every document generated from a shipment, so the set cannot state two different
           answers.
         </p>
         <div className="cta-row">

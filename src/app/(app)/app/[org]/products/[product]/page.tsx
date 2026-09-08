@@ -46,8 +46,8 @@ export default async function ProductPage({
 
         {archived ? (
           <Callout tone="warning" title="Archived">
-            This product no longer appears when adding lines to a shipment. Lines already added
-            keep the values they captured.
+            This product no longer appears when adding lines to a shipment. Lines already added keep
+            the values they captured.
           </Callout>
         ) : null}
 
