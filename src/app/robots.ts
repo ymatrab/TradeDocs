@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { getPublicBaseUrl, isIndexable } from '@/lib/http/base-url';
 
+// Reads the deployment environment, so it must be resolved per request rather than
+// frozen into the build output.
+export const dynamic = 'force-dynamic';
+
 /**
  * Crawling is closed everywhere except the production service.
  *

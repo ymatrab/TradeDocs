@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
@@ -17,6 +18,11 @@ export default async function CompanyPage({
   params: Promise<{ org: string; company: string }>;
 }) {
   const { org, company } = await params;
+  // The id reaches a filter expression below rather than a bound parameter, so it is
+  // checked before it gets there. A path segment is caller-controlled input wherever it
+  // ends up, and `or()` takes syntax, not a value.
+  if (!z.uuid().safeParse(company).success) notFound();
+
   const client = await createClient();
 
   const { data: record } = await client

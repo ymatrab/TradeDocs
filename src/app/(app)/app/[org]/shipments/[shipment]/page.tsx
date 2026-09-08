@@ -29,7 +29,7 @@ export default async function ShipmentPage({
 
   // Everything this screen needs, fetched together. The panels below are the parts of
   // one record, not separate pages, so they must not each pay a round trip.
-  const [itemsResult, documentsResult, packagesResult, contentsResult, companiesResult, catalogResult] =
+  const [itemsResult, documentsResult, packagesResult, companiesResult, catalogResult] =
     await Promise.all([
       client
         .from('shipment_items')
@@ -43,13 +43,9 @@ export default async function ShipmentPage({
         .order('created_at', { ascending: false }),
       client
         .from('shipment_packages')
-        .select('*')
+        .select('*, package_contents (id, item_id, quantity)')
         .eq('shipment_id', shipmentId)
         .order('position', { ascending: true }),
-      client
-        .from('package_contents')
-        .select('id, package_id, item_id, quantity')
-        .eq('org_id', org),
       client
         .from('companies')
         .select('id, name, city, country_code')
@@ -67,8 +63,6 @@ export default async function ShipmentPage({
 
   const lines = itemsResult.data ?? [];
   const packageRows = packagesResult.data ?? [];
-  const packageIds = new Set(packageRows.map((row) => row.id));
-  const contents = (contentsResult.data ?? []).filter((row) => packageIds.has(row.package_id));
 
   const totals = lines.reduce(
     (accumulator, item) => ({
@@ -163,13 +157,11 @@ export default async function ShipmentPage({
             gross_weight_kg: row.gross_weight_kg === null ? null : Number(row.gross_weight_kg),
             volume_m3: row.volume_m3 === null ? null : Number(row.volume_m3),
             marks: row.marks,
-            contents: contents
-              .filter((content) => content.package_id === row.id)
-              .map((content) => ({
-                id: content.id,
-                item_id: content.item_id,
-                quantity: Number(content.quantity),
-              })),
+            contents: row.package_contents.map((content) => ({
+              id: content.id,
+              item_id: content.item_id,
+              quantity: Number(content.quantity),
+            })),
           }))}
           items={lines.map((item) => ({
             id: item.id,

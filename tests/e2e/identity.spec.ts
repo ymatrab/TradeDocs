@@ -193,10 +193,13 @@ test('a shipment produces a downloadable document set', async ({ page }) => {
   await page.getByRole('button', { name: 'Generate document' }).click();
   await expect(page.getByText('Add at least one line before generating a document.')).toBeVisible();
 
-  await page.getByLabel('Description of goods').fill('Industrial bearing housing, cast iron');
-  await page.getByLabel('Quantity').fill('1200');
-  await page.getByLabel('Unit price').fill('15.50');
-  await page.getByLabel('Net weight (kg)').fill('4380');
+  // The screen now carries several forms that each take a quantity and a weight, so the
+  // one being driven is named rather than guessed at by label alone.
+  const oneOff = page.getByRole('form', { name: 'Add a one-off line' });
+  await oneOff.getByLabel('Description of goods').fill('Industrial bearing housing, cast iron');
+  await oneOff.getByLabel('Quantity').fill('1200');
+  await oneOff.getByLabel('Unit price').fill('15.50');
+  await oneOff.getByLabel('Net weight (kg)').fill('4380');
   await page.getByRole('button', { name: 'Add line' }).click();
   await expect(page.getByText('Line added.')).toBeVisible();
 

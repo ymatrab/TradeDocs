@@ -112,7 +112,9 @@ export function PackingPanel({
     <Panel title="Packing">
       <div style={{ display: 'grid', gap: 20 }}>
         <ActionResult state={addState} successTitle="Added" />
-        <ActionResult state={{ notice: removeState.notice, error: removeState.error }} />
+        {/* The removal error is reported inside its confirmation, so only the success
+            reaches the panel; the allocation actions have no dialog and report both. */}
+        <ActionResult state={{ notice: removeState.notice }} />
         <ActionResult state={allocateState} successTitle="Saved" />
         <ActionResult state={{ notice: dropState.notice, error: dropState.error }} />
 
@@ -265,7 +267,12 @@ export function PackingPanel({
           <h3 className="caption" style={{ margin: 0 }}>
             Add a package
           </h3>
-          <form action={addAction} style={{ display: 'grid', gap: 16 }} noValidate>
+          <form
+            action={addAction}
+            aria-label="Add a package"
+            style={{ display: 'grid', gap: 16 }}
+            noValidate
+          >
             <input type="hidden" name="org" value={org} />
             <input type="hidden" name="shipment" value={shipmentId} />
             <div
@@ -337,7 +344,7 @@ export function PackingPanel({
               </Field>
               <Field
                 id="package_net"
-                label="Net weight (kg)"
+                label="Package net weight (kg)"
                 requirement="Optional"
                 error={addState.fields?.net_weight_kg}
               >
@@ -347,7 +354,7 @@ export function PackingPanel({
               </Field>
               <Field
                 id="package_gross"
-                label="Gross weight (kg)"
+                label="Package gross weight (kg)"
                 requirement="Optional"
                 error={addState.fields?.gross_weight_kg}
               >
@@ -381,6 +388,7 @@ export function PackingPanel({
             </h3>
             <form
               action={allocateAction}
+              aria-label="Allocate goods to a package"
               style={{
                 display: 'grid',
                 gap: 16,
@@ -416,7 +424,7 @@ export function PackingPanel({
               </Field>
               <Field
                 id="allocate_quantity"
-                label="Quantity"
+                label="Quantity in this package"
                 hint="Replaces any earlier amount for this line in this package."
                 error={allocateState.fields?.quantity}
               >

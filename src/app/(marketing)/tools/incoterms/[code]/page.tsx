@@ -6,7 +6,7 @@ import { Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { INCOTERMS, INCOTERMS_DISCLAIMER, findIncoterm } from '@/lib/trade/incoterms';
 
-/** Eleven pages, known at build time. Rendered statically because none of it varies. */
+/** The eleven codes this route answers on. Anything else is a 404, not an empty page. */
 export function generateStaticParams() {
   return INCOTERMS.map((term) => ({ code: term.code.toLowerCase() }));
 }

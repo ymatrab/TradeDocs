@@ -310,7 +310,13 @@ export function ShipmentEditor({
             </p>
           </div>
 
-          <form ref={itemForm} action={itemAction} style={{ display: 'grid', gap: 16 }} noValidate>
+          <form
+            ref={itemForm}
+            action={itemAction}
+            aria-label="Add a one-off line"
+            style={{ display: 'grid', gap: 16 }}
+            noValidate
+          >
             <input type="hidden" name="org" value={org} />
             <input type="hidden" name="shipment" value={shipmentId} />
             <Field

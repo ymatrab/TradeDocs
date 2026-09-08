@@ -2,6 +2,10 @@ import type { MetadataRoute } from 'next';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 
+// Reads the deployment environment, so it must be resolved per request rather than
+// frozen into the build output.
+export const dynamic = 'force-dynamic';
+
 /**
  * Only public, indexable routes.
  *

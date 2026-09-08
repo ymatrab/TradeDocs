@@ -53,6 +53,11 @@ export function Callout({
   );
 }
 
+/**
+ * A titled region. The name is carried by `aria-label` as well as the heading, so the
+ * section is a landmark a screen-reader user can jump between rather than an anonymous
+ * box — and so one screen can hold several similar forms that are still tellable apart.
+ */
 export function Panel({
   title,
   actions,
@@ -63,7 +68,7 @@ export function Panel({
   children: ReactNode;
 }) {
   return (
-    <section className="panel">
+    <section className="panel" aria-label={title}>
       <div className="panel-head">
         <h2 className="caption">{title}</h2>
         {actions}

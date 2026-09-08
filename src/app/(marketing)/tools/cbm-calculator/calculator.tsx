@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { Panel } from '@/components/primitives/feedback';
+import { Field, Input } from '@/components/primitives/form';
 import { DataTable, NumericCell } from '@/components/primitives/table';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { decimal } from '@/lib/format';
@@ -49,20 +50,23 @@ export function CbmCalculator() {
             onUnitChange={setUnit}
           />
           <div style={{ maxWidth: 240 }}>
-            <label htmlFor="gross" className="caption" style={{ display: 'block', marginBottom: 6 }}>
-              Total gross weight (kg)
-            </label>
-            <p className="hint" id="gross-hint">
-              Optional. Adds the weight side of the container check.
-            </p>
-            <input
+            <Field
               id="gross"
-              className="input data numeric"
-              inputMode="decimal"
-              value={weight}
-              aria-describedby="gross-hint"
-              onChange={(event) => setWeight(event.target.value)}
-            />
+              label="Total gross weight (kg)"
+              requirement="Optional"
+              hint="Adds the weight side of the container check."
+            >
+              {({ id, describedBy }) => (
+                <Input
+                  id={id}
+                  inputMode="decimal"
+                  value={weight}
+                  aria-describedby={describedBy}
+                  className="input data numeric"
+                  onChange={(event) => setWeight(event.target.value)}
+                />
+              )}
+            </Field>
           </div>
         </div>
       </Panel>

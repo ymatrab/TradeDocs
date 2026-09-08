@@ -75,7 +75,13 @@ export function CatalogPicker({
   }
 
   return (
-    <form ref={form} action={action} style={{ display: 'grid', gap: 16 }} noValidate>
+    <form
+      ref={form}
+      action={action}
+      aria-label="Add from the catalog"
+      style={{ display: 'grid', gap: 16 }}
+      noValidate
+    >
       <input type="hidden" name="org" value={org} />
       <input type="hidden" name="shipment" value={shipmentId} />
       <input type="hidden" name="product" value={chosen?.id ?? ''} />
@@ -111,7 +117,7 @@ export function CatalogPicker({
             />
           )}
         </Field>
-        <Field id="catalog-quantity" label="Quantity" error={state.fields?.quantity}>
+        <Field id="catalog-quantity" label="Quantity to add" error={state.fields?.quantity}>
           {({ id, invalid }) => (
             <Input
               id={id}

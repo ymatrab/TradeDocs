@@ -32,6 +32,8 @@ Do not paste credentials in chat or commit `.env` files. Vendor values belong in
 | ------------------- | ----------------------------------------------------- |
 | `src/app`           | Server routes, layouts and UI                         |
 | `src/components`    | Accessible shared interface                           |
+| `src/lib/trade`     | Trade arithmetic and the Incoterms reference          |
+| `src/lib/pdf`       | Dependency-free PDF rendering of document snapshots   |
 | `src/lib/config`    | Typed environment validation and server-only secrets  |
 | `src/lib/security`  | Privacy and abuse-prevention primitives               |
 | `supabase`          | Versioned database and storage access policy          |

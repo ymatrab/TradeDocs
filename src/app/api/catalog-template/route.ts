@@ -26,7 +26,8 @@ const EXAMPLES = [
 export function GET() {
   const body = toCsv(HEADINGS, EXAMPLES.map((row) => [...row]));
 
-  return new Response(`﻿${body}`, {
+  // U+FEFF: without it Excel reads the file as its local codepage and mangles accents.
+  return new Response(`\uFEFF${body}`, {
     headers: {
       // The BOM above makes Excel open a UTF-8 file without mangling accented names.
       'content-type': 'text/csv; charset=utf-8',
