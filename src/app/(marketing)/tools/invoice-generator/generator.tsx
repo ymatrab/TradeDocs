@@ -293,7 +293,11 @@ export function DocumentGenerator() {
           </Field>
           <Field id="incoterm" label="Incoterm 2020" requirement="Optional">
             {({ id }) => (
-              <Select id={id} value={incoterm} onChange={(event) => setIncoterm(event.target.value)}>
+              <Select
+                id={id}
+                value={incoterm}
+                onChange={(event) => setIncoterm(event.target.value)}
+              >
                 {INCOTERMS.map((term) => (
                   <option key={term || 'none'} value={term}>
                     {term || 'Not stated'}

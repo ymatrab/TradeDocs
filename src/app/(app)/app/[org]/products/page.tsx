@@ -56,7 +56,11 @@ export default async function ProductsPage({
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
               <Link
                 className="text-link"
-                href={showingArchived ? `/app/${org}/products` : `/app/${org}/products?show=archived`}
+                href={
+                  showingArchived
+                    ? `/app/${org}/products`
+                    : `/app/${org}/products?show=archived`
+                }
               >
                 {showingArchived ? 'Show active' : 'Show archived'}
               </Link>

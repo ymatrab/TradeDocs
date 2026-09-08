@@ -120,7 +120,12 @@ export function CompanyForm({ org, company }: { org: string; company?: CompanyVa
       </div>
 
       <div style={columns}>
-        <Field id="contact_name" label="Contact" requirement="Optional" error={state.fields?.contact_name}>
+        <Field
+          id="contact_name"
+          label="Contact"
+          requirement="Optional"
+          error={state.fields?.contact_name}
+        >
           {({ id, describedBy, invalid }) => (
             <Input
               id={id}
@@ -202,7 +207,12 @@ export function CompanyForm({ org, company }: { org: string; company?: CompanyVa
       </div>
 
       <div style={columns}>
-        <Field id="address_line1" label="Address" requirement="Optional" error={state.fields?.address_line1}>
+        <Field
+          id="address_line1"
+          label="Address"
+          requirement="Optional"
+          error={state.fields?.address_line1}
+        >
           {({ id, describedBy, invalid }) => (
             <Input
               id={id}
@@ -248,7 +258,12 @@ export function CompanyForm({ org, company }: { org: string; company?: CompanyVa
             />
           )}
         </Field>
-        <Field id="region" label="Region or state" requirement="Optional" error={state.fields?.region}>
+        <Field
+          id="region"
+          label="Region or state"
+          requirement="Optional"
+          error={state.fields?.region}
+        >
           {({ id, describedBy, invalid }) => (
             <Input
               id={id}
@@ -260,7 +275,12 @@ export function CompanyForm({ org, company }: { org: string; company?: CompanyVa
             />
           )}
         </Field>
-        <Field id="postal_code" label="Postal code" requirement="Optional" error={state.fields?.postal_code}>
+        <Field
+          id="postal_code"
+          label="Postal code"
+          requirement="Optional"
+          error={state.fields?.postal_code}
+        >
           {({ id, describedBy, invalid }) => (
             <Input
               id={id}

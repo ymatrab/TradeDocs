@@ -435,7 +435,6 @@ export function ShipmentEditor({
           </form>
         </div>
       </Panel>
-
     </>
   );
 }

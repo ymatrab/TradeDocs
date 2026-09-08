@@ -50,7 +50,10 @@ const PACKAGE_KINDS = ['carton', 'pallet', 'crate', 'drum', 'bag', 'roll', 'bund
 
 function dimensions(row: PackageRow): string | null {
   if (row.length_cm === null || row.width_cm === null || row.height_cm === null) return null;
-  return `${decimal(row.length_cm, 1)} × ${decimal(row.width_cm, 1)} × ${decimal(row.height_cm, 1)} cm`;
+  return (
+    `${decimal(row.length_cm, 1)} × ${decimal(row.width_cm, 1)} × ` +
+    `${decimal(row.height_cm, 1)} cm`
+  );
 }
 
 /**
@@ -153,7 +156,9 @@ export function PackingPanel({
                       ) : null}
                     </td>
                     <NumericCell value={String(row.package_count)} />
-                    <td className="data">{dimensions(row) ?? <EmptyValue label="Not measured" />}</td>
+                    <td className="data">
+                      {dimensions(row) ?? <EmptyValue label="Not measured" />}
+                    </td>
                     <NumericCell
                       value={row.volume_m3 === null ? '—' : decimal(row.volume_m3, 3)}
                       unit={row.volume_m3 === null ? undefined : 'm³'}
@@ -241,7 +246,8 @@ export function PackingPanel({
                 <ul style={{ marginTop: 8, marginBottom: 0, paddingLeft: 18 }}>
                   {unreconciled.map(({ item, packed }) => (
                     <li key={item.id}>
-                      {item.description}: {showQuantity(packed)} of {showQuantity(item.quantity)}{' '}
+                      {item.description}: {showQuantity(packed)} of{' '}
+                      {showQuantity(item.quantity)}{' '}
                       {item.unit} allocated
                       {packed > item.quantity ? ' — more packed than invoiced' : ''}
                     </li>
