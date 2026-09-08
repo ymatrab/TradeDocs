@@ -190,6 +190,13 @@ export function parseCatalog(text: string): ParsedImport {
  * Normalizes a number as typed. Accepts "1.234,56" and "1,234.56" by treating whichever
  * separator appears last as the decimal point, and strips spaces and currency symbols.
  * Returns null when the text is not a number at all, so the caller reports the row.
+ *
+ * A single separator followed by three digits is genuinely ambiguous — "1,234" is one
+ * thousand to an American and one-and-a-bit to a German — and nothing inside one field
+ * can settle it. The last-separator rule resolves it as a decimal, which is the safer
+ * error of the two: it leaves "0.125" as an eighth of a kilogram rather than reading it
+ * as 125, and a weight with three decimal places is far commoner in a catalog than a
+ * price written with a thousands group and no decimal part.
  */
 export function readDecimal(value: string | undefined): string | null {
   if (value === undefined) return null;

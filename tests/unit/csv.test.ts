@@ -62,8 +62,16 @@ describe('decimal reading', () => {
     expect(readDecimal('1,234.56')).toBe('1234.56');
   });
 
-  it('reads a plain thousands group without a decimal part', () => {
-    expect(readDecimal('1,234')).toBe('1234');
+  // A lone separator before three digits cannot be resolved from the field alone. The
+  // rule picks the decimal reading, and these two pin that choice down so it cannot be
+  // changed by accident: the second is the case that makes the choice the right one.
+  it('resolves a single ambiguous separator as a decimal point', () => {
+    expect(readDecimal('1,234')).toBe('1.234');
+  });
+
+  it('keeps a three-place weight intact rather than reading it as thousands', () => {
+    expect(readDecimal('0.125')).toBe('0.125');
+    expect(readDecimal('0,125')).toBe('0.125');
   });
 
   it('ignores a currency symbol and surrounding space', () => {
