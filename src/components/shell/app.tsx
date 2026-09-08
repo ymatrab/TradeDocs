@@ -1,6 +1,15 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { FileStack, LayoutDashboard, LogOut, Package, UserCog, Users } from 'lucide-react';
+import {
+  Boxes,
+  Building2,
+  FileStack,
+  LayoutDashboard,
+  LogOut,
+  Package,
+  UserCog,
+  Users,
+} from 'lucide-react';
 import { CommandMenu } from '@/components/shell/command-menu';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
 
@@ -31,6 +40,8 @@ export function AppShell({
         { href: `/app/${orgId}`, label: 'Overview', icon: LayoutDashboard },
         { href: `/app/${orgId}/shipments`, label: 'Shipments', icon: Package },
         { href: `/app/${orgId}/documents`, label: 'Documents', icon: FileStack },
+        { href: `/app/${orgId}/products`, label: 'Products', icon: Boxes },
+        { href: `/app/${orgId}/companies`, label: 'Companies', icon: Building2 },
         { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
       ]
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];

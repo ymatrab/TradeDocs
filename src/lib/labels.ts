@@ -28,3 +28,23 @@ export type DocumentKind = keyof typeof documentKindLabels;
 export function documentKindLabel(kind: string): string {
   return documentKindLabels[kind as DocumentKind] ?? kind;
 }
+
+export const companyKindLabels = {
+  own: 'Own company',
+  customer: 'Customer',
+  supplier: 'Supplier',
+} as const;
+
+export type CompanyKind = keyof typeof companyKindLabels;
+
+export function companyKindLabel(kind: string): string {
+  return companyKindLabels[kind as CompanyKind] ?? kind;
+}
+
+export const partyRoleLabels = {
+  exporter_id: 'Exporter',
+  consignee_id: 'Consignee',
+  notify_id: 'Notify party',
+} as const;
+
+export type PartyRole = keyof typeof partyRoleLabels;

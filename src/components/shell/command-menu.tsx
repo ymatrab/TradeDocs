@@ -58,6 +58,27 @@ export function CommandMenu({ orgId }: { orgId?: string }) {
               href: `/app/${orgId}/documents`,
               keywords: 'invoice packing list certificate pdf',
             },
+            {
+              label: 'Products',
+              href: `/app/${orgId}/products`,
+              keywords: 'catalog goods sku hs code price',
+            },
+            { label: 'Add a product', href: `/app/${orgId}/products/new`, keywords: 'new catalog' },
+            {
+              label: 'Import catalog',
+              href: `/app/${orgId}/products/import`,
+              keywords: 'csv spreadsheet upload bulk',
+            },
+            {
+              label: 'Companies',
+              href: `/app/${orgId}/companies`,
+              keywords: 'customers suppliers parties consignee exporter addresses',
+            },
+            {
+              label: 'Add a company',
+              href: `/app/${orgId}/companies/new`,
+              keywords: 'new customer supplier party',
+            },
             { label: 'Members', href: `/app/${orgId}/members`, keywords: 'people roles invite' },
           ]
         : []),
