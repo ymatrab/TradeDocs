@@ -487,15 +487,20 @@ export async function addPackage(_previous: ActionState, formData: FormData): Pr
 
   const { org, shipment, ...values } = parsed.data;
   const client = await createClient();
-  const { count } = await client
+  // As with line items: the next ordinal follows the highest in use, so removing a
+  // package cannot make the next one reuse a number that is still on screen.
+  const { data: last } = await client
     .from('shipment_packages')
-    .select('id', { count: 'exact', head: true })
-    .eq('shipment_id', shipment);
+    .select('position')
+    .eq('shipment_id', shipment)
+    .order('position', { ascending: false })
+    .limit(1)
+    .maybeSingle();
 
   const { error } = await client.from('shipment_packages').insert({
     org_id: org,
     shipment_id: shipment,
-    position: (count ?? 0) + 1,
+    position: (last?.position ?? 0) + 1,
     kind: values.kind,
     package_count: values.package_count,
     length_cm: values.length_cm === null ? null : Number(values.length_cm),

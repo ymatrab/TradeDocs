@@ -152,14 +152,20 @@ export async function addItem(_previous: ActionState, formData: FormData): Promi
 
   const { org, shipment, ...item } = parsed.data;
   const client = await createClient();
-  const { count } = await client
+  // The next ordinal comes from the highest one in use, not from how many lines there
+  // are. Counting gives the same answer only until a line is removed: delete the second
+  // of three and the count says the next line is number three, which one already is.
+  const { data: last } = await client
     .from('shipment_items')
-    .select('id', { count: 'exact', head: true })
-    .eq('shipment_id', shipment);
+    .select('position')
+    .eq('shipment_id', shipment)
+    .order('position', { ascending: false })
+    .limit(1)
+    .maybeSingle();
 
   const { error } = await client
     .from('shipment_items')
-    .insert({ ...item, org_id: org, shipment_id: shipment, position: (count ?? 0) + 1 });
+    .insert({ ...item, org_id: org, shipment_id: shipment, position: (last?.position ?? 0) + 1 });
   if (error) return { error: 'That line could not be added.' };
   revalidatePath(`/app/${org}/shipments/${shipment}`);
   return { notice: 'Line added.' };
