@@ -103,7 +103,9 @@ export type Database = {
         Row: {
           address_line1: string | null
           address_line2: string | null
+          archived_at: string | null
           city: string | null
+          contact_name: string | null
           country_code: string | null
           created_at: string
           email: string | null
@@ -111,6 +113,7 @@ export type Database = {
           kind: string
           legal_name: string | null
           name: string
+          notes: string | null
           org_id: string
           phone: string | null
           postal_code: string | null
@@ -122,7 +125,9 @@ export type Database = {
         Insert: {
           address_line1?: string | null
           address_line2?: string | null
+          archived_at?: string | null
           city?: string | null
+          contact_name?: string | null
           country_code?: string | null
           created_at?: string
           email?: string | null
@@ -130,6 +135,7 @@ export type Database = {
           kind?: string
           legal_name?: string | null
           name: string
+          notes?: string | null
           org_id: string
           phone?: string | null
           postal_code?: string | null
@@ -141,7 +147,9 @@ export type Database = {
         Update: {
           address_line1?: string | null
           address_line2?: string | null
+          archived_at?: string | null
           city?: string | null
+          contact_name?: string | null
           country_code?: string | null
           created_at?: string
           email?: string | null
@@ -149,6 +157,7 @@ export type Database = {
           kind?: string
           legal_name?: string | null
           name?: string
+          notes?: string | null
           org_id?: string
           phone?: string | null
           postal_code?: string | null
@@ -356,6 +365,123 @@ export type Database = {
         }
         Relationships: []
       }
+      package_contents: {
+        Row: {
+          created_at: string
+          id: string
+          item_id: string
+          org_id: string
+          package_id: string
+          quantity: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_id: string
+          org_id: string
+          package_id: string
+          quantity: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_id?: string
+          org_id?: string
+          package_id?: string
+          quantity?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "package_contents_item_id_fkey"
+            columns: ["item_id"]
+            isOneToOne: false
+            referencedRelation: "shipment_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "package_contents_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "package_contents_package_id_fkey"
+            columns: ["package_id"]
+            isOneToOne: false
+            referencedRelation: "shipment_packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          archived_at: string | null
+          country_of_origin: string | null
+          created_at: string
+          currency: string | null
+          description: string
+          gross_weight_kg: number | null
+          hs_code: string | null
+          id: string
+          net_weight_kg: number | null
+          notes: string | null
+          org_id: string
+          package_kind: string | null
+          sku: string | null
+          unit: string
+          unit_price: number
+          units_per_package: number | null
+          updated_at: string
+        }
+        Insert: {
+          archived_at?: string | null
+          country_of_origin?: string | null
+          created_at?: string
+          currency?: string | null
+          description: string
+          gross_weight_kg?: number | null
+          hs_code?: string | null
+          id?: string
+          net_weight_kg?: number | null
+          notes?: string | null
+          org_id: string
+          package_kind?: string | null
+          sku?: string | null
+          unit?: string
+          unit_price?: number
+          units_per_package?: number | null
+          updated_at?: string
+        }
+        Update: {
+          archived_at?: string | null
+          country_of_origin?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string
+          gross_weight_kg?: number | null
+          hs_code?: string | null
+          id?: string
+          net_weight_kg?: number | null
+          notes?: string | null
+          org_id?: string
+          package_kind?: string | null
+          sku?: string | null
+          unit?: string
+          unit_price?: number
+          units_per_package?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "products_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
@@ -393,6 +519,7 @@ export type Database = {
           package_count: number | null
           package_kind: string | null
           position: number
+          product_id: string | null
           quantity: number
           shipment_id: string
           unit: string
@@ -410,6 +537,7 @@ export type Database = {
           package_count?: number | null
           package_kind?: string | null
           position?: number
+          product_id?: string | null
           quantity: number
           shipment_id: string
           unit?: string
@@ -427,6 +555,7 @@ export type Database = {
           package_count?: number | null
           package_kind?: string | null
           position?: number
+          product_id?: string | null
           quantity?: number
           shipment_id?: string
           unit?: string
@@ -441,7 +570,78 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "shipment_items_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "shipment_items_shipment_id_fkey"
+            columns: ["shipment_id"]
+            isOneToOne: false
+            referencedRelation: "shipments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      shipment_packages: {
+        Row: {
+          created_at: string
+          gross_weight_kg: number | null
+          height_cm: number | null
+          id: string
+          kind: string
+          length_cm: number | null
+          marks: string | null
+          net_weight_kg: number | null
+          org_id: string
+          package_count: number
+          position: number
+          shipment_id: string
+          volume_m3: number | null
+          width_cm: number | null
+        }
+        Insert: {
+          created_at?: string
+          gross_weight_kg?: number | null
+          height_cm?: number | null
+          id?: string
+          kind?: string
+          length_cm?: number | null
+          marks?: string | null
+          net_weight_kg?: number | null
+          org_id: string
+          package_count?: number
+          position?: number
+          shipment_id: string
+          width_cm?: number | null
+        }
+        Update: {
+          created_at?: string
+          gross_weight_kg?: number | null
+          height_cm?: number | null
+          id?: string
+          kind?: string
+          length_cm?: number | null
+          marks?: string | null
+          net_weight_kg?: number | null
+          org_id?: string
+          package_count?: number
+          position?: number
+          shipment_id?: string
+          width_cm?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipment_packages_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipment_packages_shipment_id_fkey"
             columns: ["shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
@@ -553,6 +753,14 @@ export type Database = {
     }
     Functions: {
       accept_invitation: { Args: { token: string }; Returns: string }
+      add_product_to_shipment: {
+        Args: {
+          line_quantity: number
+          target_product: string
+          target_shipment: string
+        }
+        Returns: string
+      }
       cancel_account_deletion: { Args: never; Returns: undefined }
       create_invitation: {
         Args: {
@@ -571,6 +779,10 @@ export type Database = {
       generate_document: {
         Args: { document_kind: string; target_shipment: string }
         Returns: string
+      }
+      import_products: {
+        Args: { rows: Json; target_org: string }
+        Returns: Json
       }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
     }
