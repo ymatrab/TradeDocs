@@ -158,9 +158,10 @@ export type ParsedImport = {
  */
 export function parseCatalog(text: string): ParsedImport {
   const table = parseDelimited(text, detectDelimiter(text));
-  if (table.length === 0) return { rows: [], ignored: [], missingDescription: true };
+  const [headingRow, ...body] = table;
+  if (!headingRow) return { rows: [], ignored: [], missingDescription: true };
 
-  const headings = table[0].map(normalizeHeading);
+  const headings = headingRow.map(normalizeHeading);
   const mapped = headings.map((heading) => SYNONYMS[heading]);
   const ignored = headings.filter((heading, index) => heading !== '' && !mapped[index]);
 
@@ -168,7 +169,7 @@ export function parseCatalog(text: string): ParsedImport {
     return { rows: [], ignored, missingDescription: true };
   }
 
-  const rows = table.slice(1).map((cells) => {
+  const rows = body.map((cells) => {
     const row: ImportRow = {};
     mapped.forEach((column, index) => {
       if (!column) return;
@@ -178,7 +179,11 @@ export function parseCatalog(text: string): ParsedImport {
     return row;
   });
 
-  return { rows: rows.filter((row) => (row.description ?? '') !== ''), ignored, missingDescription: false };
+  return {
+    rows: rows.filter((row) => (row.description ?? '') !== ''),
+    ignored,
+    missingDescription: false,
+  };
 }
 
 /**

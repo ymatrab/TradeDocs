@@ -615,6 +615,7 @@ export type Database = {
           package_count?: number
           position?: number
           shipment_id: string
+          volume_m3?: number | null
           width_cm?: number | null
         }
         Update: {
@@ -630,6 +631,7 @@ export type Database = {
           package_count?: number
           position?: number
           shipment_id?: string
+          volume_m3?: number | null
           width_cm?: number | null
         }
         Relationships: [

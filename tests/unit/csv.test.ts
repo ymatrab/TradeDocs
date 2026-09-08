@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { detectDelimiter, parseCatalog, parseDelimited, readDecimal, toCsv } from '@/lib/csv';
 
+/** One parsed cell, raised rather than read as undefined when the shape is wrong. */
+function cell(rows: string[][], row: number, column: number): string {
+  const value = rows[row]?.[column];
+  if (value === undefined) throw new Error(`No cell at row ${row}, column ${column}.`);
+  return value;
+}
+
 describe('delimited parsing', () => {
   it('keeps a comma that belongs to a description rather than splitting on it', () => {
     const rows = parseDelimited('a,"Cotton towel, 50 x 70 cm",c');
@@ -9,13 +16,13 @@ describe('delimited parsing', () => {
 
   it('reads a doubled quote as one literal quote', () => {
     const rows = parseDelimited('"Mug, 350 ml ""Harbour"" print",2');
-    expect(rows[0][0]).toBe('Mug, 350 ml "Harbour" print');
+    expect(cell(rows, 0, 0)).toBe('Mug, 350 ml "Harbour" print');
   });
 
   it('treats a newline inside quotes as part of the field', () => {
     const rows = parseDelimited('"line one\nline two",x');
     expect(rows).toHaveLength(1);
-    expect(rows[0][0]).toBe('line one\nline two');
+    expect(cell(rows, 0, 0)).toBe('line one\nline two');
   });
 
   it('counts a CRLF as one row break and drops a trailing newline', () => {
@@ -27,7 +34,7 @@ describe('delimited parsing', () => {
 
   it('strips the byte order mark Excel writes, so the first heading still matches', () => {
     const rows = parseDelimited('﻿description,price');
-    expect(rows[0][0]).toBe('description');
+    expect(cell(rows, 0, 0)).toBe('description');
   });
 
   it('preserves empty cells so later columns do not shift left', () => {
@@ -105,8 +112,8 @@ describe('catalog reading', () => {
 
   it('reads a semicolon file without treating the row as one column', () => {
     const { rows } = parseCatalog('description;unit price\nTowel;2,40');
-    expect(rows[0].description).toBe('Towel');
-    expect(rows[0].unit_price).toBe('2,40');
+    expect(rows[0]?.description).toBe('Towel');
+    expect(rows[0]?.unit_price).toBe('2,40');
   });
 });
 
@@ -117,6 +124,6 @@ describe('csv writing', () => {
 
   it('escapes a quote by doubling it, so the file reads back unchanged', () => {
     const written = toCsv(['a'], [['say "hi"']]);
-    expect(parseDelimited(written)[1][0]).toBe('say "hi"');
+    expect(cell(parseDelimited(written), 1, 0)).toBe('say "hi"');
   });
 });

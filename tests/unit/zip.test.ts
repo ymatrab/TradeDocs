@@ -3,11 +3,21 @@ import { createZip, crc32, safeFileName } from '@/lib/zip';
 
 const bytes = (text: string) => new TextEncoder().encode(text);
 
-/** Reads a little-endian unsigned integer, the way the format stores every field. */
+/**
+ * Reads a little-endian unsigned integer, the way the format stores every field.
+ *
+ * A read past the end of the archive is a failure of the writer under test, so it is
+ * raised rather than folded into the total as a zero — which would quietly turn a short
+ * archive into a plausible-looking number.
+ */
 function readUint(archive: Uint8Array, offset: number, width: number): number {
   let value = 0;
   for (let index = width - 1; index >= 0; index -= 1) {
-    value = value * 256 + archive[offset + index];
+    const byte = archive[offset + index];
+    if (byte === undefined) {
+      throw new Error(`Archive ends before byte ${offset + index} (length ${archive.length}).`);
+    }
+    value = value * 256 + byte;
   }
   return value;
 }
