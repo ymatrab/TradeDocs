@@ -5,6 +5,7 @@ import { NavDisclosure } from '@/components/shell/nav-disclosure';
 
 const navigation = [
   { href: '/#how', label: 'How it works' },
+  { href: '/tools', label: 'Free tools' },
   { href: '/#pricing', label: 'Pricing' },
 ] as const;
 

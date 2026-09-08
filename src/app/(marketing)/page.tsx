@@ -215,6 +215,34 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" id="tools">
+        <div className="inner">
+          <p className="section-label">Free tools</p>
+          <h2 style={{ marginBottom: 12 }}>Useful before you sign up.</h2>
+          <p className="measure" style={{ marginBottom: 24 }}>
+            The calculations that come up on the way to a shipment, free and without an account.
+            Each one runs in your browser; nothing you type is sent to us.
+          </p>
+          <div className="doc-stack">
+            <Link href="/tools/invoice-generator" className="doc-card">
+              <FileText size={22} aria-hidden="true" />
+              <h3>Commercial invoice generator</h3>
+              <p>Fill it in, download the PDF. No account and no watermark.</p>
+            </Link>
+            <Link href="/tools/cbm-calculator" className="doc-card">
+              <Package size={22} aria-hidden="true" />
+              <h3>CBM calculator</h3>
+              <p>Cubic metres from carton sizes, checked against a container.</p>
+            </Link>
+            <Link href="/tools/incoterms" className="doc-card">
+              <Stamp size={22} aria-hidden="true" />
+              <h3>Incoterms 2020 guide</h3>
+              <p>All eleven rules: who pays, who insures, where risk passes.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section" id="pricing">
         <div className="inner">
           <p className="section-label">Pricing</p>
