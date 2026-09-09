@@ -78,12 +78,12 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
 
       <section className="section">
         <h2>Other {term.mode === 'sea' ? 'maritime' : 'any-mode'} rules</h2>
-        <div className="grid-3">
+        <div className="form-grid">
           {others.map((entry) => (
             <Link
               key={entry.code}
               href={`/tools/incoterms/${entry.code.toLowerCase()}`}
-              className="doc-card"
+              className="form-cell"
             >
               <h3>
                 {entry.code} — {entry.name}

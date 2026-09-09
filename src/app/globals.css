@@ -1223,7 +1223,7 @@ kbd {
   /* Paper has no elevation, and a reversed ground prints as a solid block of toner.
      Both are screen affordances; on paper they are waste and worse legibility. */
   .panel,
-  .doc-card,
+  .form,
   .tie,
   .btn,
   .foundation article {
@@ -1237,11 +1237,15 @@ kbd {
   }
   .hero h1,
   .hero h2,
-  .hero .section-label,
+  .hero .form-meta,
   .section.dark h2,
   .section.dark h3,
-  .section.dark .section-label {
+  .stamp {
     color: var(--ink) !important;
+  }
+  /* The stamp keeps its outline on paper, in ink rather than amber. */
+  .stamp {
+    border-color: var(--ink) !important;
   }
   .app-main,
   .public-main,
@@ -1300,7 +1304,8 @@ kbd {
   padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
 }
 /* The header above is sticky, so an in-page target has to stop below it. */
-.section[id] {
+.section[id],
+.form-box[id] {
   scroll-margin-block-start: 7.5rem;
 }
 /* Kept for the sections that subdivide their column; the width is now inherited. */
@@ -1329,37 +1334,6 @@ kbd {
 .section.dark h2,
 .section.dark h3 {
   color: var(--surface);
-}
-.section.tinted {
-  background: var(--surface);
-  border-block: 1px solid var(--rule);
-}
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: var(--caption);
-  font-weight: 700;
-  color: var(--rust);
-  margin-bottom: var(--space-4);
-}
-.section-label::before {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background: var(--rust);
-}
-/* The eyebrow is the one text use of rust, so it is lightened here by hand
-   rather than through the token, which stays a background role. */
-.section.dark .section-label,
-.hero .section-label {
-  color: #f0a184;
-}
-.section.dark .section-label::before,
-.hero .section-label::before {
-  background: #f0a184;
 }
 
 .hero {
@@ -1584,91 +1558,178 @@ kbd {
   animation-delay: 420ms;
 }
 
-.grid-3 {
+/* --- The sheet ----------------------------------------------------------- */
+/* The page is laid out as the artefact it produces. Trade paperwork is a grid of
+   numbered, bordered boxes captioned in the corner, and the numbers are an address
+   system rather than a running order — box 6 is not step six, it is where marks and
+   numbers go. Numbering the sections on that principle is true to the subject and is
+   the one structure nothing else in this category can honestly borrow.
+
+   The 1px gap is the rule. The sheet's own ground shows through between boxes, so
+   neighbours share a single line instead of drawing two, and a row that does not fill
+   leaves no stray panel behind. */
+.sheet {
+  background: var(--paper);
+  padding-block: clamp(40px, 6vw, 80px);
+  padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
+}
+.form {
   display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-raised);
+}
+.form-box {
+  grid-column: span 12;
+  background: var(--surface);
+  padding: clamp(24px, 3.2vw, 40px);
+  min-width: 0;
+  /* Flow is a flex gap rather than margins, so nothing on the sheet depends on which
+     margin wins between two sibling rules. */
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-.step {
-  border-top: 2px solid var(--rule);
-  padding-top: var(--space-4);
+.form-box > h2,
+.form-box > p,
+.form-box > .form-box-head,
+.form-box > .checklist {
+  margin: 0;
 }
-.step .n {
+.form-box > h2 {
+  font-size: clamp(22px, 2.1vw, 30px);
+}
+.form-box > p {
+  color: var(--slate);
+  line-height: 1.6;
+}
+.form-box .note {
+  font-size: 14px;
+}
+/* The sheet only splits into columns where a box has room to be read in one. */
+@media (min-width: 861px) {
+  .form-box.w7 {
+    grid-column: span 7;
+  }
+  .form-box.w5 {
+    grid-column: span 5;
+  }
+}
+
+/* The corner caption every box carries, the way a printed form names its fields. */
+.form-box-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+}
+.form-ordinal {
+  flex: none;
+  align-self: flex-start;
   font-family: var(--font-data);
   font-size: var(--caption);
   font-weight: 700;
-  color: var(--rust);
-  letter-spacing: 0.1em;
+  line-height: 1.4;
+  padding: 3px 6px;
+  border-radius: 2px;
+  /* White on rust is 5.18:1. */
+  background: var(--rust);
+  color: var(--surface);
 }
-.step h3 {
-  margin: var(--space-2) 0 var(--space-2);
-  font-size: var(--step-1);
-}
-.step p {
+.form-caption {
+  font-family: var(--font-data);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: var(--caption);
+  font-weight: 700;
   color: var(--slate);
-  margin-bottom: 0;
-  font-size: 15px;
 }
 
-.doc-card {
-  background: var(--surface);
+/* Boxes nest: a box that holds several things holds them in the same grid. */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--rule);
   border: 1px solid var(--rule);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5);
+}
+.form-grid.tools {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.form-cell {
+  background: var(--surface);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  box-shadow: var(--shadow-raised);
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    border-color 160ms ease;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
-a.doc-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lifted);
-  border-color: var(--control);
-}
-@media (prefers-reduced-motion: reduce) {
-  .doc-card {
-    transition: none;
-  }
-  a.doc-card:hover {
-    transform: none;
-  }
-}
-.doc-card h3 {
-  font-size: 18px;
+.form-cell h3 {
   margin: 0;
-  letter-spacing: -0.015em;
+  font-size: 16px;
+  letter-spacing: -0.01em;
 }
-.doc-card p {
+.form-cell p {
+  margin: 0;
   color: var(--slate);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.55;
-  margin: 0;
 }
-.doc-card .icon {
+.form-cell .icon {
   color: var(--rust);
 }
-
-.price-card {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-top: 5px solid var(--rust);
-  padding: clamp(24px, 4vw, 40px);
-  max-width: 460px;
+a.form-cell:hover {
+  background: var(--paper);
 }
-.price-amount {
+a.form-cell:active {
+  background: var(--surface-pressed);
+}
+
+/* The document's own header line, above the headline it introduces. */
+.form-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--slate);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.form-meta-end {
+  margin-left: auto;
+}
+/* Two tracked-out strings do not fit a phone; the headline is what matters there. */
+@media (max-width: 640px) {
+  .form-meta-end {
+    display: none;
+  }
+}
+
+.form-box > h2.price-heading {
+  font-size: var(--step-2);
+}
+/* Scoped to beat `.form-box > p`, which is more specific than a bare class and would
+   otherwise hand the figure slate and a 1.6 line-height. */
+.form-box > p.price-amount {
   font-family: var(--font-heading);
-  font-size: 46px;
+  font-size: 56px;
   line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--ink);
 }
 .checklist {
   list-style: none;
   padding: 0;
-  margin: var(--space-4) 0 0;
   display: grid;
   gap: var(--space-2);
 }
@@ -1681,8 +1742,12 @@ a.doc-card:hover {
 .checklist svg {
   color: var(--success);
   margin-top: 3px;
+  flex: none;
 }
 
+.form-box.faq {
+  gap: var(--space-2);
+}
 .faq details {
   border-bottom: 1px solid var(--rule);
 }
@@ -1710,13 +1775,51 @@ a.doc-card:hover {
   flex: none;
 }
 .faq details[open] summary::after {
-  content: '−';
+  content: '\2212';
 }
 .faq summary:hover {
   color: var(--rust);
+}
+.faq summary:active {
+  color: var(--rust-deep);
 }
 .faq p {
   margin: 0 0 var(--space-4);
   color: var(--slate);
   max-width: 72ch;
+}
+
+/* The closing band, and the stamp.
+
+   A stamp is what a trade document gets when an authority has touched it. TradeDocs is
+   not an authority, and the one sentence it is obliged to carry on every surface says
+   so. Making that sentence the mark the page is remembered by turns the constraint into
+   the identity rather than something the design has to work around.
+
+   Amber on the canvas is 8.15:1, so the stamp is drawn at full strength — a faded one
+   would look more like ink and read as less than text. */
+.section.closing .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.section.closing h2 {
+  margin: 0;
+  max-width: 24ch;
+  font-size: clamp(26px, 3.4vw, 40px);
+}
+.stamp {
+  margin: var(--space-6) 0 0;
+  font-family: var(--font-data);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  color: var(--amber);
+  border: 2px solid var(--amber);
+  border-radius: 3px;
+  /* The tracking leaves a gap after the last character, so the padding is not even. */
+  padding: 10px 14px 10px 20px;
+  rotate: -2.5deg;
 }

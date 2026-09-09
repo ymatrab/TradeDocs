@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     'Capture a shipment once and produce a commercial invoice, packing list, delivery note, proforma and certificate of origin that carry the same figures.',
 };
 
+/**
+ * The page is laid out as the thing it sells.
+ *
+ * Trade paperwork is a grid of numbered, bordered boxes, each captioned in its corner,
+ * and the box numbers are an address system rather than a running order: box 6 is not
+ * step six, it is where marks and numbers go. The sections below are numbered on the
+ * same principle. It costs nothing, it is true to the subject, and it is the one layout
+ * that no other product in this category can honestly borrow.
+ */
+
 const documents = [
   {
     icon: FileText,
@@ -45,6 +55,48 @@ const documents = [
   },
 ];
 
+const steps = [
+  {
+    n: '1',
+    title: 'Record your parties and products',
+    detail:
+      'Your company, your customers and the goods you ship, entered once and reused. Change an address and every future document uses it.',
+  },
+  {
+    n: '2',
+    title: 'Build the shipment',
+    detail:
+      'Pick the buyer, add line items with quantities, weights and values, and set the incoterm and route. Totals are calculated, not typed.',
+  },
+  {
+    n: '3',
+    title: 'Generate the document set',
+    detail:
+      'Every document is rendered from the same shipment revision, so they cannot disagree. Download them as PDFs and send them on.',
+  },
+];
+
+const tools = [
+  {
+    icon: FileText,
+    href: '/tools/invoice-generator',
+    name: 'Commercial invoice generator',
+    detail: 'Fill it in, download the PDF. No account and no watermark.',
+  },
+  {
+    icon: Package,
+    href: '/tools/cbm-calculator',
+    name: 'CBM calculator',
+    detail: 'Cubic metres from carton sizes, checked against a container.',
+  },
+  {
+    icon: Stamp,
+    href: '/tools/incoterms',
+    name: 'Incoterms 2020 guide',
+    detail: 'All eleven rules: who pays, who insures, where risk passes.',
+  },
+];
+
 const questions = [
   {
     q: 'Does TradeDocs issue or certify my documents?',
@@ -68,13 +120,26 @@ const questions = [
   },
 ];
 
+/** The caption and ordinal every box on the sheet carries, as a real form would. */
+function BoxHead({ ordinal, caption }: { ordinal: string; caption: string }) {
+  return (
+    <div className="form-box-head">
+      <span className="form-ordinal">{ordinal}</span>
+      <span className="form-caption">{caption}</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="inner">
           <div>
-            <p className="section-label">Shipment workspace</p>
+            <p className="form-meta">
+              <span>Shipment workspace</span>
+              <span className="form-meta-end">Five document types</span>
+            </p>
             <h1>
               Trade documents that <span className="accent">agree</span> with each other.
             </h1>
@@ -96,11 +161,10 @@ export default function Home() {
 
           {/*
             The claim, drawn rather than asserted. One figure entered against a shipment,
-            then the same figure at the box number it carries on each document — 9 on a
-            commercial invoice, 6 on a packing list, 4 on a delivery note. Those numbers
-            are fixed by the forms, so the illustration is the product, not a picture of
-            it. Hidden from assistive technology because the headline and lede already
-            make the same point in words, and hearing one weight four times is noise.
+            then the same figure at the box number it carries on each document. Those
+            numbers are fixed by the forms, so the illustration is the product rather than
+            a picture of it. Hidden from assistive technology because the headline and lede
+            already make the point in words, and hearing one weight four times is noise.
           */}
           <figure className="tie" aria-hidden="true">
             <div className="tie-head">
@@ -131,115 +195,84 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section tinted">
-        <div className="inner">
-          <p className="section-label">The problem</p>
-          <h2 style={{ maxWidth: '20ch', fontSize: 'clamp(26px, 3.4vw, 40px)' }}>
-            One number typed twice is one number that will eventually differ.
-          </h2>
-          <p className="muted measure" style={{ marginTop: 16, fontSize: 17 }}>
-            Most trade paperwork is assembled by copying figures between spreadsheets. The invoice
-            says 1,280 pieces and the packing list says 1,180, and nobody notices until the goods
-            are held, the bank refuses the presentation, or the buyer disputes the total. The
-            correction costs far more than the typo.
-          </p>
-        </div>
-      </section>
-
-      <section className="section" id="how">
-        <div className="inner">
-          <p className="section-label">How it works</p>
-          <h2 style={{ marginBottom: 32 }}>Three steps, and the arithmetic stops being yours.</h2>
-          <div className="grid-3">
-            <div className="step">
-              <span className="n">STEP 01</span>
-              <h3>Record your parties and products</h3>
-              <p>
-                Your company, your customers and the goods you ship, entered once and reused. Change
-                an address and every future document uses it.
-              </p>
-            </div>
-            <div className="step">
-              <span className="n">STEP 02</span>
-              <h3>Build the shipment</h3>
-              <p>
-                Pick the buyer, add line items with quantities, weights and values, and set the
-                incoterm and route. Totals are calculated, not typed.
-              </p>
-            </div>
-            <div className="step">
-              <span className="n">STEP 03</span>
-              <h3>Generate the document set</h3>
-              <p>
-                Every document is rendered from the same shipment revision, so they cannot disagree.
-                Download them as PDFs and send them on.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section tinted">
-        <div className="inner">
-          <p className="section-label">What you get</p>
-          <h2 style={{ marginBottom: 32 }}>The documents a shipment actually needs.</h2>
-          <div className="grid-3">
-            {documents.map((document) => (
-              <article className="doc-card" key={document.name}>
-                <document.icon size={22} aria-hidden="true" className="icon" />
-                <h3>{document.name}</h3>
-                <p>{document.detail}</p>
-              </article>
-            ))}
-          </div>
-          <p className="muted" style={{ marginTop: 24, fontSize: 14, maxWidth: '70ch' }}>
-            TradeDocs prepares these documents. It is not a customs broker, carrier, chamber of
-            commerce or issuing authority, and it does not provide negotiable transport documents.
-          </p>
-        </div>
-      </section>
-
-      <section className="section" id="tools">
-        <div className="inner">
-          <p className="section-label">Free tools</p>
-          <h2 style={{ marginBottom: 12 }}>Useful before you sign up.</h2>
-          <p className="measure" style={{ marginBottom: 24 }}>
-            The calculations that come up on the way to a shipment, free and without an account.
-            Each one runs in your browser; nothing you type is sent to us.
-          </p>
-          <div className="grid-3">
-            <Link href="/tools/invoice-generator" className="doc-card">
-              <FileText size={22} aria-hidden="true" className="icon" />
-              <h3>Commercial invoice generator</h3>
-              <p>Fill it in, download the PDF. No account and no watermark.</p>
-            </Link>
-            <Link href="/tools/cbm-calculator" className="doc-card">
-              <Package size={22} aria-hidden="true" className="icon" />
-              <h3>CBM calculator</h3>
-              <p>Cubic metres from carton sizes, checked against a container.</p>
-            </Link>
-            <Link href="/tools/incoterms" className="doc-card">
-              <Stamp size={22} aria-hidden="true" className="icon" />
-              <h3>Incoterms 2020 guide</h3>
-              <p>All eleven rules: who pays, who insures, where risk passes.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="pricing">
-        <div className="inner">
-          <p className="section-label">Pricing</p>
-          <h2 style={{ marginBottom: 32 }}>Free while TradeDocs is early.</h2>
-          <div className="price-card">
-            <p className="caption" style={{ marginBottom: 8 }}>
-              Everything, no limits
+      {/* The sheet. Boxes share one rule with their neighbours, the way a printed form does. */}
+      <div className="sheet">
+        <div className="form">
+          <section className="form-box w7">
+            <BoxHead ordinal="01" caption="The problem" />
+            <h2>One number typed twice is one number that will eventually differ.</h2>
+            <p className="measure">
+              Most trade paperwork is assembled by copying figures between spreadsheets. The invoice
+              says 1,280 pieces and the packing list says 1,180, and nobody notices while the
+              documents are still on your desk.
             </p>
+          </section>
+
+          <section className="form-box w5">
+            <BoxHead ordinal="02" caption="What it costs" />
+            <h2>The correction costs far more than the typo.</h2>
+            <p>
+              Goods held at the border. A bank refusing the presentation. A buyer disputing the
+              total. Each one is days of somebody’s week, spent on a discrepancy that was never a
+              decision.
+            </p>
+          </section>
+
+          <section className="form-box" id="how">
+            <BoxHead ordinal="03" caption="Method" />
+            <h2>Three steps, and the arithmetic stops being yours.</h2>
+            <div className="form-grid">
+              {steps.map((step) => (
+                <div className="form-cell" key={step.n}>
+                  <span className="form-ordinal">{step.n}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="form-box">
+            <BoxHead ordinal="04" caption="What is prepared" />
+            <h2>The documents a shipment actually needs.</h2>
+            <div className="form-grid">
+              {documents.map((document) => (
+                <div className="form-cell" key={document.name}>
+                  <document.icon size={22} aria-hidden="true" className="icon" />
+                  <h3>{document.name}</h3>
+                  <p>{document.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="muted note">
+              TradeDocs prepares these documents. It is not a customs broker, carrier, chamber of
+              commerce or issuing authority, and it does not provide negotiable transport documents.
+            </p>
+          </section>
+
+          <section className="form-box w7">
+            <BoxHead ordinal="05" caption="Free tools" />
+            <h2>Useful before you sign up.</h2>
+            <p className="measure">
+              The calculations that come up on the way to a shipment, free and without an account.
+              Each one runs in your browser; nothing you type is sent to us.
+            </p>
+            <div className="form-grid tools">
+              {tools.map((tool) => (
+                <Link className="form-cell" href={tool.href} key={tool.href}>
+                  <tool.icon size={20} aria-hidden="true" className="icon" />
+                  <h3>{tool.name}</h3>
+                  <p>{tool.detail}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="form-box w5" id="pricing">
+            <BoxHead ordinal="06" caption="Price" />
             <p className="price-amount">£0</p>
-            <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
-              While the product is young, it is free to use. Paid plans will arrive later, with
-              notice, and accounts created now keep working.
-            </p>
+            <h2 className="price-heading">Free while TradeDocs is early.</h2>
+            <p>Paid plans will arrive later, with notice, and accounts created now keep working.</p>
             <ul className="checklist">
               {[
                 'All five document types',
@@ -253,38 +286,41 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: 28 }}>
+            <div style={{ marginTop: 24 }}>
               <LinkButton href="/sign-up" tone="accent" block>
                 Create a free account <ArrowRight size={17} aria-hidden="true" />
               </LinkButton>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="section tinted faq">
-        <div className="inner" style={{ maxWidth: 860 }}>
-          <p className="section-label">Questions</p>
-          <h2 style={{ marginBottom: 8 }}>Before you sign up.</h2>
-          {questions.map((item) => (
-            <details key={item.q}>
-              <summary>{item.q}</summary>
-              <p>{item.a}</p>
-            </details>
-          ))}
+          <section className="form-box faq">
+            <BoxHead ordinal="07" caption="Questions" />
+            <h2>Before you sign up.</h2>
+            {questions.map((item) => (
+              <details key={item.q}>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </section>
         </div>
-      </section>
+      </div>
 
-      <section className="section dark">
-        <div className="inner" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(26px, 3.4vw, 40px)', maxWidth: '24ch', margin: '0 auto' }}>
-            Stop reconciling your own paperwork.
-          </h2>
-          <div className="cta-row" style={{ justifyContent: 'center' }}>
+      <section className="section dark closing">
+        <div className="inner">
+          <h2>Stop reconciling your own paperwork.</h2>
+          <div className="cta-row">
             <LinkButton href="/sign-up" tone="accent" className="large">
               Create a free account <ArrowRight size={18} aria-hidden="true" />
             </LinkButton>
           </div>
+          {/*
+            The one sentence this product is obliged to carry on every surface, made the
+            thing the page is remembered by. A stamp is what a document gets when an
+            authority has touched it. TradeDocs is not an authority, so its stamp says
+            exactly that, and the constraint becomes the identity instead of fighting it.
+          */}
+          <p className="stamp">Prepared · not issued</p>
         </div>
       </section>
     </>
