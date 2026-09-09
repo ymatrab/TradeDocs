@@ -105,6 +105,17 @@ screen a user fills in and the document they print share one structure and a fie
 its box number in either place. The same caption treatment labels tables, panels and shell
 sections, which keeps one idea covering the whole product rather than three competing ones.
 
+The hero used to illustrate that idea with a card invented for marketing — a label on the
+left, a value on the right — which meant the one page every visitor sees was the one place the
+product's own grammar was absent. It now carries **the tie**: a figure entered once against a
+shipment, then the same figure at the box number it occupies on each document. Box 9 on a
+commercial invoice, box 6 on a packing list, box 4 on a delivery note; those numbers are fixed
+by the forms rather than chosen by us, which is what makes the illustration an argument instead
+of a decoration. A rust spine runs down the ordinals and is masked by each one, so the line
+reads as passing through the boxes. It is the only place on the page where colour carries a
+meaning by itself, and the only animation: on load the three values arrive in sequence, once,
+and reduced motion removes it entirely.
+
 Status is the second product-specific primitive. Every state carries a word, a glyph and a border
 treatment together, so it survives greyscale printing and colour-vision differences; no state is
 ever expressed as colour alone. Two lifecycles use it: documents (draft, stale, final, superseded,
@@ -122,6 +133,11 @@ The authenticated sidebar is a wide-screen affordance, not the navigation itself
 replaced by a topbar disclosure carrying the same destinations, the account links and sign-out, so no
 page of the workspace becomes unreachable on a phone. Both disclosures close on navigation, on
 Escape — which returns focus to the control that opened them — and on a pointer landing outside.
+
+A password can be read back before it is submitted. Twelve characters typed blind is where a
+good share of failed sign-ins begin, and the recovery for a typo nobody can see is to clear the
+field and start again. The reveal is never the default, sits inside the field's own border box so
+the input keeps its width, and is named for what it will do rather than for the state it is in.
 
 Destructive actions confirm before they act, and the confirmation stays open until the action has
 actually succeeded: a rejected password or a refused removal keeps the user's input where they can

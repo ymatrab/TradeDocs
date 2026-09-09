@@ -3,6 +3,7 @@
 import { useActionState, useRef } from 'react';
 import { Button } from '@/components/primitives/button';
 import { Field, Input } from '@/components/primitives/form';
+import { PasswordInput } from '@/components/primitives/password-input';
 import { Callout } from '@/components/primitives/feedback';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
 import { showsSummary } from '@/lib/form-errors';
@@ -75,10 +76,9 @@ export function AuthForm({
           error={state.fields?.password}
         >
           {({ id, describedBy, invalid }) => (
-            <Input
+            <PasswordInput
               id={id}
               name="password"
-              type="password"
               autoComplete={autoCompletePassword}
               required
               minLength={12}

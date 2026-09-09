@@ -511,6 +511,36 @@ h3 {
   flex: none;
 }
 
+/* The reveal sits inside the field's own border box rather than beside it, so the
+   input keeps its full width and the control still clears 44px. */
+.password-field {
+  position: relative;
+  display: grid;
+}
+.password-field .input {
+  padding-right: 48px;
+}
+.password-toggle {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  width: 44px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--slate);
+}
+.password-toggle:hover {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+.password-toggle:active {
+  background: var(--surface-pressed);
+}
+
 /* --- Tables -------------------------------------------------------------- */
 /* A cap is what makes the sticky header below actually stick: `position: sticky`
    resolves against this scrollport, and an uncapped box never scrolls vertically,
@@ -1194,7 +1224,7 @@ kbd {
      Both are screen affordances; on paper they are waste and worse legibility. */
   .panel,
   .doc-card,
-  .doc-sheet,
+  .tie,
   .btn,
   .foundation article {
     box-shadow: none !important;
@@ -1399,75 +1429,154 @@ kbd {
   margin-top: var(--space-3);
 }
 
-/* The hero visual is the product's actual claim: one shipment, three documents that
-   cannot disagree. It is built from the real field-box primitive, not a picture of one. */
-.doc-stack {
-  position: relative;
-  display: grid;
-  gap: var(--space-3);
-}
-.doc-sheet {
+/* --- The tie ------------------------------------------------------------- */
+/* The hero visual is the product's whole claim, so it is built from the grammar of
+   the documents themselves rather than a card that resembles one.
+
+   A figure is entered once against a shipment. Every document has a box where that
+   figure belongs, and the box numbers are fixed by the forms — box 9 on a commercial
+   invoice, box 6 on a packing list — not chosen by us. Showing the same figure at its
+   three real addresses states the claim instead of asserting it, and it puts the
+   product's own field-box primitive on the page a visitor actually sees.
+
+   The rust spine is the one place on this page where colour carries meaning by itself.
+   It marks the figure that is bound; everything around it stays quiet. */
+.tie {
+  /* A light card on the reversed ground, so it restores the light text tokens. */
   --slate: #54646f;
   --rule: #dfe5ea;
+  /* <figure> carries a 40px inline margin from the UA sheet; the reset above only
+     clears margin-top, so without this the card is inset from its own column. */
+  margin: 0;
   background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--rule);
-  border-top: 4px solid var(--ink);
+  border-top: 4px solid var(--rust);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow:
     0 1px 2px rgb(0 0 0 / 0.1),
     0 24px 48px -20px rgb(0 0 0 / 0.55);
 }
-/* Staggered, so the three read as one set of sheets rather than three unrelated cards.
-   The offsets are decorative and collapse on narrow screens, where the horizontal room
-   they need does not exist. */
-@media (min-width: 941px) {
-  .doc-sheet:nth-child(2) {
-    margin-left: var(--space-5);
-  }
-  .doc-sheet:nth-child(3) {
-    margin-left: calc(var(--space-5) * 2);
-  }
-}
-.doc-sheet.accent {
-  border-top-color: var(--rust);
-}
-.doc-sheet-head {
+.tie-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-3);
   border-bottom: 1px solid var(--rule);
   padding-bottom: var(--space-2);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
-.doc-sheet-title {
+.tie-title {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.01em;
 }
-.doc-line {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-3);
-  font-size: 14px;
-  padding: 4px 0;
+/* The source. Sunken rather than raised: this is the thing everything else is read
+   out of, so it sits under the page rather than on top of it. */
+.tie-source {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4) var(--space-4);
 }
-.doc-line .label {
-  color: var(--slate);
-}
-.doc-line .value {
-  font-variant-numeric: tabular-nums;
+.tie-figure {
   font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(24px, 3.2vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 6px 0 0;
 }
-.doc-line.tied .value {
+.tie-legend {
+  margin: var(--space-4) 0 var(--space-2);
+}
+.tie-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tie-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) 0;
+}
+/* The spine is drawn once per row rather than once for the list, so it stays joined
+   whatever the rows end up measuring, and it stops at the last ordinal instead of
+   running off the bottom of the card. */
+.tie-row::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--rust);
+}
+.tie-row:last-child::before {
+  bottom: 50%;
+}
+/* The ordinal sits on the spine and masks it, which is what makes the line read as
+   passing through the box rather than behind it. White on rust is 5.18:1. */
+.tie-ordinal {
+  position: relative;
+  z-index: 1;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--rust);
+  color: var(--surface);
+  border-radius: 2px;
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 700;
+}
+.tie-doc {
+  font-size: 14px;
+  color: var(--slate);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.tie-value {
+  display: inline-block;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rust-deep);
   background: #fdeee7;
   box-shadow: 0 0 0 3px #fdeee7;
   border-radius: 2px;
-  color: var(--rust-deep);
-  font-weight: 700;
+}
+/* One orchestrated moment, on load: the figure is entered once, then arrives in each
+   box in turn. It is the only animation on the page, and the global reduced-motion
+   rule removes it, leaving the values rendered in place. */
+@keyframes tie-land {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tie-value {
+  animation: tie-land 320ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.tie-row:nth-child(1) .tie-value {
+  animation-delay: 260ms;
+}
+.tie-row:nth-child(2) .tie-value {
+  animation-delay: 340ms;
+}
+.tie-row:nth-child(3) .tie-value {
+  animation-delay: 420ms;
 }
 
 .grid-3 {

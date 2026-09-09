@@ -94,56 +94,40 @@ export default function Home() {
             <p className="assurance">Free while TradeDocs is early. No card required.</p>
           </div>
 
-          <div className="doc-stack" aria-hidden="true">
-            <div className="doc-sheet accent">
-              <div className="doc-sheet-head">
-                <span className="doc-sheet-title">Commercial invoice</span>
-                <span className="data" style={{ fontSize: 12 }}>
-                  CI-2026-0184
-                </span>
-              </div>
-              <div className="doc-line tied">
-                <span className="label">Total quantity</span>
-                <span className="value">1,280 pcs</span>
-              </div>
-              <div className="doc-line tied">
-                <span className="label">Net weight</span>
-                <span className="value">4,476.50 kg</span>
-              </div>
-              <div className="doc-line">
-                <span className="label">Invoice value</span>
-                <span className="value">20,740.75 EUR</span>
-              </div>
+          {/*
+            The claim, drawn rather than asserted. One figure entered against a shipment,
+            then the same figure at the box number it carries on each document — 9 on a
+            commercial invoice, 6 on a packing list, 4 on a delivery note. Those numbers
+            are fixed by the forms, so the illustration is the product, not a picture of
+            it. Hidden from assistive technology because the headline and lede already
+            make the same point in words, and hearing one weight four times is noise.
+          */}
+          <figure className="tie" aria-hidden="true">
+            <div className="tie-head">
+              <span className="tie-title">Shipment</span>
+              <span className="data" style={{ fontSize: 12 }}>
+                TDX-2026-0184
+              </span>
             </div>
-            <div className="doc-sheet">
-              <div className="doc-sheet-head">
-                <span className="doc-sheet-title">Packing list</span>
-                <span className="data" style={{ fontSize: 12 }}>
-                  PL-2026-0184
-                </span>
-              </div>
-              <div className="doc-line tied">
-                <span className="label">Total quantity</span>
-                <span className="value">1,280 pcs</span>
-              </div>
-              <div className="doc-line tied">
-                <span className="label">Net weight</span>
-                <span className="value">4,476.50 kg</span>
-              </div>
+            <div className="tie-source">
+              <span className="caption">Net weight · entered once</span>
+              <p className="tie-figure">4,476.50 kg</p>
             </div>
-            <div className="doc-sheet">
-              <div className="doc-sheet-head">
-                <span className="doc-sheet-title">Delivery note</span>
-                <span className="data" style={{ fontSize: 12 }}>
-                  DN-2026-0184
-                </span>
-              </div>
-              <div className="doc-line tied">
-                <span className="label">Total quantity</span>
-                <span className="value">1,280 pcs</span>
-              </div>
-            </div>
-          </div>
+            <p className="caption tie-legend">Appears as</p>
+            <ul className="tie-rows">
+              {[
+                { box: '9', document: 'Commercial invoice' },
+                { box: '6', document: 'Packing list' },
+                { box: '4', document: 'Delivery note' },
+              ].map((entry) => (
+                <li className="tie-row" key={entry.document}>
+                  <span className="tie-ordinal">{entry.box}</span>
+                  <span className="tie-doc">{entry.document}</span>
+                  <span className="tie-value">4,476.50 kg</span>
+                </li>
+              ))}
+            </ul>
+          </figure>
         </div>
       </section>
 
