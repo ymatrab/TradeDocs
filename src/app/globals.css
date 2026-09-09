@@ -1553,21 +1553,26 @@ kbd {
   box-shadow: 0 0 0 3px #fdeee7;
   border-radius: 2px;
 }
-/* One orchestrated moment, on load: the figure is entered once, then arrives in each
-   box in turn. It is the only animation on the page, and the global reduced-motion
-   rule removes it, leaving the values rendered in place. */
-@keyframes tie-land {
+/* One orchestrated moment, on load. The value is legible from the first frame; what
+   arrives is the tie itself — the mark that binds the figure — landing on each
+   document in turn.
+
+   Fading the text in was the obvious version and the wrong one. For the length of
+   the fade the value really is below contrast, and axe measured it at 1.21:1 and
+   failed the build, correctly. Animating only the mark holds the text at 7.31:1
+   before it lands and 6.46:1 after, so every frame between sits between those two.
+
+   The keyframe declares `from` only, so it animates out of the unmarked state into
+   whatever the element already computes to, and the two stay in step by
+   construction. Reduced motion removes it and leaves the values marked. */
+@keyframes tie-bind {
   from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
+    background-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 .tie-value {
-  animation: tie-land 320ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation: tie-bind 300ms ease-out backwards;
 }
 .tie-row:nth-child(1) .tie-value {
   animation-delay: 260ms;
