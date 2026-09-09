@@ -78,7 +78,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
 
       <section className="section">
         <h2>Other {term.mode === 'sea' ? 'maritime' : 'any-mode'} rules</h2>
-        <div className="doc-stack">
+        <div className="grid-3">
           {others.map((entry) => (
             <Link
               key={entry.code}

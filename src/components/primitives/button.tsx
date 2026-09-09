@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import Link from 'next/link';
 
 export type ButtonTone = 'primary' | 'secondary' | 'quiet' | 'accent' | 'danger';
 
@@ -54,17 +55,43 @@ type LinkButtonProps = ComponentPropsWithoutRef<'a'> & {
   children: ReactNode;
 };
 
+/**
+ * A link drawn as a button. Anything pointing at one of this application's own routes
+ * navigates on the client, because a raw anchor reloads the document, discards the
+ * router cache and makes the primary call to action the slowest thing on the page.
+ *
+ * Three kinds of href stay plain anchors. A download is served by a route handler and
+ * has no client navigation to perform — and `Link` would prefetch it, generating a
+ * document nobody has asked for yet. An in-page fragment is not a navigation. An
+ * off-site address is not ours to route.
+ */
+function navigatesOnClient(href: string | undefined, download: unknown): href is string {
+  return (
+    download === undefined && typeof href === 'string' && href.startsWith('/') && href[1] !== '/'
+  );
+}
+
 export function LinkButton({
   tone = 'primary',
   compact,
   block,
   className,
   children,
+  href,
+  download,
   ...rest
 }: LinkButtonProps) {
+  const applied = classes(tone, compact, block, className);
+  if (!navigatesOnClient(href, download)) {
+    return (
+      <a {...rest} href={href} download={download} className={applied}>
+        {children}
+      </a>
+    );
+  }
   return (
-    <a {...rest} className={classes(tone, compact, block, className)}>
+    <Link {...rest} href={href} className={applied}>
       {children}
-    </a>
+    </Link>
   );
 }

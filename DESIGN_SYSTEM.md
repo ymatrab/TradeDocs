@@ -73,17 +73,29 @@ grounds are measured against the text they carry.
 
 | Token               | Value     | Carries        | Ratio |
 | ------------------- | --------- | -------------- | ----- |
-| `--ink-pressed`     | `#0c1d29` | `#ffffff` text | 17.17 |
+| `--ink-pressed`     | `#061219` | `#ffffff` text | 18.95 |
 | `--danger-pressed`  | `#741818` | `#ffffff` text | 11.13 |
-| `--rust-pressed`    | `#7d2b0d` | `#ffffff` text | 9.45  |
+| `--rust-pressed`    | `#7c2d0c` | `#ffffff` text | 9.38  |
 | `--surface-pressed` | `#e2e8ee` | `--ink` text   | 11.64 |
 
-Body text is set in a system grotesque stack (`Arial, Helvetica, sans-serif`), with a monospace
-stack for references and codes, so no font file stands between the reader and the words. Headings
-use Archivo, self-hosted at build time by `next/font` with a size-matched fallback and
-`font-display: swap`; the fallback is metric-matched, so the swap costs no layout shift. Numeric
-contexts set `font-variant-numeric: tabular-nums` so quantities, weights and totals align in a
-column.
+Three faces, each with a job, all self-hosted at build time by `next/font` with a size-matched
+fallback and `font-display: swap`, so a real typeface costs no layout shift. Archivo carries
+headings at heavy weights. Inter sets running text, because dense trade data needs a face drawn
+for screens. JetBrains Mono takes every code and figure — an HS code, a container number and a
+document number are strings a reader compares character by character, and a proportional face
+makes that harder than it needs to be. Numeric contexts set `font-variant-numeric: tabular-nums`
+so quantities, weights and totals align in a column.
+
+### The public column
+
+`--shell-max` (`1180px`) and `--gutter` (`24px`, `16px` below 900 px) are the only two values that
+decide where public content starts. The header bar, the footer, `.public-main`, every `.section`
+and the hero resolve their side padding from them, so a heading lines up with the wordmark above it
+at any viewport. A section computes its own inline padding rather than relying on a wrapper element
+(`max(--gutter, (100% - --shell-max) / 2 + --gutter)`), which keeps a full-bleed background while
+centring the content inside it, and means a page cannot forget to line itself up. Sections carrying
+an `id` reserve `7.5rem` of `scroll-margin-block-start`, because the header they scroll under is
+sticky.
 
 ## Signature primitive: the field box
 

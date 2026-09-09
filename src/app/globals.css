@@ -91,6 +91,12 @@
   --sidebar-width: 246px;
   --topbar-height: 56px;
   --measure: 68ch;
+
+  /* The public column. Header, footer and every section resolve their side padding
+     from these two values, so a heading lines up with the wordmark above it whatever
+     the viewport is. A section that wants a full-bleed background still gets one. */
+  --shell-max: 1180px;
+  --gutter: var(--space-5);
 }
 
 * {
@@ -266,7 +272,10 @@ h3 {
 }
 .btn.quiet {
   background: transparent;
-  color: var(--ink);
+  /* The only button with no ground of its own, so it takes the text colour of
+     whatever it is placed on. Naming --ink here would render it at 1.04:1 on the
+     reversed sections, which do not redefine that token — see below. */
+  color: inherit;
   border-color: transparent;
 }
 .btn.quiet:hover:not(:disabled) {
@@ -656,6 +665,14 @@ h3 {
   color: var(--slate);
   white-space: nowrap;
 }
+.tab:hover {
+  color: var(--ink);
+}
+/* The global tap-highlight reset removes the platform's own press flash, so every
+   control has to draw its own or a touch goes unanswered. */
+.tab:active {
+  background: var(--surface-sunken);
+}
 .tab[aria-selected='true'] {
   color: var(--ink);
   border-bottom-color: var(--rust);
@@ -726,10 +743,12 @@ h3 {
 .menu button:active {
   background: var(--surface-pressed);
 }
+/* Offset by the safe area as well as the gap: at a flat 16px the dismiss button
+   sits inside the iOS home-indicator swipe strip. */
 .toast-region {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
   z-index: 60;
   display: flex;
   flex-direction: column;
@@ -825,9 +844,9 @@ h3 {
   border-bottom: 1px solid var(--rule);
 }
 .bar-inner {
-  max-width: 1180px;
+  max-width: var(--shell-max);
   margin: 0 auto;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-4) var(--gutter);
   display: flex;
   align-items: center;
   gap: var(--space-5);
@@ -877,9 +896,9 @@ h3 {
   color: var(--slate);
 }
 .public-main {
-  max-width: 1180px;
+  max-width: var(--shell-max);
   margin: 0 auto;
-  padding: var(--space-6) var(--space-5);
+  padding: var(--space-6) var(--gutter);
 }
 .disclosure-bar {
   background: var(--ink);
@@ -887,7 +906,7 @@ h3 {
   font-size: 13px;
 }
 .disclosure-bar .bar-inner {
-  padding: var(--space-2) var(--space-5);
+  padding: var(--space-2) var(--gutter);
   gap: var(--space-2);
 }
 
@@ -1141,10 +1160,8 @@ kbd {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .bar-inner,
-  .public-main {
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
+  :root {
+    --gutter: var(--space-4);
   }
 }
 
@@ -1244,18 +1261,33 @@ kbd {
 /* The public site carries more weight than the workspace: it has to argue, not just
    present. It stays in the same palette so the product a visitor signs into looks like
    the site that sold it to them. */
+/* The inline padding grows to whatever keeps a --shell-max column in the middle.
+   The background still runs edge to edge, but the content inside lines up with the
+   header without the section having to be wrapped — which is what the tools pages
+   were missing, leaving every one of them ranged against the viewport edge. */
 .section {
-  padding: clamp(56px, 8vw, 104px) var(--space-5);
+  padding-block: clamp(56px, 8vw, 104px);
+  padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
 }
+/* The header above is sticky, so an in-page target has to stop below it. */
+.section[id] {
+  scroll-margin-block-start: 7.5rem;
+}
+/* Kept for the sections that subdivide their column; the width is now inherited. */
 .section > .inner {
-  max-width: 1180px;
+  max-width: var(--shell-max);
   margin: 0 auto;
 }
 /* A reversed ground redefines the text tokens rather than patching one selector
    at a time, so anything placed here inherits legible values instead of silently
    rendering slate on navy. Ratios against --ink: slate 7.08, link 7.87, control
    4.46. Background roles (--rust, --danger, --success) are deliberately left
-   alone: they are drawn behind white text and lightening them would break it. */
+   alone: they are drawn behind white text and lightening them would break it.
+
+   --ink is left alone for the same reason and is the sharper trap, because it is
+   read both ways: .btn draws its ground from it and .btn.quiet drew its text from
+   it, which is 1.04:1 here. Foreground uses take `inherit` instead, so the rule is
+   structural — a component cannot opt into ink as text and then be moved here. */
 .section.dark {
   --slate: #a9b8c5;
   --link: #8fc7e8;
@@ -1304,7 +1336,8 @@ kbd {
   --slate: var(--canvas-muted);
   --link: #8fc7e8;
   --rule: rgb(255 255 255 / 0.16);
-  padding: clamp(56px, 8vw, 112px) var(--space-5) clamp(64px, 9vw, 120px);
+  padding-block: clamp(56px, 8vw, 112px) clamp(64px, 9vw, 120px);
+  padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
   background:
     radial-gradient(48rem 32rem at 12% -20%, rgb(240 160 42 / 0.16), transparent 62%),
     radial-gradient(52rem 36rem at 88% 0%, rgb(14 107 168 / 0.28), transparent 60%), var(--canvas);
@@ -1319,7 +1352,7 @@ kbd {
   color: var(--amber);
 }
 .hero .inner {
-  max-width: 1180px;
+  max-width: var(--shell-max);
   margin: 0 auto;
   display: grid;
   gap: clamp(32px, 5vw, 64px);

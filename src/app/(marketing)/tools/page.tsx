@@ -53,10 +53,10 @@ export default function ToolsPage() {
       </section>
 
       <section className="section">
-        <div className="doc-stack">
+        <div className="grid-3">
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="doc-card">
-              <tool.icon size={22} aria-hidden="true" />
+              <tool.icon size={22} aria-hidden="true" className="icon" />
               <h2>{tool.name}</h2>
               <p>{tool.detail}</p>
             </Link>
