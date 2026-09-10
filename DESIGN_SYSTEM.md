@@ -116,6 +116,24 @@ reads as passing through the boxes. It is the only place on the page where colou
 meaning by itself, and the only animation: on load the three values arrive in sequence, once,
 and reduced motion removes it entirely.
 
+The same idea now carries the whole public page. Seven boxes on one sheet, each with an
+ordinal and a field caption, laid on a twelve-column grid whose 1px gap **is** the rule: two
+neighbours share a single line rather than drawing one each. The numbers are an address
+system, not a running order — on a customs form box 6 is not step six, it is where marks and
+numbers go — so numbering sections costs nothing and stays true to the subject.
+
+Where a row is guaranteed to fill, the sheet paints its own ground and lets the gap show
+through. Where it is not — a nested grid of five documents in four columns — each cell carries
+its rule as an outset shadow instead, so an unfilled row leaves no stray panel. Both mechanisms
+are on the page; the choice between them is whether the row can be relied on to fill.
+
+The closing band carries **the stamp**. A stamp is what a trade document gets when an authority
+has touched it. TradeDocs is not an authority, and the sentence it is obliged to show on every
+surface says exactly that, so that sentence is the mark the page is remembered by — the legal
+constraint as the identity rather than something the layout works around. Amber on the canvas is
+8.15:1 and it is drawn at full strength; a faded stamp would read as less than text and would
+deserve to fail the contrast gate.
+
 Status is the second product-specific primitive. Every state carries a word, a glyph and a border
 treatment together, so it survives greyscale printing and colour-vision differences; no state is
 ever expressed as colour alone. Two lifecycles use it: documents (draft, stale, final, superseded,
