@@ -1648,19 +1648,24 @@ kbd {
   color: var(--slate);
 }
 
-/* Boxes nest: a box that holds several things holds them in the same grid. */
+/* Boxes nest: a box that holds several things holds them in the same grid.
+
+   Unlike the sheet above, a nested row is not guaranteed to fill — five documents in
+   four columns leaves one cell and a remainder. So the rule is carried by each cell as
+   an outset shadow rather than by the container's ground: neighbours still meet in the
+   1px gap and read as one line, and an unfilled row leaves no stray panel behind. It is
+   the technique .field-box already uses, for exactly this reason. */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
 }
 .form-grid.tools {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 .form-cell {
   background: var(--surface);
+  box-shadow: 0 0 0 1px var(--rule);
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
