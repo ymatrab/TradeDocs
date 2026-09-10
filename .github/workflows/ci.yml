@@ -63,7 +63,7 @@ jobs:
       - name: Fail if formatting drifted
         if: env.FORMAT_DRIFT == '1'
         run: exit 1
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: quality-evidence
@@ -132,7 +132,7 @@ jobs:
           APPLICATION_MODE: service
           SUPABASE_PROJECT_REF: localtestproject
           SUPABASE_ENVIRONMENT: test
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: database-evidence
