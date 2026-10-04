@@ -9,6 +9,7 @@ import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/tabl
 import { ConfirmButton } from '@/components/primitives/confirm';
 import { ActionResult as Result } from '@/components/primitives/action-result';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
+import { currencyMinorUnits, lineTotal } from '@/lib/money';
 import { addItem, removeItem, updateShipment } from '../../../../shipment-actions';
 import type { ActionState } from '../../../../actions';
 import { CatalogPicker, type CatalogEntry } from './catalog-picker';
@@ -74,6 +75,7 @@ export function ShipmentEditor({
     {},
   );
   const currency = String(shipment.currency ?? 'EUR');
+  const moneyPlaces = currencyMinorUnits(currency);
   const detailForm = useRef<HTMLFormElement>(null);
   const itemForm = useRef<HTMLFormElement>(null);
   useInvalidFocus(detailForm, detailState.fields);
@@ -248,7 +250,10 @@ export function ShipmentEditor({
                     <NumericCell value={figure(Number(item.quantity), 3, 0)} unit={item.unit} />
                     <NumericCell value={figure(Number(item.unit_price), 4)} />
                     <NumericCell
-                      value={figure(Number(item.quantity) * Number(item.unit_price))}
+                      value={figure(
+                        lineTotal(item.quantity, item.unit_price, moneyPlaces).toNumber(),
+                        moneyPlaces,
+                      )}
                       unit={currency}
                     />
                     <td>
@@ -279,7 +284,7 @@ export function ShipmentEditor({
                   <th scope="row" colSpan={4}>
                     Total
                   </th>
-                  <NumericCell value={figure(totals.value)} unit={currency} />
+                  <NumericCell value={figure(totals.value, moneyPlaces)} unit={currency} />
                   <td />
                 </tr>
               </tfoot>

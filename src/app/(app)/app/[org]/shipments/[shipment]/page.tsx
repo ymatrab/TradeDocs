@@ -5,6 +5,7 @@ import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { decimal } from '@/lib/format';
+import { currencyMinorUnits, sumLineTotals } from '@/lib/money';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { ShipmentEditor } from './shipment-editor';
 import { PartiesPanel } from './parties-panel';
@@ -65,13 +66,16 @@ export default async function ShipmentPage({
   const lines = itemsResult.data ?? [];
   const packageRows = packagesResult.data ?? [];
 
+  // The value is the sum of lines rounded to the currency's minor unit, exactly as a
+  // generated document computes it, so the screen and the invoice cannot disagree.
+  const moneyPlaces = currencyMinorUnits(shipment.currency);
   const totals = lines.reduce(
     (accumulator, item) => ({
+      ...accumulator,
       quantity: accumulator.quantity + Number(item.quantity),
-      value: accumulator.value + Number(item.quantity) * Number(item.unit_price),
       net: accumulator.net + Number(item.net_weight_kg ?? 0),
     }),
-    { quantity: 0, value: 0, net: 0 },
+    { quantity: 0, value: sumLineTotals(lines, moneyPlaces).toNumber(), net: 0 },
   );
 
   return (
@@ -87,7 +91,7 @@ export default async function ShipmentPage({
           </FieldBox>
           <FieldBox ordinal="4" caption="Total value">
             <span className="data">
-              {decimal(totals.value)} {shipment.currency}
+              {decimal(totals.value, moneyPlaces)} {shipment.currency}
             </span>
           </FieldBox>
         </BoxGrid>

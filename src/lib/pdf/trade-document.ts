@@ -10,6 +10,13 @@ import { createFontSet } from './fonts';
  * evidence rather than a report.
  */
 
+/**
+ * Identifies this renderer in a set's manifest. Bump it whenever the output for an existing
+ * snapshot would change; a change that only affects snapshots of a newer schema version
+ * keeps older documents byte-identical and still warrants a bump.
+ */
+export const RENDERER_VERSION = 'tradedocs-pdf/2';
+
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
 const partySchema = z
@@ -28,6 +35,16 @@ const partySchema = z
   .optional();
 
 export const snapshotSchema = z.object({
+  /**
+   * Absent on snapshots taken before versioning, which are schema 1. Schema 2 adds
+   * money_places, and a stated-or-absent gross weight total.
+   */
+  schema_version: z.number().int().min(1).optional(),
+  /**
+   * Decimal places of the currency's minor unit, fixed when the document was generated so a
+   * re-render never depends on today's currency tables. Schema 1 documents used two.
+   */
+  money_places: z.number().int().min(0).max(4).optional(),
   kind: z.enum([
     'commercial_invoice',
     'proforma_invoice',
@@ -72,7 +89,8 @@ export const snapshotSchema = z.object({
   totals: z.object({
     quantity: numeric,
     net_weight_kg: numeric,
-    gross_weight_kg: numeric,
+    /** Null when no line states a gross weight: a total of zero would be a false figure. */
+    gross_weight_kg: numeric.nullable(),
     packages: numeric,
     value: numeric,
   }),
@@ -152,7 +170,7 @@ function decimal(value: number, places = 2): string {
 }
 
 /** Each document type shows the columns its readers need, from one shared set of figures. */
-function columnsFor(kind: DocumentSnapshot['kind']): Column[] {
+function columnsFor(kind: DocumentSnapshot['kind'], moneyPlaces: number): Column[] {
   const description: Column = {
     header: 'Description of goods',
     width: 0,
@@ -212,7 +230,12 @@ function columnsFor(kind: DocumentSnapshot['kind']): Column[] {
       align: 'right',
       value: (item) => decimal(item.unit_price, 4),
     },
-    { header: 'Amount', width: 84, align: 'right', value: (item) => decimal(item.line_total) },
+    {
+      header: 'Amount',
+      width: 84,
+      align: 'right',
+      value: (item) => decimal(item.line_total, moneyPlaces),
+    },
   ];
 }
 
@@ -238,7 +261,8 @@ function drawBox(page: Page, x: number, y: number, width: number, height: number
 
 export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
   const snapshot = snapshotSchema.parse(input);
-  const columns = columnsFor(snapshot.kind);
+  const moneyPlaces = snapshot.money_places ?? 2;
+  const columns = columnsFor(snapshot.kind, moneyPlaces);
   const fixed = columns.reduce((total, column) => total + column.width, 0);
   const layout = columns.map((column) =>
     column.width === 0 ? { ...column, width: CONTENT_WIDTH - fixed - 24 } : column,
@@ -466,10 +490,9 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
       'Total net weight',
       `${decimal(packed?.net_weight_kg ?? snapshot.totals.net_weight_kg, 3)} kg`,
     ]);
-    totals.push([
-      'Total gross weight',
-      `${decimal(packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg, 3)} kg`,
-    ]);
+    // Omitted rather than printed as zero when nothing states a gross weight.
+    const gross = packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg;
+    if (gross != null) totals.push(['Total gross weight', `${decimal(gross, 3)} kg`]);
     if (packed && Number(packed.volume_m3) > 0) {
       totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
     }
@@ -477,7 +500,7 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
     totals.push([
       'Total amount',
-      `${decimal(snapshot.totals.value)} ${snapshot.shipment.currency}`,
+      `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
     ]);
   }
   for (const [label, value] of totals) {
