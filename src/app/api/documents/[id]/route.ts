@@ -1,6 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import {
+  createClient,
+  DatabaseUnavailableError,
+  type TradeDocsClient,
+} from '@/lib/supabase/server';
 import { renderTradeDocument } from '@/lib/pdf/trade-document';
+import { safeFileName } from '@/lib/zip';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -13,7 +18,20 @@ export const runtime = 'nodejs';
  */
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const client = await createClient();
+  let client: TradeDocsClient;
+  try {
+    client = await createClient();
+  } catch (error) {
+    // A deployment without a database has no documents to serve. Saying so is a 503 the
+    // caller can act on, not an unhandled 500.
+    if (error instanceof DatabaseUnavailableError) {
+      return NextResponse.json(
+        { error: 'Documents are not available on this deployment.' },
+        { status: 503, headers: { 'Cache-Control': 'no-store', 'Retry-After': '300' } },
+      );
+    }
+    throw error;
+  }
   const { data: document } = await client
     .from('documents')
     .select('number, kind, snapshot, status')
@@ -34,7 +52,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   return new NextResponse(pdf as BodyInit, {
     headers: {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="${document.number}.pdf"`,
+      // The number is the organization's own text; it must not be able to break the header.
+      'Content-Disposition': `attachment; filename="${safeFileName(document.number)}.pdf"`,
       'Cache-Control': 'private, no-store',
       'X-Content-Type-Options': 'nosniff',
     },
