@@ -1,12 +1,25 @@
 import { createHash } from 'node:crypto';
 import { NextResponse, type NextRequest } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
-import { renderTradeDocument } from '@/lib/pdf/trade-document';
+import {
+  createClient,
+  DatabaseUnavailableError,
+  type TradeDocsClient,
+} from '@/lib/supabase/server';
+import { RENDERER_VERSION, renderTradeDocument } from '@/lib/pdf/trade-document';
 import { createZip, safeFileName, type ZipEntry } from '@/lib/zip';
 import { documentKindLabel } from '@/lib/labels';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
+
+/** Snapshots before versioning carry no schema_version and are schema 1. */
+function schemaVersionOf(snapshot: unknown): number {
+  if (typeof snapshot === 'object' && snapshot !== null && 'schema_version' in snapshot) {
+    const version = (snapshot as { schema_version: unknown }).schema_version;
+    if (typeof version === 'number' && Number.isInteger(version)) return version;
+  }
+  return 1;
+}
 
 /** Beyond this a set is not a set; it is a report, and should be built as a job. */
 const MAX_DOCUMENTS = 60;
@@ -24,7 +37,18 @@ const MAX_DOCUMENTS = 60;
  */
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const client = await createClient();
+  let client: TradeDocsClient;
+  try {
+    client = await createClient();
+  } catch (error) {
+    if (error instanceof DatabaseUnavailableError) {
+      return NextResponse.json(
+        { error: 'Documents are not available on this deployment.' },
+        { status: 503, headers: { 'Cache-Control': 'no-store', 'Retry-After': '300' } },
+      );
+    }
+    throw error;
+  }
 
   const { data: shipment } = await client
     .from('shipments')
@@ -58,6 +82,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     `Shipment revision: ${shipment.revision}`,
     `Documents: ${current.length}`,
     `Archive built: ${new Date().toISOString()}`,
+    `Renderer: ${RENDERER_VERSION}`,
     '',
     'Each line below is the SHA-256 of the file as it appears in this archive. Re-render',
     'a document from TradeDocs at any time and it produces these same bytes, because a',
@@ -66,6 +91,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     '',
   ];
 
+  const schemas = new Set<number>();
   for (const document of current) {
     let pdf: Uint8Array;
     try {
@@ -83,6 +109,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     entries.push({ name, data: pdf, modified: new Date(document.created_at) });
     const digest = createHash('sha256').update(pdf).digest('hex');
     manifest.push(`${digest}  ${name}`);
+    schemas.add(schemaVersionOf(document.snapshot));
   }
 
   if (entries.length === 0) {
@@ -91,6 +118,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     });
   }
 
+  const versions = [...schemas].sort((left, right) => left - right).join(', ');
+  manifest.push('', `Snapshot schema versions: ${versions}`);
   entries.push({
     name: 'manifest.txt',
     data: new TextEncoder().encode(`${manifest.join('\n')}\n`),

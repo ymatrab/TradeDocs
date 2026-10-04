@@ -1,11 +1,20 @@
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
+import {
+  DEGRADED_RATE_LIMIT_REASON,
+  rateLimitMode,
+  type RateLimitMode,
+} from '@/lib/security/rate-limit';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 export async function GET(): Promise<Response> {
   let ready = false;
+  // Reported whether or not the deployment is ready, so a foundation deployment that serves
+  // public tools without quotas says so instead of looking merely "unavailable".
+  let rateLimiting: RateLimitMode = { mode: 'degraded', reason: DEGRADED_RATE_LIMIT_REASON };
   try {
+    rateLimiting = rateLimitMode(getServerEnv());
     if (hasSupabaseConfiguration()) {
       const env = getServerEnv();
       if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
@@ -24,7 +33,11 @@ export async function GET(): Promise<Response> {
     ready = false;
   }
   return Response.json(
-    { status: ready ? 'ready' : 'unavailable' },
+    {
+      status: ready ? 'ready' : 'unavailable',
+      rate_limiting: rateLimiting.mode,
+      ...(rateLimiting.mode === 'degraded' ? { reason: rateLimiting.reason } : {}),
+    },
     {
       status: ready ? 200 : 503,
       headers: { 'Cache-Control': 'no-store', ...(ready ? {} : { 'Retry-After': '30' }) },

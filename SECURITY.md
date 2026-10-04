@@ -48,3 +48,12 @@ matches the invited one.
 Authorization is not implemented in page code. Row policies and database routines decide every
 outcome, so an API route, background job or console session added later inherits the same
 boundary instead of needing the check re-implemented correctly.
+
+## Public request quotas
+
+Unauthenticated endpoints that do real work (the free document generator) take a quota per
+platform-attested client address: Vercel's `x-real-ip`, never an arbitrary forwarded header;
+elsewhere callers share one quota. Quotas live in the database and fail closed with a retryable
+503 when the store is unreachable. A deployment without a database (the foundation deployment)
+cannot enforce quotas; it runs degraded, relies on each endpoint's per-request bounds, and says
+so in `/api/ready` (`rate_limiting: "degraded"` with a reason).

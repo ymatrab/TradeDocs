@@ -41,9 +41,6 @@ export const serverEnvSchema = z
     TURNSTILE_SITE_KEY: optionalText,
     TURNSTILE_SECRET_KEY: optionalSecret,
     SENTRY_DSN: z.url().optional(),
-    PDF_WORKER_URL: z.url().optional(),
-    PDF_WORKER_TOKEN: optionalSecret,
-    QUEUE_SIGNING_KEY: optionalSecret,
     PAYMENT_PROVIDER: z.enum(['disabled', 'stripe', 'paddle']).default('disabled'),
     PAYMENT_API_KEY: optionalSecret,
     PAYMENT_WEBHOOK_SECRET: optionalSecret,
@@ -137,7 +134,7 @@ export const serverEnvSchema = z
       addIssue('SUPABASE_PROJECT_REF', 'Production must identify the approved production project.');
     }
 
-    for (const field of ['APP_URL', 'SUPABASE_URL', 'PDF_WORKER_URL', 'SENTRY_DSN'] as const) {
+    for (const field of ['APP_URL', 'SUPABASE_URL', 'SENTRY_DSN'] as const) {
       const raw = value[field];
       if (!raw) continue;
       let url: URL;
@@ -197,9 +194,6 @@ export const serverEnvSchema = z
         'TURNSTILE_SITE_KEY',
         'TURNSTILE_SECRET_KEY',
         'SENTRY_DSN',
-        'PDF_WORKER_URL',
-        'PDF_WORKER_TOKEN',
-        'QUEUE_SIGNING_KEY',
         'INDEXNOW_KEY',
         'ANALYTICS_SITE_ID',
       ] as const) {

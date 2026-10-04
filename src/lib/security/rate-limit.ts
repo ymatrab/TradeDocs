@@ -118,3 +118,54 @@ export async function enforceRateLimit(
   }
   return result;
 }
+
+export type RateLimitMode = { mode: 'enforced' } | { mode: 'degraded'; reason: string };
+
+/**
+ * Why quotas are not enforced. Reported by /api/ready so the degraded state is visible to
+ * whoever operates the deployment, rather than discovered during an incident.
+ */
+export const DEGRADED_RATE_LIMIT_REASON =
+  'No database is configured, so request quotas are not enforced. Public endpoints rely on ' +
+  'their per-request bounds until the service-role connection and RATE_LIMIT_KEY_SECRET are set.';
+
+/**
+ * Quotas need the distributed store. A deployment without a database (the foundation
+ * deployment today) has none, and the only alternative, a per-instance counter, would be a
+ * guarantee in name only. Such a deployment runs degraded, openly; one that has a database
+ * fails closed when the store is unreachable.
+ */
+export function rateLimitMode(env: ServerEnv): RateLimitMode {
+  return env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY && env.RATE_LIMIT_KEY_SECRET
+    ? { mode: 'enforced' }
+    : { mode: 'degraded', reason: DEGRADED_RATE_LIMIT_REASON };
+}
+
+/**
+ * The caller's address as the hosting platform attests it. Vercel's edge overwrites
+ * x-real-ip, so it is trusted there; anywhere else a client can set any header, so no
+ * address is trusted and callers share one quota.
+ */
+export function attestedClientAddress(request: Request, env: ServerEnv): string | null {
+  if (!env.VERCEL_ENV) return null;
+  const value = request.headers.get('x-real-ip')?.trim();
+  return value && /^[0-9A-Fa-f:.]{2,45}$/.test(value) ? value : null;
+}
+
+/**
+ * Applies a quota to an unauthenticated request. Returns null when the deployment runs
+ * degraded (see rateLimitMode); otherwise allows, or throws a 429 or a retryable 503.
+ */
+export async function limitPublicRequest(
+  request: Request,
+  policy: RateLimitPolicy,
+  env: ServerEnv = getServerEnv(),
+  provider?: RateLimitProvider,
+): Promise<RateLimitResult | null> {
+  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY || !env.RATE_LIMIT_KEY_SECRET) {
+    return null;
+  }
+  const subject = `ip:${attestedClientAddress(request, env) ?? 'unattested'}`;
+  const key = rateLimitKey(subject, policy, env.RATE_LIMIT_KEY_SECRET);
+  return enforceRateLimit(provider ?? createSupabaseRateLimitProvider(env), key, policy);
+}

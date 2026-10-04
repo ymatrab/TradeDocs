@@ -61,3 +61,22 @@ without an owner.
 Every change is proved in CI against a disposable stack: `supabase/tests/identity_rls.test.sql`
 asserts the access matrix and the invitation and ownership rules, and generated types are
 regenerated and compared so a schema change cannot land without its types.
+
+## Tenant-scoped references and document provenance (20260909000100)
+
+Every tenant parent is addressable by `(org_id, id)` and every child references it by that
+pair: shipment parties, lines (to their shipment and source product), packages, package
+contents, and documents. A row therefore cannot point at another tenant's data, whatever row
+policy admits the write. A trigger additionally keeps package contents to lines of the same
+shipment. The definer routines `generate_document` and `add_product_to_shipment` scope every
+lookup to the shipment's organization as well.
+
+Documents freeze `org_id`, `created_at` and `created_by` (which may only become null, for
+account erasure) with their content; status only moves `final` to `superseded` or `voided`.
+A shipment with documents cannot be deleted. Snapshots now carry `schema_version` (2) and
+`money_places`, the currency minor units money was rounded to; schema 1 snapshots render
+with two places as issued. `supabase/tests/tenant_integrity.test.sql` proves the cross-tenant
+cases, products, packages, contents, import, add-from-catalog and rate limiting.
+
+`public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind
+`src/lib/security/rate-limit.ts`. It holds HMAC digests only, never addresses or user ids.

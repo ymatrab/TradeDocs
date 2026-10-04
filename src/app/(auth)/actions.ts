@@ -112,7 +112,9 @@ export async function requestPasswordReset(
 
   const client = await createClient();
   await client.auth.resetPasswordForEmail(parsed.data.email, {
-    redirectTo: callbackUrl('/account/password'),
+    // The page that renders updatePassword. /account/password never existed, so every
+    // reset link used to land on a 404 after signing the user in.
+    redirectTo: callbackUrl('/reset-password/new'),
   });
   return { notice: 'If that address has an account, a reset link is on its way.' };
 }
