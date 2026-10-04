@@ -32,3 +32,7 @@
 ### Verification status
 
 The user requested no local runs. Builds, lint, tests, database migrations and browser inspection have not been executed locally; `src/lib/database.types.ts` was written by hand against the new migrations rather than generated, and CI's generated-types gate is what settles it. Source creation does not constitute completion of any production delivery contract. Vendor projects, real ownership, approved prices/policies, legal review, production credentials and go-live remain unresolved.
+- Tenant integrity: composite foreign keys make cross-tenant references unstorable; documents freeze their provenance, only move forward in status and keep their shipment from being deleted. pgTAP covers products, packing, import, add-from-catalog and the cross-tenant cases.
+- Certificates of origin are withheld, with a stated limitation, until regulated documents are approved.
+- The free document generator rounds money exactly to the currency's minor unit, no longer prints the seller's country as the goods' origin, accepts an optional gross weight, and is quota-limited where a database exists; `/api/ready` reports when it is not.
+- Password reset links land on a page that sets the new password. Updates that match no row report failure. Document downloads answer 503 without a database. Vercel skips Dependabot branches.
