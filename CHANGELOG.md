@@ -2,6 +2,15 @@
 
 ## Unreleased — 2026-09-06
 
+### Redesign — "Manifest" (D-005)
+
+- Replaced the navy/amber field-box look with the Manifest system: hull green, manifest paper, safety-yellow tape markers, Archivo/Inter/JetBrains Mono roles, square controls and flat offset depth. Every token is recorded with its measured contrast in DESIGN_SYSTEM.md.
+- Public shell: a floating header card that carries the boundary statement as its first line, a hull footer that repeats it verbatim, and a new TradeDocs icon.
+- Homepage rebuilt in the order hero (the document stack) · enter once · the consistent set · saved data · free tools · honest status · questions · closing. Primary calls to action follow `isDatabaseConfigured()`: with accounts closed they lead to the free invoice generator and drop "No card required".
+- Homepage copy corrected: the "box 9 / 6 / 4 net weight" illustration is gone (the PDFs have no numbered boxes and a delivery note has no weight); the stack shows only the total quantity every document prints; only the four available document types are listed and counted, with the certificate of origin stated as awaiting legal review; the tools copy says the calculators run in the browser and the generator sends details once to render and stores nothing; team invitations are described as links. The homepage declares its canonical URL.
+- Six CSS-only motions behind one IntersectionObserver hook, all inside `prefers-reduced-motion: no-preference`; no motion ever animates text opacity. The workspace adopts the tokens with a lighter touch (hull sidebar, paper canvas, no marker or entrance motion).
+- The boundary-statement e2e check is scoped to the header, since the statement now also appears in the footer.
+
 ### Source implementation
 
 - Preserved the original 33-page production specification and mapped all 25 delivery contracts.
