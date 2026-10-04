@@ -1,100 +1,149 @@
+import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  Check,
-  FileCheck2,
-  FileSpreadsheet,
-  FileText,
-  Package,
-  Stamp,
-} from 'lucide-react';
+import { ArrowRight, Boxes, Building2, Check, Clock, Users } from 'lucide-react';
 import { LinkButton } from '@/components/primitives/button';
+import { primaryAction } from '@/components/shell/public';
+import { RevealSection } from '@/components/shell/reveal';
+import { documentKindLabels, type DocumentKind } from '@/lib/labels';
+import { isDatabaseConfigured } from '@/lib/supabase/server';
 
 export const metadata: Metadata = {
   title: 'Trade documents that agree with each other',
   description:
-    'Capture a shipment once and produce a commercial invoice, packing list, delivery note, proforma and certificate of origin that carry the same figures.',
+    'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.',
+  alternates: { canonical: '/' },
 };
 
 /**
- * The page is laid out as the thing it sells.
- *
- * Trade paperwork is a grid of numbered, bordered boxes, each captioned in its corner,
- * and the box numbers are an address system rather than a running order: box 6 is not
- * step six, it is where marks and numbers go. The sections below are numbered on the
- * same principle. It costs nothing, it is true to the subject, and it is the one layout
- * that no other product in this category can honestly borrow.
+ * The document types a visitor can produce today. The certificate of origin exists in the
+ * schema but is awaiting legal review, so it is deliberately absent here, and every count
+ * on the page is derived from this list rather than typed.
  */
-
-const documents = [
+const documents: { kind: DocumentKind; plate: string; detail: string }[] = [
   {
-    icon: FileText,
-    name: 'Commercial invoice',
+    kind: 'commercial_invoice',
+    plate: 'TD · CI',
     detail: 'Parties, goods, values, incoterm and totals, in the layout buyers and banks expect.',
   },
   {
-    icon: Package,
-    name: 'Packing list',
-    detail: 'Cartons, weights and dimensions derived from the same shipment, never retyped.',
+    kind: 'proforma_invoice',
+    plate: 'TD · PI',
+    detail: 'The quotation a buyer needs before they pay or open a letter of credit.',
   },
   {
-    icon: FileSpreadsheet,
-    name: 'Delivery note',
+    kind: 'packing_list',
+    plate: 'TD · PL',
+    detail: 'Packages, weights and dimensions from the same shipment, never retyped.',
+  },
+  {
+    kind: 'delivery_note',
+    plate: 'TD · DN',
     detail: 'What is being handed over, matched line for line to the invoice.',
-  },
-  {
-    icon: FileCheck2,
-    name: 'Proforma invoice',
-    detail: 'The quotation your buyer needs before they open a letter of credit.',
-  },
-  {
-    icon: Stamp,
-    name: 'Certificate of origin',
-    detail: 'Prepared for submission to the issuing authority, clearly labelled as preparation.',
   },
 ];
 
+/** Every document prints a total quantity, so it is the one figure the stack may share. */
+const SHARED_QUANTITY = '1,280.000';
+const stackTones = ['is-tape', '', 'is-paper', ''] as const;
+
 const steps = [
   {
-    n: '1',
-    title: 'Record your parties and products',
+    title: 'Save your parties and products',
     detail:
       'Your company, your customers and the goods you ship, entered once and reused. Change an address and every future document uses it.',
+    listLabel: 'Fields you fill in',
+    fields: ['Company name', 'Country', 'HS code'],
   },
   {
-    n: '2',
     title: 'Build the shipment',
     detail:
-      'Pick the buyer, add line items with quantities, weights and values, and set the incoterm and route. Totals are calculated, not typed.',
+      'Pick the buyer, add lines from your catalog with quantities, and set the incoterm and route. Totals are calculated, not typed.',
+    listLabel: 'Fields you fill in',
+    fields: ['Shipment reference', 'Port of loading', 'Quantity'],
   },
   {
-    n: '3',
-    title: 'Generate the document set',
+    title: 'Generate the set',
     detail:
-      'Every document is rendered from the same shipment revision, so they cannot disagree. Download them as PDFs and send them on.',
+      'Every document is rendered from the same shipment revision. Download each PDF, or the whole set as one ZIP with checksums.',
+    listLabel: 'What you download',
+    fields: ['Commercial invoice PDF', 'Packing list PDF', 'The whole set as ZIP'],
+  },
+];
+
+const saved = [
+  {
+    icon: Building2,
+    title: 'Company directory',
+    detail:
+      'Your own company, customers and suppliers with their addresses. Archive the ones you no longer ship to.',
+  },
+  {
+    icon: Boxes,
+    title: 'Product catalog',
+    detail:
+      'Descriptions, HS codes and units, imported from the spreadsheet you already keep. Editing a product never rewrites a line already shipped.',
+  },
+  {
+    icon: Users,
+    title: 'Your team',
+    detail:
+      'Invite teammates by link, as owners, admins or members. Every record stays inside your organization.',
   },
 ];
 
 const tools = [
   {
-    icon: FileText,
     href: '/tools/invoice-generator',
+    tag: 'Tool · Invoice',
     name: 'Commercial invoice generator',
-    detail: 'Fill it in, download the PDF. No account and no watermark.',
+    detail: 'Fill in an invoice, proforma or packing list and download the PDF.',
+    cta: 'Open generator',
   },
   {
-    icon: Package,
     href: '/tools/cbm-calculator',
+    tag: 'Tool · CBM',
     name: 'CBM calculator',
-    detail: 'Cubic metres from carton sizes, checked against a container.',
+    detail: 'Cubic metres from carton sizes, checked against standard containers.',
+    cta: 'Open calculator',
   },
   {
-    icon: Stamp,
+    href: '/tools/chargeable-weight',
+    tag: 'Tool · Weight',
+    name: 'Chargeable weight calculator',
+    detail: 'Volumetric against actual weight, and which one you will be billed on.',
+    cta: 'Open calculator',
+  },
+  {
     href: '/tools/incoterms',
+    tag: 'Tool · Incoterms',
     name: 'Incoterms 2020 guide',
     detail: 'All eleven rules: who pays, who insures, where risk passes.',
+    cta: 'Open guide',
   },
+];
+
+/** "Commercial invoice, proforma invoice, packing list and delivery note", from the data. */
+function listOfDocuments(): string {
+  const names = documents.map((document, index) => {
+    const label: string = documentKindLabels[document.kind];
+    return index === 0 ? label : label.toLowerCase();
+  });
+  const last = names.pop() ?? '';
+  return names.length > 0 ? `${names.join(', ')} and ${last}` : last;
+}
+
+const included = [
+  `${listOfDocuments()}, as PDFs`,
+  'Shipments, companies and products saved to your organization',
+  'Teammates invited by link, with owner, admin and member roles',
+  'A shipment’s current documents as one ZIP with a checksum manifest',
+];
+
+const notYet = [
+  'Certificate of origin: awaiting legal review, not offered yet',
+  'Invitations by email: for now you pass the link on yourself',
+  'Paid plans: none yet, and they will come with notice',
 ];
 
 const questions = [
@@ -116,213 +165,275 @@ const questions = [
   },
   {
     q: 'What does it cost?',
-    a: 'Nothing today. TradeDocs is free while it is early, and paid plans will arrive later with clear notice. Accounts created now keep working.',
+    a: 'Nothing today. TradeDocs is free while it is early, and paid plans will arrive later with clear notice.',
   },
 ];
 
-/** The caption and ordinal every box on the sheet carries, as a real form would. */
-function BoxHead({ ordinal, caption }: { ordinal: string; caption: string }) {
+/** A numeral that counts up once seen. The real number is the text beside it. */
+function Stat({ value, label }: { value: number; label: string }) {
   return (
-    <div className="form-box-head">
-      <span className="form-ordinal">{ordinal}</span>
-      <span className="form-caption">{caption}</span>
-    </div>
+    <p className="stat">
+      <span className="stat-figure">
+        <span className="count" aria-hidden="true" style={{ '--n': value } as CSSProperties} />
+        <span className="sr-only">{value}</span>
+      </span>
+      <span className="stat-label">{label}</span>
+    </p>
   );
 }
 
+/** The pixel edge's columns, uncovered in a scattered rather than a sweeping order. */
+const pixelOrder = [3, 9, 0, 13, 6, 11, 1, 15, 8, 4, 12, 2, 10, 14, 5, 7];
+
 export default function Home() {
+  const accountsOpen = isDatabaseConfigured();
+  const action = primaryAction(accountsOpen);
+
   return (
     <>
-      <section className="hero">
+      <section className="hero" aria-labelledby="hero-title">
         <div className="inner">
           <div>
-            <p className="form-meta">
-              <span>Shipment workspace</span>
-              <span className="form-meta-end">Five document types</span>
-            </p>
-            <h1>
-              Trade documents that <span className="accent">agree</span> with each other.
+            <p className="eyebrow">One shipment. Every document.</p>
+            <h1 id="hero-title">
+              Enter a shipment once. Get the whole <mark className="tape">document set</mark>.
             </h1>
             <p className="lede">
-              Enter a shipment once. TradeDocs produces the invoice, the packing list and everything
-              else from that single record — so the quantities, weights and values match on every
-              page you send.
+              Record the parties, goods and terms one time. TradeDocs prepares the commercial
+              invoice, proforma invoice, packing list and delivery note from that one record, so a
+              figure you entered once reads the same on every page that carries it.
             </p>
             <div className="cta-row">
-              <LinkButton href="/sign-up" tone="accent" className="large">
-                Create a free account <ArrowRight size={18} aria-hidden="true" />
+              <LinkButton href={action.href} className="large tape">
+                {action.label} <ArrowRight size={18} aria-hidden="true" />
               </LinkButton>
-              <Link className="text-link" href="#how">
-                See how it works
-              </Link>
+              <LinkButton href="/tools" tone="secondary" className="large">
+                {accountsOpen ? 'Try a free tool' : 'See all free tools'}
+              </LinkButton>
             </div>
-            <p className="assurance">Free while TradeDocs is early. No card required.</p>
+            <p className="assurance">
+              {accountsOpen
+                ? 'Free while early · No card required · Every page marked prepared, not issued'
+                : 'Free while early · The tools need no account · Every page marked prepared, not issued'}
+            </p>
           </div>
 
           {/*
-            The claim, drawn rather than asserted. One figure entered against a shipment,
-            then the same figure at the box number it carries on each document. Those
-            numbers are fixed by the forms, so the illustration is the product rather than
-            a picture of it. Hidden from assistive technology because the headline and lede
-            already make the point in words, and hearing one weight four times is noise.
+            The claim, drawn rather than asserted: one entry, then the documents it prepares,
+            stacked edge-on like containers. The only figure shown is the total quantity,
+            because it is the one total every one of these documents prints.
           */}
-          <figure className="tie" aria-hidden="true">
-            <div className="tie-head">
-              <span className="tie-title">Shipment</span>
-              <span className="data" style={{ fontSize: 12 }}>
-                TDX-2026-0184
-              </span>
-            </div>
-            <div className="tie-source">
-              <span className="caption">Net weight · entered once</span>
-              <p className="tie-figure">4,476.50 kg</p>
-            </div>
-            <p className="caption tie-legend">Appears as</p>
-            <ul className="tie-rows">
-              {[
-                { box: '9', document: 'Commercial invoice' },
-                { box: '6', document: 'Packing list' },
-                { box: '4', document: 'Delivery note' },
-              ].map((entry) => (
-                <li className="tie-row" key={entry.document}>
-                  <span className="tie-ordinal">{entry.box}</span>
-                  <span className="tie-doc">{entry.document}</span>
-                  <span className="tie-value">4,476.50 kg</span>
-                </li>
-              ))}
-            </ul>
+          <figure
+            className="stack"
+            role="img"
+            aria-label={`${documents.length} documents prepared from one shipment, each showing the same total quantity`}
+          >
+            <p className="stack-source">Shipment TDX-2026-0184 · entered once</p>
+            {documents.map((document, index) => (
+              <div
+                className={['stack-block', stackTones[index]].filter(Boolean).join(' ')}
+                key={document.kind}
+              >
+                <span className="stack-name">{documentKindLabels[document.kind]}</span>
+                <span className="stack-figure">
+                  Total qty
+                  <b>{SHARED_QUANTITY}</b>
+                </span>
+                <span className="stack-plate">
+                  {document.plate} · {String(index + 1).padStart(4, '0')}
+                </span>
+              </div>
+            ))}
           </figure>
         </div>
       </section>
 
-      {/* The sheet. Boxes share one rule with their neighbours, the way a printed form does. */}
-      <div className="sheet">
-        <div className="form">
-          <section className="form-box w7">
-            <BoxHead ordinal="01" caption="The problem" />
-            <h2>One number typed twice is one number that will eventually differ.</h2>
-            <p className="measure">
-              Most trade paperwork is assembled by copying figures between spreadsheets. The invoice
-              says 1,280 pieces and the packing list says 1,180, and nobody notices while the
-              documents are still on your desk.
-            </p>
-          </section>
+      <RevealSection className="section" id="how" aria-labelledby="how-title">
+        <div className="section-head">
+          <p className="eyebrow">Enter once</p>
+          <h2 id="how-title">Three steps, and the arithmetic stops being yours.</h2>
+        </div>
+        <div className="cards">
+          {steps.map((step, index) => (
+            <article className="card wipe" key={step.title}>
+              <span className="tag">Step {String(index + 1).padStart(2, '0')}</span>
+              <h3>{step.title}</h3>
+              <p>{step.detail}</p>
+              <ul className="fields" aria-label={step.listLabel}>
+                {step.fields.map((field) => (
+                  <li key={field}>{field}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
 
-          <section className="form-box w5">
-            <BoxHead ordinal="02" caption="What it costs" />
-            <h2>The correction costs far more than the typo.</h2>
+      <RevealSection className="section" aria-labelledby="set-title">
+        <div className="section-head split">
+          <div className="section-head" style={{ marginBottom: 0 }}>
+            <p className="eyebrow">The consistent set</p>
+            <h2 id="set-title" className="display">
+              <mark className="tape">Same numbers</mark>, every page.
+            </h2>
             <p>
-              Goods held at the border. A bank refusing the presentation. A buyer disputing the
-              total. Each one is days of somebody’s week, spent on a discrepancy that was never a
-              decision.
+              Each document is a snapshot of one shipment revision. Change the shipment later and
+              the earlier documents are marked stale, never quietly rewritten.
             </p>
-          </section>
+          </div>
+          <Stat value={documents.length} label="Document types from 1 entry" />
+        </div>
+        <div className="cards four">
+          {documents.map((document) => (
+            <article className="card wipe" key={document.kind}>
+              <span className="tag on-tape">{document.plate}</span>
+              <h3>{documentKindLabels[document.kind]}</h3>
+              <p>{document.detail}</p>
+            </article>
+          ))}
+        </div>
+        <p className="note">
+          A certificate of origin template is awaiting legal review and is not offered yet.
+        </p>
+      </RevealSection>
 
-          <section className="form-box" id="how">
-            <BoxHead ordinal="03" caption="Method" />
-            <h2>Three steps, and the arithmetic stops being yours.</h2>
-            <div className="form-grid">
-              {steps.map((step) => (
-                <div className="form-cell" key={step.n}>
-                  <span className="form-ordinal">{step.n}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.detail}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+      <RevealSection className="section sunken" aria-labelledby="saved-title">
+        <div className="section-head">
+          <p className="eyebrow">Saved once</p>
+          <h2 id="saved-title">Companies, products and people, kept for the next shipment.</h2>
+        </div>
+        <div className="cards">
+          {saved.map((item) => (
+            <article className="card wipe" key={item.title}>
+              <span className="plate-icon">
+                <item.icon size={22} aria-hidden="true" />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
 
-          <section className="form-box">
-            <BoxHead ordinal="04" caption="What is prepared" />
-            <h2>The documents a shipment actually needs.</h2>
-            <div className="form-grid">
-              {documents.map((document) => (
-                <div className="form-cell" key={document.name}>
-                  <document.icon size={22} aria-hidden="true" className="icon" />
-                  <h3>{document.name}</h3>
-                  <p>{document.detail}</p>
-                </div>
-              ))}
-            </div>
-            <p className="muted note">
-              TradeDocs prepares these documents. It is not a customs broker, carrier, chamber of
-              commerce or issuing authority, and it does not provide negotiable transport documents.
+      <RevealSection className="section" aria-labelledby="tools-title">
+        <div className="section-head split">
+          <div className="section-head" style={{ marginBottom: 0 }}>
+            <p className="eyebrow">Free tools</p>
+            <h2 id="tools-title">Useful before you have an account.</h2>
+            <p>
+              The calculators run in your browser. The invoice generator sends your details once to
+              render the PDF and stores nothing.
             </p>
-          </section>
+          </div>
+          <Stat value={tools.length} label="Free tools, no account" />
+        </div>
+        <div className="cards four">
+          {tools.map((tool) => (
+            <Link className="card wipe" href={tool.href} key={tool.href}>
+              <span className="tag">{tool.tag}</span>
+              <h3>{tool.name}</h3>
+              <p>{tool.detail}</p>
+              <span className="card-foot">
+                <span className="caption">Free, no account</span>
+                <span className="card-cta">
+                  {tool.cta} <ArrowRight size={15} aria-hidden="true" />
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </RevealSection>
 
-          <section className="form-box w7">
-            <BoxHead ordinal="05" caption="Free tools" />
-            <h2>Useful before you sign up.</h2>
-            <p className="measure">
-              The calculations that come up on the way to a shipment, free and without an account.
-              Each one runs in your browser; nothing you type is sent to us.
-            </p>
-            <div className="form-grid tools">
-              {tools.map((tool) => (
-                <Link className="form-cell" href={tool.href} key={tool.href}>
-                  <tool.icon size={20} aria-hidden="true" className="icon" />
-                  <h3>{tool.name}</h3>
-                  <p>{tool.detail}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          <section className="form-box w5" id="pricing">
-            <BoxHead ordinal="06" caption="Price" />
-            <p className="price-amount">£0</p>
-            <h2 className="price-heading">Free while TradeDocs is early.</h2>
-            <p>Paid plans will arrive later, with notice, and accounts created now keep working.</p>
-            <ul className="checklist">
-              {[
-                'All five document types',
-                'Unlimited shipments and documents',
-                'Your whole team, with roles and invitations',
-                'Reusable companies, customers and products',
-              ].map((item) => (
+      <RevealSection className="section dark" id="pricing" aria-labelledby="status-title">
+        <div className="pixel-edge" aria-hidden="true">
+          {pixelOrder.map((order, column) => (
+            <span key={column} style={{ '--i': order } as CSSProperties} />
+          ))}
+        </div>
+        <div className="section-head">
+          <p className="eyebrow">Honest status</p>
+          <h2 id="status-title" className="display">
+            Free while <mark className="tape">early</mark>.
+          </h2>
+          <p>
+            There is no price yet. Paid plans will come later, with notice.
+            {accountsOpen
+              ? null
+              : ' Accounts are not open on this deployment yet; the free tools work now.'}
+          </p>
+        </div>
+        <div className="status-grid">
+          <article className="card">
+            <span className="tag">Included now</span>
+            <ul className="ledger">
+              {included.map((item) => (
                 <li key={item}>
-                  <Check size={17} aria-hidden="true" />
+                  <Check size={17} aria-hidden="true" className="yes" />
                   {item}
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: 24 }}>
-              <LinkButton href="/sign-up" tone="accent" block>
-                Create a free account <ArrowRight size={17} aria-hidden="true" />
-              </LinkButton>
-            </div>
-          </section>
-
-          <section className="form-box faq">
-            <BoxHead ordinal="07" caption="Questions" />
-            <h2>Before you sign up.</h2>
-            {questions.map((item) => (
-              <details key={item.q}>
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </section>
+          </article>
+          <article className="card">
+            <span className="tag">Not yet</span>
+            <ul className="ledger">
+              {notYet.map((item) => (
+                <li key={item}>
+                  <Clock size={17} aria-hidden="true" className="not-yet" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
-      </div>
+        <div className="boundary">
+          <p>
+            TradeDocs prepares documents from the data you enter. Carriers, chambers of commerce and
+            customs authorities issue, certify and clear them, and TradeDocs never presents itself
+            as one of them.
+          </p>
+          <LinkButton href={action.href} className="tape">
+            {action.label} <ArrowRight size={17} aria-hidden="true" />
+          </LinkButton>
+        </div>
+      </RevealSection>
 
-      <section className="section dark closing">
+      <section className="section" aria-labelledby="faq-title">
+        <div className="section-head">
+          <p className="eyebrow">Questions</p>
+          <h2 id="faq-title">Before you start.</h2>
+        </div>
+        <div className="faq">
+          {questions.map((item) => (
+            <details key={item.q}>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <RevealSection className="section sunken closing" aria-labelledby="closing-title">
         <div className="inner">
-          <h2>Stop reconciling your own paperwork.</h2>
+          <p className="eyebrow">Next shipment</p>
+          <h2 id="closing-title" className="display" style={{ marginTop: 24 }}>
+            Stop <mark className="tape">reconciling</mark> paperwork.
+          </h2>
           <div className="cta-row">
-            <LinkButton href="/sign-up" tone="accent" className="large">
-              Create a free account <ArrowRight size={18} aria-hidden="true" />
+            <LinkButton href={action.href} className="large">
+              {action.label} <ArrowRight size={18} aria-hidden="true" />
+            </LinkButton>
+            <LinkButton href="/tools" tone="secondary" className="large">
+              {accountsOpen ? 'Try a free tool' : 'See all free tools'}
             </LinkButton>
           </div>
           {/*
-            The one sentence this product is obliged to carry on every surface, made the
-            thing the page is remembered by. A stamp is what a document gets when an
-            authority has touched it. TradeDocs is not an authority, so its stamp says
-            exactly that, and the constraint becomes the identity instead of fighting it.
+            A stamp is what a document gets when an authority has touched it. TradeDocs is not
+            an authority, so its stamp says exactly that.
           */}
           <p className="stamp">Prepared · not issued</p>
         </div>
-      </section>
+      </RevealSection>
     </>
   );
 }
