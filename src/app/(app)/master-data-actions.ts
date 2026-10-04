@@ -565,8 +565,14 @@ export async function removePackage(
   if (!parsed.success) return { error: 'That package could not be found.' };
 
   const client = await createClient();
-  const { error } = await client.from('shipment_packages').delete().eq('id', parsed.data.package);
-  if (error) return { error: 'That package could not be removed.' };
+  const { data: removed, error } = await client
+    .from('shipment_packages')
+    .delete()
+    .eq('id', parsed.data.package)
+    .eq('shipment_id', parsed.data.shipment)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error || !removed?.length) return { error: 'That package could not be removed.' };
 
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Package removed.' };
