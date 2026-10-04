@@ -23,7 +23,9 @@ function request(overrides: Record<string, unknown> = {}) {
     reference: '',
     seller: { name: 'Meridian Components Ltd', country_code: 'GB' },
     buyer: { name: 'Nordwind Handels GmbH', country_code: 'DE' },
-    lines: [{ description: 'Bearing housing', quantity: 3, unit_price: 0.1, country_of_origin: '' }],
+    lines: [
+      { description: 'Bearing housing', quantity: 3, unit_price: 0.1, country_of_origin: '' },
+    ],
     ...overrides,
   };
 }
