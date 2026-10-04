@@ -10,6 +10,7 @@ import { ActionResult } from '@/components/primitives/action-result';
 import { DocumentStatus, type DocumentState } from '@/components/document/status';
 import { documentKindLabel, documentKindLabels } from '@/lib/labels';
 import { generateDocument } from '@/app/(app)/shipment-actions';
+import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 import type { ActionState } from '@/app/(app)/actions';
 
 export type GeneratedDocument = {
@@ -35,12 +36,18 @@ export function DocumentsPanel({
   org,
   shipmentId,
   documents,
+  regulatedEnabled,
 }: {
   org: string;
   shipmentId: string;
   documents: GeneratedDocument[];
+  /** Regulated types are offered only once approved; the server refuses them regardless. */
+  regulatedEnabled: boolean;
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(generateDocument, {});
+  const kinds = Object.entries(documentKindLabels).filter(
+    ([kind]) => regulatedEnabled || !isRegulatedDocumentKind(kind),
+  );
   const current = documents.filter((document) => document.status === 'final' && !document.stale);
 
   return (
@@ -71,7 +78,7 @@ export function DocumentsPanel({
             <Field id="kind" label="Document type">
               {({ id }) => (
                 <Select id={id} name="kind" defaultValue="commercial_invoice">
-                  {Object.entries(documentKindLabels).map(([kind, label]) => (
+                  {kinds.map(([kind, label]) => (
                     <option key={kind} value={kind}>
                       {label}
                     </option>
@@ -84,6 +91,11 @@ export function DocumentsPanel({
             Generate document
           </Button>
         </form>
+        {regulatedEnabled ? null : (
+          <p className="muted" style={{ margin: 0 }}>
+            {REGULATED_DOCUMENT_LIMITATION}
+          </p>
+        )}
 
         {documents.length > 0 ? (
           <>

@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
 import { fieldErrors, summaryOf } from '@/lib/form-errors';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 
 const uuid = z.uuid();
 const optionalText = (max: number) =>
@@ -222,6 +224,9 @@ export async function generateDocument(
       kind: read(formData, 'kind'),
     });
   if (!parsed.success) return { error: 'Choose a document type.' };
+  if (isRegulatedDocumentKind(parsed.data.kind) && !regulatedDocumentsEnabled()) {
+    return { error: REGULATED_DOCUMENT_LIMITATION };
+  }
 
   const client = await createClient();
   const { error } = await client.rpc('generate_document', {

@@ -5,6 +5,7 @@ import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { decimal } from '@/lib/format';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { ShipmentEditor } from './shipment-editor';
 import { PartiesPanel } from './parties-panel';
 import { PackingPanel } from './packing-panel';
@@ -175,6 +176,7 @@ export default async function ShipmentPage({
         <DocumentsPanel
           org={org}
           shipmentId={shipmentId}
+          regulatedEnabled={regulatedDocumentsEnabled()}
           documents={(documentsResult.data ?? []).map((document) => ({
             id: document.id,
             kind: document.kind,
