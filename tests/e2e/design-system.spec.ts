@@ -160,8 +160,12 @@ test('keyboard reaches the content and the skip link comes first', async ({ page
 
 test('the public page carries its boundary statement and passes axe', async ({ page }) => {
   await page.goto('/');
+  // The statement is carried in the header and again in the footer; the header copy is the
+  // one that has to be on screen before anything else.
   await expect(
-    page.getByText('It is not a customs broker, carrier, chamber or issuing authority.'),
+    page
+      .getByRole('banner')
+      .getByText('It is not a customs broker, carrier, chamber or issuing authority.'),
   ).toBeVisible();
   expect(
     (
