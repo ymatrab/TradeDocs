@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
       if (error.status === 415) return refuse('Send the document as JSON.', 415);
       if (error.status === 422) {
         return refuse(
-          'Check the document details. A number, a buyer and at least one line are needed.',
+          'Check the document details. A number and at least one described line are needed, and any country or date must be valid.',
           400,
         );
       }

@@ -54,6 +54,11 @@ export const snapshotSchema = z.object({
   ]),
   number: z.string(),
   generated_at: z.string(),
+  /**
+   * The date the issuer states for the document (YYYY-MM-DD), when it differs from the day
+   * it was generated. Absent on every workspace snapshot so far, which print generated_at.
+   */
+  issued_on: z.string().nullable().optional(),
   shipment: z.object({
     reference: z.string(),
     incoterm: z.string().nullable().optional(),
@@ -281,7 +286,7 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     page.text(`No. ${snapshot.number}`, PAGE_WIDTH - MARGIN, cursor, { size: 10, align: 'right' });
     cursor -= 14;
     page.text(
-      `Shipment ${snapshot.shipment.reference} · revision ${snapshot.shipment.revision} · issued ${snapshot.generated_at.slice(0, 10)}`,
+      `Shipment ${snapshot.shipment.reference} · revision ${snapshot.shipment.revision} · issued ${snapshot.issued_on ?? snapshot.generated_at.slice(0, 10)}`,
       MARGIN,
       cursor,
       { size: 7.5 },
