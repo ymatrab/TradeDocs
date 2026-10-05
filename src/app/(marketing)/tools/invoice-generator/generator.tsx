@@ -59,6 +59,16 @@ const KINDS = {
   packing_list: 'Packing list',
 } as const;
 
+/** The document types the free generator renders; a page presets one of them. */
+export type GeneratorKind = keyof typeof KINDS;
+
+/** A number in the shape each document is usually given, shown as a placeholder only. */
+const NUMBER_PLACEHOLDER: Record<GeneratorKind, string> = {
+  commercial_invoice: 'INV-2026-001',
+  proforma_invoice: 'PI-2026-001',
+  packing_list: 'PL-2026-001',
+};
+
 const INCOTERMS = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
 
 const columns = {
@@ -80,8 +90,13 @@ function number(value: string): number {
  * it. What they do not get is the part an account is for: the values are gone the moment
  * the page is closed, and the second shipment starts from an empty form again.
  */
-export function DocumentGenerator() {
-  const [kind, setKind] = useState<keyof typeof KINDS>('commercial_invoice');
+export function DocumentGenerator({
+  initialKind = 'commercial_invoice',
+}: {
+  /** The type the form opens on. The visitor can still switch it. */
+  initialKind?: GeneratorKind;
+}) {
+  const [kind, setKind] = useState<GeneratorKind>(initialKind);
   const [documentNumber, setDocumentNumber] = useState('');
   const [issuedOn, setIssuedOn] = useState('');
   const [origin, setOrigin] = useState('');
@@ -278,7 +293,7 @@ export function DocumentGenerator() {
               <Select
                 id={id}
                 value={kind}
-                onChange={(event) => setKind(event.target.value as keyof typeof KINDS)}
+                onChange={(event) => setKind(event.target.value as GeneratorKind)}
               >
                 {Object.entries(KINDS).map(([value, label]) => (
                   <option key={value} value={value}>
@@ -295,7 +310,7 @@ export function DocumentGenerator() {
                 value={documentNumber}
                 maxLength={60}
                 className="input data"
-                placeholder="INV-2026-001"
+                placeholder={NUMBER_PLACEHOLDER[kind]}
                 onChange={(event) => setDocumentNumber(event.target.value)}
               />
             )}
