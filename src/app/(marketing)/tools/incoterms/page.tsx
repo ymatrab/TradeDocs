@@ -2,7 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Callout } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
-import { INCOTERMS, INCOTERMS_DISCLAIMER, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
+import {
+  INCOTERMS,
+  INCOTERMS_CHART,
+  INCOTERMS_DISCLAIMER,
+  INCOTERMS_HUB_FAQ,
+} from '@/lib/trade/incoterms';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
 import { ToolJsonLd } from '@/components/seo/json-ld';
@@ -10,9 +15,9 @@ import { RelatedTools } from '@/components/seo/related-tools';
 import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
-  title: 'Incoterms 2020 explained — all eleven rules',
+  title: 'Incoterms 2020 chart and explanation — all eleven rules',
   description:
-    'Where risk passes, who pays for carriage, who clears customs and who insures, for every Incoterms 2020 rule. Plain language, with the trap in each one named.',
+    'An Incoterms 2020 responsibilities chart and a plain-language summary of every rule: where risk passes, who pays for carriage, who clears customs and who insures, with the trap in each one named.',
   alternates: { canonical: '/tools/incoterms' },
   openGraph: openGraphFor(
     'Incoterms 2020 explained: all eleven rules',
@@ -62,6 +67,44 @@ export default function IncotermsPage() {
             ))}
           </tbody>
         </DataTable>
+      </section>
+
+      <section className="section" aria-labelledby="chart-title">
+        <h2 id="chart-title">Incoterms® 2020 responsibilities chart</h2>
+        <p className="measure">
+          Who does what under each rule, read down a column. The chart is built from the same data
+          as the rule pages, so the two cannot disagree.
+        </p>
+        <DataTable caption="Incoterms® 2020 responsibilities by rule" density="compact">
+          <thead>
+            <tr>
+              <th scope="col">Obligation</th>
+              {INCOTERMS.map((term) => (
+                <th key={term.code} scope="col">
+                  <Link className="text-link" href={`/tools/incoterms/${term.code.toLowerCase()}`}>
+                    <span className="data">{term.code}</span>
+                  </Link>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {INCOTERMS_CHART.map((row) => (
+              <tr key={row.label}>
+                <th scope="row">{row.label}</th>
+                {INCOTERMS.map((term) => (
+                  <td key={term.code}>{row.cell(term)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </DataTable>
+        <p className="muted measure">
+          Origin means risk passes in the seller’s country, at the named place or port of shipment,
+          even under the C rules where the seller pays carriage further. Unloading at destination
+          can be included in the carriage contract the seller buys; the chart shows who the rules
+          themselves put it on.
+        </p>
       </section>
 
       <section className="section">

@@ -29,8 +29,10 @@ export async function generateMetadata({
   const term = findIncoterm(code);
   if (!term) return { title: 'Incoterms 2020' };
 
-  const title = `${term.code} Incoterms 2020 — ${term.name}, explained`;
-  const description = `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`;
+  const title = term.search?.title ?? `${term.code} Incoterms 2020 — ${term.name}, explained`;
+  const description = term.search
+    ? `${term.search.lead} Who pays, who insures, and the mistake it most often causes.`
+    : `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`;
   const path = `/tools/incoterms/${term.code.toLowerCase()}`;
   return {
     title,
@@ -65,10 +67,11 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
             Incoterms® 2020
           </Link>
         </p>
-        <h1>
-          {term.code} Incoterms® 2020 — {term.name}
-        </h1>
-        <p className="lede">{term.riskPasses}</p>
+        <h1>{term.search?.heading ?? `${term.code} Incoterms® 2020 — ${term.name}`}</h1>
+        <p className="lede">
+          {term.search ? `${term.search.lead} ` : null}
+          {term.riskPasses}
+        </p>
       </section>
 
       <section className="section">

@@ -44,12 +44,24 @@ export type Incoterm = {
   mistakes: readonly string[];
   /** Three or four questions, answered plainly. Rendered on the page and reused for JSON-LD. */
   faq: readonly IncotermFaq[];
+  /**
+   * The page's title, heading and opening sentence in the words people search with, where
+   * the keyword data shows a phrasing other than "<code> Incoterms 2020" (content plan
+   * 2026-10-05). Rules without one use the default pattern.
+   */
+  search?: { title: string; heading: string; lead: string };
 };
 
 export const INCOTERMS: readonly Incoterm[] = [
   {
     code: 'EXW',
     name: 'Ex Works',
+    search: {
+      title: 'EXW Incoterm — Ex Works in Incoterms 2020, explained',
+      heading: 'EXW Incoterm: Ex Works (Incoterms® 2020)',
+      lead:
+        'EXW, Ex Works, is the Incoterms® rule with the least for the seller to do: it makes the goods available at its own premises and the buyer does everything from there.',
+    },
     mode: 'any',
     riskPasses: 'At the seller’s premises, once the goods are placed at the buyer’s disposal.',
     sellerCosts: 'Nothing beyond making the goods available, packed and identified.',
@@ -87,6 +99,12 @@ export const INCOTERMS: readonly Incoterm[] = [
   {
     code: 'FCA',
     name: 'Free Carrier',
+    search: {
+      title: 'FCA Incoterm — Free Carrier in Incoterms 2020, explained',
+      heading: 'FCA Incoterm: Free Carrier (Incoterms® 2020)',
+      lead:
+        'FCA, Free Carrier, is the Incoterms® rule under which the seller clears the goods for export and hands them to the buyer’s carrier at a named place.',
+    },
     mode: 'any',
     riskPasses: 'When the goods are handed to the carrier the buyer nominated, at the named place.',
     sellerCosts: 'Delivery to that named place, and export clearance.',
@@ -199,6 +217,12 @@ export const INCOTERMS: readonly Incoterm[] = [
   {
     code: 'DAP',
     name: 'Delivered at Place',
+    search: {
+      title: 'DAP meaning — Delivered at Place in Incoterms 2020',
+      heading: 'DAP meaning: Delivered at Place (Incoterms® 2020)',
+      lead:
+        'DAP means Delivered at Place: the seller delivers the goods to the named destination, and the buyer clears them for import and pays the duty and taxes.',
+    },
     mode: 'any',
     riskPasses:
       'At the named destination, with the goods ready for unloading from the arriving vehicle.',
@@ -279,6 +303,12 @@ export const INCOTERMS: readonly Incoterm[] = [
   {
     code: 'DDP',
     name: 'Delivered Duty Paid',
+    search: {
+      title: 'DDP shipping — Delivered Duty Paid in Incoterms 2020, explained',
+      heading: 'DDP shipping: Delivered Duty Paid (Incoterms® 2020)',
+      lead:
+        'DDP shipping means the seller delivers the goods to the buyer’s named place cleared for import, with the import duty and taxes paid.',
+    },
     mode: 'any',
     riskPasses: 'At the named destination, ready for unloading, cleared for import.',
     sellerCosts: 'Everything, including import duty and taxes.',
@@ -351,6 +381,12 @@ export const INCOTERMS: readonly Incoterm[] = [
   {
     code: 'FOB',
     name: 'Free on Board',
+    search: {
+      title: 'FOB shipping meaning — Free on Board in Incoterms 2020',
+      heading: 'FOB in shipping: Free on Board (Incoterms® 2020)',
+      lead:
+        'In shipping, FOB means Free on Board: an Incoterms® rule under which the seller loads the goods on board the vessel the buyer nominates, at the named port of shipment.',
+    },
     mode: 'sea',
     riskPasses: 'When the goods are on board the vessel at the named port of shipment.',
     sellerCosts: 'Delivery on board, and export clearance.',
@@ -458,6 +494,36 @@ export const INCOTERMS: readonly Incoterm[] = [
       },
     ],
   },
+];
+
+/** One cell of the responsibilities chart. */
+export type ChartRow = { label: string; cell: (term: Incoterm) => string };
+
+const who = (party: Party): string => (party === 'seller' ? 'Seller' : 'Buyer');
+
+/**
+ * The responsibilities chart: obligations down the side, the eleven rules across. Built
+ * from the entries above, so it cannot disagree with the rule pages. The facts not stored
+ * per rule follow the ICC text directly: CIF and CIP are the only rules that oblige the
+ * seller to insure, DPU is the only one that obliges the seller to unload at destination,
+ * and risk passes at origin under the E, F and C rules and at destination under the D rules.
+ */
+export const INCOTERMS_CHART: readonly ChartRow[] = [
+  { label: 'Export clearance', cell: (term) => who(term.exportClearance) },
+  { label: 'Main carriage contracted and paid by', cell: (term) => who(term.mainCarriage) },
+  {
+    label: 'Insurance required of',
+    cell: (term) => (term.code === 'CIF' || term.code === 'CIP' ? 'Seller' : 'Neither'),
+  },
+  {
+    label: 'Risk passes',
+    cell: (term) => (term.code.startsWith('D') ? 'Destination' : 'Origin'),
+  },
+  {
+    label: 'Unloading at destination',
+    cell: (term) => (term.code === 'DPU' ? 'Seller' : 'Buyer'),
+  },
+  { label: 'Import clearance, duty and taxes', cell: (term) => who(term.importClearance) },
 ];
 
 export function findIncoterm(code: string): Incoterm | undefined {
