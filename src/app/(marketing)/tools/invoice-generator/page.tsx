@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
+import { PAGE_SOURCES } from '@/lib/trade/sources';
+import { SourcesBlock, ToolCta } from '../page-parts';
 import { DocumentGenerator } from './generator';
 
 export const metadata: Metadata = {
@@ -14,7 +14,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What has to be on a commercial invoice?',
-    a: 'The seller and buyer with full addresses, an invoice number and date, a description of the goods, quantities, unit prices and the total, the currency, the country of origin, and the agreed Incoterm with its named place. HS codes are not always mandatory but customs work is far faster with them.',
+    a: 'The usual core is the seller and buyer with full addresses, an invoice number and date, a description of the goods, quantities, unit prices and the total, the currency and the country of origin, with the agreed Incoterms® rule and its named place beside them. What is actually required depends on the importing country; for the United States it is set out in 19 CFR 141.86. HS codes are not always mandatory, but customs work is faster with them.',
+  },
+  {
+    q: 'Which fields does the generator need?',
+    a: 'A document number, the names of both companies and at least one described line of goods. Everything marked optional can be left blank and the PDF will still be produced, but the customs authority in the importing country may expect it, so fill in what applies to your shipment.',
   },
   {
     q: 'What is the difference between a commercial invoice and a proforma invoice?',
@@ -71,17 +75,17 @@ export default function GeneratorPage() {
         <p className="measure">
           Filling this in once is fine. Filling it in again next month, then retyping the same
           figures into a packing list, is where a document set starts to disagree with itself — and
-          a packing list that contradicts its invoice is the usual reason a consignment is held.
-          With an account, the goods and the parties are saved once, every document is generated
-          from the same shipment, and the set downloads together with a manifest.
+          a packing list that contradicts its invoice is a common reason a consignment is held. With
+          an account, the goods and the parties are saved once, every document is generated from the
+          same shipment, and the set downloads together with a manifest.
         </p>
-        <div className="cta-row">
-          <LinkButton href="/sign-up">Create a free account</LinkButton>
-          <Link className="text-link" href="/tools">
-            All trade tools
-          </Link>
-        </div>
+        <ToolCta
+          current="/tools/invoice-generator"
+          secondary={{ href: '/tools', label: 'All trade tools' }}
+        />
       </section>
+
+      <SourcesBlock ids={PAGE_SOURCES.invoice} />
     </>
   );
 }

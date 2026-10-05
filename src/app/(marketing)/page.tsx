@@ -117,7 +117,7 @@ const tools = [
   {
     href: '/tools/incoterms',
     tag: 'Tool · Incoterms',
-    name: 'Incoterms 2020 guide',
+    name: 'Incoterms® 2020 guide',
     detail: 'All eleven rules: who pays, who insures, where risk passes.',
     cta: 'Open guide',
   },

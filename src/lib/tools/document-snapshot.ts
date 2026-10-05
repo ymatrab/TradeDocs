@@ -49,9 +49,25 @@ const line = z.object({
   package_count: z.coerce.number().int().min(0).max(1_000_000).optional(),
 });
 
+function isCalendarDate(value: string): boolean {
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value;
+}
+
+/** A calendar date, YYYY-MM-DD; empty means "use the day it is generated". */
+const calendarDate = z
+  .string()
+  .trim()
+  .regex(/^(\d{4}-\d{2}-\d{2})?$/)
+  // A round trip rather than Date.parse alone, which accepts 31 February as 3 March.
+  .refine((value) => !value || isCalendarDate(value))
+  .transform((value) => value || null);
+
 export const toolRequestSchema = z.object({
   kind: z.enum(['commercial_invoice', 'proforma_invoice', 'packing_list']),
   number: z.string().trim().min(1).max(60),
+  /** The date printed as the document's issue date; the generation day when not stated. */
+  issued_on: calendarDate.optional(),
   reference: z.string().trim().max(60).default(''),
   currency: z
     .string()
@@ -118,6 +134,7 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
     kind: input.kind,
     number: input.number,
     generated_at: generatedAt.toISOString(),
+    issued_on: input.issued_on ?? null,
     shipment: {
       reference: input.reference || input.number,
       incoterm: input.incoterm,

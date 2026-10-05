@@ -72,7 +72,9 @@ export function volumeOf(cartons: readonly Carton[], unit: LengthUnit): VolumeRe
  * a quotation: an individual contract can and does override them, which the page says.
  *
  * Air divisors are stated per cubic metre. IATA's 6000 cm³/kg is 167 kg per m³; express
- * carriers commonly use 5000 cm³/kg, which is 200 kg per m³.
+ * carriers commonly use 5000 cm³/kg, which is 200 kg per m³. The air and express figures
+ * are cited from lib/trade/sources ('iata-volumetric' and the DHL, FedEx and UPS records);
+ * the road and sea conventions have no source record yet.
  */
 export const VOLUMETRIC_RULES = {
   air_iata: {
@@ -83,7 +85,7 @@ export const VOLUMETRIC_RULES = {
   air_express: {
     label: 'Air express / courier (5000 cm³/kg)',
     kgPerCubicMetre: 1_000_000 / 5000,
-    note: 'Used by most integrators for international express.',
+    note: 'Used by DHL Express, FedEx and UPS for international express.',
   },
   road_europe: {
     label: 'Road groupage, Europe (333 kg/m³)',
@@ -132,7 +134,12 @@ export function chargeableWeight(
   };
 }
 
-/** Interior dimensions in metres, and the usable volume a forwarder plans against. */
+/**
+ * Typical internal volume and maximum payload per container type. Real units vary by
+ * series and carrier — Maersk, for example, publishes 33, 67, 76 and 85 m³ for these four
+ * types ('maersk-dry-containers' in lib/trade/sources) — so every surface labels these as
+ * typical figures for planning, not a specification of any particular box.
+ */
 export const CONTAINERS = {
   '20ft': { label: "20' standard", volumeM3: 33.2, payloadKg: 28_200 },
   '40ft': { label: "40' standard", volumeM3: 67.7, payloadKg: 28_800 },

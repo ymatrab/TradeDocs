@@ -34,7 +34,7 @@ const tools = [
   {
     icon: Handshake,
     href: '/tools/incoterms',
-    name: 'Incoterms 2020 guide',
+    name: 'Incoterms® 2020 guide',
     detail:
       'All eleven rules in plain language: where risk passes, who pays what, who clears customs, and the traps in each.',
   },

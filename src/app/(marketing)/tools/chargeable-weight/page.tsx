@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { LinkButton } from '@/components/primitives/button';
+import { PAGE_SOURCES } from '@/lib/trade/sources';
+import { SourcesBlock, ToolCta } from '../page-parts';
 import { ChargeableWeightCalculator } from './calculator';
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ const faq = [
   },
   {
     q: 'What is the volumetric divisor for air freight?',
-    a: 'The general IATA convention is 6,000 cm³ per kilogram, which works out at about 167 kg per cubic metre. Express and courier services usually apply 5,000 cm³ per kilogram, or 200 kg per cubic metre, which produces a higher charge for the same box.',
+    a: 'The general IATA convention is 6,000 cm³ per kilogram, which works out at about 167 kg per cubic metre. DHL Express, FedEx and UPS publish 5,000 cm³ per kilogram for their express services, or 200 kg per cubic metre, which produces a higher charge for the same box.',
   },
   {
     q: 'How is volumetric weight calculated?',
@@ -65,13 +65,10 @@ export default function ChargeableWeightPage() {
           and agree with your invoice. TradeDocs holds them once per product and prints every
           document in the set from the same numbers.
         </p>
-        <div className="cta-row">
-          <LinkButton href="/sign-up">Create a free account</LinkButton>
-          <Link className="text-link" href="/tools">
-            All trade tools
-          </Link>
-        </div>
+        <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>
+
+      <SourcesBlock ids={PAGE_SOURCES.chargeableWeight} />
     </>
   );
 }

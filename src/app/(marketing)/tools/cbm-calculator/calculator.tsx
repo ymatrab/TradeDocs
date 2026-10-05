@@ -84,9 +84,9 @@ export function CbmCalculator() {
       </BoxGrid>
 
       {stated ? (
-        <Panel title="Against a standard container">
+        <Panel title="Against typical container sizes">
           <div style={{ display: 'grid', gap: 12 }}>
-            <DataTable caption="How this consignment sits against standard containers">
+            <DataTable caption="How this consignment sits against typical container sizes">
               <thead>
                 <tr>
                   <th scope="col">Container</th>
@@ -115,9 +115,10 @@ export function CbmCalculator() {
               </tbody>
             </DataTable>
             <p className="muted" style={{ marginBottom: 0 }}>
-              A planning estimate against nominal capacities. Real stowage depends on whether the
-              cartons stack, how they divide into the container floor, and the pallets they sit on.
-              A forwarder’s load plan is the answer that binds.
+              A planning estimate against typical volumes and payloads; individual containers vary
+              by series and carrier. Real stowage depends on whether the cartons stack, how they
+              divide into the container floor, and the pallets they sit on. A forwarder’s load plan
+              is the answer that binds.
             </p>
           </div>
         </Panel>

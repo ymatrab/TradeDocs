@@ -138,6 +138,16 @@ describe('free document snapshot', () => {
     expect(stated.totals.gross_weight_kg).toBe('5');
     expect(stated.items[1]?.gross_weight_kg).toBe(0.75);
   });
+
+  it('prints a stated issue date, and only a real one', () => {
+    expect(snapshotOf().issued_on).toBeNull();
+    expect(snapshotOf({ issued_on: '' }).issued_on).toBeNull();
+    const dated = snapshotOf({ issued_on: '2026-09-30' });
+    expect(dated.issued_on).toBe('2026-09-30');
+    expect(renderTradeDocument(dated).byteLength).toBeGreaterThan(2_000);
+    expect(toolRequestSchema.safeParse(request({ issued_on: '2026-02-31' })).success).toBe(false);
+    expect(toolRequestSchema.safeParse(request({ issued_on: '30/09/2026' })).success).toBe(false);
+  });
 });
 
 describe('free document route', () => {
