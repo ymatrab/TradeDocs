@@ -2,6 +2,17 @@
 
 ## Unreleased — 2026-09-06
 
+### Design v2 refinement (D-013, Manifest palette kept)
+
+- Type: Inter Tight 500/600 for headlines (display 72 → 44, line-height .94, −.025em; H2 48 → 32; H3 24 → 20) and Geist Mono 500 for eyebrows, tags, buttons and figures, replacing Archivo and JetBrains Mono; `text-wrap: balance` on headings. The home headline is nine words, so it is set in sentence case; uppercase stays for headlines of six words or fewer. PDFs embed their own font and are unchanged.
+- Spacing: one section rhythm (`clamp(72px, 10vw, 140px)`), one card padding, a tighter hero so the header, headline, offer and product frame fit 1280 × 800, 16px gutters below 900px.
+- Hero: the edge-on document stack is replaced by a product frame — an example record in the workspace's field boxes and a rail of the four documents, with the total quantity sharing one marker across all five.
+- New "one record → four documents" section: the record pinned on the left, the documents stacking on the right as the page scrolls (a horizontal snap row on phones). The four tool cards became one ruled tool bench, each tool with one live field worked out by the same domain functions as the full tool.
+- Motion: line rise inside masks, scroll-driven stacked documents and pixel dissolve (with fallbacks), marker sweep, header condense via a sentinel, an eased count-up, hero frame drift and a press scale. No motion animates text opacity or colour; reduced motion shows every final state.
+- Nav: "Pricing" is now "Free while early" (there are no prices); the anchor stays `/#pricing`.
+- Fixed the CI axe colour-contrast failure on `/`: the white "PL" plate in the hero took `--muted`, which the hero redefines to `--hull-muted`, giving #b6c9c3 on #fff (1.73:1). Light grounds placed on hull now restore named paper tokens (`--paper-muted`, `--paper-link`, `--paper-rule`).
+- Workspace: a section caption above every page title, a sticky topbar, one page column (`.app-page`), panels with full-bleed tables, row hover and inset focus rings, an empty-state mark and a next action on every empty state, a short rise on dialogs and menus, and the press scale on buttons.
+
 ### Search readiness (D-007, indexing still closed)
 
 - `isIndexable()` now also requires `APP_URL` on a custom domain. `X-Robots-Tag: noindex, nofollow` is sent only when the deployment is not indexable or on private paths, and a production deployment with a custom `APP_URL` 308s its vercel.app hosts to it; previews are never redirected. Both decisions are pure and unit-tested.
