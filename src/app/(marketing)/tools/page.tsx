@@ -1,51 +1,42 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Box, FileText, Scale, Handshake } from 'lucide-react';
+import {
+  BookOpen,
+  Box,
+  Boxes,
+  Calculator,
+  FileText,
+  Handshake,
+  Scale,
+  type LucideIcon,
+} from 'lucide-react';
 import { ToolsHubJsonLd } from '@/components/seo/json-ld';
+import { GUIDES } from '@/lib/content/guides';
+import { PUBLIC_TOOLS } from '@/lib/seo/site';
 import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
-  title: 'Free trade tools — CBM, chargeable weight and Incoterms',
+  title: 'Free trade tools — document generators and shipping calculators',
   description:
-    'Calculators and references for people who ship: cubic metres, volumetric versus actual weight, and a plain-language guide to all eleven Incoterms 2020 rules.',
+    'Free tools for people who ship: commercial invoice, proforma invoice and packing list generators, CBM, dimensional weight and landed cost calculators, and a guide to all eleven Incoterms 2020 rules.',
   alternates: { canonical: '/tools' },
   openGraph: openGraphFor(
-    'Free trade tools: invoice generator, CBM, chargeable weight, Incoterms',
-    'A free commercial invoice generator, CBM and chargeable weight calculators, and a plain-language guide to all eleven Incoterms 2020 rules.',
+    'Free trade tools: document generators, calculators and Incoterms',
+    'Commercial invoice, proforma and packing list generators, CBM, dimensional weight and landed cost calculators, and a guide to all eleven Incoterms 2020 rules.',
     '/tools',
   ),
 };
 
-const tools = [
-  {
-    icon: FileText,
-    href: '/tools/invoice-generator',
-    name: 'Commercial invoice generator',
-    detail:
-      'Fill in a commercial invoice, proforma or packing list and download the PDF. No account, no watermark, nothing stored.',
-  },
-  {
-    icon: Box,
-    href: '/tools/cbm-calculator',
-    name: 'CBM calculator',
-    detail:
-      'Cubic metres from carton dimensions, in any unit, with a check against 20ft, 40ft and high-cube containers.',
-  },
-  {
-    icon: Scale,
-    href: '/tools/chargeable-weight',
-    name: 'Chargeable weight calculator',
-    detail:
-      'Volumetric against actual weight for air, express, road groupage and sea LCL — and which one you will be billed on.',
-  },
-  {
-    icon: Handshake,
-    href: '/tools/incoterms',
-    name: 'Incoterms® 2020 guide',
-    detail:
-      'All eleven rules in plain language: where risk passes, who pays what, who clears customs, and the traps in each.',
-  },
-];
+/** The icon beside each tool. The names and summaries come from the shared tool list. */
+const ICONS: Record<string, LucideIcon> = {
+  '/tools/invoice-generator': FileText,
+  '/tools/proforma-invoice-generator': FileText,
+  '/tools/packing-list-generator': Boxes,
+  '/tools/cbm-calculator': Box,
+  '/tools/chargeable-weight': Scale,
+  '/tools/landed-cost-calculator': Calculator,
+  '/tools/incoterms': Handshake,
+};
 
 export default function ToolsPage() {
   return (
@@ -54,18 +45,35 @@ export default function ToolsPage() {
         <p className="eyebrow">Free, no account needed</p>
         <h1>Trade tools</h1>
         <p className="lede">
-          The calculations and references that come up before a shipment is booked. Each one runs in
-          your browser: nothing you type about a consignment is sent to us or stored.
+          The documents, calculations and references that come up before a shipment is booked. The
+          calculators run in your browser; the generators send your details once to render the PDF.
+          Nothing you type about a consignment is stored.
         </p>
       </section>
 
       <section className="section">
         <div className="form-grid">
-          {tools.map((tool) => (
-            <Link key={tool.href} href={tool.href} className="form-cell">
-              <tool.icon size={22} aria-hidden="true" className="icon" />
-              <h2>{tool.name}</h2>
-              <p>{tool.detail}</p>
+          {PUBLIC_TOOLS.map((tool) => {
+            const Icon = ICONS[tool.path] ?? FileText;
+            return (
+              <Link key={tool.path} href={tool.path} className="form-cell">
+                <Icon size={22} aria-hidden="true" className="icon" />
+                <h2>{tool.name}</h2>
+                <p>{tool.summary}</p>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="guides-title">
+        <h2 id="guides-title">Guides</h2>
+        <div className="form-grid">
+          {GUIDES.map((guide) => (
+            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="form-cell">
+              <BookOpen size={22} aria-hidden="true" className="icon" />
+              <h3>{guide.title}</h3>
+              <p>{guide.description}</p>
             </Link>
           ))}
         </div>

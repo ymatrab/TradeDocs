@@ -1,3 +1,4 @@
+import { GUIDES } from '@/lib/content/guides';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
 
@@ -31,28 +32,49 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     path: '/tools/invoice-generator',
     name: 'Commercial invoice generator',
     summary:
-      'Fill in a commercial invoice, proforma invoice or packing list and download the PDF. No account, no watermark, nothing stored.',
+      'A fillable commercial invoice template: enter the parties and goods and download the PDF. No account, no watermark, nothing stored.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/proforma-invoice-generator',
+    name: 'Proforma invoice generator',
+    summary:
+      'Fill in a proforma invoice for a quotation, a letter of credit or an import licence and download the PDF. No account, nothing stored.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/packing-list-generator',
+    name: 'Packing list generator',
+    summary:
+      'An export packing list with packages, net and gross weights per line, downloaded as a PDF. No account, nothing stored.',
     kind: 'application',
   },
   {
     path: '/tools/cbm-calculator',
     name: 'CBM calculator',
     summary:
-      'Cubic metres from carton dimensions, in any unit, with a check against 20ft, 40ft and high-cube containers.',
+      'Cubic metres and cubic feet from carton dimensions, in any unit, with a check against 20ft, 40ft and high-cube containers.',
     kind: 'application',
   },
   {
     path: '/tools/chargeable-weight',
-    name: 'Chargeable weight calculator',
+    name: 'Dimensional (volumetric) weight calculator',
     summary:
-      'Volumetric against actual weight for air, express, road groupage and sea LCL, and which one you will be billed on.',
+      'Dimensional against actual weight for air, express, road groupage and sea LCL, and which one you will be billed on.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/landed-cost-calculator',
+    name: 'Landed cost calculator',
+    summary:
+      'Goods, freight, insurance, duty and taxes at the rates you enter, as a total and a cost per unit. No tariff lookup, nothing stored.',
     kind: 'application',
   },
   {
     path: '/tools/incoterms',
     name: 'Incoterms 2020 guide',
     summary:
-      'All eleven rules in plain language: where risk passes, who pays what, who clears customs.',
+      'All eleven rules in plain language, with a responsibilities chart: where risk passes, who pays what, who clears customs.',
     kind: 'reference',
   },
 ];
@@ -73,7 +95,9 @@ export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS
  *
  * Written by hand when a page's copy or data changes, never computed from the clock: a
  * sitemap that reports every page as modified on every request teaches crawlers to ignore
- * the field. 2026-10-05 is the Manifest redesign round, which rewrote all of these.
+ * the field. 2026-10-05 is the Manifest redesign round, which rewrote all of these, and
+ * the content round the same day, which added the guides and three tools. A page whose copy
+ * changes later gets its own date here rather than moving the others.
  */
 const REDESIGN_ROUND = '2026-10-05';
 
@@ -96,6 +120,13 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
   ...INCOTERMS.map((term) => ({
     path: `/tools/incoterms/${term.code.toLowerCase()}`,
     lastModified: REDESIGN_ROUND,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+  { path: '/guides', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.6 },
+  ...GUIDES.map((guide) => ({
+    path: `/guides/${guide.slug}`,
+    lastModified: guide.updated,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),

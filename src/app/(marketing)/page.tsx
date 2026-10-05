@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowRight, Boxes, Building2, Check, Clock, Users } from 'lucide-react';
 import { LinkButton } from '@/components/primitives/button';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
@@ -7,6 +8,7 @@ import { Line } from '@/components/shell/line';
 import { primaryAction } from '@/components/shell/public';
 import { RevealSection } from '@/components/shell/reveal';
 import { HomeJsonLd } from '@/components/seo/json-ld';
+import { PUBLIC_TOOLS } from '@/lib/seo/site';
 import { openGraphFor } from '@/lib/seo/social';
 import { documentKindLabels, partyRoleLabels, type DocumentKind } from '@/lib/labels';
 import { INCOTERMS } from '@/lib/trade/incoterms';
@@ -126,7 +128,7 @@ const tools: BenchTool[] = [
     id: 'weight',
     href: '/tools/chargeable-weight',
     mark: 'KG',
-    name: 'Chargeable weight calculator',
+    name: 'Dimensional weight calculator',
     detail: 'Volumetric against actual weight, and which one you will be billed on.',
   },
   {
@@ -427,11 +429,11 @@ export default function Home() {
               <Line>Useful before you have an account.</Line>
             </h2>
             <p>
-              The calculators run in your browser. The invoice generator sends your details once to
-              render the PDF and stores nothing.
+              The calculators run in your browser. The document generators send your details once to
+              render the PDF and store nothing.
             </p>
           </div>
-          <Stat value={tools.length} label="Free tools, no account" />
+          <Stat value={PUBLIC_TOOLS.length} label="Free tools, no account" />
         </div>
         <ToolBench tools={tools} incoterms={benchIncoterms} />
         <div className="bench-foot">
@@ -440,6 +442,21 @@ export default function Home() {
           </LinkButton>
           <span className="caption">Free, no account · The figures above are worked examples</span>
         </div>
+        <p className="measure">
+          The document generators need no account: a{' '}
+          <Link className="text-link" href="/tools/invoice-generator">
+            commercial invoice
+          </Link>
+          , a{' '}
+          <Link className="text-link" href="/tools/proforma-invoice-generator">
+            proforma invoice
+          </Link>{' '}
+          and a{' '}
+          <Link className="text-link" href="/tools/packing-list-generator">
+            packing list
+          </Link>
+          , each downloaded as a PDF.
+        </p>
       </RevealSection>
 
       <RevealSection className="section dark" id="pricing" aria-labelledby="status-title">

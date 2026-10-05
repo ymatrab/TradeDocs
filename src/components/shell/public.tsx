@@ -7,14 +7,18 @@ import { NavSentinel } from '@/components/shell/nav-condense';
 const navigation = [
   { href: '/#how', label: 'How it works' },
   { href: '/tools', label: 'Free tools' },
+  { href: '/guides', label: 'Guides' },
   // There are no prices yet, so the link is named for what the section actually says.
   { href: '/#pricing', label: 'Free while early' },
 ] as const;
 
 const footerTools = [
-  { href: '/tools/invoice-generator', label: 'Invoice generator' },
+  { href: '/tools/invoice-generator', label: 'Commercial invoice' },
+  { href: '/tools/proforma-invoice-generator', label: 'Proforma invoice' },
+  { href: '/tools/packing-list-generator', label: 'Packing list' },
   { href: '/tools/cbm-calculator', label: 'CBM calculator' },
-  { href: '/tools/chargeable-weight', label: 'Chargeable weight' },
+  { href: '/tools/chargeable-weight', label: 'Dimensional weight' },
+  { href: '/tools/landed-cost-calculator', label: 'Landed cost' },
   { href: '/tools/incoterms', label: 'Incoterms 2020' },
 ] as const;
 
