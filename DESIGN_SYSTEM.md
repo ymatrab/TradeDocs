@@ -1,8 +1,8 @@
 # Design system
 
-Status: implemented by Task 03; tokens and public components replaced by the "Manifest" redesign (D-005). Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/design-system`, which returns 404 in production.
+Status: implemented by Task 03; tokens and public components replaced by the "Manifest" redesign (D-005); type, spacing, motion and finish refined by design v2 (D-013, palette unchanged). Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/design-system`, which returns 404 in production.
 
-Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-10-04.
+Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-10-05.
 
 ## Product character
 
@@ -41,7 +41,7 @@ the focus ring and control border are non-text and meet 3:1.
 | `--ink`             | `#14221f` | Text, primary button ground                         | paper 14.56 · surface 16.43                          |
 | `--ink-raised`      | `#243a35` | Primary button hover (workspace)                    | white 12.13                                          |
 | `--ink-pressed`     | `#0a1311` | Primary button pressed                              | white 18.85                                          |
-| `--muted`           | `#5a6762` | Captions, hints, units, absent values               | paper 5.24 · surface 5.91                            |
+| `--muted`           | `#5a6762` | Captions, hints, units, absent values               | paper 5.24 · surface 5.91 · sunken 4.83              |
 | `--hull`            | `#143d3a` | Reversed ground: hero, status band, footer, sidebar | white 11.94                                          |
 | `--hull-raised`     | `#1d524d` | Blocks on hull, active sidebar row                  | white 8.87 · `--hull-muted` 5.13                     |
 | `--hull-pressed`    | `#0f302d` | Pressed sidebar row                                 | white 14.18 · `--hull-muted` 8.19                    |
@@ -73,31 +73,62 @@ Rules that the tokens alone cannot enforce:
 A reversed section (`.hero`, `.section.dark`, `.public-footer`) redefines `--muted`, `--link`,
 `--focus` and `--rule` rather than patching selectors, so anything placed on hull inherits
 legible values. `--ink` is deliberately not redefined: the primary button draws its ground from
-it and the tape button its text, so foreground uses on hull take `inherit`. A white card placed
-on hull restores the light values it was measured against.
+it and the tape button its text, so foreground uses on hull take `inherit`.
 
-### Typography
+A light ground placed on hull (a card in the status band, the hero product frame) restores the
+light values **by name** — `--paper-muted`, `--paper-link`, `--paper-rule`, which `:root` defines
+and `--muted`, `--link`, `--focus` and `--rule` resolve to. Restating hex values, or forgetting a
+child, is how the v1 hero shipped a white plate whose label inherited `--hull-muted`: #b6c9c3 on
+#fff, 1.73:1, the CI axe failure fixed in v2.
 
-Three faces, self-hosted at build time by `next/font` with `font-display: swap`:
+### Typography (v2)
 
-- **Archivo 600**, `letter-spacing: .01em`: headlines. Uppercase only for headlines of six
-  words or fewer (the hero, "Same numbers, every page", "Free while early", the closing line);
-  longer H2s stay sentence case.
+Three faces, self-hosted at build time by `next/font` (`display: swap`, metric-adjusted
+fallback), each loaded as its variable font:
+
+- **Inter Tight 500/600**, negative tracking: headlines. It is Inter's own skeleton drawn
+  tighter, so headline and body read as one family. Uppercase only for headlines of six words
+  or fewer ("Same numbers, every page", "Free while early", the closing line, tool titles);
+  longer headlines — including the nine-word home headline — stay sentence case.
 - **Inter 400/500**: running text, sentence case, 68ch measure.
-- **JetBrains Mono 500**, uppercase, `.08em` tracking: eyebrows, tags, plates, figures, totals,
-  table heads and every public button label. Numeric contexts set `tabular-nums`.
+- **Geist Mono 500**, uppercase, `.08em` tracking: eyebrows, tags, plates, figures, totals,
+  table heads and every public button label. Narrower than the JetBrains Mono it replaced.
+  Numeric contexts set `tabular-nums`. PDFs embed their own font and are unaffected.
 
-Scale, desktop → 375px: hero display 64 → 40 (line-height .98) · H2 40 → 30 · H3 24 → 20 ·
-body 17 → 16 · small 14 · mono label 12 · stat numeral 72 → 48. Inputs are 16px so iOS never
-zooms. The workspace keeps the smaller sentence-case scale (H1 48 → 32, H2 32 → 24) and Inter
-button labels.
+| Role                           | Face / weight                        | Desktop → mobile | Line height | Tracking | Token            |
+| ------------------------------ | ------------------------------------ | ---------------- | ----------- | -------- | ---------------- |
+| Display (home headline, close) | Inter Tight 600                      | 72 → 44          | 0.94        | −0.025em | `--type-display` |
+| H2                             | Inter Tight 600 upper / 500 sentence | 48 → 32          | 1.0         | −0.02em  | `--type-h2`      |
+| H3                             | Inter Tight 500                      | 24 → 20          | 1.15        | −0.01em  | `--type-h3`      |
+| Body                           | Inter 400                            | 17 → 16          | 1.55        | 0        | —                |
+| Eyebrow / tag / button         | Geist Mono 500 upper                 | 12 (button 14)   | 1.4         | +0.08em  | `--caption`      |
+| Numerals (stat, bench marks)   | Inter Tight 600 `tnum`               | 96 → 56          | 0.9         | −0.03em  | `--type-numeral` |
+
+`text-wrap: balance` on every h1/h2. Inputs are 16px so iOS never zooms. The workspace keeps a
+smaller sentence-case scale: topbar title 20px/600 (17px below 900px) under a mono section
+caption; panel titles are mono captions in `--ink`.
+
+### Spacing (v2)
+
+- **Section rhythm**: one value, `--section-space: clamp(72px, 10vw, 140px)`, top and bottom of
+  every public section; two paper sections in a row share one gap.
+- **Card padding**: one value, `--card-pad: clamp(20px, 2.2vw, 28px)`, for cards, form cells,
+  bench columns, the record card and the hero frame.
+- **Hero**: `clamp(32px, 4.5vw, 64px)` above and `clamp(56px, 7vw, 96px)` below, so header,
+  headline, offer and product frame fit a 1280 × 800 window.
+- **Gutters**: `--gutter` 24px, 16px below 900px; checked at 360px.
+- **Workspace**: `.app-page` is the one page column (gap 24, max 960px; `.wide` 1080px); panel
+  bodies pad 24 (16 below 640px) and a table that is a panel's only child runs to its edges.
 
 ### Components
 
 - **Header**: a floating white card, square, 1px `--rule`, 12px from the top, 1180px max,
   sticky on desktop. The boundary statement is its first line (mono 12px), so it can never be
-  scrolled past or collapsed. Below 900px: wordmark, one short offer and the menu; the card
-  scrolls with the page rather than covering a third of a phone.
+  scrolled past or collapsed. Once the 1px sentinel above it has scrolled away the row condenses
+  from 64 to 52px under a deeper shadow; the boundary line never condenses. Below 900px:
+  wordmark, one short offer and the menu; the card scrolls with the page rather than covering a
+  third of a phone. Navigation: How it works · Free tools · Free while early (`/#pricing`; there
+  are no prices, so the link is named for what the section says) · Sign in.
 - **Primary offer**: follows `isDatabaseConfigured()`, the check the auth layout makes. With
   accounts open it is "Create a free account"; without them it is "Use the free invoice
   generator", and "No card required" is dropped.
@@ -109,43 +140,66 @@ button labels.
   and takes the pressed token.
 - **Cards**: white, square, 1px `--rule`, 24px pad, a mono tag top-left ("STEP 01",
   "TOOL · CBM", "TD · CI"); the offset ink shadow appears on hover only.
-- **Stat**: a mono numeral and one line, derived from the same list the page renders (document
-  types, free tools), never typed. The visible numeral is a CSS counter; the number assistive
-  technology reads is real text beside it.
+- **Stat**: an Inter Tight numeral and one mono line, derived from the same list the page
+  renders (document types, free tools), never typed. The visible numeral is a CSS counter; the
+  number assistive technology reads is real text beside it.
+- **Product frame** (hero): a white frame, 1px `--ink` border, flat 8px tape offset. An example
+  record in field boxes (the workspace's own captions, no box numbers because the PDFs print
+  none) and a rail of the four document plates. The total quantity is marked in the record and
+  on every plate. Labelled "Example shipment" wherever it is drawn.
+- **Record flow**: a hull record card pinned left (`position: sticky`), four document cards
+  right, each marking the same total. Below 900px a horizontal snap row in a focusable region.
+- **Tool bench**: one ruled band, `--ink` rules between columns and 12-column hairlines behind;
+  per tool a large mark (CBM, KG, INCO, INV), the tool's name as a link, one live field worked
+  out by the tool's own domain function, and one primary action below the band.
+- **Workspace header and states**: every page title sits under a mono section caption. Every
+  empty state carries the three-plate mark and a next action (create, open shipments, clear the
+  search, back to the active list).
 - **Fields**: 48px, white, 1.5px `--control`, square; label 14px/500 above; hint `--muted`;
   error `--danger` text plus icon, associated by `aria-describedby`.
 - **Footer**: hull, four columns → two → one, the boundary statement repeated verbatim.
 - **Workspace**: the same tokens and fonts on a paper canvas with white square panels; hull
   sidebar with a tape rule on the current row. No tape marker, stack or pixel motion there.
 
-### The stack
+### The product frame (formerly the stack)
 
-The hero visual is the product's own grammar: one entry, then the documents it prepares seen
-edge-on, offset like containers on a quay. Each block is a document name with a mono plate. The
-only figure on the blocks is the total quantity, because it is the one total all four documents
-print — a delivery note carries no weight, and the PDFs have no numbered boxes, so the earlier
-"same weight at box 9 / 6 / 4" illustration was withdrawn as untrue. The certificate of origin
-is absent from the stack and from every count until its legal review completes.
+v1 drew the documents edge-on, offset like containers. v2 replaces that with the product's own
+parts: the record as field boxes and the documents as plates beneath it. The only figure shared
+across them is still the total quantity, because it is the one total all four documents print —
+a delivery note carries no weight and the PDFs have no numbered boxes. The certificate of origin
+is absent from the frame, the record flow and every count until its legal review completes.
 
-### Motion
+### Motion (v2)
 
-Six motions, all CSS, all inside `prefers-reduced-motion: no-preference`; with reduced motion
-every element renders in its final state. One hook, `useInView` in
-`src/components/shell/reveal.tsx`, writes `data-reveal="pending"` on a section only when it
-starts below the fold, and `"in"` once it is seen; without script nothing is ever hidden.
-**Text opacity is never animated** — CI's axe pass samples mid-animation, and every frame of
-every motion below keeps text at its full contrast.
+All CSS, behind one hook (`useInView` in `src/components/shell/reveal.tsx`), which writes
+`data-reveal="pending"` on a section only when it starts below the fold and `"in"` once it is
+seen; without script nothing is ever hidden. Everything sits inside
+`prefers-reduced-motion: no-preference`, and the global reduced-motion rule removes every
+animation and transition, so **reduced motion shows every element in its final state**.
+Scroll-driven rules sit inside `@supports (animation-timeline: view())` as well.
 
-1. Tape paint-in: `background-size 0 → 100%`, 480ms after a 200ms delay — on paper grounds
-   only, because on hull the ink depends on the tape being there.
-2. Container stack: hero blocks `translate 24px → 0` and `clip-path inset(0 100% 0 0) → 0`,
-   70ms stagger, on load.
-3. Block wipe: cards `clip-path inset(0 0 100% 0) → 0`, 520ms, 70ms stagger.
-4. Pixel-grid uncover: a row of 16 paper squares at the top edge of the hull status band
-   drops away in a scattered order, 20ms stagger. It carries no text and takes no pointer.
-5. Button and card lift: `translate(-2px, -2px)` plus offset shadow, 120ms.
-6. Numeral count-up via `@property --n` and `counter-reset`; without `@property` the counter
-   shows the final value.
+**Text opacity and colour never animate.** CI's axe pass samples the page mid-animation, so
+text is either drawn at full contrast in every frame or hidden by a transform outside a mask.
+Only `translate`, `scale`, `clip-path` and `background-size` move.
+
+Easings: enter `cubic-bezier(.16,1,.3,1)` (`--ease-enter`), state `cubic-bezier(.2,0,0,1)`
+(`--ease-state`), scroll linear.
+
+| #   | Motion            | What moves                                                                                                                                                                                                                                       | Trigger                                       | Fallback / reduced motion                                                                 |
+| --- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 1   | Line rise         | Each headline line (`<Line>`, `components/shell/line.tsx`) rises `translate 110% → 0` inside an `overflow: hidden` mask, 720ms enter, 80ms stagger. A marked word rises inside its line's mask, so on hull its ink never shows without the tape. | Hero on load; sections on reveal              | Reduced: lines in place. Above-the-fold sections are never armed.                         |
+| 2   | Stacked documents | Record-flow cards are sticky; each settles `scale .94, translate −12px` as the next card enters, driven by that card's named view timeline (`timeline-scope` on the list).                                                                       | Scroll, ≥901px                                | No scroll timelines or reduced: a static list, not sticky. Phones: snap row.              |
+| 3   | Marker sweep      | `background-size 0 → 100%`, 520ms enter after 240ms. In the hero frame the record total and four plates sweep in turn on load.                                                                                                                   | Reveal (paper grounds); load (frame)          | Never on hull (`.dark`, `.on-hull`), where the ink depends on the tape. Reduced: painted. |
+| 4   | Header condense   | `.nav-row` 64 → 52px, deeper shadow, 240ms state.                                                                                                                                                                                                | 1px sentinel leaves view (`nav-condense.tsx`) | No IntersectionObserver: full height. Mobile header is not sticky and never condenses.    |
+| 5   | Count-up          | `@property --n` counter runs 0 → value, 900ms enter.                                                                                                                                                                                             | Reveal                                        | Without `@property`: the final value. Real number is sr-only text.                        |
+| 6   | Pixel dissolve    | 16 paper squares at the top of the status band scale `1 → 0`, each column offset in a scattered order.                                                                                                                                           | Scroll (`view()`, entry range)                | No scroll timelines: drops away on reveal (IO). Reduced: absent.                          |
+| 7   | Hero frame drift  | The frame lifts `0 → −24px` as the hero exits.                                                                                                                                                                                                   | Scroll (`view()`, exit range)                 | None.                                                                                     |
+| 8   | Press             | `:active` adds `scale(.985)` to every button and linked card, 120ms, on top of the public lift.                                                                                                                                                  | Pointer / key press                           | Reduced: no transition, state still shown.                                                |
+
+Retained alongside the eight: the card wipe (`clip-path inset(0 0 100% 0) → 0`, 520ms, 70ms
+stagger, on reveal), the hero plates landing on load (`translate 16px → 0` with a clip wipe,
+70ms stagger), and in the workspace a 200–240ms rise on dialogs, menus and disclosures. The
+workspace has no marker, line rise or scroll motion.
 
 ### The public column
 
@@ -157,7 +211,7 @@ at any viewport. A section computes its own inline padding
 centring the content inside it. Two paper sections in a row share one gap. Sections carrying an
 `id` reserve `8rem` of `scroll-margin-block-start`, because the header they scroll under is sticky.
 The public wrapper clips horizontal overflow (`overflow-x: clip`, which keeps sticky working), so
-the stack's offsets can never scroll a phone sideways.
+the hero frame's offset shadow can never scroll a phone sideways.
 
 ## Signature primitive: the field box
 

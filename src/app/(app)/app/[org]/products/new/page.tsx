@@ -20,7 +20,7 @@ export default async function NewProductPage({ params }: { params: Promise<{ org
 
   return (
     <AppShell title="Add product" current="Products" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 900 }}>
+      <div className="app-page">
         <p>
           <Link className="text-link" href={`/app/${org}/products`}>
             ← Catalog

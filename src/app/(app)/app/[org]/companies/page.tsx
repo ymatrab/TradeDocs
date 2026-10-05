@@ -41,7 +41,7 @@ export default async function CompaniesPage({
 
   return (
     <AppShell title="Companies" current="Companies" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 1040 }}>
+      <div className="app-page wide">
         <Panel
           title={showingArchived ? 'Archived companies' : 'Companies'}
           actions={
@@ -95,6 +95,11 @@ export default async function CompaniesPage({
             <EmptyState
               title="Nothing archived"
               description="Companies you archive are kept here, out of the pickers but still readable on the documents that used them."
+              action={
+                <Link className="btn secondary" href={`/app/${org}/companies`}>
+                  Back to companies
+                </Link>
+              }
             />
           ) : (
             <EmptyState

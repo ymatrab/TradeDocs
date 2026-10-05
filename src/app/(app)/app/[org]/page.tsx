@@ -58,7 +58,7 @@ export default async function OverviewPage({ params }: { params: Promise<{ org: 
 
   return (
     <AppShell title={organization.name} current="Overview" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 940 }}>
+      <div className="app-page">
         <BoxGrid label="Workspace summary">
           <FieldBox ordinal="1" caption="Shipments">
             <span className="data">{shipments?.length ?? 0}</span>

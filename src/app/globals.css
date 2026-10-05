@@ -35,9 +35,16 @@
   --ink: #14221f;
   --ink-raised: #243a35;
   --ink-pressed: #0a1311;
-  --muted: #5a6762;
+  /* The light-ground values of the three text tokens a reversed section redefines. Kept
+     under their own names so anything light placed on hull (a card, the hero frame) can
+     restore them without restating hex values — and without inheriting the hull ones,
+     which is how a white plate in the hero once rendered #b6c9c3 on #fff (1.73:1). */
+  --paper-muted: #5a6762;
+  --paper-link: #0b6b5c;
+  --paper-rule: #d9d6cc;
+  --muted: var(--paper-muted);
   --control: #76847f;
-  --rule: #d9d6cc;
+  --rule: var(--paper-rule);
 
   /* The reversed ground: deep hull green. Used for the hero, the honest-status band,
      the footer and the workspace sidebar — never as a panel inside a light page. */
@@ -56,16 +63,16 @@
   --signal-deep: #9a3412;
   --signal-pressed: #7c2d0c;
 
-  --link: #0b6b5c;
-  --focus: #0b6b5c;
+  --link: var(--paper-link);
+  --focus: var(--paper-link);
   --danger: #a62424;
   --danger-hover: #8d1e1e;
   --danger-pressed: #741818;
   --success: #1f6b45;
   --caution: #8a5a00;
 
-  /* Archivo carries headlines, Inter sets running text, and every code, figure, plate and
-     label is monospaced so a reader can compare it character by character. */
+  /* Inter Tight carries headlines, Inter sets running text, and every code, figure, plate
+     and label is set in Geist Mono so a reader can compare it character by character. */
   --font-body: var(--font-text), 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-display), var(--font-text), system-ui, sans-serif;
   --font-data: var(--font-code), ui-monospace, 'SF Mono', Menlo, monospace;
@@ -85,6 +92,20 @@
   --space-6: 32px;
   --space-7: 48px;
 
+  /* One vertical rhythm between public sections, and one inner padding for every card. */
+  --section-space: clamp(72px, 10vw, 140px);
+  --card-pad: clamp(20px, 2.2vw, 28px);
+
+  /* Type scale (design v2, docs/design-v2-spec.md §2). Desktop → mobile through clamp. */
+  --type-display: clamp(44px, 5.6vw, 72px);
+  --type-h2: clamp(32px, 3.75vw, 48px);
+  --type-h3: clamp(20px, 1.9vw, 24px);
+  --type-numeral: clamp(56px, 7.5vw, 96px);
+
+  /* Easings: enter for things arriving, state for things changing, linear for scroll. */
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-state: cubic-bezier(0.2, 0, 0, 1);
+
   /* Square, like a stencilled plate. Status stamps keep a 2px corner of their own. */
   --radius: 0px;
   --radius-lg: 0px;
@@ -95,7 +116,7 @@
   --shadow-lifted: 6px 6px 0 rgb(20 34 31 / 0.18);
 
   --sidebar-width: 246px;
-  --topbar-height: 56px;
+  --topbar-height: 64px;
   --measure: 68ch;
 
   /* The public column. Header, footer and every section resolve their side padding from
@@ -169,19 +190,22 @@ h3,
 h1 {
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: 0.005em;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 h2 {
   font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.005em;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 h3 {
   font-size: var(--step-1);
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 .muted {
   color: var(--muted);
@@ -266,15 +290,18 @@ h3 {
   text-decoration: none;
   white-space: nowrap;
   transition:
-    translate 120ms ease-out,
-    box-shadow 120ms ease-out,
-    background-color 150ms ease-out;
+    translate 120ms var(--ease-state),
+    scale 120ms var(--ease-state),
+    box-shadow 120ms var(--ease-state),
+    background-color 150ms var(--ease-state);
 }
 .btn:hover:not(:disabled) {
   background: var(--ink-raised);
 }
+/* The press: every button gives a little under the finger, on any ground. */
 .btn:active:not(:disabled) {
   background: var(--ink-pressed);
+  scale: 0.985;
 }
 .btn.secondary {
   background: var(--surface);
@@ -567,6 +594,11 @@ h3 {
   border: 1px solid var(--rule);
   background: var(--surface);
 }
+/* The scroll region takes focus so a keyboard can scroll it; the ring is drawn inside,
+   because a panel clips anything drawn outside its edge. */
+.table-scroll:focus-visible {
+  outline-offset: -2px;
+}
 .table {
   border-collapse: collapse;
   width: 100%;
@@ -605,6 +637,16 @@ h3 {
 .table tbody tr:last-child td {
   border-bottom: 0;
 }
+/* A row answers the pointer so a wide table can be read across without losing the line. */
+.table tbody tr {
+  transition: background-color 150ms var(--ease-state);
+}
+.table tbody tr:hover {
+  background: rgb(236 232 222 / 0.55);
+}
+.table td .text-link:focus-visible {
+  outline-offset: 2px;
+}
 .table td.numeric,
 .table th.numeric {
   text-align: right;
@@ -626,16 +668,44 @@ h3 {
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
+/* Overflow is clipped for the table corners, so a focus ring inside would be cut off; the
+   panel draws one ring around itself instead when anything inside has keyboard focus. */
+.panel:has(:focus-visible) {
+  border-color: var(--control);
+}
+/* An in-page target stops below the sticky workspace topbar. */
+.panel[id] {
+  scroll-margin-block-start: calc(var(--topbar-height) + var(--space-4));
+}
 .panel-head {
   padding: var(--space-3) var(--space-4);
+  min-height: 56px;
   border-bottom: 1px solid var(--rule);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.panel-head > .caption {
+  margin: 0;
+  color: var(--ink);
 }
 .panel-body {
-  padding: var(--space-4);
+  padding: var(--space-5);
+}
+/* A table inside a panel runs to the panel's edges; its own border would double the rule. */
+.panel-body > .table-scroll:only-child {
+  margin: calc(-1 * var(--space-5));
+  border: 0;
+}
+@media (max-width: 640px) {
+  .panel-body {
+    padding: var(--space-4);
+  }
+  .panel-body > .table-scroll:only-child {
+    margin: calc(-1 * var(--space-4));
+  }
 }
 .callout {
   border: 1px solid var(--rule);
@@ -677,9 +747,35 @@ h3 {
   align-items: center;
   gap: var(--space-3);
 }
+/* The empty mark: three stacked plates, the wordmark's own figure, drawn in rule colour so
+   an empty screen still looks like part of the product rather than an error. */
+.state:not([role='alert'])::before {
+  content: '';
+  width: 40px;
+  height: 34px;
+  margin-bottom: var(--space-2);
+  background:
+    linear-gradient(var(--tape), var(--tape)) 8px 0 / 32px 9px no-repeat,
+    linear-gradient(var(--rule), var(--rule)) 0 12px / 32px 9px no-repeat,
+    linear-gradient(var(--rule), var(--rule)) 6px 24px / 34px 9px no-repeat;
+}
+.state h3 {
+  margin: 0;
+  font-size: var(--step-2);
+}
 .state p {
   margin-bottom: 0;
   max-width: 46ch;
+}
+.state > .btn,
+.state > .state-actions {
+  margin-top: var(--space-2);
+}
+.state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
 }
 .skeleton {
   background: linear-gradient(
@@ -741,6 +837,22 @@ h3 {
 }
 .dialog::backdrop {
   background: rgb(20 34 31 / 0.55);
+}
+/* Panels arrive rather than appear: a short rise on the transform only, so nothing inside
+   is ever drawn at reduced contrast while it moves. */
+@media (prefers-reduced-motion: no-preference) {
+  .dialog[open] {
+    animation: panel-in 240ms var(--ease-state);
+  }
+  .menu,
+  .nav-disclosure[open] > nav {
+    animation: panel-in 200ms var(--ease-state);
+  }
+}
+@keyframes panel-in {
+  from {
+    translate: 0 8px;
+  }
 }
 .dialog-head,
 .dialog-foot {
@@ -892,7 +1004,7 @@ h3 {
   gap: 10px;
   font-weight: 600;
   font-size: var(--step-1);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.015em;
   text-decoration: none;
   color: var(--ink);
 }
@@ -974,13 +1086,26 @@ h3 {
   gap: var(--space-3);
   color: inherit;
 }
-.app-title {
-  font-size: 17px;
+.app-heading {
+  display: grid;
+  min-width: 0;
+}
+.app-heading .caption {
   margin: 0;
-  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.015em;
   min-width: 0;
 }
 .app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   height: var(--topbar-height);
   background: var(--surface);
   border-bottom: 1px solid var(--rule);
@@ -990,8 +1115,25 @@ h3 {
   padding: 0 var(--space-4);
 }
 .app-main {
-  padding: var(--space-5);
+  padding: var(--space-6) var(--space-5) var(--space-7);
   min-width: 0;
+}
+/* Every workspace page is one column of panels on the same gap and measure. */
+.app-page {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 960px;
+}
+.app-page.wide {
+  max-width: 1080px;
+}
+@media (max-width: 640px) {
+  .app-main {
+    padding: var(--space-4) var(--space-4) var(--space-6);
+  }
+  .app-page {
+    gap: var(--space-4);
+  }
 }
 .search-trigger {
   display: inline-flex;
@@ -1142,9 +1284,13 @@ kbd {
     display: none;
   }
   .app-title {
+    font-size: 17px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .app-heading .caption {
+    display: none;
   }
   :root {
     --gutter: var(--space-4);
@@ -1158,7 +1304,7 @@ kbd {
    present. Everything below is scoped to `.site`, so the workspace keeps its quieter
    buttons and its own heading sizes. */
 .site {
-  /* Nothing on a public page may scroll the viewport sideways; the stack's offsets and
+  /* Nothing on a public page may scroll the viewport sideways; the frame's offset shadow and
      the floating card stay inside it. `clip` rather than `hidden` keeps sticky working.
      The ground is hull so the floating header sits on the hero it opens; every section
      paints its own ground below it. */
@@ -1267,6 +1413,27 @@ kbd {
   gap: var(--space-4);
   padding: 8px 8px 8px var(--space-4);
   min-height: 64px;
+  transition:
+    min-height 240ms var(--ease-state),
+    padding 240ms var(--ease-state);
+}
+.nav-card {
+  transition: box-shadow 240ms var(--ease-state);
+}
+/* The sentinel sits above the header; once it has scrolled away the header is stuck and
+   condenses. Only the row shortens: the boundary line above it is never what gives way. */
+.nav-sentinel {
+  height: 1px;
+  margin-bottom: -1px;
+}
+@media (min-width: 901px) {
+  .public-header[data-condensed] .nav-row {
+    min-height: 52px;
+    padding-block: 4px;
+  }
+  .public-header[data-condensed] .nav-card {
+    box-shadow: 8px 8px 0 rgb(20 34 31 / 0.24);
+  }
 }
 .public-nav {
   display: flex;
@@ -1328,7 +1495,7 @@ kbd {
 /* The inline padding grows to whatever keeps a --shell-max column in the middle. The
    background runs edge to edge while the content lines up with the header. */
 .section {
-  padding-block: clamp(64px, 9vw, 120px);
+  padding-block: var(--section-space);
   padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
 }
 .section:not(.dark) {
@@ -1350,18 +1517,36 @@ kbd {
   background: var(--surface-sunken);
 }
 :where(.site) h2 {
-  font-size: clamp(30px, 3.4vw, 40px);
-  line-height: 1.08;
+  font-size: var(--type-h2);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 :where(.site) h3 {
-  font-size: clamp(20px, 1.8vw, 24px);
-  line-height: 1.2;
+  font-size: var(--type-h3);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
-/* Uppercase only for a headline of six words or fewer. */
+/* Uppercase only for a headline of six words or fewer, and then at 600. */
 .site .display {
   text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 0.98;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 0.94;
+}
+
+/* A headline line inside its own mask (components/shell/line.tsx). The padding gives
+   ascenders and descenders room at a line height under 1; the negative margin gives it
+   back, so the mask changes nothing about where the line sits. */
+.line {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
+}
+.line > span {
+  display: block;
 }
 .section-head {
   display: grid;
@@ -1447,13 +1632,47 @@ mark.tape {
 }
 
 /* --- Hero ---------------------------------------------------------------- */
+/* Tight enough that the header, the headline, the offer and the product frame all sit
+   inside a 1280 × 800 window. */
 .hero {
-  padding-block: clamp(48px, 7vw, 96px) clamp(64px, 9vw, 120px);
+  padding-block: clamp(32px, 4.5vw, 64px) clamp(56px, 7vw, 96px);
   padding-inline: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
 }
 .hero > .eyebrow,
 .hero > h1,
 .hero > .lede {
+  max-width: 820px;
+}
+/* Tool pages open on a short uppercase title. */
+.hero > h1 {
+  margin-block: var(--space-5) var(--space-4);
+  text-transform: uppercase;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+}
+.hero .inner {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(32px, 4.5vw, 64px);
+  grid-template-columns: minmax(0, 54fr) minmax(0, 46fr);
+  align-items: center;
+}
+@media (max-width: 940px) {
+  .hero .inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* The home headline is nine words, so it is set in sentence case at display size. */
+.hero .inner h1 {
+  font-size: var(--type-display);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  margin-block: var(--space-5);
+}
+.lede {
   max-width: 820px;
 }
 .hero > h1 {
@@ -1496,6 +1715,9 @@ mark.tape {
   align-items: center;
   margin-top: var(--space-6);
 }
+.hero .lede {
+  margin-bottom: 0;
+}
 @media (max-width: 560px) {
   .hero .cta-row > .btn,
   .closing .cta-row > .btn {
@@ -1510,95 +1732,82 @@ mark.tape {
   margin: var(--space-4) 0 0;
 }
 
-/* --- The stack ------------------------------------------------------------ */
-/* The hero visual is the product's own grammar: one entry, then a stack of documents seen
-   edge-on, each carrying the one figure that truly appears on all of them. Blocks are
-   offset like containers on a quay. */
-.stack {
+/* --- The product frame ---------------------------------------------------- */
+/* The hero visual is the product's own parts: a white frame holding an example record in
+   the workspace's field boxes, and a rail of the four documents prepared from it. The
+   total quantity is the one figure all four print, so it and the four plates share one
+   marker. The frame restores the light tokens (see the reversed-ground rule above). */
+.frame {
   margin: 0;
-  display: grid;
-  gap: 10px;
-}
-.stack-source {
-  font-family: var(--font-data);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--hull-muted);
-  margin: 0 0 6px;
-}
-.stack-block {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--space-2) var(--space-4);
-  min-height: 72px;
-  padding: 14px 18px;
-  clip-path: inset(0);
-  background: var(--hull-raised);
-  color: var(--surface);
-  --plate: var(--hull-muted);
-}
-.stack-block:nth-child(odd) {
-  margin-right: 8%;
-}
-.stack-block:nth-child(even) {
-  margin-left: 8%;
-}
-.stack-block.is-tape {
-  background: var(--tape);
-  color: var(--ink);
-  --plate: var(--ink);
-}
-.stack-block.is-paper {
   background: var(--surface);
-  color: var(--ink);
-  --plate: var(--muted);
+  border: 1px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--tape);
+  min-width: 0;
 }
-.stack-name {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-}
-.stack-plate,
-.stack-figure {
+.frame-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: 10px var(--space-4);
+  border-bottom: 1px solid var(--rule);
   font-family: var(--font-data);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--plate);
-  font-variant-numeric: tabular-nums;
+  color: var(--muted);
 }
-.stack-figure {
-  grid-row: span 2;
-  text-align: right;
-  color: inherit;
+.frame-head > :first-child {
+  color: var(--ink);
 }
-.stack-figure b {
-  display: block;
-  font-size: 18px;
+.frame .box-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 1px;
+}
+.frame .field-box {
+  padding: 10px var(--space-4) 12px;
+}
+.frame .field-box-value {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.frame-rail {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.frame-rail li {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  background: var(--surface-sunken);
+  min-width: 0;
+}
+.frame-plate {
+  font-family: var(--font-data);
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.frame-rail mark.tape,
+.frame .field-box mark.tape {
+  justify-self: start;
+  font-size: 14px;
+  font-weight: 500;
 }
 @media (max-width: 560px) {
-  .stack-block {
-    min-height: 56px;
-    padding: 10px 14px;
+  .frame .box-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
-  .stack-block:nth-child(odd) {
-    margin-right: 5%;
-  }
-  .stack-block:nth-child(even) {
-    margin-left: 5%;
-  }
-  .stack-name {
-    font-size: 15px;
-  }
-  .stack-figure b {
-    font-size: 15px;
+  .frame-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1615,15 +1824,16 @@ mark.tape {
   background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--rule);
-  padding: var(--space-5);
+  padding: var(--card-pad);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   min-width: 0;
   text-decoration: none;
   transition:
-    translate 120ms ease-out,
-    box-shadow 120ms ease-out;
+    translate 120ms var(--ease-state),
+    scale 120ms var(--ease-state),
+    box-shadow 120ms var(--ease-state);
 }
 .card > * {
   margin: 0;
@@ -1634,14 +1844,20 @@ mark.tape {
   line-height: 1.6;
 }
 .card h3 {
-  font-size: 20px;
+  font-size: 22px;
 }
-/* The light card on hull restores the light tokens it was built against. */
+/* A light card on hull restores the light tokens it was built against, by name. */
+.section.dark .card,
+.hero .frame {
+  --muted: var(--paper-muted);
+  --link: var(--paper-link);
+  --focus: var(--paper-link);
+  --rule: var(--paper-rule);
+  --eyebrow-mark: var(--hull);
+  --lift-shadow: var(--ink);
+  color: var(--ink);
+}
 .section.dark .card {
-  --muted: #5a6762;
-  --link: #0b6b5c;
-  --focus: #0b6b5c;
-  --rule: #d9d6cc;
   border-color: transparent;
 }
 a.card:hover,
@@ -1652,6 +1868,7 @@ a.card:hover,
 }
 a.card:active {
   translate: 0 0;
+  scale: 0.985;
   box-shadow: none;
 }
 .card-foot {
@@ -1736,12 +1953,12 @@ a.card:active {
   margin: 0;
 }
 .stat-figure {
-  font-family: var(--font-data);
-  font-weight: 500;
-  font-size: clamp(48px, 6vw, 72px);
-  line-height: 1;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--type-numeral);
+  line-height: 0.9;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 .stat-label {
   font-family: var(--font-data);
@@ -1763,6 +1980,252 @@ a.card:active {
 }
 .count::after {
   content: counter(n);
+}
+
+/* --- One record → four documents ----------------------------------------- */
+/* The record is pinned on the left while the documents prepared from it stack on the
+   right. Each card marks the same total the record marks. Below 900px the cards become a
+   horizontal row with snap points, and the record sits above it. */
+.record-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+.record-pin {
+  position: sticky;
+  top: 9rem;
+}
+.record-card {
+  background: var(--hull);
+  color: var(--surface);
+  --muted: var(--hull-muted);
+  --rule: rgb(255 255 255 / 0.2);
+  --focus: var(--tape);
+  padding: var(--card-pad);
+  display: grid;
+  gap: var(--space-4);
+}
+.record-head {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+}
+.record-head .data {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.record-list {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.record-list > div {
+  display: grid;
+  gap: 2px;
+}
+.record-list dd {
+  margin: 0;
+  font-size: 17px;
+}
+/* On hull the strip carries the ink alone, so it covers the whole line box — and it is
+   marked .on-hull so the paper sweep never draws it from nothing. */
+.record-card mark.tape {
+  background-position: 0 50%;
+  background-size: 100% 100%;
+}
+.record-foot {
+  margin: 0;
+  font-family: var(--font-data);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.doc-stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+  timeline-scope: var(--scope);
+}
+.doc-card {
+  min-height: 240px;
+  border-color: var(--ink);
+}
+.doc-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doc-total {
+  margin-top: auto !important;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.doc-total mark.tape {
+  font-size: 17px;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .record-flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .record-pin {
+    position: static;
+  }
+  /* A row of documents a visitor swipes through. The region takes focus so a keyboard
+     can scroll it too. */
+  .doc-scroller {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    padding-bottom: var(--space-3);
+  }
+  .doc-scroller:focus-visible {
+    outline-offset: -2px;
+  }
+  .doc-stack {
+    grid-auto-flow: column;
+    grid-auto-columns: min(84%, 340px);
+    gap: var(--space-3);
+  }
+  .doc {
+    scroll-snap-align: start;
+  }
+  .doc-card {
+    height: 100%;
+  }
+}
+
+/* --- Tool bench ------------------------------------------------------------ */
+/* One ruled band rather than four cards: a large mark per tool, one live field and its
+   worked result, hairlines that expose the 12-column grid underneath, one action. */
+.bench {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid var(--ink);
+  background: var(--surface);
+}
+.bench::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+  opacity: 0.6;
+}
+.bench-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--card-pad);
+  min-width: 0;
+}
+.bench-col + .bench-col {
+  border-left: 1px solid var(--ink);
+}
+.bench-mark {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.bench-name {
+  margin: var(--space-2) 0 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.bench-name a {
+  text-decoration: none;
+  display: inline;
+}
+.bench-name a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.bench-name svg {
+  vertical-align: -2px;
+}
+.bench-detail {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.bench-preview {
+  margin-top: auto;
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+}
+.bench-preview > label {
+  font-size: 13px;
+  font-weight: 500;
+}
+.bench-result {
+  display: grid;
+  gap: 2px;
+  min-height: 52px;
+  padding: 8px 10px;
+  background: var(--surface-sunken);
+}
+.bench-result.small {
+  font-size: 13px;
+  line-height: 1.45;
+}
+.bench-figure {
+  font-family: var(--font-data);
+  font-size: 18px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.bench-foot {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+@media (max-width: 1080px) {
+  .bench {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bench-col:nth-child(3) {
+    border-left: 0;
+  }
+  .bench-col:nth-child(n + 3) {
+    border-top: 1px solid var(--ink);
+  }
+}
+@media (max-width: 600px) {
+  .bench {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .bench-col + .bench-col {
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .bench::before {
+    background-size: calc(100% / 4) 100%;
+  }
 }
 
 /* --- Honest status --------------------------------------------------------- */
@@ -1850,7 +2313,7 @@ a.card:active {
   font-weight: 600;
   font-family: var(--font-heading);
   font-size: var(--step-1);
-  letter-spacing: 0.005em;
+  letter-spacing: -0.01em;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -1895,9 +2358,9 @@ a.card:active {
   align-items: flex-start;
 }
 .closing h2 {
-  margin: 0;
+  margin: var(--space-5) 0 0;
   max-width: 18ch;
-  font-size: clamp(40px, 5.2vw, 64px);
+  font-size: var(--type-display);
 }
 .stamp {
   margin: var(--space-7) 0 0;
@@ -1928,7 +2391,7 @@ a.card:active {
 .form-cell {
   background: var(--surface);
   border: 1px solid var(--rule);
-  padding: var(--space-5);
+  padding: var(--card-pad);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -2046,40 +2509,48 @@ a.form-cell:active {
 }
 
 /* --- Motion ------------------------------------------------------------------ */
-/* Six motions, each CSS-only, all inside no-preference: with reduced motion every element
-   simply renders in its final state. Text opacity is never animated — every frame of
-   every motion keeps text at its full contrast. The reveal hook arms a section by setting
+/* Eight motions (DESIGN_SYSTEM.md, "Motion"), each CSS, all inside no-preference: with
+   reduced motion every element renders in its final state. Text opacity and colour never
+   animate — CI's axe pass samples mid-animation, so text is either drawn at full contrast
+   or hidden by a transform outside a mask. The reveal hook arms a section by setting
    data-reveal="pending" only when it starts below the fold, and "in" once it is seen. */
 @media (prefers-reduced-motion: no-preference) {
-  /* 1. Tape paint-in, on paper grounds only — on hull the ink depends on the tape. */
-  .section:not(.dark) mark.tape {
-    transition: background-size 480ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms;
+  /* 1. Line rise. The hero rises on load; a section's lines rise when it is revealed. */
+  .hero .line > span {
+    animation: line-rise 720ms var(--ease-enter) backwards;
+    animation-delay: calc(80ms + var(--i, 0) * 80ms);
   }
-  [data-reveal='pending'].section:not(.dark) mark.tape {
+  .section .line > span {
+    transition: translate 720ms var(--ease-enter) calc(var(--i, 0) * 80ms);
+  }
+  [data-reveal='pending'] .line > span {
+    translate: 0 110%;
+  }
+
+  /* 3. Marker sweep, light grounds only — on hull the ink depends on the tape. In the hero
+     frame the record's total and the four plates are swept in turn on load, so the tie
+     between them is drawn rather than described. */
+  .section:not(.dark) mark.tape:not(.on-hull) {
+    transition: background-size 520ms var(--ease-enter) 240ms;
+  }
+  [data-reveal='pending'].section:not(.dark) mark.tape:not(.on-hull) {
     background-size: 0 0.86em;
   }
-
-  /* 2. The container stack lands on load, block by block. */
-  .stack-block {
-    animation: stack-land 560ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
-  }
-  .stack-block:nth-child(2) {
-    animation-delay: 70ms;
-  }
-  .stack-block:nth-child(3) {
-    animation-delay: 140ms;
-  }
-  .stack-block:nth-child(4) {
-    animation-delay: 210ms;
-  }
-  .stack-block:nth-child(5) {
-    animation-delay: 280ms;
+  .frame mark.tape {
+    animation: marker-sweep 520ms var(--ease-enter) backwards;
+    animation-delay: calc(640ms + var(--i, 0) * 110ms);
   }
 
-  /* 3. Block wipe for cards. */
+  /* The frame's plates land on load, one after another. */
+  .frame-rail li {
+    animation: plate-land 560ms var(--ease-enter) backwards;
+    animation-delay: calc(360ms + var(--i, 0) * 70ms);
+  }
+
+  /* Cards wipe in when their section is revealed. */
   .wipe {
     clip-path: inset(0);
-    transition: clip-path 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition: clip-path 520ms var(--ease-enter);
   }
   .wipe:nth-child(2) {
     transition-delay: 70ms;
@@ -2094,26 +2565,100 @@ a.form-cell:active {
     clip-path: inset(0 0 100% 0);
   }
 
-  /* 4. Pixel-grid uncover where paper meets hull. */
-  .pixel-edge span {
-    transition: scale 260ms steps(4, end);
-    transition-delay: calc(var(--i, 0) * 20ms);
-  }
-  [data-reveal='pending'] .pixel-edge span {
-    scale: 1 1;
-  }
+  /* 4. Nav condense is the transition on .nav-row and .nav-card above. */
 
-  /* 5. Button lift is the transition on .btn and .card above. */
-
-  /* 6. Numerals count up once their section is seen. */
+  /* 5. Count-up: an eased run to the real figure once the section is seen. */
   [data-reveal='in'] .count {
-    animation: count-up 700ms steps(12, end);
+    animation: count-up 900ms var(--ease-enter);
+  }
+
+  /* 8. Press is the :active scale on .btn and a.card above. */
+}
+
+/* Scroll-driven motions, where the browser can tie them to scroll. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* 2. Stacked documents. Each card is sticky; as the next one rises to cover it, it
+       settles back. Its timeline is the next card's own view of the scrollport, which
+       the list makes visible to its siblings through timeline-scope. The last card has
+       no successor and never settles. */
+    @media (min-width: 901px) {
+      .doc {
+        position: sticky;
+        top: calc(9rem + var(--i, 0) * 18px);
+        view-timeline-name: var(--self);
+      }
+      .doc:not(:last-child) .doc-card {
+        transform-origin: 50% 0;
+        animation: settle linear both;
+        animation-timeline: var(--next);
+        animation-range: entry 40% entry 100%;
+      }
+    }
+
+    /* 6. Pixel dissolve: the paper squares where paper meets hull scale away as the band
+       enters, each column a little later than the last in a scattered order. */
+    .pixel-edge span {
+      animation: pixel-out linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 1.6%) entry calc(12% + var(--i, 0) * 1.6%);
+    }
+
+    /* 7. Hero frame drift: the frame lifts a little faster than the page as it leaves. */
+    .hero .frame {
+      animation: frame-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+
+  /* 6, without scroll timelines: the squares drop away once the band is revealed. */
+  @supports not (animation-timeline: view()) {
+    .pixel-edge span {
+      transition: scale 260ms steps(4, end);
+      transition-delay: calc(var(--i, 0) * 20ms);
+    }
+    [data-reveal='pending'] .pixel-edge span {
+      scale: 1 1;
+    }
   }
 }
-@keyframes stack-land {
+@keyframes line-rise {
   from {
-    translate: 0 24px;
+    translate: 0 110%;
+  }
+}
+@keyframes marker-sweep {
+  from {
+    background-size: 0 100%;
+  }
+}
+@keyframes plate-land {
+  from {
+    translate: 0 16px;
     clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes settle {
+  to {
+    scale: 0.94;
+    translate: 0 -12px;
+  }
+}
+@keyframes pixel-out {
+  from {
+    scale: 1 1;
+  }
+  to {
+    scale: 1 0;
+  }
+}
+@keyframes frame-drift {
+  to {
+    translate: 0 -24px;
   }
 }
 @keyframes count-up {
@@ -2179,8 +2724,9 @@ a.form-cell:active {
   .stamp {
     border-color: var(--ink) !important;
   }
-  .stack-block {
-    border: 1px solid #000;
+  .frame {
+    box-shadow: none !important;
+    border-color: #000;
   }
   .app-main,
   .foundation {

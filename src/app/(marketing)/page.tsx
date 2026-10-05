@@ -1,14 +1,17 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { ArrowRight, Boxes, Building2, Check, Clock, Users } from 'lucide-react';
 import { LinkButton } from '@/components/primitives/button';
+import { BoxGrid, FieldBox } from '@/components/document/field-box';
+import { Line } from '@/components/shell/line';
 import { primaryAction } from '@/components/shell/public';
 import { RevealSection } from '@/components/shell/reveal';
 import { HomeJsonLd } from '@/components/seo/json-ld';
 import { openGraphFor } from '@/lib/seo/social';
-import { documentKindLabels, type DocumentKind } from '@/lib/labels';
+import { documentKindLabels, partyRoleLabels, type DocumentKind } from '@/lib/labels';
+import { INCOTERMS } from '@/lib/trade/incoterms';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
+import { ToolBench, type BenchIncoterm, type BenchTool } from './tool-bench';
 
 export const metadata: Metadata = {
   title: 'Trade documents that agree with each other',
@@ -50,9 +53,21 @@ const documents: { kind: DocumentKind; plate: string; detail: string }[] = [
   },
 ];
 
-/** Every document prints a total quantity, so it is the one figure the stack may share. */
+/** Every document prints a total quantity, so it is the one figure they may be shown sharing. */
 const SHARED_QUANTITY = '1,280.000';
-const stackTones = ['is-tape', '', 'is-paper', ''] as const;
+
+/**
+ * An example record, labelled as one wherever it is drawn. The captions are the workspace's
+ * own field names; there are no box numbers because the PDFs print none.
+ */
+const EXAMPLE_REFERENCE = 'TDX-2026-0184';
+const exampleRecord = [
+  { caption: partyRoleLabels.exporter_id, value: 'Example Exports Ltd' },
+  { caption: partyRoleLabels.consignee_id, value: 'Example Imports GmbH' },
+  { caption: 'Incoterm 2020', value: 'FOB · Shanghai' },
+  { caption: 'Port of loading', value: 'Shanghai, CN' },
+  { caption: 'Port of discharge', value: 'Hamburg, DE' },
+] as const;
 
 const steps = [
   {
@@ -99,36 +114,43 @@ const saved = [
   },
 ];
 
-const tools = [
+const tools: BenchTool[] = [
   {
-    href: '/tools/invoice-generator',
-    tag: 'Tool · Invoice',
-    name: 'Commercial invoice generator',
-    detail: 'Fill in an invoice, proforma or packing list and download the PDF.',
-    cta: 'Open generator',
-  },
-  {
+    id: 'cbm',
     href: '/tools/cbm-calculator',
-    tag: 'Tool · CBM',
+    mark: 'CBM',
     name: 'CBM calculator',
     detail: 'Cubic metres from carton sizes, checked against standard containers.',
-    cta: 'Open calculator',
   },
   {
+    id: 'weight',
     href: '/tools/chargeable-weight',
-    tag: 'Tool · Weight',
+    mark: 'KG',
     name: 'Chargeable weight calculator',
     detail: 'Volumetric against actual weight, and which one you will be billed on.',
-    cta: 'Open calculator',
   },
   {
+    id: 'incoterms',
     href: '/tools/incoterms',
-    tag: 'Tool · Incoterms',
+    mark: 'INCO',
     name: 'Incoterms® 2020 guide',
     detail: 'All eleven rules: who pays, who insures, where risk passes.',
-    cta: 'Open guide',
+  },
+  {
+    id: 'invoice',
+    href: '/tools/invoice-generator',
+    mark: 'INV',
+    name: 'Commercial invoice generator',
+    detail: 'Fill in an invoice, proforma or packing list and download the PDF.',
   },
 ];
+
+/** Only what the bench's one field shows, so the full guide text stays off the client. */
+const benchIncoterms: BenchIncoterm[] = INCOTERMS.map((rule) => ({
+  code: rule.code,
+  name: rule.name,
+  riskPasses: rule.riskPasses,
+}));
 
 /** "Commercial invoice, proforma invoice, packing list and delivery note", from the data. */
 function listOfDocuments(): string {
@@ -195,6 +217,8 @@ const pixelOrder = [3, 9, 0, 13, 6, 11, 1, 15, 8, 4, 12, 2, 10, 14, 5, 7];
 export default function Home() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
+  // Every timeline name the record section declares, so a card can follow the next one.
+  const docTimelines = documents.map((_, index) => `--doc-${index}`).join(', ');
 
   return (
     <>
@@ -203,7 +227,8 @@ export default function Home() {
           <div>
             <p className="eyebrow">One shipment. Every document.</p>
             <h1 id="hero-title">
-              Enter a shipment once. Get the whole <mark className="tape">document set</mark>.
+              <Line index={0}>Enter a shipment once.</Line>{' '}
+              <Line index={1}>Get the whole <mark className="tape">document set</mark>.</Line>
             </h1>
             <p className="lede">
               Record the parties, goods and terms one time. TradeDocs prepares the commercial
@@ -226,31 +251,39 @@ export default function Home() {
           </div>
 
           {/*
-            The claim, drawn rather than asserted: one entry, then the documents it prepares,
-            stacked edge-on like containers. The only figure shown is the total quantity,
-            because it is the one total every one of these documents prints.
+            The claim, drawn with the product's own parts: an example shipment record in the
+            workspace's field boxes, and beneath it the documents prepared from it. The total
+            quantity is the one figure every one of those documents prints, so it is the one
+            the marker ties together.
           */}
-          <figure
-            className="stack"
-            role="img"
-            aria-label={`${documents.length} documents prepared from one shipment, each showing the same total quantity`}
-          >
-            <p className="stack-source">Shipment TDX-2026-0184 · entered once</p>
-            {documents.map((document, index) => (
-              <div
-                className={['stack-block', stackTones[index]].filter(Boolean).join(' ')}
-                key={document.kind}
-              >
-                <span className="stack-name">{documentKindLabels[document.kind]}</span>
-                <span className="stack-figure">
-                  Total qty
-                  <b>{SHARED_QUANTITY}</b>
-                </span>
-                <span className="stack-plate">
-                  {document.plate} · {String(index + 1).padStart(4, '0')}
-                </span>
-              </div>
-            ))}
+          <figure className="frame" aria-labelledby="frame-caption">
+            <figcaption id="frame-caption" className="frame-head">
+              <span>Example shipment · {EXAMPLE_REFERENCE}</span>
+              <span>Entered once</span>
+            </figcaption>
+            <BoxGrid label="Example shipment record">
+              {exampleRecord.map((field) => (
+                <FieldBox key={field.caption} caption={field.caption} value={field.value} />
+              ))}
+              <FieldBox caption="Total quantity">
+                <mark className="tape data" style={{ '--i': 0 } as CSSProperties}>
+                  {SHARED_QUANTITY}
+                </mark>
+              </FieldBox>
+            </BoxGrid>
+            <ul className="frame-rail" aria-label="Documents prepared from this record">
+              {documents.map((document, index) => (
+                <li key={document.kind} style={{ '--i': index } as CSSProperties}>
+                  <span className="frame-plate">{document.plate}</span>
+                  <span className="sr-only">
+                    {documentKindLabels[document.kind]}, total quantity
+                  </span>
+                  <mark className="tape data" style={{ '--i': index + 1 } as CSSProperties}>
+                    {SHARED_QUANTITY}
+                  </mark>
+                </li>
+              ))}
+            </ul>
           </figure>
         </div>
       </section>
@@ -258,7 +291,9 @@ export default function Home() {
       <RevealSection className="section" id="how" aria-labelledby="how-title">
         <div className="section-head">
           <p className="eyebrow">Enter once</p>
-          <h2 id="how-title">Three steps, and the arithmetic stops being yours.</h2>
+          <h2 id="how-title">
+            <Line>Three steps, and the arithmetic stops being yours.</Line>
+          </h2>
         </div>
         <div className="cards">
           {steps.map((step, index) => (
@@ -281,7 +316,8 @@ export default function Home() {
           <div className="section-head" style={{ marginBottom: 0 }}>
             <p className="eyebrow">The consistent set</p>
             <h2 id="set-title" className="display">
-              <mark className="tape">Same numbers</mark>, every page.
+              <Line index={0}><mark className="tape">Same numbers</mark>,</Line>{' '}
+              <Line index={1}>every page.</Line>
             </h2>
             <p>
               Each document is a snapshot of one shipment revision. Change the shipment later and
@@ -290,14 +326,73 @@ export default function Home() {
           </div>
           <Stat value={documents.length} label="Document types from 1 entry" />
         </div>
-        <div className="cards four">
-          {documents.map((document) => (
-            <article className="card wipe" key={document.kind}>
-              <span className="tag on-tape">{document.plate}</span>
-              <h3>{documentKindLabels[document.kind]}</h3>
-              <p>{document.detail}</p>
-            </article>
-          ))}
+
+        {/*
+          One record, pinned, and the documents prepared from it stacking beside it as the
+          page scrolls. Each card marks the same total the record marks. On a phone the cards
+          become a row the visitor swipes through instead.
+        */}
+        <div className="record-flow">
+          <div className="record-pin">
+            <div className="record-card">
+              <p className="record-head">
+                <span className="caption">One record</span>
+                <span className="data">{EXAMPLE_REFERENCE}</span>
+              </p>
+              <dl className="record-list">
+                {exampleRecord.slice(0, 3).map((field) => (
+                  <div key={field.caption}>
+                    <dt className="caption">{field.caption}</dt>
+                    <dd>{field.value}</dd>
+                  </div>
+                ))}
+                <div>
+                  <dt className="caption">Total quantity</dt>
+                  <dd>
+                    <mark className="tape data on-hull">{SHARED_QUANTITY}</mark>
+                  </dd>
+                </div>
+              </dl>
+              <p className="record-foot">
+                Example record · prepares {documents.length} documents
+              </p>
+            </div>
+          </div>
+          <div
+            className="doc-scroller"
+            role="region"
+            aria-label="Documents prepared from the record"
+            tabIndex={0}
+          >
+            <ol className="doc-stack" style={{ '--scope': docTimelines } as CSSProperties}>
+              {documents.map((document, index) => (
+                <li
+                  className="doc"
+                  key={document.kind}
+                  style={
+                    {
+                      '--i': index,
+                      '--self': `--doc-${index}`,
+                      '--next': `--doc-${index + 1}`,
+                    } as CSSProperties
+                  }
+                >
+                  <article className="card doc-card">
+                    <span className="doc-card-head">
+                      <span className="tag on-tape">{document.plate}</span>
+                      <span className="caption">{String(index + 1).padStart(4, '0')}</span>
+                    </span>
+                    <h3>{documentKindLabels[document.kind]}</h3>
+                    <p>{document.detail}</p>
+                    <p className="doc-total">
+                      <span className="caption">Total quantity</span>
+                      <mark className="tape data">{SHARED_QUANTITY}</mark>
+                    </p>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
         <p className="note">
           A certificate of origin template is awaiting legal review and is not offered yet.
@@ -307,7 +402,9 @@ export default function Home() {
       <RevealSection className="section sunken" aria-labelledby="saved-title">
         <div className="section-head">
           <p className="eyebrow">Saved once</p>
-          <h2 id="saved-title">Companies, products and people, kept for the next shipment.</h2>
+          <h2 id="saved-title">
+            <Line>Companies, products and people, kept for the next shipment.</Line>
+          </h2>
         </div>
         <div className="cards">
           {saved.map((item) => (
@@ -326,7 +423,9 @@ export default function Home() {
         <div className="section-head split">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <p className="eyebrow">Free tools</p>
-            <h2 id="tools-title">Useful before you have an account.</h2>
+            <h2 id="tools-title">
+              <Line>Useful before you have an account.</Line>
+            </h2>
             <p>
               The calculators run in your browser. The invoice generator sends your details once to
               render the PDF and stores nothing.
@@ -334,20 +433,12 @@ export default function Home() {
           </div>
           <Stat value={tools.length} label="Free tools, no account" />
         </div>
-        <div className="cards four">
-          {tools.map((tool) => (
-            <Link className="card wipe" href={tool.href} key={tool.href}>
-              <span className="tag">{tool.tag}</span>
-              <h3>{tool.name}</h3>
-              <p>{tool.detail}</p>
-              <span className="card-foot">
-                <span className="caption">Free, no account</span>
-                <span className="card-cta">
-                  {tool.cta} <ArrowRight size={15} aria-hidden="true" />
-                </span>
-              </span>
-            </Link>
-          ))}
+        <ToolBench tools={tools} incoterms={benchIncoterms} />
+        <div className="bench-foot">
+          <LinkButton href="/tools" className="large">
+            See all free tools <ArrowRight size={18} aria-hidden="true" />
+          </LinkButton>
+          <span className="caption">Free, no account · The figures above are worked examples</span>
         </div>
       </RevealSection>
 
@@ -360,7 +451,8 @@ export default function Home() {
         <div className="section-head">
           <p className="eyebrow">Honest status</p>
           <h2 id="status-title" className="display">
-            Free while <mark className="tape">early</mark>.
+            <Line index={0}>Free while</Line>{' '}
+            <Line index={1}><mark className="tape">early</mark>.</Line>
           </h2>
           <p>
             There is no price yet. Paid plans will come later, with notice.
@@ -408,7 +500,9 @@ export default function Home() {
       <section className="section" aria-labelledby="faq-title">
         <div className="section-head">
           <p className="eyebrow">Questions</p>
-          <h2 id="faq-title">Before you start.</h2>
+          <h2 id="faq-title">
+            <Line>Before you start.</Line>
+          </h2>
         </div>
         <div className="faq">
           {questions.map((item) => (
@@ -423,8 +517,9 @@ export default function Home() {
       <RevealSection className="section sunken closing" aria-labelledby="closing-title">
         <div className="inner">
           <p className="eyebrow">Next shipment</p>
-          <h2 id="closing-title" className="display" style={{ marginTop: 24 }}>
-            Stop <mark className="tape">reconciling</mark> paperwork.
+          <h2 id="closing-title" className="display">
+            <Line index={0}>Stop <mark className="tape">reconciling</mark></Line>{' '}
+            <Line index={1}>paperwork.</Line>
           </h2>
           <div className="cta-row">
             <LinkButton href={action.href} className="large">
