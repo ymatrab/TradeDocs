@@ -12,6 +12,11 @@ const pages = [
   ['invoice-generator', '/tools/invoice-generator'],
   ['incoterms-fob', '/tools/incoterms/fob'],
   ['sign-in', '/sign-in'],
+  ['proforma-generator', '/tools/proforma-invoice-generator'],
+  ['packing-list-generator', '/tools/packing-list-generator'],
+  ['landed-cost', '/tools/landed-cost-calculator'],
+  ['guides', '/guides'],
+  ['guide-lcl-fcl', '/guides/lcl-vs-fcl'],
 ] as const;
 
 test.describe('review screens', () => {
