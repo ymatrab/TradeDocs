@@ -50,5 +50,10 @@ Order matters; each step is the owner's unless marked agent.
    `SUPABASE_PROJECT_REF` and `PRODUCTION_SUPABASE_PROJECT_REF` (the project ref from the
    Supabase URL), `SUPABASE_ENVIRONMENT=production`, `RATE_LIMIT_KEY_SECRET` (32+ random
    characters), `LAUNCH_APPROVED=true` only after the launch checklist is signed.
+   The schema (`src/lib/config/schema.ts`) also refuses production service mode without
+   `RESEND_API_KEY`, `EMAIL_FROM`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `SENTRY_DSN`,
+   `INDEXNOW_KEY` and `ANALYTICS_SITE_ID`; each needs a value or a recorded owner waiver
+   before step 5. `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` already
+   come from the Vercel Supabase integration (D-011).
 5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
    `/design-system` is 404, robots and sitemap match the indexing decision (D-007).
