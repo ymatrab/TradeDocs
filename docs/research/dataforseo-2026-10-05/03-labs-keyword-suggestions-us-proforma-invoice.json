@@ -1,0 +1,2858 @@
+{
+ "id": "10051916-2048-0399-0000-7a9e05df64f2",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "total_count": 1075,
+ "items": [
+  {
+   "keyword": "proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 13:38:48 +00:00",
+    "competition": 0.08,
+    "competition_level": "LOW",
+    "cpc": 11.58,
+    "search_volume": 12100,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 21.24,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 12100,
+     "2026-07": 9900,
+     "2026-06": 12100,
+     "2026-05": 12100,
+     "2026-04": 12100,
+     "2026-03": 12100,
+     "2026-02": 9900,
+     "2026-01": 12100,
+     "2025-12": 12100,
+     "2025-11": 12100,
+     "2025-10": 12100,
+     "2025-09": 12100
+    },
+    "search_volume_trend": {
+     "monthly": 22
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 2
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1315.3,
+    "dofollow": 1275.2,
+    "referring_pages": 1277.7,
+    "referring_domains": 14.6,
+    "referring_main_domains": 13.4,
+    "rank": 90.1,
+    "main_domain_rank": 499.7,
+    "last_updated_time": "2026-08-03 10:00:13 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "transactional",
+    "last_updated_time": "2026-05-07 09:24:47 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma for invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 09:04:45 +00:00",
+    "competition": 0.08,
+    "competition_level": "LOW",
+    "cpc": 11.58,
+    "search_volume": 12100,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 21.24,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 12100,
+     "2026-07": 9900,
+     "2026-06": 12100,
+     "2026-05": 12100,
+     "2026-04": 12100,
+     "2026-03": 12100,
+     "2026-02": 9900,
+     "2026-01": 12100,
+     "2025-12": 12100,
+     "2025-11": 12100,
+     "2025-10": 12100,
+     "2025-09": 12100
+    },
+    "search_volume_trend": {
+     "monthly": 22
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 87.4,
+    "dofollow": 51.2,
+    "referring_pages": 78.6,
+    "referring_domains": 23.3,
+    "referring_main_domains": 22,
+    "rank": 89.9,
+    "main_domain_rank": 549.9,
+    "last_updated_time": "2024-10-12 14:20:35 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "informational",
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 23:34:29 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma of invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 12:29:57 +00:00",
+    "competition": 0.08,
+    "competition_level": "LOW",
+    "cpc": 11.58,
+    "search_volume": 12100,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 21.24,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 12100,
+     "2026-07": 9900,
+     "2026-06": 12100,
+     "2026-05": 12100,
+     "2026-04": 12100,
+     "2026-03": 12100,
+     "2026-02": 9900,
+     "2026-01": 12100,
+     "2025-12": 12100,
+     "2025-11": 12100,
+     "2025-10": 12100,
+     "2025-09": 12100
+    },
+    "search_volume_trend": {
+     "monthly": 22
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 74.2,
+    "dofollow": 45.8,
+    "referring_pages": 65.5,
+    "referring_domains": 18.7,
+    "referring_main_domains": 17.6,
+    "rank": 72.1,
+    "main_domain_rank": 486.7,
+    "last_updated_time": "2024-10-12 14:20:33 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "transactional",
+    "last_updated_time": "2026-05-02 12:25:55 +00:00"
+   }
+  },
+  {
+   "keyword": "invoice proforma",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 20:46:08 +00:00",
+    "competition": 0.08,
+    "competition_level": "LOW",
+    "cpc": 11.58,
+    "search_volume": 12100,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 21.24,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 12100,
+     "2026-07": 9900,
+     "2026-06": 12100,
+     "2026-05": 12100,
+     "2026-04": 12100,
+     "2026-03": 12100,
+     "2026-02": 9900,
+     "2026-01": 12100,
+     "2025-12": 12100,
+     "2025-11": 12100,
+     "2025-10": 12100,
+     "2025-09": 12100
+    },
+    "search_volume_trend": {
+     "monthly": 22
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 2
+   },
+   "avg_backlinks_info": {
+    "backlinks": 79.9,
+    "dofollow": 49.7,
+    "referring_pages": 71.2,
+    "referring_domains": 23.5,
+    "referring_main_domains": 22.1,
+    "rank": 99.3,
+    "main_domain_rank": 481.4,
+    "last_updated_time": "2024-09-15 00:42:39 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "informational"
+    ],
+    "last_updated_time": "2026-04-27 23:08:25 +00:00"
+   }
+  },
+  {
+   "keyword": "what is a proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 12:47:34 +00:00",
+    "competition": 0.04,
+    "competition_level": "LOW",
+    "cpc": 14.32,
+    "search_volume": 4400,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 4400,
+     "2026-07": 4400,
+     "2026-06": 4400,
+     "2026-05": 4400,
+     "2026-04": 4400,
+     "2026-03": 4400,
+     "2026-02": 4400,
+     "2026-01": 3600,
+     "2025-12": 4400,
+     "2025-11": 3600,
+     "2025-10": 4400,
+     "2025-09": 4400
+    },
+    "search_volume_trend": {
+     "yearly": 22
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 6,
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 25.4,
+    "dofollow": 19.3,
+    "referring_pages": 20.8,
+    "referring_domains": 9,
+    "referring_main_domains": 8.3,
+    "rank": 68.2,
+    "main_domain_rank": 485.8,
+    "last_updated_time": "2026-09-03 16:03:37 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 07:38:19 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice meaning",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 11:38:47 +00:00",
+    "competition": 0.04,
+    "competition_level": "LOW",
+    "cpc": 1.87,
+    "search_volume": 2400,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.42,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 1900,
+     "2026-07": 1900,
+     "2026-06": 2400,
+     "2026-05": 1900,
+     "2026-04": 2400,
+     "2026-03": 2400,
+     "2026-02": 2400,
+     "2026-01": 2400,
+     "2025-12": 2400,
+     "2025-11": 2400,
+     "2025-10": 2400,
+     "2025-09": 2900
+    },
+    "search_volume_trend": {
+     "quarterly": -21,
+     "yearly": -34
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 8,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1325.8,
+    "dofollow": 1283.8,
+    "referring_pages": 1286.9,
+    "referring_domains": 16,
+    "referring_main_domains": 14.6,
+    "rank": 92.8,
+    "main_domain_rank": 485.4,
+    "last_updated_time": "2026-09-04 09:29:10 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 17:59:20 +00:00"
+   }
+  },
+  {
+   "keyword": "template proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 15:15:44 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 3,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 26.6,
+    "dofollow": 9.9,
+    "referring_pages": 24.4,
+    "referring_domains": 19.9,
+    "referring_main_domains": 19.4,
+    "rank": 68.6,
+    "main_domain_rank": 514.7,
+    "last_updated_time": "2026-06-30 16:09:15 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 23:04:21 +00:00"
+   }
+  },
+  {
+   "keyword": "invoice proforma template",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 22:54:33 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 251.3,
+    "dofollow": 122.8,
+    "referring_pages": 245.6,
+    "referring_domains": 61.6,
+    "referring_main_domains": 53.8,
+    "rank": 92.8,
+    "main_domain_rank": 451,
+    "last_updated_time": "2024-09-15 20:31:43 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 23:02:55 +00:00"
+   }
+  },
+  {
+   "keyword": "samples of proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 00:39:51 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10018,
+     10161,
+     10163
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "sample proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "search_intent_info": {
+    "main_intent": "transactional",
+    "last_updated_time": "2026-05-03 04:44:53 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice templates",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 02:09:56 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 28.3,
+    "dofollow": 13.4,
+    "referring_pages": 26.6,
+    "referring_domains": 11.7,
+    "referring_main_domains": 11.4,
+    "rank": 57.6,
+    "main_domain_rank": 421.5,
+    "last_updated_time": "2024-10-12 20:05:12 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 22:00:31 +00:00"
+   }
+  },
+  {
+   "keyword": "sample of proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 02:09:30 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "sample proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 6.8,
+    "dofollow": 4.8,
+    "referring_pages": 6.5,
+    "referring_domains": 5.4,
+    "referring_main_domains": 5.2,
+    "rank": 68.9,
+    "main_domain_rank": 410.9,
+    "last_updated_time": "2026-03-15 10:16:41 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 00:01:45 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice samples",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 13:24:16 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "sample proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 99.5,
+    "dofollow": 53.9,
+    "referring_pages": 93.9,
+    "referring_domains": 39.3,
+    "referring_main_domains": 37.4,
+    "rank": 63.7,
+    "main_domain_rank": 540.7,
+    "last_updated_time": "2025-10-22 09:19:34 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 00:10:51 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice word template",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 16:30:34 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template word",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 3.4,
+    "dofollow": 2.6,
+    "referring_pages": 3.2,
+    "referring_domains": 2.7,
+    "referring_main_domains": 2.6,
+    "rank": 40.8,
+    "main_domain_rank": 412.2,
+    "last_updated_time": "2026-03-15 10:49:13 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "foreign_intent": [
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 20:54:13 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice examples",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 20:59:45 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice example",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 25.6,
+    "dofollow": 18.5,
+    "referring_pages": 20.2,
+    "referring_domains": 9.3,
+    "referring_main_domains": 8.7,
+    "rank": 51.8,
+    "main_domain_rank": 465.3,
+    "last_updated_time": "2026-03-15 10:50:17 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 19:02:50 +00:00"
+   }
+  },
+  {
+   "keyword": "sample proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 13:14:28 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 1,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 23.3,
+    "dofollow": 17.9,
+    "referring_pages": 19.3,
+    "referring_domains": 8.9,
+    "referring_main_domains": 8.4,
+    "rank": 59.3,
+    "main_domain_rank": 543.6,
+    "last_updated_time": "2026-08-01 09:24:53 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-28 22:27:48 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice template word",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 19:34:55 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 2.2,
+    "dofollow": 1.8,
+    "referring_pages": 2.2,
+    "referring_domains": 1.8,
+    "referring_main_domains": 1.7,
+    "rank": 30.7,
+    "main_domain_rank": 523.5,
+    "last_updated_time": "2026-09-06 01:42:30 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "foreign_intent": [
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 17:31:38 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice example",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 01:45:51 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 11,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1315.3,
+    "dofollow": 1275.1,
+    "referring_pages": 1277.8,
+    "referring_domains": 14.6,
+    "referring_main_domains": 13.4,
+    "rank": 95.5,
+    "main_domain_rank": 604.9,
+    "last_updated_time": "2026-08-01 09:46:17 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 21:11:40 +00:00"
+   }
+  },
+  {
+   "keyword": "template for proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 03:19:06 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 53900
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 43,
+    "dofollow": 22.1,
+    "referring_pages": 41.3,
+    "referring_domains": 23.4,
+    "referring_main_domains": 22,
+    "rank": 97.5,
+    "main_domain_rank": 399.3,
+    "last_updated_time": "2024-04-03 03:57:43 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 21:39:16 +00:00"
+   }
+  },
+  {
+   "keyword": "template of proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 02:23:37 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 19.1,
+    "dofollow": 9.8,
+    "referring_pages": 15.9,
+    "referring_domains": 11.4,
+    "referring_main_domains": 10.8,
+    "rank": 63.3,
+    "main_domain_rank": 508.2,
+    "last_updated_time": "2025-11-10 10:39:15 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 22:03:42 +00:00"
+   }
+  },
+  {
+   "keyword": "invoice proforma sample",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 23:47:39 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "sample proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 40.4,
+    "dofollow": 10.6,
+    "referring_pages": 37,
+    "referring_domains": 31.8,
+    "referring_main_domains": 31.3,
+    "rank": 81.9,
+    "main_domain_rank": 469.3,
+    "last_updated_time": "2026-01-28 18:40:15 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-28 01:44:39 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice template",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 17:22:59 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 24.5,
+    "dofollow": 18.8,
+    "referring_pages": 20.5,
+    "referring_domains": 9.9,
+    "referring_main_domains": 9.3,
+    "rank": 70.9,
+    "main_domain_rank": 569.4,
+    "last_updated_time": "2026-08-01 09:45:54 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 17:59:20 +00:00"
+   }
+  },
+  {
+   "keyword": "template of a proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 04:24:15 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 44,
+    "dofollow": 31.7,
+    "referring_pages": 39.9,
+    "referring_domains": 17.9,
+    "referring_main_domains": 16.6,
+    "rank": 103.7,
+    "main_domain_rank": 527,
+    "last_updated_time": "2025-12-11 05:57:56 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 22:32:56 +00:00"
+   }
+  },
+  {
+   "keyword": "invoice proforma format",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 06:01:54 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "format for proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 48.4,
+    "dofollow": 11.5,
+    "referring_pages": 45.1,
+    "referring_domains": 37,
+    "referring_main_domains": 36.5,
+    "rank": 104.8,
+    "main_domain_rank": 545.4,
+    "last_updated_time": "2026-03-15 13:13:01 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 23:59:24 +00:00"
+   }
+  },
+  {
+   "keyword": "sample of a proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 17:49:45 +00:00",
+    "competition": 0.12,
+    "competition_level": "LOW",
+    "cpc": 7.16,
+    "search_volume": 1300,
+    "low_top_of_page_bid": 1.76,
+    "high_top_of_page_bid": 13.59,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 5400,
+     "2026-07": 880,
+     "2026-06": 720,
+     "2026-05": 880,
+     "2026-04": 1000,
+     "2026-03": 1000,
+     "2026-02": 1000,
+     "2026-01": 880,
+     "2025-12": 720,
+     "2025-11": 880,
+     "2025-10": 1000,
+     "2025-09": 1300
+    },
+    "search_volume_trend": {
+     "monthly": 514,
+     "quarterly": 650,
+     "yearly": 440
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "sample proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 5,
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 57.2,
+    "dofollow": 31.9,
+    "referring_pages": 49.7,
+    "referring_domains": 18.6,
+    "referring_main_domains": 17.5,
+    "rank": 66.5,
+    "main_domain_rank": 423,
+    "last_updated_time": "2024-09-15 19:30:14 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-28 22:05:23 +00:00"
+   }
+  },
+  {
+   "keyword": "commercial invoice vs proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 03:39:11 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "cpc": 269.93,
+    "search_volume": 720,
+    "low_top_of_page_bid": 0.74,
+    "high_top_of_page_bid": 117.65,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 720,
+     "2026-07": 720,
+     "2026-06": 720,
+     "2026-05": 720,
+     "2026-04": 720,
+     "2026-03": 880,
+     "2026-02": 720,
+     "2026-01": 720,
+     "2025-12": 720,
+     "2025-11": 720,
+     "2025-10": 880,
+     "2025-09": 880
+    },
+    "search_volume_trend": {
+     "yearly": -18
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice vs commercial invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 9.4,
+    "dofollow": 7.3,
+    "referring_pages": 8.7,
+    "referring_domains": 5.1,
+    "referring_main_domains": 4.7,
+    "rank": 45.5,
+    "main_domain_rank": 520,
+    "last_updated_time": "2026-09-06 16:57:59 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 03:33:47 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice vs commercial invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 06:38:42 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "cpc": 269.93,
+    "search_volume": 720,
+    "low_top_of_page_bid": 0.74,
+    "high_top_of_page_bid": 117.65,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 720,
+     "2026-07": 720,
+     "2026-06": 720,
+     "2026-05": 720,
+     "2026-04": 720,
+     "2026-03": 880,
+     "2026-02": 720,
+     "2026-01": 720,
+     "2025-12": 720,
+     "2025-11": 720,
+     "2025-10": 880,
+     "2025-09": 880
+    },
+    "search_volume_trend": {
+     "yearly": -18
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 9.4,
+    "dofollow": 7.6,
+    "referring_pages": 8.7,
+    "referring_domains": 5.2,
+    "referring_main_domains": 4.8,
+    "rank": 48.9,
+    "main_domain_rank": 429.7,
+    "last_updated_time": "2026-08-01 20:24:37 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 18:23:03 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma vs commercial invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 01:29:05 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "cpc": 269.93,
+    "search_volume": 720,
+    "low_top_of_page_bid": 0.74,
+    "high_top_of_page_bid": 117.65,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 720,
+     "2026-07": 720,
+     "2026-06": 720,
+     "2026-05": 720,
+     "2026-04": 720,
+     "2026-03": 880,
+     "2026-02": 720,
+     "2026-01": 720,
+     "2025-12": 720,
+     "2025-11": 720,
+     "2025-10": 880,
+     "2025-09": 880
+    },
+    "search_volume_trend": {
+     "yearly": -18
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice vs commercial invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 9.1,
+    "dofollow": 7.6,
+    "referring_pages": 8.5,
+    "referring_domains": 4.8,
+    "referring_main_domains": 4.4,
+    "rank": 44,
+    "main_domain_rank": 444.3,
+    "last_updated_time": "2026-07-01 00:43:42 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 22:23:48 +00:00"
+   }
+  },
+  {
+   "keyword": "what is proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 15:06:45 +00:00",
+    "competition": 0.04,
+    "competition_level": "LOW",
+    "cpc": 0.04,
+    "search_volume": 720,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 720,
+     "2026-07": 720,
+     "2026-06": 720,
+     "2026-05": 720,
+     "2026-04": 720,
+     "2026-03": 880,
+     "2026-02": 880,
+     "2026-01": 720,
+     "2025-12": 720,
+     "2025-11": 590,
+     "2025-10": 720,
+     "2025-09": 720
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "what is a proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 12,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1317.4,
+    "dofollow": 1276.4,
+    "referring_pages": 1279.2,
+    "referring_domains": 15.5,
+    "referring_main_domains": 14.2,
+    "rank": 115.2,
+    "main_domain_rank": 470.3,
+    "last_updated_time": "2026-08-02 12:52:29 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-05-01 06:31:44 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice vs invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 22:54:48 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "search_volume": 390,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 390,
+     "2026-07": 390,
+     "2026-06": 390,
+     "2026-05": 390,
+     "2026-04": 390,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 260,
+     "2025-10": 260,
+     "2025-09": 320
+    },
+    "search_volume_trend": {
+     "yearly": 22
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 24.8,
+    "dofollow": 18.8,
+    "referring_pages": 20.2,
+    "referring_domains": 8.4,
+    "referring_main_domains": 7.5,
+    "rank": 44.8,
+    "main_domain_rank": 556.3,
+    "last_updated_time": "2026-09-08 22:59:26 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 18:20:02 +00:00"
+   }
+  },
+  {
+   "keyword": "invoice vs proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 12:46:10 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "search_volume": 390,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 390,
+     "2026-07": 390,
+     "2026-06": 390,
+     "2026-05": 390,
+     "2026-04": 390,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 260,
+     "2025-10": 260,
+     "2025-09": 320
+    },
+    "search_volume_trend": {
+     "yearly": 22
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice vs invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 23.4,
+    "dofollow": 17.5,
+    "referring_pages": 18.3,
+    "referring_domains": 8,
+    "referring_main_domains": 7.5,
+    "rank": 37.5,
+    "main_domain_rank": 522.6,
+    "last_updated_time": "2026-07-05 03:06:51 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-28 16:24:17 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma vs invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 12:18:37 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "search_volume": 390,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 390,
+     "2026-07": 390,
+     "2026-06": 390,
+     "2026-05": 390,
+     "2026-04": 390,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 260,
+     "2025-10": 260,
+     "2025-09": 320
+    },
+    "search_volume_trend": {
+     "yearly": 457
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice vs invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 23.1,
+    "dofollow": 17.3,
+    "referring_pages": 18.1,
+    "referring_domains": 8,
+    "referring_main_domains": 7.5,
+    "rank": 46.3,
+    "main_domain_rank": 391,
+    "last_updated_time": "2026-07-18 10:41:19 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 00:48:57 +00:00"
+   }
+  },
+  {
+   "keyword": "what does proforma invoice mean",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 17:21:50 +00:00",
+    "competition": 0.03,
+    "competition_level": "LOW",
+    "cpc": 9.62,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 7,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 320,
+     "2026-07": 390,
+     "2026-06": 390,
+     "2026-05": 320,
+     "2026-04": 320,
+     "2026-03": 390,
+     "2026-02": 320,
+     "2026-01": 320,
+     "2025-12": 260,
+     "2025-11": 260,
+     "2025-10": 320,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "monthly": -18,
+     "quarterly": -18
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "what does a proforma invoice mean",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 5
+   },
+   "avg_backlinks_info": {
+    "backlinks": 29.3,
+    "dofollow": 22.3,
+    "referring_pages": 24.3,
+    "referring_domains": 10.9,
+    "referring_main_domains": 9.8,
+    "rank": 84.3,
+    "main_domain_rank": 438,
+    "last_updated_time": "2026-09-08 15:39:31 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 03:27:37 +00:00"
+   }
+  },
+  {
+   "keyword": "definition of proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 20:45:56 +00:00",
+    "competition": 0.05,
+    "competition_level": "LOW",
+    "cpc": 2.53,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 260,
+     "2026-07": 260,
+     "2026-06": 320,
+     "2026-05": 320,
+     "2026-04": 260,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 320,
+     "2025-10": 260,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -19
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice definition",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 25.5,
+    "dofollow": 19.2,
+    "referring_pages": 20.5,
+    "referring_domains": 8.6,
+    "referring_main_domains": 7.7,
+    "rank": 57.9,
+    "main_domain_rank": 464.6,
+    "last_updated_time": "2026-09-09 09:42:26 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 14:31:32 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice define",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 14:13:29 +00:00",
+    "competition": 0.05,
+    "competition_level": "LOW",
+    "cpc": 2.53,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 260,
+     "2026-07": 260,
+     "2026-06": 320,
+     "2026-05": 320,
+     "2026-04": 260,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 320,
+     "2025-10": 260,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -19
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "define proforma invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 27.6,
+    "dofollow": 20.8,
+    "referring_pages": 22.6,
+    "referring_domains": 10.4,
+    "referring_main_domains": 9.4,
+    "rank": 75.7,
+    "main_domain_rank": 475.2,
+    "last_updated_time": "2026-09-08 22:57:57 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 22:08:54 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice definition",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 05:25:27 +00:00",
+    "competition": 0.05,
+    "competition_level": "LOW",
+    "cpc": 2.53,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 260,
+     "2026-07": 260,
+     "2026-06": 320,
+     "2026-05": 320,
+     "2026-04": 260,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 320,
+     "2025-10": 260,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -19
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 9,
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1325.7,
+    "dofollow": 1284,
+    "referring_pages": 1286.8,
+    "referring_domains": 15.7,
+    "referring_main_domains": 14.3,
+    "rank": 101.1,
+    "main_domain_rank": 453.2,
+    "last_updated_time": "2026-09-08 22:56:01 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 18:35:48 +00:00"
+   }
+  },
+  {
+   "keyword": "what does a proforma invoice mean",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 12:39:34 +00:00",
+    "competition": 0.03,
+    "competition_level": "LOW",
+    "cpc": 9.62,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 7,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 320,
+     "2026-07": 390,
+     "2026-06": 390,
+     "2026-05": 320,
+     "2026-04": 320,
+     "2026-03": 390,
+     "2026-02": 320,
+     "2026-01": 320,
+     "2025-12": 260,
+     "2025-11": 260,
+     "2025-10": 320,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "monthly": -18,
+     "quarterly": -18
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 7,
+    "detected_language": "en",
+    "words_count": 6
+   },
+   "avg_backlinks_info": {
+    "backlinks": 29.2,
+    "dofollow": 22.1,
+    "referring_pages": 24.2,
+    "referring_domains": 10.8,
+    "referring_main_domains": 9.7,
+    "rank": 86.6,
+    "main_domain_rank": 477.8,
+    "last_updated_time": "2026-09-08 15:41:22 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-30 00:08:49 +00:00"
+   }
+  },
+  {
+   "keyword": "meaning of proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 18:45:37 +00:00",
+    "competition": 0.05,
+    "competition_level": "LOW",
+    "cpc": 2.53,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 260,
+     "2026-07": 260,
+     "2026-06": 320,
+     "2026-05": 320,
+     "2026-04": 260,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 320,
+     "2025-10": 260,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -19
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice meaning",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 6,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 28.1,
+    "dofollow": 21.1,
+    "referring_pages": 22.9,
+    "referring_domains": 9.8,
+    "referring_main_domains": 8.8,
+    "rank": 71.6,
+    "main_domain_rank": 536.1,
+    "last_updated_time": "2026-09-09 01:33:12 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 15:03:44 +00:00"
+   }
+  },
+  {
+   "keyword": "define proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-15 18:34:44 +00:00",
+    "competition": 0.05,
+    "competition_level": "LOW",
+    "cpc": 2.53,
+    "search_volume": 320,
+    "low_top_of_page_bid": 0.01,
+    "high_top_of_page_bid": 0.99,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 260,
+     "2026-07": 260,
+     "2026-06": 320,
+     "2026-05": 320,
+     "2026-04": 260,
+     "2026-03": 390,
+     "2026-02": 390,
+     "2026-01": 320,
+     "2025-12": 320,
+     "2025-11": 320,
+     "2025-10": 260,
+     "2025-09": 390
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -19
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 25.9,
+    "dofollow": 19.3,
+    "referring_pages": 20.9,
+    "referring_domains": 9,
+    "referring_main_domains": 8.1,
+    "rank": 61.2,
+    "main_domain_rank": 451.1,
+    "last_updated_time": "2026-09-09 09:43:39 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 08:04:30 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice template excel",
+   "keyword_info": {
+    "last_updated_time": "2026-09-16 15:50:27 +00:00",
+    "competition": 0.03,
+    "competition_level": "LOW",
+    "cpc": 4.45,
+    "search_volume": 260,
+    "low_top_of_page_bid": 2.07,
+    "high_top_of_page_bid": 9.6,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 480,
+     "2026-07": 1000,
+     "2026-06": 880,
+     "2026-05": 30,
+     "2026-04": 40,
+     "2026-03": 90,
+     "2026-02": 40,
+     "2026-01": 50,
+     "2025-12": 30,
+     "2025-11": 50,
+     "2025-10": 50,
+     "2025-09": 40
+    },
+    "search_volume_trend": {
+     "monthly": -52,
+     "quarterly": -45,
+     "yearly": 586
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 3,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 30.1,
+    "dofollow": 4.6,
+    "referring_pages": 29.3,
+    "referring_domains": 24.5,
+    "referring_main_domains": 24.3,
+    "rank": 60.6,
+    "main_domain_rank": 595.2,
+    "last_updated_time": "2026-08-11 15:33:04 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 20:15:36 +00:00"
+   }
+  },
+  {
+   "keyword": "excel proforma invoice template",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 10:02:03 +00:00",
+    "competition": 0.03,
+    "competition_level": "LOW",
+    "cpc": 4.45,
+    "search_volume": 260,
+    "low_top_of_page_bid": 2.07,
+    "high_top_of_page_bid": 9.6,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 480,
+     "2026-07": 1000,
+     "2026-06": 880,
+     "2026-05": 30,
+     "2026-04": 40,
+     "2026-03": 90,
+     "2026-02": 40,
+     "2026-01": 50,
+     "2025-12": 30,
+     "2025-11": 50,
+     "2025-10": 50,
+     "2025-09": 40
+    },
+    "search_volume_trend": {
+     "monthly": -52,
+     "quarterly": -45,
+     "yearly": 586
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice template excel",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 3,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 119.1,
+    "dofollow": 61.5,
+    "referring_pages": 113,
+    "referring_domains": 42,
+    "referring_main_domains": 39.4,
+    "rank": 52.2,
+    "main_domain_rank": 511.6,
+    "last_updated_time": "2025-05-19 17:14:24 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 08:03:07 +00:00"
+   }
+  },
+  {
+   "keyword": "returns proforma invoice net a porter",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 20:41:48 +00:00",
+    "competition": 0,
+    "competition_level": "LOW",
+    "search_volume": 260,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 390,
+     "2026-07": 260,
+     "2026-06": 260,
+     "2026-05": 320,
+     "2026-04": 320,
+     "2026-03": 320,
+     "2026-02": 210,
+     "2026-01": 260,
+     "2025-12": 210,
+     "2025-11": 170,
+     "2025-10": 210,
+     "2025-09": 170
+    },
+    "search_volume_trend": {
+     "monthly": 50,
+     "quarterly": 50,
+     "yearly": 255
+    }
+   },
+   "keyword_properties": {
+    "detected_language": "en",
+    "words_count": 6
+   },
+   "avg_backlinks_info": {
+    "backlinks": 272.2,
+    "dofollow": 124.9,
+    "referring_pages": 267.8,
+    "referring_domains": 0.9,
+    "referring_main_domains": 0.9,
+    "rank": 10.1,
+    "main_domain_rank": 582.2,
+    "last_updated_time": "2026-09-10 05:27:42 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "transactional",
+    "last_updated_time": "2026-04-29 21:12:55 +00:00"
+   }
+  },
+  {
+   "keyword": "difference between proforma invoice and account sales in consignment",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 15:43:57 +00:00",
+    "competition": 0,
+    "competition_level": "LOW",
+    "search_volume": 210,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 140,
+     "2026-07": 40,
+     "2026-06": 110,
+     "2026-05": 320,
+     "2026-04": 390,
+     "2026-03": 320,
+     "2026-02": 320,
+     "2026-01": 260,
+     "2025-12": 210,
+     "2025-11": 140,
+     "2025-10": 70,
+     "2025-09": 50
+    },
+    "search_volume_trend": {
+     "monthly": 250,
+     "quarterly": 27,
+     "yearly": 600
+    }
+   },
+   "keyword_properties": {
+    "detected_language": "en",
+    "words_count": 9
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1.2,
+    "dofollow": 0.9,
+    "referring_pages": 1.1,
+    "referring_domains": 0.6,
+    "referring_main_domains": 0.6,
+    "rank": 14.7,
+    "main_domain_rank": 423.5,
+    "last_updated_time": "2026-07-09 16:34:07 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 16:31:17 +00:00"
+   }
+  },
+  {
+   "keyword": "fedex proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 22:59:31 +00:00",
+    "competition": 0.06,
+    "competition_level": "LOW",
+    "cpc": 348.24,
+    "search_volume": 210,
+    "low_top_of_page_bid": 0.69,
+    "high_top_of_page_bid": 23.08,
+    "categories": [
+     10004,
+     10305,
+     11104
+    ],
+    "monthly_searches": {
+     "2026-08": 170,
+     "2026-07": 170,
+     "2026-06": 210,
+     "2026-05": 170,
+     "2026-04": 210,
+     "2026-03": 210,
+     "2026-02": 210,
+     "2026-01": 210,
+     "2025-12": 260,
+     "2025-11": 210,
+     "2025-10": 210,
+     "2025-09": 260
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -35
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice fedex",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 16.7,
+    "dofollow": 12.9,
+    "referring_pages": 15.3,
+    "referring_domains": 8.7,
+    "referring_main_domains": 8.2,
+    "rank": 54.9,
+    "main_domain_rank": 590.5,
+    "last_updated_time": "2026-04-03 01:07:28 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 09:11:51 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice fedex",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 05:30:35 +00:00",
+    "competition": 0.06,
+    "competition_level": "LOW",
+    "cpc": 348.24,
+    "search_volume": 210,
+    "low_top_of_page_bid": 0.69,
+    "high_top_of_page_bid": 23.08,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 170,
+     "2026-07": 170,
+     "2026-06": 210,
+     "2026-05": 170,
+     "2026-04": 210,
+     "2026-03": 210,
+     "2026-02": 210,
+     "2026-01": 210,
+     "2025-12": 260,
+     "2025-11": 210,
+     "2025-10": 210,
+     "2025-09": 260
+    },
+    "search_volume_trend": {
+     "quarterly": -19,
+     "yearly": -35
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 11.6,
+    "dofollow": 7.9,
+    "referring_pages": 10.5,
+    "referring_domains": 6.1,
+    "referring_main_domains": 5.8,
+    "rank": 35.6,
+    "main_domain_rank": 574.8,
+    "last_updated_time": "2026-09-11 10:45:37 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-30 00:39:19 +00:00"
+   }
+  },
+  {
+   "keyword": "difference between proforma and commercial invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-13 07:02:37 +00:00",
+    "competition": 0.01,
+    "competition_level": "LOW",
+    "search_volume": 140,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 140,
+     "2026-07": 170,
+     "2026-06": 140,
+     "2026-05": 140,
+     "2026-04": 140,
+     "2026-03": 170,
+     "2026-02": 140,
+     "2026-01": 140,
+     "2025-12": 140,
+     "2025-11": 170,
+     "2025-10": 140,
+     "2025-09": 170
+    },
+    "search_volume_trend": {
+     "monthly": -18
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "difference between proforma invoice and commercial invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 6
+   },
+   "avg_backlinks_info": {
+    "backlinks": 6.6,
+    "dofollow": 5.4,
+    "referring_pages": 6.4,
+    "referring_domains": 3.8,
+    "referring_main_domains": 3.5,
+    "rank": 33.3,
+    "main_domain_rank": 530.6,
+    "last_updated_time": "2026-09-15 22:47:18 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 14:28:26 +00:00"
+   }
+  },
+  {
+   "keyword": "difference between proforma invoice and commercial invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 04:54:46 +00:00",
+    "competition": 0.01,
+    "competition_level": "LOW",
+    "search_volume": 140,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 140,
+     "2026-07": 170,
+     "2026-06": 140,
+     "2026-05": 140,
+     "2026-04": 140,
+     "2026-03": 170,
+     "2026-02": 140,
+     "2026-01": 140,
+     "2025-12": 140,
+     "2025-11": 170,
+     "2025-10": 140,
+     "2025-09": 170
+    },
+    "search_volume_trend": {
+     "monthly": -18
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 7
+   },
+   "avg_backlinks_info": {
+    "backlinks": 7,
+    "dofollow": 5.7,
+    "referring_pages": 6.9,
+    "referring_domains": 4.2,
+    "referring_main_domains": 3.9,
+    "rank": 42.7,
+    "main_domain_rank": 519.5,
+    "last_updated_time": "2026-09-15 22:47:50 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-27 14:41:24 +00:00"
+   }
+  },
+  {
+   "keyword": "difference between commercial invoice and proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-12 09:19:49 +00:00",
+    "competition": 0.01,
+    "competition_level": "LOW",
+    "search_volume": 140,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 140,
+     "2026-07": 170,
+     "2026-06": 140,
+     "2026-05": 140,
+     "2026-04": 140,
+     "2026-03": 170,
+     "2026-02": 140,
+     "2026-01": 140,
+     "2025-12": 140,
+     "2025-11": 170,
+     "2025-10": 140,
+     "2025-09": 170
+    },
+    "search_volume_trend": {
+     "monthly": -18
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "difference between proforma invoice and commercial invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "en",
+    "words_count": 7
+   },
+   "avg_backlinks_info": {
+    "backlinks": 7.5,
+    "dofollow": 6,
+    "referring_pages": 7.2,
+    "referring_domains": 4.4,
+    "referring_main_domains": 4.1,
+    "rank": 44.2,
+    "main_domain_rank": 531.8,
+    "last_updated_time": "2026-09-15 22:48:45 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 14:07:42 +00:00"
+   }
+  },
+  {
+   "keyword": "commercial vs proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 08:44:51 +00:00",
+    "competition": 0.02,
+    "competition_level": "LOW",
+    "search_volume": 140,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 110,
+     "2026-07": 140,
+     "2026-06": 140,
+     "2026-05": 140,
+     "2026-04": 140,
+     "2026-03": 170,
+     "2026-02": 110,
+     "2026-01": 140,
+     "2025-12": 140,
+     "2025-11": 110,
+     "2025-10": 170,
+     "2025-09": 170
+    },
+    "search_volume_trend": {
+     "monthly": -21,
+     "quarterly": -21,
+     "yearly": -21
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice vs commercial invoice",
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 6,
+    "detected_language": "en",
+    "words_count": 4
+   },
+   "avg_backlinks_info": {
+    "backlinks": 1306.9,
+    "dofollow": 1270,
+    "referring_pages": 1272.8,
+    "referring_domains": 11.2,
+    "referring_main_domains": 10.1,
+    "rank": 76.4,
+    "main_domain_rank": 588.9,
+    "last_updated_time": "2026-09-16 00:09:55 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "informational",
+    "last_updated_time": "2026-04-29 15:05:33 +00:00"
+   }
+  },
+  {
+   "keyword": "proforma invoice alibaba",
+   "keyword_info": {
+    "last_updated_time": "2026-09-14 11:33:51 +00:00",
+    "competition": 0.01,
+    "competition_level": "LOW",
+    "search_volume": 110,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 210,
+     "2026-07": 170,
+     "2026-06": 210,
+     "2026-05": 210,
+     "2026-04": 170,
+     "2026-03": 140,
+     "2026-02": 140,
+     "2026-01": 70,
+     "2025-12": 10,
+     "2025-11": 10,
+     "2025-10": 10,
+     "2025-09": 10
+    },
+    "search_volume_trend": {
+     "monthly": 24,
+     "yearly": 2000
+    }
+   },
+   "keyword_properties": {
+    "synonym_clustering_algorithm": "text_processing",
+    "keyword_difficulty": 4,
+    "detected_language": "tr",
+    "is_another_language": true,
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 86.4,
+    "dofollow": 67.9,
+    "referring_pages": 78,
+    "referring_domains": 42.9,
+    "referring_main_domains": 41.4,
+    "rank": 55.6,
+    "main_domain_rank": 693.8,
+    "last_updated_time": "2026-09-17 00:34:12 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "informational",
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 23:18:50 +00:00"
+   }
+  },
+  {
+   "keyword": "alibaba proforma invoice",
+   "keyword_info": {
+    "last_updated_time": "2026-09-17 05:05:55 +00:00",
+    "competition": 0.01,
+    "competition_level": "LOW",
+    "search_volume": 110,
+    "categories": [
+     10019,
+     10168,
+     10537,
+     10885,
+     12209
+    ],
+    "monthly_searches": {
+     "2026-08": 210,
+     "2026-07": 170,
+     "2026-06": 210,
+     "2026-05": 210,
+     "2026-04": 170,
+     "2026-03": 140,
+     "2026-02": 140,
+     "2026-01": 70,
+     "2025-12": 10,
+     "2025-11": 10,
+     "2025-10": 10,
+     "2025-09": 10
+    },
+    "search_volume_trend": {
+     "monthly": 24,
+     "yearly": 2000
+    }
+   },
+   "keyword_properties": {
+    "core_keyword": "proforma invoice alibaba",
+    "synonym_clustering_algorithm": "text_processing",
+    "detected_language": "tr",
+    "is_another_language": true,
+    "words_count": 3
+   },
+   "avg_backlinks_info": {
+    "backlinks": 0.9,
+    "dofollow": 0.9,
+    "referring_pages": 0.9,
+    "referring_domains": 0.3,
+    "referring_main_domains": 0.2,
+    "rank": 4.9,
+    "main_domain_rank": 782.2,
+    "last_updated_time": "2024-11-14 07:19:24 +00:00"
+   },
+   "search_intent_info": {
+    "main_intent": "commercial",
+    "foreign_intent": [
+     "informational",
+     "transactional"
+    ],
+    "last_updated_time": "2026-04-29 00:08:41 +00:00"
+   }
+  }
+ ]
+}

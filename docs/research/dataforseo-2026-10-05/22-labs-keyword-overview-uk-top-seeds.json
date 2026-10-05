@@ -1,0 +1,153 @@
+{
+ "id": "10051919-2048-0607-0000-6d1c6821afb9",
+ "endpoint": "dataforseo_labs/google/keyword_overview/live",
+ "location": "United Kingdom",
+ "language": "en",
+ "_note": "Condensed transcription of inline response (keyword, search_volume, keyword_difficulty, main_intent). No cost field reported by the MCP response.",
+ "items": [
+  {
+   "keyword": "proforma invoice",
+   "search_volume": 8100,
+   "keyword_difficulty": null,
+   "main_intent": "transactional"
+  },
+  {
+   "keyword": "hs code",
+   "search_volume": 12100,
+   "keyword_difficulty": 72,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "incoterms",
+   "search_volume": 9900,
+   "keyword_difficulty": 45,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "fob meaning",
+   "search_volume": 5400,
+   "keyword_difficulty": 11,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "incoterms 2020",
+   "search_volume": 1600,
+   "keyword_difficulty": 31,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "cbm calculator",
+   "search_volume": 1300,
+   "keyword_difficulty": 8,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "ddp incoterm",
+   "search_volume": 1300,
+   "keyword_difficulty": 11,
+   "main_intent": "navigational"
+  },
+  {
+   "keyword": "exw incoterm",
+   "search_volume": 1300,
+   "keyword_difficulty": 13,
+   "main_intent": "navigational"
+  },
+  {
+   "keyword": "commercial invoice",
+   "search_volume": 1000,
+   "keyword_difficulty": 1,
+   "main_intent": "commercial"
+  },
+  {
+   "keyword": "certificate of origin",
+   "search_volume": 720,
+   "keyword_difficulty": 9,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "commercial invoice template",
+   "search_volume": 590,
+   "keyword_difficulty": null,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "proforma invoice template",
+   "search_volume": 480,
+   "keyword_difficulty": null,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "delivery note template",
+   "search_volume": 480,
+   "keyword_difficulty": null,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "volumetric weight calculator",
+   "search_volume": 480,
+   "keyword_difficulty": 11,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "packing list template",
+   "search_volume": 260,
+   "keyword_difficulty": 4,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "chargeable weight calculator",
+   "search_volume": 140,
+   "keyword_difficulty": 3,
+   "main_intent": "transactional"
+  },
+  {
+   "keyword": "export documents",
+   "search_volume": 140,
+   "keyword_difficulty": 20,
+   "main_intent": "transactional"
+  },
+  {
+   "keyword": "shipping documents",
+   "search_volume": 140,
+   "keyword_difficulty": 3,
+   "main_intent": "commercial"
+  },
+  {
+   "keyword": "certificate of origin template",
+   "search_volume": 90,
+   "keyword_difficulty": null,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "container loading calculator",
+   "search_volume": 90,
+   "keyword_difficulty": null,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "landed cost calculator",
+   "search_volume": 90,
+   "keyword_difficulty": null,
+   "main_intent": "commercial"
+  },
+  {
+   "keyword": "dimensional weight calculator",
+   "search_volume": 50,
+   "keyword_difficulty": 35,
+   "main_intent": "informational"
+  },
+  {
+   "keyword": "packing list generator",
+   "search_volume": 50,
+   "keyword_difficulty": 8,
+   "main_intent": "navigational"
+  },
+  {
+   "keyword": "commercial invoice generator",
+   "search_volume": 40,
+   "keyword_difficulty": 44,
+   "main_intent": "commercial"
+  }
+ ]
+}

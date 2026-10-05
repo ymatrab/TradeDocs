@@ -1,0 +1,92 @@
+{
+ "id": "10051916-2048-0399-0000-37ef4bd626ac",
+ "status_code": 20000,
+ "total_count": 27290,
+ "_note": "Condensed transcription: this response was returned inline by the DataForSEO MCP tool and not persisted to disk; fields kept per item: keyword, search_volume, keyword_difficulty, main_intent, cpc. No cost field was reported by the MCP response.",
+ "items": [
+  {
+   "keyword": "hs harmonized code",
+   "search_volume": 14800,
+   "keyword_difficulty": 68,
+   "main_intent": "informational",
+   "cpc": 7.97
+  },
+  {
+   "keyword": "hs tariff code lookup",
+   "search_volume": 9900,
+   "keyword_difficulty": 46,
+   "main_intent": "informational",
+   "cpc": 6.39
+  },
+  {
+   "keyword": "hs tariff code search",
+   "search_volume": 9900,
+   "keyword_difficulty": 52,
+   "main_intent": "informational",
+   "cpc": 6.39
+  },
+  {
+   "keyword": "hs code lookup",
+   "search_volume": 4400,
+   "keyword_difficulty": 72,
+   "main_intent": "informational",
+   "cpc": 6.05
+  },
+  {
+   "keyword": "hs tariff code",
+   "search_volume": 3600,
+   "keyword_difficulty": 29,
+   "main_intent": "informational",
+   "cpc": 4.2
+  },
+  {
+   "keyword": "hs code to hts code",
+   "search_volume": 3600,
+   "keyword_difficulty": 35,
+   "main_intent": "informational",
+   "cpc": 4.2
+  },
+  {
+   "keyword": "hs code harmonized",
+   "search_volume": 2900,
+   "keyword_difficulty": 52,
+   "main_intent": "informational",
+   "cpc": 10.23
+  },
+  {
+   "keyword": "what is hs code",
+   "search_volume": 1600,
+   "keyword_difficulty": 38,
+   "main_intent": "informational",
+   "cpc": 5.78
+  },
+  {
+   "keyword": "what is an hs code",
+   "search_volume": 1600,
+   "keyword_difficulty": 40,
+   "main_intent": "informational",
+   "cpc": 5.78
+  },
+  {
+   "keyword": "hs tariff code ebay",
+   "search_volume": 1300,
+   "keyword_difficulty": 7,
+   "main_intent": "informational",
+   "cpc": null
+  },
+  {
+   "keyword": "hs code search",
+   "search_volume": 1000,
+   "keyword_difficulty": 61,
+   "main_intent": "informational",
+   "cpc": 10.64
+  },
+  {
+   "keyword": "usps hs code lookup tool",
+   "search_volume": 1000,
+   "keyword_difficulty": 26,
+   "main_intent": "navigational",
+   "cpc": 0.33
+  }
+ ]
+}

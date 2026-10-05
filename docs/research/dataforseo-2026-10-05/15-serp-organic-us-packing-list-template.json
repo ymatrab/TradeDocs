@@ -1,0 +1,77 @@
+{
+ "id": "10051917-2048-0139-0000-a0ba7c33a701",
+ "keyword": "packing list template",
+ "location": "United States",
+ "language": "en",
+ "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. SERP features listed. No cost field was reported by the MCP response.",
+ "serp_features": [
+  "images (mixed: retail packing slip, vertex42 travel, incodocs.com/template/packing_list, travel printables)",
+  "people_also_ask (all travel-packing questions)",
+  "related_searches (incl. 'packing list template export')"
+ ],
+ "organic": [
+  {
+   "rank": 2,
+   "domain": "www.canva.com",
+   "url": "https://www.canva.com/checklists/templates/travel/",
+   "title": "Free and customizable travel checklist templates",
+   "page_type": "travel template gallery"
+  },
+  {
+   "rank": 3,
+   "domain": "www.travelwhilenerdy.com",
+   "url": "https://www.travelwhilenerdy.com/blog/the-joys-of-a-packing-list",
+   "title": "Using Google Sheets to perfect your packing list",
+   "page_type": "travel blog"
+  },
+  {
+   "rank": 4,
+   "domain": "shipping-packing-list-template.pdffiller.com",
+   "url": "https://shipping-packing-list-template.pdffiller.com/",
+   "title": "packing list - Blank Fillable Template",
+   "page_type": "fillable shipping form"
+  },
+  {
+   "rank": 5,
+   "domain": "www.pinterest.com",
+   "url": "https://www.pinterest.com/pin/ultimate-packing-list-template-pdf-free-printables--25543922885456908/",
+   "title": "Ultimate Packing List Template PDF",
+   "page_type": "travel printable"
+  },
+  {
+   "rank": 7,
+   "domain": "www.notion.com",
+   "url": "https://www.notion.com/templates/category/packing-lists",
+   "title": "Packing Lists templates",
+   "page_type": "travel template gallery"
+  },
+  {
+   "rank": 8,
+   "domain": "gdoc.io",
+   "url": "https://gdoc.io/packing-list-templates/",
+   "title": "Free Packing List Google Docs Templates",
+   "page_type": "travel template gallery"
+  },
+  {
+   "rank": 9,
+   "domain": "gatherandgotravel.com",
+   "url": "https://gatherandgotravel.com/universal-packing-list/",
+   "title": "Free Expert Packing List Great for Any Trip",
+   "page_type": "travel blog"
+  },
+  {
+   "rank": 10,
+   "domain": "www-s3.smartertravel.com",
+   "url": "https://www-s3.smartertravel.com/pdf/The-Ultimate-Packing-List-SmarterTravel-Editable-Download.pdf",
+   "title": "Packing List",
+   "page_type": "travel PDF"
+  },
+  {
+   "rank": 11,
+   "domain": "incodocs.com",
+   "url": "https://incodocs.com/template/packing_list",
+   "title": "Create a Packing List [Free Template]",
+   "page_type": "trade-document template/generator (competitor)"
+  }
+ ]
+}
