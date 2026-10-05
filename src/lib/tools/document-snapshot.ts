@@ -10,11 +10,13 @@ import { currencyMinorUnits, lineTotal, sumLineTotals, sumStated } from '@/lib/m
 
 export const MAX_TOOL_LINES = 20;
 
+/** An optional free-text field: absent, blank and whitespace all mean "not stated". */
 const text = (max: number) =>
   z
     .string()
     .trim()
     .max(max)
+    .optional()
     .transform((value) => value || null);
 
 /** ISO 3166-1 alpha-2, upper-cased; empty means "not stated". */
@@ -23,6 +25,7 @@ const country = z
   .trim()
   .toUpperCase()
   .regex(/^([A-Z]{2})?$/)
+  .optional()
   .transform((value) => value || null);
 
 const party = z.object({
