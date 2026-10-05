@@ -17,7 +17,14 @@ export type SourceId =
   | 'ups-dimensional'
   | 'maersk-dry-containers'
   | 'us-cbp-invoice-contents'
-  | 'eu-union-customs-code';
+  | 'eu-union-customs-code'
+  | 'us-cbp-proforma-invoice'
+  | 'trade-gov-proforma-invoice'
+  | 'trade-gov-commercial-invoice'
+  | 'trade-gov-packing-list'
+  | 'nist-si-volume'
+  | 'maersk-fcl-lcl'
+  | 'wto-customs-valuation';
 
 export type SourceRecord = {
   id: SourceId;
@@ -116,19 +123,99 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'us-cbp-proforma-invoice': {
+    id: 'us-cbp-proforma-invoice',
+    authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
+    title: '19 CFR 141.85 — Pro forma invoice',
+    url: 'https://www.ecfr.gov/current/title-19/chapter-I/part-141/subpart-F/section-141.85',
+    jurisdiction: 'United States (imports)',
+    supports:
+      'the importer’s pro forma invoice filed when the commercial invoice is not available at entry',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'trade-gov-proforma-invoice': {
+    id: 'trade-gov-proforma-invoice',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Pro Forma Invoice',
+    url: 'https://www.trade.gov/pro-forma-invoice',
+    jurisdiction: 'United States (export guidance)',
+    supports: 'what a proforma invoice is for and the details it usually carries',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'trade-gov-commercial-invoice': {
+    id: 'trade-gov-commercial-invoice',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Export Documentation: Commercial Invoice',
+    url: 'https://www.trade.gov/commercial-invoice',
+    jurisdiction: 'United States (export guidance)',
+    supports: 'the commercial invoice as the document customs assesses duties and taxes from',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'trade-gov-packing-list': {
+    id: 'trade-gov-packing-list',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Export Documentation: Packing List',
+    url: 'https://www.trade.gov/packing-list',
+    jurisdiction: 'United States (export guidance)',
+    supports: 'what a packing list itemises and who relies on it',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'nist-si-volume': {
+    id: 'nist-si-volume',
+    authority: 'National Institute of Standards and Technology (NIST)',
+    title: 'NIST Guide to the SI, Appendix B.9: factors for units listed by kind of quantity',
+    url: 'https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9',
+    jurisdiction: 'International (SI unit conversion)',
+    supports: 'one cubic foot being 0.028 316 85 cubic metres',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'maersk-fcl-lcl': {
+    id: 'maersk-fcl-lcl',
+    authority: 'Maersk',
+    title: 'FCL vs LCL shipping: deciding the best fit for your shipment',
+    url: 'https://www.maersk.com/logistics-explained/transportation-and-freight/2023/12/15/understanding-ocean-freight',
+    jurisdiction: 'Carrier practice (one carrier; others differ)',
+    supports: 'how LCL and FCL bookings differ and LCL being charged on the cubic metres used',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'wto-customs-valuation': {
+    id: 'wto-customs-valuation',
+    authority: 'World Trade Organization (WTO)',
+    title: 'Customs valuation — technical information',
+    url: 'https://www.wto.org/english/tratop_e/cusval_e/cusval_info_e.htm',
+    jurisdiction: 'International (WTO Customs Valuation Agreement)',
+    supports:
+      'transaction value as the main basis of customs value, and freight and insurance being added where a member values on a CIF basis',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 };
 
 /** Sources cited on each public page, in the order they are listed. */
 export const PAGE_SOURCES = {
   incoterms: ['icc-incoterms-2020'],
-  cbm: ['maersk-dry-containers'],
+  cbm: ['maersk-dry-containers', 'nist-si-volume'],
   chargeableWeight: [
     'iata-volumetric',
     'dhl-express-volumetric',
     'fedex-dimensional',
     'ups-dimensional',
   ],
-  invoice: ['us-cbp-invoice-contents', 'eu-union-customs-code', 'icc-incoterms-2020'],
+  invoice: [
+    'us-cbp-invoice-contents',
+    'trade-gov-commercial-invoice',
+    'eu-union-customs-code',
+    'icc-incoterms-2020',
+  ],
+  proforma: ['trade-gov-proforma-invoice', 'us-cbp-proforma-invoice', 'icc-incoterms-2020'],
+  packingList: ['trade-gov-packing-list', 'trade-gov-commercial-invoice'],
+  landedCost: ['wto-customs-valuation', 'icc-incoterms-2020'],
 } as const satisfies Record<string, readonly SourceId[]>;
 
 export function sourcesFor(ids: readonly SourceId[]): SourceRecord[] {
