@@ -40,7 +40,8 @@ function isVercelHost(host: string): boolean {
 
 /** True when APP_URL names a real domain rather than a platform-assigned vercel.app host. */
 export function isCustomDomainUrl(appUrl: string | undefined): boolean {
-  const host = hostOf(appUrl);
+  // The name without its port, so a loopback origin is recognised whatever port it uses.
+  const host = hostOf(appUrl)?.replace(/:\d+$/, '') ?? null;
   return host !== null && !isVercelHost(host) && host !== 'localhost' && host !== '127.0.0.1';
 }
 

@@ -38,8 +38,7 @@ test('tool structured data parses and matches the visible FAQ', async ({ page })
   expect(types).toEqual(expect.arrayContaining(['BreadcrumbList', 'SoftwareApplication']));
 
   const faq = items.find((item) => item['@type'] === 'FAQPage') as
-    | { mainEntity: { name: string }[] }
-    | undefined;
+    { mainEntity: { name: string }[] } | undefined;
   expect(faq).toBeDefined();
   for (const question of faq?.mainEntity ?? []) {
     await expect(page.locator('summary', { hasText: question.name })).toHaveCount(1);

@@ -50,8 +50,7 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     id: 'iata-volumetric',
     authority: 'International Air Transport Association (IATA)',
     title: 'Air cargo tariffs and rules: what you need to know',
-    url:
-      'https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/air-cargo-tariffs-and-rules-what-you-need-to-know/',
+    url: 'https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/air-cargo-tariffs-and-rules-what-you-need-to-know/',
     jurisdiction: 'International air cargo',
     supports: 'the general 6,000 cm³ per kilogram volumetric rule for air freight',
     retrieved: RETRIEVED,
@@ -61,8 +60,7 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     id: 'dhl-express-volumetric',
     authority: 'DHL',
     title: 'Actual weight vs volumetric weight explained',
-    url:
-      'https://www.dhl.com/discover/en-id/logistics-advice/logistics-insights/decoding-shipping-costs-actual-weight-vs-volumetric-weight',
+    url: 'https://www.dhl.com/discover/en-id/logistics-advice/logistics-insights/decoding-shipping-costs-actual-weight-vs-volumetric-weight',
     jurisdiction: 'Carrier practice (DHL Express)',
     supports: 'DHL Express dividing by 5,000 for volumetric weight',
     retrieved: RETRIEVED,
@@ -72,8 +70,7 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     id: 'fedex-dimensional',
     authority: 'FedEx',
     title: 'How do I calculate dimensional weight of a package?',
-    url:
-      'https://www.fedex.com/en-jp/customer-support/faq/invoices-and-payments/fees-and-charges/calculate-dimensional-weight.html',
+    url: 'https://www.fedex.com/en-jp/customer-support/faq/invoices-and-payments/fees-and-charges/calculate-dimensional-weight.html',
     jurisdiction: 'Carrier practice (FedEx international)',
     supports: 'FedEx dividing by 5,000 for dimensional weight in centimetres',
     retrieved: RETRIEVED,
@@ -93,8 +90,7 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     id: 'maersk-dry-containers',
     authority: 'Maersk',
     title: 'Our fleet — dry container equipment specifications (PDF)',
-    url:
-      'https://www.maersk.com/~/media_sc9/maersk/local-information/files/africa/south-africa/important-information/container-type-and-sizes/dry-equipment-specifications-updated.pdf',
+    url: 'https://www.maersk.com/~/media_sc9/maersk/local-information/files/africa/south-africa/important-information/container-type-and-sizes/dry-equipment-specifications-updated.pdf',
     jurisdiction: 'Carrier equipment (one carrier’s fleet; other carriers differ)',
     supports: 'typical internal volumes and maximum payloads of dry containers',
     retrieved: RETRIEVED,
