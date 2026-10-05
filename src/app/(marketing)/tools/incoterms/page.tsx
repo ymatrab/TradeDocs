@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
 
 export const metadata: Metadata = {
@@ -10,6 +13,11 @@ export const metadata: Metadata = {
   description:
     'Where risk passes, who pays for carriage, who clears customs and who insures, for every Incoterms 2020 rule. Plain language, with the trap in each one named.',
   alternates: { canonical: '/tools/incoterms' },
+  openGraph: openGraphFor(
+    'Incoterms 2020 explained: all eleven rules',
+    'Where risk passes, who pays for carriage, who clears customs and who insures, for every Incoterms 2020 rule, in plain language.',
+    '/tools/incoterms',
+  ),
 };
 
 const faq = [
@@ -105,6 +113,8 @@ export default function IncotermsPage() {
           </Link>
         </div>
       </section>
+      <RelatedTools current="/tools/incoterms" />
+      <ToolJsonLd path="/tools/incoterms" />
     </>
   );
 }

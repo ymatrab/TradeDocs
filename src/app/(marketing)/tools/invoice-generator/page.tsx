@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { DocumentGenerator } from './generator';
 
 export const metadata: Metadata = {
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
   description:
     'Fill in a commercial invoice, proforma invoice or packing list and download it as a PDF. No account, no watermark, and nothing you type is stored.',
   alternates: { canonical: '/tools/invoice-generator' },
+  openGraph: openGraphFor(
+    'Free commercial invoice generator (PDF, no sign-up)',
+    'Fill in a commercial invoice, proforma invoice or packing list and download it as a PDF. No account, no watermark, nothing stored.',
+    '/tools/invoice-generator',
+  ),
 };
 
 const faq = [
@@ -82,6 +90,8 @@ export default function GeneratorPage() {
           </Link>
         </div>
       </section>
+      <RelatedTools current="/tools/invoice-generator" />
+      <ToolJsonLd path="/tools/invoice-generator" faq={faq} />
     </>
   );
 }

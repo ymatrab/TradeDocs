@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
+import { IncotermJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { INCOTERMS, INCOTERMS_DISCLAIMER, findIncoterm } from '@/lib/trade/incoterms';
 
 /** The eleven codes this route answers on. Anything else is a 404, not an empty page. */
@@ -20,10 +23,14 @@ export async function generateMetadata({
   const term = findIncoterm(code);
   if (!term) return { title: 'Incoterms 2020' };
 
+  const title = `${term.code} Incoterms 2020 — ${term.name}, explained`;
+  const description = `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`;
+  const path = `/tools/incoterms/${term.code.toLowerCase()}`;
   return {
-    title: `${term.code} Incoterms 2020 — ${term.name}, explained`,
-    description: `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`,
-    alternates: { canonical: `/tools/incoterms/${term.code.toLowerCase()}` },
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: openGraphFor(title, description, path),
   };
 }
 
@@ -115,6 +122,8 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
           </Link>
         </div>
       </section>
+      <RelatedTools current="/tools/incoterms" />
+      <IncotermJsonLd code={term.code} />
     </>
   );
 }

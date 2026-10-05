@@ -5,6 +5,8 @@ import { ArrowRight, Boxes, Building2, Check, Clock, Users } from 'lucide-react'
 import { LinkButton } from '@/components/primitives/button';
 import { primaryAction } from '@/components/shell/public';
 import { RevealSection } from '@/components/shell/reveal';
+import { HomeJsonLd } from '@/components/seo/json-ld';
+import { openGraphFor } from '@/lib/seo/social';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
 
@@ -13,6 +15,11 @@ export const metadata: Metadata = {
   description:
     'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.',
   alternates: { canonical: '/' },
+  openGraph: openGraphFor(
+    'TradeDocs: trade documents that agree with each other',
+    'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.',
+    '/',
+  ),
 };
 
 /**
@@ -434,6 +441,7 @@ export default function Home() {
           <p className="stamp">Prepared · not issued</p>
         </div>
       </RevealSection>
+      <HomeJsonLd faq={questions} />
     </>
   );
 }

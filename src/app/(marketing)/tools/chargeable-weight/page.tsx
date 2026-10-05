@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { LinkButton } from '@/components/primitives/button';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { ChargeableWeightCalculator } from './calculator';
 
 export const metadata: Metadata = {
@@ -8,6 +11,11 @@ export const metadata: Metadata = {
   description:
     'Compare actual and volumetric weight for air, express, road groupage and sea LCL, and see which one your carrier will bill. Free, and worked out in your browser.',
   alternates: { canonical: '/tools/chargeable-weight' },
+  openGraph: openGraphFor(
+    'Chargeable weight calculator: volumetric vs actual',
+    'Compare actual and volumetric weight for air, express, road groupage and sea LCL, and see which one your carrier will bill. Free, in your browser.',
+    '/tools/chargeable-weight',
+  ),
 };
 
 const faq = [
@@ -72,6 +80,8 @@ export default function ChargeableWeightPage() {
           </Link>
         </div>
       </section>
+      <RelatedTools current="/tools/chargeable-weight" />
+      <ToolJsonLd path="/tools/chargeable-weight" faq={faq} />
     </>
   );
 }

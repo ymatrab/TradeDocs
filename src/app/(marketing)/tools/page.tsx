@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Box, FileText, Scale, Handshake } from 'lucide-react';
+import { ToolsHubJsonLd } from '@/components/seo/json-ld';
+import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
   title: 'Free trade tools — CBM, chargeable weight and Incoterms',
   description:
     'Calculators and references for people who ship: cubic metres, volumetric versus actual weight, and a plain-language guide to all eleven Incoterms 2020 rules.',
   alternates: { canonical: '/tools' },
+  openGraph: openGraphFor(
+    'Free trade tools: invoice generator, CBM, chargeable weight, Incoterms',
+    'A free commercial invoice generator, CBM and chargeable weight calculators, and a plain-language guide to all eleven Incoterms 2020 rules.',
+    '/tools',
+  ),
 };
 
 const tools = [
@@ -72,6 +79,7 @@ export default function ToolsPage() {
           If they show you that we know the work, better.
         </p>
       </section>
+      <ToolsHubJsonLd />
     </>
   );
 }
