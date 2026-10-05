@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { Callout } from '@/components/primitives/feedback';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { DocumentGenerator } from './generator';
 
 export const metadata: Metadata = {
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
   description:
     'Fill in a commercial invoice, proforma invoice or packing list and download it as a PDF. No account, no watermark, and nothing you type is stored.',
   alternates: { canonical: '/tools/invoice-generator' },
+  openGraph: openGraphFor(
+    'Free commercial invoice generator (PDF, no sign-up)',
+    'Fill in a commercial invoice, proforma invoice or packing list and download it as a PDF. No account, no watermark, nothing stored.',
+    '/tools/invoice-generator',
+  ),
 };
 
 const faq = [
@@ -86,6 +94,8 @@ export default function GeneratorPage() {
       </section>
 
       <SourcesBlock ids={PAGE_SOURCES.invoice} />
+      <RelatedTools current="/tools/invoice-generator" />
+      <ToolJsonLd path="/tools/invoice-generator" faq={faq} />
     </>
   );
 }

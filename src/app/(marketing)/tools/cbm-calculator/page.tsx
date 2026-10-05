@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { CbmCalculator } from './calculator';
 
 export const metadata: Metadata = {
@@ -8,6 +11,11 @@ export const metadata: Metadata = {
   description:
     'Work out the CBM of a consignment from carton dimensions in cm, mm, m, inches or feet, and see how it sits against a 20ft, 40ft or high-cube container. Free, and nothing leaves your browser.',
   alternates: { canonical: '/tools/cbm-calculator' },
+  openGraph: openGraphFor(
+    'CBM calculator: cubic metres for shipping cartons',
+    'Work out the CBM of a consignment from carton dimensions and check it against a 20ft, 40ft or high-cube container. Free, and nothing leaves your browser.',
+    '/tools/cbm-calculator',
+  ),
 };
 
 const faq = [
@@ -69,6 +77,8 @@ export default function CbmPage() {
       </section>
 
       <SourcesBlock ids={PAGE_SOURCES.cbm} />
+      <RelatedTools current="/tools/cbm-calculator" />
+      <ToolJsonLd path="/tools/cbm-calculator" faq={faq} />
     </>
   );
 }

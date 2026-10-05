@@ -1,0 +1,102 @@
+import { INCOTERMS } from '@/lib/trade/incoterms';
+import { documentKindLabels, type DocumentKind } from '@/lib/labels';
+
+/**
+ * The public surface, described once.
+ *
+ * The sitemap, llms.txt, structured data and the related-tools block all read from here, so
+ * a tool cannot be linked from one place and missing from another. Pages keep their own
+ * copy; this holds the facts search engines and assistants are given about them.
+ */
+
+export const SITE_NAME = 'TradeDocs';
+
+export const SITE_DESCRIPTION =
+  'TradeDocs is a shipment workspace for exporters and the people who prepare their paperwork. ' +
+  'You record a shipment’s parties, goods and terms once, and it prepares the commercial ' +
+  'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
+  'figures agree across the set. It is free while early, and its calculators, Incoterms 2020 ' +
+  'guide and invoice generator work without an account.';
+
+export type PublicTool = {
+  path: string;
+  name: string;
+  summary: string;
+  /** An interactive tool is software; a reference page is not, and is not marked up as one. */
+  kind: 'application' | 'reference';
+};
+
+export const PUBLIC_TOOLS: readonly PublicTool[] = [
+  {
+    path: '/tools/invoice-generator',
+    name: 'Commercial invoice generator',
+    summary:
+      'Fill in a commercial invoice, proforma invoice or packing list and download the PDF. No account, no watermark, nothing stored.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/cbm-calculator',
+    name: 'CBM calculator',
+    summary:
+      'Cubic metres from carton dimensions, in any unit, with a check against 20ft, 40ft and high-cube containers.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/chargeable-weight',
+    name: 'Chargeable weight calculator',
+    summary:
+      'Volumetric against actual weight for air, express, road groupage and sea LCL, and which one you will be billed on.',
+    kind: 'application',
+  },
+  {
+    path: '/tools/incoterms',
+    name: 'Incoterms 2020 guide',
+    summary:
+      'All eleven rules in plain language: where risk passes, who pays what, who clears customs.',
+    kind: 'reference',
+  },
+];
+
+export function findPublicTool(path: string): PublicTool | undefined {
+  return PUBLIC_TOOLS.find((tool) => tool.path === path);
+}
+
+/** Document types offered publicly. Certificate of origin stays out until D-008 is lifted. */
+const ALL_DOCUMENT_KINDS = Object.keys(documentKindLabels) as DocumentKind[];
+
+export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS.filter(
+  (kind) => kind !== 'certificate_of_origin',
+);
+
+/**
+ * The date each public page's content last changed, as YYYY-MM-DD.
+ *
+ * Written by hand when a page's copy or data changes, never computed from the clock: a
+ * sitemap that reports every page as modified on every request teaches crawlers to ignore
+ * the field. 2026-10-05 is the Manifest redesign round, which rewrote all of these.
+ */
+const REDESIGN_ROUND = '2026-10-05';
+
+export type SitemapPage = {
+  path: string;
+  lastModified: string;
+  changeFrequency: 'weekly' | 'monthly';
+  priority: number;
+};
+
+export const SITEMAP_PAGES: readonly SitemapPage[] = [
+  { path: '/', lastModified: REDESIGN_ROUND, changeFrequency: 'weekly', priority: 1 },
+  { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
+  ...PUBLIC_TOOLS.map((tool) => ({
+    path: tool.path,
+    lastModified: REDESIGN_ROUND,
+    changeFrequency: 'monthly' as const,
+    priority: tool.path === '/tools/invoice-generator' ? 0.8 : 0.7,
+  })),
+  ...INCOTERMS.map((term) => ({
+    path: `/tools/incoterms/${term.code.toLowerCase()}`,
+    lastModified: REDESIGN_ROUND,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+];

@@ -11,6 +11,9 @@ import {
 } from '@/lib/trade/incoterms';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../../page-parts';
+import { IncotermJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 
 /** The eleven codes this route answers on. Anything else is a 404, not an empty page. */
 export function generateStaticParams() {
@@ -26,10 +29,14 @@ export async function generateMetadata({
   const term = findIncoterm(code);
   if (!term) return { title: 'Incoterms 2020' };
 
+  const title = `${term.code} Incoterms 2020 — ${term.name}, explained`;
+  const description = `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`;
+  const path = `/tools/incoterms/${term.code.toLowerCase()}`;
   return {
-    title: `${term.code} Incoterms 2020 — ${term.name}, explained`,
-    description: `${term.riskPasses} What ${term.code} means for cost, risk, insurance and customs clearance, and the mistake it most often causes.`,
-    alternates: { canonical: `/tools/incoterms/${term.code.toLowerCase()}` },
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: openGraphFor(title, description, path),
   };
 }
 
@@ -163,6 +170,8 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
         </p>
         <ToolCta secondary={{ href: '/tools/incoterms', label: 'Compare all eleven rules' }} />
       </section>
+      <RelatedTools current="/tools/incoterms" />
+      <IncotermJsonLd code={term.code} />
     </>
   );
 }

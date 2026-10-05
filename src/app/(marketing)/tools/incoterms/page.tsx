@@ -5,12 +5,20 @@ import { DataTable } from '@/components/primitives/table';
 import { INCOTERMS, INCOTERMS_DISCLAIMER, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
   title: 'Incoterms 2020 explained — all eleven rules',
   description:
     'Where risk passes, who pays for carriage, who clears customs and who insures, for every Incoterms 2020 rule. Plain language, with the trap in each one named.',
   alternates: { canonical: '/tools/incoterms' },
+  openGraph: openGraphFor(
+    'Incoterms 2020 explained: all eleven rules',
+    'Where risk passes, who pays for carriage, who clears customs and who insures, for every Incoterms 2020 rule, in plain language.',
+    '/tools/incoterms',
+  ),
 };
 
 export default function IncotermsPage() {
@@ -86,6 +94,8 @@ export default function IncotermsPage() {
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>
+      <RelatedTools current="/tools/incoterms" />
+      <ToolJsonLd path="/tools/incoterms" faq={INCOTERMS_HUB_FAQ} />
     </>
   );
 }

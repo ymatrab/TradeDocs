@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Archivo, Inter, JetBrains_Mono } from 'next/font/google';
 import { getPublicBaseUrl, isIndexable } from '@/lib/http/base-url';
+import { SITE_NAME } from '@/lib/seo/site';
+import { SHARE_IMAGE, openGraphFor } from '@/lib/seo/social';
 import './globals.css';
 
 /**
@@ -38,6 +40,9 @@ const mono = JetBrains_Mono({
 // Per-request CSP nonces must never be cached in a static HTML artifact.
 export const dynamic = 'force-dynamic';
 
+const DEFAULT_DESCRIPTION =
+  'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.';
+
 /**
  * Indexing is decided per deployment, not hard-coded.
  *
@@ -53,9 +58,11 @@ export function generateMetadata(): Metadata {
   const indexable = isIndexable();
   return {
     metadataBase: new URL(getPublicBaseUrl()),
-    title: { default: 'TradeDocs', template: '%s · TradeDocs' },
-    description:
-      'A shipment workspace for reusable company, customer, product, and trade document data.',
+    title: { default: SITE_NAME, template: `%s · ${SITE_NAME}` },
+    description: DEFAULT_DESCRIPTION,
+    applicationName: SITE_NAME,
+    openGraph: openGraphFor(SITE_NAME, DEFAULT_DESCRIPTION),
+    twitter: { card: 'summary_large_image', images: [SHARE_IMAGE.url] },
     robots: indexable
       ? { index: true, follow: true }
       : { index: false, follow: false, nocache: true },

@@ -2,6 +2,16 @@
 
 ## Unreleased — 2026-09-06
 
+### Search readiness (D-007, indexing still closed)
+
+- `isIndexable()` now also requires `APP_URL` on a custom domain. `X-Robots-Tag: noindex, nofollow` is sent only when the deployment is not indexable or on private paths, and a production deployment with a custom `APP_URL` 308s its vercel.app hosts to it; previews are never redirected. Both decisions are pure and unit-tested.
+- Sitemap entries carry the date each page's content last changed instead of the request time.
+- Explicit `noindex` on the design-system and invitation pages; app and auth layouts already had it.
+- Share card (`opengraph-image`) in the Manifest palette, Open Graph and Twitter metadata on the root and on every public page.
+- JSON-LD: Organization and WebSite on the home page, SoftwareApplication (free, no ratings) on the three interactive tools, BreadcrumbList on the tools hub, tool and Incoterm pages, and FAQPage only where the questions are rendered.
+- `/llms.txt` generated from the same tool, Incoterms and document lists the pages use, with the boundary statement; certificate of origin excluded (D-008).
+- A shared related-tools block at the end of every tool and Incoterm page. SEO.md now holds the route inventory and the go-live checklist.
+
 ### Redesign — "Manifest" (D-005)
 
 - Replaced the navy/amber field-box look with the Manifest system: hull green, manifest paper, safety-yellow tape markers, Archivo/Inter/JetBrains Mono roles, square controls and flat offset depth. Every token is recorded with its measured contrast in DESIGN_SYSTEM.md.

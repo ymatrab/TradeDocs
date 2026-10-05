@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { getServerEnv } from '@/lib/config/server';
+import { isCustomDomainUrl } from '@/lib/http/indexing';
 
 const FALLBACK = 'http://127.0.0.1:3000';
 
@@ -33,9 +34,14 @@ export function getPublicBaseUrl(): string {
 export function isIndexable(): boolean {
   try {
     const env = getServerEnv();
-    // Only the real production service. A preview, a staging environment or a foundation
-    // build serving a closed screen must never compete with production in an index.
-    return env.APP_ENV === 'production' && env.APPLICATION_MODE === 'service';
+    // Only the real production service on its own domain. A preview, a staging environment
+    // or a foundation build must never compete with production in an index, and per D-007
+    // the vercel.app host is never indexed: APP_URL has to name the attached custom domain.
+    return (
+      env.APP_ENV === 'production' &&
+      env.APPLICATION_MODE === 'service' &&
+      isCustomDomainUrl(env.APP_URL)
+    );
   } catch {
     return false;
   }
