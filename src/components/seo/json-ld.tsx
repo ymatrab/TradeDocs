@@ -1,5 +1,6 @@
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import {
+  articleSchema,
   breadcrumbSchema,
   faqPageSchema,
   jsonLdScript,
@@ -10,6 +11,7 @@ import {
   type JsonLdObject,
   type QuestionAndAnswer,
 } from '@/lib/seo/json-ld';
+import { findGuide } from '@/lib/content/guides';
 import { findPublicTool } from '@/lib/seo/site';
 import { findIncoterm } from '@/lib/trade/incoterms';
 
@@ -29,6 +31,7 @@ function JsonLd({ data }: { data: JsonLdObject[] }) {
 const HOME: Crumb = { name: 'Home', path: '/' };
 const TOOLS: Crumb = { name: 'Free tools', path: '/tools' };
 const INCOTERMS: Crumb = { name: 'Incoterms® 2020', path: '/tools/incoterms' };
+const GUIDES: Crumb = { name: 'Guides', path: '/guides' };
 
 export function HomeJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
@@ -60,5 +63,29 @@ export function IncotermJsonLd({ code }: { code: string }) {
   const base = getPublicBaseUrl();
   const data = [breadcrumbSchema(base, [HOME, TOOLS, INCOTERMS, crumb])];
   if (term.faq.length > 0) data.push(faqPageSchema(term.faq));
+  return <JsonLd data={data} />;
+}
+
+export function GuidesHubJsonLd() {
+  return <JsonLd data={[breadcrumbSchema(getPublicBaseUrl(), [HOME, GUIDES])]} />;
+}
+
+/** A guide: breadcrumbs, the article, and its visible FAQ. */
+export function GuideJsonLd({ slug }: { slug: string }) {
+  const guide = findGuide(slug);
+  if (!guide) return null;
+  const base = getPublicBaseUrl();
+  const path = `/guides/${guide.slug}`;
+  const data = [
+    breadcrumbSchema(base, [HOME, GUIDES, { name: guide.title, path }]),
+    articleSchema(base, {
+      path,
+      headline: guide.title,
+      description: guide.description,
+      datePublished: guide.published,
+      dateModified: guide.updated,
+    }),
+  ];
+  if (guide.faq.length > 0) data.push(faqPageSchema(guide.faq));
   return <JsonLd data={data} />;
 }

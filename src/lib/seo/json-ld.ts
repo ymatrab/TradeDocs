@@ -64,6 +64,35 @@ export function softwareApplicationSchema(base: string, tool: PublicTool): JsonL
   };
 }
 
+export type ArticleFacts = {
+  path: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+};
+
+/**
+ * A guide. The author is the organization: guides carry a team byline, and naming a person
+ * who did not write them would be an invented author.
+ */
+export function articleSchema(base: string, article: ArticleFacts): JsonLdObject {
+  const url = absolute(base, article.path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.headline,
+    description: article.description,
+    url,
+    mainEntityOfPage: url,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    inLanguage: 'en',
+    author: { '@id': `${base}/#organization` },
+    publisher: { '@id': `${base}/#organization` },
+  };
+}
+
 export type Crumb = { name: string; path: string };
 
 export function breadcrumbSchema(base: string, crumbs: readonly Crumb[]): JsonLdObject {
