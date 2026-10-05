@@ -2,11 +2,13 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ShieldAlert } from 'lucide-react';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
+import { NavSentinel } from '@/components/shell/nav-condense';
 
 const navigation = [
   { href: '/#how', label: 'How it works' },
   { href: '/tools', label: 'Free tools' },
-  { href: '/#pricing', label: 'Pricing' },
+  // There are no prices yet, so the link is named for what the section actually says.
+  { href: '/#pricing', label: 'Free while early' },
 ] as const;
 
 const footerTools = [
@@ -57,6 +59,7 @@ export function PublicShell({
   const action = primaryAction(accountsOpen);
   return (
     <div className="site">
+      <NavSentinel />
       <header className="public-header">
         <div className="nav-card">
           {/* Part of the header itself, so it can never be scrolled past or collapsed. */}
