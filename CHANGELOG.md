@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-09-06
 
+### Workspace documents at snapshot schema 3
+
+- Migration `20260910000100_document_snapshot_v3.sql` redefines `generate_document` (same org scoping as 20260909000100) to emit schema 3: new workspace invoices get the per-line Origin column and "Incoterms® 2020" caption, and net/gross weight totals that no line states are null instead of zero. Existing schema 1/2 documents are not rewritten and render as issued. pgTAP (`tenant_integrity.test.sql`, plan 44) asserts the new schema, the absent gross total and an untouched schema 2 row; pending CI.
+
 ### Deferred service waivers (D-017)
 
 - Production service mode still requires `RESEND_API_KEY` and `EMAIL_FROM`; Turnstile, Sentry, analytics and IndexNow keys are required unless `WAIVE_TURNSTILE` / `WAIVE_SENTRY` / `WAIVE_ANALYTICS` / `WAIVE_INDEXNOW` is `true`. Any configured key keeps its control active (a partial Turnstile pair is rejected). `/api/ready` lists waived controls under `degraded`. RUNBOOK documents the launch waivers and Resend as Supabase Auth SMTP.

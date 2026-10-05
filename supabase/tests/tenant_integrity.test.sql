@@ -7,7 +7,7 @@
 create extension if not exists pgtap;
 
 begin;
-select plan(40);
+select plan(44);
 
 insert into auth.users (instance_id, id, aud, role, email, encrypted_password, email_confirmed_at, created_at, updated_at)
 values
@@ -291,6 +291,32 @@ select throws_ok(
   'a package cannot hold a line from a different shipment'
 );
 
+-- A document issued under schema 2, before generate_document moved to schema 3. Written as
+-- the migration owner because no API role can insert a document directly.
+reset role;
+select set_config(
+  'tests.legacy_snapshot',
+  '{"schema_version":2,"money_places":2,"kind":"commercial_invoice","number":"CI-LEGACY-0001",
+    "generated_at":"2026-09-01T09:00:00+00:00",
+    "shipment":{"reference":"SHP-2","currency":"EUR","revision":1},
+    "exporter":null,"consignee":null,"notify":null,
+    "items":[{"position":1,"description":"Other shipment line","country_of_origin":null,
+              "quantity":1,"unit":"pcs","unit_price":0,"line_total":0,
+              "net_weight_kg":null,"gross_weight_kg":null,"package_count":null,"package_kind":null}],
+    "packages":[],
+    "totals":{"quantity":1,"net_weight_kg":0,"gross_weight_kg":0,"packages":0,"value":0},
+    "packing_totals":{"packages":0,"gross_weight_kg":0,"net_weight_kg":0,"volume_m3":0}}',
+  true
+);
+with created as (
+  insert into public.documents (org_id, shipment_id, kind, number, shipment_revision, snapshot)
+  values (current_setting('tests.org_a')::uuid, current_setting('tests.shipment_a2')::uuid,
+          'commercial_invoice', 'CI-LEGACY-0001', 1, current_setting('tests.legacy_snapshot')::jsonb)
+  returning id
+)
+select set_config('tests.legacy_document', id::text, true) from created;
+set local role authenticated;
+
 -- Documents: provenance and status only move forward.
 select lives_ok(
   $$select set_config(
@@ -302,8 +328,31 @@ select lives_ok(
 );
 select is(
   (select snapshot ->> 'schema_version' from public.documents where id = current_setting('tests.document')::uuid),
-  '2',
+  '3',
   'a new snapshot records the schema it follows'
+);
+select is(
+  (select (snapshot -> 'totals' ->> 'net_weight_kg')::numeric
+   from public.documents where id = current_setting('tests.document')::uuid),
+  36.500::numeric,
+  'a stated net weight is totalled'
+);
+select is(
+  (select snapshot -> 'totals' -> 'gross_weight_kg'
+   from public.documents where id = current_setting('tests.document')::uuid),
+  'null'::jsonb,
+  'a gross weight no line states is absent from a schema 3 snapshot, not zero'
+);
+select is(
+  (select snapshot from public.documents where id = current_setting('tests.legacy_document')::uuid),
+  current_setting('tests.legacy_snapshot')::jsonb,
+  'a schema 2 document is untouched by the move to schema 3'
+);
+select is(
+  (select snapshot ->> 'schema_version' from public.documents
+   where id = current_setting('tests.legacy_document')::uuid),
+  '2',
+  'a schema 2 document keeps the schema it was issued under'
 );
 select is(
   (select snapshot -> 'exporter' ->> 'name' from public.documents where id = current_setting('tests.document')::uuid),
