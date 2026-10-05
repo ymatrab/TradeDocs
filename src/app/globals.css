@@ -496,6 +496,19 @@ h3 {
   font-weight: 400;
   color: var(--muted);
 }
+/* A row of fields. Labels and hints wrap to different heights, so the fields sit on
+   the row's baseline and the controls line up across it. */
+.form-row {
+  --form-col: 160px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--form-col)), 1fr));
+  align-items: end;
+}
+/* Wide enough for the longest option in a select, e.g. "Commercial invoice". */
+.form-row.roomy {
+  --form-col: 210px;
+}
 .input,
 .textarea,
 .select {
@@ -2162,6 +2175,7 @@ a.card:active {
   text-underline-offset: 4px;
 }
 .bench-name svg {
+  display: inline;
   vertical-align: -2px;
 }
 .bench-detail {
@@ -2199,6 +2213,7 @@ a.card:active {
 }
 .bench-foot {
   margin-top: var(--space-6);
+  margin-bottom: var(--space-5);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2432,7 +2447,24 @@ a.form-cell:active {
 .section > h2 {
   margin-bottom: var(--space-4);
 }
-.section > p.measure + h2 {
+/* Long-form prose: guides, the generators' field glossaries, Incoterms and calculators. */
+.section > :is(p, ul, ol).measure + :is(p, ul, ol) {
+  margin-top: var(--space-4);
+}
+.section > :is(ul, ol).measure {
+  padding-left: 1.25em;
+}
+.section > ul.measure {
+  list-style: disc;
+}
+.section > ol.measure {
+  list-style: decimal;
+}
+.section > :is(ul, ol).measure > li + li {
+  margin-top: var(--space-2);
+}
+.section > :is(p, ul, ol).measure + h2,
+.section > .table-scroll + h2 {
   margin-top: var(--space-7);
 }
 

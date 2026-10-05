@@ -71,12 +71,6 @@ const NUMBER_PLACEHOLDER: Record<GeneratorKind, string> = {
 
 const INCOTERMS = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
 
-const columns = {
-  display: 'grid',
-  gap: 14,
-  gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-} as const;
-
 function number(value: string): number {
   const parsed = Number(value.replace(',', '.'));
   return Number.isFinite(parsed) ? parsed : 0;
@@ -125,7 +119,7 @@ export function DocumentGenerator({
   ) => (
     <Panel title={label}>
       <div style={{ display: 'grid', gap: 14 }}>
-        <div style={columns}>
+        <div className="form-row">
           <Field id={`${prefix}-name`} label="Company name">
             {({ id }) => (
               <Input
@@ -148,7 +142,7 @@ export function DocumentGenerator({
             )}
           </Field>
         </div>
-        <div style={columns}>
+        <div className="form-row">
           <Field id={`${prefix}-address`} label="Address" requirement="Optional">
             {({ id }) => (
               <Input
@@ -287,7 +281,7 @@ export function DocumentGenerator({
   return (
     <div style={{ display: 'grid', gap: 24 }}>
       <Panel title="Document">
-        <div style={columns}>
+        <div className="form-row roomy">
           <Field id="kind" label="Type">
             {({ id }) => (
               <Select
@@ -424,7 +418,7 @@ export function DocumentGenerator({
                   />
                 )}
               </Field>
-              <div style={columns}>
+              <div className="form-row">
                 <Field id={`hs-${row.key}`} label="HS code" requirement="Optional">
                   {({ id }) => (
                     <Input
