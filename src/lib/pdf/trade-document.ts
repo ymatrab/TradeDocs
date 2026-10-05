@@ -542,8 +542,8 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
 }
 
 /** Exported for tests: the width a description column receives for a given document type. */
-export function descriptionWidth(kind: DocumentSnapshot['kind']): number {
-  const columns = columnsFor(kind);
+export function descriptionWidth(kind: DocumentSnapshot['kind'], moneyPlaces = 2): number {
+  const columns = columnsFor(kind, moneyPlaces);
   const fixed = columns.reduce((total, column) => total + column.width, 0);
   return CONTENT_WIDTH - fixed - 24;
 }
