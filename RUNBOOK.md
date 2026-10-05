@@ -51,9 +51,18 @@ Order matters; each step is the owner's unless marked agent.
    Supabase URL), `SUPABASE_ENVIRONMENT=production`, `RATE_LIMIT_KEY_SECRET` (32+ random
    characters), `LAUNCH_APPROVED=true` only after the launch checklist is signed.
    The schema (`src/lib/config/schema.ts`) also refuses production service mode without
-   `RESEND_API_KEY`, `EMAIL_FROM`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `SENTRY_DSN`,
-   `INDEXNOW_KEY` and `ANALYTICS_SITE_ID`; each needs a value or a recorded owner waiver
-   before step 5. `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` already
-   come from the Vercel Supabase integration (D-011).
+   `RESEND_API_KEY` and `EMAIL_FROM` (always required), and without `TURNSTILE_SITE_KEY` +
+   `TURNSTILE_SECRET_KEY`, `SENTRY_DSN`, `ANALYTICS_SITE_ID` and `INDEXNOW_KEY` unless the
+   matching waiver is set. Per D-017 (sign-up launch), set `WAIVE_TURNSTILE=true`,
+   `WAIVE_SENTRY=true`, `WAIVE_ANALYTICS=true` and `WAIVE_INDEXNOW=true`. Adding a service's
+   key later re-enables it whatever its waiver says; remove the waiver at the same time.
+   `/api/ready` lists the waived controls under `degraded`. `SUPABASE_URL`,
+   `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` already come from the Vercel Supabase
+   integration (D-011).
+   Supabase → Authentication → SMTP Settings → enable custom SMTP with Resend: host
+   `smtp.resend.com`, port `465`, username `resend`, password = the Resend API key, sender =
+   the `EMAIL_FROM` address. Without it, sign-up confirmation emails hit Supabase's built-in
+   email rate limit. The owner sets this in the Supabase dashboard; agents never handle the
+   key.
 5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
    `/design-system` is 404, robots and sitemap match the indexing decision (D-007).

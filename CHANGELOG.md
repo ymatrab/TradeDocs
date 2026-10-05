@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-09-06
 
+### Deferred service waivers (D-017)
+
+- Production service mode still requires `RESEND_API_KEY` and `EMAIL_FROM`; Turnstile, Sentry, analytics and IndexNow keys are required unless `WAIVE_TURNSTILE` / `WAIVE_SENTRY` / `WAIVE_ANALYTICS` / `WAIVE_INDEXNOW` is `true`. Any configured key keeps its control active (a partial Turnstile pair is rejected). `/api/ready` lists waived controls under `degraded`. RUNBOOK documents the launch waivers and Resend as Supabase Auth SMTP.
+
 ### Content sign-off fixes
 
 - Container capacities match the cited Maersk sheet (33/67/76/85 m³, 28,200/28,800/28,620/27,600 kg), pinned by a unit test.

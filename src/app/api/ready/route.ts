@@ -1,3 +1,5 @@
+import { degradedControls } from '@/lib/config/controls';
+import type { WaivableControl } from '@/lib/config/schema';
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
 import {
   DEGRADED_RATE_LIMIT_REASON,
@@ -13,8 +15,12 @@ export async function GET(): Promise<Response> {
   // Reported whether or not the deployment is ready, so a foundation deployment that serves
   // public tools without quotas says so instead of looking merely "unavailable".
   let rateLimiting: RateLimitMode = { mode: 'degraded', reason: DEGRADED_RATE_LIMIT_REASON };
+  // Controls the owner waived by name (D-017); names only, never configuration values.
+  let degraded: WaivableControl[] = [];
   try {
-    rateLimiting = rateLimitMode(getServerEnv());
+    const configuration = getServerEnv();
+    rateLimiting = rateLimitMode(configuration);
+    degraded = degradedControls(configuration);
     if (hasSupabaseConfiguration()) {
       const env = getServerEnv();
       if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
@@ -37,6 +43,7 @@ export async function GET(): Promise<Response> {
       status: ready ? 'ready' : 'unavailable',
       rate_limiting: rateLimiting.mode,
       ...(rateLimiting.mode === 'degraded' ? { reason: rateLimiting.reason } : {}),
+      ...(degraded.length > 0 ? { degraded } : {}),
     },
     {
       status: ready ? 200 : 503,

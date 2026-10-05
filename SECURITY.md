@@ -57,3 +57,15 @@ elsewhere callers share one quota. Quotas live in the database and fail closed w
 503 when the store is unreachable. A deployment without a database (the foundation deployment)
 cannot enforce quotas; it runs degraded, relies on each endpoint's per-request bounds, and says
 so in `/api/ready` (`rate_limiting: "degraded"` with a reason).
+
+## Waived controls (D-017)
+
+Production service mode requires each deferred control's keys unless its named waiver is
+`true`. A waiver applies only while every key for that control is absent; any configured key
+re-activates the control and then requires its full configuration. `/api/ready` lists waived
+controls by name in `degraded` (no values).
+
+- `WAIVE_TURNSTILE`: no bot challenge on anonymous flows; quotas and per-request bounds remain.
+- `WAIVE_SENTRY`: no external error ingestion; errors reach platform logs only.
+- `WAIVE_ANALYTICS`: no product analytics are collected.
+- `WAIVE_INDEXNOW`: no IndexNow submission; search engines discover pages through the sitemap.
