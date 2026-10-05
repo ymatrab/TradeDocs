@@ -20,15 +20,15 @@ Written 2026-10-05 after the /elliot launch-readiness run. Decisions referenced 
 
 ## Phase 1 — open sign-up (blocked on owner items)
 
-| # | Item | Who |
-|---|---|---|
-| 1 | Business name, country, contact email → agents draft privacy + terms (D-009), owner approves | owner → agents |
-| 2 | Resend account + verified sending domain; Supabase Auth SMTP → Resend (RUNBOOK) | owner |
-| 3 | `PRODUCTION_DATABASE_URL` secret in GitHub `production` environment; run "Migrate production database" (dry run, then apply). Take a Supabase backup first | owner |
-| 4 | Vercel Production env: APP_ENV, APPLICATION_MODE=service, APP_URL, project refs, SUPABASE_ENVIRONMENT, RATE_LIMIT_KEY_SECRET, RESEND_API_KEY, EMAIL_FROM, WAIVE_TURNSTILE/SENTRY/ANALYTICS/INDEXNOW=true (D-017) | owner |
-| 5 | Branch protection on `main` (require CI) | owner approves, agent configures |
-| 6 | Redeploy; agent smoke test: `/api/ready` 200 with degraded list, sign-up + confirmation email, first shipment → 4 PDFs → ZIP, second org cannot see the first | agents |
-| 7 | `LAUNCH_APPROVED=true` after the checklist is signed | owner |
+| #   | Item                                                                                                                                                                                                             | Who                              |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| 1   | Business name, country, contact email → agents draft privacy + terms (D-009), owner approves                                                                                                                     | owner → agents                   |
+| 2   | Resend account + verified sending domain; Supabase Auth SMTP → Resend (RUNBOOK)                                                                                                                                  | owner                            |
+| 3   | `PRODUCTION_DATABASE_URL` secret in GitHub `production` environment; run "Migrate production database" (dry run, then apply). Take a Supabase backup first                                                       | owner                            |
+| 4   | Vercel Production env: APP_ENV, APPLICATION_MODE=service, APP_URL, project refs, SUPABASE_ENVIRONMENT, RATE_LIMIT_KEY_SECRET, RESEND_API_KEY, EMAIL_FROM, WAIVE_TURNSTILE/SENTRY/ANALYTICS/INDEXNOW=true (D-017) | owner                            |
+| 5   | Branch protection on `main` (require CI)                                                                                                                                                                         | owner approves, agent configures |
+| 6   | Redeploy; agent smoke test: `/api/ready` 200 with degraded list, sign-up + confirmation email, first shipment → 4 PDFs → ZIP, second org cannot see the first                                                    | agents                           |
+| 7   | `LAUNCH_APPROVED=true` after the checklist is signed                                                                                                                                                             | owner                            |
 
 ## Phase 2 — open search (blocked on domain)
 
