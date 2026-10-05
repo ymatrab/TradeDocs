@@ -35,3 +35,20 @@ Verify clean required gates, focused release commit/tag, named approvals, separa
 ## Restore drill
 
 Restore approved backup into an isolated environment; disable customer email, live payment actions, analytics and indexing. Restore/check schema, tenant records, private objects, versions/hashes and queued side effects. Verify counts/constraints/RLS, historical PDF regeneration and a full synthetic journey. Reconcile external payment facts before resuming jobs. Measure actual recovery point/time against approved per-service RPO/RTO and record gaps, owners and dates. Delete the drill environment according to its approved retention policy. Run quarterly and before launch; backup existence alone is insufficient.
+
+## Production go-live (service mode)
+
+Order matters; each step is the owner's unless marked agent.
+
+1. Merge the release to `main` after CI and preview sign-off.
+2. GitHub → Settings → Environments → `production` → add secret `PRODUCTION_DATABASE_URL`
+   (Supabase session-pooler URI). Agents never handle the value.
+3. Actions → "Migrate production database" → confirm `migrate production`, first with
+   dry run on (lists pending migrations), then with dry run off.
+4. Vercel → Production environment variables (Production target only, D-011):
+   `APP_ENV=production`, `APPLICATION_MODE=service`, `APP_URL=https://<custom domain>`,
+   `SUPABASE_PROJECT_REF` and `PRODUCTION_SUPABASE_PROJECT_REF` (the project ref from the
+   Supabase URL), `SUPABASE_ENVIRONMENT=production`, `RATE_LIMIT_KEY_SECRET` (32+ random
+   characters), `LAUNCH_APPROVED=true` only after the launch checklist is signed.
+5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
+   `/design-system` is 404, robots and sitemap match the indexing decision (D-007).
