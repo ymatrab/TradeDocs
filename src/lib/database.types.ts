@@ -223,10 +223,10 @@ export type Database = {
           },
           {
             foreignKeyName: "documents_shipment_id_fkey"
-            columns: ["shipment_id"]
+            columns: ["org_id", "shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
         ]
       }
@@ -393,10 +393,10 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "package_contents_item_id_fkey"
-            columns: ["item_id"]
+            columns: ["org_id", "item_id"]
             isOneToOne: false
             referencedRelation: "shipment_items"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
           {
             foreignKeyName: "package_contents_org_id_fkey"
@@ -407,10 +407,10 @@ export type Database = {
           },
           {
             foreignKeyName: "package_contents_package_id_fkey"
-            columns: ["package_id"]
+            columns: ["org_id", "package_id"]
             isOneToOne: false
             referencedRelation: "shipment_packages"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
         ]
       }
@@ -571,17 +571,17 @@ export type Database = {
           },
           {
             foreignKeyName: "shipment_items_product_id_fkey"
-            columns: ["product_id"]
+            columns: ["org_id", "product_id"]
             isOneToOne: false
             referencedRelation: "products"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
           {
             foreignKeyName: "shipment_items_shipment_id_fkey"
-            columns: ["shipment_id"]
+            columns: ["org_id", "shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
         ]
       }
@@ -644,10 +644,10 @@ export type Database = {
           },
           {
             foreignKeyName: "shipment_packages_shipment_id_fkey"
-            columns: ["shipment_id"]
+            columns: ["org_id", "shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
         ]
       }
@@ -721,24 +721,24 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "shipments_consignee_id_fkey"
-            columns: ["consignee_id"]
+            columns: ["org_id", "consignee_id"]
             isOneToOne: false
             referencedRelation: "companies"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
           {
             foreignKeyName: "shipments_exporter_id_fkey"
-            columns: ["exporter_id"]
+            columns: ["org_id", "exporter_id"]
             isOneToOne: false
             referencedRelation: "companies"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
           {
             foreignKeyName: "shipments_notify_id_fkey"
-            columns: ["notify_id"]
+            columns: ["org_id", "notify_id"]
             isOneToOne: false
             referencedRelation: "companies"
-            referencedColumns: ["id"]
+            referencedColumns: ["org_id", "id"]
           },
           {
             foreignKeyName: "shipments_org_id_fkey"
@@ -764,6 +764,14 @@ export type Database = {
         Returns: string
       }
       cancel_account_deletion: { Args: never; Returns: undefined }
+      consume_rate_limit: {
+        Args: { p_key_hash: string; p_limit: number; p_window_seconds: number }
+        Returns: {
+          allowed: boolean
+          remaining: number
+          retry_after_seconds: number
+        }[]
+      }
       create_invitation: {
         Args: {
           invitee_email: string

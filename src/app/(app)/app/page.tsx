@@ -20,7 +20,7 @@ export default async function OrganizationsPage() {
 
   return (
     <AppShell title="Organizations" current="Organizations">
-      <div style={{ display: 'grid', gap: 24, maxWidth: 900 }}>
+      <div className="app-page">
         <Callout tone="legal" title="Preparation only">
           TradeDocs prepares documents. It does not issue, endorse or clear them.
         </Callout>
@@ -63,11 +63,16 @@ export default async function OrganizationsPage() {
             <EmptyState
               title="No organization yet"
               description="Create one to capture your company, customer and product data once and reuse it on every document."
+              action={
+                <a className="btn" href="#new-organization">
+                  Create one below
+                </a>
+              }
             />
           </Panel>
         )}
 
-        <Panel title="Create an organization">
+        <Panel title="Create an organization" id="new-organization">
           <CreateOrganizationForm />
         </Panel>
       </div>

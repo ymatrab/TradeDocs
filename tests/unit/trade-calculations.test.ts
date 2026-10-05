@@ -3,11 +3,14 @@ import {
   CONTAINERS,
   chargeableWeight,
   containerFit,
+  cubicFeetToCubicMetres,
+  cubicMetresToCubicFeet,
   toKilograms,
   toMetres,
   volumeOf,
 } from '@/lib/trade/calculations';
-import { INCOTERMS, findIncoterm } from '@/lib/trade/incoterms';
+import { INCOTERMS, findIncoterm, incotermFaq } from '@/lib/trade/incoterms';
+import { PAGE_SOURCES, SOURCES, lastReviewed, sourcesFor } from '@/lib/trade/sources';
 
 describe('unit conversion', () => {
   it('converts the length units a packing list is measured in', () => {
@@ -20,6 +23,14 @@ describe('unit conversion', () => {
   it('converts pounds by the international definition, not an approximation', () => {
     expect(toKilograms(1, 'lb')).toBeCloseTo(0.45359237, 10);
     expect(toKilograms(2500, 'g')).toBeCloseTo(2.5, 10);
+  });
+});
+
+describe('cubic feet', () => {
+  it('uses the exact SI factor, so one cubic metre is about 35.3147 cubic feet', () => {
+    expect(cubicMetresToCubicFeet(1)).toBeCloseTo(35.3146667, 6);
+    expect(cubicFeetToCubicMetres(1)).toBeCloseTo(0.028316846592, 12);
+    expect(cubicFeetToCubicMetres(cubicMetresToCubicFeet(33.2))).toBeCloseTo(33.2, 10);
   });
 });
 
@@ -116,6 +127,13 @@ describe('container fit', () => {
     const volumes = Object.values(CONTAINERS).map((container) => container.volumeM3);
     expect([...volumes].sort((a, b) => a - b)).toEqual(volumes);
   });
+
+  it('matches the cited Maersk dry container sheet', () => {
+    expect(CONTAINERS['20ft']).toMatchObject({ volumeM3: 33, payloadKg: 28_200 });
+    expect(CONTAINERS['40ft']).toMatchObject({ volumeM3: 67, payloadKg: 28_800 });
+    expect(CONTAINERS['40hc']).toMatchObject({ volumeM3: 76, payloadKg: 28_620 });
+    expect(CONTAINERS['45hc']).toMatchObject({ volumeM3: 85, payloadKg: 27_600 });
+  });
 });
 
 describe('incoterms reference', () => {
@@ -145,5 +163,48 @@ describe('incoterms reference', () => {
 
   it('finds a rule whatever case it is asked for', () => {
     expect(findIncoterm('fob')?.name).toBe('Free on Board');
+  });
+
+  it('gives every rule page the same complete set of sections', () => {
+    for (const term of INCOTERMS) {
+      expect(term.faq.length, term.code).toBeGreaterThanOrEqual(3);
+      expect(term.faq.length, term.code).toBeLessThanOrEqual(4);
+      expect(term.mistakes.length, term.code).toBeGreaterThanOrEqual(2);
+      expect(term.example, term.code).not.toBe('');
+      expect(term.carriageNote, term.code).not.toBe('');
+    }
+    expect(incotermFaq('fca')).toBe(findIncoterm('FCA')?.faq);
+    expect(incotermFaq('dat')).toEqual([]);
+  });
+
+  it('leaves the main carriage with the buyer under exactly the E and F rules', () => {
+    const buyerCarries = INCOTERMS.filter((term) => term.mainCarriage === 'buyer');
+    expect(buyerCarries.map((term) => term.code)).toEqual(['EXW', 'FCA', 'FAS', 'FOB']);
+  });
+
+  it('never says the rules can oblige a carrier to issue a bill of lading', () => {
+    const fca = JSON.stringify(findIncoterm('FCA'));
+    expect(fca).not.toMatch(/obliges the carrier|oblige the carrier to issue/i);
+  });
+
+  it('puts the cost of a DAP import-clearance delay on the buyer', () => {
+    expect(findIncoterm('DAP')?.watchOut).toMatch(/fall on the buyer, not the seller/);
+  });
+});
+
+describe('source registry', () => {
+  it('cites only records that exist, over https, with a retrieval date and reviewer', () => {
+    for (const ids of Object.values(PAGE_SOURCES)) {
+      for (const record of sourcesFor(ids)) {
+        expect(record.url).toMatch(/^https:\/\//);
+        expect(record.retrieved).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+        expect(record.reviewer).not.toBe('');
+      }
+    }
+    expect(Object.values(SOURCES).every((record) => record.id in SOURCES)).toBe(true);
+  });
+
+  it('reports the latest retrieval among the sources a page cites', () => {
+    expect(lastReviewed(sourcesFor(PAGE_SOURCES.invoice))).toBe('2026-10-05');
   });
 });

@@ -1,6 +1,7 @@
 import { afterEach, expect, it, vi } from 'vitest';
 import { GET as health } from '@/app/api/health/route';
 import { GET as readiness } from '@/app/api/ready/route';
+import { DEGRADED_RATE_LIMIT_REASON } from '@/lib/security/rate-limit';
 
 afterEach(() => {
   vi.unstubAllEnvs();
@@ -22,7 +23,11 @@ it('unconfigured readiness fails without contacting a provider', async () => {
   vi.stubGlobal('fetch', fetcher);
   const response = await readiness();
   expect(response.status).toBe(503);
-  expect(await response.json()).toEqual({ status: 'unavailable' });
+  expect(await response.json()).toEqual({
+    status: 'unavailable',
+    rate_limiting: 'degraded',
+    reason: DEGRADED_RATE_LIMIT_REASON,
+  });
   expect(fetcher).not.toHaveBeenCalled();
 });
 
@@ -36,7 +41,25 @@ it('configured readiness reflects the real auth dependency result without reveal
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({ internalVersion: 'private' })));
   const response = await readiness();
   expect(response.status).toBe(200);
-  expect(await response.json()).toEqual({ status: 'ready' });
+  // No service-role key or quota secret here, so quotas are reported as degraded.
+  expect(await response.json()).toEqual({
+    status: 'ready',
+    rate_limiting: 'degraded',
+    reason: DEGRADED_RATE_LIMIT_REASON,
+  });
   vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('outage')));
   expect((await readiness()).status).toBe(503);
+});
+
+it('readiness reports enforced quotas once the store and key are configured', async () => {
+  vi.stubEnv('APP_ENV', 'test');
+  vi.stubEnv('APPLICATION_MODE', 'service');
+  vi.stubEnv('SUPABASE_URL', 'http://127.0.0.1:54321');
+  vi.stubEnv('SUPABASE_ANON_KEY', 'synthetic-public-test-key');
+  vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'synthetic-service-test-key');
+  vi.stubEnv('SUPABASE_PROJECT_REF', 'syntheticproject');
+  vi.stubEnv('SUPABASE_ENVIRONMENT', 'test');
+  vi.stubEnv('RATE_LIMIT_KEY_SECRET', 'synthetic-rate-test-key-more-than-32-characters');
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({})));
+  expect(await (await readiness()).json()).toEqual({ status: 'ready', rate_limiting: 'enforced' });
 });

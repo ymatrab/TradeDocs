@@ -47,6 +47,7 @@ export function AppShell({
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 
   const account: NavItem[] = [{ href: '/app/account', label: 'Account', icon: UserCog }];
+  const kicker = orgId ? 'Workspace' : 'TradeDocs';
 
   const links = (items: readonly NavItem[]) =>
     items.map((item) => (
@@ -97,7 +98,15 @@ export function AppShell({
             {links(account)}
             {signOut}
           </NavDisclosure>
-          <h1 className="app-title">{title}</h1>
+          {/*
+            One header pattern for every page: the section it belongs to, then its title.
+            When the title already is the section ("Shipments"), the caption names the
+            area instead, so the line above the heading is never a repeat of it.
+          */}
+          <div className="app-heading">
+            <p className="caption">{current && current !== title ? current : kicker}</p>
+            <h1 className="app-title">{title}</h1>
+          </div>
           <div style={{ marginLeft: 'auto' }}>
             <CommandMenu orgId={orgId} />
           </div>

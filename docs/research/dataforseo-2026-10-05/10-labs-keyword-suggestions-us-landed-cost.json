@@ -1,0 +1,85 @@
+{
+  "id": "10051916-2048-0399-0000-875dc217cd0a",
+  "status_code": 20000,
+  "total_count": 267,
+  "_note": "Condensed transcription: this response was returned inline by the DataForSEO MCP tool and not persisted to disk; fields kept per item: keyword, search_volume, keyword_difficulty, main_intent, cpc. No cost field was reported by the MCP response.",
+  "items": [
+    {
+      "keyword": "landed cost",
+      "search_volume": 1000,
+      "keyword_difficulty": 5,
+      "main_intent": "informational",
+      "cpc": 16.56
+    },
+    {
+      "keyword": "what is landed cost",
+      "search_volume": 720,
+      "keyword_difficulty": 7,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "landed cost calculator",
+      "search_volume": 320,
+      "keyword_difficulty": 10,
+      "main_intent": "commercial",
+      "cpc": 7.93
+    },
+    {
+      "keyword": "calculate landed cost",
+      "search_volume": 320,
+      "keyword_difficulty": 10,
+      "main_intent": "informational",
+      "cpc": 7.93
+    },
+    {
+      "keyword": "landed cost meaning",
+      "search_volume": 210,
+      "keyword_difficulty": 9,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "total landed cost",
+      "search_volume": 170,
+      "keyword_difficulty": 2,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "how to calculate landed cost",
+      "search_volume": 50,
+      "keyword_difficulty": 12,
+      "main_intent": "informational",
+      "cpc": 27
+    },
+    {
+      "keyword": "landed cost formula",
+      "search_volume": 50,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "cpc": 5.97
+    },
+    {
+      "keyword": "landed cost vs fob",
+      "search_volume": 50,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "dhl landed cost calculator",
+      "search_volume": 40,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "cpc": 3.45
+    },
+    {
+      "keyword": "zonos landed cost calculator",
+      "search_volume": 40,
+      "keyword_difficulty": 1,
+      "main_intent": "commercial",
+      "cpc": 0.42
+    }
+  ]
+}

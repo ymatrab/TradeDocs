@@ -16,6 +16,7 @@ type Line = {
   unit: string;
   unit_price: string;
   net_weight_kg: string;
+  gross_weight_kg: string;
   package_count: string;
 };
 
@@ -47,6 +48,7 @@ function emptyLine(key: number): Line {
     unit: 'pcs',
     unit_price: '0',
     net_weight_kg: '',
+    gross_weight_kg: '',
     package_count: '',
   };
 }
@@ -57,13 +59,17 @@ const KINDS = {
   packing_list: 'Packing list',
 } as const;
 
-const INCOTERMS = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
+/** The document types the free generator renders; a page presets one of them. */
+export type GeneratorKind = keyof typeof KINDS;
 
-const columns = {
-  display: 'grid',
-  gap: 14,
-  gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-} as const;
+/** A number in the shape each document is usually given, shown as a placeholder only. */
+const NUMBER_PLACEHOLDER: Record<GeneratorKind, string> = {
+  commercial_invoice: 'INV-2026-001',
+  proforma_invoice: 'PI-2026-001',
+  packing_list: 'PL-2026-001',
+};
+
+const INCOTERMS = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
 
 function number(value: string): number {
   const parsed = Number(value.replace(',', '.'));
@@ -78,9 +84,16 @@ function number(value: string): number {
  * it. What they do not get is the part an account is for: the values are gone the moment
  * the page is closed, and the second shipment starts from an empty form again.
  */
-export function DocumentGenerator() {
-  const [kind, setKind] = useState<keyof typeof KINDS>('commercial_invoice');
+export function DocumentGenerator({
+  initialKind = 'commercial_invoice',
+}: {
+  /** The type the form opens on. The visitor can still switch it. */
+  initialKind?: GeneratorKind;
+}) {
+  const [kind, setKind] = useState<GeneratorKind>(initialKind);
   const [documentNumber, setDocumentNumber] = useState('');
+  const [issuedOn, setIssuedOn] = useState('');
+  const [origin, setOrigin] = useState('');
   const [currency, setCurrency] = useState('EUR');
   const [incoterm, setIncoterm] = useState('');
   const [incotermPlace, setIncotermPlace] = useState('');
@@ -106,7 +119,7 @@ export function DocumentGenerator() {
   ) => (
     <Panel title={label}>
       <div style={{ display: 'grid', gap: 14 }}>
-        <div style={columns}>
+        <div className="form-row">
           <Field id={`${prefix}-name`} label="Company name">
             {({ id }) => (
               <Input
@@ -129,8 +142,8 @@ export function DocumentGenerator() {
             )}
           </Field>
         </div>
-        <div style={columns}>
-          <Field id={`${prefix}-address`} label="Address">
+        <div className="form-row">
+          <Field id={`${prefix}-address`} label="Address" requirement="Optional">
             {({ id }) => (
               <Input
                 id={id}
@@ -141,7 +154,7 @@ export function DocumentGenerator() {
               />
             )}
           </Field>
-          <Field id={`${prefix}-city`} label="City">
+          <Field id={`${prefix}-city`} label="City" requirement="Optional">
             {({ id }) => (
               <Input
                 id={id}
@@ -162,7 +175,12 @@ export function DocumentGenerator() {
               />
             )}
           </Field>
-          <Field id={`${prefix}-country`} label="Country" hint="Two-letter code.">
+          <Field
+            id={`${prefix}-country`}
+            label="Country"
+            hint="Two-letter code."
+            requirement="Optional"
+          >
             {({ id, describedBy }) => (
               <Input
                 id={id}
@@ -191,6 +209,15 @@ export function DocumentGenerator() {
     if (!lines.some((row) => row.description.trim())) {
       return setError('Describe at least one line of goods.');
     }
+    const countryCode = /^([A-Z]{2})?$/;
+    if (
+      !countryCode.test(origin) ||
+      lines.some((row) => !countryCode.test(row.country_of_origin))
+    ) {
+      return setError(
+        'Give each country of origin as a two-letter code, such as VN, or leave it blank.',
+      );
+    }
 
     setPending(true);
     try {
@@ -200,6 +227,7 @@ export function DocumentGenerator() {
         body: JSON.stringify({
           kind,
           number: documentNumber,
+          issued_on: issuedOn,
           currency,
           incoterm,
           incoterm_place: incotermPlace,
@@ -207,6 +235,7 @@ export function DocumentGenerator() {
           port_of_discharge: '',
           marks_and_numbers: '',
           reference: '',
+          country_of_origin: origin,
           seller,
           buyer,
           lines: lines
@@ -219,6 +248,7 @@ export function DocumentGenerator() {
               unit: row.unit || 'pcs',
               unit_price: number(row.unit_price),
               net_weight_kg: row.net_weight_kg ? number(row.net_weight_kg) : undefined,
+              gross_weight_kg: row.gross_weight_kg ? number(row.gross_weight_kg) : undefined,
               package_count: row.package_count ? Math.trunc(number(row.package_count)) : undefined,
             })),
         }),
@@ -251,13 +281,13 @@ export function DocumentGenerator() {
   return (
     <div style={{ display: 'grid', gap: 24 }}>
       <Panel title="Document">
-        <div style={columns}>
+        <div className="form-row roomy">
           <Field id="kind" label="Type">
             {({ id }) => (
               <Select
                 id={id}
                 value={kind}
-                onChange={(event) => setKind(event.target.value as keyof typeof KINDS)}
+                onChange={(event) => setKind(event.target.value as GeneratorKind)}
               >
                 {Object.entries(KINDS).map(([value, label]) => (
                   <option key={value} value={value}>
@@ -274,8 +304,25 @@ export function DocumentGenerator() {
                 value={documentNumber}
                 maxLength={60}
                 className="input data"
-                placeholder="INV-2026-001"
+                placeholder={NUMBER_PLACEHOLDER[kind]}
                 onChange={(event) => setDocumentNumber(event.target.value)}
+              />
+            )}
+          </Field>
+          <Field
+            id="issued-on"
+            label="Document date"
+            hint="Printed as the issue date. Leave blank for today."
+            requirement="Optional"
+          >
+            {({ id, describedBy }) => (
+              <Input
+                id={id}
+                type="date"
+                value={issuedOn}
+                className="input data"
+                aria-describedby={describedBy}
+                onChange={(event) => setIssuedOn(event.target.value)}
               />
             )}
           </Field>
@@ -291,7 +338,7 @@ export function DocumentGenerator() {
               />
             )}
           </Field>
-          <Field id="incoterm" label="Incoterm 2020" requirement="Optional">
+          <Field id="incoterm" label="Incoterms® 2020 rule" requirement="Optional">
             {({ id }) => (
               <Select
                 id={id}
@@ -314,6 +361,24 @@ export function DocumentGenerator() {
                 maxLength={160}
                 placeholder="Rotterdam"
                 onChange={(event) => setIncotermPlace(event.target.value)}
+              />
+            )}
+          </Field>
+          <Field
+            id="shipment-origin"
+            label="Country of origin"
+            hint="For the whole shipment, two-letter code. Leave blank if the lines differ."
+            requirement="Optional"
+          >
+            {({ id, describedBy }) => (
+              <Input
+                id={id}
+                value={origin}
+                maxLength={2}
+                className="input data"
+                aria-describedby={describedBy}
+                style={{ textTransform: 'uppercase' }}
+                onChange={(event) => setOrigin(event.target.value.toUpperCase())}
               />
             )}
           </Field>
@@ -353,7 +418,7 @@ export function DocumentGenerator() {
                   />
                 )}
               </Field>
-              <div style={columns}>
+              <div className="form-row">
                 <Field id={`hs-${row.key}`} label="HS code" requirement="Optional">
                   {({ id }) => (
                     <Input
@@ -420,6 +485,19 @@ export function DocumentGenerator() {
                       inputMode="decimal"
                       className="input data numeric"
                       onChange={(event) => updateLine(row.key, 'net_weight_kg', event.target.value)}
+                    />
+                  )}
+                </Field>
+                <Field id={`gross-${row.key}`} label="Gross weight (kg)" requirement="Optional">
+                  {({ id }) => (
+                    <Input
+                      id={id}
+                      value={row.gross_weight_kg}
+                      inputMode="decimal"
+                      className="input data numeric"
+                      onChange={(event) =>
+                        updateLine(row.key, 'gross_weight_kg', event.target.value)
+                      }
                     />
                   )}
                 </Field>

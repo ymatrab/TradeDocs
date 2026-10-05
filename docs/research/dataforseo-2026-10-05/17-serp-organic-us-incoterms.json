@@ -1,0 +1,64 @@
+{
+  "id": "10051918-2048-0139-0000-7b3e33c15444",
+  "keyword": "incoterms",
+  "location": "United States",
+  "language": "en",
+  "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. No cost field was reported by the MCP response.",
+  "serp_features": [
+    "ai_overview (cites trade.gov, iccwbo.org, wikipedia, xeneta, incodocs.com/blog/incoterms-2020-explained-the-complete-guide, dhl, kuehne-nagel, ups)",
+    "images (incodocs guide x2, incodocs FCA page, freightos, dhl, gw-world)",
+    "people_also_ask",
+    "video"
+  ],
+  "organic": [
+    {
+      "rank": 4,
+      "domain": "www.dhl.com",
+      "url": "https://www.dhl.com/discover/en-id/logistics-advice/essential-guides/what-are-incoterms",
+      "title": "Incoterms Guide for Small Businesses",
+      "page_type": "carrier guide"
+    },
+    {
+      "rank": 5,
+      "domain": "atradius.us",
+      "url": "https://atradius.us/knowledge-and-research/resources/understanding-incoterms-who-pays-the-tariffs",
+      "title": "Understanding Incoterms: Who pays the tariffs?",
+      "page_type": "guide (credit insurer)"
+    },
+    {
+      "rank": 6,
+      "domain": "blog.tridge.com",
+      "url": "https://blog.tridge.com/blog-posts/the-ultimate-guide-to-incoterms-understanding-international-trade-made-simple",
+      "title": "The Ultimate Guide to Incoterms",
+      "page_type": "blog guide"
+    },
+    {
+      "rank": 7,
+      "domain": "www.lynden.com",
+      "url": "https://www.lynden.com/logistics/resources/incoterms/",
+      "title": "Understanding Incoterms",
+      "page_type": "logistics resource"
+    },
+    {
+      "rank": 8,
+      "domain": "ecapital.com",
+      "url": "https://ecapital.com/en-gb/financial-term/incoterms/",
+      "title": "Incoterms | eCapital",
+      "page_type": "glossary"
+    },
+    {
+      "rank": 10,
+      "domain": "acrosslogistics.com",
+      "url": "https://acrosslogistics.com/blog/en/incoterms-2020-what-they-are-and-what-they-are-for",
+      "title": "INCOTERMS 2020. What they are",
+      "page_type": "blog guide"
+    },
+    {
+      "rank": 11,
+      "domain": "www.jmrodgers.com",
+      "url": "https://www.jmrodgers.com/incoterms-2020-explained-11-shipping-terms-every-importer-must-know/",
+      "title": "Incoterms 2020 Explained: 11 Shipping Terms",
+      "page_type": "customs broker blog"
+    }
+  ]
+}

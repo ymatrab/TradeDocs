@@ -7,6 +7,8 @@
  * resolve. The PDF renderer uses the same locale for the same reason.
  */
 
+import { currencyMinorUnits } from './money';
+
 const LOCALE = 'en-GB';
 
 export function decimal(value: number | string | null | undefined, places = 2): string {
@@ -27,9 +29,12 @@ export function quantity(value: number | string | null | undefined): string {
   return amount.toLocaleString(LOCALE, { maximumFractionDigits: 3 });
 }
 
-/** The currency stays a code beside the figure; a symbol is ambiguous across borders. */
+/**
+ * The currency stays a code beside the figure; a symbol is ambiguous across borders. The
+ * places follow the currency's minor unit, so a yen amount never shows sen.
+ */
 export function money(value: number | string | null | undefined, currency: string): string {
-  return `${decimal(value)} ${currency}`;
+  return `${decimal(value, currencyMinorUnits(currency))} ${currency}`;
 }
 
 export function shortDate(value: string | null | undefined): string {

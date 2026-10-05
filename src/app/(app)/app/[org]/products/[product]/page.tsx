@@ -37,7 +37,7 @@ export default async function ProductPage({
 
   return (
     <AppShell title={record.description} current="Products" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 900 }}>
+      <div className="app-page">
         <p>
           <Link className="text-link" href={`/app/${org}/products`}>
             ← Catalog

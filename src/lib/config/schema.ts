@@ -16,6 +16,21 @@ const flag = z
   .default('false')
   .transform((value) => value === 'true');
 
+/**
+ * Deferred services the owner may waive by name (D-017). A waiver only relaxes the production
+ * requirement for the keys; it never disables a configured control.
+ */
+export const waivableControls = {
+  turnstile: {
+    waiver: 'WAIVE_TURNSTILE',
+    keys: ['TURNSTILE_SITE_KEY', 'TURNSTILE_SECRET_KEY'],
+  },
+  sentry: { waiver: 'WAIVE_SENTRY', keys: ['SENTRY_DSN'] },
+  analytics: { waiver: 'WAIVE_ANALYTICS', keys: ['ANALYTICS_SITE_ID'] },
+  indexnow: { waiver: 'WAIVE_INDEXNOW', keys: ['INDEXNOW_KEY'] },
+} as const;
+export type WaivableControl = keyof typeof waivableControls;
+
 /** Pure schema: this module never reads process.env and may be imported by tooling. */
 export const serverEnvSchema = z
   .object({
@@ -41,9 +56,6 @@ export const serverEnvSchema = z
     TURNSTILE_SITE_KEY: optionalText,
     TURNSTILE_SECRET_KEY: optionalSecret,
     SENTRY_DSN: z.url().optional(),
-    PDF_WORKER_URL: z.url().optional(),
-    PDF_WORKER_TOKEN: optionalSecret,
-    QUEUE_SIGNING_KEY: optionalSecret,
     PAYMENT_PROVIDER: z.enum(['disabled', 'stripe', 'paddle']).default('disabled'),
     PAYMENT_API_KEY: optionalSecret,
     PAYMENT_WEBHOOK_SECRET: optionalSecret,
@@ -57,6 +69,10 @@ export const serverEnvSchema = z
     REGULATED_DOCUMENTS_APPROVED: flag,
     EMAIL_DELIVERY_APPROVED: flag,
     LAUNCH_APPROVED: flag,
+    WAIVE_TURNSTILE: flag,
+    WAIVE_SENTRY: flag,
+    WAIVE_ANALYTICS: flag,
+    WAIVE_INDEXNOW: flag,
   })
   .superRefine((value, context) => {
     const deployed = !['local', 'test'].includes(value.APP_ENV);
@@ -137,7 +153,7 @@ export const serverEnvSchema = z
       addIssue('SUPABASE_PROJECT_REF', 'Production must identify the approved production project.');
     }
 
-    for (const field of ['APP_URL', 'SUPABASE_URL', 'PDF_WORKER_URL', 'SENTRY_DSN'] as const) {
+    for (const field of ['APP_URL', 'SUPABASE_URL', 'SENTRY_DSN'] as const) {
       const raw = value[field];
       if (!raw) continue;
       let url: URL;
@@ -191,19 +207,20 @@ export const serverEnvSchema = z
       addIssue('APPLICATION_MODE', 'Foundation deployments cannot enable customer capabilities.');
     }
     if (production && serviceMode) {
-      for (const field of [
-        'RESEND_API_KEY',
-        'EMAIL_FROM',
-        'TURNSTILE_SITE_KEY',
-        'TURNSTILE_SECRET_KEY',
-        'SENTRY_DSN',
-        'PDF_WORKER_URL',
-        'PDF_WORKER_TOKEN',
-        'QUEUE_SIGNING_KEY',
-        'INDEXNOW_KEY',
-        'ANALYTICS_SITE_ID',
-      ] as const) {
+      for (const field of ['RESEND_API_KEY', 'EMAIL_FROM'] as const) {
         if (!value[field]) addIssue(field, 'Required before production deployment.');
+      }
+      for (const control of Object.values(waivableControls)) {
+        // A waiver applies only while every key is absent: a partly configured control stays
+        // active and must be complete, so it cannot silently fail open.
+        const keys: readonly (keyof typeof value)[] = control.keys;
+        const configured = keys.some((field) => Boolean(value[field]));
+        if (value[control.waiver] && !configured) continue;
+        for (const field of keys) {
+          if (!value[field]) {
+            addIssue(field, `Required before production deployment unless ${control.waiver}.`);
+          }
+        }
       }
       if (!value.LAUNCH_APPROVED)
         addIssue('LAUNCH_APPROVED', 'Requires the approved release checklist.');

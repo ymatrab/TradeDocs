@@ -5,7 +5,10 @@ import { getUser, isDatabaseConfigured } from '@/lib/supabase/server';
 import { AcceptForm } from './accept-form';
 
 export const dynamic = 'force-dynamic';
-export const metadata: Metadata = { title: 'Accept an invitation' };
+export const metadata: Metadata = {
+  title: 'Accept an invitation',
+  robots: { index: false, follow: false, nocache: true },
+};
 
 export default async function AcceptInvitationPage({
   searchParams,

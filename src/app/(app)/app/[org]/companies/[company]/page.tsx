@@ -47,7 +47,7 @@ export default async function CompanyPage({
 
   return (
     <AppShell title={record.name} current="Companies" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 900 }}>
+      <div className="app-page">
         <p>
           <Link className="text-link" href={`/app/${org}/companies`}>
             ← All companies

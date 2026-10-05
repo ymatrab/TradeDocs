@@ -27,3 +27,17 @@ export function hasSupabaseConfiguration(): boolean {
     return false;
   }
 }
+
+/**
+ * Whether regulated document types may be generated. Any configuration problem answers
+ * no: this gate fails closed, so a broken environment withholds the claim rather than
+ * making it without approval.
+ */
+export function regulatedDocumentsEnabled(): boolean {
+  try {
+    const env = getServerEnv();
+    return env.ENABLE_REGULATED_DOCUMENTS && env.REGULATED_DOCUMENTS_APPROVED;
+  } catch {
+    return false;
+  }
+}

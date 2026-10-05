@@ -1,0 +1,2610 @@
+{
+  "id": "10051916-2048-0399-0000-2744a10545a1",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "total_count": 13907,
+  "items": [
+    {
+      "keyword": "pack this packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 21:13:18 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 255.8,
+        "dofollow": 139.9,
+        "referring_pages": 232.7,
+        "referring_domains": 82.2,
+        "referring_main_domains": 78.6,
+        "rank": 160.9,
+        "main_domain_rank": 446.5,
+        "last_updated_time": "2024-09-14 21:53:14 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["informational"],
+        "last_updated_time": "2026-04-29 19:06:53 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 01:22:37 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 380.6,
+        "dofollow": 333.6,
+        "referring_pages": 358.9,
+        "referring_domains": 75.3,
+        "referring_main_domains": 73,
+        "rank": 130.9,
+        "main_domain_rank": 516.5,
+        "last_updated_time": "2026-07-30 05:06:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:45:31 +00:00"
+      }
+    },
+    {
+      "keyword": "list of packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 18:26:46 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10004, 10301, 11156],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 407.4,
+        "dofollow": 227.5,
+        "referring_pages": 369.2,
+        "referring_domains": 129,
+        "referring_main_domains": 124,
+        "rank": 216.6,
+        "main_domain_rank": 462.4,
+        "last_updated_time": "2024-10-04 13:10:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 20:43:03 +00:00"
+      }
+    },
+    {
+      "keyword": "list of packing items",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 11:59:27 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 467.1,
+        "dofollow": 376.2,
+        "referring_pages": 434.7,
+        "referring_domains": 105.4,
+        "referring_main_domains": 101.8,
+        "rank": 189.4,
+        "main_domain_rank": 480.2,
+        "last_updated_time": "2025-04-12 13:49:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:08:39 +00:00"
+      }
+    },
+    {
+      "keyword": "list packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:23:02 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10004, 10301, 11156],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 561.9,
+        "dofollow": 393.5,
+        "referring_pages": 531.3,
+        "referring_domains": 113.3,
+        "referring_main_domains": 108.2,
+        "rank": 177.1,
+        "main_domain_rank": 536,
+        "last_updated_time": "2024-10-04 13:10:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 12:53:37 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 17:49:17 +00:00",
+        "competition": 0.76,
+        "competition_level": "HIGH",
+        "cpc": 0.13,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.08,
+        "high_top_of_page_bid": 0.76,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 49500,
+          "2026-07": 60500,
+          "2026-06": 49500,
+          "2026-05": 40500,
+          "2026-04": 33100,
+          "2026-03": 40500,
+          "2026-02": 27100,
+          "2026-01": 22200,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 33100,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 670.8,
+        "dofollow": 473.1,
+        "referring_pages": 633.2,
+        "referring_domains": 154.3,
+        "referring_main_domains": 148.1,
+        "rank": 251.5,
+        "main_domain_rank": 389,
+        "last_updated_time": "2024-10-04 13:10:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:52:16 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing for cruise",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 10:23:51 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-05-02 13:34:52 +00:00"
+      }
+    },
+    {
+      "keyword": "list for cruise packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 02:50:45 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 133.4,
+        "dofollow": 61.8,
+        "referring_pages": 122.7,
+        "referring_domains": 44.4,
+        "referring_main_domains": 43.3,
+        "rank": 126,
+        "main_domain_rank": 515.4,
+        "last_updated_time": "2024-10-04 13:36:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 19:16:45 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for cruise",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 21:40:59 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 107.5,
+        "dofollow": 54,
+        "referring_pages": 98.1,
+        "referring_domains": 37.8,
+        "referring_main_domains": 36.8,
+        "rank": 106.7,
+        "main_domain_rank": 549.3,
+        "last_updated_time": "2024-09-14 23:51:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional", "commercial"],
+        "last_updated_time": "2026-04-29 22:43:57 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing for a cruise",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:40:14 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 105.3,
+        "dofollow": 48.6,
+        "referring_pages": 97.9,
+        "referring_domains": 36.4,
+        "referring_main_domains": 35.5,
+        "rank": 105.6,
+        "main_domain_rank": 523.9,
+        "last_updated_time": "2024-09-14 23:56:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:00:40 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for a cruise",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 17:06:55 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 448256.7,
+        "dofollow": 26227.2,
+        "referring_pages": 170463.9,
+        "referring_domains": 19.8,
+        "referring_main_domains": 18.9,
+        "rank": 78.7,
+        "main_domain_rank": 592.4,
+        "last_updated_time": "2025-11-09 05:07:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 20:17:09 +00:00"
+      }
+    },
+    {
+      "keyword": "cruising packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:04:47 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 50538.4,
+        "dofollow": 55.8,
+        "referring_pages": 21243,
+        "referring_domains": 40.9,
+        "referring_main_domains": 39.9,
+        "rank": 118.5,
+        "main_domain_rank": 514.4,
+        "last_updated_time": "2024-12-04 22:38:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 03:07:35 +00:00"
+      }
+    },
+    {
+      "keyword": "packing cruise list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 23:21:45 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 142,
+        "dofollow": 80.9,
+        "referring_pages": 132.1,
+        "referring_domains": 41.6,
+        "referring_main_domains": 40.3,
+        "rank": 132.2,
+        "main_domain_rank": 519.3,
+        "last_updated_time": "2024-10-04 13:34:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["commercial", "transactional"],
+        "last_updated_time": "2026-04-29 18:48:17 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for cruising",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:37:56 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 105.7,
+        "dofollow": 47.8,
+        "referring_pages": 97.3,
+        "referring_domains": 34.9,
+        "referring_main_domains": 34,
+        "rank": 103.4,
+        "main_domain_rank": 531.9,
+        "last_updated_time": "2024-09-14 23:51:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 18:18:02 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for cruises",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 16:38:47 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10017, 10147, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 132.1,
+        "dofollow": 60.6,
+        "referring_pages": 121.6,
+        "referring_domains": 44.2,
+        "referring_main_domains": 43.1,
+        "rank": 127.2,
+        "main_domain_rank": 514.3,
+        "last_updated_time": "2024-09-14 23:51:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["informational", "commercial"],
+        "last_updated_time": "2026-04-28 21:45:17 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for a cruise list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:03:23 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": 40233
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 294.8,
+        "dofollow": 94.2,
+        "referring_pages": 281.3,
+        "referring_domains": 6.9,
+        "referring_main_domains": 6.6,
+        "rank": 48.2,
+        "main_domain_rank": 574.4,
+        "last_updated_time": "2026-08-14 19:01:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["informational", "commercial"],
+        "last_updated_time": "2026-04-29 19:04:01 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for cruise list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 03:55:50 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 142,
+        "dofollow": 80.9,
+        "referring_pages": 132.1,
+        "referring_domains": 41.6,
+        "referring_main_domains": 40.3,
+        "rank": 132.2,
+        "main_domain_rank": 519.3,
+        "last_updated_time": "2024-10-04 13:34:14 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional"],
+        "last_updated_time": "2026-04-29 17:55:13 +00:00"
+      }
+    },
+    {
+      "keyword": "cruise packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:58:58 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 742.1,
+        "dofollow": 541.4,
+        "referring_pages": 729.9,
+        "referring_domains": 6.1,
+        "referring_main_domains": 5.8,
+        "rank": 44.2,
+        "main_domain_rank": 562.9,
+        "last_updated_time": "2026-07-30 08:57:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["commercial", "transactional"],
+        "last_updated_time": "2026-04-30 03:23:11 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list cruise",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 00:35:57 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.2,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.34,
+        "categories": [10017, 10153, 10802],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cruise packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 105.3,
+        "dofollow": 48.6,
+        "referring_pages": 97.9,
+        "referring_domains": 36.4,
+        "referring_main_domains": 35.5,
+        "rank": 105.6,
+        "main_domain_rank": 518.7,
+        "last_updated_time": "2024-09-14 23:51:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["commercial"],
+        "last_updated_time": "2026-04-29 18:01:03 +00:00"
+      }
+    },
+    {
+      "keyword": "traveling packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 06:52:31 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 568.5,
+        "dofollow": 405.6,
+        "referring_pages": 534.2,
+        "referring_domains": 118.3,
+        "referring_main_domains": 113,
+        "rank": 195.7,
+        "main_domain_rank": 452.5,
+        "last_updated_time": "2024-09-25 07:38:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:11:09 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for travel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:27:58 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 415.7,
+        "dofollow": 318.3,
+        "referring_pages": 385.5,
+        "referring_domains": 208.7,
+        "referring_main_domains": 197,
+        "rank": 117.7,
+        "main_domain_rank": 447.8,
+        "last_updated_time": "2026-03-12 07:50:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:11:46 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing for trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 06:05:32 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 600,
+        "dofollow": 420.9,
+        "referring_pages": 566.4,
+        "referring_domains": 130.8,
+        "referring_main_domains": 125,
+        "rank": 204.4,
+        "main_domain_rank": 426.2,
+        "last_updated_time": "2024-09-25 07:42:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 20:00:06 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 17:58:42 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 180.5,
+        "dofollow": 135.8,
+        "referring_pages": 157.8,
+        "referring_domains": 71.5,
+        "referring_main_domains": 68.6,
+        "rank": 123.4,
+        "main_domain_rank": 537.8,
+        "last_updated_time": "2026-09-02 22:24:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:31:14 +00:00"
+      }
+    },
+    {
+      "keyword": "list for trip packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 16:00:32 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 596.8,
+        "dofollow": 408.6,
+        "referring_pages": 562.3,
+        "referring_domains": 122.2,
+        "referring_main_domains": 116.9,
+        "rank": 213,
+        "main_domain_rank": 397.9,
+        "last_updated_time": "2024-09-25 07:42:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:06:14 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for a trip list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:51:44 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 199.9,
+        "dofollow": 149,
+        "referring_pages": 175,
+        "referring_domains": 75.7,
+        "referring_main_domains": 72.5,
+        "rank": 103.6,
+        "main_domain_rank": 406.8,
+        "last_updated_time": "2026-06-18 12:40:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:55:08 +00:00"
+      }
+    },
+    {
+      "keyword": "travelling packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:55:31 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 601.5,
+        "dofollow": 411.2,
+        "referring_pages": 561.3,
+        "referring_domains": 125.9,
+        "referring_main_domains": 121,
+        "rank": 201.2,
+        "main_domain_rank": 430.2,
+        "last_updated_time": "2024-11-28 11:42:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:04:52 +00:00"
+      }
+    },
+    {
+      "keyword": "traveling list for packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:39:56 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 484.4,
+        "dofollow": 390.8,
+        "referring_pages": 452.1,
+        "referring_domains": 116.9,
+        "referring_main_domains": 112.9,
+        "rank": 187.1,
+        "main_domain_rank": 457.1,
+        "last_updated_time": "2025-04-12 15:09:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:06:26 +00:00"
+      }
+    },
+    {
+      "keyword": "trip packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:33:29 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 142.5,
+        "dofollow": 105,
+        "referring_pages": 121.8,
+        "referring_domains": 51.9,
+        "referring_main_domains": 49.9,
+        "rank": 89.4,
+        "main_domain_rank": 441.4,
+        "last_updated_time": "2026-05-15 03:56:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional"],
+        "last_updated_time": "2026-04-30 02:35:43 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list when traveling",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:19:06 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel packing checklist",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 587.1,
+        "dofollow": 418.8,
+        "referring_pages": 553.1,
+        "referring_domains": 128.3,
+        "referring_main_domains": 122.6,
+        "rank": 194,
+        "main_domain_rank": 458.6,
+        "last_updated_time": "2024-09-25 07:41:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:11:23 +00:00"
+      }
+    },
+    {
+      "keyword": "travel list for packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 22:27:54 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 655.9,
+        "dofollow": 436.7,
+        "referring_pages": 618.8,
+        "referring_domains": 144.8,
+        "referring_main_domains": 139,
+        "rank": 236.1,
+        "main_domain_rank": 433.6,
+        "last_updated_time": "2024-09-15 00:23:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:33:45 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing for a trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 16:42:50 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 189.7,
+        "dofollow": 137.6,
+        "referring_pages": 165.2,
+        "referring_domains": 73.5,
+        "referring_main_domains": 70.8,
+        "rank": 90.7,
+        "main_domain_rank": 452.7,
+        "last_updated_time": "2026-06-18 12:35:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 20:51:23 +00:00"
+      }
+    },
+    {
+      "keyword": "travel list packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:00:57 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 131.5,
+        "dofollow": 92.6,
+        "referring_pages": 111.9,
+        "referring_domains": 47.6,
+        "referring_main_domains": 46,
+        "rank": 104.3,
+        "main_domain_rank": 447.8,
+        "last_updated_time": "2026-01-27 06:38:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:18:56 +00:00"
+      }
+    },
+    {
+      "keyword": "list for travel packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:21:58 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 626.5,
+        "dofollow": 428.2,
+        "referring_pages": 590.6,
+        "referring_domains": 136.1,
+        "referring_main_domains": 130.4,
+        "rank": 221,
+        "main_domain_rank": 387.4,
+        "last_updated_time": "2024-09-15 00:40:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 15:19:39 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 02:23:59 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10154],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 601.5,
+        "dofollow": 411.2,
+        "referring_pages": 561.3,
+        "referring_domains": 125.9,
+        "referring_main_domains": 121,
+        "rank": 201.2,
+        "main_domain_rank": 490.8,
+        "last_updated_time": "2024-11-28 11:55:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:42:08 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for trip list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 05:31:07 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 583.5,
+        "dofollow": 406.3,
+        "referring_pages": 547.5,
+        "referring_domains": 121.6,
+        "referring_main_domains": 116.4,
+        "rank": 218.7,
+        "main_domain_rank": 418.6,
+        "last_updated_time": "2024-09-15 00:34:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:21:37 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for travelling",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 14:11:52 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 608.5,
+        "dofollow": 432.5,
+        "referring_pages": 571.4,
+        "referring_domains": 135.4,
+        "referring_main_domains": 129.6,
+        "rank": 221.2,
+        "main_domain_rank": 365.9,
+        "last_updated_time": "2024-09-25 07:40:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:29:55 +00:00"
+      }
+    },
+    {
+      "keyword": "travel packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:10:47 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 177.4,
+        "dofollow": 134.6,
+        "referring_pages": 156.4,
+        "referring_domains": 70.8,
+        "referring_main_domains": 68.1,
+        "rank": 110.6,
+        "main_domain_rank": 521.2,
+        "last_updated_time": "2026-07-30 09:28:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional"],
+        "last_updated_time": "2026-04-29 21:43:54 +00:00"
+      }
+    },
+    {
+      "keyword": "packing travel list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:32:42 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 580.3,
+        "dofollow": 411.8,
+        "referring_pages": 545.3,
+        "referring_domains": 122.4,
+        "referring_main_domains": 116.8,
+        "rank": 218.9,
+        "main_domain_rank": 356.3,
+        "last_updated_time": "2024-09-25 07:40:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:56:15 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for a trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:52:26 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 199.6,
+        "dofollow": 148.7,
+        "referring_pages": 174.7,
+        "referring_domains": 75.4,
+        "referring_main_domains": 72.2,
+        "rank": 102.4,
+        "main_domain_rank": 475.3,
+        "last_updated_time": "2026-06-18 07:36:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:06:55 +00:00"
+      }
+    },
+    {
+      "keyword": "list of packing items for a trip",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:57:36 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 554.1,
+        "dofollow": 384.1,
+        "referring_pages": 520.6,
+        "referring_domains": 115.3,
+        "referring_main_domains": 110.4,
+        "rank": 173.4,
+        "main_domain_rank": 386.3,
+        "last_updated_time": "2024-10-12 14:22:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 16:27:41 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for trips",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 19:18:16 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "trip packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 563.8,
+        "dofollow": 391.7,
+        "referring_pages": 531.8,
+        "referring_domains": 114.9,
+        "referring_main_domains": 109.7,
+        "rank": 196.2,
+        "main_domain_rank": 375.3,
+        "last_updated_time": "2024-09-15 00:34:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:21:37 +00:00"
+      }
+    },
+    {
+      "keyword": "list travel packing",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:48:42 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 453.5,
+        "dofollow": 220.2,
+        "referring_pages": 411.4,
+        "referring_domains": 139.4,
+        "referring_main_domains": 134.3,
+        "rank": 194.4,
+        "main_domain_rank": 463.6,
+        "last_updated_time": "2024-10-25 07:34:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 13:33:44 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list travel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:58:13 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 564,
+        "dofollow": 400.5,
+        "referring_pages": 530.1,
+        "referring_domains": 116.7,
+        "referring_main_domains": 111.6,
+        "rank": 192.6,
+        "main_domain_rank": 454.2,
+        "last_updated_time": "2024-09-15 00:34:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional"],
+        "last_updated_time": "2026-04-29 21:05:05 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for travel list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 00:41:23 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10017, 10143, 10776, 12075],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 621.1,
+        "dofollow": 436.6,
+        "referring_pages": 583.1,
+        "referring_domains": 137.8,
+        "referring_main_domains": 132,
+        "rank": 231.2,
+        "main_domain_rank": 453.6,
+        "last_updated_time": "2024-09-25 07:40:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:25:32 +00:00"
+      }
+    },
+    {
+      "keyword": "list of packing for travelling",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 16:26:45 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.27,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.38,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 12100,
+          "2026-06": 14800,
+          "2026-05": 12100,
+          "2026-04": 9900,
+          "2026-03": 12100,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 12100,
+          "2025-11": 9900,
+          "2025-10": 12100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -33,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "travel pack list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 607.6,
+        "dofollow": 434,
+        "referring_pages": 569.8,
+        "referring_domains": 135.5,
+        "referring_main_domains": 129.6,
+        "rank": 219.4,
+        "main_domain_rank": 440,
+        "last_updated_time": "2024-09-25 07:42:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 10:06:17 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for a vacation",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 09:15:56 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.1,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 0.35,
+        "categories": [10017, 10154],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 9900,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vacation packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 331.2,
+        "dofollow": 168.8,
+        "referring_pages": 299.5,
+        "referring_domains": 103.3,
+        "referring_main_domains": 98.8,
+        "rank": 157,
+        "main_domain_rank": 407,
+        "last_updated_time": "2024-09-14 23:51:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:06:55 +00:00"
+      }
+    },
+    {
+      "keyword": "list for packing for vacation",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:55:25 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.1,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 0.35,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 9900,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vacation packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 285,
+        "dofollow": 143,
+        "referring_pages": 254.5,
+        "referring_domains": 88.2,
+        "referring_main_domains": 84.6,
+        "rank": 130.8,
+        "main_domain_rank": 446.7,
+        "last_updated_time": "2024-10-12 14:10:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 17:20:05 +00:00"
+      }
+    },
+    {
+      "keyword": "packing vacation list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:07:59 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.1,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 0.35,
+        "categories": [10017, 10154],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 9900,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vacation packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 285.3,
+        "dofollow": 140.1,
+        "referring_pages": 258.5,
+        "referring_domains": 85.7,
+        "referring_main_domains": 81.9,
+        "rank": 133.8,
+        "main_domain_rank": 405.1,
+        "last_updated_time": "2024-09-14 23:51:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:01:03 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for vacation",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 23:03:07 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.1,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 0.35,
+        "categories": [10017, 10154],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 9900,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vacation packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 172.1,
+        "dofollow": 127.9,
+        "referring_pages": 151,
+        "referring_domains": 70.7,
+        "referring_main_domains": 68.5,
+        "rank": 116.4,
+        "main_domain_rank": 585,
+        "last_updated_time": "2026-07-30 12:26:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:26:56 +00:00"
+      }
+    },
+    {
+      "keyword": "packing for vacation list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 10:43:33 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.1,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 0.35,
+        "categories": [10017, 10154],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 9900,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vacation packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 285.3,
+        "dofollow": 140.1,
+        "referring_pages": 258.5,
+        "referring_domains": 85.7,
+        "referring_main_domains": 81.9,
+        "rank": 133.8,
+        "main_domain_rank": 405.1,
+        "last_updated_time": "2024-09-14 23:51:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:13:15 +00:00"
+      }
+    }
+  ]
+}

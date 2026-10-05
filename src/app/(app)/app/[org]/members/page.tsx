@@ -47,7 +47,7 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
 
   return (
     <AppShell title={organization.name} current="Members" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 940 }}>
+      <div className="app-page">
         <Panel title="Members">
           <DataTable caption={`People in ${organization.name}`}>
             <thead>

@@ -1,0 +1,77 @@
+{
+  "id": "10051918-2048-0139-0000-3d7d80614b8e",
+  "keyword": "fob meaning",
+  "location": "United States",
+  "language": "en",
+  "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. No cost field was reported by the MCP response.",
+  "serp_features": [
+    "ai_overview (mixed intent: shipping 'Free On Board' AND key fob / slang)",
+    "people_also_ask (slang, key fob, FOB price)",
+    "related_searches (slang, military, car, TikTok, shipping)"
+  ],
+  "organic": [
+    {
+      "rank": 2,
+      "domain": "www.freightquote.com",
+      "url": "https://www.freightquote.com/blog/what-does-fob-mean-in-freight-shipping/",
+      "title": "What Does FOB (Free on Board) Mean in Shipping?",
+      "page_type": "freight blog"
+    },
+    {
+      "rank": 4,
+      "domain": "www.redwoodlogistics.com",
+      "url": "https://www.redwoodlogistics.com/insights/what-is-fob-what-does-it-mean",
+      "title": "What Does FOB Mean in Shipping?",
+      "page_type": "logistics blog"
+    },
+    {
+      "rank": 5,
+      "domain": "www.merriam-webster.com",
+      "url": "https://www.merriam-webster.com/dictionary/fob",
+      "title": "FOB Definition & Meaning",
+      "page_type": "dictionary (non-trade)"
+    },
+    {
+      "rank": 6,
+      "domain": "www.quora.com",
+      "url": "https://www.quora.com/What-does-fob-mean-as-in-key-fob",
+      "title": "What does 'fob' mean as in key fob?",
+      "page_type": "forum (non-trade)"
+    },
+    {
+      "rank": 7,
+      "domain": "www.ups.com",
+      "url": "https://www.ups.com/us/en/supplychain/resources/glossary-term/free-on-board",
+      "title": "Free on Board (FOB) Definition",
+      "page_type": "carrier glossary"
+    },
+    {
+      "rank": 8,
+      "domain": "www.sekologistics.com",
+      "url": "https://www.sekologistics.com/en/resource-hub/knowledge-hub/fob-logistics-what-does-it-mean-and-when-to-use-it/",
+      "title": "FOB logistics - What does it mean",
+      "page_type": "logistics guide"
+    },
+    {
+      "rank": 9,
+      "domain": "www.investopedia.com",
+      "url": "https://www.investopedia.com/terms/f/fob.asp",
+      "title": "FOB Shipping Terms",
+      "page_type": "finance glossary"
+    },
+    {
+      "rank": 10,
+      "domain": "www.base-4.com",
+      "url": "https://www.base-4.com/fob-a-critical-acronym-every-developer-should-know/",
+      "title": "FOB | A critical acronym",
+      "page_type": "blog"
+    },
+    {
+      "rank": 11,
+      "domain": "www.tiktok.com",
+      "url": "https://www.tiktok.com/@theonlyfayez/video/7199360055001517354",
+      "title": "Understanding FOB and Its Cultural Context",
+      "page_type": "video (slang, non-trade)"
+    }
+  ]
+}

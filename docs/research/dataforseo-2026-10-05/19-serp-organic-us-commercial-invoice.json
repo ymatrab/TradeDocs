@@ -1,0 +1,71 @@
+{
+  "id": "10051918-2048-0139-0000-8b864f5ec04e",
+  "keyword": "commercial invoice",
+  "location": "United States",
+  "language": "en",
+  "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. No cost field was reported by the MCP response.",
+  "serp_features": [
+    "ai_overview (cites fedex PDF template, ups, trade.gov, dhl, wikipedia)",
+    "images (incodocs.com/template/commercial_invoice, export.gov, eforms, onlineinvoices, flexport)",
+    "people_also_ask ('Can I create my own commercial invoice?')",
+    "product_considerations"
+  ],
+  "organic": [
+    {
+      "rank": 4,
+      "domain": "www.ups.com",
+      "url": "https://www.ups.com/lv/en/shipping/international-shipping/commercial-invoice",
+      "title": "How to Create a Commercial Invoice",
+      "page_type": "carrier how-to"
+    },
+    {
+      "rank": 5,
+      "domain": "www.fedex.com",
+      "url": "https://www.fedex.com/en-zm/new-customer/how-to-fill-out-commercial-invoice.html",
+      "title": "How to Fill Out a Commercial Invoice",
+      "page_type": "carrier how-to"
+    },
+    {
+      "rank": 6,
+      "domain": "www.depositfix.com",
+      "url": "https://www.depositfix.com/learn/what-is-a-commercial-invoice",
+      "title": "What Is a Commercial Invoice",
+      "page_type": "definition"
+    },
+    {
+      "rank": 7,
+      "domain": "www.artsyltech.com",
+      "url": "https://www.artsyltech.com/proforma-invoice-vs-commercial-invoice",
+      "title": "Difference Between Proforma Invoice and Commercial",
+      "page_type": "comparison guide"
+    },
+    {
+      "rank": 8,
+      "domain": "www.tnt.com",
+      "url": "https://www.tnt.com/express/en_mk/site/how-to/create-commercial-invoice.html",
+      "title": "Create Commercial Invoice | TNT",
+      "page_type": "carrier how-to + template"
+    },
+    {
+      "rank": 9,
+      "domain": "worldcraftlogistics.com",
+      "url": "https://worldcraftlogistics.com/blog/education/what-is-a-commercial-invoice-what-should-you-pay-attention-to",
+      "title": "What is a Commercial invoice?",
+      "page_type": "logistics blog"
+    },
+    {
+      "rank": 10,
+      "domain": "www.reddit.com",
+      "url": "https://www.reddit.com/r/Netsuite/comments/15erdfg/how_to_make_a_customs_commercial_invoice/",
+      "title": "How to make a Customs Commercial Invoice",
+      "page_type": "forum"
+    },
+    {
+      "rank": 11,
+      "domain": "blog.pazago.com",
+      "url": "https://blog.pazago.com/post/commercial-invoice-meaning-importance",
+      "title": "Understanding the Format and Importance",
+      "page_type": "blog"
+    }
+  ]
+}

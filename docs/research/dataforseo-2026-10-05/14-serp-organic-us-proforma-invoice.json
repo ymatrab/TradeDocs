@@ -1,0 +1,64 @@
+{
+  "id": "10051917-2048-0139-0000-5e719a5a2d92",
+  "keyword": "proforma invoice",
+  "location": "United States",
+  "language": "en",
+  "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. SERP features listed. No cost field was reported by the MCP response.",
+  "serp_features": [
+    "ai_overview (cites investopedia, sumup, freshbooks, stripe, trade.gov, bill.com, wise)",
+    "images (templatearchive, invoicehome, mybillbook, vertex42, zoho, billdu)",
+    "people_also_ask",
+    "short_videos"
+  ],
+  "organic": [
+    {
+      "rank": 4,
+      "domain": "en.organilog.com",
+      "url": "https://en.organilog.com/what-is-a-proforma-invoice-and-how-does-it-work/",
+      "title": "What Is A Proforma Invoice And How Does It Work?",
+      "page_type": "definition guide"
+    },
+    {
+      "rank": 5,
+      "domain": "www.paidnice.com",
+      "url": "https://www.paidnice.com/dictionary/pro-forma-invoice",
+      "title": "What is Pro-forma Invoice? - AR Dictionary",
+      "page_type": "glossary"
+    },
+    {
+      "rank": 7,
+      "domain": "www.invoiceoffice.com",
+      "url": "https://www.invoiceoffice.com/blog/a-proforma-invoice",
+      "title": "A proforma invoice, what is that?",
+      "page_type": "blog definition"
+    },
+    {
+      "rank": 8,
+      "domain": "conta.com",
+      "url": "https://conta.com/glossary/what-is-a-proforma-invoice/",
+      "title": "Proforma invoice - Conta",
+      "page_type": "glossary"
+    },
+    {
+      "rank": 9,
+      "domain": "www.eposnow.com",
+      "url": "https://www.eposnow.com/uk/resources/what-is-a-proforma-invoice/",
+      "title": "What is a Proforma Invoice?",
+      "page_type": "blog definition"
+    },
+    {
+      "rank": 10,
+      "domain": "letstranzact.ai",
+      "url": "https://letstranzact.ai/blogs/proforma-invoice-format-free-template",
+      "title": "Proforma Invoice: Format, Free Template, and When to Use",
+      "page_type": "guide + template"
+    },
+    {
+      "rank": 11,
+      "domain": "www.linkedin.com",
+      "url": "https://www.linkedin.com/pulse/proforma-invoice-understanding-its-role-modern-business-gurukiran-m-g-ku0af",
+      "title": "How Proforma Invoices Help Businesses",
+      "page_type": "article"
+    }
+  ]
+}

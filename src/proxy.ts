@@ -2,10 +2,25 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { buildContentSecurityPolicy } from '@/lib/security/headers';
 import { getServerEnv } from '@/lib/config/server';
+import { isIndexable } from '@/lib/http/base-url';
+import { canonicalHostRedirect, robotsHeaderFor } from '@/lib/http/indexing';
 
 export async function proxy(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const env = getServerEnv();
+
+  // One canonical host (D-007): once a custom domain is attached, the vercel.app production
+  // alias answers with a permanent redirect instead of a duplicate copy of every page.
+  const canonical = canonicalHostRedirect({
+    requestHost: request.headers.get('host'),
+    appUrl: env.APP_URL,
+    vercelEnv: env.VERCEL_ENV,
+    productionAlias: process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    pathname: request.nextUrl.pathname,
+    search: request.nextUrl.search,
+  });
+  if (canonical) return NextResponse.redirect(canonical, 308);
+
   const csp = buildContentSecurityPolicy({
     nonce,
     development: env.APP_ENV === 'local' || env.APP_ENV === 'test',
@@ -39,7 +54,8 @@ export async function proxy(request: NextRequest) {
   }
 
   response.headers.set('Content-Security-Policy', csp);
-  response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  const robots = robotsHeaderFor({ indexable: isIndexable(), pathname: request.nextUrl.pathname });
+  if (robots) response.headers.set('X-Robots-Tag', robots);
   return response;
 }
 

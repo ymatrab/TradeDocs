@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
 import { fieldErrors, summaryOf } from '@/lib/form-errors';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 
 const uuid = z.uuid();
 const optionalText = (max: number) =>
@@ -102,8 +104,16 @@ export async function updateShipment(
 
   const { org, shipment, ...fields } = parsed.data;
   const client = await createClient();
-  const { error } = await client.from('shipments').update(fields).eq('id', shipment);
-  if (error) return { error: 'Those shipment details could not be saved.' };
+  // Scoped to the organization in the form and read back, because a filter that matches
+  // nothing is not an error to PostgREST: without the row count a shipment the caller
+  // cannot see would be reported as saved.
+  const { data: saved, error } = await client
+    .from('shipments')
+    .update(fields)
+    .eq('id', shipment)
+    .eq('org_id', org)
+    .select('id');
+  if (error || !saved?.length) return { error: 'Those shipment details could not be saved.' };
   revalidatePath(`/app/${org}/shipments/${shipment}`);
   return { notice: 'Shipment saved. Documents generated before now are marked stale.' };
 }
@@ -180,8 +190,14 @@ export async function removeItem(_previous: ActionState, formData: FormData): Pr
   if (!parsed.success) return { error: 'Check the line.' };
 
   const client = await createClient();
-  const { error } = await client.from('shipment_items').delete().eq('id', parsed.data.item);
-  if (error) return { error: 'That line could not be removed.' };
+  const { data: removed, error } = await client
+    .from('shipment_items')
+    .delete()
+    .eq('id', parsed.data.item)
+    .eq('shipment_id', parsed.data.shipment)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error || !removed?.length) return { error: 'That line could not be removed.' };
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Line removed.' };
 }
@@ -208,6 +224,9 @@ export async function generateDocument(
       kind: read(formData, 'kind'),
     });
   if (!parsed.success) return { error: 'Choose a document type.' };
+  if (isRegulatedDocumentKind(parsed.data.kind) && !regulatedDocumentsEnabled()) {
+    return { error: REGULATED_DOCUMENT_LIMITATION };
+  }
 
   const client = await createClient();
   const { error } = await client.rpc('generate_document', {

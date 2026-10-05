@@ -386,6 +386,26 @@ function readProblems(details: string | null | undefined): ImportProblem[] | nul
 // Using master data on a shipment
 // ---------------------------------------------------------------------------
 
+type PartyColumn = 'exporter_id' | 'consignee_id' | 'notify_id';
+
+/**
+ * One explicit column per role. A computed key widens to an index signature that newer
+ * supabase-js typings reject, and spelling each case out keeps the allowed set visible.
+ */
+function partyUpdate(
+  role: PartyColumn,
+  company: string | null,
+): { exporter_id: string | null } | { consignee_id: string | null } | { notify_id: string | null } {
+  switch (role) {
+    case 'exporter_id':
+      return { exporter_id: company };
+    case 'consignee_id':
+      return { consignee_id: company };
+    case 'notify_id':
+      return { notify_id: company };
+  }
+}
+
 export async function setShipmentParty(
   _previous: ActionState,
   formData: FormData,
@@ -405,14 +425,31 @@ export async function setShipmentParty(
     });
   if (!parsed.success) return { error: 'That party could not be set.' };
 
+  const { org, shipment, role } = parsed.data;
+  const company = parsed.data.company || null;
   const client = await createClient();
-  const { error } = await client
-    .from('shipments')
-    .update({ [parsed.data.role]: parsed.data.company || null })
-    .eq('id', parsed.data.shipment);
-  if (error) return { error: 'That party could not be set.' };
 
-  revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
+  // The party must belong to the organization the shipment does. The database refuses a
+  // cross-tenant reference as well; checking here turns that into a message, not a 500.
+  if (company) {
+    const { data: owned } = await client
+      .from('companies')
+      .select('id')
+      .eq('id', company)
+      .eq('org_id', org)
+      .maybeSingle();
+    if (!owned) return { error: 'That party is not in this organization.' };
+  }
+
+  const { data: changed, error } = await client
+    .from('shipments')
+    .update(partyUpdate(role, company))
+    .eq('id', shipment)
+    .eq('org_id', org)
+    .select('id');
+  if (error || !changed?.length) return { error: 'That party could not be set.' };
+
+  revalidatePath(`/app/${org}/shipments/${shipment}`);
   return { notice: 'Party updated.' };
 }
 
@@ -528,8 +565,14 @@ export async function removePackage(
   if (!parsed.success) return { error: 'That package could not be found.' };
 
   const client = await createClient();
-  const { error } = await client.from('shipment_packages').delete().eq('id', parsed.data.package);
-  if (error) return { error: 'That package could not be removed.' };
+  const { data: removed, error } = await client
+    .from('shipment_packages')
+    .delete()
+    .eq('id', parsed.data.package)
+    .eq('shipment_id', parsed.data.shipment)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error || !removed?.length) return { error: 'That package could not be removed.' };
 
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Package removed.' };

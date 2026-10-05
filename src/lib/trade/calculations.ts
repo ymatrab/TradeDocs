@@ -43,6 +43,21 @@ export function toMetres(value: number, unit: LengthUnit): number {
   return value * LENGTH_UNITS[unit].toMetres;
 }
 
+/**
+ * One foot is exactly 0.3048 m, so one cubic foot is exactly 0.028 316 846 592 m³ — the
+ * factor NIST lists as 2.831 685 E-02 ('nist-si-volume' in lib/trade/sources). One cubic
+ * metre is therefore about 35.3147 ft³.
+ */
+export const CUBIC_METRES_PER_CUBIC_FOOT = 0.3048 ** 3;
+
+export function cubicMetresToCubicFeet(cubicMetres: number): number {
+  return cubicMetres / CUBIC_METRES_PER_CUBIC_FOOT;
+}
+
+export function cubicFeetToCubicMetres(cubicFeet: number): number {
+  return cubicFeet * CUBIC_METRES_PER_CUBIC_FOOT;
+}
+
 export function toKilograms(value: number, unit: WeightUnit): number {
   return value * WEIGHT_UNITS[unit].toKilograms;
 }
@@ -72,7 +87,10 @@ export function volumeOf(cartons: readonly Carton[], unit: LengthUnit): VolumeRe
  * a quotation: an individual contract can and does override them, which the page says.
  *
  * Air divisors are stated per cubic metre. IATA's 6000 cm³/kg is 167 kg per m³; express
- * carriers commonly use 5000 cm³/kg, which is 200 kg per m³.
+ * carriers commonly use 5000 cm³/kg, which is 200 kg per m³. The air and express figures
+ * are cited from lib/trade/sources ('iata-volumetric' and the DHL, FedEx and UPS records);
+ * the road and sea conventions have no primary source record (carriers set them in their
+ * own tariffs), so each surface labels them as common industry conventions.
  */
 export const VOLUMETRIC_RULES = {
   air_iata: {
@@ -83,17 +101,17 @@ export const VOLUMETRIC_RULES = {
   air_express: {
     label: 'Air express / courier (5000 cm³/kg)',
     kgPerCubicMetre: 1_000_000 / 5000,
-    note: 'Used by most integrators for international express.',
+    note: 'Used by DHL Express, FedEx and UPS for international express.',
   },
   road_europe: {
     label: 'Road groupage, Europe (333 kg/m³)',
     kgPerCubicMetre: 333,
-    note: 'A common European road convention; contracts vary widely.',
+    note: 'A common industry convention, not a published standard; check your carrier’s tariff.',
   },
   sea_lcl: {
     label: 'Sea LCL (1000 kg/m³)',
     kgPerCubicMetre: 1000,
-    note: 'One tonne per cubic metre — LCL bills on whichever is greater, W/M.',
+    note: 'A common industry convention (one tonne per cubic metre, billed on the greater, W/M); check your forwarder’s tariff.',
   },
 } as const;
 
@@ -132,12 +150,18 @@ export function chargeableWeight(
   };
 }
 
-/** Interior dimensions in metres, and the usable volume a forwarder plans against. */
+/**
+ * Internal volume and maximum payload per container type, as Maersk publishes them for its
+ * steel dry containers ('maersk-dry-containers' in lib/trade/sources, checked against the
+ * sheet: 33, 67, 76 and 85 m³; 28,200, 28,800, 28,620 and 27,600 kg). Real units vary by
+ * series and carrier, so every surface labels these as typical figures for planning, not a
+ * specification of any particular box.
+ */
 export const CONTAINERS = {
-  '20ft': { label: "20' standard", volumeM3: 33.2, payloadKg: 28_200 },
-  '40ft': { label: "40' standard", volumeM3: 67.7, payloadKg: 28_800 },
-  '40hc': { label: "40' high cube", volumeM3: 76.4, payloadKg: 28_600 },
-  '45hc': { label: "45' high cube", volumeM3: 86.1, payloadKg: 27_700 },
+  '20ft': { label: "20' standard", volumeM3: 33, payloadKg: 28_200 },
+  '40ft': { label: "40' standard", volumeM3: 67, payloadKg: 28_800 },
+  '40hc': { label: "40' high cube", volumeM3: 76, payloadKg: 28_620 },
+  '45hc': { label: "45' high cube", volumeM3: 85, payloadKg: 27_600 },
 } as const;
 
 export type ContainerKind = keyof typeof CONTAINERS;

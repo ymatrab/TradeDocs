@@ -35,3 +35,34 @@ Verify clean required gates, focused release commit/tag, named approvals, separa
 ## Restore drill
 
 Restore approved backup into an isolated environment; disable customer email, live payment actions, analytics and indexing. Restore/check schema, tenant records, private objects, versions/hashes and queued side effects. Verify counts/constraints/RLS, historical PDF regeneration and a full synthetic journey. Reconcile external payment facts before resuming jobs. Measure actual recovery point/time against approved per-service RPO/RTO and record gaps, owners and dates. Delete the drill environment according to its approved retention policy. Run quarterly and before launch; backup existence alone is insufficient.
+
+## Production go-live (service mode)
+
+Order matters; each step is the owner's unless marked agent.
+
+1. Merge the release to `main` after CI and preview sign-off.
+2. GitHub → Settings → Environments → `production` → add secret `PRODUCTION_DATABASE_URL`
+   (Supabase session-pooler URI). Agents never handle the value.
+3. Actions → "Migrate production database" → confirm `migrate production`, first with
+   dry run on (lists pending migrations), then with dry run off.
+4. Vercel → Production environment variables (Production target only, D-011):
+   `APP_ENV=production`, `APPLICATION_MODE=service`, `APP_URL=https://<custom domain>`,
+   `SUPABASE_PROJECT_REF` and `PRODUCTION_SUPABASE_PROJECT_REF` (the project ref from the
+   Supabase URL), `SUPABASE_ENVIRONMENT=production`, `RATE_LIMIT_KEY_SECRET` (32+ random
+   characters), `LAUNCH_APPROVED=true` only after the launch checklist is signed.
+   The schema (`src/lib/config/schema.ts`) also refuses production service mode without
+   `RESEND_API_KEY` and `EMAIL_FROM` (always required), and without `TURNSTILE_SITE_KEY` +
+   `TURNSTILE_SECRET_KEY`, `SENTRY_DSN`, `ANALYTICS_SITE_ID` and `INDEXNOW_KEY` unless the
+   matching waiver is set. Per D-017 (sign-up launch), set `WAIVE_TURNSTILE=true`,
+   `WAIVE_SENTRY=true`, `WAIVE_ANALYTICS=true` and `WAIVE_INDEXNOW=true`. Adding a service's
+   key later re-enables it whatever its waiver says; remove the waiver at the same time.
+   `/api/ready` lists the waived controls under `degraded`. `SUPABASE_URL`,
+   `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` already come from the Vercel Supabase
+   integration (D-011).
+   Supabase → Authentication → SMTP Settings → enable custom SMTP with Resend: host
+   `smtp.resend.com`, port `465`, username `resend`, password = the Resend API key, sender =
+   the `EMAIL_FROM` address. Without it, sign-up confirmation emails hit Supabase's built-in
+   email rate limit. The owner sets this in the Supabase dashboard; agents never handle the
+   key.
+5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
+   `/design-system` is 404, robots and sitemap match the indexing decision (D-007).

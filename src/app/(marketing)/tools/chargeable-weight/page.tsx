@@ -1,23 +1,35 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { LinkButton } from '@/components/primitives/button';
+import { PAGE_SOURCES } from '@/lib/trade/sources';
+import { SourcesBlock, ToolCta } from '../page-parts';
+import { ToolJsonLd } from '@/components/seo/json-ld';
+import { RelatedTools } from '@/components/seo/related-tools';
+import { openGraphFor } from '@/lib/seo/social';
 import { ChargeableWeightCalculator } from './calculator';
 
 export const metadata: Metadata = {
-  title: 'Chargeable weight calculator — volumetric vs actual',
+  title: 'Dimensional weight calculator — volumetric vs actual weight',
   description:
-    'Compare actual and volumetric weight for air, express, road groupage and sea LCL, and see which one your carrier will bill. Free, and worked out in your browser.',
+    'Work out the dimensional (volumetric) weight of your cartons for air, express, road groupage and sea LCL, compare it with the actual weight and see which one your carrier will bill. Free, in your browser.',
   alternates: { canonical: '/tools/chargeable-weight' },
+  openGraph: openGraphFor(
+    'Dimensional (volumetric) weight calculator',
+    'Dimensional against actual weight for air, express, road groupage and sea LCL, and which one your carrier will bill. Free, in your browser.',
+    '/tools/chargeable-weight',
+  ),
 };
 
 const faq = [
+  {
+    q: 'What is dimensional weight?',
+    a: 'A weight worked out from a package’s size rather than its mass: length × width × height divided by the carrier’s divisor. It is called dimensional or DIM weight by FedEx and UPS, and volumetric weight by DHL and IATA. The idea is the same under both names.',
+  },
   {
     q: 'What is chargeable weight?',
     a: 'The greater of a consignment’s actual weight and its volumetric weight. Carriers sell space as well as lift, so a light bulky consignment is billed on the room it takes up rather than what it weighs.',
   },
   {
     q: 'What is the volumetric divisor for air freight?',
-    a: 'The general IATA convention is 6,000 cm³ per kilogram, which works out at about 167 kg per cubic metre. Express and courier services usually apply 5,000 cm³ per kilogram, or 200 kg per cubic metre, which produces a higher charge for the same box.',
+    a: 'The general IATA convention is 6,000 cm³ per kilogram, which works out at about 167 kg per cubic metre. DHL Express, FedEx and UPS publish 5,000 cm³ per kilogram for their express services, or 200 kg per cubic metre, which produces a higher charge for the same box.',
   },
   {
     q: 'How is volumetric weight calculated?',
@@ -25,7 +37,7 @@ const faq = [
   },
   {
     q: 'Does sea freight use volumetric weight?',
-    a: 'LCL sea freight uses the same idea under a different name — weight or measure, W/M — and bills at whichever is greater, treating one cubic metre as one tonne. Full container loads are priced per container instead, so the comparison does not arise.',
+    a: 'LCL sea freight uses the same idea under a different name — weight or measure, W/M — and bills at whichever is greater, commonly treating one cubic metre as one tonne — a common industry convention, so check your forwarder’s tariff. Full container loads are priced per container instead, so the comparison does not arise.',
   },
 ];
 
@@ -34,16 +46,40 @@ export default function ChargeableWeightPage() {
     <>
       <section className="hero">
         <p className="eyebrow">Free tool</p>
-        <h1>Chargeable weight calculator</h1>
+        <h1>Dimensional (volumetric) weight calculator</h1>
         <p className="lede">
           The figure that surprises people on a first freight invoice. Enter your cartons and their
-          weight to see which basis the carrier will bill on, and by how much. Nothing you type
-          leaves your browser.
+          weight to get the dimensional weight, the chargeable weight the carrier will bill on, and
+          by how much the two differ. Nothing you type leaves your browser.
         </p>
       </section>
 
       <section className="section">
         <ChargeableWeightCalculator />
+      </section>
+
+      <section className="section" aria-labelledby="formula-title">
+        <h2 id="formula-title">The dimensional weight formula</h2>
+        <p className="measure">
+          Dimensional weight in kilograms = length × width × height in centimetres ÷ the divisor.
+          The divisor is set by the carrier and the service, and the published figures below are the
+          ones this calculator uses. Your own contract can set a different one, and when it does,
+          the contract wins.
+        </p>
+        <ul className="measure">
+          <li>
+            <strong>6,000</strong> — the general IATA convention for air cargo, about 167 kg per
+            cubic metre.
+          </li>
+          <li>
+            <strong>5,000</strong> — DHL Express, FedEx and UPS for international express in
+            centimetres, 200 kg per cubic metre.
+          </li>
+        </ul>
+        <p className="measure">
+          The carrier then bills on whichever is greater, the actual or the dimensional weight. That
+          greater figure is the chargeable weight.
+        </p>
       </section>
 
       <section className="section">
@@ -65,13 +101,12 @@ export default function ChargeableWeightPage() {
           and agree with your invoice. TradeDocs holds them once per product and prints every
           document in the set from the same numbers.
         </p>
-        <div className="cta-row">
-          <LinkButton href="/sign-up">Create a free account</LinkButton>
-          <Link className="text-link" href="/tools">
-            All trade tools
-          </Link>
-        </div>
+        <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>
+
+      <SourcesBlock ids={PAGE_SOURCES.chargeableWeight} />
+      <RelatedTools current="/tools/chargeable-weight" />
+      <ToolJsonLd path="/tools/chargeable-weight" faq={faq} />
     </>
   );
 }

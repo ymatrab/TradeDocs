@@ -1,0 +1,61 @@
+name: Migrate production database
+# Applies supabase/migrations to the production project. Manual only: the owner starts it
+# from the Actions tab after the release it belongs to has passed CI. The connection string
+# lives in the PRODUCTION_DATABASE_URL secret (Supabase → Project settings → Database →
+# Connection string, "Session pooler" URI); it is never echoed or written to disk.
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type "migrate production" to apply pending migrations
+        required: true
+        default: ''
+      dry_run:
+        description: List pending migrations without applying them
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: migrate-production
+  cancel-in-progress: false
+jobs:
+  migrate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: production
+    steps:
+      - name: Require explicit confirmation
+        if: inputs.confirm != 'migrate production'
+        run: |
+          echo "::error::Confirmation text did not match. Nothing was applied."
+          exit 1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Check the secret is present
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+        run: |
+          if [ -z "$PRODUCTION_DATABASE_URL" ]; then
+            echo "::error::Add the PRODUCTION_DATABASE_URL secret to the production environment first."
+            exit 1
+          fi
+      - name: List pending migrations
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+        run: npx supabase migration list --db-url "$PRODUCTION_DATABASE_URL"
+      - name: Apply pending migrations
+        if: ${{ !inputs.dry_run }}
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+        run: npx supabase db push --db-url "$PRODUCTION_DATABASE_URL"
+      - name: Show the applied state
+        if: ${{ !inputs.dry_run }}
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+        run: npx supabase migration list --db-url "$PRODUCTION_DATABASE_URL"

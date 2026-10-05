@@ -1,24 +1,25 @@
 import type { Metadata } from 'next';
-import { Archivo, Inter, JetBrains_Mono } from 'next/font/google';
+import { Geist_Mono, Inter, Inter_Tight } from 'next/font/google';
 import { getPublicBaseUrl, isIndexable } from '@/lib/http/base-url';
+import { SITE_NAME } from '@/lib/seo/site';
+import { SHARE_IMAGE, openGraphFor } from '@/lib/seo/social';
 import './globals.css';
 
 /**
  * Three faces, each with a job, all self-hosted at build time so a real typeface costs no
- * layout shift.
+ * layout shift (`adjustFontFallback` is next/font's default and sizes the fallback to match).
  *
- * Archivo carries the headlines at heavy weights — a sturdy grotesque that reads as
- * industrial rather than startup. Inter sets the running text, because dense trade data
- * needs a face drawn for screens. JetBrains Mono takes every code and figure: an HS code,
- * a container number and a document number are strings a reader compares character by
- * character, and a proportional face makes that harder than it needs to be.
+ * Inter Tight carries the headlines at 500–600 with negative tracking: Inter's own skeleton,
+ * so headline and running text read as one family, drawn tight enough for display sizes.
+ * Inter sets the running text, because dense trade data needs a face drawn for screens.
+ * Geist Mono takes every code, label and figure: an HS code, a container number and a
+ * document number are strings a reader compares character by character. It is narrower than
+ * the JetBrains Mono it replaces, so a plate or a button label takes less width.
  *
- * The previous setup loaded Archivo and then set every word in Arial, which is why the
- * product looked dated regardless of anything else on the page.
+ * The PDFs embed their own font (src/lib/pdf/fonts) and are unaffected by anything here.
  */
-const display = Archivo({
+const display = Inter_Tight({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
   display: 'swap',
   variable: '--font-display',
 });
@@ -29,7 +30,7 @@ const body = Inter({
   variable: '--font-text',
 });
 
-const mono = JetBrains_Mono({
+const mono = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-code',
@@ -37,6 +38,9 @@ const mono = JetBrains_Mono({
 
 // Per-request CSP nonces must never be cached in a static HTML artifact.
 export const dynamic = 'force-dynamic';
+
+const DEFAULT_DESCRIPTION =
+  'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.';
 
 /**
  * Indexing is decided per deployment, not hard-coded.
@@ -53,9 +57,11 @@ export function generateMetadata(): Metadata {
   const indexable = isIndexable();
   return {
     metadataBase: new URL(getPublicBaseUrl()),
-    title: { default: 'TradeDocs', template: '%s · TradeDocs' },
-    description:
-      'A shipment workspace for reusable company, customer, product, and trade document data.',
+    title: { default: SITE_NAME, template: `%s · ${SITE_NAME}` },
+    description: DEFAULT_DESCRIPTION,
+    applicationName: SITE_NAME,
+    openGraph: openGraphFor(SITE_NAME, DEFAULT_DESCRIPTION),
+    twitter: { card: 'summary_large_image', images: [SHARE_IMAGE.url] },
     robots: indexable
       ? { index: true, follow: true }
       : { index: false, follow: false, nocache: true },

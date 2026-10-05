@@ -61,3 +61,36 @@ without an owner.
 Every change is proved in CI against a disposable stack: `supabase/tests/identity_rls.test.sql`
 asserts the access matrix and the invitation and ownership rules, and generated types are
 regenerated and compared so a schema change cannot land without its types.
+
+## Tenant-scoped references and document provenance (20260909000100)
+
+Every tenant parent is addressable by `(org_id, id)` and every child references it by that
+pair: shipment parties, lines (to their shipment and source product), packages, package
+contents, and documents. A row therefore cannot point at another tenant's data, whatever row
+policy admits the write. A trigger additionally keeps package contents to lines of the same
+shipment. The definer routines `generate_document` and `add_product_to_shipment` scope every
+lookup to the shipment's organization as well.
+
+Documents freeze `org_id`, `created_at` and `created_by` (which may only become null, for
+account erasure) with their content; status only moves `final` to `superseded` or `voided`.
+A shipment with documents cannot be deleted. Snapshots now carry `schema_version` (2) and
+`money_places`, the currency minor units money was rounded to; schema 1 snapshots render
+with two places as issued. Schema 3 (renderer `tradedocs-pdf/3`) adds a nullable net weight
+total, a per-line origin column on invoices whose lines state one and the "Incoterms® 2020"
+caption. `supabase/tests/tenant_integrity.test.sql` proves the cross-tenant cases, products,
+packages, contents, import, add-from-catalog and rate limiting.
+
+## Workspace snapshots at schema 3 (20260910000100)
+
+`generate_document` is redefined unchanged except that it stamps `schema_version` 3 and
+leaves `totals.net_weight_kg` and `totals.gross_weight_kg` null when no line states one
+(schema 2 coalesced them to zero). Lines already carried `country_of_origin`; `packing_totals`
+keep their schema 2 shape. Every org-scoped lookup from 20260909000100 is kept. Existing
+documents are not rewritten: the renderer dispatches on `schema_version`, so schema 1 and 2
+snapshots render byte-identically, and `freeze_document` refuses any rewrite. The tenant
+integrity test asserts a new document is schema 3 with an absent unstated gross total, and
+that a pre-existing schema 2 row is untouched. Rollback: re-run the 20260909000100
+definition; schema 3 documents issued meanwhile keep rendering as issued.
+
+`public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind
+`src/lib/security/rate-limit.ts`. It holds HMAC digests only, never addresses or user ids.
