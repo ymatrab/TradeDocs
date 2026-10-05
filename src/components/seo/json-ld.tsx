@@ -84,6 +84,7 @@ export function GuideJsonLd({ slug }: { slug: string }) {
       description: guide.description,
       datePublished: guide.published,
       dateModified: guide.updated,
+      image: guide.cover,
     }),
   ];
   if (guide.faq.length > 0) data.push(faqPageSchema(guide.faq));

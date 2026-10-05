@@ -9,6 +9,8 @@ export const SHARE_IMAGE = {
   alt: 'TradeDocs: enter a shipment once, get the whole document set',
 } as const;
 
+export type ShareImage = { url: string; width: number; height: number; alt: string };
+
 /**
  * Open Graph for one public page.
  *
@@ -22,6 +24,8 @@ export function openGraphFor(
   description: string,
   /** Omitted at the root, so a page without its own Open Graph never claims to be `/`. */
   path?: string,
+  /** A page with its own cover shares that instead of the generated card. */
+  image: ShareImage = SHARE_IMAGE,
 ): NonNullable<Metadata['openGraph']> {
   return {
     type: 'website',
@@ -30,6 +34,14 @@ export function openGraphFor(
     title,
     description,
     ...(path ? { url: path } : {}),
-    images: [SHARE_IMAGE],
+    images: [image],
   };
+}
+
+/**
+ * The Twitter card for a page with its own image. The root's card names the generated
+ * share image, and a page's `twitter` replaces it, so the card type is repeated here.
+ */
+export function twitterFor(image: ShareImage): NonNullable<Metadata['twitter']> {
+  return { card: 'summary_large_image', images: [{ url: image.url, alt: image.alt }] };
 }

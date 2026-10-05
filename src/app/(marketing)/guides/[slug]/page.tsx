@@ -3,11 +3,13 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Callout } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
+import { CoverFigure } from '@/components/content/cover-figure';
 import { GuideJsonLd } from '@/components/seo/json-ld';
 import { GUIDES, GUIDE_DISCLAIMER, findGuide, type GuideSection } from '@/lib/content/guides';
 import { shortDate } from '@/lib/format';
 import { findPublicTool, type PublicTool } from '@/lib/seo/site';
-import { openGraphFor } from '@/lib/seo/social';
+import { unsplashShareImage } from '@/lib/content/images';
+import { openGraphFor, twitterFor } from '@/lib/seo/social';
 import { SourcesBlock, ToolCta } from '../../tools/page-parts';
 
 /** The guides this route answers on. Anything else is a 404, not an empty page. */
@@ -24,11 +26,13 @@ export async function generateMetadata({
   const guide = findGuide(slug);
   if (!guide) return { title: 'Guides' };
   const path = `/guides/${guide.slug}`;
+  const image = unsplashShareImage(guide.cover);
   return {
     title: guide.metaTitle,
     description: guide.description,
     alternates: { canonical: path },
-    openGraph: openGraphFor(guide.metaTitle, guide.description, path),
+    openGraph: openGraphFor(guide.metaTitle, guide.description, path, image),
+    twitter: twitterFor(image),
   };
 }
 
@@ -104,6 +108,10 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           {guide.byline} · Published {shortDate(guide.published)} · Last reviewed{' '}
           {shortDate(guide.reviewed)}
         </p>
+      </section>
+
+      <section className="section guide-cover-section">
+        <CoverFigure photo={guide.cover} priority />
       </section>
 
       <section className="section" aria-labelledby="answer-title">

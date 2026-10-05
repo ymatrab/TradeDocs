@@ -2770,3 +2770,28 @@ a.form-cell:active {
     color: #000 !important;
   }
 }
+
+/* --- Cover photo (D-016) ----------------------------------------------------- */
+/* A credited Unsplash photo under a guide's hero. The width and height attributes give the
+   2:1 box before the image loads; the image fills the content column at any width. */
+.section.guide-cover-section {
+  padding-block-start: clamp(24px, 4vw, 56px);
+}
+.cover-figure {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+}
+.cover-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background: var(--surface-sunken);
+  border: 1px solid var(--rule);
+}
+.cover-figure figcaption {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  color: var(--muted);
+}

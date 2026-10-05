@@ -44,3 +44,17 @@ test('tool structured data parses and matches the visible FAQ', async ({ page })
     await expect(page.locator('summary', { hasText: question.name })).toHaveCount(1);
   }
 });
+
+test('a guide cover is hotlinked from Unsplash, sized and credited', async ({ page }) => {
+  await page.goto('/guides/lcl-vs-fcl');
+  const cover = page.locator('.cover-figure img');
+  await expect(cover).toHaveAttribute('src', /^https:\/\/images\.unsplash\.com\/photo-/);
+  await expect(cover).toHaveAttribute('width', '1280');
+  await expect(cover).toHaveAttribute('height', '640');
+  await expect(cover).toHaveAttribute('fetchpriority', 'high');
+  const credits = page.locator('.cover-figure figcaption a');
+  await expect(credits).toHaveCount(2);
+  for (const link of await credits.all()) {
+    await expect(link).toHaveAttribute('href', /utm_source=paydocs&utm_medium=referral/);
+  }
+});

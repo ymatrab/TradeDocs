@@ -2,6 +2,13 @@
 
 ## Unreleased — 2026-09-06
 
+### Guide covers and image SEO (D-016)
+
+- The three guides and `/guides` show a credited Unsplash cover (`cover` on each guide, `GUIDES_HUB_COVER`), hotlinked from images.unsplash.com through a plain `<img>` (`CoverFigure`): imgix-resized 2:1 `srcset` 640–1920, `sizes`, explicit dimensions, eager/high priority at the top of the page, and a "Photo by … on Unsplash" caption with `utm_source=paydocs` referral links.
+- CSP `img-src` allows `https://images.unsplash.com`.
+- Article JSON-LD gains an ImageObject (credit, creator, Unsplash licence, photo page); guide and hub Open Graph/Twitter cards use the cover at 1200 × 630; the sitemap lists each cover as an image entry.
+- Unit tests for the URL builders, referral links, ImageObject, CSP and image sitemap (`tests/unit/images.test.ts`); the guides test now requires a cover. SEO.md gains the image policy.
+
 ### Content round (content plan 2026-10-05)
 
 - New `/tools/proforma-invoice-generator` and `/tools/packing-list-generator`: the existing generator and `/api/tools/document`, preset to each kind (`initialKind`), with their own intro, a definition section, a visible FAQ, sources and the capability-aware CTA.

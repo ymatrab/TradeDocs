@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { GuidesHubJsonLd } from '@/components/seo/json-ld';
-import { GUIDES } from '@/lib/content/guides';
+import { CoverFigure } from '@/components/content/cover-figure';
+import { GUIDES, GUIDES_HUB_COVER } from '@/lib/content/guides';
+import { unsplashShareImage } from '@/lib/content/images';
 import { shortDate } from '@/lib/format';
-import { openGraphFor } from '@/lib/seo/social';
+import { openGraphFor, twitterFor } from '@/lib/seo/social';
 
 const description =
   'Plain-language guides to the decisions behind a shipment’s paperwork: LCL or FCL, DAP or DDP, a proforma or a commercial invoice. Sourced, dated and linked to the free tools.';
@@ -12,7 +14,13 @@ export const metadata: Metadata = {
   title: 'Shipping and trade document guides',
   description,
   alternates: { canonical: '/guides' },
-  openGraph: openGraphFor('Shipping and trade document guides', description, '/guides'),
+  openGraph: openGraphFor(
+    'Shipping and trade document guides',
+    description,
+    '/guides',
+    unsplashShareImage(GUIDES_HUB_COVER),
+  ),
+  twitter: twitterFor(unsplashShareImage(GUIDES_HUB_COVER)),
 };
 
 export default function GuidesPage() {
@@ -25,6 +33,10 @@ export default function GuidesPage() {
           Each one answers a question that comes up before a shipment is booked, cites where its
           facts come from, and points at the tool that does the arithmetic.
         </p>
+      </section>
+
+      <section className="section guide-cover-section">
+        <CoverFigure photo={GUIDES_HUB_COVER} priority />
       </section>
 
       <section className="section">

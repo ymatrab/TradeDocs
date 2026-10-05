@@ -25,7 +25,8 @@ export function buildContentSecurityPolicy({
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${development ? " 'unsafe-eval'" : ''} https://challenges.cloudflare.com`,
     // Next, Tailwind and accessible overlays can apply inline style attributes.
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob:",
+    // Guide covers are hotlinked from Unsplash, as its API guidelines require (D-016).
+    "img-src 'self' data: blob: https://images.unsplash.com",
     "font-src 'self'",
     `connect-src ${connectOrigins.join(' ')}`,
     'frame-src https://challenges.cloudflare.com',

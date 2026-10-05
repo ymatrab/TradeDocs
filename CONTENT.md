@@ -37,7 +37,7 @@ Not yet sourced, kept with existing hedging: the 333 kg/m³ European road groupa
 
 - Every source record: reviewer **pending owner review**. This is not an approval.
 - Incoterms® summaries and the responsibilities chart: drafted from ICC 2020 positions (FCA A6/B6 on-board bill of lading option, DAP import-clearance delay costs on the buyer, CIP ICC (A) / CIF ICC (C) cover, DPU the only rule with seller unloading); legal review pending.
-- Guides: written 2026-10-05 by the TradeDocs team, last reviewed against their sources the same day; no named author, no statistics, no cover images yet (`cover` left unset). Customs statements are general and hedged; the DDP import-VAT point and the US pro forma invoice (19 CFR 141.85) want a broker or legal read before indexing opens.
+- Guides: written 2026-10-05 by the TradeDocs team, last reviewed against their sources the same day; no named author, no statistics; each guide and the hub carry a credited, hotlinked Unsplash cover (D-016, see SEO.md "Images"). Customs statements are general and hedged; the DDP import-VAT point and the US pro forma invoice (19 CFR 141.85) want a broker or legal read before indexing opens.
 - Certificate of origin: not offered and not written about; `REGULATED_DOCUMENT_LIMITATION` states it is pending legal and regulatory review (D-002).
 - Worked examples on rule pages use invented parties and say so.
 

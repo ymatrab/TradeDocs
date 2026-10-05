@@ -1,3 +1,9 @@
+import {
+  UNSPLASH_LICENSE,
+  heightAt,
+  unsplashImage,
+  type UnsplashPhoto,
+} from '@/lib/content/images';
 import { SITE_DESCRIPTION, SITE_NAME, type PublicTool } from '@/lib/seo/site';
 
 /**
@@ -70,7 +76,34 @@ export type ArticleFacts = {
   description: string;
   datePublished: string;
   dateModified: string;
+  image?: UnsplashPhoto;
 };
+
+/** The width of the rendition named in structured data: wide enough for any rich result. */
+const SCHEMA_IMAGE_WIDTH = 1920;
+
+/**
+ * A credited Unsplash photo. The licence and credit are stated because the page states
+ * them, and `acquireLicensePage` is the photo's own page, where the Unsplash licence is
+ * granted.
+ */
+export function imageObjectSchema(photo: UnsplashPhoto): JsonLdObject {
+  const url = unsplashImage(photo, { width: SCHEMA_IMAGE_WIDTH, format: 'jpg' });
+  return {
+    '@type': 'ImageObject',
+    url,
+    contentUrl: url,
+    width: SCHEMA_IMAGE_WIDTH,
+    height: heightAt(photo, SCHEMA_IMAGE_WIDTH),
+    caption: photo.caption,
+    description: photo.alt,
+    creditText: `${photo.photographer.name} on Unsplash`,
+    creator: { '@type': 'Person', name: photo.photographer.name, url: photo.photographer.profile },
+    copyrightNotice: photo.photographer.name,
+    license: UNSPLASH_LICENSE,
+    acquireLicensePage: photo.page,
+  };
+}
 
 /**
  * A guide. The author is the organization: guides carry a team byline, and naming a person
@@ -90,6 +123,7 @@ export function articleSchema(base: string, article: ArticleFacts): JsonLdObject
     inLanguage: 'en',
     author: { '@id': `${base}/#organization` },
     publisher: { '@id': `${base}/#organization` },
+    ...(article.image ? { image: imageObjectSchema(article.image) } : {}),
   };
 }
 

@@ -1,3 +1,4 @@
+import type { UnsplashPhoto } from '@/lib/content/images';
 import type { SourceId } from '@/lib/trade/sources';
 
 /**
@@ -30,8 +31,6 @@ export type GuideSection = {
 
 export type GuideFaq = { q: string; a: string };
 
-export type GuideCover = { src: string; alt: string; credit: string };
-
 export type Guide = {
   slug: string;
   /** The page's H1. */
@@ -51,8 +50,8 @@ export type Guide = {
   sources: readonly SourceId[];
   /** Paths from PUBLIC_TOOLS that do what the guide describes. */
   tools: readonly string[];
-  /** Images come later; left unset until a real, credited image exists. */
-  cover?: GuideCover;
+  /** A credited Unsplash photo, hotlinked (D-016). */
+  cover: UnsplashPhoto;
 };
 
 const BYLINE = 'TradeDocs team';
@@ -149,6 +148,16 @@ export const GUIDES: readonly Guide[] = [
     ],
     sources: ['maersk-fcl-lcl', 'maersk-dry-containers', 'icc-incoterms-2020'],
     tools: ['/tools/cbm-calculator', '/tools/chargeable-weight', '/tools/packing-list-generator'],
+    cover: {
+      id: '2JNNpq4nGls',
+      src: 'https://images.unsplash.com/photo-1670121180583-39ab653a071c',
+      width: 6000,
+      height: 4000,
+      alt: 'Container ship loaded with full container loads at a port terminal in Vietnam',
+      caption: 'Container ship at Hai Phong International Container Terminal, Vietnam',
+      photographer: { name: 'Nathan Cima', profile: 'https://unsplash.com/@nathan_cima' },
+      page: 'https://unsplash.com/photos/a-large-ship-in-the-water-2JNNpq4nGls',
+    },
   },
   {
     slug: 'dap-vs-ddp',
@@ -243,6 +252,16 @@ export const GUIDES: readonly Guide[] = [
     ],
     sources: ['icc-incoterms-2020', 'trade-gov-commercial-invoice'],
     tools: ['/tools/incoterms', '/tools/landed-cost-calculator', '/tools/invoice-generator'],
+    cover: {
+      id: 'crHhZlES310',
+      src: 'https://images.unsplash.com/photo-1601467995997-ac1ae9a8fff4',
+      width: 5900,
+      height: 3933,
+      alt: 'White delivery truck parked at a building at the end of a delivered shipment',
+      caption: 'White delivery truck parked at a building',
+      photographer: { name: 'Maxim Tolchinskiy', profile: 'https://unsplash.com/@shaikhulud' },
+      page: 'https://unsplash.com/photos/crHhZlES310',
+    },
   },
   {
     slug: 'proforma-vs-commercial-invoice',
@@ -345,8 +364,30 @@ export const GUIDES: readonly Guide[] = [
       '/tools/invoice-generator',
       '/tools/packing-list-generator',
     ],
+    cover: {
+      id: 'spScdgWY-_c',
+      src: 'https://images.unsplash.com/photo-1631651693480-97f1132e333d',
+      width: 3576,
+      height: 2384,
+      alt: 'Paper documents and a pen on a wooden table, ready for an invoice to be filled in',
+      caption: 'Papers and a pen on a wooden table',
+      photographer: { name: '2H Media', profile: 'https://unsplash.com/@2hmedia' },
+      page: 'https://unsplash.com/photos/spScdgWY-_c',
+    },
   },
 ];
+
+/** The /guides hub's cover. */
+export const GUIDES_HUB_COVER: UnsplashPhoto = {
+  id: 'b4lmjXJi9e4',
+  src: 'https://images.unsplash.com/photo-1782398138711-72c37bce4b38',
+  width: 7094,
+  height: 4532,
+  alt: 'Aerial view of a busy port with stacked shipping containers waiting to be loaded',
+  caption: 'Aerial view of a busy port with shipping containers',
+  photographer: { name: 'Cosmin Andrei Buzamat', profile: 'https://unsplash.com/@cos592' },
+  page: 'https://unsplash.com/photos/b4lmjXJi9e4',
+};
 
 export function findGuide(slug: string): Guide | undefined {
   return GUIDES.find((guide) => guide.slug === slug);
