@@ -1,2072 +1,1876 @@
 {
- "id": "10051915-2048-0607-0000-6b507dd1af3e",
- "status_code": 20000,
- "status_message": "Ok.",
- "items": [
-  {
-   "keyword": "cbm calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 01:13:24 +00:00",
-    "competition": 0.01,
-    "competition_level": "LOW",
-    "cpc": 21.2,
-    "search_volume": 4400,
-    "low_top_of_page_bid": 6.41,
-    "high_top_of_page_bid": 71.56,
-    "categories": [
-     10004,
-     10300,
-     11328
-    ],
-    "monthly_searches": {
-     "2026-08": 5400,
-     "2026-07": 5400,
-     "2026-06": 4400,
-     "2026-05": 3600,
-     "2026-04": 4400,
-     "2026-03": 3600,
-     "2026-02": 3600,
-     "2026-01": 3600,
-     "2025-12": 2900,
-     "2025-11": 3600,
-     "2025-10": 4400,
-     "2025-09": 3600
+  "id": "10051915-2048-0607-0000-6b507dd1af3e",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "keyword": "cbm calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 01:13:24 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 21.2,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 6.41,
+        "high_top_of_page_bid": 71.56,
+        "categories": [10004, 10300, 11328],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 5400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 4400,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "quarterly": 23,
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "calculate cbm",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 539.6,
+        "dofollow": 458,
+        "referring_pages": 471.4,
+        "referring_domains": 25.4,
+        "referring_main_domains": 22.5,
+        "rank": 116,
+        "main_domain_rank": 474.9,
+        "last_updated_time": "2026-07-30 22:05:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:58:58 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": 23,
-     "yearly": 50
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "calculate cbm",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 12,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 539.6,
-    "dofollow": 458,
-    "referring_pages": 471.4,
-    "referring_domains": 25.4,
-    "referring_main_domains": 22.5,
-    "rank": 116,
-    "main_domain_rank": 474.9,
-    "last_updated_time": "2026-07-30 22:05:40 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 02:58:58 +00:00"
-   }
-  },
-  {
-   "keyword": "certificate of origin",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 19:16:46 +00:00",
-    "competition": 0.05,
-    "competition_level": "LOW",
-    "cpc": 28.25,
-    "search_volume": 4400,
-    "low_top_of_page_bid": 3.31,
-    "high_top_of_page_bid": 45.95,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 4400,
-     "2026-07": 4400,
-     "2026-06": 4400,
-     "2026-05": 4400,
-     "2026-04": 4400,
-     "2026-03": 4400,
-     "2026-02": 4400,
-     "2026-01": 4400,
-     "2025-12": 3600,
-     "2025-11": 4400,
-     "2025-10": 5400,
-     "2025-09": 5400
+    {
+      "keyword": "certificate of origin",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:16:46 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 28.25,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 3.31,
+        "high_top_of_page_bid": 45.95,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 4400,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 3600,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 37,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 187.7,
+        "dofollow": 131.3,
+        "referring_pages": 151.4,
+        "referring_domains": 42.6,
+        "referring_main_domains": 39.1,
+        "rank": 164.3,
+        "main_domain_rank": 521,
+        "last_updated_time": "2026-09-03 20:00:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:14:13 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 37,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 187.7,
-    "dofollow": 131.3,
-    "referring_pages": 151.4,
-    "referring_domains": 42.6,
-    "referring_main_domains": 39.1,
-    "rank": 164.3,
-    "main_domain_rank": 521,
-    "last_updated_time": "2026-09-03 20:00:32 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 04:14:13 +00:00"
-   }
-  },
-  {
-   "keyword": "certificate of origin template",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 16:59:46 +00:00",
-    "competition": 0.13,
-    "competition_level": "LOW",
-    "cpc": 19.02,
-    "search_volume": 1300,
-    "low_top_of_page_bid": 1.8,
-    "high_top_of_page_bid": 25.15,
-    "categories": [
-     10018,
-     10161,
-     10163
-    ],
-    "monthly_searches": {
-     "2026-08": 1000,
-     "2026-07": 1300,
-     "2026-06": 1300,
-     "2026-05": 1300,
-     "2026-04": 1600,
-     "2026-03": 1600,
-     "2026-02": 1300,
-     "2026-01": 1600,
-     "2025-12": 1300,
-     "2025-11": 1300,
-     "2025-10": 1600,
-     "2025-09": 1600
+    {
+      "keyword": "certificate of origin template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 16:59:46 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 19.02,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.8,
+        "high_top_of_page_bid": 25.15,
+        "categories": [10018, 10161, 10163],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -23,
+          "quarterly": -23,
+          "yearly": -38
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 90.2,
+        "dofollow": 63.7,
+        "referring_pages": 80.4,
+        "referring_domains": 14.9,
+        "referring_main_domains": 13.9,
+        "rank": 71.5,
+        "main_domain_rank": 429.9,
+        "last_updated_time": "2026-09-05 12:26:18 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:44:07 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -23,
-     "quarterly": -23,
-     "yearly": -38
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 1,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 90.2,
-    "dofollow": 63.7,
-    "referring_pages": 80.4,
-    "referring_domains": 14.9,
-    "referring_main_domains": 13.9,
-    "rank": 71.5,
-    "main_domain_rank": 429.9,
-    "last_updated_time": "2026-09-05 12:26:18 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-30 01:44:07 +00:00"
-   }
-  },
-  {
-   "keyword": "cfr incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 23:38:40 +00:00",
-    "competition": 0.05,
-    "competition_level": "LOW",
-    "cpc": 2.86,
-    "search_volume": 1000,
-    "low_top_of_page_bid": 0.06,
-    "high_top_of_page_bid": 1.39,
-    "categories": [
-     10012,
-     10094
-    ],
-    "monthly_searches": {
-     "2026-08": 880,
-     "2026-07": 880,
-     "2026-06": 880,
-     "2026-05": 880,
-     "2026-04": 1000,
-     "2026-03": 1000,
-     "2026-02": 1000,
-     "2026-01": 1000,
-     "2025-12": 880,
-     "2025-11": 880,
-     "2025-10": 1300,
-     "2025-09": 1000
+    {
+      "keyword": "cfr incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:38:40 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 2.86,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 1.39,
+        "categories": [10012, 10094],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cfr incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.8,
+        "dofollow": 3,
+        "referring_pages": 3.6,
+        "referring_domains": 2.6,
+        "referring_main_domains": 2.5,
+        "rank": 24.8,
+        "main_domain_rank": 338.3,
+        "last_updated_time": "2025-09-05 16:18:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": ["informational", "commercial"],
+        "last_updated_time": "2026-04-29 05:34:53 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -12
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "cfr incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 2,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 3.8,
-    "dofollow": 3,
-    "referring_pages": 3.6,
-    "referring_domains": 2.6,
-    "referring_main_domains": 2.5,
-    "rank": 24.8,
-    "main_domain_rank": 338.3,
-    "last_updated_time": "2025-09-05 16:18:22 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "foreign_intent": [
-     "informational",
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-29 05:34:53 +00:00"
-   }
-  },
-  {
-   "keyword": "chargeable weight calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 06:12:48 +00:00",
-    "competition": 0.02,
-    "competition_level": "LOW",
-    "cpc": 8.47,
-    "search_volume": 590,
-    "low_top_of_page_bid": 1.76,
-    "high_top_of_page_bid": 10.19,
-    "categories": [
-     10004,
-     10300,
-     11328
-    ],
-    "monthly_searches": {
-     "2026-08": 480,
-     "2026-07": 480,
-     "2026-06": 480,
-     "2026-05": 480,
-     "2026-04": 590,
-     "2026-03": 720,
-     "2026-02": 720,
-     "2026-01": 590,
-     "2025-12": 590,
-     "2025-11": 590,
-     "2025-10": 720,
-     "2025-09": 590
+    {
+      "keyword": "chargeable weight calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:12:48 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 8.47,
+        "search_volume": 590,
+        "low_top_of_page_bid": 1.76,
+        "high_top_of_page_bid": 10.19,
+        "categories": [10004, 10300, 11328],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 480,
+          "2026-04": 590,
+          "2026-03": 720,
+          "2026-02": 720,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "calculate chargeable weight",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12,
+        "dofollow": 10.6,
+        "referring_pages": 12,
+        "referring_domains": 1.4,
+        "referring_main_domains": 1.3,
+        "rank": 40.3,
+        "main_domain_rank": 280.8,
+        "last_updated_time": "2026-08-03 03:03:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-05-03 19:28:30 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "calculate chargeable weight",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 12,
-    "dofollow": 10.6,
-    "referring_pages": 12,
-    "referring_domains": 1.4,
-    "referring_main_domains": 1.3,
-    "rank": 40.3,
-    "main_domain_rank": 280.8,
-    "last_updated_time": "2026-08-03 03:03:00 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "transactional",
-    "last_updated_time": "2026-05-03 19:28:30 +00:00"
-   }
-  },
-  {
-   "keyword": "cif incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 19:03:20 +00:00",
-    "competition": 0.07,
-    "competition_level": "LOW",
-    "cpc": 0.47,
-    "search_volume": 1900,
-    "low_top_of_page_bid": 0.06,
-    "high_top_of_page_bid": 0.65,
-    "categories": [
-     10012
-    ],
-    "monthly_searches": {
-     "2026-08": 1600,
-     "2026-07": 1600,
-     "2026-06": 1600,
-     "2026-05": 1600,
-     "2026-04": 1900,
-     "2026-03": 2400,
-     "2026-02": 1900,
-     "2026-01": 1900,
-     "2025-12": 1600,
-     "2025-11": 1600,
-     "2025-10": 2400,
-     "2025-09": 2400
+    {
+      "keyword": "cif incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:03:20 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 0.47,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.65,
+        "categories": [10012],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cif incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 58.7,
+        "dofollow": 39.9,
+        "referring_pages": 50.9,
+        "referring_domains": 24.3,
+        "referring_main_domains": 23.4,
+        "rank": 100.5,
+        "main_domain_rank": 377.4,
+        "last_updated_time": "2025-10-22 06:07:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": ["informational"],
+        "last_updated_time": "2026-04-29 02:06:36 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -45
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "cif incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 14,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 58.7,
-    "dofollow": 39.9,
-    "referring_pages": 50.9,
-    "referring_domains": 24.3,
-    "referring_main_domains": 23.4,
-    "rank": 100.5,
-    "main_domain_rank": 377.4,
-    "last_updated_time": "2025-10-22 06:07:54 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "foreign_intent": [
-     "informational"
-    ],
-    "last_updated_time": "2026-04-29 02:06:36 +00:00"
-   }
-  },
-  {
-   "keyword": "cip incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-06-16 03:30:20 +00:00",
-    "categories": [
-     10004,
-     13841
-    ]
-   },
-   "keyword_properties": {
-    "core_keyword": "cip in incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 34,
-    "detected_language": "it",
-    "is_another_language": true
-   },
-   "avg_backlinks_info": {
-    "backlinks": 72.1,
-    "dofollow": 23.8,
-    "referring_pages": 63.9,
-    "referring_domains": 31.4,
-    "referring_main_domains": 29.6,
-    "rank": 122.3,
-    "main_domain_rank": 411.5,
-    "last_updated_time": "2023-02-08 16:35:54 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "foreign_intent": [
-     "informational"
-    ],
-    "last_updated_time": "2026-04-29 22:59:25 +00:00"
-   }
-  },
-  {
-   "keyword": "commercial invoice",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 05:35:33 +00:00",
-    "competition": 0.22,
-    "competition_level": "LOW",
-    "cpc": 13.41,
-    "search_volume": 3600,
-    "low_top_of_page_bid": 2,
-    "high_top_of_page_bid": 19.57,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 2900,
-     "2026-07": 2900,
-     "2026-06": 3600,
-     "2026-05": 3600,
-     "2026-04": 3600,
-     "2026-03": 3600,
-     "2026-02": 3600,
-     "2026-01": 3600,
-     "2025-12": 3600,
-     "2025-11": 3600,
-     "2025-10": 4400,
-     "2025-09": 4400
+    {
+      "keyword": "cip incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-06-16 03:30:20 +00:00",
+        "categories": [10004, 13841]
+      },
+      "keyword_properties": {
+        "core_keyword": "cip in incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "it",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 72.1,
+        "dofollow": 23.8,
+        "referring_pages": 63.9,
+        "referring_domains": 31.4,
+        "referring_main_domains": 29.6,
+        "rank": 122.3,
+        "main_domain_rank": 411.5,
+        "last_updated_time": "2023-02-08 16:35:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": ["informational"],
+        "last_updated_time": "2026-04-29 22:59:25 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": -19,
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 24,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 156.9,
-    "dofollow": 72.7,
-    "referring_pages": 83,
-    "referring_domains": 20.3,
-    "referring_main_domains": 18.3,
-    "rank": 120,
-    "main_domain_rank": 541.5,
-    "last_updated_time": "2026-07-30 21:59:02 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "commercial",
-    "foreign_intent": [
-     "informational",
-     "transactional"
-    ],
-    "last_updated_time": "2026-04-29 16:12:48 +00:00"
-   }
-  },
-  {
-   "keyword": "commercial invoice for customs",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 11:20:56 +00:00",
-    "competition": 0.36,
-    "competition_level": "MEDIUM",
-    "cpc": 13.99,
-    "search_volume": 720,
-    "low_top_of_page_bid": 1.52,
-    "high_top_of_page_bid": 12.98,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 720,
-     "2026-07": 590,
-     "2026-06": 720,
-     "2026-05": 720,
-     "2026-04": 720,
-     "2026-03": 720,
-     "2026-02": 590,
-     "2026-01": 720,
-     "2025-12": 590,
-     "2025-11": 590,
-     "2025-10": 880,
-     "2025-09": 880
+    {
+      "keyword": "commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:35:33 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 13.41,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 2,
+        "high_top_of_page_bid": 19.57,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 24,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 156.9,
+        "dofollow": 72.7,
+        "referring_pages": 83,
+        "referring_domains": 20.3,
+        "referring_main_domains": 18.3,
+        "rank": 120,
+        "main_domain_rank": 541.5,
+        "last_updated_time": "2026-07-30 21:59:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": ["informational", "transactional"],
+        "last_updated_time": "2026-04-29 16:12:48 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 22
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 24,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 543.9,
-    "dofollow": 435.5,
-    "referring_pages": 452.9,
-    "referring_domains": 28.8,
-    "referring_main_domains": 26,
-    "rank": 149.3,
-    "main_domain_rank": 650.5,
-    "last_updated_time": "2026-08-02 18:33:33 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "transactional",
-    "foreign_intent": [
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-30 05:44:34 +00:00"
-   }
-  },
-  {
-   "keyword": "commercial invoice generator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-15 18:24:58 +00:00",
-    "competition": 0.66,
-    "competition_level": "MEDIUM",
-    "cpc": 6.39,
-    "search_volume": 170,
-    "low_top_of_page_bid": 2.52,
-    "high_top_of_page_bid": 19.51,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 90,
-     "2026-07": 90,
-     "2026-06": 480,
-     "2026-05": 260,
-     "2026-04": 110,
-     "2026-03": 110,
-     "2026-02": 90,
-     "2026-01": 110,
-     "2025-12": 110,
-     "2025-11": 90,
-     "2025-10": 140,
-     "2025-09": 140
+    {
+      "keyword": "commercial invoice for customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:20:56 +00:00",
+        "competition": 0.36,
+        "competition_level": "MEDIUM",
+        "cpc": 13.99,
+        "search_volume": 720,
+        "low_top_of_page_bid": 1.52,
+        "high_top_of_page_bid": 12.98,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 590,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 590,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 24,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 543.9,
+        "dofollow": 435.5,
+        "referring_pages": 452.9,
+        "referring_domains": 28.8,
+        "referring_main_domains": 26,
+        "rank": 149.3,
+        "main_domain_rank": 650.5,
+        "last_updated_time": "2026-08-02 18:33:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["commercial"],
+        "last_updated_time": "2026-04-30 05:44:34 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": -81,
-     "yearly": -18
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 9,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 256.1,
-    "dofollow": 141.5,
-    "referring_pages": 219.3,
-    "referring_domains": 102.3,
-    "referring_main_domains": 96.9,
-    "rank": 106,
-    "main_domain_rank": 418.2,
-    "last_updated_time": "2026-09-13 20:38:19 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "commercial",
-    "last_updated_time": "2026-04-29 15:41:58 +00:00"
-   }
-  },
-  {
-   "keyword": "commercial invoice template",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 03:03:12 +00:00",
-    "competition": 0.44,
-    "competition_level": "MEDIUM",
-    "cpc": 8.9,
-    "search_volume": 2400,
-    "low_top_of_page_bid": 1.52,
-    "high_top_of_page_bid": 13.41,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 2400,
-     "2026-07": 1900,
-     "2026-06": 1900,
-     "2026-05": 2400,
-     "2026-04": 2400,
-     "2026-03": 2900,
-     "2026-02": 2400,
-     "2026-01": 2400,
-     "2025-12": 2400,
-     "2025-11": 1900,
-     "2025-10": 2900,
-     "2025-09": 2900
+    {
+      "keyword": "commercial invoice generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:24:58 +00:00",
+        "competition": 0.66,
+        "competition_level": "MEDIUM",
+        "cpc": 6.39,
+        "search_volume": 170,
+        "low_top_of_page_bid": 2.52,
+        "high_top_of_page_bid": 19.51,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 90,
+          "2026-06": 480,
+          "2026-05": 260,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 90,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "quarterly": -81,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 256.1,
+        "dofollow": 141.5,
+        "referring_pages": 219.3,
+        "referring_domains": 102.3,
+        "referring_main_domains": 96.9,
+        "rank": 106,
+        "main_domain_rank": 418.2,
+        "last_updated_time": "2026-09-13 20:38:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 15:41:58 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 26,
-     "quarterly": 26,
-     "yearly": -17
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 18,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 1972.8,
-    "dofollow": 1894.9,
-    "referring_pages": 1911.2,
-    "referring_domains": 19.3,
-    "referring_main_domains": 17.3,
-    "rank": 136.7,
-    "main_domain_rank": 520.6,
-    "last_updated_time": "2026-07-31 12:26:08 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "foreign_intent": [
-     "transactional",
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-29 05:17:52 +00:00"
-   }
-  },
-  {
-   "keyword": "container loading calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 02:51:18 +00:00",
-    "competition": 0.28,
-    "competition_level": "LOW",
-    "cpc": 4.84,
-    "search_volume": 260,
-    "low_top_of_page_bid": 2,
-    "high_top_of_page_bid": 5.88,
-    "categories": [
-     10004,
-     10300
-    ],
-    "monthly_searches": {
-     "2026-08": 210,
-     "2026-07": 260,
-     "2026-06": 210,
-     "2026-05": 210,
-     "2026-04": 260,
-     "2026-03": 320,
-     "2026-02": 210,
-     "2026-01": 210,
-     "2025-12": 260,
-     "2025-11": 260,
-     "2025-10": 320,
-     "2025-09": 320
+    {
+      "keyword": "commercial invoice template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:03:12 +00:00",
+        "competition": 0.44,
+        "competition_level": "MEDIUM",
+        "cpc": 8.9,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 1.52,
+        "high_top_of_page_bid": 13.41,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 26,
+          "quarterly": 26,
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1972.8,
+        "dofollow": 1894.9,
+        "referring_pages": 1911.2,
+        "referring_domains": 19.3,
+        "referring_main_domains": 17.3,
+        "rank": 136.7,
+        "main_domain_rank": 520.6,
+        "last_updated_time": "2026-07-31 12:26:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["transactional", "commercial"],
+        "last_updated_time": "2026-04-29 05:17:52 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -19,
-     "yearly": -46
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 7,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 182.3,
-    "dofollow": 54.3,
-    "referring_pages": 77.3,
-    "referring_domains": 8.5,
-    "referring_main_domains": 8.2,
-    "rank": 105.5,
-    "main_domain_rank": 354.2,
-    "last_updated_time": "2026-09-10 17:09:19 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 16:38:26 +00:00"
-   }
-  },
-  {
-   "keyword": "cpt incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 11:27:01 +00:00",
-    "competition": 0.04,
-    "competition_level": "LOW",
-    "cpc": 1.73,
-    "search_volume": 1600,
-    "low_top_of_page_bid": 0.19,
-    "high_top_of_page_bid": 9.67,
-    "categories": [
-     10008
-    ],
-    "monthly_searches": {
-     "2026-08": 1300,
-     "2026-07": 1600,
-     "2026-06": 1600,
-     "2026-05": 1900,
-     "2026-04": 1900,
-     "2026-03": 1900,
-     "2026-02": 1600,
-     "2026-01": 1600,
-     "2025-12": 1600,
-     "2025-11": 1600,
-     "2025-10": 1900,
-     "2025-09": 1900
+    {
+      "keyword": "container loading calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:51:18 +00:00",
+        "competition": 0.28,
+        "competition_level": "LOW",
+        "cpc": 4.84,
+        "search_volume": 260,
+        "low_top_of_page_bid": 2,
+        "high_top_of_page_bid": 5.88,
+        "categories": [10004, 10300],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 210,
+          "2026-04": 260,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 182.3,
+        "dofollow": 54.3,
+        "referring_pages": 77.3,
+        "referring_domains": 8.5,
+        "referring_main_domains": 8.2,
+        "rank": 105.5,
+        "main_domain_rank": 354.2,
+        "last_updated_time": "2026-09-10 17:09:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:38:26 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -19,
-     "quarterly": -19,
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "cpt incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 2,
-    "dofollow": 0.8,
-    "referring_pages": 1.6,
-    "referring_domains": 1.1,
-    "referring_main_domains": 1.1,
-    "rank": 15.9,
-    "main_domain_rank": 411.5,
-    "last_updated_time": "2026-03-14 19:14:51 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "foreign_intent": [
-     "navigational"
-    ],
-    "last_updated_time": "2026-04-29 16:57:45 +00:00"
-   }
-  },
-  {
-   "keyword": "dap incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-15 22:57:37 +00:00",
-    "competition": 0.07,
-    "competition_level": "LOW",
-    "cpc": 0.99,
-    "search_volume": 4400,
-    "low_top_of_page_bid": 0.07,
-    "high_top_of_page_bid": 0.65,
-    "categories": [
-     10004,
-     10276
-    ],
-    "monthly_searches": {
-     "2026-08": 4400,
-     "2026-07": 4400,
-     "2026-06": 4400,
-     "2026-05": 4400,
-     "2026-04": 5400,
-     "2026-03": 5400,
-     "2026-02": 4400,
-     "2026-01": 4400,
-     "2025-12": 4400,
-     "2025-11": 4400,
-     "2025-10": 5400,
-     "2025-09": 5400
+    {
+      "keyword": "cpt incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:27:01 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 1.73,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.19,
+        "high_top_of_page_bid": 9.67,
+        "categories": [10008],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cpt incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2,
+        "dofollow": 0.8,
+        "referring_pages": 1.6,
+        "referring_domains": 1.1,
+        "referring_main_domains": 1.1,
+        "rank": 15.9,
+        "main_domain_rank": 411.5,
+        "last_updated_time": "2026-03-14 19:14:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["navigational"],
+        "last_updated_time": "2026-04-29 16:57:45 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "dap incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 7,
-    "detected_language": "sv",
-    "is_another_language": true
-   },
-   "avg_backlinks_info": {
-    "backlinks": 39.9,
-    "dofollow": 18.9,
-    "referring_pages": 38.2,
-    "referring_domains": 12.5,
-    "referring_main_domains": 12,
-    "rank": 97.9,
-    "main_domain_rank": 364.4,
-    "last_updated_time": "2024-10-04 15:47:23 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-04-26 23:25:54 +00:00"
-   }
-  },
-  {
-   "keyword": "ddp incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 10:33:51 +00:00",
-    "competition": 0.12,
-    "competition_level": "LOW",
-    "cpc": 2.22,
-    "search_volume": 3600,
-    "low_top_of_page_bid": 0.06,
-    "high_top_of_page_bid": 0.75,
-    "categories": [
-     10012,
-     10095,
-     11831
-    ],
-    "monthly_searches": {
-     "2026-08": 2900,
-     "2026-07": 2900,
-     "2026-06": 2900,
-     "2026-05": 2900,
-     "2026-04": 3600,
-     "2026-03": 3600,
-     "2026-02": 3600,
-     "2026-01": 3600,
-     "2025-12": 2900,
-     "2025-11": 3600,
-     "2025-10": 4400,
-     "2025-09": 4400
+    {
+      "keyword": "dap incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 22:57:37 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 0.99,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.07,
+        "high_top_of_page_bid": 0.65,
+        "categories": [10004, 10276],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 4400,
+          "2026-04": 5400,
+          "2026-03": 5400,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dap incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "sv",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 39.9,
+        "dofollow": 18.9,
+        "referring_pages": 38.2,
+        "referring_domains": 12.5,
+        "referring_main_domains": 12,
+        "rank": 97.9,
+        "main_domain_rank": 364.4,
+        "last_updated_time": "2024-10-04 15:47:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-26 23:25:54 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -19
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "ddp incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 14,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 22.5,
-    "dofollow": 16.1,
-    "referring_pages": 19.8,
-    "referring_domains": 10.7,
-    "referring_main_domains": 9.9,
-    "rank": 70.3,
-    "main_domain_rank": 331.8,
-    "last_updated_time": "2026-03-13 10:08:16 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "foreign_intent": [
-     "informational",
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-27 00:32:29 +00:00"
-   }
-  },
-  {
-   "keyword": "delivery note template",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 05:42:37 +00:00",
-    "competition": 0.07,
-    "competition_level": "LOW",
-    "cpc": 5.1,
-    "search_volume": 140,
-    "categories": [
-     10004,
-     10307
-    ],
-    "monthly_searches": {
-     "2026-08": 170,
-     "2026-07": 90,
-     "2026-06": 90,
-     "2026-05": 140,
-     "2026-04": 140,
-     "2026-03": 140,
-     "2026-02": 110,
-     "2026-01": 110,
-     "2025-12": 90,
-     "2025-11": 140,
-     "2025-10": 140,
-     "2025-09": 210
+    {
+      "keyword": "ddp incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 10:33:51 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 2.22,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.75,
+        "categories": [10012, 10095, 11831],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ddp incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22.5,
+        "dofollow": 16.1,
+        "referring_pages": 19.8,
+        "referring_domains": 10.7,
+        "referring_main_domains": 9.9,
+        "rank": 70.3,
+        "main_domain_rank": 331.8,
+        "last_updated_time": "2026-03-13 10:08:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": ["informational", "commercial"],
+        "last_updated_time": "2026-04-27 00:32:29 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 89,
-     "quarterly": 89,
-     "yearly": 21
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "delivery note templates",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 55.5,
-    "dofollow": 40.8,
-    "referring_pages": 43.7,
-    "referring_domains": 1.9,
-    "referring_main_domains": 1.8,
-    "rank": 58.7,
-    "main_domain_rank": 487.8,
-    "last_updated_time": "2026-09-15 22:57:40 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 08:53:24 +00:00"
-   }
-  },
-  {
-   "keyword": "dimensional weight calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 19:47:13 +00:00",
-    "competition": 0.33,
-    "competition_level": "LOW",
-    "cpc": 3.89,
-    "search_volume": 1600,
-    "low_top_of_page_bid": 0.96,
-    "high_top_of_page_bid": 6.3,
-    "categories": [
-     10004,
-     10004,
-     10300,
-     10300,
-     11328
-    ],
-    "monthly_searches": {
-     "2026-08": 1300,
-     "2026-07": 1300,
-     "2026-06": 1300,
-     "2026-05": 1600,
-     "2026-04": 1900,
-     "2026-03": 1900,
-     "2026-02": 1600,
-     "2026-01": 1600,
-     "2025-12": 1600,
-     "2025-11": 1600,
-     "2025-10": 2400,
-     "2025-09": 2400
+    {
+      "keyword": "delivery note template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:42:37 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 5.1,
+        "search_volume": 140,
+        "categories": [10004, 10307],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 140,
+          "2026-04": 140,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 90,
+          "2025-11": 140,
+          "2025-10": 140,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": 89,
+          "quarterly": 89,
+          "yearly": 21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "delivery note templates",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 55.5,
+        "dofollow": 40.8,
+        "referring_pages": 43.7,
+        "referring_domains": 1.9,
+        "referring_main_domains": 1.8,
+        "rank": 58.7,
+        "main_domain_rank": 487.8,
+        "last_updated_time": "2026-09-15 22:57:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:53:24 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -32
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 36,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 283.1,
-    "dofollow": 158,
-    "referring_pages": 173.6,
-    "referring_domains": 24.9,
-    "referring_main_domains": 23.5,
-    "rank": 200.2,
-    "main_domain_rank": 427,
-    "last_updated_time": "2026-09-04 20:05:13 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-26 23:50:34 +00:00"
-   }
-  },
-  {
-   "keyword": "dpu incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 09:26:23 +00:00",
-    "competition": 0.02,
-    "competition_level": "LOW",
-    "search_volume": 70,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 70,
-     "2026-07": 70,
-     "2026-06": 70,
-     "2026-05": 50,
-     "2026-04": 70,
-     "2026-03": 90,
-     "2026-02": 70,
-     "2026-01": 70,
-     "2025-12": 70,
-     "2025-11": 70,
-     "2025-10": 50,
-     "2025-09": 90
+    {
+      "keyword": "dimensional weight calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 19:47:13 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 3.89,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.96,
+        "high_top_of_page_bid": 6.3,
+        "categories": [10004, 10004, 10300, 10300, 11328],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 36,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 283.1,
+        "dofollow": 158,
+        "referring_pages": 173.6,
+        "referring_domains": 24.9,
+        "referring_main_domains": 23.5,
+        "rank": 200.2,
+        "main_domain_rank": 427,
+        "last_updated_time": "2026-09-04 20:05:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 23:50:34 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -22
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "dpu incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 7,
-    "dofollow": 3.3,
-    "referring_pages": 3.5,
-    "referring_domains": 1.4,
-    "referring_main_domains": 1.4,
-    "rank": 23.7,
-    "main_domain_rank": 421.9,
-    "last_updated_time": "2026-09-24 06:39:44 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-04-27 00:11:53 +00:00"
-   }
-  },
-  {
-   "keyword": "export documents",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 12:44:14 +00:00",
-    "competition": 0.06,
-    "competition_level": "LOW",
-    "search_volume": 260,
-    "low_top_of_page_bid": 2.38,
-    "high_top_of_page_bid": 11.67,
-    "categories": [
-     10019,
-     10168,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 210,
-     "2026-07": 260,
-     "2026-06": 210,
-     "2026-05": 170,
-     "2026-04": 260,
-     "2026-03": 260,
-     "2026-02": 260,
-     "2026-01": 170,
-     "2025-12": 170,
-     "2025-11": 140,
-     "2025-10": 260,
-     "2025-09": 390
+    {
+      "keyword": "dpu incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 09:26:23 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 70,
+          "2025-10": 50,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dpu incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7,
+        "dofollow": 3.3,
+        "referring_pages": 3.5,
+        "referring_domains": 1.4,
+        "referring_main_domains": 1.4,
+        "rank": 23.7,
+        "main_domain_rank": 421.9,
+        "last_updated_time": "2026-09-24 06:39:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-27 00:11:53 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -19,
-     "yearly": -34
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 8,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 414.6,
-    "dofollow": 377.3,
-    "referring_pages": 390.6,
-    "referring_domains": 22.6,
-    "referring_main_domains": 21.6,
-    "rank": 99.7,
-    "main_domain_rank": 455.8,
-    "last_updated_time": "2026-09-10 14:13:42 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "transactional",
-    "foreign_intent": [
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-27 15:53:45 +00:00"
-   }
-  },
-  {
-   "keyword": "exw incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 02:33:30 +00:00",
-    "competition": 0.06,
-    "competition_level": "LOW",
-    "cpc": 27.62,
-    "search_volume": 3600,
-    "low_top_of_page_bid": 0.2,
-    "high_top_of_page_bid": 2.43,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 3600,
-     "2026-07": 3600,
-     "2026-06": 3600,
-     "2026-05": 3600,
-     "2026-04": 3600,
-     "2026-03": 4400,
-     "2026-02": 3600,
-     "2026-01": 3600,
-     "2025-12": 3600,
-     "2025-11": 3600,
-     "2025-10": 4400,
-     "2025-09": 4400
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "exw incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 10,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 318,
-    "dofollow": 215.9,
-    "referring_pages": 275.6,
-    "referring_domains": 67.9,
-    "referring_main_domains": 64.8,
-    "rank": 130.2,
-    "main_domain_rank": 438.6,
-    "last_updated_time": "2026-01-27 21:35:54 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-04-27 16:13:14 +00:00"
-   }
-  },
-  {
-   "keyword": "fas incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-15 17:32:51 +00:00",
-    "competition": 0.01,
-    "competition_level": "LOW",
-    "search_volume": 40,
-    "categories": [
-     10004,
-     13804
-    ],
-    "monthly_searches": {
-     "2026-08": 20,
-     "2026-07": 20,
-     "2026-06": 30,
-     "2026-05": 30,
-     "2026-04": 40,
-     "2026-03": 50,
-     "2026-02": 30,
-     "2026-01": 40,
-     "2025-12": 30,
-     "2025-11": 40,
-     "2025-10": 50,
-     "2025-09": 50
+    {
+      "keyword": "export documents",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:44:14 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.38,
+        "high_top_of_page_bid": 11.67,
+        "categories": [10019, 10168, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 260,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 170,
+          "2025-12": 170,
+          "2025-11": 140,
+          "2025-10": 260,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 414.6,
+        "dofollow": 377.3,
+        "referring_pages": 390.6,
+        "referring_domains": 22.6,
+        "referring_main_domains": 21.6,
+        "rank": 99.7,
+        "main_domain_rank": 455.8,
+        "last_updated_time": "2026-09-10 14:13:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": ["commercial"],
+        "last_updated_time": "2026-04-27 15:53:45 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": -33,
-     "yearly": -82
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "fas incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 16.7,
-    "dofollow": 7.6,
-    "referring_pages": 9.9,
-    "referring_domains": 4.6,
-    "referring_main_domains": 4.2,
-    "rank": 35.1,
-    "main_domain_rank": 472.7,
-    "last_updated_time": "2026-10-03 23:55:28 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "foreign_intent": [
-     "navigational"
-    ],
-    "last_updated_time": "2026-04-27 17:22:47 +00:00"
-   }
-  },
-  {
-   "keyword": "fca incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 10:14:35 +00:00",
-    "competition": 0.04,
-    "competition_level": "LOW",
-    "cpc": 2.64,
-    "search_volume": 6600,
-    "low_top_of_page_bid": 0.09,
-    "high_top_of_page_bid": 1.46,
-    "categories": [
-     10012
-    ],
-    "monthly_searches": {
-     "2026-08": 6600,
-     "2026-07": 6600,
-     "2026-06": 6600,
-     "2026-05": 6600,
-     "2026-04": 6600,
-     "2026-03": 8100,
-     "2026-02": 6600,
-     "2026-01": 6600,
-     "2025-12": 6600,
-     "2025-11": 6600,
-     "2025-10": 8100,
-     "2025-09": 8100
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "fca incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 23.5,
-    "dofollow": 7.6,
-    "referring_pages": 14.1,
-    "referring_domains": 8.4,
-    "referring_main_domains": 8.3,
-    "rank": 52.1,
-    "main_domain_rank": 462.7,
-    "last_updated_time": "2026-09-03 09:42:01 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "foreign_intent": [
-     "informational",
-     "commercial"
-    ],
-    "last_updated_time": "2026-04-27 17:22:58 +00:00"
-   }
-  },
-  {
-   "keyword": "fob incoterm",
-   "keyword_info": {
-    "last_updated_time": "2026-09-15 03:52:49 +00:00",
-    "competition": 0.04,
-    "competition_level": "LOW",
-    "cpc": 2.78,
-    "search_volume": 2400,
-    "low_top_of_page_bid": 0.06,
-    "high_top_of_page_bid": 3.16,
-    "categories": [
-     10008
-    ],
-    "monthly_searches": {
-     "2026-08": 2400,
-     "2026-07": 1900,
-     "2026-06": 2400,
-     "2026-05": 1900,
-     "2026-04": 2400,
-     "2026-03": 2400,
-     "2026-02": 1900,
-     "2026-01": 1900,
-     "2025-12": 1900,
-     "2025-11": 1900,
-     "2025-10": 2400,
-     "2025-09": 2900
+    {
+      "keyword": "exw incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:33:30 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 27.62,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.2,
+        "high_top_of_page_bid": 2.43,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 4400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "exw incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 318,
+        "dofollow": 215.9,
+        "referring_pages": 275.6,
+        "referring_domains": 67.9,
+        "referring_main_domains": 64.8,
+        "rank": 130.2,
+        "main_domain_rank": 438.6,
+        "last_updated_time": "2026-01-27 21:35:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-27 16:13:14 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 26
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "fob incoterms",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 16,
-    "detected_language": "nl",
-    "is_another_language": true
-   },
-   "avg_backlinks_info": {
-    "backlinks": 117.5,
-    "dofollow": 85.7,
-    "referring_pages": 94.5,
-    "referring_domains": 33.9,
-    "referring_main_domains": 32,
-    "rank": 105.1,
-    "main_domain_rank": 512.3,
-    "last_updated_time": "2026-09-04 12:09:17 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-04-27 16:45:00 +00:00"
-   }
-  },
-  {
-   "keyword": "how to fill out a commercial invoice",
-   "keyword_info": {
-    "last_updated_time": "2026-09-17 09:56:43 +00:00",
-    "competition": 0.02,
-    "competition_level": "LOW",
-    "cpc": 2.73,
-    "search_volume": 70,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 170,
-     "2026-07": 70,
-     "2026-06": 40,
-     "2026-05": 50,
-     "2026-04": 50,
-     "2026-03": 70,
-     "2026-02": 50,
-     "2026-01": 50,
-     "2025-12": 40,
-     "2025-11": 40,
-     "2025-10": 50,
-     "2025-09": 90
+    {
+      "keyword": "fas incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:32:51 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 40,
+        "categories": [10004, 13804],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 40,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "quarterly": -33,
+          "yearly": -82
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "fas incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16.7,
+        "dofollow": 7.6,
+        "referring_pages": 9.9,
+        "referring_domains": 4.6,
+        "referring_main_domains": 4.2,
+        "rank": 35.1,
+        "main_domain_rank": 472.7,
+        "last_updated_time": "2026-10-03 23:55:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["navigational"],
+        "last_updated_time": "2026-04-27 17:22:47 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 143,
-     "quarterly": 325,
-     "yearly": 143
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 20,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 429.3,
-    "dofollow": 397.4,
-    "referring_pages": 412.1,
-    "referring_domains": 22.4,
-    "referring_main_domains": 20.4,
-    "rank": 116.3,
-    "main_domain_rank": 560.7,
-    "last_updated_time": "2026-09-23 15:08:47 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-27 21:19:51 +00:00"
-   }
-  },
-  {
-   "keyword": "hs code",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 13:15:09 +00:00",
-    "competition": 0.04,
-    "competition_level": "LOW",
-    "cpc": 7.97,
-    "search_volume": 14800,
-    "low_top_of_page_bid": 1.2,
-    "high_top_of_page_bid": 10.29,
-    "categories": [
-     10016,
-     10141,
-     11029
-    ],
-    "monthly_searches": {
-     "2026-08": 14800,
-     "2026-07": 14800,
-     "2026-06": 12100,
-     "2026-05": 12100,
-     "2026-04": 14800,
-     "2026-03": 14800,
-     "2026-02": 12100,
-     "2026-01": 14800,
-     "2025-12": 12100,
-     "2025-11": 12100,
-     "2025-10": 14800,
-     "2025-09": 18100
+    {
+      "keyword": "fca incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:14:35 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 2.64,
+        "search_volume": 6600,
+        "low_top_of_page_bid": 0.09,
+        "high_top_of_page_bid": 1.46,
+        "categories": [10012],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 6600,
+          "2026-04": 6600,
+          "2026-03": 8100,
+          "2026-02": 6600,
+          "2026-01": 6600,
+          "2025-12": 6600,
+          "2025-11": 6600,
+          "2025-10": 8100,
+          "2025-09": 8100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "fca incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.5,
+        "dofollow": 7.6,
+        "referring_pages": 14.1,
+        "referring_domains": 8.4,
+        "referring_main_domains": 8.3,
+        "rank": 52.1,
+        "main_domain_rank": 462.7,
+        "last_updated_time": "2026-09-03 09:42:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": ["informational", "commercial"],
+        "last_updated_time": "2026-04-27 17:22:58 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": 22
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "codes hs",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 74,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 12560.9,
-    "dofollow": 10395.3,
-    "referring_pages": 10769.7,
-    "referring_domains": 224.2,
-    "referring_main_domains": 307.3,
-    "rank": 227.5,
-    "main_domain_rank": 530.4,
-    "last_updated_time": "2023-10-10 20:30:29 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-27 20:39:48 +00:00"
-   }
-  },
-  {
-   "keyword": "hs code lookup",
-   "keyword_info": {
-    "last_updated_time": "2026-09-14 10:42:34 +00:00",
-    "competition": 0.08,
-    "competition_level": "LOW",
-    "cpc": 6.05,
-    "search_volume": 4400,
-    "low_top_of_page_bid": 1.25,
-    "high_top_of_page_bid": 7.5,
-    "categories": [
-     10004,
-     10290,
-     11208
-    ],
-    "monthly_searches": {
-     "2026-08": 3600,
-     "2026-07": 3600,
-     "2026-06": 3600,
-     "2026-05": 3600,
-     "2026-04": 4400,
-     "2026-03": 4400,
-     "2026-02": 3600,
-     "2026-01": 4400,
-     "2025-12": 4400,
-     "2025-11": 4400,
-     "2025-10": 4400,
-     "2025-09": 5400
+    {
+      "keyword": "fob incoterm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:52:49 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 2.78,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 3.16,
+        "categories": [10008],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 26
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "fob incoterms",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "nl",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 117.5,
+        "dofollow": 85.7,
+        "referring_pages": 94.5,
+        "referring_domains": 33.9,
+        "referring_main_domains": 32,
+        "rank": 105.1,
+        "main_domain_rank": 512.3,
+        "last_updated_time": "2026-09-04 12:09:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-27 16:45:00 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "yearly": -33
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 72,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 13956.6,
-    "dofollow": 11580,
-    "referring_pages": 12139.1,
-    "referring_domains": 287.9,
-    "referring_main_domains": 387.5,
-    "rank": 311.7,
-    "main_domain_rank": 420.7,
-    "last_updated_time": "2023-10-11 10:31:51 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-28 01:41:35 +00:00"
-   }
-  },
-  {
-   "keyword": "incodocs",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 12:05:57 +00:00",
-    "competition": 0.01,
-    "competition_level": "LOW",
-    "cpc": 27.27,
-    "search_volume": 140,
-    "categories": [
-     10004,
-     10302,
-     11359,
-     12684,
-     13464
-    ],
-    "monthly_searches": {
-     "2026-08": 90,
-     "2026-07": 90,
-     "2026-06": 110,
-     "2026-05": 110,
-     "2026-04": 140,
-     "2026-03": 110,
-     "2026-02": 110,
-     "2026-01": 140,
-     "2025-12": 170,
-     "2025-11": 170,
-     "2025-10": 170,
-     "2025-09": 170
+    {
+      "keyword": "how to fill out a commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:56:43 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 2.73,
+        "search_volume": 70,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 70,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 143,
+          "quarterly": 325,
+          "yearly": 143
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 429.3,
+        "dofollow": 397.4,
+        "referring_pages": 412.1,
+        "referring_domains": 22.4,
+        "referring_main_domains": 20.4,
+        "rank": 116.3,
+        "main_domain_rank": 560.7,
+        "last_updated_time": "2026-09-23 15:08:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:19:51 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": -18,
-     "yearly": -36
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 15,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 64.3,
-    "dofollow": 33,
-    "referring_pages": 57.8,
-    "referring_domains": 28.6,
-    "referring_main_domains": 27.4,
-    "rank": 69.4,
-    "main_domain_rank": 636.1,
-    "last_updated_time": "2026-09-15 18:12:58 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "foreign_intent": [
-     "navigational"
-    ],
-    "last_updated_time": "2026-04-28 14:38:11 +00:00"
-   }
-  },
-  {
-   "keyword": "incodocs alternative",
-   "keyword_info": {
-    "last_updated_time": "2026-06-13 23:58:18 +00:00",
-    "categories": [
-     10019,
-     10168,
-     10885,
-     13114
-    ]
-   },
-   "keyword_properties": {
-    "detected_language": "en"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-04-28 13:06:23 +00:00"
-   }
-  },
-  {
-   "keyword": "incoterms",
-   "keyword_info": {
-    "last_updated_time": "2026-09-15 04:34:39 +00:00",
-    "competition": 0.03,
-    "competition_level": "LOW",
-    "cpc": 15.68,
-    "search_volume": 22200,
-    "low_top_of_page_bid": 0.17,
-    "high_top_of_page_bid": 13.32,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 18100,
-     "2026-07": 18100,
-     "2026-06": 22200,
-     "2026-05": 18100,
-     "2026-04": 22200,
-     "2026-03": 22200,
-     "2026-02": 22200,
-     "2026-01": 22200,
-     "2025-12": 18100,
-     "2025-11": 22200,
-     "2025-10": 27100,
-     "2025-09": 27100
+    {
+      "keyword": "hs code",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:15:09 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 7.97,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 1.2,
+        "high_top_of_page_bid": 10.29,
+        "categories": [10016, 10141, 11029],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 14800,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 14800,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 14800,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 18100
+        },
+        "search_volume_trend": {
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "codes hs",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 74,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12560.9,
+        "dofollow": 10395.3,
+        "referring_pages": 10769.7,
+        "referring_domains": 224.2,
+        "referring_main_domains": 307.3,
+        "rank": 227.5,
+        "main_domain_rank": 530.4,
+        "last_updated_time": "2023-10-10 20:30:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:39:48 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "quarterly": -18,
-     "yearly": -18
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 41,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 4520.8,
-    "dofollow": 4245.6,
-    "referring_pages": 4344.8,
-    "referring_domains": 210.5,
-    "referring_main_domains": 194.3,
-    "rank": 240.2,
-    "main_domain_rank": 503.6,
-    "last_updated_time": "2026-07-30 06:53:03 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-27 23:57:52 +00:00"
-   }
-  },
-  {
-   "keyword": "incoterms 2020",
-   "keyword_info": {
-    "last_updated_time": "2026-09-16 11:18:34 +00:00",
-    "competition": 0.04,
-    "competition_level": "LOW",
-    "cpc": 4.67,
-    "search_volume": 2900,
-    "low_top_of_page_bid": 0.32,
-    "high_top_of_page_bid": 16.39,
-    "categories": [
-     10004,
-     13841
-    ],
-    "monthly_searches": {
-     "2026-08": 2900,
-     "2026-07": 2900,
-     "2026-06": 2900,
-     "2026-05": 2900,
-     "2026-04": 2900,
-     "2026-03": 3600,
-     "2026-02": 2900,
-     "2026-01": 2900,
-     "2025-12": 2900,
-     "2025-11": 2900,
-     "2025-10": 3600,
-     "2025-09": 3600
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 26,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 4472.3,
-    "dofollow": 4195.4,
-    "referring_pages": 4295.4,
-    "referring_domains": 197,
-    "referring_main_domains": 181.3,
-    "rank": 174.5,
-    "main_domain_rank": 471.3,
-    "last_updated_time": "2026-07-31 04:04:30 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-28 00:24:48 +00:00"
-   }
-  },
-  {
-   "keyword": "landed cost calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 00:43:54 +00:00",
-    "competition": 0.08,
-    "competition_level": "LOW",
-    "cpc": 7.93,
-    "search_volume": 320,
-    "low_top_of_page_bid": 2.23,
-    "high_top_of_page_bid": 6.41,
-    "categories": [
-     10004,
-     10300,
-     11328
-    ],
-    "monthly_searches": {
-     "2026-08": 260,
-     "2026-07": 320,
-     "2026-06": 260,
-     "2026-05": 320,
-     "2026-04": 590,
-     "2026-03": 590,
-     "2026-02": 210,
-     "2026-01": 140,
-     "2025-12": 170,
-     "2025-11": 170,
-     "2025-10": 170,
-     "2025-09": 210
+    {
+      "keyword": "hs code lookup",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:42:34 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 6.05,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.25,
+        "high_top_of_page_bid": 7.5,
+        "categories": [10004, 10290, 11208],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 72,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13956.6,
+        "dofollow": 11580,
+        "referring_pages": 12139.1,
+        "referring_domains": 287.9,
+        "referring_main_domains": 387.5,
+        "rank": 311.7,
+        "main_domain_rank": 420.7,
+        "last_updated_time": "2023-10-11 10:31:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:41:35 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -19,
-     "yearly": 53
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "landing cost calculator",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 10,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 24.9,
-    "dofollow": 16.9,
-    "referring_pages": 21.8,
-    "referring_domains": 11.2,
-    "referring_main_domains": 10.1,
-    "rank": 90.5,
-    "main_domain_rank": 491.9,
-    "last_updated_time": "2026-09-09 02:49:38 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "commercial",
-    "last_updated_time": "2026-05-03 04:28:32 +00:00"
-   }
-  },
-  {
-   "keyword": "packing list generator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 21:51:35 +00:00",
-    "competition": 0.05,
-    "competition_level": "LOW",
-    "cpc": 4.27,
-    "search_volume": 390,
-    "low_top_of_page_bid": 1.43,
-    "high_top_of_page_bid": 4.49,
-    "categories": [
-     10021,
-     10178,
-     10937,
-     12262
-    ],
-    "monthly_searches": {
-     "2026-08": 590,
-     "2026-07": 720,
-     "2026-06": 590,
-     "2026-05": 480,
-     "2026-04": 320,
-     "2026-03": 390,
-     "2026-02": 260,
-     "2026-01": 260,
-     "2025-12": 320,
-     "2025-11": 260,
-     "2025-10": 210,
-     "2025-09": 210
+    {
+      "keyword": "incodocs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 12:05:57 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 27.27,
+        "search_volume": 140,
+        "categories": [10004, 10302, 11359, 12684, 13464],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 90,
+          "2026-06": 110,
+          "2026-05": 110,
+          "2026-04": 140,
+          "2026-03": 110,
+          "2026-02": 110,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 170,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 64.3,
+        "dofollow": 33,
+        "referring_pages": 57.8,
+        "referring_domains": 28.6,
+        "referring_main_domains": 27.4,
+        "rank": 69.4,
+        "main_domain_rank": 636.1,
+        "last_updated_time": "2026-09-15 18:12:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": ["navigational"],
+        "last_updated_time": "2026-04-28 14:38:11 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -18,
-     "yearly": 127
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 3,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 64.9,
-    "dofollow": 49.9,
-    "referring_pages": 62,
-    "referring_domains": 35.1,
-    "referring_main_domains": 33.6,
-    "rank": 87.2,
-    "main_domain_rank": 353.6,
-    "last_updated_time": "2026-09-08 00:54:54 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "navigational",
-    "last_updated_time": "2026-05-08 07:28:41 +00:00"
-   }
-  },
-  {
-   "keyword": "packing list template",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 01:57:46 +00:00",
-    "competition": 0.71,
-    "competition_level": "HIGH",
-    "cpc": 2.47,
-    "search_volume": 2400,
-    "low_top_of_page_bid": 1.74,
-    "high_top_of_page_bid": 4.15,
-    "categories": [
-     10011,
-     10087,
-     10493,
-     11757
-    ],
-    "monthly_searches": {
-     "2026-08": 1900,
-     "2026-07": 2900,
-     "2026-06": 2900,
-     "2026-05": 2900,
-     "2026-04": 2400,
-     "2026-03": 2900,
-     "2026-02": 2400,
-     "2026-01": 2400,
-     "2025-12": 1900,
-     "2025-11": 2400,
-     "2025-10": 2400,
-     "2025-09": 2900
+    {
+      "keyword": "incodocs alternative",
+      "keyword_info": {
+        "last_updated_time": "2026-06-13 23:58:18 +00:00",
+        "categories": [10019, 10168, 10885, 13114]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-28 13:06:23 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -34,
-     "quarterly": -34,
-     "yearly": -34
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "packing list templates",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 5,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 12.3,
-    "dofollow": 5.1,
-    "referring_pages": 9,
-    "referring_domains": 5.5,
-    "referring_main_domains": 5.1,
-    "rank": 62.5,
-    "main_domain_rank": 521.5,
-    "last_updated_time": "2026-09-04 10:02:44 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 17:54:51 +00:00"
-   }
-  },
-  {
-   "keyword": "packing list vs commercial invoice",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 21:30:03 +00:00",
-    "competition": 0,
-    "competition_level": "LOW",
-    "search_volume": 10,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 10,
-     "2026-07": 10,
-     "2026-05": 10,
-     "2026-04": 10,
-     "2026-03": 10,
-     "2026-02": 10,
-     "2026-01": 10,
-     "2025-12": 10,
-     "2025-11": 10,
-     "2025-10": 10,
-     "2025-09": 10
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "detected_language": "en"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 17:56:15 +00:00"
-   }
-  },
-  {
-   "keyword": "proforma invoice",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 13:38:48 +00:00",
-    "competition": 0.08,
-    "competition_level": "LOW",
-    "cpc": 11.58,
-    "search_volume": 12100,
-    "low_top_of_page_bid": 0.19,
-    "high_top_of_page_bid": 21.24,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 12100,
-     "2026-07": 9900,
-     "2026-06": 12100,
-     "2026-05": 12100,
-     "2026-04": 12100,
-     "2026-03": 12100,
-     "2026-02": 9900,
-     "2026-01": 12100,
-     "2025-12": 12100,
-     "2025-11": 12100,
-     "2025-10": 12100,
-     "2025-09": 12100
+    {
+      "keyword": "incoterms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:34:39 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 15.68,
+        "search_volume": 22200,
+        "low_top_of_page_bid": 0.17,
+        "high_top_of_page_bid": 13.32,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 18100,
+          "2026-07": 18100,
+          "2026-06": 22200,
+          "2026-05": 18100,
+          "2026-04": 22200,
+          "2026-03": 22200,
+          "2026-02": 22200,
+          "2026-01": 22200,
+          "2025-12": 18100,
+          "2025-11": 22200,
+          "2025-10": 27100,
+          "2025-09": 27100
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 41,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4520.8,
+        "dofollow": 4245.6,
+        "referring_pages": 4344.8,
+        "referring_domains": 210.5,
+        "referring_main_domains": 194.3,
+        "rank": 240.2,
+        "main_domain_rank": 503.6,
+        "last_updated_time": "2026-07-30 06:53:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:57:52 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 22
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 7,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 1315.3,
-    "dofollow": 1275.2,
-    "referring_pages": 1277.7,
-    "referring_domains": 14.6,
-    "referring_main_domains": 13.4,
-    "rank": 90.1,
-    "main_domain_rank": 499.7,
-    "last_updated_time": "2026-08-03 10:00:13 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "transactional",
-    "last_updated_time": "2026-05-07 09:24:47 +00:00"
-   }
-  },
-  {
-   "keyword": "proforma invoice generator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 05:52:53 +00:00",
-    "competition": 0.71,
-    "competition_level": "HIGH",
-    "cpc": 19.71,
-    "search_volume": 40,
-    "low_top_of_page_bid": 2.66,
-    "high_top_of_page_bid": 22.27,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 20,
-     "2026-07": 30,
-     "2026-06": 10,
-     "2026-05": 30,
-     "2026-04": 50,
-     "2026-03": 210,
-     "2026-02": 20,
-     "2026-01": 20,
-     "2025-12": 40,
-     "2025-11": 40,
-     "2025-10": 40,
-     "2025-09": 20
+    {
+      "keyword": "incoterms 2020",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:18:34 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 4.67,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.32,
+        "high_top_of_page_bid": 16.39,
+        "categories": [10004, 13841],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 3600,
+          "2025-09": 3600
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4472.3,
+        "dofollow": 4195.4,
+        "referring_pages": 4295.4,
+        "referring_domains": 197,
+        "referring_main_domains": 181.3,
+        "rank": 174.5,
+        "main_domain_rank": 471.3,
+        "last_updated_time": "2026-07-31 04:04:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:24:48 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -33,
-     "quarterly": 100,
-     "yearly": -50
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 13,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 251.2,
-    "dofollow": 158.3,
-    "referring_pages": 172.1,
-    "referring_domains": 62.4,
-    "referring_main_domains": 60.7,
-    "rank": 125,
-    "main_domain_rank": 420.3,
-    "last_updated_time": "2026-10-02 07:15:55 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "commercial",
-    "foreign_intent": [
-     "transactional"
-    ],
-    "last_updated_time": "2026-04-29 18:20:02 +00:00"
-   }
-  },
-  {
-   "keyword": "proforma invoice template",
-   "keyword_info": {
-    "last_updated_time": "2026-09-12 17:22:59 +00:00",
-    "competition": 0.12,
-    "competition_level": "LOW",
-    "cpc": 7.16,
-    "search_volume": 1300,
-    "low_top_of_page_bid": 1.76,
-    "high_top_of_page_bid": 13.59,
-    "categories": [
-     10019,
-     10168,
-     10537,
-     10885,
-     12209
-    ],
-    "monthly_searches": {
-     "2026-08": 5400,
-     "2026-07": 880,
-     "2026-06": 720,
-     "2026-05": 880,
-     "2026-04": 1000,
-     "2026-03": 1000,
-     "2026-02": 1000,
-     "2026-01": 880,
-     "2025-12": 720,
-     "2025-11": 880,
-     "2025-10": 1000,
-     "2025-09": 1300
+    {
+      "keyword": "landed cost calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:43:54 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 7.93,
+        "search_volume": 320,
+        "low_top_of_page_bid": 2.23,
+        "high_top_of_page_bid": 6.41,
+        "categories": [10004, 10300, 11328],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 260,
+          "2026-05": 320,
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 210,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 170,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": 53
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "landing cost calculator",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24.9,
+        "dofollow": 16.9,
+        "referring_pages": 21.8,
+        "referring_domains": 11.2,
+        "referring_main_domains": 10.1,
+        "rank": 90.5,
+        "main_domain_rank": 491.9,
+        "last_updated_time": "2026-09-09 02:49:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-05-03 04:28:32 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": 514,
-     "quarterly": 650,
-     "yearly": 440
-    }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 5,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 24.5,
-    "dofollow": 18.8,
-    "referring_pages": 20.5,
-    "referring_domains": 9.9,
-    "referring_main_domains": 9.3,
-    "rank": 70.9,
-    "main_domain_rank": 569.4,
-    "last_updated_time": "2026-08-01 09:45:54 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 17:59:20 +00:00"
-   }
-  },
-  {
-   "keyword": "shipping documents",
-   "keyword_info": {
-    "last_updated_time": "2026-09-13 10:29:33 +00:00",
-    "competition": 0.08,
-    "competition_level": "LOW",
-    "cpc": 10.71,
-    "search_volume": 590,
-    "low_top_of_page_bid": 1.59,
-    "high_top_of_page_bid": 12.34,
-    "categories": [
-     10004,
-     10305,
-     11103
-    ],
-    "monthly_searches": {
-     "2026-08": 590,
-     "2026-07": 720,
-     "2026-06": 590,
-     "2026-05": 590,
-     "2026-04": 720,
-     "2026-03": 720,
-     "2026-02": 590,
-     "2026-01": 590,
-     "2025-12": 590,
-     "2025-11": 720,
-     "2025-10": 720,
-     "2025-09": 590
+    {
+      "keyword": "packing list generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:51:35 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 4.27,
+        "search_volume": 390,
+        "low_top_of_page_bid": 1.43,
+        "high_top_of_page_bid": 4.49,
+        "categories": [10021, 10178, 10937, 12262],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 590,
+          "2026-05": 480,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 320,
+          "2025-11": 260,
+          "2025-10": 210,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 127
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 64.9,
+        "dofollow": 49.9,
+        "referring_pages": 62,
+        "referring_domains": 35.1,
+        "referring_main_domains": 33.6,
+        "rank": 87.2,
+        "main_domain_rank": 353.6,
+        "last_updated_time": "2026-09-08 00:54:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-05-08 07:28:41 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -18
-    }
-   },
-   "keyword_properties": {
-    "core_keyword": "shipping document",
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 30,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 35,
-    "dofollow": 25.4,
-    "referring_pages": 30.3,
-    "referring_domains": 16.6,
-    "referring_main_domains": 15.4,
-    "rank": 98.4,
-    "main_domain_rank": 497.9,
-    "last_updated_time": "2025-10-24 06:27:45 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "commercial",
-    "foreign_intent": [
-     "transactional",
-     "informational"
-    ],
-    "last_updated_time": "2026-04-28 22:55:10 +00:00"
-   }
-  },
-  {
-   "keyword": "volumetric weight calculator",
-   "keyword_info": {
-    "last_updated_time": "2026-09-17 01:43:25 +00:00",
-    "competition": 0.22,
-    "competition_level": "LOW",
-    "cpc": 3.5,
-    "search_volume": 320,
-    "low_top_of_page_bid": 1.1,
-    "high_top_of_page_bid": 7.64,
-    "categories": [
-     10004,
-     10004,
-     10300,
-     10300,
-     11328
-    ],
-    "monthly_searches": {
-     "2026-08": 260,
-     "2026-07": 390,
-     "2026-06": 260,
-     "2026-05": 320,
-     "2026-04": 320,
-     "2026-03": 320,
-     "2026-02": 210,
-     "2026-01": 210,
-     "2025-12": 260,
-     "2025-11": 320,
-     "2025-10": 320,
-     "2025-09": 320
+    {
+      "keyword": "packing list template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:57:46 +00:00",
+        "competition": 0.71,
+        "competition_level": "HIGH",
+        "cpc": 2.47,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 1.74,
+        "high_top_of_page_bid": 4.15,
+        "categories": [10011, 10087, 10493, 11757],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 2400,
+          "2025-10": 2400,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": -34,
+          "quarterly": -34,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list templates",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12.3,
+        "dofollow": 5.1,
+        "referring_pages": 9,
+        "referring_domains": 5.5,
+        "referring_main_domains": 5.1,
+        "rank": 62.5,
+        "main_domain_rank": 521.5,
+        "last_updated_time": "2026-09-04 10:02:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:54:51 +00:00"
+      }
     },
-    "search_volume_trend": {
-     "monthly": -33,
-     "yearly": -33
+    {
+      "keyword": "packing list vs commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:30:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:56:15 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:38:48 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 11.58,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.19,
+        "high_top_of_page_bid": 21.24,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "monthly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1315.3,
+        "dofollow": 1275.2,
+        "referring_pages": 1277.7,
+        "referring_domains": 14.6,
+        "referring_main_domains": 13.4,
+        "rank": 90.1,
+        "main_domain_rank": 499.7,
+        "last_updated_time": "2026-08-03 10:00:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-05-07 09:24:47 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:52:53 +00:00",
+        "competition": 0.71,
+        "competition_level": "HIGH",
+        "cpc": 19.71,
+        "search_volume": 40,
+        "low_top_of_page_bid": 2.66,
+        "high_top_of_page_bid": 22.27,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 50,
+          "2026-03": 210,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": 100,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 251.2,
+        "dofollow": 158.3,
+        "referring_pages": 172.1,
+        "referring_domains": 62.4,
+        "referring_main_domains": 60.7,
+        "rank": 125,
+        "main_domain_rank": 420.3,
+        "last_updated_time": "2026-10-02 07:15:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": ["transactional"],
+        "last_updated_time": "2026-04-29 18:20:02 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:22:59 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 7.16,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.76,
+        "high_top_of_page_bid": 13.59,
+        "categories": [10019, 10168, 10537, 10885, 12209],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1000,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 514,
+          "quarterly": 650,
+          "yearly": 440
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24.5,
+        "dofollow": 18.8,
+        "referring_pages": 20.5,
+        "referring_domains": 9.9,
+        "referring_main_domains": 9.3,
+        "rank": 70.9,
+        "main_domain_rank": 569.4,
+        "last_updated_time": "2026-08-01 09:45:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:59:20 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping documents",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 10:29:33 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 10.71,
+        "search_volume": 590,
+        "low_top_of_page_bid": 1.59,
+        "high_top_of_page_bid": 12.34,
+        "categories": [10004, 10305, 11103],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 590,
+          "2026-05": 590,
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 590,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping document",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35,
+        "dofollow": 25.4,
+        "referring_pages": 30.3,
+        "referring_domains": 16.6,
+        "referring_main_domains": 15.4,
+        "rank": 98.4,
+        "main_domain_rank": 497.9,
+        "last_updated_time": "2025-10-24 06:27:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": ["transactional", "informational"],
+        "last_updated_time": "2026-04-28 22:55:10 +00:00"
+      }
+    },
+    {
+      "keyword": "volumetric weight calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:43:25 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 3.5,
+        "search_volume": 320,
+        "low_top_of_page_bid": 1.1,
+        "high_top_of_page_bid": 7.64,
+        "categories": [10004, 10004, 10300, 10300, 11328],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 390,
+          "2026-06": 260,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 166.8,
+        "dofollow": 91.4,
+        "referring_pages": 95.2,
+        "referring_domains": 6.8,
+        "referring_main_domains": 5.9,
+        "rank": 102.2,
+        "main_domain_rank": 394.2,
+        "last_updated_time": "2026-09-08 16:32:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:25:27 +00:00"
+      }
     }
-   },
-   "keyword_properties": {
-    "synonym_clustering_algorithm": "text_processing",
-    "keyword_difficulty": 7,
-    "detected_language": "en"
-   },
-   "avg_backlinks_info": {
-    "backlinks": 166.8,
-    "dofollow": 91.4,
-    "referring_pages": 95.2,
-    "referring_domains": 6.8,
-    "referring_main_domains": 5.9,
-    "rank": 102.2,
-    "main_domain_rank": 394.2,
-    "last_updated_time": "2026-09-08 16:32:10 +00:00"
-   },
-   "search_intent_info": {
-    "main_intent": "informational",
-    "last_updated_time": "2026-04-29 23:25:27 +00:00"
-   }
-  }
- ]
+  ]
 }

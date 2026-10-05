@@ -1,211 +1,211 @@
 {
- "id": "10051919-2048-0385-0000-28bdbf4742a3",
- "endpoint": "dataforseo_labs/google/relevant_pages/live",
- "target": "incodocs.com",
- "location": "United States",
- "total_count": 536,
- "order_by": "metrics.organic.etv,desc",
- "_note": "Condensed transcription of inline response: page path, organic etv (estimated monthly US traffic, DataForSEO model), ranking keyword count. Position-bucket details omitted. No cost field reported by the MCP response.",
- "items": [
-  {
-   "page": "https://incodocs.com/blog/alpha-bravo-charlie-nato-phonetic-alphabet/",
-   "organic_etv": 6477,
-   "keyword_count": 374
-  },
-  {
-   "page": "https://incodocs.com/ports/de/air-port/destr",
-   "organic_etv": 3262,
-   "keyword_count": 1
-  },
-  {
-   "page": "https://incodocs.com/blog/nmfc-codes-chart/",
-   "organic_etv": 1181,
-   "keyword_count": 112
-  },
-  {
-   "page": "https://incodocs.com/blog/incoterms-2020-explained-the-complete-guide/",
-   "organic_etv": 998,
-   "keyword_count": 82
-  },
-  {
-   "page": "https://incodocs.com/blog/fca-vs-fob-incoterms/",
-   "organic_etv": 452,
-   "keyword_count": 62
-  },
-  {
-   "page": "https://incodocs.com/blog/net-weight-vs-gross-weight-vs-tare-weight/",
-   "organic_etv": 418,
-   "keyword_count": 76
-  },
-  {
-   "page": "https://incodocs.com/ports/it",
-   "organic_etv": 278,
-   "keyword_count": 28
-  },
-  {
-   "page": "https://incodocs.com/template/proforma_invoice",
-   "organic_etv": 276,
-   "keyword_count": 23
-  },
-  {
-   "page": "https://incodocs.com/blog/largest-port-in-us/",
-   "organic_etv": 272,
-   "keyword_count": 73
-  },
-  {
-   "page": "https://incodocs.com/blog/exw-incoterm/",
-   "organic_etv": 265,
-   "keyword_count": 70
-  },
-  {
-   "page": "https://incodocs.com/ports/us/sea-port/ustiw",
-   "organic_etv": 241,
-   "keyword_count": 35
-  },
-  {
-   "page": "https://incodocs.com/blog/comparative-advantage/",
-   "organic_etv": 228,
-   "keyword_count": 55
-  },
-  {
-   "page": "https://incodocs.com/ports/kr",
-   "organic_etv": 209,
-   "keyword_count": 8
-  },
-  {
-   "page": "https://incodocs.com/blog/just-in-time-manufacturing-jit/",
-   "organic_etv": 178,
-   "keyword_count": 51
-  },
-  {
-   "page": "https://incodocs.com/ports/us",
-   "organic_etv": 158,
-   "keyword_count": 77
-  },
-  {
-   "page": "https://incodocs.com/ports/co",
-   "organic_etv": 156,
-   "keyword_count": 6
-  },
-  {
-   "page": "https://incodocs.com/template/packing_list",
-   "organic_etv": 151,
-   "keyword_count": 36
-  },
-  {
-   "page": "https://incodocs.com/blog/berthing-shipping/",
-   "organic_etv": 148,
-   "keyword_count": 18
-  },
-  {
-   "page": "https://incodocs.com/template/bill_of_lading",
-   "organic_etv": 147,
-   "keyword_count": 131
-  },
-  {
-   "page": "https://incodocs.com/blog/3pl-third-party-logistics/",
-   "organic_etv": 145,
-   "keyword_count": 13
-  },
-  {
-   "page": "https://incodocs.com/template/bill_of_exchange",
-   "organic_etv": 127,
-   "keyword_count": 19
-  },
-  {
-   "page": "https://incodocs.com/blog/general-purpose-gp-vs-high-cube-hc/",
-   "organic_etv": 124,
-   "keyword_count": 15
-  },
-  {
-   "page": "https://incodocs.com/ports/ru",
-   "organic_etv": 123,
-   "keyword_count": 10
-  },
-  {
-   "page": "https://incodocs.com/ports/ua",
-   "organic_etv": 112,
-   "keyword_count": 7
-  },
-  {
-   "page": "https://incodocs.com/blog/un-locode/",
-   "organic_etv": 112,
-   "keyword_count": 11
-  },
-  {
-   "page": "https://incodocs.com/ports/us/sea-port/uslgb",
-   "organic_etv": 107,
-   "keyword_count": 40
-  },
-  {
-   "page": "https://incodocs.com/blog/what-are-freight-charges/",
-   "organic_etv": 106,
-   "keyword_count": 28
-  },
-  {
-   "page": "https://incodocs.com/blog/hs-code-hts-code-tariff-explained/",
-   "organic_etv": 106,
-   "keyword_count": 55
-  },
-  {
-   "page": "https://incodocs.com/ports/eg",
-   "organic_etv": 102,
-   "keyword_count": 2
-  },
-  {
-   "page": "https://incodocs.com/blog/protectionism-in-trade/",
-   "organic_etv": 85,
-   "keyword_count": 44
-  },
-  {
-   "page": "https://incodocs.com/blog/tariff-rate-quota-vs-import-quota/",
-   "organic_etv": 85,
-   "keyword_count": 24
-  },
-  {
-   "page": "https://incodocs.com/blog/history-of-shipping-container-1956-world-trade/",
-   "organic_etv": 84,
-   "keyword_count": 19
-  },
-  {
-   "page": "https://incodocs.com/blog/most-favored-nation-mfn/",
-   "organic_etv": 80,
-   "keyword_count": 37
-  },
-  {
-   "page": "https://incodocs.com/ports/ar",
-   "organic_etv": 76,
-   "keyword_count": 8
-  },
-  {
-   "page": "https://incodocs.com/ports/cu",
-   "organic_etv": 69,
-   "keyword_count": 5
-  },
-  {
-   "page": "https://incodocs.com/ports/cl",
-   "organic_etv": 65,
-   "keyword_count": 10
-  },
-  {
-   "page": "https://incodocs.com/blog/specific-duty/",
-   "organic_etv": 64,
-   "keyword_count": 2
-  },
-  {
-   "page": "https://incodocs.com/ports/us/sea-port/usbos",
-   "organic_etv": 63,
-   "keyword_count": 11
-  },
-  {
-   "page": "https://incodocs.com/ports/il",
-   "organic_etv": 62,
-   "keyword_count": 9
-  },
-  {
-   "page": "https://incodocs.com/ports/in/sea-port/innsa",
-   "organic_etv": 59,
-   "keyword_count": 12
-  }
- ]
+  "id": "10051919-2048-0385-0000-28bdbf4742a3",
+  "endpoint": "dataforseo_labs/google/relevant_pages/live",
+  "target": "incodocs.com",
+  "location": "United States",
+  "total_count": 536,
+  "order_by": "metrics.organic.etv,desc",
+  "_note": "Condensed transcription of inline response: page path, organic etv (estimated monthly US traffic, DataForSEO model), ranking keyword count. Position-bucket details omitted. No cost field reported by the MCP response.",
+  "items": [
+    {
+      "page": "https://incodocs.com/blog/alpha-bravo-charlie-nato-phonetic-alphabet/",
+      "organic_etv": 6477,
+      "keyword_count": 374
+    },
+    {
+      "page": "https://incodocs.com/ports/de/air-port/destr",
+      "organic_etv": 3262,
+      "keyword_count": 1
+    },
+    {
+      "page": "https://incodocs.com/blog/nmfc-codes-chart/",
+      "organic_etv": 1181,
+      "keyword_count": 112
+    },
+    {
+      "page": "https://incodocs.com/blog/incoterms-2020-explained-the-complete-guide/",
+      "organic_etv": 998,
+      "keyword_count": 82
+    },
+    {
+      "page": "https://incodocs.com/blog/fca-vs-fob-incoterms/",
+      "organic_etv": 452,
+      "keyword_count": 62
+    },
+    {
+      "page": "https://incodocs.com/blog/net-weight-vs-gross-weight-vs-tare-weight/",
+      "organic_etv": 418,
+      "keyword_count": 76
+    },
+    {
+      "page": "https://incodocs.com/ports/it",
+      "organic_etv": 278,
+      "keyword_count": 28
+    },
+    {
+      "page": "https://incodocs.com/template/proforma_invoice",
+      "organic_etv": 276,
+      "keyword_count": 23
+    },
+    {
+      "page": "https://incodocs.com/blog/largest-port-in-us/",
+      "organic_etv": 272,
+      "keyword_count": 73
+    },
+    {
+      "page": "https://incodocs.com/blog/exw-incoterm/",
+      "organic_etv": 265,
+      "keyword_count": 70
+    },
+    {
+      "page": "https://incodocs.com/ports/us/sea-port/ustiw",
+      "organic_etv": 241,
+      "keyword_count": 35
+    },
+    {
+      "page": "https://incodocs.com/blog/comparative-advantage/",
+      "organic_etv": 228,
+      "keyword_count": 55
+    },
+    {
+      "page": "https://incodocs.com/ports/kr",
+      "organic_etv": 209,
+      "keyword_count": 8
+    },
+    {
+      "page": "https://incodocs.com/blog/just-in-time-manufacturing-jit/",
+      "organic_etv": 178,
+      "keyword_count": 51
+    },
+    {
+      "page": "https://incodocs.com/ports/us",
+      "organic_etv": 158,
+      "keyword_count": 77
+    },
+    {
+      "page": "https://incodocs.com/ports/co",
+      "organic_etv": 156,
+      "keyword_count": 6
+    },
+    {
+      "page": "https://incodocs.com/template/packing_list",
+      "organic_etv": 151,
+      "keyword_count": 36
+    },
+    {
+      "page": "https://incodocs.com/blog/berthing-shipping/",
+      "organic_etv": 148,
+      "keyword_count": 18
+    },
+    {
+      "page": "https://incodocs.com/template/bill_of_lading",
+      "organic_etv": 147,
+      "keyword_count": 131
+    },
+    {
+      "page": "https://incodocs.com/blog/3pl-third-party-logistics/",
+      "organic_etv": 145,
+      "keyword_count": 13
+    },
+    {
+      "page": "https://incodocs.com/template/bill_of_exchange",
+      "organic_etv": 127,
+      "keyword_count": 19
+    },
+    {
+      "page": "https://incodocs.com/blog/general-purpose-gp-vs-high-cube-hc/",
+      "organic_etv": 124,
+      "keyword_count": 15
+    },
+    {
+      "page": "https://incodocs.com/ports/ru",
+      "organic_etv": 123,
+      "keyword_count": 10
+    },
+    {
+      "page": "https://incodocs.com/ports/ua",
+      "organic_etv": 112,
+      "keyword_count": 7
+    },
+    {
+      "page": "https://incodocs.com/blog/un-locode/",
+      "organic_etv": 112,
+      "keyword_count": 11
+    },
+    {
+      "page": "https://incodocs.com/ports/us/sea-port/uslgb",
+      "organic_etv": 107,
+      "keyword_count": 40
+    },
+    {
+      "page": "https://incodocs.com/blog/what-are-freight-charges/",
+      "organic_etv": 106,
+      "keyword_count": 28
+    },
+    {
+      "page": "https://incodocs.com/blog/hs-code-hts-code-tariff-explained/",
+      "organic_etv": 106,
+      "keyword_count": 55
+    },
+    {
+      "page": "https://incodocs.com/ports/eg",
+      "organic_etv": 102,
+      "keyword_count": 2
+    },
+    {
+      "page": "https://incodocs.com/blog/protectionism-in-trade/",
+      "organic_etv": 85,
+      "keyword_count": 44
+    },
+    {
+      "page": "https://incodocs.com/blog/tariff-rate-quota-vs-import-quota/",
+      "organic_etv": 85,
+      "keyword_count": 24
+    },
+    {
+      "page": "https://incodocs.com/blog/history-of-shipping-container-1956-world-trade/",
+      "organic_etv": 84,
+      "keyword_count": 19
+    },
+    {
+      "page": "https://incodocs.com/blog/most-favored-nation-mfn/",
+      "organic_etv": 80,
+      "keyword_count": 37
+    },
+    {
+      "page": "https://incodocs.com/ports/ar",
+      "organic_etv": 76,
+      "keyword_count": 8
+    },
+    {
+      "page": "https://incodocs.com/ports/cu",
+      "organic_etv": 69,
+      "keyword_count": 5
+    },
+    {
+      "page": "https://incodocs.com/ports/cl",
+      "organic_etv": 65,
+      "keyword_count": 10
+    },
+    {
+      "page": "https://incodocs.com/blog/specific-duty/",
+      "organic_etv": 64,
+      "keyword_count": 2
+    },
+    {
+      "page": "https://incodocs.com/ports/us/sea-port/usbos",
+      "organic_etv": 63,
+      "keyword_count": 11
+    },
+    {
+      "page": "https://incodocs.com/ports/il",
+      "organic_etv": 62,
+      "keyword_count": 9
+    },
+    {
+      "page": "https://incodocs.com/ports/in/sea-port/innsa",
+      "organic_etv": 59,
+      "keyword_count": 12
+    }
+  ]
 }

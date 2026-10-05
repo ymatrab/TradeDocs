@@ -87,9 +87,9 @@ export default function ProformaGeneratorPage() {
           ))}
         </ul>
         <p className="measure">
-          In U.S. customs the term has a second, narrower meaning: an importer without the
-          seller’s commercial invoice at entry can file a pro forma invoice under 19 CFR 141.85, a
-          statement of value with the commercial invoice to follow.{' '}
+          In U.S. customs the term has a second, narrower meaning: an importer without the seller’s
+          commercial invoice at entry can file a pro forma invoice under 19 CFR 141.85, a statement
+          of value with the commercial invoice to follow.{' '}
           <Link className="text-link" href="/guides/proforma-vs-commercial-invoice">
             Proforma vs commercial invoice, explained
           </Link>

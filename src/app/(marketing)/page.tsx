@@ -230,7 +230,9 @@ export default function Home() {
             <p className="eyebrow">One shipment. Every document.</p>
             <h1 id="hero-title">
               <Line index={0}>Enter a shipment once.</Line>{' '}
-              <Line index={1}>Get the whole <mark className="tape">document set</mark>.</Line>
+              <Line index={1}>
+                Get the whole <mark className="tape">document set</mark>.
+              </Line>
             </h1>
             <p className="lede">
               Record the parties, goods and terms one time. TradeDocs prepares the commercial
@@ -318,7 +320,9 @@ export default function Home() {
           <div className="section-head" style={{ marginBottom: 0 }}>
             <p className="eyebrow">The consistent set</p>
             <h2 id="set-title" className="display">
-              <Line index={0}><mark className="tape">Same numbers</mark>,</Line>{' '}
+              <Line index={0}>
+                <mark className="tape">Same numbers</mark>,
+              </Line>{' '}
               <Line index={1}>every page.</Line>
             </h2>
             <p>
@@ -355,9 +359,7 @@ export default function Home() {
                   </dd>
                 </div>
               </dl>
-              <p className="record-foot">
-                Example record · prepares {documents.length} documents
-              </p>
+              <p className="record-foot">Example record · prepares {documents.length} documents</p>
             </div>
           </div>
           <div
@@ -469,7 +471,9 @@ export default function Home() {
           <p className="eyebrow">Honest status</p>
           <h2 id="status-title" className="display">
             <Line index={0}>Free while</Line>{' '}
-            <Line index={1}><mark className="tape">early</mark>.</Line>
+            <Line index={1}>
+              <mark className="tape">early</mark>.
+            </Line>
           </h2>
           <p>
             There is no price yet. Paid plans will come later, with notice.
@@ -535,7 +539,9 @@ export default function Home() {
         <div className="inner">
           <p className="eyebrow">Next shipment</p>
           <h2 id="closing-title" className="display">
-            <Line index={0}>Stop <mark className="tape">reconciling</mark></Line>{' '}
+            <Line index={0}>
+              Stop <mark className="tape">reconciling</mark>
+            </Line>{' '}
             <Line index={1}>paperwork.</Line>
           </h2>
           <div className="cta-row">

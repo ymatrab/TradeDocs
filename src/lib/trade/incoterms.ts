@@ -59,8 +59,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     search: {
       title: 'EXW Incoterm — Ex Works in Incoterms 2020, explained',
       heading: 'EXW Incoterm: Ex Works (Incoterms® 2020)',
-      lead:
-        'EXW, Ex Works, is the Incoterms® rule with the least for the seller to do: it makes the goods available at its own premises and the buyer does everything from there.',
+      lead: 'EXW, Ex Works, is the Incoterms® rule with the least for the seller to do: it makes the goods available at its own premises and the buyer does everything from there.',
     },
     mode: 'any',
     riskPasses: 'At the seller’s premises, once the goods are placed at the buyer’s disposal.',
@@ -102,8 +101,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     search: {
       title: 'FCA Incoterm — Free Carrier in Incoterms 2020, explained',
       heading: 'FCA Incoterm: Free Carrier (Incoterms® 2020)',
-      lead:
-        'FCA, Free Carrier, is the Incoterms® rule under which the seller clears the goods for export and hands them to the buyer’s carrier at a named place.',
+      lead: 'FCA, Free Carrier, is the Incoterms® rule under which the seller clears the goods for export and hands them to the buyer’s carrier at a named place.',
     },
     mode: 'any',
     riskPasses: 'When the goods are handed to the carrier the buyer nominated, at the named place.',
@@ -220,8 +218,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     search: {
       title: 'DAP meaning — Delivered at Place in Incoterms 2020',
       heading: 'DAP meaning: Delivered at Place (Incoterms® 2020)',
-      lead:
-        'DAP means Delivered at Place: the seller delivers the goods to the named destination, and the buyer clears them for import and pays the duty and taxes.',
+      lead: 'DAP means Delivered at Place: the seller delivers the goods to the named destination, and the buyer clears them for import and pays the duty and taxes.',
     },
     mode: 'any',
     riskPasses:
@@ -306,8 +303,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     search: {
       title: 'DDP shipping — Delivered Duty Paid in Incoterms 2020, explained',
       heading: 'DDP shipping: Delivered Duty Paid (Incoterms® 2020)',
-      lead:
-        'DDP shipping means the seller delivers the goods to the buyer’s named place cleared for import, with the import duty and taxes paid.',
+      lead: 'DDP shipping means the seller delivers the goods to the buyer’s named place cleared for import, with the import duty and taxes paid.',
     },
     mode: 'any',
     riskPasses: 'At the named destination, ready for unloading, cleared for import.',
@@ -384,8 +380,7 @@ export const INCOTERMS: readonly Incoterm[] = [
     search: {
       title: 'FOB shipping meaning — Free on Board in Incoterms 2020',
       heading: 'FOB in shipping: Free on Board (Incoterms® 2020)',
-      lead:
-        'In shipping, FOB means Free on Board: an Incoterms® rule under which the seller loads the goods on board the vessel the buyer nominates, at the named port of shipment.',
+      lead: 'In shipping, FOB means Free on Board: an Incoterms® rule under which the seller loads the goods on board the vessel the buyer nominates, at the named port of shipment.',
     },
     mode: 'sea',
     riskPasses: 'When the goods are on board the vessel at the named port of shipment.',

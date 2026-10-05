@@ -1,64 +1,64 @@
 {
- "id": "10051916-2048-0399-0000-7734692e72f1",
- "status_code": 20000,
- "total_count": 2937,
- "_note": "Condensed transcription: this response was returned inline by the DataForSEO MCP tool and not persisted to disk; fields kept per item: keyword, search_volume, keyword_difficulty, main_intent, cpc. No cost field was reported by the MCP response.",
- "items": [
-  {
-   "keyword": "less than container load",
-   "search_volume": 22200,
-   "keyword_difficulty": 2,
-   "main_intent": "informational",
-   "cpc": 9.38
-  },
-  {
-   "keyword": "container loading",
-   "search_volume": 1300,
-   "keyword_difficulty": 4,
-   "main_intent": "informational",
-   "cpc": 7.52
-  },
-  {
-   "keyword": "load container",
-   "search_volume": 1300,
-   "keyword_difficulty": 4,
-   "main_intent": "transactional",
-   "cpc": 7.52
-  },
-  {
-   "keyword": "less than container load shipping",
-   "search_volume": 1300,
-   "keyword_difficulty": 9,
-   "main_intent": "commercial",
-   "cpc": 14.04
-  },
-  {
-   "keyword": "what is less than container load",
-   "search_volume": 880,
-   "keyword_difficulty": null,
-   "main_intent": "informational",
-   "cpc": null
-  },
-  {
-   "keyword": "full container load shipping",
-   "search_volume": 480,
-   "keyword_difficulty": 11,
-   "main_intent": "commercial",
-   "cpc": 15.99
-  },
-  {
-   "keyword": "how many pallets fit in 40 foot container",
-   "search_volume": 390,
-   "keyword_difficulty": null,
-   "main_intent": "informational",
-   "cpc": null
-  },
-  {
-   "keyword": "full container load meaning",
-   "search_volume": 320,
-   "keyword_difficulty": 9,
-   "main_intent": "informational",
-   "cpc": 0.63
-  }
- ]
+  "id": "10051916-2048-0399-0000-7734692e72f1",
+  "status_code": 20000,
+  "total_count": 2937,
+  "_note": "Condensed transcription: this response was returned inline by the DataForSEO MCP tool and not persisted to disk; fields kept per item: keyword, search_volume, keyword_difficulty, main_intent, cpc. No cost field was reported by the MCP response.",
+  "items": [
+    {
+      "keyword": "less than container load",
+      "search_volume": 22200,
+      "keyword_difficulty": 2,
+      "main_intent": "informational",
+      "cpc": 9.38
+    },
+    {
+      "keyword": "container loading",
+      "search_volume": 1300,
+      "keyword_difficulty": 4,
+      "main_intent": "informational",
+      "cpc": 7.52
+    },
+    {
+      "keyword": "load container",
+      "search_volume": 1300,
+      "keyword_difficulty": 4,
+      "main_intent": "transactional",
+      "cpc": 7.52
+    },
+    {
+      "keyword": "less than container load shipping",
+      "search_volume": 1300,
+      "keyword_difficulty": 9,
+      "main_intent": "commercial",
+      "cpc": 14.04
+    },
+    {
+      "keyword": "what is less than container load",
+      "search_volume": 880,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "full container load shipping",
+      "search_volume": 480,
+      "keyword_difficulty": 11,
+      "main_intent": "commercial",
+      "cpc": 15.99
+    },
+    {
+      "keyword": "how many pallets fit in 40 foot container",
+      "search_volume": 390,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "cpc": null
+    },
+    {
+      "keyword": "full container load meaning",
+      "search_volume": 320,
+      "keyword_difficulty": 9,
+      "main_intent": "informational",
+      "cpc": 0.63
+    }
+  ]
 }

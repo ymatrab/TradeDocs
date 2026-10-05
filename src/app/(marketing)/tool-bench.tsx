@@ -64,7 +64,9 @@ function BenchColumn({
   const id = useId();
   return (
     <article className="bench-col" aria-labelledby={`${id}-name`}>
-      <span className="bench-mark" aria-hidden="true">{tool.mark}</span>
+      <span className="bench-mark" aria-hidden="true">
+        {tool.mark}
+      </span>
       <h3 id={`${id}-name`} className="bench-name">
         <Link href={tool.href}>
           {tool.name} <ArrowRight size={16} aria-hidden="true" />

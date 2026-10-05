@@ -70,8 +70,7 @@ export const GUIDES: readonly Guide[] = [
     metaTitle: 'LCL vs FCL shipping — less than container load or full container',
     description:
       'What less than container load (LCL) and full container load (FCL) mean, how each is charged, where the break-even sits and what changes on your packing list.',
-    lede:
-      'Two ways to ship by sea in a container. One sells you space by the cubic metre, the other sells you the box. Which one is cheaper depends on your volume, and which one is safer depends on your cargo.',
+    lede: 'Two ways to ship by sea in a container. One sells you space by the cubic metre, the other sells you the box. Which one is cheaper depends on your volume, and which one is safer depends on your cargo.',
     answer:
       'LCL (less than container load) means your cargo shares a container with other shippers’ goods and you pay for the space you use, measured in cubic metres. FCL (full container load) means you book the whole container for your cargo alone, even if it is not full, and pay a price per container.',
     published: CONTENT_ROUND,
@@ -157,8 +156,7 @@ export const GUIDES: readonly Guide[] = [
     metaTitle: 'DAP vs DDP — the difference in Incoterms 2020, and when each goes wrong',
     description:
       'DAP and DDP both deliver to the buyer’s named place. The difference is import clearance, duties and taxes. What each rule puts on the seller and the buyer, with the traps in each.',
-    lede:
-      'Two delivered rules that look almost the same on a quotation. The seller carries the goods all the way to the buyer under both. The difference is who deals with customs on arrival, and who pays what customs asks for.',
+    lede: 'Two delivered rules that look almost the same on a quotation. The seller carries the goods all the way to the buyer under both. The difference is who deals with customs on arrival, and who pays what customs asks for.',
     answer:
       'Under DAP (Delivered at Place) the seller delivers to the named destination and the buyer clears the goods for import and pays the import duties and taxes. Under DDP (Delivered Duty Paid) the seller does that too: it clears the goods for import and pays the duties and taxes, so the buyer pays only the agreed price.',
     published: CONTENT_ROUND,
@@ -252,8 +250,7 @@ export const GUIDES: readonly Guide[] = [
     metaTitle: 'Proforma vs commercial invoice — the difference, and when you need each',
     description:
       'A proforma invoice is a quotation in invoice form, issued before the sale. A commercial invoice bills goods sold and is what customs values them from. What goes on each, and how they relate.',
-    lede:
-      'They look alike and carry many of the same fields, which is exactly why they get confused. They are issued at different moments, for different readers, and only one of them is the basis customs works from.',
+    lede: 'They look alike and carry many of the same fields, which is exactly why they get confused. They are issued at different moments, for different readers, and only one of them is the basis customs works from.',
     answer:
       'A proforma invoice is a quotation in the form of an invoice, sent before the sale is final so the buyer can arrange payment, a letter of credit or an import licence. A commercial invoice is issued for goods actually sold and shipped; it requests payment and is the document customs in the importing country uses to assess duties and taxes.',
     published: CONTENT_ROUND,

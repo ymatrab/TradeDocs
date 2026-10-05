@@ -77,8 +77,7 @@ export function LandedCostCalculator() {
   });
 
   const stated = result.total.greaterThan(0);
-  const show = (amount: Decimal) =>
-    stated ? money(amount.toFixed(places), code) : '—';
+  const show = (amount: Decimal) => (stated ? money(amount.toFixed(places), code) : '—');
 
   const amountField = (field: AmountField, id: string, label: string, hint?: string) => (
     <Field

@@ -1,85 +1,85 @@
 {
- "id": "10051917-2048-0139-0000-decfc6863a87",
- "keyword": "cbm calculator",
- "location": "United States",
- "language": "en",
- "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. SERP features listed. No cost field was reported by the MCP response.",
- "serp_features": [
-  "knowledge_graph (CBM Calculator LLC)",
-  "google_reviews",
-  "people_also_ask",
-  "related_searches (to kg, inches, cm, feet, excel, app)"
- ],
- "organic": [
-  {
-   "rank": 1,
-   "domain": "www.cbmcalculator.com",
-   "url": "https://www.cbmcalculator.com/",
-   "title": "CBM Calculator",
-   "page_type": "dedicated calculator site"
-  },
-  {
-   "rank": 2,
-   "domain": "www.thecalculatorsite.com",
-   "url": "https://www.thecalculatorsite.com/misc/cubic-meters-calculator.php",
-   "title": "CBM Calculator for Shipping",
-   "page_type": "calculator"
-  },
-  {
-   "rank": 3,
-   "domain": "www.omnicalculator.com",
-   "url": "https://www.omnicalculator.com/other/cbm-shipping",
-   "title": "CBM Calculator",
-   "page_type": "calculator"
-  },
-  {
-   "rank": 5,
-   "domain": "shippingsolutionssoftware.com",
-   "url": "https://shippingsolutionssoftware.com/blog/cbm-calculator",
-   "title": "Calculate Volume and Freight Costs Fast",
-   "page_type": "calculator on export-docs software blog"
-  },
-  {
-   "rank": 6,
-   "domain": "play.google.com",
-   "url": "https://play.google.com/store/apps/details?id=cbm.calculator",
-   "title": "CBM Calculator - Apps on Google Play",
-   "page_type": "mobile app"
-  },
-  {
-   "rank": 7,
-   "domain": "freightfinders.com",
-   "url": "https://freightfinders.com/freight-tools/cbm-calculator/",
-   "title": "Cubic Meter (CBM) Calculator - Freight Tools",
-   "page_type": "calculator (freight marketplace)"
-  },
-  {
-   "rank": 8,
-   "domain": "www.freightos.com",
-   "url": "https://www.freightos.com/freight-resources/cubic-meter-calculator-cbm-shipping-free/",
-   "title": "CBM Calculator & Shipping",
-   "page_type": "calculator (freight marketplace)"
-  },
-  {
-   "rank": 9,
-   "domain": "topremit.com",
-   "url": "https://topremit.com/en/cbm-calculator",
-   "title": "CBM Calculator for Shipping",
-   "page_type": "calculator (payments co.)"
-  },
-  {
-   "rank": 10,
-   "domain": "www.youtube.com",
-   "url": "https://www.youtube.com/watch?v=fwtUUbtofBQ",
-   "title": "CBM Cubic Meter Calculator Walkthrough for Shipping (Inco Docs)",
-   "page_type": "video (competitor channel)"
-  },
-  {
-   "rank": 11,
-   "domain": "ovrseas.io",
-   "url": "https://ovrseas.io/tools/cbm-calculator",
-   "title": "CBM Calculator - Free Cubic Meter Calculator for Shipping",
-   "page_type": "calculator (trade SaaS)"
-  }
- ]
+  "id": "10051917-2048-0139-0000-decfc6863a87",
+  "keyword": "cbm calculator",
+  "location": "United States",
+  "language": "en",
+  "_note": "Condensed transcription of an inline DataForSEO serp/google/organic/live/advanced response (not persisted to disk by the MCP client). Organic positions are rank_absolute; page_type is our classification from title/URL. SERP features listed. No cost field was reported by the MCP response.",
+  "serp_features": [
+    "knowledge_graph (CBM Calculator LLC)",
+    "google_reviews",
+    "people_also_ask",
+    "related_searches (to kg, inches, cm, feet, excel, app)"
+  ],
+  "organic": [
+    {
+      "rank": 1,
+      "domain": "www.cbmcalculator.com",
+      "url": "https://www.cbmcalculator.com/",
+      "title": "CBM Calculator",
+      "page_type": "dedicated calculator site"
+    },
+    {
+      "rank": 2,
+      "domain": "www.thecalculatorsite.com",
+      "url": "https://www.thecalculatorsite.com/misc/cubic-meters-calculator.php",
+      "title": "CBM Calculator for Shipping",
+      "page_type": "calculator"
+    },
+    {
+      "rank": 3,
+      "domain": "www.omnicalculator.com",
+      "url": "https://www.omnicalculator.com/other/cbm-shipping",
+      "title": "CBM Calculator",
+      "page_type": "calculator"
+    },
+    {
+      "rank": 5,
+      "domain": "shippingsolutionssoftware.com",
+      "url": "https://shippingsolutionssoftware.com/blog/cbm-calculator",
+      "title": "Calculate Volume and Freight Costs Fast",
+      "page_type": "calculator on export-docs software blog"
+    },
+    {
+      "rank": 6,
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=cbm.calculator",
+      "title": "CBM Calculator - Apps on Google Play",
+      "page_type": "mobile app"
+    },
+    {
+      "rank": 7,
+      "domain": "freightfinders.com",
+      "url": "https://freightfinders.com/freight-tools/cbm-calculator/",
+      "title": "Cubic Meter (CBM) Calculator - Freight Tools",
+      "page_type": "calculator (freight marketplace)"
+    },
+    {
+      "rank": 8,
+      "domain": "www.freightos.com",
+      "url": "https://www.freightos.com/freight-resources/cubic-meter-calculator-cbm-shipping-free/",
+      "title": "CBM Calculator & Shipping",
+      "page_type": "calculator (freight marketplace)"
+    },
+    {
+      "rank": 9,
+      "domain": "topremit.com",
+      "url": "https://topremit.com/en/cbm-calculator",
+      "title": "CBM Calculator for Shipping",
+      "page_type": "calculator (payments co.)"
+    },
+    {
+      "rank": 10,
+      "domain": "www.youtube.com",
+      "url": "https://www.youtube.com/watch?v=fwtUUbtofBQ",
+      "title": "CBM Cubic Meter Calculator Walkthrough for Shipping (Inco Docs)",
+      "page_type": "video (competitor channel)"
+    },
+    {
+      "rank": 11,
+      "domain": "ovrseas.io",
+      "url": "https://ovrseas.io/tools/cbm-calculator",
+      "title": "CBM Calculator - Free Cubic Meter Calculator for Shipping",
+      "page_type": "calculator (trade SaaS)"
+    }
+  ]
 }

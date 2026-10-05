@@ -4,28 +4,28 @@ Source: DataForSEO under D-014, Google US in English, plus the UK for the top 24
 
 ## Keyword clusters
 
-| Keyword | Vol | KD | Intent | SERP page type | Target URL | P |
-| --- | --- | --- | --- | --- | --- | --- |
-| commercial invoice template | 2,400 | 18 | info | Image pack (incodocs, eforms), PDF/Scribd, blogs | `/tools/invoice-generator` | P1 |
-| commercial invoice | 3,600 | 24 | commercial | AI overview, carrier how-tos | `/tools/invoice-generator` | P1 |
-| proforma invoice | 12,100 | 7 | transactional | AI overview, glossaries, template images | new `/tools/proforma-invoice-generator` | P1 |
-| proforma invoice template | 1,300 | 5 | info | not pulled | same | P1 |
-| packing list template | 2,400 | 5 | info | Travel-dominated; pdfFiller #4, incodocs #11 | new `/tools/packing-list-generator` | P1 |
-| cbm calculator | 4,400 | 12 | info | Calculators only | `/tools/cbm-calculator` | P1 |
-| dimensional weight calculator | 1,600 | 36 | info | Calculators + AI overview | `/tools/chargeable-weight` | P1 |
-| incoterms | 22,200 | 41 | info | AI overview (ICC, trade.gov, incodocs), guides | `/tools/incoterms` | P1 |
-| fca / dap / ddp / exw incoterm | 6,600 / 4,400 / 3,600 / 3,600 | ≤14 | nav | not pulled | `/tools/incoterms/[code]` | P1 |
-| ddp shipping / fob shipping | 6,600 / 5,400 | 12 / 6 | nav/comm. | not pulled | rule pages | P1 |
-| proforma vs commercial invoice | 720 | 5 | info | not pulled | new guide | P1 |
-| fob meaning | 33,100 | 5 | info | Mixed with key fob and slang | `/tools/incoterms/fob` | P2 |
-| cbm to cubic feet | 6,600 | n/a | info | not pulled | section on the CBM page | P2 |
-| dap vs ddp | 1,900 | n/a | info | not pulled | new comparison | P2 |
-| less than container load | 22,200 | 2 | info | not pulled | new LCL vs FCL guide | P2 |
-| certificate of origin | 4,400 | 37 | info | not pulled | new explainer | P2 |
-| landed cost calculator | 320 | 10 | commercial | not pulled | new tool | P2 |
-| container loading calculator | 260 | 7 | info | not pulled | extend the CBM page | P3 |
-| hs code | 14,800 | 74 | info | not pulled | guide only | P3 |
-| incodocs alternative | 0 | n/a | nav | n/a | defer | P3 |
+| Keyword                        | Vol                           | KD     | Intent        | SERP page type                                   | Target URL                              | P   |
+| ------------------------------ | ----------------------------- | ------ | ------------- | ------------------------------------------------ | --------------------------------------- | --- |
+| commercial invoice template    | 2,400                         | 18     | info          | Image pack (incodocs, eforms), PDF/Scribd, blogs | `/tools/invoice-generator`              | P1  |
+| commercial invoice             | 3,600                         | 24     | commercial    | AI overview, carrier how-tos                     | `/tools/invoice-generator`              | P1  |
+| proforma invoice               | 12,100                        | 7      | transactional | AI overview, glossaries, template images         | new `/tools/proforma-invoice-generator` | P1  |
+| proforma invoice template      | 1,300                         | 5      | info          | not pulled                                       | same                                    | P1  |
+| packing list template          | 2,400                         | 5      | info          | Travel-dominated; pdfFiller #4, incodocs #11     | new `/tools/packing-list-generator`     | P1  |
+| cbm calculator                 | 4,400                         | 12     | info          | Calculators only                                 | `/tools/cbm-calculator`                 | P1  |
+| dimensional weight calculator  | 1,600                         | 36     | info          | Calculators + AI overview                        | `/tools/chargeable-weight`              | P1  |
+| incoterms                      | 22,200                        | 41     | info          | AI overview (ICC, trade.gov, incodocs), guides   | `/tools/incoterms`                      | P1  |
+| fca / dap / ddp / exw incoterm | 6,600 / 4,400 / 3,600 / 3,600 | ≤14    | nav           | not pulled                                       | `/tools/incoterms/[code]`               | P1  |
+| ddp shipping / fob shipping    | 6,600 / 5,400                 | 12 / 6 | nav/comm.     | not pulled                                       | rule pages                              | P1  |
+| proforma vs commercial invoice | 720                           | 5      | info          | not pulled                                       | new guide                               | P1  |
+| fob meaning                    | 33,100                        | 5      | info          | Mixed with key fob and slang                     | `/tools/incoterms/fob`                  | P2  |
+| cbm to cubic feet              | 6,600                         | n/a    | info          | not pulled                                       | section on the CBM page                 | P2  |
+| dap vs ddp                     | 1,900                         | n/a    | info          | not pulled                                       | new comparison                          | P2  |
+| less than container load       | 22,200                        | 2      | info          | not pulled                                       | new LCL vs FCL guide                    | P2  |
+| certificate of origin          | 4,400                         | 37     | info          | not pulled                                       | new explainer                           | P2  |
+| landed cost calculator         | 320                           | 10     | commercial    | not pulled                                       | new tool                                | P2  |
+| container loading calculator   | 260                           | 7      | info          | not pulled                                       | extend the CBM page                     | P3  |
+| hs code                        | 14,800                        | 74     | info          | not pulled                                       | guide only                              | P3  |
+| incodocs alternative           | 0                             | n/a    | nav           | n/a                                              | defer                                   | P3  |
 
 UK (file 22): proforma invoice 8,100, incoterms 9,900, commercial invoice 1,000 (KD 1), delivery note template 480. UK searchers use "volumetric weight" (480) rather than "dimensional" (50).
 
