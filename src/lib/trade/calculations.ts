@@ -89,7 +89,8 @@ export function volumeOf(cartons: readonly Carton[], unit: LengthUnit): VolumeRe
  * Air divisors are stated per cubic metre. IATA's 6000 cm³/kg is 167 kg per m³; express
  * carriers commonly use 5000 cm³/kg, which is 200 kg per m³. The air and express figures
  * are cited from lib/trade/sources ('iata-volumetric' and the DHL, FedEx and UPS records);
- * the road and sea conventions have no source record yet.
+ * the road and sea conventions have no primary source record (carriers set them in their
+ * own tariffs), so each surface labels them as common industry conventions.
  */
 export const VOLUMETRIC_RULES = {
   air_iata: {
@@ -105,12 +106,12 @@ export const VOLUMETRIC_RULES = {
   road_europe: {
     label: 'Road groupage, Europe (333 kg/m³)',
     kgPerCubicMetre: 333,
-    note: 'A common European road convention; contracts vary widely.',
+    note: 'A common industry convention, not a published standard; check your carrier’s tariff.',
   },
   sea_lcl: {
     label: 'Sea LCL (1000 kg/m³)',
     kgPerCubicMetre: 1000,
-    note: 'One tonne per cubic metre — LCL bills on whichever is greater, W/M.',
+    note: 'A common industry convention (one tonne per cubic metre, billed on the greater, W/M); check your forwarder’s tariff.',
   },
 } as const;
 
@@ -150,16 +151,17 @@ export function chargeableWeight(
 }
 
 /**
- * Typical internal volume and maximum payload per container type. Real units vary by
- * series and carrier — Maersk, for example, publishes 33, 67, 76 and 85 m³ for these four
- * types ('maersk-dry-containers' in lib/trade/sources) — so every surface labels these as
- * typical figures for planning, not a specification of any particular box.
+ * Internal volume and maximum payload per container type, as Maersk publishes them for its
+ * steel dry containers ('maersk-dry-containers' in lib/trade/sources, checked against the
+ * sheet: 33, 67, 76 and 85 m³; 28,200, 28,800, 28,620 and 27,600 kg). Real units vary by
+ * series and carrier, so every surface labels these as typical figures for planning, not a
+ * specification of any particular box.
  */
 export const CONTAINERS = {
-  '20ft': { label: "20' standard", volumeM3: 33.2, payloadKg: 28_200 },
-  '40ft': { label: "40' standard", volumeM3: 67.7, payloadKg: 28_800 },
-  '40hc': { label: "40' high cube", volumeM3: 76.4, payloadKg: 28_600 },
-  '45hc': { label: "45' high cube", volumeM3: 86.1, payloadKg: 27_700 },
+  '20ft': { label: "20' standard", volumeM3: 33, payloadKg: 28_200 },
+  '40ft': { label: "40' standard", volumeM3: 67, payloadKg: 28_800 },
+  '40hc': { label: "40' high cube", volumeM3: 76, payloadKg: 28_620 },
+  '45hc': { label: "45' high cube", volumeM3: 85, payloadKg: 27_600 },
 } as const;
 
 export type ContainerKind = keyof typeof CONTAINERS;

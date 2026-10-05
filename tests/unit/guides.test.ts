@@ -21,6 +21,13 @@ describe('guides', () => {
     }
   });
 
+  it('keep the rendered title within 60 characters, site suffix included', () => {
+    // The root layout's title template appends " · TradeDocs".
+    for (const guide of GUIDES) {
+      expect(`${guide.metaTitle} · TradeDocs`.length, guide.slug).toBeLessThanOrEqual(60);
+    }
+  });
+
   it('cite registered sources and link only to tools that exist', () => {
     const tools = new Set(PUBLIC_TOOLS.map((tool) => tool.path));
     for (const guide of GUIDES) {

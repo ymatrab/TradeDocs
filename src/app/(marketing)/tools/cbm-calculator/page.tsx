@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { DataTable, NumericCell } from '@/components/primitives/table';
 import { decimal } from '@/lib/format';
 import { cubicFeetToCubicMetres, cubicMetresToCubicFeet } from '@/lib/trade/calculations';
@@ -117,7 +118,12 @@ export default function CbmPage() {
         </div>
         <p className="muted measure">
           33, 67 and 76 m³ are the typical internal volumes of a 20ft, 40ft and 40ft high-cube
-          container, for comparison.
+          container, for comparison. Whether a volume is worth a container of its own or ships as
+          groupage is a separate question:{' '}
+          <Link className="text-link" href="/guides/lcl-vs-fcl">
+            read LCL vs FCL
+          </Link>
+          .
         </p>
       </section>
 

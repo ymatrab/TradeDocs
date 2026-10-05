@@ -31,7 +31,9 @@ All cited sources live in [`src/lib/trade/sources.ts`](src/lib/trade/sources.ts)
 
 Added 2026-10-05: ITA pro forma invoice, commercial invoice and packing list pages; 19 CFR 141.85; NIST SP 811 Appendix B.9 (ft³ factor); Maersk FCL vs LCL; WTO customs valuation technical information.
 
-Not yet sourced, kept with existing hedging: the 333 kg/m³ European road groupage convention and the 1 t/m³ sea LCL W/M convention (`VOLUMETRIC_RULES` in `src/lib/trade/calculations.ts`; the LCL guide says "commonly"). Container capacities in the calculator are typical figures; Maersk's sheet (33/67/76/85 m³) is cited as an example and the calculator's own constants were not changed.
+No primary source found (2026-10-05): the 333 kg/m³ European road groupage ratio and the 1 t/m³ sea LCL W/M ratio (`VOLUMETRIC_RULES` in `src/lib/trade/calculations.ts`). Carriers set both in their own tariffs, and DHL's chargeable-weight explainer, which mentions a 1:3 road ratio, could not be opened by the fetch tools, so neither has a source record. Every surface labels them "a common industry convention; check your carrier's / forwarder's tariff" (calculator hints, chargeable weight FAQ, LCL vs FCL guide).
+
+Container capacities (`CONTAINERS`) now match Maersk's dry container sheet, re-read 2026-10-05: 20' standard 33 m³ / 28,200 kg, 40' standard 67 m³ / 28,800 kg, 40' high cube 76 m³ / 28,620 kg, 45' high cube 85 m³ / 27,600 kg (steel; one carrier's fleet, labelled typical). A unit test pins the four pairs.
 
 ## Review status
 

@@ -16,8 +16,9 @@ export const SITE_DESCRIPTION =
   'TradeDocs is a shipment workspace for exporters and the people who prepare their paperwork. ' +
   'You record a shipment’s parties, goods and terms once, and it prepares the commercial ' +
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
-  'figures agree across the set. It is free while early, and its calculators, Incoterms 2020 ' +
-  'guide and invoice generator work without an account.';
+  'figures agree across the set. It is free while early, and its free tools work without an ' +
+  'account: commercial invoice, proforma invoice and packing list generators, a landed cost ' +
+  'calculator, CBM and chargeable weight calculators and an Incoterms 2020 guide.';
 
 export type PublicTool = {
   path: string;

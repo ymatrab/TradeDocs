@@ -457,7 +457,12 @@ export default function Home() {
           <Link className="text-link" href="/tools/packing-list-generator">
             packing list
           </Link>
-          , each downloaded as a PDF.
+          , each downloaded as a PDF. Before you quote, the{' '}
+          <Link className="text-link" href="/tools/landed-cost-calculator">
+            landed cost calculator
+          </Link>{' '}
+          estimates what the goods cost once delivered, from the freight and the duty and tax rates
+          you enter.
         </p>
       </RevealSection>
 

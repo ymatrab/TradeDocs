@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { createFontSet } from '@/lib/pdf/fonts';
 import { wrap } from '@/lib/pdf/writer';
-import { renderTradeDocument } from '@/lib/pdf/trade-document';
+import {
+  columnHeaders,
+  descriptionWidth,
+  documentTotals,
+  renderTradeDocument,
+} from '@/lib/pdf/trade-document';
 
 const fonts = createFontSet();
 
@@ -53,6 +58,15 @@ function snapshot(overrides: Record<string, unknown> = {}): unknown {
   };
 }
 
+function firstItem(): Record<string, unknown> {
+  const base = snapshot() as { items: Record<string, unknown>[] };
+  return { ...base.items[0] };
+}
+
+function firstTotals(): Record<string, unknown> {
+  return { ...(snapshot() as { totals: Record<string, unknown> }).totals };
+}
+
 function asText(bytes: Uint8Array): string {
   return new TextDecoder('latin1').decode(bytes);
 }
@@ -69,6 +83,11 @@ describe('the embedded face', () => {
     for (const character of 'ЖДщйЫΔΘΩ') {
       expect(fonts.regular.has(character.codePointAt(0) ?? 0)).toBe(true);
     }
+  });
+
+  it('carries the registered sign the Incoterms® caption prints', () => {
+    expect(fonts.regular.has('®'.codePointAt(0) ?? 0)).toBe(true);
+    expect(fonts.bold.has('®'.codePointAt(0) ?? 0)).toBe(true);
   });
 
   it('reports honestly that it cannot represent CJK', () => {
@@ -139,6 +158,46 @@ describe('trade document rendering', () => {
     expect(packing.byteLength).toBeGreaterThan(2_000);
     expect(invoice.byteLength).toBeGreaterThan(2_000);
     expect(asText(packing)).toContain('/Type /Page');
+  });
+
+  it('prints a per-line origin column on a schema 3 invoice whose lines state one', () => {
+    expect(columnHeaders(snapshot({ schema_version: 3 }))).toEqual([
+      'Description of goods',
+      'HS code',
+      'Origin',
+      'Quantity',
+      'Unit price',
+      'Amount',
+    ]);
+    expect(columnHeaders(snapshot({ schema_version: 3, kind: 'proforma_invoice' }))).toContain(
+      'Origin',
+    );
+    // An older document keeps the columns it was issued with.
+    expect(columnHeaders(snapshot({ schema_version: 2 }))).not.toContain('Origin');
+    // The description column keeps room for a readable line of text.
+    expect(descriptionWidth('commercial_invoice', 2, true)).toBeGreaterThan(140);
+  });
+
+  it('omits the origin column when no line states one', () => {
+    const items = [{ ...firstItem(), country_of_origin: null }];
+    expect(columnHeaders(snapshot({ schema_version: 3, items }))).not.toContain('Origin');
+  });
+
+  it('omits a net weight total no line states, instead of printing zero', () => {
+    const items = [{ ...firstItem(), net_weight_kg: null }];
+    const totals = { ...firstTotals(), net_weight_kg: null };
+    const stated = documentTotals(snapshot({ schema_version: 3, kind: 'packing_list' }));
+    expect(stated.map(([label]) => label)).toContain('Total net weight');
+    const unstated = documentTotals(
+      snapshot({ schema_version: 3, kind: 'packing_list', items, totals }),
+    );
+    expect(unstated.map(([label]) => label)).not.toContain('Total net weight');
+    expect(
+      renderTradeDocument(
+        snapshot({ schema_version: 3, kind: 'packing_list', items, totals }),
+        createFontSet(),
+      ).byteLength,
+    ).toBeGreaterThan(2_000);
   });
 
   it('paginates a long shipment', () => {

@@ -66,7 +66,7 @@ export const GUIDES: readonly Guide[] = [
   {
     slug: 'lcl-vs-fcl',
     title: 'LCL vs FCL: share a container or book your own?',
-    metaTitle: 'LCL vs FCL shipping — less than container load or full container',
+    metaTitle: 'LCL vs FCL shipping: shared or full container',
     description:
       'What less than container load (LCL) and full container load (FCL) mean, how each is charged, where the break-even sits and what changes on your packing list.',
     lede: 'Two ways to ship by sea in a container. One sells you space by the cubic metre, the other sells you the box. Which one is cheaper depends on your volume, and which one is safer depends on your cargo.',
@@ -81,7 +81,7 @@ export const GUIDES: readonly Guide[] = [
         heading: 'How LCL works',
         paragraphs: [
           'You hand your cartons or pallets to a forwarder or carrier, usually at a container freight station near the port. They consolidate your consignment with others going the same way, load the shared container, ship it, and at destination deconsolidate it: the container is unpacked and each shipper’s goods are released separately.',
-          'Because you are buying part of a box, the price is built from the space your cargo takes up. Maersk, for example, describes LCL as paying only for the container space you use, measured in CBM. In practice LCL is commonly quoted on weight or measure (W/M): the forwarder compares your cubic metres with your weight in tonnes and charges on whichever is greater, so dense cargo pays on weight and light, bulky cargo pays on volume.',
+          'Because you are buying part of a box, the price is built from the space your cargo takes up. Maersk, for example, describes LCL as paying only for the container space you use, measured in CBM. In practice LCL is commonly quoted on weight or measure (W/M): the forwarder compares your cubic metres with your weight in tonnes and charges on whichever is greater, so dense cargo pays on weight and light, bulky cargo pays on volume. One tonne to one cubic metre is a common industry convention rather than a published standard; check your forwarder’s tariff.',
           'On top of the ocean rate, an LCL quotation usually carries handling charges at both ends for the consolidation and the unpacking. Read the quotation for those lines; they are part of the cost even though they are not freight.',
         ],
       },
@@ -135,7 +135,7 @@ export const GUIDES: readonly Guide[] = [
       },
       {
         q: 'How is LCL freight calculated?',
-        a: 'From your cubic metres, compared with your weight. LCL is commonly charged on weight or measure (W/M), treating one cubic metre as one tonne and billing on the greater, plus handling charges at origin and destination.',
+        a: 'From your cubic metres, compared with your weight. LCL is commonly charged on weight or measure (W/M), treating one cubic metre as one tonne and billing on the greater, plus handling charges at origin and destination. That ratio is a common industry convention; check your forwarder’s tariff.',
       },
       {
         q: 'Is FCL always cheaper per cubic metre?',
@@ -162,7 +162,7 @@ export const GUIDES: readonly Guide[] = [
   {
     slug: 'dap-vs-ddp',
     title: 'DAP vs DDP: who clears the goods into the destination country?',
-    metaTitle: 'DAP vs DDP — the difference in Incoterms 2020, and when each goes wrong',
+    metaTitle: 'DAP vs DDP in Incoterms 2020: the difference',
     description:
       'DAP and DDP both deliver to the buyer’s named place. The difference is import clearance, duties and taxes. What each rule puts on the seller and the buyer, with the traps in each.',
     lede: 'Two delivered rules that look almost the same on a quotation. The seller carries the goods all the way to the buyer under both. The difference is who deals with customs on arrival, and who pays what customs asks for.',
@@ -266,7 +266,7 @@ export const GUIDES: readonly Guide[] = [
   {
     slug: 'proforma-vs-commercial-invoice',
     title: 'Proforma invoice vs commercial invoice: what each one is for',
-    metaTitle: 'Proforma vs commercial invoice — the difference, and when you need each',
+    metaTitle: 'Proforma vs commercial invoice: the difference',
     description:
       'A proforma invoice is a quotation in invoice form, issued before the sale. A commercial invoice bills goods sold and is what customs values them from. What goes on each, and how they relate.',
     lede: 'They look alike and carry many of the same fields, which is exactly why they get confused. They are issued at different moments, for different readers, and only one of them is the basis customs works from.',

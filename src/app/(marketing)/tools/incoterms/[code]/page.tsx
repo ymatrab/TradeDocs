@@ -44,6 +44,18 @@ export async function generateMetadata({
 
 const party = (value: Incoterm['mainCarriage']) => (value === 'seller' ? 'Seller' : 'Buyer');
 
+/**
+ * The opening sentence. The risk point has its own section below, so the lede names the
+ * rule instead of repeating that sentence (a search lead, where the rule has one, already
+ * describes the delivery point).
+ */
+function lede(term: Incoterm): string {
+  if (term.search) return term.search.lead;
+  const mode =
+    term.mode === 'sea' ? 'sea and inland waterway transport only' : 'any mode of transport';
+  return `${term.code}, ${term.name}, is the Incoterms® 2020 rule for ${mode} under which the ${term.mainCarriage} arranges the main carriage. Below: who pays for what, where risk transfers and who clears the goods.`;
+}
+
 /** Export and import clearance in one sentence, built from the data so all eleven agree. */
 function clearance(term: Incoterm): string {
   if (term.exportClearance === term.importClearance) {
@@ -68,10 +80,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
           </Link>
         </p>
         <h1>{term.search?.heading ?? `${term.code} Incoterms® 2020 — ${term.name}`}</h1>
-        <p className="lede">
-          {term.search ? `${term.search.lead} ` : null}
-          {term.riskPasses}
-        </p>
+        <p className="lede">{lede(term)}</p>
       </section>
 
       <section className="section">
@@ -102,7 +111,19 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
         <p className="measure">{term.riskPasses}</p>
 
         <h2>Export and import clearance</h2>
-        <p className="measure">{clearance(term)}</p>
+        <p className="measure">
+          {clearance(term)}
+          {term.code === 'DAP' || term.code === 'DDP' ? (
+            <>
+              {' '}
+              Which of the two to choose turns on who can clear the goods and pay the duty:{' '}
+              <Link className="text-link" href="/guides/dap-vs-ddp">
+                read DAP vs DDP
+              </Link>
+              .
+            </>
+          ) : null}
+        </p>
 
         <h2>Insurance</h2>
         <p className="measure">{term.insurance}</p>

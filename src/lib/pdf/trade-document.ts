@@ -15,7 +15,7 @@ import { createFontSet } from './fonts';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/2';
+export const RENDERER_VERSION = 'tradedocs-pdf/3';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -37,7 +37,11 @@ const partySchema = z
 export const snapshotSchema = z.object({
   /**
    * Absent on snapshots taken before versioning, which are schema 1. Schema 2 adds
-   * money_places, and a stated-or-absent gross weight total.
+   * money_places, and a stated-or-absent gross weight total. Schema 3 adds a
+   * stated-or-absent net weight total, a per-line origin column on invoices whose lines
+   * state one, and the registered "Incoterms® 2020" caption. Each change applies only from
+   * the schema that introduced it, so a document issued under an older schema re-renders
+   * exactly as it was issued.
    */
   schema_version: z.number().int().min(1).optional(),
   /**
@@ -93,7 +97,8 @@ export const snapshotSchema = z.object({
   ),
   totals: z.object({
     quantity: numeric,
-    net_weight_kg: numeric,
+    /** Null (schema 3) when no line states a net weight: a total of zero would be false. */
+    net_weight_kg: numeric.nullable(),
     /** Null when no line states a gross weight: a total of zero would be a false figure. */
     gross_weight_kg: numeric.nullable(),
     packages: numeric,
@@ -174,8 +179,29 @@ function decimal(value: number, places = 2): string {
   });
 }
 
+/** Snapshots before versioning carry no schema_version and are schema 1. */
+function schemaOf(snapshot: DocumentSnapshot): number {
+  return snapshot.schema_version ?? 1;
+}
+
+/**
+ * Whether an invoice prints a per-line origin column: from schema 3, whenever any line
+ * states an origin, so lines of different origin are not reduced to one shipment field.
+ */
+function showsLineOrigin(snapshot: DocumentSnapshot): boolean {
+  return (
+    schemaOf(snapshot) >= 3 &&
+    (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') &&
+    snapshot.items.some((item) => Boolean(item.country_of_origin))
+  );
+}
+
 /** Each document type shows the columns its readers need, from one shared set of figures. */
-function columnsFor(kind: DocumentSnapshot['kind'], moneyPlaces: number): Column[] {
+function columnsFor(
+  kind: DocumentSnapshot['kind'],
+  moneyPlaces: number,
+  lineOrigin = false,
+): Column[] {
   const description: Column = {
     header: 'Description of goods',
     width: 0,
@@ -193,6 +219,8 @@ function columnsFor(kind: DocumentSnapshot['kind'], moneyPlaces: number): Column
     width: 46,
     value: (item) => item.country_of_origin ?? '—',
   };
+  // Narrower on an invoice, which already carries five columns; an alpha-2 code fits.
+  const lineOriginColumn: Column = { ...origin, width: 40 };
 
   if (kind === 'packing_list') {
     return [
@@ -228,6 +256,7 @@ function columnsFor(kind: DocumentSnapshot['kind'], moneyPlaces: number): Column
   return [
     description,
     hs,
+    ...(lineOrigin ? [lineOriginColumn] : []),
     quantity,
     {
       header: 'Unit price',
@@ -264,10 +293,44 @@ function drawBox(page: Page, x: number, y: number, width: number, height: number
   page.text(caption.toUpperCase(), x + 6, y - 11, { size: 6, font: 'bold' });
 }
 
+/** The totals block, as label and printed value, in the order the document prints them. */
+function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
+  const schema = schemaOf(snapshot);
+  const moneyPlaces = snapshot.money_places ?? 2;
+  const packing = snapshot.kind === 'packing_list' ? (snapshot.packages ?? []) : [];
+  const totals: [string, string][] = [['Total quantity', decimal(snapshot.totals.quantity, 3)]];
+  if (snapshot.kind === 'packing_list') {
+    // Described packages are the measured truth and take precedence; the per-line counts
+    // are an estimate that only stands in when nothing was described.
+    const packed = packing.length > 0 ? snapshot.packing_totals : undefined;
+    totals.push(['Total packages', decimal(packed?.packages ?? snapshot.totals.packages, 0)]);
+    // Omitted rather than printed as zero when nothing states a net weight (schema 3); an
+    // older document prints the zero it was issued with.
+    const net = packed?.net_weight_kg ?? snapshot.totals.net_weight_kg;
+    if (net != null || schema < 3) {
+      totals.push(['Total net weight', `${decimal(net ?? 0, 3)} kg`]);
+    }
+    // Omitted rather than printed as zero when nothing states a gross weight.
+    const gross = packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg;
+    if (gross != null) totals.push(['Total gross weight', `${decimal(gross, 3)} kg`]);
+    if (packed && Number(packed.volume_m3) > 0) {
+      totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
+    }
+  }
+  if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
+    totals.push([
+      'Total amount',
+      `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
+    ]);
+  }
+  return totals;
+}
+
 export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
   const snapshot = snapshotSchema.parse(input);
   const moneyPlaces = snapshot.money_places ?? 2;
-  const columns = columnsFor(snapshot.kind, moneyPlaces);
+  const schema = schemaOf(snapshot);
+  const columns = columnsFor(snapshot.kind, moneyPlaces, showsLineOrigin(snapshot));
   const fixed = columns.reduce((total, column) => total + column.width, 0);
   const layout = columns.map((column) =>
     column.width === 0 ? { ...column, width: CONTENT_WIDTH - fixed - 24 } : column,
@@ -343,7 +406,7 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
   // Shipment terms.
   const terms: [string, string][] = [
     [
-      'Incoterm 2020',
+      schema >= 3 ? 'Incoterms® 2020' : 'Incoterm 2020',
       [snapshot.shipment.incoterm, snapshot.shipment.incoterm_place].filter(Boolean).join(' ') ||
         '—',
     ],
@@ -485,29 +548,7 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
 
   // Totals. Every document type states the figures its readers reconcile against.
   cursor -= 6;
-  const totals: [string, string][] = [['Total quantity', decimal(snapshot.totals.quantity, 3)]];
-  if (snapshot.kind === 'packing_list') {
-    // Described packages are the measured truth and take precedence; the per-line counts
-    // are an estimate that only stands in when nothing was described.
-    const packed = packing.length > 0 ? snapshot.packing_totals : undefined;
-    totals.push(['Total packages', decimal(packed?.packages ?? snapshot.totals.packages, 0)]);
-    totals.push([
-      'Total net weight',
-      `${decimal(packed?.net_weight_kg ?? snapshot.totals.net_weight_kg, 3)} kg`,
-    ]);
-    // Omitted rather than printed as zero when nothing states a gross weight.
-    const gross = packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg;
-    if (gross != null) totals.push(['Total gross weight', `${decimal(gross, 3)} kg`]);
-    if (packed && Number(packed.volume_m3) > 0) {
-      totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
-    }
-  }
-  if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
-    totals.push([
-      'Total amount',
-      `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
-    ]);
-  }
+  const totals = totalsFor(snapshot);
   for (const [label, value] of totals) {
     const bold = label.startsWith('Total amount') || totals.length === 1;
     page.text(label, PAGE_WIDTH - MARGIN - 130, cursor - 10, { size: 8.5, align: 'right' });
@@ -547,10 +588,26 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
 }
 
 /** Exported for tests: the width a description column receives for a given document type. */
-export function descriptionWidth(kind: DocumentSnapshot['kind'], moneyPlaces = 2): number {
-  const columns = columnsFor(kind, moneyPlaces);
+export function descriptionWidth(
+  kind: DocumentSnapshot['kind'],
+  moneyPlaces = 2,
+  lineOrigin = false,
+): number {
+  const columns = columnsFor(kind, moneyPlaces, lineOrigin);
   const fixed = columns.reduce((total, column) => total + column.width, 0);
   return CONTENT_WIDTH - fixed - 24;
 }
 
+/** Exported for tests: the column headers a snapshot's line table prints, in order. */
+export function columnHeaders(input: unknown): string[] {
+  const snapshot = snapshotSchema.parse(input);
+  const columns = columnsFor(snapshot.kind, snapshot.money_places ?? 2, showsLineOrigin(snapshot));
+  return columns.map((column) => column.header);
+}
+
 export { titles };
+
+/** Exported for tests: the totals a snapshot prints, as label and value. */
+export function documentTotals(input: unknown): [string, string][] {
+  return totalsFor(snapshotSchema.parse(input));
+}
