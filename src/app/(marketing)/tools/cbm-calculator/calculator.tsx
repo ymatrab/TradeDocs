@@ -6,7 +6,12 @@ import { Field, Input } from '@/components/primitives/form';
 import { DataTable, NumericCell } from '@/components/primitives/table';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { decimal } from '@/lib/format';
-import { containerFit, volumeOf, type LengthUnit } from '@/lib/trade/calculations';
+import {
+  containerFit,
+  cubicMetresToCubicFeet,
+  volumeOf,
+  type LengthUnit,
+} from '@/lib/trade/calculations';
 import { CartonRows, emptyCarton, num, type CartonInput } from '../carton-rows';
 
 /**
@@ -78,7 +83,7 @@ export function CbmCalculator() {
         </FieldBox>
         <FieldBox ordinal="4" caption="Volume in ft³">
           <span className="data">
-            {stated ? decimal(result.totalVolumeM3 * 35.3146667, 2) : '—'}
+            {stated ? decimal(cubicMetresToCubicFeet(result.totalVolumeM3), 2) : '—'}
           </span>
         </FieldBox>
       </BoxGrid>

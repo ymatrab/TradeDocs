@@ -3,6 +3,8 @@ import {
   CONTAINERS,
   chargeableWeight,
   containerFit,
+  cubicFeetToCubicMetres,
+  cubicMetresToCubicFeet,
   toKilograms,
   toMetres,
   volumeOf,
@@ -21,6 +23,14 @@ describe('unit conversion', () => {
   it('converts pounds by the international definition, not an approximation', () => {
     expect(toKilograms(1, 'lb')).toBeCloseTo(0.45359237, 10);
     expect(toKilograms(2500, 'g')).toBeCloseTo(2.5, 10);
+  });
+});
+
+describe('cubic feet', () => {
+  it('uses the exact SI factor, so one cubic metre is about 35.3147 cubic feet', () => {
+    expect(cubicMetresToCubicFeet(1)).toBeCloseTo(35.3146667, 6);
+    expect(cubicFeetToCubicMetres(1)).toBeCloseTo(0.028316846592, 12);
+    expect(cubicFeetToCubicMetres(cubicMetresToCubicFeet(33.2))).toBeCloseTo(33.2, 10);
   });
 });
 

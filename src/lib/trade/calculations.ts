@@ -43,6 +43,21 @@ export function toMetres(value: number, unit: LengthUnit): number {
   return value * LENGTH_UNITS[unit].toMetres;
 }
 
+/**
+ * One foot is exactly 0.3048 m, so one cubic foot is exactly 0.028 316 846 592 m³ — the
+ * factor NIST lists as 2.831 685 E-02 ('nist-si-volume' in lib/trade/sources). One cubic
+ * metre is therefore about 35.3147 ft³.
+ */
+export const CUBIC_METRES_PER_CUBIC_FOOT = 0.3048 ** 3;
+
+export function cubicMetresToCubicFeet(cubicMetres: number): number {
+  return cubicMetres / CUBIC_METRES_PER_CUBIC_FOOT;
+}
+
+export function cubicFeetToCubicMetres(cubicFeet: number): number {
+  return cubicFeet * CUBIC_METRES_PER_CUBIC_FOOT;
+}
+
 export function toKilograms(value: number, unit: WeightUnit): number {
   return value * WEIGHT_UNITS[unit].toKilograms;
 }

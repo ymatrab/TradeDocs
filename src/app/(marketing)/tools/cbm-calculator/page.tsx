@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import { DataTable, NumericCell } from '@/components/primitives/table';
+import { decimal } from '@/lib/format';
+import { cubicFeetToCubicMetres, cubicMetresToCubicFeet } from '@/lib/trade/calculations';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
 import { ToolJsonLd } from '@/components/seo/json-ld';
@@ -7,9 +10,9 @@ import { openGraphFor } from '@/lib/seo/social';
 import { CbmCalculator } from './calculator';
 
 export const metadata: Metadata = {
-  title: 'CBM calculator — cubic metres for shipping cartons',
+  title: 'CBM calculator — cubic metres and cubic feet for shipping cartons',
   description:
-    'Work out the CBM of a consignment from carton dimensions in cm, mm, m, inches or feet, and see how it sits against a 20ft, 40ft or high-cube container. Free, and nothing leaves your browser.',
+    'Work out the CBM of a consignment from carton dimensions in cm, mm, m, inches or feet, convert CBM to cubic feet, and see how it sits against a 20ft, 40ft or high-cube container. Free, and nothing leaves your browser.',
   alternates: { canonical: '/tools/cbm-calculator' },
   openGraph: openGraphFor(
     'CBM calculator: cubic metres for shipping cartons',
@@ -18,7 +21,15 @@ export const metadata: Metadata = {
   ),
 };
 
+/** Worked conversions, computed from the exact factor rather than typed in. */
+const CUBIC_METRE_EXAMPLES = [1, 2.5, 10, 33, 67, 76] as const;
+const CUBIC_FOOT_EXAMPLES = [1, 100, 500, 1000] as const;
+
 const faq = [
+  {
+    q: 'How do I convert CBM to cubic feet?',
+    a: 'Multiply by 35.3147. One foot is exactly 0.3048 metres, so one cubic foot is 0.0283168 m³ and one cubic metre is about 35.3147 ft³. To go the other way, multiply cubic feet by 0.0283168, or divide by 35.3147.',
+  },
   {
     q: 'What is CBM?',
     a: 'CBM is cubic metres — length × width × height, in metres, multiplied by the number of cartons. It is the figure sea freight quotations for LCL cargo are built from, because a shipper pays for the space a consignment occupies as much as for what it weighs.',
@@ -52,6 +63,62 @@ export default function CbmPage() {
 
       <section className="section">
         <CbmCalculator />
+      </section>
+
+      <section className="section" aria-labelledby="cubic-feet-title">
+        <h2 id="cubic-feet-title">CBM to cubic feet</h2>
+        <p className="measure">
+          One cubic metre is 35.3147 cubic feet. The factor is exact by definition: a foot is 0.3048
+          metres, so a cubic foot is 0.3048³ = 0.028 316 846 592 m³, the figure NIST publishes. The
+          calculator above shows both units; the tables below are for converting a figure you
+          already have.
+        </p>
+        <div className="form-grid">
+          <DataTable caption="Cubic metres to cubic feet">
+            <thead>
+              <tr>
+                <th scope="col" className="numeric">
+                  CBM (m³)
+                </th>
+                <th scope="col" className="numeric">
+                  Cubic feet (ft³)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {CUBIC_METRE_EXAMPLES.map((value) => (
+                <tr key={value}>
+                  <NumericCell value={decimal(value, value % 1 === 0 ? 0 : 1)} />
+                  <NumericCell value={decimal(cubicMetresToCubicFeet(value), 2)} />
+                </tr>
+              ))}
+            </tbody>
+          </DataTable>
+          <DataTable caption="Cubic feet to cubic metres">
+            <thead>
+              <tr>
+                <th scope="col" className="numeric">
+                  Cubic feet (ft³)
+                </th>
+                <th scope="col" className="numeric">
+                  CBM (m³)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {CUBIC_FOOT_EXAMPLES.map((value) => (
+                <tr key={value}>
+                  <NumericCell value={decimal(value, 0)} />
+                  <NumericCell value={decimal(cubicFeetToCubicMetres(value), 3)} />
+                </tr>
+              ))}
+            </tbody>
+          </DataTable>
+        </div>
+        <p className="muted measure">
+          33, 67 and 76 m³ are the typical internal volumes of a 20ft, 40ft and 40ft high-cube
+          container, for comparison.
+        </p>
       </section>
 
       <section className="section">
