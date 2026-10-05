@@ -127,6 +127,13 @@ describe('container fit', () => {
     const volumes = Object.values(CONTAINERS).map((container) => container.volumeM3);
     expect([...volumes].sort((a, b) => a - b)).toEqual(volumes);
   });
+
+  it('matches the cited Maersk dry container sheet', () => {
+    expect(CONTAINERS['20ft']).toMatchObject({ volumeM3: 33, payloadKg: 28_200 });
+    expect(CONTAINERS['40ft']).toMatchObject({ volumeM3: 67, payloadKg: 28_800 });
+    expect(CONTAINERS['40hc']).toMatchObject({ volumeM3: 76, payloadKg: 28_620 });
+    expect(CONTAINERS['45hc']).toMatchObject({ volumeM3: 85, payloadKg: 27_600 });
+  });
 });
 
 describe('incoterms reference', () => {

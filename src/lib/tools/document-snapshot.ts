@@ -127,9 +127,10 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
   const places = currencyMinorUnits(input.currency);
   const items = input.lines.map((entry, index) => toItem(entry, index, places));
   const gross = sumStated(input.lines.map((entry) => entry.gross_weight_kg));
+  const net = sumStated(input.lines.map((entry) => entry.net_weight_kg));
 
   return {
-    schema_version: 2,
+    schema_version: 3,
     money_places: places,
     kind: input.kind,
     number: input.number,
@@ -155,7 +156,8 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
     items,
     totals: {
       quantity: (sumStated(input.lines.map((entry) => entry.quantity)) ?? 0).toString(),
-      net_weight_kg: (sumStated(input.lines.map((entry) => entry.net_weight_kg)) ?? 0).toString(),
+      // Null when no line states one, as with gross below (schema 3).
+      net_weight_kg: net === null ? null : net.toString(),
       // Null when no line states one, so the document omits the figure instead of
       // printing a gross weight of zero.
       gross_weight_kg: gross === null ? null : gross.toString(),

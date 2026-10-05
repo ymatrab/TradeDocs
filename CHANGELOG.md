@@ -2,6 +2,15 @@
 
 ## Unreleased — 2026-09-06
 
+### Content sign-off fixes
+
+- Container capacities match the cited Maersk sheet (33/67/76/85 m³, 28,200/28,800/28,620/27,600 kg), pinned by a unit test.
+- Free document PDFs (snapshot schema 3, renderer `tradedocs-pdf/3`): invoices print a per-line Origin column when any line states one; a packing list with no net weights omits "Total net weight" instead of printing 0.000 kg; the terms caption reads "Incoterms® 2020" (Noto Sans carries ®, now tested). Older snapshots render exactly as issued; workspace `generate_document` still emits schema 2.
+- Road 333 kg/m³ and LCL 1 t/m³ labelled as common industry conventions with a check-your-tariff note (no primary source found).
+- Generator copy: weights and packages print on the packing list, not the invoice; "with a quantity above zero"; the proforma FAQ lists the missing fields and that the proforma shows no weights.
+- Incoterm pages no longer repeat the risk sentence in the lede; DAP and DDP link to the DAP vs DDP guide; the CBM page links to LCL vs FCL.
+- Guide meta titles fit 60 characters with the " · TradeDocs" suffix (tested). SITE_DESCRIPTION names the generators and the landed cost calculator; home links the landed cost calculator; "document generators" on the auth fallback.
+
 ### Guide covers and image SEO (D-016)
 
 - The three guides and `/guides` show a credited Unsplash cover (`cover` on each guide, `GUIDES_HUB_COVER`), hotlinked from images.unsplash.com through a plain `<img>` (`CoverFigure`): imgix-resized 2:1 `srcset` 640–1920, `sizes`, explicit dimensions, eager/high priority at the top of the page, and a "Photo by … on Unsplash" caption with `utm_source=paydocs` referral links.

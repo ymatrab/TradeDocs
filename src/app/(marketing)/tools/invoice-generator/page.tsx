@@ -65,7 +65,7 @@ const fields = [
   {
     term: 'Net and gross weight, packages',
     detail:
-      'Optional on the invoice, and the figures your packing list will repeat. Net is the goods alone; gross includes their packaging.',
+      'Optional. They print on the packing list made from the same form, not on the invoice itself. Net is the goods alone; gross includes their packaging.',
   },
 ];
 
@@ -84,7 +84,7 @@ const faq = [
   },
   {
     q: 'Which fields does the generator need?',
-    a: 'A document number, the names of both companies and at least one described line of goods. Everything marked optional can be left blank and the PDF will still be produced, but the customs authority in the importing country may expect it, so fill in what applies to your shipment.',
+    a: 'A document number, the names of both companies and at least one described line of goods with a quantity above zero. Everything marked optional can be left blank and the PDF will still be produced, but the customs authority in the importing country may expect it, so fill in what applies to your shipment.',
   },
   {
     q: 'What is the difference between a commercial invoice and a proforma invoice?',
@@ -129,8 +129,8 @@ export default function GeneratorPage() {
         <h2 id="fields-title">What each field on the invoice means</h2>
         <p className="measure">
           A commercial invoice is the seller’s bill for goods sold and shipped, and the document
-          customs in the importing country assesses duties and taxes from. Each part of the form
-          becomes one part of it.
+          customs in the importing country assesses duties and taxes from. Most of the form prints
+          on the invoice; the weights and package counts print on the packing list instead.
         </p>
         <ul className="measure">
           {fields.map((field) => (

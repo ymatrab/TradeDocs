@@ -75,7 +75,10 @@ Documents freeze `org_id`, `created_at` and `created_by` (which may only become 
 account erasure) with their content; status only moves `final` to `superseded` or `voided`.
 A shipment with documents cannot be deleted. Snapshots now carry `schema_version` (2) and
 `money_places`, the currency minor units money was rounded to; schema 1 snapshots render
-with two places as issued. `supabase/tests/tenant_integrity.test.sql` proves the cross-tenant
+with two places as issued. Schema 3 (free document tool only, renderer `tradedocs-pdf/3`)
+adds a nullable net weight total, a per-line origin column on invoices whose lines state one
+and the "Incoterms® 2020" caption; `generate_document` still emits schema 2, so workspace
+documents render exactly as issued. `supabase/tests/tenant_integrity.test.sql` proves the cross-tenant
 cases, products, packages, contents, import, add-from-catalog and rate limiting.
 
 `public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind

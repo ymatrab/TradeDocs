@@ -80,7 +80,7 @@ describe('money', () => {
 describe('free document snapshot', () => {
   it('records its schema and the currency places it was rounded to', () => {
     const snapshot = snapshotOf();
-    expect(snapshot.schema_version).toBe(2);
+    expect(snapshot.schema_version).toBe(3);
     expect(snapshot.money_places).toBe(2);
     expect(snapshot.items[0]?.line_total).toBe('0.30');
     expect(snapshot.totals.value).toBe('0.30');
@@ -123,9 +123,10 @@ describe('free document snapshot', () => {
     expect(snapshotOf({ country_of_origin: 'it' }).shipment.country_of_origin).toBe('IT');
   });
 
-  it('states a gross weight only when a line does', () => {
+  it('states net and gross weights only when a line does', () => {
     const without = snapshotOf({ kind: 'packing_list' });
     expect(without.totals.gross_weight_kg).toBeNull();
+    expect(without.totals.net_weight_kg).toBeNull();
     expect(renderTradeDocument(without).byteLength).toBeGreaterThan(2_000);
 
     const stated = snapshotOf({
@@ -136,6 +137,7 @@ describe('free document snapshot', () => {
       ],
     });
     expect(stated.totals.gross_weight_kg).toBe('5');
+    expect(stated.totals.net_weight_kg).toBe('4');
     expect(stated.items[1]?.gross_weight_kg).toBe(0.75);
   });
 

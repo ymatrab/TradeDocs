@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Does sea freight use volumetric weight?',
-    a: 'LCL sea freight uses the same idea under a different name — weight or measure, W/M — and bills at whichever is greater, treating one cubic metre as one tonne. Full container loads are priced per container instead, so the comparison does not arise.',
+    a: 'LCL sea freight uses the same idea under a different name — weight or measure, W/M — and bills at whichever is greater, commonly treating one cubic metre as one tonne — a common industry convention, so check your forwarder’s tariff. Full container loads are priced per container instead, so the comparison does not arise.',
   },
 ];
 

@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: 'Can I add a validity date and payment terms?',
-    a: 'The generator prints the parties, the goods, the prices, the Incoterms® rule and place and the document date. It does not yet have fields for a validity date or payment terms, so state those in the message you send the proforma with.',
+    a: 'The generator prints the parties, the goods, the prices, the Incoterms® rule and place and the document date. It does not yet have fields for a validity date, payment terms, a buyer reference, package dimensions or a shipping date, so state those in the message you send the proforma with. The proforma PDF shows no weights either; those print only on the packing list.',
   },
   {
     q: 'Is anything I type here saved?',
