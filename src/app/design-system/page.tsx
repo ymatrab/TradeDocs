@@ -6,7 +6,10 @@ import { Showcase } from './showcase';
 // environment the bundle happened to be built in.
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = { title: 'Design system' };
+export const metadata: Metadata = {
+  title: 'Design system',
+  robots: { index: false, follow: false, nocache: true },
+};
 
 export default function DesignSystemPage() {
   if (process.env.APP_ENV === 'production') notFound();
