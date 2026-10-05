@@ -2,6 +2,18 @@
 
 ## Unreleased — 2026-09-06
 
+### Content round (content plan 2026-10-05)
+
+- New `/tools/proforma-invoice-generator` and `/tools/packing-list-generator`: the existing generator and `/api/tools/document`, preset to each kind (`initialKind`), with their own intro, a definition section, a visible FAQ, sources and the capability-aware CTA.
+- `/tools/invoice-generator` retitled around "commercial invoice template", with a "what each field means" section and two answered questions (creating your own, standard format).
+- CBM calculator: CBM ↔ cubic feet section and tables from the exact SI factor (`CUBIC_METRES_PER_CUBIC_FOOT`, NIST SP 811 B.9), and the calculator's ft³ figure now uses it.
+- `/tools/chargeable-weight` renamed "Dimensional (volumetric) weight calculator" (URL unchanged), with the formula and only the divisors already cited.
+- Incoterms: an Incoterms 2020 responsibilities chart on the hub (`INCOTERMS_CHART`, built from the rule data) and search-phrased titles, headings and leads for EXW, FCA, DAP, DDP and FOB (FOB leads with the shipping sense).
+- New `/tools/landed-cost-calculator`: goods + freight + insurance + duty + taxes + other costs at user-entered rates only, duty on the goods or CIF value, exact decimal arithmetic in `src/lib/trade/landed-cost.ts` with unit tests, cost per unit, listed assumptions and a not-advice note.
+- New `/guides` hub and three guides from `src/lib/content/guides.ts`: LCL vs FCL, DAP vs DDP, proforma vs commercial invoice. Team byline, last-reviewed date, sources, not-advice note, tool links, visible FAQ; Article, BreadcrumbList and FAQPage JSON-LD.
+- Seven sources added to the registry (ITA ×3, 19 CFR 141.85, NIST, Maersk FCL vs LCL, WTO customs valuation), each opened on 2026-10-05.
+- Wiring: `PUBLIC_TOOLS`, sitemap, llms.txt, tools hub (now read from `PUBLIC_TOOLS`), related tools, footer and a Guides nav link. The home "free tools" count is `PUBLIC_TOOLS.length`, and home links to the three generators. CONTENT.md and SEO.md updated.
+
 ### Design v2 refinement (D-013, Manifest palette kept)
 
 - Type: Inter Tight 500/600 for headlines (display 72 → 44, line-height .94, −.025em; H2 48 → 32; H3 24 → 20) and Geist Mono 500 for eyebrows, tags, buttons and figures, replacing Archivo and JetBrains Mono; `text-wrap: balance` on headings. The home headline is nine words, so it is set in sentence case; uppercase stays for headlines of six words or fewer. PDFs embed their own font and are unchanged.
