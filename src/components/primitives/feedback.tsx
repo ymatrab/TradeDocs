@@ -61,14 +61,17 @@ export function Callout({
 export function Panel({
   title,
   actions,
+  id,
   children,
 }: {
   title: string;
   actions?: ReactNode;
+  /** An in-page target, so an empty state elsewhere on the screen can point at this one. */
+  id?: string;
   children: ReactNode;
 }) {
   return (
-    <section className="panel" aria-label={title}>
+    <section className="panel" aria-label={title} id={id}>
       <div className="panel-head">
         <h2 className="caption">{title}</h2>
         {actions}

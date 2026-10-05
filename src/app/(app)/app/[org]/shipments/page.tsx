@@ -28,7 +28,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
 
   return (
     <AppShell title="Shipments" current="Shipments" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 940 }}>
+      <div className="app-page">
         <Panel title="Shipments">
           {shipments && shipments.length > 0 ? (
             <DataTable caption="Shipments in this organization">
@@ -66,10 +66,15 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
             <EmptyState
               title="No shipments yet"
               description="Create one to capture its parties, goods and packing once, then produce every document from it."
+              action={
+                <a className="btn" href="#new-shipment">
+                  Start a shipment below
+                </a>
+              }
             />
           )}
         </Panel>
-        <Panel title="New shipment">
+        <Panel title="New shipment" id="new-shipment">
           <CreateShipmentForm org={org} />
         </Panel>
       </div>

@@ -54,7 +54,7 @@ export default async function DocumentsPage({ params }: { params: Promise<{ org:
 
   return (
     <AppShell title="Documents" current="Documents" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 1040 }}>
+      <div className="app-page wide">
         <Callout tone="legal" title="Preparation only">
           These documents are prepared from your own data. They are not issued, endorsed, certified
           or cleared by any authority.
@@ -109,7 +109,11 @@ export default async function DocumentsPage({ params }: { params: Promise<{ org:
               </tbody>
             </DataTable>
           ) : (
-            <EmptyState title="No documents yet" description={NOTHING_YET} />
+            <EmptyState
+              title="No documents yet"
+              description={NOTHING_YET}
+              action={<LinkButton href={`/app/${org}/shipments`}>Open your shipments</LinkButton>}
+            />
           )}
         </Panel>
       </div>

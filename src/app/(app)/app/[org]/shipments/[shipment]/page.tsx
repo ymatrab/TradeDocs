@@ -80,7 +80,7 @@ export default async function ShipmentPage({
 
   return (
     <AppShell title={shipment.reference} current="Shipments" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 1040 }}>
+      <div className="app-page wide">
         <BoxGrid label="Shipment summary">
           <FieldBox ordinal="1" caption="Reference">
             <span className="data">{shipment.reference}</span>

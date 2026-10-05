@@ -49,7 +49,7 @@ export default async function ProductsPage({
 
   return (
     <AppShell title="Products" current="Products" orgId={org}>
-      <div style={{ display: 'grid', gap: 24, maxWidth: 1040 }}>
+      <div className="app-page wide">
         <Panel
           title={showingArchived ? 'Archived products' : 'Catalog'}
           actions={
@@ -119,11 +119,28 @@ export default async function ProductsPage({
               <EmptyState
                 title="Nothing matched"
                 description={`No product here matches “${term}”. Check the spelling, or clear the search to see the whole catalog.`}
+                action={
+                  <Link
+                    className="btn secondary"
+                    href={
+                      showingArchived
+                        ? `/app/${org}/products?show=archived`
+                        : `/app/${org}/products`
+                    }
+                  >
+                    Clear the search
+                  </Link>
+                }
               />
             ) : showingArchived ? (
               <EmptyState
                 title="Nothing archived"
                 description="Products you retire are kept here, out of the shipment picker but still readable on the documents that used them."
+                action={
+                  <Link className="btn secondary" href={`/app/${org}/products`}>
+                    Back to the catalog
+                  </Link>
+                }
               />
             ) : (
               <EmptyState
