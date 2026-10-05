@@ -1,7 +1,7 @@
 # TradeDocs — launch build plan
 
-Owner instruction 2026-10-05: plan everything first, then build it in one pass. Nothing below is
-built until the owner approves this plan. Branch: `redesign/manifest` (draft PR #10).
+Status 2026-10-05: sections 1–4 built on `redesign/manifest` (PR #10), CI green at 5fcdb3b, all six
+agents signed off. Next steps and remaining improvements: docs/LAUNCH_PLAN.md.
 
 ## Already on the branch (keep, re-verify in the final pass)
 
