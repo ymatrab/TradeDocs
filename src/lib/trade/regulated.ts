@@ -19,4 +19,4 @@ export function isRegulatedDocumentKind(kind: string): kind is RegulatedDocument
 }
 
 export const REGULATED_DOCUMENT_LIMITATION =
-  'Certificates of origin are pending legal and regulatory review and cannot be generated yet.';
+  'Certificates of origin are not available yet. Their wording is pending legal and regulatory review.';

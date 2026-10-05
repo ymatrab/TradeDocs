@@ -14,19 +14,20 @@ export default function NewPasswordPage() {
   return (
     <>
       <h1 style={{ fontSize: 28 }}>Choose a new password</h1>
-      <p className="muted">This replaces the password on your account.</p>
+      <p className="muted">Once saved, you sign in with this password from now on.</p>
       <AuthForm
         action={updatePassword}
         submitLabel="Save the new password"
         pendingLabel="Saving…"
         includeEmail={false}
         passwordLabel="New password"
-        passwordHint="At least 12 characters. Length protects an account better than punctuation does."
+        passwordHint="At least 12 characters. A long phrase is easier to remember and harder to guess."
         autoCompletePassword="new-password"
       />
       <p className="muted" style={{ marginTop: 24, marginBottom: 0, fontSize: 14 }}>
+        Link expired?{' '}
         <Link className="text-link" href="/reset-password">
-          Request a new link
+          Request a new one
         </Link>
       </p>
     </>

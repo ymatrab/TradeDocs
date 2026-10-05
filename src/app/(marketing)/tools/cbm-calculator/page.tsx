@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { LinkButton } from '@/components/primitives/button';
+import { PAGE_SOURCES } from '@/lib/trade/sources';
+import { SourcesBlock, ToolCta } from '../page-parts';
 import { CbmCalculator } from './calculator';
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ const faq = [
   },
   {
     q: 'How many CBM fit in a 20ft container?',
-    a: 'About 33 m³ of usable interior volume, and roughly 67 m³ in a 40ft standard or 76 m³ in a 40ft high cube. Loaded cargo rarely reaches those figures, because cartons do not divide neatly into the floor and cannot always be stacked.',
+    a: 'Typically about 33 m³ of internal volume, against roughly 67 m³ in a 40ft standard and 76 m³ in a 40ft high cube — the figures Maersk, for example, publishes for its dry containers. Individual boxes vary by series and carrier, and loaded cargo rarely reaches those figures, because cartons do not divide neatly into the floor and cannot always be stacked.',
   },
 ];
 
@@ -65,13 +65,10 @@ export default function CbmPage() {
           packing list, where TradeDocs derives the volume for you, checks that what is packed
           matches what is invoiced, and prints both from the same figures.
         </p>
-        <div className="cta-row">
-          <LinkButton href="/sign-up">Create a free account</LinkButton>
-          <Link className="text-link" href="/tools">
-            All trade tools
-          </Link>
-        </div>
+        <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>
+
+      <SourcesBlock ids={PAGE_SOURCES.cbm} />
     </>
   );
 }

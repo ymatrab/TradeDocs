@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
-import { INCOTERMS, INCOTERMS_DISCLAIMER, findIncoterm } from '@/lib/trade/incoterms';
+import {
+  INCOTERMS,
+  INCOTERMS_DISCLAIMER,
+  findIncoterm,
+  type Incoterm,
+} from '@/lib/trade/incoterms';
+import { PAGE_SOURCES } from '@/lib/trade/sources';
+import { SourcesBlock, ToolCta } from '../../page-parts';
 
 /** The eleven codes this route answers on. Anything else is a 404, not an empty page. */
 export function generateStaticParams() {
@@ -27,6 +33,16 @@ export async function generateMetadata({
   };
 }
 
+const party = (value: Incoterm['mainCarriage']) => (value === 'seller' ? 'Seller' : 'Buyer');
+
+/** Export and import clearance in one sentence, built from the data so all eleven agree. */
+function clearance(term: Incoterm): string {
+  if (term.exportClearance === term.importClearance) {
+    return `The ${term.exportClearance} handles both export and import clearance, including any import duties and taxes.`;
+  }
+  return `The ${term.exportClearance} clears the goods for export. The ${term.importClearance} clears them for import and pays any import duties and taxes.`;
+}
+
 export default async function IncotermPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
   const term = findIncoterm(code);
@@ -39,11 +55,11 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
       <section className="hero">
         <p className="eyebrow">
           <Link className="text-link" href="/tools/incoterms">
-            Incoterms 2020
+            Incoterms® 2020
           </Link>
         </p>
         <h1>
-          {term.code} — {term.name}
+          {term.code} Incoterms® 2020 — {term.name}
         </h1>
         <p className="lede">{term.riskPasses}</p>
       </section>
@@ -53,27 +69,62 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
           <FieldBox ordinal="1" caption="Transport mode">
             {term.mode === 'sea' ? 'Sea and inland waterway only' : 'Any mode, including sea'}
           </FieldBox>
-          <FieldBox ordinal="2" caption="Export clearance">
-            {term.exportClearance === 'seller' ? 'Seller' : 'Buyer'}
+          <FieldBox ordinal="2" caption="Main carriage arranged by">
+            {party(term.mainCarriage)}
           </FieldBox>
-          <FieldBox ordinal="3" caption="Import clearance">
-            {term.importClearance === 'seller' ? 'Seller' : 'Buyer'}
+          <FieldBox ordinal="3" caption="Export clearance">
+            {party(term.exportClearance)}
           </FieldBox>
-          <FieldBox ordinal="4" caption="Seller pays for" wide>
+          <FieldBox ordinal="4" caption="Import clearance">
+            {party(term.importClearance)}
+          </FieldBox>
+          <FieldBox ordinal="5" caption="Seller pays for" wide>
             {term.sellerCosts}
           </FieldBox>
         </BoxGrid>
       </section>
 
       <section className="section">
+        <h2>Who arranges the main carriage</h2>
+        <p className="measure">{term.carriageNote}</p>
+
+        <h2>Where risk transfers</h2>
+        <p className="measure">{term.riskPasses}</p>
+
+        <h2>Export and import clearance</h2>
+        <p className="measure">{clearance(term)}</p>
+
         <h2>Insurance</h2>
         <p className="measure">{term.insurance}</p>
 
         <h2>When {term.code} is the right choice</h2>
         <p className="measure">{term.suits}</p>
+      </section>
 
-        <h2>What goes wrong</h2>
+      <section className="section">
+        <h2>A worked example</h2>
+        <p className="measure">{term.example}</p>
+        <p className="muted measure">The parties are invented, for illustration only.</p>
+
+        <h2>Common mistakes</h2>
         <p className="measure">{term.watchOut}</p>
+        <ul className="measure">
+          {term.mistakes.map((mistake) => (
+            <li key={mistake}>{mistake}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section">
+        <h2>Questions about {term.code}</h2>
+        <div className="faq">
+          {term.faq.map((entry) => (
+            <details key={entry.q}>
+              <summary>{entry.q}</summary>
+              <p>{entry.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       <section className="section">
@@ -100,6 +151,8 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
         </Callout>
       </section>
 
+      <SourcesBlock ids={PAGE_SOURCES.incoterms} />
+
       <section className="section">
         <h2>Putting {term.code} on a document</h2>
         <p className="measure">
@@ -108,12 +161,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
           every document generated from it, so an invoice and a packing list cannot state different
           terms.
         </p>
-        <div className="cta-row">
-          <LinkButton href="/sign-up">Create a free account</LinkButton>
-          <Link className="text-link" href="/tools/incoterms">
-            Compare all eleven rules
-          </Link>
-        </div>
+        <ToolCta secondary={{ href: '/tools/incoterms', label: 'Compare all eleven rules' }} />
       </section>
     </>
   );
