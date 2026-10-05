@@ -45,7 +45,10 @@ jobs:
       - run: npm run check:boundaries
       - run: npm run check:secrets
       - run: npm run check:licenses
-      - run: npm audit --audit-level=high
+      # Runtime dependencies fail on high. Development tooling fails on critical: braces
+      # (GHSA-vfj7-8cjw-p6xm) reaches ESLint only and has no patched release. DECISIONS.md D-010.
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm audit --audit-level=critical
       - run: npm sbom --sbom-format cyclonedx > sbom.json
       - name: Build with Vercel production foundation configuration
         run: npm run build

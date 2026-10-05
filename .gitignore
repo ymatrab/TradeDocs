@@ -15,3 +15,4 @@ supabase/.branches/
 output/
 
 graphify-out/
+.claude/worktrees/
