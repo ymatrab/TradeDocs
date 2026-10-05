@@ -161,9 +161,11 @@ describe('free document route', () => {
     configureDatabase();
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue(
-        Response.json([{ allowed: false, remaining: 0, retry_after_seconds: 17 }]),
-      ),
+      vi
+        .fn()
+        .mockResolvedValue(
+          Response.json([{ allowed: false, remaining: 0, retry_after_seconds: 17 }]),
+        ),
     );
     const response = await POST(post(JSON.stringify(request())));
     expect(response.status).toBe(429);
