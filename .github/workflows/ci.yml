@@ -73,6 +73,7 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            review-artifacts/
             sbom.json
             format.patch
           retention-days: 30

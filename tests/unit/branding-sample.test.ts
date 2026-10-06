@@ -6,7 +6,7 @@ import { renderTradeDocument } from '@/lib/pdf/trade-document';
 import { png } from '../fixtures/images';
 
 /**
- * Writes a branded sample invoice to test-results/review so the owner can look at the
+ * Writes a branded sample invoice to review-artifacts/ so the owner can look at the
  * Pro branding without an entitled account. The parties and images are invented: the logo is
  * a drawn mark (dark block with a yellow bar), the signature a drawn stroke.
  */
@@ -92,7 +92,7 @@ describe('branded sample for review', () => {
     ]);
     const pdf = renderTradeDocument(snapshot, createFontSet(), images);
     expect(pdf.byteLength).toBeGreaterThan(1000);
-    mkdirSync('test-results/review', { recursive: true });
-    writeFileSync('test-results/review/branded-commercial-invoice.pdf', pdf);
+    mkdirSync('review-artifacts', { recursive: true });
+    writeFileSync('review-artifacts/branded-commercial-invoice.pdf', pdf);
   });
 });
