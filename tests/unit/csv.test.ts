@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { detectDelimiter, parseCatalog, parseDelimited, readDecimal, toCsv } from '@/lib/csv';
+import {
+  detectDelimiter,
+  parseCatalog,
+  parseDelimited,
+  parseDelimitedLines,
+  readDecimal,
+  toCsv,
+} from '@/lib/csv';
 
 /** One parsed cell, raised rather than read as undefined when the shape is wrong. */
 function cell(rows: string[][], row: number, column: number): string {
@@ -39,6 +46,12 @@ describe('delimited parsing', () => {
 
   it('preserves empty cells so later columns do not shift left', () => {
     expect(parseDelimited('a,,c')).toEqual([['a', '', 'c']]);
+  });
+});
+
+describe('record line numbers', () => {
+  it('records the line a record starts on, counting lines inside quotes', () => {
+    expect(parseDelimitedLines('a\n"b\nc"\nd').map((record) => record.line)).toEqual([1, 2, 4]);
   });
 });
 
@@ -93,6 +106,7 @@ describe('catalog reading', () => {
     );
     expect(missingDescription).toBe(false);
     expect(rows[0]).toEqual({
+      line: 2,
       sku: 'A-100',
       description: 'Cotton tea towel',
       hs_code: '630260',
@@ -113,9 +127,28 @@ describe('catalog reading', () => {
     expect(ignored).toContain('warehouse bay');
   });
 
-  it('skips rows with no description, which is what a trailing blank line is', () => {
+  it('keeps a row with values but no description, so the import reports it by line', () => {
     const { rows } = parseCatalog('description,price\nTowel,2.40\n,1.00\n');
-    expect(rows).toHaveLength(1);
+    expect(rows).toEqual([
+      { line: 2, description: 'Towel', unit_price: '2.40' },
+      { line: 3, unit_price: '1.00' },
+    ]);
+  });
+
+  it('leaves out blank lines and rows with data only in unused columns', () => {
+    const { rows } = parseCatalog('description,bay\nTowel,B1\n\n,B2\n');
+    expect(rows).toEqual([{ line: 2, description: 'Towel' }]);
+  });
+
+  it('numbers rows by the line they start on in the file', () => {
+    const { rows } = parseCatalog(
+      'description,price\r\nTowel,2.40\r\n\r\n"Mug,\nprinted",3.10\r\nPlate,4.00',
+    );
+    expect(rows.map((row) => [row.line, row.description])).toEqual([
+      [2, 'Towel'],
+      [4, 'Mug,\nprinted'],
+      [6, 'Plate'],
+    ]);
   });
 
   it('reads a semicolon file without treating the row as one column', () => {

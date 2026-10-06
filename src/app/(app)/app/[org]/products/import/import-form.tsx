@@ -27,7 +27,12 @@ export function ImportForm({ org }: { org: string }) {
             {state.error}
           </Callout>
         ) : null}
-        {state.notice ? (
+        {state.notice && state.previewed ? (
+          <Callout tone="success" title="Ready to import" live>
+            {state.notice} Choose Import catalog to write it.
+          </Callout>
+        ) : null}
+        {state.notice && !state.previewed ? (
           <Callout tone="success" title="Catalog updated" live>
             {state.notice}{' '}
             <Link className="text-link" href={`/app/${org}/products`}>
@@ -72,6 +77,7 @@ export function ImportForm({ org }: { org: string }) {
               rows={6}
               invalid={invalid}
               aria-describedby={describedBy}
+              defaultValue={state.checked ?? ''}
               className="textarea data"
               placeholder={
                 'sku,description,hs_code,origin,unit,unit price\nA-100,Cotton tea towel,630260,IN,pcs,2.40'
@@ -80,7 +86,17 @@ export function ImportForm({ org }: { org: string }) {
           )}
         </Field>
 
-        <div>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button
+            type="submit"
+            name="intent"
+            value="preview"
+            tone="secondary"
+            pending={pending}
+            pendingLabel="Checking…"
+          >
+            Check the file
+          </Button>
           <Button type="submit" pending={pending} pendingLabel="Reading the file…">
             Import catalog
           </Button>
@@ -91,14 +107,14 @@ export function ImportForm({ org }: { org: string }) {
         <Panel title="Rows to correct">
           <div style={{ display: 'grid', gap: 12 }}>
             <p className="muted">
-              Row numbers count the products under your heading row, so row 1 is the first product.
-              Fix these and import the file again.
+              Line numbers match your file as a spreadsheet or text editor shows it: line 1 is the
+              heading row. Fix these and check the file again.
             </p>
             <DataTable caption="Rows that were rejected" density="compact">
               <thead>
                 <tr>
                   <th scope="col" className="numeric">
-                    Row
+                    Line
                   </th>
                   <th scope="col">Problem</th>
                 </tr>

@@ -8,6 +8,7 @@ import {
   LayoutDashboard,
   LogOut,
   Package,
+  Settings,
   UserCog,
   Users,
 } from 'lucide-react';
@@ -47,6 +48,7 @@ export function AppShell({
         { href: `/app/${orgId}/companies`, label: 'Companies', icon: Building2 },
         { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
         { href: `/app/${orgId}/billing`, label: 'Billing', icon: CreditCard },
+        { href: `/app/${orgId}/settings`, label: 'Settings', icon: Settings },
       ]
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 

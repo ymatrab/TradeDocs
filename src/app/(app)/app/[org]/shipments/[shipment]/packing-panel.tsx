@@ -16,6 +16,7 @@ import {
   removePackage,
 } from '@/app/(app)/master-data-actions';
 import type { ActionState } from '@/app/(app)/actions';
+import { packingTotals, rowWeight, unreconciledLines } from '@/lib/trade/packing';
 
 export type PackageContent = {
   id: string;
@@ -90,26 +91,18 @@ export function PackingPanel({
   );
 
   const byItem = new Map(items.map((item) => [item.id, item]));
-  const allocated = new Map<string, number>();
-  for (const row of packages) {
-    for (const content of row.contents) {
-      allocated.set(content.item_id, (allocated.get(content.item_id) ?? 0) + content.quantity);
-    }
-  }
-
-  const unreconciled = items
-    .map((item) => ({ item, packed: allocated.get(item.id) ?? 0 }))
-    .filter(({ item, packed }) => Math.abs(packed - item.quantity) > 0.0005);
-
-  const totals = packages.reduce(
-    (sum, row) => ({
-      count: sum.count + row.package_count,
-      gross: sum.gross + Number(row.gross_weight_kg ?? 0),
-      net: sum.net + Number(row.net_weight_kg ?? 0),
-      volume: sum.volume + Number(row.volume_m3 ?? 0),
-    }),
-    { count: 0, gross: 0, net: 0, volume: 0 },
-  );
+  // Exact decimals, and weights per row (count x per-package weight), as the packing list
+  // a document prints them.
+  const unreconciled = unreconciledLines(
+    items,
+    packages.flatMap((row) => row.contents),
+  ).map(({ item, packed, over }) => ({ item, packed: packed.toNumber(), over }));
+  const summed = packingTotals(packages);
+  const totals = {
+    count: summed.packages,
+    gross: summed.gross_weight_kg?.toNumber() ?? 0,
+    volume: summed.volume_m3.toNumber(),
+  };
 
   return (
     <Panel title="Packing">
@@ -163,8 +156,16 @@ export function PackingPanel({
                       value={row.volume_m3 === null ? '—' : decimal(row.volume_m3, 3)}
                       unit={row.volume_m3 === null ? undefined : 'm³'}
                     />
+                    {/* The row's weight: count x per-package gross, which the total adds. */}
                     <NumericCell
-                      value={row.gross_weight_kg === null ? '—' : decimal(row.gross_weight_kg, 3)}
+                      value={
+                        row.gross_weight_kg === null
+                          ? '—'
+                          : decimal(
+                              rowWeight(row.package_count, row.gross_weight_kg)?.toNumber() ?? 0,
+                              3,
+                            )
+                      }
                       unit={row.gross_weight_kg === null ? undefined : 'kg'}
                     />
                     <td>
@@ -244,11 +245,11 @@ export function PackingPanel({
                   consignment is held. These lines differ:
                 </span>
                 <ul style={{ marginTop: 8, marginBottom: 0, paddingLeft: 18 }}>
-                  {unreconciled.map(({ item, packed }) => (
+                  {unreconciled.map(({ item, packed, over }) => (
                     <li key={item.id}>
                       {item.description}: {showQuantity(packed)} of {showQuantity(item.quantity)}{' '}
                       {item.unit} allocated
-                      {packed > item.quantity ? ' — more packed than invoiced' : ''}
+                      {over ? ' — more packed than invoiced' : ''}
                     </li>
                   ))}
                 </ul>
@@ -426,7 +427,7 @@ export function PackingPanel({
               <Field
                 id="allocate_quantity"
                 label="Quantity in this package"
-                hint="Replaces any earlier amount for this line in this package."
+                hint="The total across every package in that row. Replaces any earlier amount for this line there."
                 error={allocateState.fields?.quantity}
               >
                 {({ id, describedBy, invalid }) => (

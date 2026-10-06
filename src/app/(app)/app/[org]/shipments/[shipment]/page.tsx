@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { createClient } from '@/lib/supabase/server';
+import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { decimal } from '@/lib/format';
 import { currencyMinorUnits, sumLineTotals } from '@/lib/money';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { freshnessOf } from '@/lib/trade/staleness';
 import { ShipmentEditor } from './shipment-editor';
 import { PartiesPanel } from './parties-panel';
 import { PackingPanel } from './packing-panel';
 import { DocumentsPanel } from './documents-panel';
+import { DuplicateShipmentForm } from './duplicate-shipment-form';
 
 export const metadata: Metadata = { title: 'Shipment' };
 
@@ -21,6 +23,7 @@ export default async function ShipmentPage({
 }) {
   const { org, shipment: shipmentId } = await params;
   const client = await createClient();
+  const user = await getUser();
 
   const { data: shipment } = await client
     .from('shipments')
@@ -31,37 +34,59 @@ export default async function ShipmentPage({
 
   // Everything this screen needs, fetched together. The panels below are the parts of
   // one record, not separate pages, so they must not each pay a round trip.
-  const [itemsResult, documentsResult, packagesResult, companiesResult, catalogResult] =
-    await Promise.all([
-      client
-        .from('shipment_items')
-        .select('*')
-        .eq('shipment_id', shipmentId)
-        .order('position', { ascending: true }),
-      client
-        .from('documents')
-        .select('id, kind, number, status, shipment_revision, created_at')
-        .eq('shipment_id', shipmentId)
-        .order('created_at', { ascending: false }),
-      client
-        .from('shipment_packages')
-        .select('*, package_contents (id, item_id, quantity)')
-        .eq('shipment_id', shipmentId)
-        .order('position', { ascending: true }),
-      client
-        .from('companies')
-        .select('id, name, city, country_code')
-        .eq('org_id', org)
-        .is('archived_at', null)
-        .order('name'),
-      client
-        .from('products')
-        .select('id, sku, description, hs_code, unit, unit_price')
-        .eq('org_id', org)
-        .is('archived_at', null)
-        .order('description')
-        .limit(500),
-    ]);
+  const [
+    itemsResult,
+    documentsResult,
+    packagesResult,
+    companiesResult,
+    catalogResult,
+    previewResult,
+    membershipResult,
+  ] = await Promise.all([
+    client
+      .from('shipment_items')
+      .select('*')
+      .eq('shipment_id', shipmentId)
+      .order('position', { ascending: true }),
+    client
+      .from('documents')
+      .select('id, kind, number, status, status_reason, shipment_revision, snapshot, created_at')
+      .eq('shipment_id', shipmentId)
+      .order('created_at', { ascending: false }),
+    client
+      .from('shipment_packages')
+      .select('*, package_contents (id, item_id, quantity)')
+      .eq('shipment_id', shipmentId)
+      .order('position', { ascending: true }),
+    client
+      .from('companies')
+      .select('id, name, city, country_code')
+      .eq('org_id', org)
+      .is('archived_at', null)
+      .order('name'),
+    client
+      .from('products')
+      .select('id, sku, description, hs_code, unit, unit_price')
+      .eq('org_id', org)
+      .is('archived_at', null)
+      .order('description')
+      .limit(500),
+    // The snapshot a document would carry now, to say why an earlier one is stale.
+    client.rpc('preview_document', {
+      target_shipment: shipmentId,
+      document_kind: 'commercial_invoice',
+    }),
+    user
+      ? client
+          .from('memberships')
+          .select('role')
+          .eq('org_id', org)
+          .eq('user_id', user.id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+  ]);
+  const canVoid =
+    membershipResult.data?.role === 'owner' || membershipResult.data?.role === 'admin';
 
   const lines = itemsResult.data ?? [];
   const packageRows = packagesResult.data ?? [];
@@ -123,6 +148,7 @@ export default async function ShipmentPage({
             country_of_origin: shipment.country_of_origin,
             country_of_destination: shipment.country_of_destination,
             marks_and_numbers: shipment.marks_and_numbers,
+            shipped_on: shipment.shipped_on,
             revision: shipment.revision,
             currency: shipment.currency,
           }}
@@ -181,14 +207,23 @@ export default async function ShipmentPage({
           org={org}
           shipmentId={shipmentId}
           regulatedEnabled={regulatedDocumentsEnabled()}
-          documents={(documentsResult.data ?? []).map((document) => ({
-            id: document.id,
-            kind: document.kind,
-            number: document.number,
-            status: document.status,
-            stale: document.shipment_revision < shipment.revision,
-          }))}
+          canVoid={canVoid}
+          documents={(documentsResult.data ?? []).map((document) => {
+            const current = previewResult.data ?? undefined;
+            const freshness = freshnessOf(document, shipment.revision, current);
+            return {
+              id: document.id,
+              kind: document.kind,
+              number: document.number,
+              status: document.status,
+              stale: freshness.stale,
+              reason: freshness.reason,
+              statusReason: document.status_reason,
+            };
+          })}
         />
+
+        <DuplicateShipmentForm org={org} shipmentId={shipmentId} reference={shipment.reference} />
 
         <Panel title="Audit">
           <p className="muted" style={{ marginBottom: 0 }}>

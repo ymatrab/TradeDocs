@@ -16,6 +16,7 @@ export const MAX_SET_DOCUMENTS = 60;
 
 /**
  * Rows per product import file. Enforced by public.import_products
- * (supabase/migrations/20260908000200_master_data_access.sql); this mirrors it for display.
+ * (supabase/migrations/20261006000400_shipment_reuse_and_import.sql); the import action
+ * refuses a larger file before calling it, and this mirrors it for display.
  */
 export const MAX_IMPORT_ROWS = 2000;

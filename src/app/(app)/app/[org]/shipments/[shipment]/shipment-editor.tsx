@@ -92,6 +92,9 @@ export function ShipmentEditor({
         >
           <input type="hidden" name="org" value={org} />
           <input type="hidden" name="shipment" value={shipmentId} />
+          {/* The revision this form shows. A save against a newer one is refused rather
+              than overwriting someone else's change. */}
+          <input type="hidden" name="revision" value={String(shipment.revision ?? '')} />
           <Result state={detailState} />
           <div
             style={{
@@ -193,6 +196,24 @@ export function ShipmentEditor({
               )}
             </Field>
           </div>
+          <Field
+            id="shipped_on"
+            label="Shipping date"
+            requirement="Optional"
+            hint="The date the goods leave, as stated on the delivery note."
+            error={detailState.fields?.shipped_on}
+          >
+            {({ id, describedBy, invalid }) => (
+              <Input
+                id={id}
+                name="shipped_on"
+                type="date"
+                invalid={invalid}
+                aria-describedby={describedBy}
+                defaultValue={String(shipment.shipped_on ?? '')}
+              />
+            )}
+          </Field>
           <Field
             id="marks_and_numbers"
             label="Marks and numbers"

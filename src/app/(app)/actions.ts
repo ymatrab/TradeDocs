@@ -76,7 +76,12 @@ export async function inviteMember(
     invitee_email: parsed.data.email,
     invitee_role: parsed.data.role,
   });
-  if (error || !data) return { error: 'That invitation could not be created.' };
+  if (error || !data) {
+    if (error?.code === '42501') {
+      return { error: 'Only an owner or administrator can invite members.' };
+    }
+    return { error: 'That invitation could not be created. Try again.' };
+  }
 
   revalidatePath(`/app/${parsed.data.org}/members`);
   // Returned once and never stored in readable form. Delivery by email arrives with
@@ -98,18 +103,22 @@ export async function changeRole(_previous: ActionState, formData: FormData): Pr
   }
 
   const client = await createClient();
-  const { error } = await client
+  // Read back: the row policy lets only owners change roles, and a change it filters out
+  // is not an error to PostgREST, so without the row count it would read as done.
+  const { data: changed, error } = await client
     .from('memberships')
     .update({ role: parsed.data.role })
     .eq('org_id', parsed.data.org)
-    .eq('user_id', parsed.data.user);
+    .eq('user_id', parsed.data.user)
+    .select('user_id');
   if (error) {
     return {
       error: error.message.includes('at least one owner')
         ? 'An organization must keep at least one owner.'
-        : 'That role could not be changed.',
+        : 'That role could not be changed. Try again.',
     };
   }
+  if (!changed?.length) return { error: 'Only an owner can change roles.' };
   revalidatePath(`/app/${parsed.data.org}/members`);
   return { notice: 'Role updated.' };
 }
@@ -124,17 +133,21 @@ export async function removeMember(
   if (!parsed.success) return { error: 'Check the details.' };
 
   const client = await createClient();
-  const { error } = await client
+  const { data: removed, error } = await client
     .from('memberships')
     .delete()
     .eq('org_id', parsed.data.org)
-    .eq('user_id', parsed.data.user);
+    .eq('user_id', parsed.data.user)
+    .select('user_id');
   if (error) {
     return {
       error: error.message.includes('at least one owner')
         ? 'An organization must keep at least one owner.'
-        : 'That member could not be removed.',
+        : 'That member could not be removed. Try again.',
     };
+  }
+  if (!removed?.length) {
+    return { error: 'Only an owner or administrator can remove another member.' };
   }
   revalidatePath(`/app/${parsed.data.org}/members`);
   return { notice: 'Member removed.' };

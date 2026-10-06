@@ -1,15 +1,16 @@
 'use client';
 
 import { useActionState } from 'react';
-import { Download, FolderDown } from 'lucide-react';
+import { Download, Eye, FolderDown } from 'lucide-react';
 import { Button, LinkButton } from '@/components/primitives/button';
-import { Field, Select } from '@/components/primitives/form';
+import { Field, Input, Select } from '@/components/primitives/form';
+import { ConfirmButton } from '@/components/primitives/confirm';
 import { Panel } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
 import { ActionResult } from '@/components/primitives/action-result';
 import { DocumentStatus, type DocumentState } from '@/components/document/status';
 import { documentKindLabel, documentKindLabels } from '@/lib/labels';
-import { generateDocument } from '@/app/(app)/shipment-actions';
+import { generateDocument, voidDocument } from '@/app/(app)/shipment-actions';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 import type { ActionState } from '@/app/(app)/actions';
 
@@ -19,6 +20,10 @@ export type GeneratedDocument = {
   number: string;
   status: string;
   stale: boolean;
+  /** Why a stale document no longer matches the shipment. */
+  reason?: string | null;
+  /** Why a document was superseded or voided, as recorded. */
+  statusReason?: string | null;
 };
 
 /**
@@ -37,14 +42,21 @@ export function DocumentsPanel({
   shipmentId,
   documents,
   regulatedEnabled,
+  canVoid = false,
 }: {
   org: string;
   shipmentId: string;
   documents: GeneratedDocument[];
   /** Regulated types are offered only once approved; the server refuses them regardless. */
   regulatedEnabled: boolean;
+  /** Owners and administrators may void; the routine refuses everyone else regardless. */
+  canVoid?: boolean;
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(generateDocument, {});
+  const [voidState, voidAction, voidPending] = useActionState<ActionState, FormData>(
+    voidDocument,
+    {},
+  );
   const kinds = Object.entries(documentKindLabels).filter(
     ([kind]) => regulatedEnabled || !isRegulatedDocumentKind(kind),
   );
@@ -68,6 +80,7 @@ export function DocumentsPanel({
     >
       <div style={{ display: 'grid', gap: 16 }}>
         <ActionResult state={state} />
+        <ActionResult state={{ notice: voidState.notice }} successTitle="Voided" />
         <form
           action={action}
           style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}
@@ -91,6 +104,23 @@ export function DocumentsPanel({
             Generate document
           </Button>
         </form>
+        <p className="muted" style={{ margin: 0 }}>
+          Preview before you generate:{' '}
+          {kinds.map(([kind, label], index) => (
+            <span key={kind}>
+              {index > 0 ? ' · ' : null}
+              <a
+                className="text-link"
+                href={`/api/shipments/${shipmentId}/preview?kind=${kind}`}
+                target="_blank"
+                rel="noopener"
+              >
+                <Eye size={13} aria-hidden="true" /> {label}
+              </a>
+            </span>
+          ))}
+          . A preview carries no number and is marked as not issued.
+        </p>
         {regulatedEnabled ? null : (
           <p className="muted" style={{ margin: 0 }}>
             {REGULATED_DOCUMENT_LIMITATION}
@@ -117,16 +147,69 @@ export function DocumentsPanel({
                     <td>{documentKindLabel(document.kind)}</td>
                     <td>
                       <DocumentStatus state={renderedState(document)} />
+                      {document.status === 'final' && document.stale && document.reason ? (
+                        <span className="muted" style={{ display: 'block', fontSize: 13 }}>
+                          {document.reason}
+                        </span>
+                      ) : null}
+                      {document.status !== 'final' && document.statusReason ? (
+                        <span className="muted" style={{ display: 'block', fontSize: 13 }}>
+                          {document.statusReason}
+                        </span>
+                      ) : null}
                     </td>
                     <td>
-                      <LinkButton
-                        href={`/api/documents/${document.id}`}
-                        tone="secondary"
-                        compact
-                        download
-                      >
-                        <Download size={15} aria-hidden="true" /> PDF
-                      </LinkButton>
+                      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                        <LinkButton
+                          href={`/api/documents/${document.id}`}
+                          tone="secondary"
+                          compact
+                          download
+                        >
+                          <Download size={15} aria-hidden="true" /> PDF
+                        </LinkButton>
+                        {canVoid && document.status === 'final' ? (
+                          <>
+                            <form id={`void-${document.id}`} action={voidAction}>
+                              <input type="hidden" name="org" value={org} />
+                              <input type="hidden" name="shipment" value={shipmentId} />
+                              <input type="hidden" name="document" value={document.id} />
+                            </form>
+                            <ConfirmButton
+                              form={`void-${document.id}`}
+                              tone="quiet"
+                              compact
+                              trigger="Void"
+                              title={`Void ${document.number}?`}
+                              description="A voided document stays in the history with your reason and can no longer be part of the set. This cannot be undone; generate a new revision if one is needed."
+                              confirm="Void the document"
+                              cancel="Keep it"
+                              pending={voidPending}
+                              error={voidState.fields?.reason ? undefined : voidState.error}
+                              failed={Boolean(voidState.error)}
+                            >
+                              <Field
+                                id={`void-reason-${document.id}`}
+                                label="Reason"
+                                hint="Shown beside the document, such as “Issued in error”."
+                                error={voidState.fields?.reason}
+                              >
+                                {({ id, describedBy, invalid }) => (
+                                  <Input
+                                    id={id}
+                                    name="reason"
+                                    form={`void-${document.id}`}
+                                    maxLength={500}
+                                    required
+                                    invalid={invalid}
+                                    aria-describedby={describedBy}
+                                  />
+                                )}
+                              </Field>
+                            </ConfirmButton>
+                          </>
+                        ) : null}
+                      </div>
                     </td>
                   </tr>
                 ))}

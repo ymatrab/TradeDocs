@@ -20,11 +20,18 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
     .maybeSingle();
   if (!organization) notFound();
 
-  const { data: shipments } = await client
-    .from('shipments')
-    .select('id, reference, status, currency, revision, created_at')
-    .eq('org_id', org)
-    .order('created_at', { ascending: false });
+  const [{ data: shipments }, { data: settings }] = await Promise.all([
+    client
+      .from('shipments')
+      .select('id, reference, status, currency, revision, created_at')
+      .eq('org_id', org)
+      .order('created_at', { ascending: false }),
+    client
+      .from('organization_settings')
+      .select('default_currency')
+      .eq('org_id', org)
+      .maybeSingle(),
+  ]);
 
   return (
     <AppShell title="Shipments" current="Shipments" orgId={org}>
@@ -75,7 +82,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
           )}
         </Panel>
         <Panel title="New shipment" id="new-shipment">
-          <CreateShipmentForm org={org} />
+          <CreateShipmentForm org={org} defaultCurrency={settings?.default_currency ?? 'EUR'} />
         </Panel>
       </div>
     </AppShell>
