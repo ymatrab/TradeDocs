@@ -7,9 +7,15 @@
  * a named person has checked the record; that is not an approval and must not be shown as one.
  *
  * Pages render these through the tools' SourcesBlock; nothing here is fetched at runtime.
+ *
+ * Two parts, merged into one SOURCES map: the core records below (tools and the first
+ * articles), and the per-article files in lib/content/sources/<slug>.ts, so writers adding
+ * sources in parallel never edit this file. An id may be defined only once across both.
  */
 
-export type SourceId =
+import { ARTICLE_SOURCE_FILES, type ArticleSourceId } from '@/lib/content/sources';
+
+export type CoreSourceId =
   | 'icc-incoterms-2020'
   | 'iata-volumetric'
   | 'dhl-express-volumetric'
@@ -27,8 +33,10 @@ export type SourceId =
   | 'wto-customs-valuation'
   | 'trade-gov-export-documents';
 
-export type SourceRecord = {
-  id: SourceId;
+export type SourceId = CoreSourceId | ArticleSourceId;
+
+/** A source as a per-article file writes it; the map key becomes its id. */
+export type SourceFields = {
   authority: string;
   title: string;
   url: string;
@@ -40,12 +48,14 @@ export type SourceRecord = {
   reviewer: string;
 };
 
+export type SourceRecord = SourceFields & { id: SourceId };
+
 const RETRIEVED = '2026-10-05';
 /** The blog round: sources first cited by the blog posts. */
 const RETRIEVED_BLOG = '2026-10-06';
 const PENDING = 'pending owner review';
 
-export const SOURCES: Record<SourceId, SourceRecord> = {
+const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
   'icc-incoterms-2020': {
     id: 'icc-incoterms-2020',
     authority: 'International Chamber of Commerce (ICC)',
@@ -210,6 +220,31 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     reviewer: PENDING,
   },
 };
+
+/**
+ * Merges per-article source files into the core records. A repeated id would silently
+ * replace another record's URL on every page that cites it, so it stops the build instead.
+ */
+export function mergeSourceFiles(
+  core: Readonly<Record<string, SourceRecord>>,
+  files: readonly Readonly<Record<string, SourceFields>>[],
+): Record<string, SourceRecord> {
+  const merged: Record<string, SourceRecord> = { ...core };
+  for (const file of files) {
+    for (const [id, fields] of Object.entries(file)) {
+      if (id in merged) throw new Error(`Source id "${id}" is defined more than once.`);
+      merged[id] = { ...fields, id: id as SourceId };
+    }
+  }
+  return merged;
+}
+
+const MERGED_SOURCES = mergeSourceFiles(CORE_SOURCES, ARTICLE_SOURCE_FILES);
+
+export const SOURCES = MERGED_SOURCES as Record<SourceId, SourceRecord>;
+
+/** Ids of the core records, for the registry checks. */
+export const CORE_SOURCE_IDS = Object.keys(CORE_SOURCES) as CoreSourceId[];
 
 /** Sources cited on each public page, in the order they are listed. */
 export const PAGE_SOURCES = {

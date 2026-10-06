@@ -1,7 +1,11 @@
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
-import { countWords, type ContentArticle } from '@/lib/content/article';
+import { countWords, orderArticles, type ContentArticle } from '@/lib/content/article';
 import { GUIDES } from '@/lib/content/guides';
+import { MAX_RELATED, findArticleByPath, relatedLinks } from '@/lib/content/related';
+import { ARTICLE_SOURCE_FILES } from '@/lib/content/sources';
 import { articlePlainText } from '@/lib/content/plain-text';
 import {
   BLOG_HUB_COVER,
@@ -12,7 +16,7 @@ import {
   postWordCount,
 } from '@/lib/content/posts';
 import { PUBLIC_TOOLS, SITEMAP_PAGES } from '@/lib/seo/site';
-import { SOURCES } from '@/lib/trade/sources';
+import { CORE_SOURCE_IDS, SOURCES, mergeSourceFiles, type SourceFields } from '@/lib/trade/sources';
 
 const UNSPLASH_RAW = /^https:\/\/images\.unsplash\.com\/photo-[\w-]+$/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -151,5 +155,76 @@ describe('blog posts', () => {
     expect(text).toContain(`Short answer: ${post!.answer}`);
     for (const entry of post!.faq) expect(text).toContain(`Q: ${entry.q}`);
     for (const id of post!.sources) expect(text).toContain(SOURCES[id].url);
+  });
+});
+
+/** The `.ts` files in a content folder, minus its index, as slugs. */
+function articleFiles(folder: string): string[] {
+  return readdirSync(join(process.cwd(), 'src/lib/content', folder))
+    .filter((name) => name.endsWith('.ts') && name !== 'index.ts')
+    .map((name) => name.replace(/\.ts$/, ''))
+    .sort();
+}
+
+describe('one file per article (parallel writing)', () => {
+  it('lists every post and guide file in its index, each named after its slug', () => {
+    // A file missing from the index would never be rendered, linked or put in the sitemap.
+    expect(articleFiles('posts')).toEqual(POSTS.map((post) => post.slug).sort());
+    expect(articleFiles('guides')).toEqual(GUIDES.map((guide) => guide.slug).sort());
+  });
+
+  it('orders articles newest first and keeps the index order on the same day', () => {
+    const at = (slug: string, published: string) => ({ ...POSTS[0]!, slug, published });
+    const entries = [at('b', '2026-10-06'), at('a', '2026-10-06'), at('c', '2026-11-01')];
+    expect(orderArticles(entries).map((article) => article.slug)).toEqual(['c', 'b', 'a']);
+  });
+
+  it('merges per-article source files, named after an article, without repeating an id', () => {
+    const slugs = new Set([...POSTS, ...GUIDES].map((article) => article.slug));
+    for (const slug of articleFiles('sources')) expect(slugs.has(slug), slug).toBe(true);
+    expect(articleFiles('sources')).toHaveLength(ARTICLE_SOURCE_FILES.length);
+
+    const added = ARTICLE_SOURCE_FILES.flatMap((file) => Object.keys(file));
+    expect(new Set(added).size).toBe(added.length);
+    expect(Object.keys(SOURCES)).toHaveLength(CORE_SOURCE_IDS.length + added.length);
+    for (const id of added) {
+      const record = SOURCES[id as keyof typeof SOURCES];
+      expect(record.id).toBe(id);
+      expect(record.url, id).toMatch(/^https:\/\//);
+      expect(record.retrieved, id).toMatch(ISO_DATE);
+      expect(record.reviewer, id).not.toBe('');
+    }
+  });
+
+  it('link related articles that exist, never themselves, at most six', () => {
+    const articles = [
+      ...POSTS.map((article) => ({ article, kind: 'blog' as const })),
+      ...GUIDES.map((article) => ({ article, kind: 'guides' as const })),
+    ];
+    for (const { article, kind } of articles) {
+      const own = `/${kind}/${article.slug}`;
+      const paths = article.related ?? [];
+      expect(paths.length, article.slug).toBeLessThanOrEqual(MAX_RELATED);
+      for (const path of paths) {
+        expect(findArticleByPath(path), `${article.slug}: ${path}`).toBeDefined();
+        expect(path, article.slug).not.toBe(own);
+      }
+      const links = relatedLinks(article, kind);
+      expect(links.length, article.slug).toBeLessThanOrEqual(MAX_RELATED);
+      expect(links.map((link) => link.href), article.slug).not.toContain(own);
+    }
+    expect(findArticleByPath('/blog/not-a-post')).toBeUndefined();
+    expect(findArticleByPath('/tools/cbm-calculator')).toBeUndefined();
+  });
+
+  it('refuses a source id defined twice', () => {
+    const record = SOURCES['icc-incoterms-2020'];
+    const fields: SourceFields = { ...record };
+    const core = { 'icc-incoterms-2020': record };
+    const twice = /defined more than once/;
+    expect(() => mergeSourceFiles(core, [{ 'icc-incoterms-2020': fields }])).toThrow(twice);
+    const repeated = [{ 'x-source': fields }, { 'x-source': fields }];
+    expect(() => mergeSourceFiles({}, repeated)).toThrow(twice);
+    expect(mergeSourceFiles({}, [{ 'x-source': fields }])['x-source']?.id).toBe('x-source');
   });
 });

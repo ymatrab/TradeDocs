@@ -60,11 +60,11 @@ Guides and blog posts render through one component (`src/components/content/arti
 - **Conversion.** The in-context tool button sits under the short answer (account offer only where accounts are open), a mid-article callout links the matching tool, and `/pricing` is linked only as plain text.
 - **Machine-readable copies.** llms.txt lists every guide and post with its short answer; `/llms-full.txt` carries the full text and sources; `/blog/rss.xml` carries the posts.
 
-Posts are added to `POSTS` in `src/lib/content/posts.ts`; the sitemap (with cover image), llms.txt, llms-full.txt, the feed and the hub pick them up from there. The `/blog` sitemap date is the newest post's `updated`.
+Posts are added as `src/lib/content/posts/<slug>.ts` and listed in `posts/index.ts` (docs/content/WRITING_BRIEF.md); the sitemap (with cover image), llms.txt, llms-full.txt, the feed and the hub pick them up from there. The `/blog` sitemap date is the newest post's `updated`.
 
 ## Images (D-016)
 
-- **Source.** Guide, post and hub covers are Unsplash photos, chosen per page and data in `src/lib/content/guides.ts` (`cover`, `GUIDES_HUB_COVER`) and `src/lib/content/posts.ts` (`cover`, `BLOG_HUB_COVER`), typed by `src/lib/content/images.ts`. The download event was tracked through the Unsplash API when each photo was chosen; a replacement photo needs its own tracked download.
+- **Source.** Guide, post and hub covers are Unsplash photos, chosen per page and data in each `src/lib/content/guides/<slug>.ts` and `posts/<slug>.ts` (`cover`) and the folders' `index.ts` (`GUIDES_HUB_COVER`, `BLOG_HUB_COVER`), typed by `src/lib/content/images.ts`. The download event was tracked through the Unsplash API when each photo was chosen; a replacement photo needs its own tracked download.
 - **Hotlinked, never re-hosted.** The Unsplash API guidelines require loading the photo from `images.unsplash.com`, so covers are a plain `<img>` with imgix parameters (`w`, `h`, `q=75`, `fm=webp`, `fit=crop`, `auto=format`), a 640/960/1280/1920 `srcset` cropped to 2:1 and `sizes`; not `next/image` and not Vercel image optimization. CSP `img-src` allows `https://images.unsplash.com` and nothing else was widened.
 - **Credit.** Every cover shows "Photo by <name> on Unsplash", both links carrying `?utm_source=paydocs&utm_medium=referral` (the registered app name).
 - **Performance.** Explicit `width`/`height` reserve the box (no CLS). The cover at the top of a page is `loading="eager" fetchpriority="high"` because it is the likely LCP element; any other use is lazy. All are `decoding="async"`.

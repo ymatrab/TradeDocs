@@ -4,6 +4,7 @@ import { ArticleView } from '@/components/content/article-view';
 import { GuideJsonLd } from '@/components/seo/json-ld';
 import { GUIDES, GUIDE_DISCLAIMER, findGuide } from '@/lib/content/guides';
 import { unsplashShareImage } from '@/lib/content/images';
+import { relatedLinks } from '@/lib/content/related';
 import { openGraphFor, twitterFor } from '@/lib/seo/social';
 
 /** The guides this route answers on. Anything else is a 404, not an empty page. */
@@ -35,19 +36,13 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const guide = findGuide(slug);
   if (!guide) notFound();
 
-  const related = GUIDES.filter((entry) => entry.slug !== guide.slug).map((entry) => ({
-    href: `/guides/${entry.slug}`,
-    title: entry.title,
-    description: entry.description,
-  }));
-
   return (
     <>
       <ArticleView
         article={guide}
         hub={{ href: '/guides', label: 'Guides', allLabel: 'All guides' }}
         disclaimer={GUIDE_DISCLAIMER}
-        related={related}
+        related={relatedLinks(guide, 'guides')}
         relatedTitle="More guides"
       />
       <GuideJsonLd slug={guide.slug} />

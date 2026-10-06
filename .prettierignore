@@ -7,3 +7,5 @@ test-results
 tmp
 src/lib/database.types.ts
 
+# Raw DataForSEO responses, kept byte for byte as the API returned them.
+docs/research/dataforseo-2026-10-06/

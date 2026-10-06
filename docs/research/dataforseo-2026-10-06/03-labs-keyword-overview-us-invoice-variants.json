@@ -1,0 +1,4039 @@
+{
+  "id": "10060214-2048-0607-0000-0498ad4ac4bc",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "keyword": "amazon fba commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-06-16 01:43:16 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 23:50:45 +00:00"
+      }
+    },
+    {
+      "keyword": "canada customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:30:06 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 6.29,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.05,
+        "high_top_of_page_bid": 17.37,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 390,
+          "2025-12": 390,
+          "2025-11": 480,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.5,
+        "dofollow": 15.5,
+        "referring_pages": 16,
+        "referring_domains": 7.3,
+        "referring_main_domains": 6.7,
+        "rank": 44.9,
+        "main_domain_rank": 471.9,
+        "last_updated_time": "2026-08-03 02:56:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:34:26 +00:00"
+      }
+    },
+    {
+      "keyword": "canada customs invoice form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:02:45 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 12.18,
+        "search_volume": 30,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 20,
+          "2026-06": 40,
+          "2026-05": 30,
+          "2026-04": 40,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 10,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 50,
+          "quarterly": -25,
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 27.8,
+        "dofollow": 24.5,
+        "referring_pages": 25.1,
+        "referring_domains": 9.3,
+        "referring_main_domains": 8.1,
+        "rank": 71.6,
+        "main_domain_rank": 480.4,
+        "last_updated_time": "2026-08-31 18:23:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-26 06:24:25 +00:00"
+      }
+    },
+    {
+      "keyword": "carton marking",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:32:39 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 0.82,
+        "search_volume": 30,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 20,
+          "2026-01": 40,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 8.2,
+        "dofollow": 2.9,
+        "referring_pages": 3,
+        "referring_domains": 1.4,
+        "referring_main_domains": 1.2,
+        "rank": 22.5,
+        "main_domain_rank": 369.7,
+        "last_updated_time": "2026-08-31 14:28:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 02:21:43 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:44:11 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-04": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-26 18:41:03 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice canada",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:01:57 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 6.29,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.05,
+        "high_top_of_page_bid": 17.37,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 390,
+          "2025-12": 390,
+          "2025-11": 480,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20.8,
+        "dofollow": 18.7,
+        "referring_pages": 19.3,
+        "referring_domains": 9.3,
+        "referring_main_domains": 8.1,
+        "rank": 77,
+        "main_domain_rank": 402.6,
+        "last_updated_time": "2026-09-07 04:10:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:00:45 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:57:38 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 40,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "quarterly": 100,
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-26 08:42:02 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice currency",
+      "keyword_info": {
+        "last_updated_time": "2026-06-14 14:40:29 +00:00",
+        "categories": [
+          10012
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 09:59:52 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice declaration statement",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:44:40 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 18.61,
+        "search_volume": 110,
+        "low_top_of_page_bid": 6.33,
+        "high_top_of_page_bid": 28.9,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 140,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 110,
+          "2025-12": 140,
+          "2025-11": 110,
+          "2025-10": 170,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "quarterly": 22,
+          "yearly": 120
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 908.1,
+        "dofollow": 880.3,
+        "referring_pages": 883.9,
+        "referring_domains": 7.1,
+        "referring_main_domains": 6.6,
+        "rank": 99.2,
+        "main_domain_rank": 536.2,
+        "last_updated_time": "2026-05-28 03:53:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 04:39:42 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice definition",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:31:38 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 110,
+          "2026-06": 140,
+          "2026-05": 110,
+          "2026-04": 140,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 140,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -36,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "definition commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 516.7,
+        "dofollow": 421.1,
+        "referring_pages": 429.1,
+        "referring_domains": 19.6,
+        "referring_main_domains": 17.8,
+        "rank": 87,
+        "main_domain_rank": 440.9,
+        "last_updated_time": "2026-07-11 17:55:36 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 13:03:29 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice dhl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 10:05:35 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 102.82,
+        "search_volume": 260,
+        "categories": [
+          10004,
+          10305,
+          11104
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 260,
+          "2026-05": 210,
+          "2026-04": 260,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 210,
+          "2025-10": 260,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dhl commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 6.7,
+        "dofollow": 4.8,
+        "referring_pages": 5.4,
+        "referring_domains": 2.5,
+        "referring_main_domains": 2.3,
+        "rank": 59.1,
+        "main_domain_rank": 566.2,
+        "last_updated_time": "2026-09-10 17:31:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 03:33:47 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice example",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:42:37 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 4.84,
+        "search_volume": 390,
+        "low_top_of_page_bid": 1.98,
+        "high_top_of_page_bid": 20,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 390,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -33,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1594.9,
+        "dofollow": 1538.6,
+        "referring_pages": 1548.8,
+        "referring_domains": 12.5,
+        "referring_main_domains": 11.6,
+        "rank": 130.8,
+        "main_domain_rank": 527.3,
+        "last_updated_time": "2026-09-08 10:04:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-05-05 22:08:30 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:14:31 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 54,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 00:04:48 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice for samples",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:42:21 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 4.84,
+        "search_volume": 390,
+        "low_top_of_page_bid": 1.98,
+        "high_top_of_page_bid": 20,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 390,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -33,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice sample",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 280.5,
+        "dofollow": 260.9,
+        "referring_pages": 271.6,
+        "referring_domains": 11.4,
+        "referring_main_domains": 10.5,
+        "rank": 113.1,
+        "main_domain_rank": 521.3,
+        "last_updated_time": "2026-01-30 14:06:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-26 14:10:14 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:24:58 +00:00",
+        "competition": 0.66,
+        "competition_level": "MEDIUM",
+        "cpc": 6.39,
+        "search_volume": 170,
+        "low_top_of_page_bid": 2.52,
+        "high_top_of_page_bid": 19.51,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 90,
+          "2026-06": 480,
+          "2026-05": 260,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 90,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "quarterly": -81,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 256.1,
+        "dofollow": 141.5,
+        "referring_pages": 219.3,
+        "referring_domains": 102.3,
+        "referring_main_domains": 96.9,
+        "rank": 106,
+        "main_domain_rank": 418.2,
+        "last_updated_time": "2026-09-13 20:38:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 15:41:58 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice incoterms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 03:47:31 +00:00",
+        "competition": 0.57,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-26 19:43:51 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:37:23 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 200
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 03:35:27 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 14:51:19 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          10012,
+          10019,
+          10168,
+          10276,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 110,
+          "2026-06": 140,
+          "2026-05": 110,
+          "2026-04": 140,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 140,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -36,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 523.1,
+        "dofollow": 427.4,
+        "referring_pages": 437.1,
+        "referring_domains": 20.8,
+        "referring_main_domains": 18.8,
+        "rank": 81,
+        "main_domain_rank": 441.3,
+        "last_updated_time": "2026-09-18 02:38:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:11:00 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:48:53 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 1.32,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice for mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 23:57:05 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice no commercial value",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:27:48 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "no commercial value invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 05:48:29 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice pdf",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:10:02 +00:00",
+        "competition": 0.21,
+        "competition_level": "LOW",
+        "cpc": 12.25,
+        "search_volume": 110,
+        "low_top_of_page_bid": 1.34,
+        "high_top_of_page_bid": 13.95,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 90,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 90,
+          "2025-11": 90,
+          "2025-10": 140,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "pdf commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 21.4,
+        "dofollow": 10.1,
+        "referring_pages": 20,
+        "referring_domains": 10.8,
+        "referring_main_domains": 10,
+        "rank": 61.1,
+        "main_domain_rank": 503.9,
+        "last_updated_time": "2026-09-18 02:24:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:47:04 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:38:12 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 43.75,
+        "search_volume": 50,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 90,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -20,
+          "quarterly": -20,
+          "yearly": -43
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:02:48 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice sample",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 09:09:52 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 4.84,
+        "search_volume": 390,
+        "low_top_of_page_bid": 1.98,
+        "high_top_of_page_bid": 20,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 390,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -33,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1581.9,
+        "dofollow": 1524.5,
+        "referring_pages": 1535.7,
+        "referring_domains": 11.9,
+        "referring_main_domains": 10.8,
+        "rank": 94.7,
+        "main_domain_rank": 501.6,
+        "last_updated_time": "2026-05-22 05:31:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:25:28 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice signature",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 23:14:52 +00:00",
+        "competition": 0.29,
+        "competition_level": "LOW",
+        "cpc": 30.72,
+        "search_volume": 10,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-26 16:25:47 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice template excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:26:59 +00:00",
+        "competition": 0.32,
+        "competition_level": "LOW",
+        "cpc": 18.92,
+        "search_volume": 140,
+        "low_top_of_page_bid": 2.31,
+        "high_top_of_page_bid": 15.1,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 140,
+          "2026-05": 110,
+          "2026-04": 140,
+          "2026-03": 170,
+          "2026-02": 170,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 140,
+          "2025-10": 140,
+          "2025-09": 140
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice excel template",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35,
+        "dofollow": 6.1,
+        "referring_pages": 33.8,
+        "referring_domains": 27.2,
+        "referring_main_domains": 26.8,
+        "rank": 80.2,
+        "main_domain_rank": 616.7,
+        "last_updated_time": "2026-09-16 00:08:39 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:56:28 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice uk",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 08:54:59 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:17:19 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 21:17:17 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 40,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": -25,
+          "quarterly": -40,
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16478.6,
+        "dofollow": 14522.8,
+        "referring_pages": 14553,
+        "referring_domains": 30.8,
+        "referring_main_domains": 26.2,
+        "rank": 80.1,
+        "main_domain_rank": 539.9,
+        "last_updated_time": "2026-10-04 11:28:39 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 18:41:03 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice vs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:32:36 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 90,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 90,
+          "2026-03": 50,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": -22,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 402.3,
+        "dofollow": 380.7,
+        "referring_pages": 386.5,
+        "referring_domains": 12.5,
+        "referring_main_domains": 11.1,
+        "rank": 47.3,
+        "main_domain_rank": 515.8,
+        "last_updated_time": "2026-09-24 13:12:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:48:12 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice vs packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:32:59 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list vs commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 06:59:07 +00:00"
+      }
+    },
+    {
+      "keyword": "country of origin on commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 12:38:43 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 15.25,
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 20,
+          "2026-03": 10,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:42:48 +00:00"
+      }
+    },
+    {
+      "keyword": "customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:43:55 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 18.31,
+        "search_volume": 880,
+        "low_top_of_page_bid": 3.84,
+        "high_top_of_page_bid": 27.22,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 880,
+          "2026-02": 1000,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 48,
+          "quarterly": 48,
+          "yearly": 30
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13302.2,
+        "dofollow": 11736.3,
+        "referring_pages": 11755.7,
+        "referring_domains": 46.3,
+        "referring_main_domains": 40.3,
+        "rank": 142.4,
+        "main_domain_rank": 500.8,
+        "last_updated_time": "2025-12-12 08:38:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 03:23:15 +00:00"
+      }
+    },
+    {
+      "keyword": "dhl commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 17:21:32 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 102.82,
+        "search_volume": 260,
+        "categories": [
+          10004,
+          10305,
+          11104
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 260,
+          "2026-05": 210,
+          "2026-04": 260,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 210,
+          "2025-10": 260,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5.5,
+        "dofollow": 3.6,
+        "referring_pages": 4.2,
+        "referring_domains": 2.1,
+        "referring_main_domains": 2,
+        "rank": 50.2,
+        "main_domain_rank": 548.6,
+        "last_updated_time": "2026-09-10 16:07:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 15:56:05 +00:00"
+      }
+    },
+    {
+      "keyword": "dhl commercial invoice template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 04:02:54 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 49.24,
+        "search_volume": 140,
+        "low_top_of_page_bid": 19.77,
+        "high_top_of_page_bid": 114.41,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 110,
+          "2026-06": 110,
+          "2026-05": 110,
+          "2026-04": 320,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 70,
+          "2025-12": 140,
+          "2025-11": 110,
+          "2025-10": 170,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": 27,
+          "quarterly": 27,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.5,
+        "dofollow": 5,
+        "referring_pages": 8.3,
+        "referring_domains": 2,
+        "referring_main_domains": 1.9,
+        "rank": 53.8,
+        "main_domain_rank": 620.5,
+        "last_updated_time": "2026-09-15 22:54:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 04:28:44 +00:00"
+      }
+    },
+    {
+      "keyword": "ebay commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:08:40 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10276,
+          13854
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 14:49:34 +00:00"
+      }
+    },
+    {
+      "keyword": "etsy commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:20:36 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10019,
+          10168,
+          10276,
+          10537,
+          10885,
+          12209,
+          13854
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 18:20:18 +00:00"
+      }
+    },
+    {
+      "keyword": "export documentation",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:56:40 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.38,
+        "high_top_of_page_bid": 11.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12210
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 260,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 170,
+          "2025-12": 170,
+          "2025-11": 140,
+          "2025-10": 260,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export documents",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 429.5,
+        "dofollow": 391.2,
+        "referring_pages": 404.7,
+        "referring_domains": 22.7,
+        "referring_main_domains": 21.7,
+        "rank": 116.6,
+        "main_domain_rank": 550.6,
+        "last_updated_time": "2026-09-10 14:27:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 13:14:09 +00:00"
+      }
+    },
+    {
+      "keyword": "export documents",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:44:14 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.38,
+        "high_top_of_page_bid": 11.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 260,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 170,
+          "2025-12": 170,
+          "2025-11": 140,
+          "2025-10": 260,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 414.6,
+        "dofollow": 377.3,
+        "referring_pages": 390.6,
+        "referring_domains": 22.6,
+        "referring_main_domains": 21.6,
+        "rank": 99.7,
+        "main_domain_rank": 455.8,
+        "last_updated_time": "2026-09-10 14:13:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 15:53:45 +00:00"
+      }
+    },
+    {
+      "keyword": "export invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 02:08:26 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "low_top_of_page_bid": 1.08,
+        "high_top_of_page_bid": 28.94,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 50,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 40,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 40,
+          "2025-11": 110,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -40,
+          "quarterly": -25,
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 411,
+        "dofollow": 383.9,
+        "referring_pages": 392.9,
+        "referring_domains": 20.5,
+        "referring_main_domains": 19.6,
+        "rank": 67.5,
+        "main_domain_rank": 472.4,
+        "last_updated_time": "2026-09-29 20:32:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 09:32:41 +00:00"
+      }
+    },
+    {
+      "keyword": "export invoice format",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 17:17:08 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:03:52 +00:00"
+      }
+    },
+    {
+      "keyword": "export packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 20:28:51 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 10.78,
+        "search_volume": 40,
+        "low_top_of_page_bid": 2.97,
+        "high_top_of_page_bid": 15.49,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 50,
+          "2026-06": 40,
+          "2026-05": 30,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -40,
+          "quarterly": -25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list export",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.7,
+        "dofollow": 12.7,
+        "referring_pages": 15,
+        "referring_domains": 7.1,
+        "referring_main_domains": 6.7,
+        "rank": 51.7,
+        "main_domain_rank": 522.6,
+        "last_updated_time": "2026-08-16 15:02:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 11:17:54 +00:00"
+      }
+    },
+    {
+      "keyword": "how to create a commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:23:28 +00:00",
+        "competition": 0.67,
+        "competition_level": "HIGH",
+        "cpc": 20.64,
+        "search_volume": 50,
+        "low_top_of_page_bid": 2.28,
+        "high_top_of_page_bid": 13.69,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 30,
+          "2025-10": 90,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -40,
+          "quarterly": -40,
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 429.3,
+        "dofollow": 397.4,
+        "referring_pages": 412.1,
+        "referring_domains": 22.4,
+        "referring_main_domains": 20.4,
+        "rank": 116.2,
+        "main_domain_rank": 522.2,
+        "last_updated_time": "2026-09-28 04:30:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:36:19 +00:00"
+      }
+    },
+    {
+      "keyword": "how to fill out a commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:56:43 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 2.73,
+        "search_volume": 70,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 70,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 143,
+          "quarterly": 325,
+          "yearly": 143
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 429.3,
+        "dofollow": 397.4,
+        "referring_pages": 412.1,
+        "referring_domains": 22.4,
+        "referring_main_domains": 20.4,
+        "rank": 116.3,
+        "main_domain_rank": 560.7,
+        "last_updated_time": "2026-09-23 15:08:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:19:51 +00:00"
+      }
+    },
+    {
+      "keyword": "how to fill out commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:38:38 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 2.73,
+        "search_volume": 70,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 70,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 143,
+          "quarterly": 325,
+          "yearly": 143
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to fill out a commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 442.8,
+        "dofollow": 407,
+        "referring_pages": 422.6,
+        "referring_domains": 24.9,
+        "referring_main_domains": 22.1,
+        "rank": 137.9,
+        "main_domain_rank": 487.7,
+        "last_updated_time": "2026-09-23 15:22:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:16:26 +00:00"
+      }
+    },
+    {
+      "keyword": "how to make a commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 07:34:59 +00:00",
+        "competition": 0.59,
+        "competition_level": "MEDIUM",
+        "cpc": 8.12,
+        "search_volume": 30,
+        "low_top_of_page_bid": 2.18,
+        "high_top_of_page_bid": 19.78,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 40,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to make commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 429.6,
+        "dofollow": 392.5,
+        "referring_pages": 410,
+        "referring_domains": 21,
+        "referring_main_domains": 18.6,
+        "rank": 148.1,
+        "main_domain_rank": 478.4,
+        "last_updated_time": "2026-08-29 09:14:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:28:51 +00:00"
+      }
+    },
+    {
+      "keyword": "how to make a proforma invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:48:04 +00:00",
+        "competition": 0.32,
+        "competition_level": "LOW",
+        "cpc": 60.76,
+        "search_volume": 20,
+        "low_top_of_page_bid": 3.88,
+        "high_top_of_page_bid": 30.06,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 30,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": 100,
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to make proforma invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 71.8,
+        "dofollow": 60.7,
+        "referring_pages": 66.8,
+        "referring_domains": 8.9,
+        "referring_main_domains": 8.6,
+        "rank": 68.9,
+        "main_domain_rank": 545.4,
+        "last_updated_time": "2025-02-26 14:58:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 11:41:52 +00:00"
+      }
+    },
+    {
+      "keyword": "hs code on commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 11:00:24 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice hs code",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 277.8,
+        "dofollow": 181.7,
+        "referring_pages": 263.3,
+        "referring_domains": 75.1,
+        "referring_main_domains": 68.9,
+        "rank": 95,
+        "main_domain_rank": 488.5,
+        "last_updated_time": "2025-12-23 13:57:18 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:20:56 +00:00"
+      }
+    },
+    {
+      "keyword": "invoice for customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 02:33:03 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 18.31,
+        "search_volume": 880,
+        "low_top_of_page_bid": 3.84,
+        "high_top_of_page_bid": 27.22,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 880,
+          "2026-02": 1000,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 48,
+          "quarterly": 48,
+          "yearly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 52.1,
+        "dofollow": 33.6,
+        "referring_pages": 48.6,
+        "referring_domains": 26.2,
+        "referring_main_domains": 24.9,
+        "rank": 88.9,
+        "main_domain_rank": 533.3,
+        "last_updated_time": "2024-09-15 05:28:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 23:45:54 +00:00"
+      }
+    },
+    {
+      "keyword": "no commercial value invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 11:01:19 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:26:01 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list example",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 21:03:03 +00:00",
+        "competition": 0.99,
+        "competition_level": "HIGH",
+        "cpc": 0.44,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.15,
+        "high_top_of_page_bid": 2.53,
+        "categories": [
+          10018,
+          10161,
+          10163,
+          10846
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 480,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 880
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 158.5,
+        "dofollow": 114.6,
+        "referring_pages": 136.6,
+        "referring_domains": 61.1,
+        "referring_main_domains": 58.7,
+        "rank": 101.7,
+        "main_domain_rank": 507.9,
+        "last_updated_time": "2026-09-08 01:09:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:27:28 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 02:34:19 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10282,
+          11153,
+          12417
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 40,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 40,
+          "2026-01": 70,
+          "2025-12": 30,
+          "2025-11": 50,
+          "2025-10": 50,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 75,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10.5,
+        "dofollow": 5.3,
+        "referring_pages": 9,
+        "referring_domains": 4.7,
+        "referring_main_domains": 4.2,
+        "rank": 36.6,
+        "main_domain_rank": 593,
+        "last_updated_time": "2026-09-27 01:55:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:43:38 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for export",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:55:37 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 10.78,
+        "search_volume": 40,
+        "low_top_of_page_bid": 2.97,
+        "high_top_of_page_bid": 15.49,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 50,
+          "2026-06": 40,
+          "2026-05": 30,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -40,
+          "quarterly": -25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list export",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15.2,
+        "dofollow": 10.6,
+        "referring_pages": 13.6,
+        "referring_domains": 7.9,
+        "referring_main_domains": 7.4,
+        "rank": 56.4,
+        "main_domain_rank": 421.2,
+        "last_updated_time": "2026-02-04 15:41:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 20:35:49 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list for shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 22:20:56 +00:00",
+        "competition": 0.94,
+        "competition_level": "HIGH",
+        "cpc": 10.25,
+        "search_volume": 210,
+        "low_top_of_page_bid": 2.41,
+        "high_top_of_page_bid": 12.58,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 170,
+          "2025-10": 210,
+          "2025-09": 260
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list shipping",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 32.1,
+        "dofollow": 23,
+        "referring_pages": 30.8,
+        "referring_domains": 11.8,
+        "referring_main_domains": 10.7,
+        "rank": 79.4,
+        "main_domain_rank": 369.4,
+        "last_updated_time": "2024-09-26 11:25:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 18:44:51 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list format",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:11:43 +00:00",
+        "competition": 0.92,
+        "competition_level": "HIGH",
+        "cpc": 1.56,
+        "search_volume": 210,
+        "low_top_of_page_bid": 1.63,
+        "high_top_of_page_bid": 5.06,
+        "categories": [
+          10016,
+          10139,
+          10743,
+          12018
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 170,
+          "2026-06": 170,
+          "2026-05": 170,
+          "2026-04": 170,
+          "2026-03": 210,
+          "2026-02": 210,
+          "2026-01": 170,
+          "2025-12": 140,
+          "2025-11": 170,
+          "2025-10": 210,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -81
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "format of packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.4,
+        "dofollow": 3.1,
+        "referring_pages": 9,
+        "referring_domains": 4.1,
+        "referring_main_domains": 3.8,
+        "rank": 48.7,
+        "main_domain_rank": 520,
+        "last_updated_time": "2026-08-10 00:14:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:40:00 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:51:35 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 4.27,
+        "search_volume": 390,
+        "low_top_of_page_bid": 1.43,
+        "high_top_of_page_bid": 4.49,
+        "categories": [
+          10021,
+          10178,
+          10937,
+          12262
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 590,
+          "2026-05": 480,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 320,
+          "2025-11": 260,
+          "2025-10": 210,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 127
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 64.9,
+        "dofollow": 49.9,
+        "referring_pages": 62,
+        "referring_domains": 35.1,
+        "referring_main_domains": 33.6,
+        "rank": 87.2,
+        "main_domain_rank": 353.6,
+        "last_updated_time": "2026-09-08 00:54:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-05-08 07:28:41 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 20:55:29 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10108,
+          10756
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "quarterly": -20,
+          "yearly": -20
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22.7,
+        "dofollow": 16.4,
+        "referring_pages": 19,
+        "referring_domains": 9.4,
+        "referring_main_domains": 8.9,
+        "rank": 53.2,
+        "main_domain_rank": 382.5,
+        "last_updated_time": "2026-09-27 01:55:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:57:13 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list template excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:40:51 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 1.94,
+        "search_volume": 320,
+        "low_top_of_page_bid": 1.51,
+        "high_top_of_page_bid": 3.4,
+        "categories": [
+          10016,
+          10139,
+          10743
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 320,
+          "2026-06": 320,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.9,
+        "dofollow": 6.4,
+        "referring_pages": 13.2,
+        "referring_domains": 6.3,
+        "referring_main_domains": 5.6,
+        "rank": 42.5,
+        "main_domain_rank": 661.5,
+        "last_updated_time": "2026-09-08 01:09:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:36:05 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list vs bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 19:40:59 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10017,
+          10143,
+          10776,
+          12075
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:26:56 +00:00"
+      }
+    },
+    {
+      "keyword": "packing list vs commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:30:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:56:15 +00:00"
+      }
+    },
+    {
+      "keyword": "pro forma invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:03:40 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 11.58,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.19,
+        "high_top_of_page_bid": 21.24,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 12100,
+          "2025-09": 12100
+        },
+        "search_volume_trend": {
+          "monthly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1314.9,
+        "dofollow": 1274.9,
+        "referring_pages": 1277.4,
+        "referring_domains": 15.1,
+        "referring_main_domains": 13.9,
+        "rank": 94.2,
+        "main_domain_rank": 475.7,
+        "last_updated_time": "2026-07-30 09:40:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 18:19:41 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:56:23 +00:00",
+        "competition": 0.2,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "invoice proforma excel",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 253,
+        "dofollow": 127.8,
+        "referring_pages": 247.1,
+        "referring_domains": 58.8,
+        "referring_main_domains": 50.9,
+        "rank": 57.9,
+        "main_domain_rank": 414,
+        "last_updated_time": "2024-09-11 12:17:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:52:29 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice for customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:33:38 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 1.23,
+        "search_volume": 50,
+        "low_top_of_page_bid": 0.98,
+        "high_top_of_page_bid": 12.04,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 40,
+          "2026-03": 170,
+          "2026-02": 50,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "proforma invoice customs",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 597,
+        "dofollow": 579,
+        "referring_pages": 582.8,
+        "referring_domains": 7.5,
+        "referring_main_domains": 6,
+        "rank": 69.6,
+        "main_domain_rank": 475.9,
+        "last_updated_time": "2026-02-04 14:50:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 19:03:39 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice format",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:30:33 +00:00",
+        "competition": 0.44,
+        "competition_level": "MEDIUM",
+        "cpc": 2.96,
+        "search_volume": 20,
+        "low_top_of_page_bid": 1.66,
+        "high_top_of_page_bid": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 40,
+          "2026-04": 30,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "quarterly": 50,
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "format for proforma invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.3,
+        "dofollow": 17.8,
+        "referring_pages": 19.3,
+        "referring_domains": 8.9,
+        "referring_main_domains": 8.4,
+        "rank": 55.5,
+        "main_domain_rank": 538.4,
+        "last_updated_time": "2026-08-27 11:35:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:26:31 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice generator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:52:53 +00:00",
+        "competition": 0.71,
+        "competition_level": "HIGH",
+        "cpc": 19.71,
+        "search_volume": 40,
+        "low_top_of_page_bid": 2.66,
+        "high_top_of_page_bid": 22.27,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 50,
+          "2026-03": 210,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": 100,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 251.2,
+        "dofollow": 158.3,
+        "referring_pages": 172.1,
+        "referring_domains": 62.4,
+        "referring_main_domains": 60.7,
+        "rank": 125,
+        "main_domain_rank": 420.3,
+        "last_updated_time": "2026-10-02 07:15:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 18:20:02 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice payment terms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:33:46 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "payment terms proforma invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:35:08 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice pdf",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:16:03 +00:00",
+        "competition": 0.37,
+        "competition_level": "MEDIUM",
+        "cpc": 3.48,
+        "search_volume": 30,
+        "low_top_of_page_bid": 1.45,
+        "high_top_of_page_bid": 7.21,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 10,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 30,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "yearly": -57
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1294.6,
+        "dofollow": 1259.2,
+        "referring_pages": 1261,
+        "referring_domains": 7.7,
+        "referring_main_domains": 6.9,
+        "rank": 71.2,
+        "main_domain_rank": 570.4,
+        "last_updated_time": "2026-08-14 16:34:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:10:59 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice sample",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:19:38 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 7.16,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.76,
+        "high_top_of_page_bid": 13.59,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1000,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 514,
+          "quarterly": 650,
+          "yearly": 440
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "sample proforma invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 184.2,
+        "dofollow": 133.1,
+        "referring_pages": 177.6,
+        "referring_domains": 43.5,
+        "referring_main_domains": 89.2,
+        "rank": 115.8,
+        "main_domain_rank": 386.9,
+        "last_updated_time": "2023-10-13 00:34:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:02:24 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice validity",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 01:26:56 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-03": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:26:44 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice vs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:54:48 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 260,
+          "2025-10": 260,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24.8,
+        "dofollow": 18.8,
+        "referring_pages": 20.2,
+        "referring_domains": 8.4,
+        "referring_main_domains": 7.5,
+        "rank": 44.8,
+        "main_domain_rank": 556.3,
+        "last_updated_time": "2026-09-08 22:59:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:20:02 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice vs purchase order",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 02:59:22 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 18:47:15 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice vs quotation",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:47:41 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": 57
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 370.4,
+        "dofollow": 283.8,
+        "referring_pages": 337.1,
+        "referring_domains": 94.8,
+        "referring_main_domains": 89.9,
+        "rank": 84.1,
+        "main_domain_rank": 502.2,
+        "last_updated_time": "2026-09-22 19:49:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 22:30:22 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping documents",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 10:29:33 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 10.71,
+        "search_volume": 590,
+        "low_top_of_page_bid": 1.59,
+        "high_top_of_page_bid": 12.34,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 590,
+          "2026-05": 590,
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 590,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping document",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35,
+        "dofollow": 25.4,
+        "referring_pages": 30.3,
+        "referring_domains": 16.6,
+        "referring_main_domains": 15.4,
+        "rank": 98.4,
+        "main_domain_rank": 497.9,
+        "last_updated_time": "2025-10-24 06:27:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 22:55:10 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping marks",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:01:58 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 590,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 590,
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 480,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 480,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping mark",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.5,
+        "dofollow": 0.3,
+        "referring_pages": 0.5,
+        "referring_domains": 0.5,
+        "referring_main_domains": 0.5,
+        "rank": 2.5,
+        "main_domain_rank": 467.8,
+        "last_updated_time": "2026-05-21 02:18:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:17:21 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:45:39 +00:00",
+        "competition": 0.94,
+        "competition_level": "HIGH",
+        "cpc": 10.25,
+        "search_volume": 210,
+        "low_top_of_page_bid": 2.41,
+        "high_top_of_page_bid": 12.58,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 170,
+          "2025-10": 210,
+          "2025-09": 260
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "packing list shipping",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.8,
+        "dofollow": 17.6,
+        "referring_pages": 20.9,
+        "referring_domains": 10.8,
+        "referring_main_domains": 9.9,
+        "rank": 55.5,
+        "main_domain_rank": 463.6,
+        "last_updated_time": "2026-09-11 07:51:14 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:06:56 +00:00"
+      }
+    },
+    {
+      "keyword": "shopify commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 04:53:25 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "cpc": 3.35,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10276,
+          13854
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.1,
+        "dofollow": 24.5,
+        "referring_pages": 31.4,
+        "referring_domains": 12.7,
+        "referring_main_domains": 11.6,
+        "rank": 67,
+        "main_domain_rank": 469.9,
+        "last_updated_time": "2023-01-13 18:58:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-30 02:03:03 +00:00"
+      }
+    },
+    {
+      "keyword": "tax invoice vs commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:39:50 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice vs tax invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:36:15 +00:00"
+      }
+    },
+    {
+      "keyword": "usps commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 07:22:32 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 40,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": -25,
+          "quarterly": -40,
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice usps",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16478.6,
+        "dofollow": 14522.8,
+        "referring_pages": 14553,
+        "referring_domains": 30.8,
+        "referring_main_domains": 26.2,
+        "rank": 80.3,
+        "main_domain_rank": 540.7,
+        "last_updated_time": "2026-10-01 10:17:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:46:07 +00:00"
+      }
+    },
+    {
+      "keyword": "weight list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 07:16:07 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 0.2,
+        "search_volume": 210,
+        "low_top_of_page_bid": 7.2,
+        "high_top_of_page_bid": 44.69,
+        "categories": [
+          10004,
+          10281,
+          10293,
+          11241,
+          12529,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 210,
+          "2026-04": 140,
+          "2026-03": 210,
+          "2026-02": 140,
+          "2026-01": 210,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 170,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 52,
+          "yearly": 52
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "weighted list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 44,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 832.4,
+        "dofollow": 283.5,
+        "referring_pages": 793.6,
+        "referring_domains": 232.8,
+        "referring_main_domains": 214.2,
+        "rank": 186.6,
+        "main_domain_rank": 536,
+        "last_updated_time": "2026-07-08 11:30:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:35:12 +00:00"
+      }
+    },
+    {
+      "keyword": "what is a packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:52:30 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "categories": [
+          10017,
+          10143,
+          10776,
+          12075
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 260,
+          "2026-04": 260,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 210,
+          "2025-11": 210,
+          "2025-10": 210,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 85
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "what is packing list",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 159.5,
+        "dofollow": 116.6,
+        "referring_pages": 137.4,
+        "referring_domains": 63.1,
+        "referring_main_domains": 60.5,
+        "rank": 90.4,
+        "main_domain_rank": 426.6,
+        "last_updated_time": "2026-09-10 02:25:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 09:28:52 +00:00"
+      }
+    },
+    {
+      "keyword": "what is a packing list in shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 09:32:34 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 20,
+          "2026-04": 30,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -50,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.8,
+        "dofollow": 9.6,
+        "referring_pages": 11.8,
+        "referring_domains": 6.9,
+        "referring_main_domains": 6.5,
+        "rank": 41.7,
+        "main_domain_rank": 351.7,
+        "last_updated_time": "2026-02-26 20:58:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:13:33 +00:00"
+      }
+    },
+    {
+      "keyword": "what is a pro forma invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 14:24:21 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 14.32,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.99,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 4400,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 4400,
+          "2026-01": 3600,
+          "2025-12": 4400,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 60.2,
+        "dofollow": 49,
+        "referring_pages": 53.3,
+        "referring_domains": 17.8,
+        "referring_main_domains": 17.3,
+        "rank": 102.2,
+        "main_domain_rank": 628.5,
+        "last_updated_time": "2025-07-28 18:58:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 13:38:19 +00:00"
+      }
+    },
+    {
+      "keyword": "who prepares commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 09:51:20 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 63,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 23:26:01 +00:00"
+      }
+    }
+  ]
+}

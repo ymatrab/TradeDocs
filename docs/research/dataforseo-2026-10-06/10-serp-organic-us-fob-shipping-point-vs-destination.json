@@ -1,0 +1,112 @@
+{
+  "note": "Condensed transcription of an inline MCP response (the SERP endpoint returned inline, not to a file). Not the raw payload; fields kept: type, rank_absolute, domain, url, title.",
+  "id": "10060216-2048-0139-0000-350db2768e46",
+  "keyword": "fob shipping point vs destination",
+  "location": "United States",
+  "language": "en",
+  "retrieved": "2026-10-06",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_absolute": 1,
+      "cited": [
+        "vizionapi.com",
+        "youtube.com",
+        "quizlet.com",
+        "accountingcoach.com",
+        "investopedia.com",
+        "reddit.com",
+        "gofreight.com",
+        "freightquote.com"
+      ],
+      "summary": "US domestic/accounting sense: when title, freight cost and risk pass; comparison table"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 2,
+      "domain": "www.investopedia.com",
+      "url": "https://www.investopedia.com/ask/answers/052515/what-distinction-between-free-board-fob-shipping-point-and-destination.asp",
+      "title": "FOB Shipping Point vs. FOB Destination: Key Differences ..."
+    },
+    {
+      "type": "people_also_ask",
+      "rank_absolute": 3,
+      "questions": [
+        "Is Amazon FOB shipping or destination?",
+        "Does FOB shipping point mean freight in or out?",
+        "What does \"FOB shipping point\" mean?",
+        "Who pays for FOB destination points?"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 4,
+      "domain": "www.reddit.com",
+      "url": "https://www.reddit.com/r/Accounting/comments/r1idnl/can_you_guys_help_me_out_with_fob_shipping_point/",
+      "title": "Can you guys help me out with F.O.B shipping point and ..."
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 5,
+      "domain": "www.vizionapi.com",
+      "url": "https://www.vizionapi.com/blog/fob-shipping-point-vs-destination",
+      "title": "Difference Between FOB Shipping Point and FOB Destination"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 6,
+      "domain": "www.youtube.com",
+      "url": "https://www.youtube.com/watch?v=pX4XzDURh0Q",
+      "title": "FOB Shipping Point vs FOB Destination Explained"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 7,
+      "domain": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/FOB_(shipping)",
+      "title": "FOB (shipping)"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 8,
+      "domain": "www.accountingcoach.com",
+      "url": "https://www.accountingcoach.com/blog/fob-shipping-point-fob-destination",
+      "title": "What is the significance of FOB shipping point and ..."
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 9,
+      "domain": "www.inboundlogistics.com",
+      "url": "https://www.inboundlogistics.com/articles/fob-destination/",
+      "title": "What is FOB Destination? Meaning, Terms, Who Pays?"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 10,
+      "domain": "quizlet.com",
+      "url": "https://quizlet.com/study-guides/fob-shipping-point-vs-fob-destination-examples-1e12bdbe-8bbb-4e26-adb1-1c27fad4b1f7",
+      "title": "FOB Shipping Point vs. FOB Destination Examples"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 11,
+      "domain": "www.youtube.com",
+      "url": "https://www.youtube.com/watch?v=i2hq-skFxiQ",
+      "title": "FOB Shipping Versus FOB Destination."
+    },
+    {
+      "type": "related_searches",
+      "rank_absolute": 12,
+      "items": [
+        "FOB Destination",
+        "Fob shipping point vs destination reddit",
+        "FOB shipping point who pays",
+        "Fob shipping point vs destination cost",
+        "Fob shipping point vs destination revenue recognition",
+        "FOB shipping point vs FOB destination Journal entry",
+        "Fob shipping point example",
+        "FOB Destination, freight collect"
+      ]
+    }
+  ]
+}
