@@ -5,6 +5,7 @@ import { Download, Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
 import { Callout, Panel } from '@/components/primitives/feedback';
+import { TurnstileWidget } from '@/components/security/turnstile-widget';
 import { decimal } from '@/lib/format';
 
 type Line = {
@@ -101,6 +102,9 @@ export function DocumentGenerator({
   const [buyer, setBuyer] = useState<Party>(emptyParty);
   const [lines, setLines] = useState<Line[]>([emptyLine(1)]);
   const [pending, setPending] = useState(false);
+  // Turnstile, when the deployment has it on (D-017): a fresh single-use token per download.
+  const [challengeToken, setChallengeToken] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const [error, setError] = useState<string | null>(null);
 
   const total = lines.reduce(
@@ -223,7 +227,10 @@ export function DocumentGenerator({
     try {
       const response = await fetch('/api/tools/document', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(challengeToken ? { 'cf-turnstile-response': challengeToken } : {}),
+        },
         body: JSON.stringify({
           kind,
           number: documentNumber,
@@ -275,6 +282,7 @@ export function DocumentGenerator({
       setError('That document could not be produced. Check your connection and try again.');
     } finally {
       setPending(false);
+      setAttempt((value) => value + 1);
     }
   };
 
@@ -545,6 +553,8 @@ export function DocumentGenerator({
           {error}
         </Callout>
       ) : null}
+
+      <TurnstileWidget action="tool_document" resetKey={attempt} onToken={setChallengeToken} />
 
       <div className="cta-row">
         <Button type="button" onClick={submit} pending={pending} pendingLabel="Producing the PDF…">

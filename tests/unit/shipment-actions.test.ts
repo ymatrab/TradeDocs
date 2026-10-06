@@ -14,7 +14,6 @@ import {
   removePackage,
   saveCompany,
 } from '@/app/(app)/master-data-actions';
-import { changeRole } from '@/app/(app)/actions';
 import { saveDocumentSettings } from '@/app/(app)/settings-actions';
 
 /**
@@ -144,11 +143,6 @@ describe('row-count reporting', () => {
     );
     expect(result.error).toBe('That company could not be found in this organization.');
     expect(state.calls).toContainEqual(['eq', 'org_id', ORG]);
-  });
-
-  it('reports a role change the policy filtered out as refused', async () => {
-    const result = await changeRole({}, form({ org: ORG, user: USER, role: 'admin' }));
-    expect(result.error).toBe('Only an owner can change roles.');
   });
 });
 

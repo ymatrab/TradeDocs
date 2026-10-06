@@ -1,0 +1,5052 @@
+{
+  "id": "10060214-2048-0607-0000-9b7f81712da3",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "keyword": "20ft container cbm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 04:42:38 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 210,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 210,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 170,
+          "2026-01": 260,
+          "2025-12": 210,
+          "2025-11": 210,
+          "2025-10": 210,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -35
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "de",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 40.1,
+        "dofollow": 30.6,
+        "referring_pages": 32.7,
+        "referring_domains": 7.8,
+        "referring_main_domains": 7.5,
+        "rank": 120.3,
+        "main_domain_rank": 460.2,
+        "last_updated_time": "2026-09-12 11:27:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-24 17:51:00 +00:00"
+      }
+    },
+    {
+      "keyword": "20ft container dimensions",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:56:45 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 1.73,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.05,
+        "high_top_of_page_bid": 1.3,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 390,
+          "2026-04": 480,
+          "2026-03": 480,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 480,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "container dimensions 20ft",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "fr",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 118.2,
+        "dofollow": 110.1,
+        "referring_pages": 112.5,
+        "referring_domains": 89.9,
+        "referring_main_domains": 5.8,
+        "rank": 139.5,
+        "main_domain_rank": 417.9,
+        "last_updated_time": "2026-08-03 04:27:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-24 17:04:56 +00:00"
+      }
+    },
+    {
+      "keyword": "40ft container cbm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:48:52 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "quarterly": -20,
+          "yearly": -43
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cbm of 40ft container",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12.1,
+        "dofollow": 7.4,
+        "referring_pages": 9.8,
+        "referring_domains": 4.3,
+        "referring_main_domains": 4.3,
+        "rank": 53.7,
+        "main_domain_rank": 489.9,
+        "last_updated_time": "2026-09-30 21:22:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-24 18:06:51 +00:00"
+      }
+    },
+    {
+      "keyword": "40ft container dimensions",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:14:44 +00:00",
+        "competition": 0.41,
+        "competition_level": "MEDIUM",
+        "cpc": 0.77,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.17,
+        "high_top_of_page_bid": 1.41,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 480,
+          "2026-02": 480,
+          "2026-01": 590,
+          "2025-12": 480,
+          "2025-11": 590,
+          "2025-10": 720,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.3,
+        "dofollow": 27,
+        "referring_pages": 31.7,
+        "referring_domains": 7.4,
+        "referring_main_domains": 7.2,
+        "rank": 82.1,
+        "main_domain_rank": 487.1,
+        "last_updated_time": "2026-08-03 04:39:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-24 19:33:27 +00:00"
+      }
+    },
+    {
+      "keyword": "40ft high cube container dimensions",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 21:43:42 +00:00",
+        "competition": 0.42,
+        "competition_level": "MEDIUM",
+        "cpc": 0.81,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.18,
+        "high_top_of_page_bid": 2.13,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 390,
+          "2026-06": 480,
+          "2026-05": 480,
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 590,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "container dimensions 40ft high cube",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.7,
+        "dofollow": 21.6,
+        "referring_pages": 23.1,
+        "referring_domains": 4.4,
+        "referring_main_domains": 4.3,
+        "rank": 58.9,
+        "main_domain_rank": 339.4,
+        "last_updated_time": "2026-08-03 04:38:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-24 20:14:48 +00:00"
+      }
+    },
+    {
+      "keyword": "40hc container cbm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:27:24 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 30,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 50,
+          "quarterly": 50,
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "40 hc container cbm",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 132.2,
+        "dofollow": 112.6,
+        "referring_pages": 127.7,
+        "referring_domains": 11.1,
+        "referring_main_domains": 16.6,
+        "rank": 63.3,
+        "main_domain_rank": 318.3,
+        "last_updated_time": "2023-10-06 23:57:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 00:49:39 +00:00"
+      }
+    },
+    {
+      "keyword": "air freight vs sea freight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:10:44 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 140,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 70,
+          "2025-10": 50,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "quarterly": -22,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 30.4,
+        "dofollow": 14.5,
+        "referring_pages": 27.7,
+        "referring_domains": 12.9,
+        "referring_main_domains": 11.9,
+        "rank": 56.7,
+        "main_domain_rank": 458,
+        "last_updated_time": "2026-09-25 05:06:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 01:09:44 +00:00"
+      }
+    },
+    {
+      "keyword": "bonded warehouse",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 20:30:55 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 7.38,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 3.3,
+        "high_top_of_page_bid": 13.31,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "yearly": -47
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 65.1,
+        "dofollow": 37.4,
+        "referring_pages": 54.6,
+        "referring_domains": 30.6,
+        "referring_main_domains": 29.3,
+        "rank": 110.2,
+        "main_domain_rank": 432.8,
+        "last_updated_time": "2026-09-04 13:32:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 01:46:55 +00:00"
+      }
+    },
+    {
+      "keyword": "bunker adjustment factor",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 22:03:51 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 0.16,
+        "search_volume": 5400,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 5400,
+          "2026-06": 5400,
+          "2026-05": 5400,
+          "2026-04": 5400,
+          "2026-03": 5400,
+          "2026-02": 6600,
+          "2026-01": 5400,
+          "2025-12": 5400,
+          "2025-11": 5400,
+          "2025-10": 5400,
+          "2025-09": 6600
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.2,
+        "dofollow": 4.5,
+        "referring_pages": 10.9,
+        "referring_domains": 4.2,
+        "referring_main_domains": 4.2,
+        "rank": 44.6,
+        "main_domain_rank": 398.4,
+        "last_updated_time": "2026-09-03 15:01:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 10:13:11 +00:00"
+      }
+    },
+    {
+      "keyword": "cargo insurance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 06:22:10 +00:00",
+        "competition": 0.37,
+        "competition_level": "MEDIUM",
+        "cpc": 82.54,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 14.03,
+        "high_top_of_page_bid": 85.47,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 1900,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 1600,
+          "2025-11": 1900,
+          "2025-10": 1900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 21,
+          "yearly": 21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.9,
+        "dofollow": 6.2,
+        "referring_pages": 7.9,
+        "referring_domains": 6.4,
+        "referring_main_domains": 6.4,
+        "rank": 35.1,
+        "main_domain_rank": 370,
+        "last_updated_time": "2026-09-04 13:17:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 11:17:40 +00:00"
+      }
+    },
+    {
+      "keyword": "cbm formula",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:46:23 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 50,
+          "2026-01": 70,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "yearly": -44
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 516.2,
+        "dofollow": 445.7,
+        "referring_pages": 455.9,
+        "referring_domains": 21.9,
+        "referring_main_domains": 18.9,
+        "rank": 85.8,
+        "main_domain_rank": 624.9,
+        "last_updated_time": "2026-09-24 16:28:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:29:45 +00:00"
+      }
+    },
+    {
+      "keyword": "cbm to kg",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 12:02:31 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          10004,
+          10300,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 320,
+          "2026-04": 480,
+          "2026-03": 480,
+          "2026-02": 480,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 390,
+          "2025-10": 590,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": 52,
+          "quarterly": 52,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 515.5,
+        "dofollow": 444.4,
+        "referring_pages": 455.6,
+        "referring_domains": 22.1,
+        "referring_main_domains": 19.1,
+        "rank": 80.5,
+        "main_domain_rank": 377.4,
+        "last_updated_time": "2026-08-03 20:28:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:53:52 +00:00"
+      }
+    },
+    {
+      "keyword": "cfs warehouse",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 07:52:54 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 1.76,
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.92,
+        "high_top_of_page_bid": 10.88,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 260,
+          "2026-06": 260,
+          "2026-05": 210,
+          "2026-04": 260,
+          "2026-03": 320,
+          "2026-02": 260,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 260,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.6,
+        "dofollow": 1.4,
+        "referring_pages": 1.6,
+        "referring_domains": 1.3,
+        "referring_main_domains": 1.2,
+        "rank": 62,
+        "main_domain_rank": 219.7,
+        "last_updated_time": "2026-09-10 18:17:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-25 23:54:19 +00:00"
+      }
+    },
+    {
+      "keyword": "chargeable weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:12:15 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 18.5,
+        "search_volume": 110,
+        "low_top_of_page_bid": 0.83,
+        "high_top_of_page_bid": 19.14,
+        "categories": [
+          10004,
+          10281,
+          10293,
+          11241,
+          12529,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 90,
+          "2026-04": 70,
+          "2026-03": 140,
+          "2026-02": 90,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 110,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": 29,
+          "quarterly": 29,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 19.3,
+        "dofollow": 15.5,
+        "referring_pages": 19.2,
+        "referring_domains": 4.7,
+        "referring_main_domains": 4.4,
+        "rank": 73.1,
+        "main_domain_rank": 335.3,
+        "last_updated_time": "2026-09-18 04:04:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 10:52:59 +00:00"
+      }
+    },
+    {
+      "keyword": "chargeable weight air freight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:53:51 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "low_top_of_page_bid": 1.7,
+        "high_top_of_page_bid": 8,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "chargeable weight in air freight",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 39.4,
+        "dofollow": 12.6,
+        "referring_pages": 36.4,
+        "referring_domains": 10.5,
+        "referring_main_domains": 13.2,
+        "rank": 42.1,
+        "main_domain_rank": 326.8,
+        "last_updated_time": "2023-08-23 15:53:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 01:01:21 +00:00"
+      }
+    },
+    {
+      "keyword": "cif value",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:06:41 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "categories": [
+          10012
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 170,
+          "2026-01": 170,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 210,
+          "2025-09": 260
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -35
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 69.6,
+        "dofollow": 41.3,
+        "referring_pages": 53.9,
+        "referring_domains": 24.6,
+        "referring_main_domains": 23.1,
+        "rank": 68.6,
+        "main_domain_rank": 455.8,
+        "last_updated_time": "2026-09-16 00:43:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:41:28 +00:00"
+      }
+    },
+    {
+      "keyword": "consolidated shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:32:14 +00:00",
+        "competition": 0.32,
+        "competition_level": "LOW",
+        "cpc": 15.54,
+        "search_volume": 320,
+        "low_top_of_page_bid": 4.32,
+        "high_top_of_page_bid": 18.62,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 260,
+          "2026-04": 320,
+          "2026-03": 260,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 210,
+          "2025-11": 210,
+          "2025-10": 260,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -35
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 8.2,
+        "dofollow": 6.6,
+        "referring_pages": 7.8,
+        "referring_domains": 3.8,
+        "referring_main_domains": 3.3,
+        "rank": 35.8,
+        "main_domain_rank": 469.4,
+        "last_updated_time": "2026-09-09 10:49:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 04:26:56 +00:00"
+      }
+    },
+    {
+      "keyword": "container capacity",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:05:49 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12403
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 90,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 125,
+          "quarterly": 80,
+          "yearly": 80
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 546.5,
+        "dofollow": 461.1,
+        "referring_pages": 483.3,
+        "referring_domains": 90.6,
+        "referring_main_domains": 84.5,
+        "rank": 161.1,
+        "main_domain_rank": 447,
+        "last_updated_time": "2026-09-24 12:45:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 04:29:59 +00:00"
+      }
+    },
+    {
+      "keyword": "container freight station",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 09:19:24 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 26.37,
+        "search_volume": 320,
+        "low_top_of_page_bid": 5.13,
+        "high_top_of_page_bid": 16.86,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 260,
+          "2026-06": 170,
+          "2026-05": 210,
+          "2026-04": 210,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 320,
+          "2025-12": 210,
+          "2025-11": 1000,
+          "2025-10": 390,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "quarterly": 53,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.6,
+        "dofollow": 2.5,
+        "referring_pages": 3.2,
+        "referring_domains": 2.5,
+        "referring_main_domains": 2.5,
+        "rank": 55.3,
+        "main_domain_rank": 340,
+        "last_updated_time": "2026-09-09 10:35:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 03:35:15 +00:00"
+      }
+    },
+    {
+      "keyword": "container load plan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:00:29 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 5.85,
+        "search_volume": 70,
+        "low_top_of_page_bid": 2.58,
+        "high_top_of_page_bid": 6.07,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 40,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 50,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": 75,
+          "quarterly": 40
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "load plan container",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 355.3,
+        "dofollow": 155.1,
+        "referring_pages": 171,
+        "referring_domains": 25,
+        "referring_main_domains": 20.8,
+        "rank": 158.9,
+        "main_domain_rank": 356.1,
+        "last_updated_time": "2025-08-31 09:56:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 01:13:12 +00:00"
+      }
+    },
+    {
+      "keyword": "container loading calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:51:18 +00:00",
+        "competition": 0.28,
+        "competition_level": "LOW",
+        "cpc": 4.84,
+        "search_volume": 260,
+        "low_top_of_page_bid": 2,
+        "high_top_of_page_bid": 5.88,
+        "categories": [
+          10004,
+          10300
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 260,
+          "2026-06": 210,
+          "2026-05": 210,
+          "2026-04": 260,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 182.3,
+        "dofollow": 54.3,
+        "referring_pages": 77.3,
+        "referring_domains": 8.5,
+        "referring_main_domains": 8.2,
+        "rank": 105.5,
+        "main_domain_rank": 354.2,
+        "last_updated_time": "2026-09-10 17:09:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:38:26 +00:00"
+      }
+    },
+    {
+      "keyword": "container sizes",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 11:04:43 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "cpc": 2.17,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.27,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 53,
+          "yearly": 53
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "containers sizes",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 915.4,
+        "dofollow": 626.7,
+        "referring_pages": 656.6,
+        "referring_domains": 102.1,
+        "referring_main_domains": 95.7,
+        "rank": 209.9,
+        "main_domain_rank": 463.6,
+        "last_updated_time": "2026-09-04 20:25:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:21:08 +00:00"
+      }
+    },
+    {
+      "keyword": "cost of shipping a container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:47:29 +00:00",
+        "competition": 0.93,
+        "competition_level": "HIGH",
+        "search_volume": 10,
+        "categories": [
+          10003,
+          10004,
+          10035,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping container cost",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 40.3,
+        "dofollow": 26.9,
+        "referring_pages": 39,
+        "referring_domains": 24.5,
+        "referring_main_domains": 23.6,
+        "rank": 137.3,
+        "main_domain_rank": 382,
+        "last_updated_time": "2024-07-13 19:42:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 22:04:29 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:25:56 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 2.61,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 4.28,
+        "categories": [
+          10012,
+          11093
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 260,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 390,
+          "2025-10": 390,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -65
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "duty customs calculator",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 46,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35846.8,
+        "dofollow": 32261.8,
+        "referring_pages": 33598.1,
+        "referring_domains": 186.3,
+        "referring_main_domains": 170.7,
+        "rank": 266.9,
+        "main_domain_rank": 477.7,
+        "last_updated_time": "2026-09-09 10:04:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:00:34 +00:00"
+      }
+    },
+    {
+      "keyword": "demurrage",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 21:21:42 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 7.04,
+        "search_volume": 6600,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 4.99,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 6600,
+          "2026-04": 6600,
+          "2026-03": 6600,
+          "2026-02": 6600,
+          "2026-01": 8100,
+          "2025-12": 6600,
+          "2025-11": 6600,
+          "2025-10": 6600,
+          "2025-09": 6600
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42.6,
+        "dofollow": 30,
+        "referring_pages": 38.5,
+        "referring_domains": 25.4,
+        "referring_main_domains": 22.8,
+        "rank": 107.6,
+        "main_domain_rank": 453.8,
+        "last_updated_time": "2026-07-30 16:59:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 07:42:14 +00:00"
+      }
+    },
+    {
+      "keyword": "demurrage vs detention",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:17:35 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 480,
+        "categories": [
+          10018,
+          10163,
+          13736
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 390,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 480,
+          "2025-12": 480,
+          "2025-11": 480,
+          "2025-10": 590,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "detention vs demurrage",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10,
+        "dofollow": 7.6,
+        "referring_pages": 8.9,
+        "referring_domains": 5.5,
+        "referring_main_domains": 5.2,
+        "rank": 41.5,
+        "main_domain_rank": 341.8,
+        "last_updated_time": "2026-08-03 19:37:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 00:39:24 +00:00"
+      }
+    },
+    {
+      "keyword": "detention charges",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:04:50 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10018,
+          10163,
+          13736
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 110,
+          "2026-06": 110,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10.5,
+        "dofollow": 8.1,
+        "referring_pages": 9.3,
+        "referring_domains": 5.6,
+        "referring_main_domains": 5.3,
+        "rank": 76.3,
+        "main_domain_rank": 404,
+        "last_updated_time": "2026-07-11 17:18:14 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 06:49:00 +00:00"
+      }
+    },
+    {
+      "keyword": "dim weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 15:13:55 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 10.96,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.08,
+        "high_top_of_page_bid": 8,
+        "categories": [
+          10004,
+          10281,
+          10293,
+          11241,
+          12529,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": 14
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dim weights",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 36,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 301.5,
+        "dofollow": 213.2,
+        "referring_pages": 241.3,
+        "referring_domains": 65.1,
+        "referring_main_domains": 60.9,
+        "rank": 174.9,
+        "main_domain_rank": 498,
+        "last_updated_time": "2026-09-05 20:53:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 08:42:05 +00:00"
+      }
+    },
+    {
+      "keyword": "dimensional weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:27:42 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 10.96,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.08,
+        "high_top_of_page_bid": 8,
+        "categories": [
+          10004,
+          10281,
+          10293,
+          11241,
+          12529,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": 14
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 36,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 282.6,
+        "dofollow": 200.2,
+        "referring_pages": 223.2,
+        "referring_domains": 59.2,
+        "referring_main_domains": 55.4,
+        "rank": 183.5,
+        "main_domain_rank": 511.5,
+        "last_updated_time": "2026-08-01 12:28:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 13:55:59 +00:00"
+      }
+    },
+    {
+      "keyword": "door to door shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:19:44 +00:00",
+        "competition": 0.3,
+        "competition_level": "LOW",
+        "cpc": 9.06,
+        "search_volume": 390,
+        "low_top_of_page_bid": 2.92,
+        "high_top_of_page_bid": 11.93,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          13604
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 480,
+          "2026-06": 260,
+          "2026-05": 590,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 260,
+          "2026-01": 320,
+          "2025-12": 720,
+          "2025-11": 390,
+          "2025-10": 320,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": 50,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7708.4,
+        "dofollow": 7694,
+        "referring_pages": 7703.6,
+        "referring_domains": 15.7,
+        "referring_main_domains": 15,
+        "rank": 74.7,
+        "main_domain_rank": 454.3,
+        "last_updated_time": "2026-08-03 00:39:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:30:27 +00:00"
+      }
+    },
+    {
+      "keyword": "drayage",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:57:41 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 14.72,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 2.15,
+        "high_top_of_page_bid": 19.85,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 8100,
+          "2026-06": 8100,
+          "2026-05": 8100,
+          "2026-04": 9900,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 6600,
+          "2025-11": 8100,
+          "2025-10": 9900,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.8,
+        "dofollow": 25.3,
+        "referring_pages": 29.5,
+        "referring_domains": 15.9,
+        "referring_main_domains": 15.1,
+        "rank": 65.7,
+        "main_domain_rank": 469.7,
+        "last_updated_time": "2026-09-03 05:57:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 11:51:03 +00:00"
+      }
+    },
+    {
+      "keyword": "duties and taxes",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:15:52 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 43.33,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.4,
+        "high_top_of_page_bid": 20.21,
+        "categories": [
+          10012,
+          11093
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 590,
+          "2026-06": 590,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "taxes and duties",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 63,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2681.6,
+        "dofollow": 1372.4,
+        "referring_pages": 1415.6,
+        "referring_domains": 115,
+        "referring_main_domains": 108.4,
+        "rank": 258,
+        "main_domain_rank": 545.2,
+        "last_updated_time": "2026-09-05 20:41:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 23:59:52 +00:00"
+      }
+    },
+    {
+      "keyword": "duty drawback",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 01:50:59 +00:00",
+        "competition": 0.48,
+        "competition_level": "MEDIUM",
+        "cpc": 34.86,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 7.69,
+        "high_top_of_page_bid": 20.81,
+        "categories": [
+          10012,
+          11093
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 72.5,
+        "dofollow": 35.4,
+        "referring_pages": 67.8,
+        "referring_domains": 28.1,
+        "referring_main_domains": 25.9,
+        "rank": 85.4,
+        "main_domain_rank": 495.8,
+        "last_updated_time": "2026-08-01 06:16:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 00:40:16 +00:00"
+      }
+    },
+    {
+      "keyword": "duty vs tariff",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:38:04 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 720,
+          "2026-02": 1600,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -69
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1650.3,
+        "dofollow": 705.2,
+        "referring_pages": 843.3,
+        "referring_domains": 161.2,
+        "referring_main_domains": 152.1,
+        "rank": 114.6,
+        "main_domain_rank": 439.2,
+        "last_updated_time": "2026-09-05 20:41:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 23:07:37 +00:00"
+      }
+    },
+    {
+      "keyword": "euro pallet size",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:24:03 +00:00",
+        "competition": 0.34,
+        "competition_level": "MEDIUM",
+        "cpc": 41.34,
+        "search_volume": 880,
+        "low_top_of_page_bid": 14.15,
+        "high_top_of_page_bid": 200,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": 125
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "pallet euro size",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1036.7,
+        "dofollow": 1020.8,
+        "referring_pages": 1027.1,
+        "referring_domains": 28.5,
+        "referring_main_domains": 26.8,
+        "rank": 135.2,
+        "main_domain_rank": 316.7,
+        "last_updated_time": "2026-09-09 08:22:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:11:53 +00:00"
+      }
+    },
+    {
+      "keyword": "fcl meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:09:56 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 0.63,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 2.32,
+        "categories": [
+          10108,
+          10756
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 320,
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.6,
+        "dofollow": 11,
+        "referring_pages": 13.1,
+        "referring_domains": 6.6,
+        "referring_main_domains": 6.2,
+        "rank": 68.5,
+        "main_domain_rank": 331.8,
+        "last_updated_time": "2026-09-09 08:04:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:27:59 +00:00"
+      }
+    },
+    {
+      "keyword": "fcl vs lcl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:39:55 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 10.23,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.09,
+        "high_top_of_page_bid": 23.1,
+        "categories": [
+          10014,
+          13605,
+          13631,
+          13633
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 390,
+          "2026-06": 320,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14.4,
+        "dofollow": 8.7,
+        "referring_pages": 13.4,
+        "referring_domains": 8,
+        "referring_main_domains": 7.4,
+        "rank": 68.8,
+        "main_domain_rank": 469.6,
+        "last_updated_time": "2026-09-09 07:49:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:47:26 +00:00"
+      }
+    },
+    {
+      "keyword": "fob value",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:06:44 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10012
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 110,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "yearly": -44
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "hy",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 156.7,
+        "dofollow": 116.6,
+        "referring_pages": 137.5,
+        "referring_domains": 50.3,
+        "referring_main_domains": 48.1,
+        "rank": 100.6,
+        "main_domain_rank": 454.3,
+        "last_updated_time": "2026-09-24 01:23:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:20:27 +00:00"
+      }
+    },
+    {
+      "keyword": "foreign trade zone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 17:29:23 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 4.5,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.14,
+        "high_top_of_page_bid": 4.18,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1600,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": -23,
+          "yearly": -58
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "foreign trade zones",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 38,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 769.6,
+        "dofollow": 694.2,
+        "referring_pages": 743.7,
+        "referring_domains": 82.2,
+        "referring_main_domains": 76.3,
+        "rank": 190.1,
+        "main_domain_rank": 488,
+        "last_updated_time": "2026-09-05 11:18:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:30:10 +00:00"
+      }
+    },
+    {
+      "keyword": "free trade zone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:44:03 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.71,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 1.05,
+        "high_top_of_page_bid": 6.27,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 720,
+          "2026-06": 880,
+          "2026-05": 2900,
+          "2026-04": 5400,
+          "2026-03": 4400,
+          "2026-02": 2900,
+          "2026-01": 1900,
+          "2025-12": 2400,
+          "2025-11": 3600,
+          "2025-10": 5400,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 285.3,
+        "dofollow": 221.7,
+        "referring_pages": 271.5,
+        "referring_domains": 81.1,
+        "referring_main_domains": 75.3,
+        "rank": 171.5,
+        "main_domain_rank": 442.1,
+        "last_updated_time": "2026-09-04 05:43:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:50:08 +00:00"
+      }
+    },
+    {
+      "keyword": "freight class",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 13:29:56 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 6.03,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.6,
+        "high_top_of_page_bid": 9.02,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 186.8,
+        "dofollow": 178.9,
+        "referring_pages": 185.2,
+        "referring_domains": 10.2,
+        "referring_main_domains": 9.6,
+        "rank": 86.3,
+        "main_domain_rank": 336.9,
+        "last_updated_time": "2026-07-31 05:40:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 13:55:08 +00:00"
+      }
+    },
+    {
+      "keyword": "freight forwarder",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 06:30:05 +00:00",
+        "competition": 0.27,
+        "competition_level": "LOW",
+        "cpc": 11.28,
+        "search_volume": 18100,
+        "low_top_of_page_bid": 3.41,
+        "high_top_of_page_bid": 11.77,
+        "categories": [
+          10004,
+          10004,
+          10004,
+          10305,
+          10305,
+          10305,
+          11103,
+          11103,
+          11103,
+          12401,
+          12406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 14800,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 18100,
+          "2026-03": 22200,
+          "2026-02": 18100,
+          "2026-01": 27100,
+          "2025-12": 27100,
+          "2025-11": 14800,
+          "2025-10": 18100,
+          "2025-09": 22200
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1618.2,
+        "dofollow": 1384.6,
+        "referring_pages": 1415.3,
+        "referring_domains": 62.1,
+        "referring_main_domains": 59,
+        "rank": 138.5,
+        "main_domain_rank": 493.8,
+        "last_updated_time": "2026-09-02 18:18:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-27 18:22:13 +00:00"
+      }
+    },
+    {
+      "keyword": "freight forwarder vs customs broker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:41:57 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "low_top_of_page_bid": 0.33,
+        "high_top_of_page_bid": 13.88,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 50,
+          "2026-05": 50,
+          "2026-04": 90,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "quarterly": 40
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16.4,
+        "dofollow": 7.8,
+        "referring_pages": 13.3,
+        "referring_domains": 7,
+        "referring_main_domains": 6.9,
+        "rank": 52.9,
+        "main_domain_rank": 380.7,
+        "last_updated_time": "2026-09-24 00:13:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 12:12:30 +00:00"
+      }
+    },
+    {
+      "keyword": "freight quote",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:58:16 +00:00",
+        "competition": 0.58,
+        "competition_level": "MEDIUM",
+        "cpc": 21.14,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 8.03,
+        "high_top_of_page_bid": 75,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 14800,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 9900,
+          "2025-10": 14800,
+          "2025-09": 12100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 208,
+        "dofollow": 150.1,
+        "referring_pages": 182.2,
+        "referring_domains": 56.9,
+        "referring_main_domains": 52.3,
+        "rank": 128.3,
+        "main_domain_rank": 463.8,
+        "last_updated_time": "2026-07-30 10:10:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 07:50:52 +00:00"
+      }
+    },
+    {
+      "keyword": "freight rate",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:59:36 +00:00",
+        "competition": 0.48,
+        "competition_level": "MEDIUM",
+        "cpc": 11.2,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 3.13,
+        "high_top_of_page_bid": 12.52,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1300,
+          "2025-10": 1300,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -12,
+          "quarterly": -12,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "freight rates",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 40,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 758.2,
+        "dofollow": 625.7,
+        "referring_pages": 680.5,
+        "referring_domains": 149.1,
+        "referring_main_domains": 144.5,
+        "rank": 215.5,
+        "main_domain_rank": 452.7,
+        "last_updated_time": "2025-12-11 09:14:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:17:36 +00:00"
+      }
+    },
+    {
+      "keyword": "freight shipping cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:24:29 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "cpc": 16.18,
+        "search_volume": 390,
+        "low_top_of_page_bid": 3.12,
+        "high_top_of_page_bid": 14.69,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 320,
+          "2026-06": 320,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 590,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "freight cost shipping",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 834.8,
+        "dofollow": 571.6,
+        "referring_pages": 740.1,
+        "referring_domains": 248.1,
+        "referring_main_domains": 219.6,
+        "rank": 201.4,
+        "main_domain_rank": 400.1,
+        "last_updated_time": "2024-12-10 23:22:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:46:30 +00:00"
+      }
+    },
+    {
+      "keyword": "full container load",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 05:46:56 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 9.36,
+        "search_volume": 110,
+        "low_top_of_page_bid": 2.13,
+        "high_top_of_page_bid": 17.22,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 140,
+          "2026-06": 90,
+          "2026-05": 90,
+          "2026-04": 110,
+          "2026-03": 170,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 90,
+          "2025-11": 90,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "quarterly": -22,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.1,
+        "dofollow": 11.1,
+        "referring_pages": 15.6,
+        "referring_domains": 8.7,
+        "referring_main_domains": 8.3,
+        "rank": 98,
+        "main_domain_rank": 593.1,
+        "last_updated_time": "2026-09-17 23:05:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 09:08:43 +00:00"
+      }
+    },
+    {
+      "keyword": "groupage",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 17:21:22 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "low_top_of_page_bid": 4.5,
+        "high_top_of_page_bid": 25.94,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 170,
+          "2026-06": 140,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 90,
+          "2026-02": 110,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 110,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -35,
+          "quarterly": -21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "el",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.4,
+        "dofollow": 0.2,
+        "referring_pages": 0.4,
+        "referring_domains": 0.3,
+        "referring_main_domains": 0.3,
+        "rank": 4,
+        "main_domain_rank": 363,
+        "last_updated_time": "2026-07-11 11:59:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:19:51 +00:00"
+      }
+    },
+    {
+      "keyword": "how is customs value calculated",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:00:53 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:07:37 +00:00"
+      }
+    },
+    {
+      "keyword": "how many cartons in a 20ft container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 16:17:32 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:08:40 +00:00"
+      }
+    },
+    {
+      "keyword": "how many pallets fit in a 20ft container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:11:04 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 40,
+          "2026-06": 40,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 25,
+          "quarterly": 25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how many pallets fits in a 20ft container",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:43:57 +00:00"
+      }
+    },
+    {
+      "keyword": "how many pallets fit in a 40ft container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:03:54 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 320,
+          "2026-06": 320,
+          "2026-05": 390,
+          "2026-04": 480,
+          "2026-03": 480,
+          "2026-02": 390,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 6.4,
+        "dofollow": 2.7,
+        "referring_pages": 3.2,
+        "referring_domains": 1.2,
+        "referring_main_domains": 1.2,
+        "rank": 20.9,
+        "main_domain_rank": 309.4,
+        "last_updated_time": "2026-09-08 05:44:39 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:50:36 +00:00"
+      }
+    },
+    {
+      "keyword": "how much does it cost to ship a container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:37:46 +00:00",
+        "competition": 0.45,
+        "competition_level": "MEDIUM",
+        "cpc": 14.86,
+        "search_volume": 40,
+        "low_top_of_page_bid": 1.88,
+        "high_top_of_page_bid": 7.49,
+        "categories": [
+          10004,
+          10301,
+          11155
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 50,
+          "2026-04": 40,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 50,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "quarterly": 33,
+          "yearly": -43
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how much does it cost for shipping container",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 19.8,
+        "dofollow": 10.1,
+        "referring_pages": 15.6,
+        "referring_domains": 9,
+        "referring_main_domains": 8.8,
+        "rank": 62.4,
+        "main_domain_rank": 452.8,
+        "last_updated_time": "2026-10-03 12:31:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:06:01 +00:00"
+      }
+    },
+    {
+      "keyword": "how to calculate cbm",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 12:50:06 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 320,
+        "categories": [
+          10004,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 260,
+          "2026-05": 260,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 320,
+          "2025-12": 390,
+          "2025-11": 390,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 532.4,
+        "dofollow": 449.1,
+        "referring_pages": 465.5,
+        "referring_domains": 23.2,
+        "referring_main_domains": 20.1,
+        "rank": 104.8,
+        "main_domain_rank": 596.1,
+        "last_updated_time": "2026-09-09 05:08:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:53:44 +00:00"
+      }
+    },
+    {
+      "keyword": "how to calculate chargeable weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 11:01:42 +00:00",
+        "competition": 0.19,
+        "competition_level": "LOW",
+        "cpc": 4.81,
+        "search_volume": 40,
+        "low_top_of_page_bid": 0.32,
+        "high_top_of_page_bid": 5.82,
+        "categories": [
+          10004,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 40,
+          "2026-04": 30,
+          "2026-03": 40,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -50,
+          "yearly": -71
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.7,
+        "dofollow": 3.9,
+        "referring_pages": 7.4,
+        "referring_domains": 4.3,
+        "referring_main_domains": 4.1,
+        "rank": 52.4,
+        "main_domain_rank": 464.5,
+        "last_updated_time": "2026-10-03 11:55:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:53:15 +00:00"
+      }
+    },
+    {
+      "keyword": "how to calculate import duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:51:49 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "cpc": 9.35,
+        "search_volume": 260,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 3.79,
+        "categories": [
+          10004,
+          10004,
+          10300,
+          11328,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 170,
+          "2026-05": 170,
+          "2026-04": 170,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to calculate duty on import",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 46,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 36281.9,
+        "dofollow": 32370.6,
+        "referring_pages": 33700.1,
+        "referring_domains": 182.2,
+        "referring_main_domains": 168.8,
+        "rank": 252.5,
+        "main_domain_rank": 574.3,
+        "last_updated_time": "2026-09-10 10:34:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:05:09 +00:00"
+      }
+    },
+    {
+      "keyword": "how to calculate landed cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 17:23:38 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 27,
+        "search_volume": 50,
+        "low_top_of_page_bid": 0.6,
+        "high_top_of_page_bid": 10.84,
+        "categories": [
+          10004,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 70,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": -43,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 36.2,
+        "dofollow": 18.6,
+        "referring_pages": 29.5,
+        "referring_domains": 15,
+        "referring_main_domains": 13,
+        "rank": 102.8,
+        "main_domain_rank": 469.6,
+        "last_updated_time": "2026-09-28 04:28:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:47:57 +00:00"
+      }
+    },
+    {
+      "keyword": "how to get a freight quote",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:18:04 +00:00",
+        "competition": 0.64,
+        "competition_level": "MEDIUM",
+        "cpc": 16.32,
+        "search_volume": 10,
+        "low_top_of_page_bid": 4.38,
+        "high_top_of_page_bid": 11.17,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12406
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 30,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1471.3,
+        "dofollow": 671,
+        "referring_pages": 707.6,
+        "referring_domains": 47.4,
+        "referring_main_domains": 43.5,
+        "rank": 138.1,
+        "main_domain_rank": 475.7,
+        "last_updated_time": "2026-03-10 21:26:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:35:46 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship a pallet",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 11:29:38 +00:00",
+        "competition": 0.74,
+        "competition_level": "HIGH",
+        "cpc": 18.66,
+        "search_volume": 140,
+        "low_top_of_page_bid": 3.08,
+        "high_top_of_page_bid": 16.96,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 140,
+          "2026-05": 140,
+          "2026-04": 170,
+          "2026-03": 170,
+          "2026-02": 140,
+          "2026-01": 140,
+          "2025-12": 110,
+          "2025-11": 140,
+          "2025-10": 170,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 38.6,
+        "dofollow": 27.7,
+        "referring_pages": 35.4,
+        "referring_domains": 12.2,
+        "referring_main_domains": 12,
+        "rank": 57.2,
+        "main_domain_rank": 445.2,
+        "last_updated_time": "2026-07-11 09:56:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:22:04 +00:00"
+      }
+    },
+    {
+      "keyword": "import duty calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:16:41 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 4.01,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.44,
+        "high_top_of_page_bid": 5.11,
+        "categories": [
+          10004,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1900,
+          "2026-04": 2900,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2900,
+          "2025-10": 2900,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": -45,
+          "quarterly": -45,
+          "yearly": -63
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 43,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24125.6,
+        "dofollow": 21064.1,
+        "referring_pages": 22201.7,
+        "referring_domains": 178.3,
+        "referring_main_domains": 165.6,
+        "rank": 233.4,
+        "main_domain_rank": 437.2,
+        "last_updated_time": "2026-07-31 11:41:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 08:59:40 +00:00"
+      }
+    },
+    {
+      "keyword": "import vat",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:53:37 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 50,
+          "2026-05": 90,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "quarterly": 40,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "nl",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 68.6,
+        "dofollow": 47.4,
+        "referring_pages": 58.5,
+        "referring_domains": 21.2,
+        "referring_main_domains": 20.3,
+        "rank": 45.9,
+        "main_domain_rank": 386.5,
+        "last_updated_time": "2026-09-23 13:45:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:07:21 +00:00"
+      }
+    },
+    {
+      "keyword": "landed cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:34:22 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 16.56,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.28,
+        "high_top_of_page_bid": 33.78,
+        "categories": [
+          10002,
+          10028,
+          10222
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 14,
+          "quarterly": 14
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 21.8,
+        "dofollow": 11.8,
+        "referring_pages": 19.2,
+        "referring_domains": 9.1,
+        "referring_main_domains": 8.9,
+        "rank": 85,
+        "main_domain_rank": 450,
+        "last_updated_time": "2026-08-01 10:59:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 12:09:53 +00:00"
+      }
+    },
+    {
+      "keyword": "landed cost calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:43:54 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 7.93,
+        "search_volume": 320,
+        "low_top_of_page_bid": 2.23,
+        "high_top_of_page_bid": 6.41,
+        "categories": [
+          10004,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 260,
+          "2026-05": 320,
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 210,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 170,
+          "2025-10": 170,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": 53
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "landing cost calculator",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24.9,
+        "dofollow": 16.9,
+        "referring_pages": 21.8,
+        "referring_domains": 11.2,
+        "referring_main_domains": 10.1,
+        "rank": 90.5,
+        "main_domain_rank": 491.9,
+        "last_updated_time": "2026-09-09 02:49:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-05-03 04:28:32 +00:00"
+      }
+    },
+    {
+      "keyword": "landed cost formula",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:19:00 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 5.97,
+        "search_volume": 50,
+        "low_top_of_page_bid": 4,
+        "high_top_of_page_bid": 7.32,
+        "categories": [
+          10012,
+          10098
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 30,
+          "2025-11": 50,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "quarterly": -25,
+          "yearly": -57
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.5,
+        "dofollow": 1.5,
+        "referring_pages": 1.5,
+        "referring_domains": 0.5,
+        "referring_main_domains": 0.4,
+        "rank": 7.5,
+        "main_domain_rank": 400,
+        "last_updated_time": "2026-09-27 17:27:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:49:26 +00:00"
+      }
+    },
+    {
+      "keyword": "lcl meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:41:21 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 14.85,
+        "categories": [
+          10108,
+          10756
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "quarterly": 24
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.4,
+        "dofollow": 3.2,
+        "referring_pages": 4,
+        "referring_domains": 2.6,
+        "referring_main_domains": 2.6,
+        "rank": 33.3,
+        "main_domain_rank": 589.2,
+        "last_updated_time": "2026-07-31 00:13:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 13:51:37 +00:00"
+      }
+    },
+    {
+      "keyword": "lcl shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 15:37:37 +00:00",
+        "competition": 0.29,
+        "competition_level": "LOW",
+        "cpc": 14.04,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 2.86,
+        "high_top_of_page_bid": 14.36,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1300,
+          "2026-06": 1000,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1600,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -23,
+          "yearly": -23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16.2,
+        "dofollow": 14.1,
+        "referring_pages": 15.7,
+        "referring_domains": 8.5,
+        "referring_main_domains": 8.2,
+        "rank": 79.8,
+        "main_domain_rank": 465.3,
+        "last_updated_time": "2026-08-01 03:27:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 12:55:54 +00:00"
+      }
+    },
+    {
+      "keyword": "lcl vs fcl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:26:42 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 10.23,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.09,
+        "high_top_of_page_bid": 23.1,
+        "categories": [
+          10014,
+          13605,
+          13631,
+          13633
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 390,
+          "2026-06": 320,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "fcl vs lcl",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15.7,
+        "dofollow": 9.7,
+        "referring_pages": 14.4,
+        "referring_domains": 8.1,
+        "referring_main_domains": 7.4,
+        "rank": 90.1,
+        "main_domain_rank": 443.9,
+        "last_updated_time": "2025-11-18 13:58:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 12:06:21 +00:00"
+      }
+    },
+    {
+      "keyword": "ltl vs ftl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 08:08:34 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "cpc": 0.33,
+        "search_volume": 720,
+        "low_top_of_page_bid": 0.11,
+        "high_top_of_page_bid": 8.75,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 41.5,
+        "dofollow": 39.2,
+        "referring_pages": 40.1,
+        "referring_domains": 5.4,
+        "referring_main_domains": 5.2,
+        "rank": 84.3,
+        "main_domain_rank": 299.5,
+        "last_updated_time": "2026-05-19 23:40:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 10:52:01 +00:00"
+      }
+    },
+    {
+      "keyword": "marine cargo insurance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 08:14:37 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 21.13,
+        "search_volume": 720,
+        "low_top_of_page_bid": 3.91,
+        "high_top_of_page_bid": 28.75,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12405
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 590,
+          "2026-05": 880,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 590,
+          "2025-10": 590,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -34,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.6,
+        "dofollow": 3.9,
+        "referring_pages": 4.6,
+        "referring_domains": 3.7,
+        "referring_main_domains": 3.6,
+        "rank": 33.9,
+        "main_domain_rank": 371.6,
+        "last_updated_time": "2026-08-02 15:46:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:12:06 +00:00"
+      }
+    },
+    {
+      "keyword": "nmfc code",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:38:54 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 6.9,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.87,
+        "high_top_of_page_bid": 10.5,
+        "categories": [
+          10004,
+          10290,
+          11208
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2400,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "nmfc codes",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 542.6,
+        "dofollow": 495.3,
+        "referring_pages": 501.8,
+        "referring_domains": 21.5,
+        "referring_main_domains": 20.6,
+        "rank": 73.6,
+        "main_domain_rank": 351.2,
+        "last_updated_time": "2026-03-13 13:32:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:04:16 +00:00"
+      }
+    },
+    {
+      "keyword": "ocean freight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:10:46 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 13.07,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 2.85,
+        "high_top_of_page_bid": 12.69,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12405
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 53,
+          "yearly": 81
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 682,
+        "dofollow": 626.6,
+        "referring_pages": 656,
+        "referring_domains": 60.8,
+        "referring_main_domains": 55.9,
+        "rank": 153.8,
+        "main_domain_rank": 416,
+        "last_updated_time": "2026-07-31 19:09:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 16:50:38 +00:00"
+      }
+    },
+    {
+      "keyword": "ocean freight rates",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:44:35 +00:00",
+        "competition": 0.47,
+        "competition_level": "MEDIUM",
+        "cpc": 17.44,
+        "search_volume": 320,
+        "low_top_of_page_bid": 2.92,
+        "high_top_of_page_bid": 11.53,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12405
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 480,
+          "2026-06": 390,
+          "2026-05": 260,
+          "2026-04": 390,
+          "2026-03": 590,
+          "2026-02": 210,
+          "2026-01": 170,
+          "2025-12": 140,
+          "2025-11": 210,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 37,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3628.5,
+        "dofollow": 710.4,
+        "referring_pages": 3127.4,
+        "referring_domains": 79.3,
+        "referring_main_domains": 72.9,
+        "rank": 224.6,
+        "main_domain_rank": 422.6,
+        "last_updated_time": "2026-09-08 23:24:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:34:21 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet dimensions",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:33:28 +00:00",
+        "competition": 0.61,
+        "competition_level": "MEDIUM",
+        "cpc": 18.06,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 6.17,
+        "high_top_of_page_bid": 87.08,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 4400,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 3600,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dimensions of a pallet",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1988.4,
+        "dofollow": 1974.3,
+        "referring_pages": 1982.6,
+        "referring_domains": 14.8,
+        "referring_main_domains": 14.7,
+        "rank": 153.1,
+        "main_domain_rank": 302.3,
+        "last_updated_time": "2026-07-30 19:55:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 17:46:54 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 11:16:39 +00:00",
+        "competition": 0.78,
+        "competition_level": "HIGH",
+        "cpc": 18.51,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 4.84,
+        "high_top_of_page_bid": 25.57,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping pallets",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.5,
+        "dofollow": 6.9,
+        "referring_pages": 7.5,
+        "referring_domains": 7.3,
+        "referring_main_domains": 7.2,
+        "rank": 35.3,
+        "main_domain_rank": 504,
+        "last_updated_time": "2026-07-31 19:24:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 17:27:17 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet size",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:57:11 +00:00",
+        "competition": 0.89,
+        "competition_level": "HIGH",
+        "cpc": 8.66,
+        "search_volume": 5400,
+        "low_top_of_page_bid": 1.84,
+        "high_top_of_page_bid": 81.19,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 5400,
+          "2026-06": 5400,
+          "2026-05": 6600,
+          "2026-04": 6600,
+          "2026-03": 6600,
+          "2026-02": 5400,
+          "2026-01": 5400,
+          "2025-12": 5400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 983.2,
+        "dofollow": 979.3,
+        "referring_pages": 980.1,
+        "referring_domains": 4.2,
+        "referring_main_domains": 4.2,
+        "rank": 83.9,
+        "main_domain_rank": 366.6,
+        "last_updated_time": "2026-07-30 14:14:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 17:32:22 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:29:44 +00:00",
+        "competition": 0.3,
+        "competition_level": "LOW",
+        "cpc": 21.83,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 38.01,
+        "high_top_of_page_bid": 149.75,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1300,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": 14
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.7,
+        "dofollow": 6.9,
+        "referring_pages": 7.2,
+        "referring_domains": 2.4,
+        "referring_main_domains": 2.4,
+        "rank": 31.8,
+        "main_domain_rank": 353.2,
+        "last_updated_time": "2026-08-01 10:14:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 23:49:24 +00:00"
+      }
+    },
+    {
+      "keyword": "reciprocal tariffs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 21:13:16 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 1.78,
+        "search_volume": 2400,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 590,
+          "2026-06": 590,
+          "2026-05": 880,
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 4400,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -93
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2035.8,
+        "dofollow": 1574.8,
+        "referring_pages": 1709.9,
+        "referring_domains": 361.2,
+        "referring_main_domains": 334,
+        "rank": 164.7,
+        "main_domain_rank": 427.1,
+        "last_updated_time": "2026-07-30 19:48:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:10:07 +00:00"
+      }
+    },
+    {
+      "keyword": "sea freight vs air freight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:14:54 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 140,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 40,
+          "2025-11": 70,
+          "2025-10": 50,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "quarterly": -22,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "air freight vs sea freight",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 30.1,
+        "dofollow": 13.6,
+        "referring_pages": 27.7,
+        "referring_domains": 12.9,
+        "referring_main_domains": 11.9,
+        "rank": 56.4,
+        "main_domain_rank": 457.9,
+        "last_updated_time": "2026-09-22 06:04:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 23:11:30 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping container cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 10:10:46 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 2.38,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.48,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 61.2,
+        "dofollow": 31.1,
+        "referring_pages": 46,
+        "referring_domains": 25.4,
+        "referring_main_domains": 23.4,
+        "rank": 127.7,
+        "main_domain_rank": 389.8,
+        "last_updated_time": "2026-07-30 19:33:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 22:57:04 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping container dimensions",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:58:46 +00:00",
+        "competition": 0.28,
+        "competition_level": "LOW",
+        "cpc": 1.48,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.09,
+        "high_top_of_page_bid": 1.49,
+        "categories": [
+          10004,
+          10004,
+          10004,
+          10305,
+          10305,
+          10305,
+          11103,
+          11103,
+          11374,
+          12403
+        ],
+        "monthly_searches": {
+          "2026-08": 8100,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 8100,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 558.1,
+        "dofollow": 466.9,
+        "referring_pages": 492.8,
+        "referring_domains": 95.7,
+        "referring_main_domains": 89.6,
+        "rank": 185.2,
+        "main_domain_rank": 440.2,
+        "last_updated_time": "2026-09-03 03:52:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:07:48 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping container sizes",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:20:08 +00:00",
+        "competition": 0.79,
+        "competition_level": "HIGH",
+        "cpc": 1.97,
+        "search_volume": 5400,
+        "low_top_of_page_bid": 0.31,
+        "high_top_of_page_bid": 2.19,
+        "categories": [
+          10004,
+          10004,
+          10004,
+          10305,
+          10305,
+          10305,
+          11103,
+          11103,
+          11374,
+          12403
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 5400,
+          "2026-04": 5400,
+          "2026-03": 5400,
+          "2026-02": 4400,
+          "2026-01": 6600,
+          "2025-12": 5400,
+          "2025-11": 5400,
+          "2025-10": 5400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "container ship sizes",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 62.5,
+        "dofollow": 36.1,
+        "referring_pages": 37.2,
+        "referring_domains": 5.8,
+        "referring_main_domains": 5.5,
+        "rank": 135,
+        "main_domain_rank": 462.8,
+        "last_updated_time": "2026-07-30 17:42:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:06:56 +00:00"
+      }
+    },
+    {
+      "keyword": "standard pallet size",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:02:40 +00:00",
+        "competition": 0.59,
+        "competition_level": "MEDIUM",
+        "cpc": 13.02,
+        "search_volume": 18100,
+        "low_top_of_page_bid": 5,
+        "high_top_of_page_bid": 148.15,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 18100,
+          "2026-07": 18100,
+          "2026-06": 18100,
+          "2026-05": 18100,
+          "2026-04": 18100,
+          "2026-03": 18100,
+          "2026-02": 14800,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 14800,
+          "2025-10": 18100,
+          "2025-09": 18100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "standard size pallet",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1051.3,
+        "dofollow": 1027.4,
+        "referring_pages": 1042.8,
+        "referring_domains": 24.6,
+        "referring_main_domains": 24.4,
+        "rank": 140.4,
+        "main_domain_rank": 290.6,
+        "last_updated_time": "2026-07-30 07:23:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:10:24 +00:00"
+      }
+    },
+    {
+      "keyword": "tariff",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:03:44 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 5.9,
+        "search_volume": 368000,
+        "low_top_of_page_bid": 0.15,
+        "high_top_of_page_bid": 7.33,
+        "categories": [
+          10002,
+          10028,
+          10222
+        ],
+        "monthly_searches": {
+          "2026-08": 165000,
+          "2026-07": 110000,
+          "2026-06": 135000,
+          "2026-05": 135000,
+          "2026-04": 165000,
+          "2026-03": 1000000,
+          "2026-02": 823000,
+          "2026-01": 301000,
+          "2025-12": 301000,
+          "2025-11": 450000,
+          "2025-10": 450000,
+          "2025-09": 450000
+        },
+        "search_volume_trend": {
+          "monthly": 50,
+          "quarterly": 22,
+          "yearly": -70
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "tariffs",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "hu",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1598.8,
+        "dofollow": 789.5,
+        "referring_pages": 920.6,
+        "referring_domains": 185,
+        "referring_main_domains": 174.6,
+        "rank": 211,
+        "main_domain_rank": 589.5,
+        "last_updated_time": "2026-07-30 03:40:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:29:50 +00:00"
+      }
+    },
+    {
+      "keyword": "tariff calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 17:02:40 +00:00",
+        "competition": 0.19,
+        "competition_level": "LOW",
+        "cpc": 2.06,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 7,
+        "categories": [
+          10012,
+          11093
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "yearly": -57
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 40,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22977.8,
+        "dofollow": 20322.6,
+        "referring_pages": 20376.3,
+        "referring_domains": 144.6,
+        "referring_main_domains": 132.3,
+        "rank": 248.5,
+        "main_domain_rank": 403.3,
+        "last_updated_time": "2026-07-30 19:34:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:27:24 +00:00"
+      }
+    },
+    {
+      "keyword": "terminal handling charges",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 08:57:27 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 50,
+          "2026-04": 40,
+          "2026-03": 70,
+          "2026-02": 40,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "quarterly": 33,
+          "yearly": -43
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.7,
+        "dofollow": 1.7,
+        "referring_pages": 3.7,
+        "referring_domains": 2.7,
+        "referring_main_domains": 2.4,
+        "rank": 38.6,
+        "main_domain_rank": 343.6,
+        "last_updated_time": "2026-09-26 04:42:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:29:29 +00:00"
+      }
+    },
+    {
+      "keyword": "transit time",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 12:02:25 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 6.3,
+        "search_volume": 880,
+        "low_top_of_page_bid": 2.59,
+        "high_top_of_page_bid": 8.41,
+        "categories": [
+          10017,
+          10146,
+          10783,
+          12083
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 720,
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "quarterly": 48,
+          "yearly": 81
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1056.8,
+        "dofollow": 336.4,
+        "referring_pages": 620.3,
+        "referring_domains": 47.7,
+        "referring_main_domains": 40.7,
+        "rank": 151.8,
+        "main_domain_rank": 364.8,
+        "last_updated_time": "2026-08-01 19:24:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:29:55 +00:00"
+      }
+    },
+    {
+      "keyword": "vat on imports",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:00:29 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 50,
+          "2026-05": 90,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "quarterly": 40,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import vat",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 276.2,
+        "dofollow": 245.8,
+        "referring_pages": 260.2,
+        "referring_domains": 33.9,
+        "referring_main_domains": 29.5,
+        "rank": 88.4,
+        "main_domain_rank": 420.2,
+        "last_updated_time": "2026-09-21 16:53:18 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:52:33 +00:00"
+      }
+    },
+    {
+      "keyword": "volumetric weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:47:59 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 3.04,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.98,
+        "high_top_of_page_bid": 17.2,
+        "categories": [
+          10004,
+          10281,
+          10293,
+          11241,
+          12529,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 320,
+          "2026-06": 320,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 390,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 305.6,
+        "dofollow": 202.7,
+        "referring_pages": 215.3,
+        "referring_domains": 29.2,
+        "referring_main_domains": 26.8,
+        "rank": 150.4,
+        "main_domain_rank": 475.6,
+        "last_updated_time": "2026-09-07 19:47:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:39:19 +00:00"
+      }
+    },
+    {
+      "keyword": "volumetric weight calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:43:25 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 3.5,
+        "search_volume": 320,
+        "low_top_of_page_bid": 1.1,
+        "high_top_of_page_bid": 7.64,
+        "categories": [
+          10004,
+          10004,
+          10300,
+          10300,
+          11328
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 390,
+          "2026-06": 260,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 166.8,
+        "dofollow": 91.4,
+        "referring_pages": 95.2,
+        "referring_domains": 6.8,
+        "referring_main_domains": 5.9,
+        "rank": 102.2,
+        "main_domain_rank": 394.2,
+        "last_updated_time": "2026-09-08 16:32:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:25:27 +00:00"
+      }
+    },
+    {
+      "keyword": "volumetric weight dhl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:48:11 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 140,
+          "2026-04": 90,
+          "2026-03": 170,
+          "2026-02": 50,
+          "2026-01": 30,
+          "2025-12": 50,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dhl volumetric weight",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14,
+        "dofollow": 8.3,
+        "referring_pages": 12.1,
+        "referring_domains": 6.4,
+        "referring_main_domains": 6.3,
+        "rank": 98.9,
+        "main_domain_rank": 523.9,
+        "last_updated_time": "2026-09-21 15:47:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:41:19 +00:00"
+      }
+    },
+    {
+      "keyword": "what is a freight forwarder",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:03:17 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 5.08,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.18,
+        "high_top_of_page_bid": 5.18,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12401,
+          12406
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2900,
+          "2025-10": 3600,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 24,
+          "quarterly": 24,
+          "yearly": 24
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 32.7,
+        "dofollow": 23,
+        "referring_pages": 31.2,
+        "referring_domains": 17,
+        "referring_main_domains": 16.9,
+        "rank": 103.2,
+        "main_domain_rank": 457.2,
+        "last_updated_time": "2026-07-30 22:35:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:51:20 +00:00"
+      }
+    },
+    {
+      "keyword": "what is landed cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 18:42:02 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 720,
+        "low_top_of_page_bid": 0.35,
+        "high_top_of_page_bid": 11.78,
+        "categories": [
+          10004,
+          10301,
+          11155
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 720,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25.1,
+        "dofollow": 13.4,
+        "referring_pages": 21,
+        "referring_domains": 9.9,
+        "referring_main_domains": 9.7,
+        "rank": 98,
+        "main_domain_rank": 426.4,
+        "last_updated_time": "2026-08-02 12:55:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:40:56 +00:00"
+      }
+    },
+    {
+      "keyword": "who pays customs duties",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:47:15 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 40,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "yearly": -80
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "who pays the customs duty",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 32,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 537.3,
+        "dofollow": 354.9,
+        "referring_pages": 392,
+        "referring_domains": 120.3,
+        "referring_main_domains": 104.7,
+        "rank": 192.3,
+        "main_domain_rank": 514.6,
+        "last_updated_time": "2026-08-14 00:33:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 07:05:38 +00:00"
+      }
+    },
+    {
+      "keyword": "who pays import duties",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:03:21 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 90,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 170,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "yearly": -81
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "who pays import duty",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 902.8,
+        "dofollow": 748.6,
+        "referring_pages": 777.3,
+        "referring_domains": 86.8,
+        "referring_main_domains": 72.5,
+        "rank": 172.3,
+        "main_domain_rank": 517.1,
+        "last_updated_time": "2026-09-18 19:22:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 16:31:36 +00:00"
+      }
+    }
+  ]
+}

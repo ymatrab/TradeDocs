@@ -16,9 +16,12 @@ import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
  *
  * - A feature is listed only if the code really does it, and its `plans` say who gets it. No
  *   feature is paid-only today, so every feature lists every plan and nothing free is gated.
- * - No price is ever written in this file (P-002). A paid plan's price, currency, interval and
- *   Payment Link come only from the environment. Until all of them are set, valid, and payments
- *   are open, the plan is "Not available yet": no price, no buy button.
+ * - No price shows unless the owner has approved the prices (PRICES_APPROVED=true, D-020).
+ *   PROPOSED_PRICES below are the marketing proposal, unapproved (P-002 stays open until the
+ *   owner confirms). With the flag off every paid plan is "Not available yet": no price, no
+ *   buy button. With it on, a paid plan shows its proposed prices; it becomes purchasable only
+ *   when payments are open and its env price and Payment Link are all set and valid, and the
+ *   price it then shows is the env one, which must match what the Payment Link charges.
  *
  * Pure: it never reads process.env. The server module passes the environment in.
  */
@@ -153,9 +156,50 @@ export function paidOnlyFeatures(plan: PaidPlanId): Feature[] {
 
 export type PlanInterval = 'month' | 'year';
 
+/**
+ * Proposed prices (marketing, 2026-10-06; docs/research/pricing-proposal-2026-10-06.md).
+ * Not approved: they render only with PRICES_APPROVED=true. A year costs ten months.
+ */
+export const PRICE_CURRENCIES = ['USD', 'EUR'] as const;
+export type PriceCurrency = (typeof PRICE_CURRENCIES)[number];
+
+export const PROPOSED_PRICES = {
+  pro: { USD: { month: 19, year: 190 }, EUR: { month: 19, year: 190 } },
+  team: { USD: { month: 49, year: 490 }, EUR: { month: 49, year: 490 } },
+} as const satisfies Record<PaidPlanId, Record<PriceCurrency, Record<PlanInterval, number>>>;
+
+/** The owner's approval of PROPOSED_PRICES. Any value other than "true" leaves it off. */
+export const PRICES_APPROVED_ENV = 'PRICES_APPROVED';
+
+export function pricesApproved(input: PlanEnvironment): boolean {
+  return input[PRICES_APPROVED_ENV]?.trim() === 'true';
+}
+
+export type ListedPrice = {
+  currency: PriceCurrency;
+  /** Formatted, such as "$19". */
+  month: string;
+  year: string;
+  /** Whole months a yearly payment saves, such as 2. */
+  monthsFree: number;
+};
+
+/** A paid plan's proposed prices, formatted, in the order of PRICE_CURRENCIES. */
+export function listedPrices(plan: PaidPlanId): ListedPrice[] {
+  return PRICE_CURRENCIES.flatMap((currency) => {
+    const { month, year } = PROPOSED_PRICES[plan][currency];
+    const monthly = formatPrice(String(month), currency);
+    const yearly = formatPrice(String(year), currency);
+    if (!monthly || !yearly) return [];
+    return [{ currency, month: monthly, year: yearly, monthsFree: Math.round(12 - year / month) }];
+  });
+}
+
 export type PlanOffer =
   | { state: 'free' }
   | { state: 'unavailable' }
+  /** Approved prices on show, but nothing can be bought yet: no button. */
+  | { state: 'listed'; prices: ListedPrice[] }
   | {
       state: 'purchasable';
       /** Formatted for display, such as "$29". Built from the environment, never typed here. */
@@ -235,15 +279,19 @@ function formatPrice(amount: string, currency: string): string | undefined {
 }
 
 /**
- * A paid plan's offer. Any missing or invalid value, or closed payments, answers
- * "unavailable": the one plan fails closed, and nothing else on the page is affected.
+ * A paid plan's offer. Without price approval it is "unavailable" (no price at all). With
+ * approval, closed payments or any missing or invalid checkout value answer "listed": the
+ * proposed prices show and nothing can be bought, so the one plan fails closed for buying and
+ * nothing else on the page is affected.
  */
 export function resolveOffer(
   plan: PaidPlanId,
   input: PlanEnvironment,
   paymentsOpen: boolean,
 ): PlanOffer {
-  if (!paymentsOpen) return { state: 'unavailable' };
+  if (!pricesApproved(input)) return { state: 'unavailable' };
+  const listed: PlanOffer = { state: 'listed', prices: listedPrices(plan) };
+  if (!paymentsOpen) return listed;
   const names = planEnvNames(plan);
   const amount = amountSchema.safeParse(blankToUndefined(input[names.amount]));
   const currency = currencySchema.safeParse(blankToUndefined(input[names.currency]));
@@ -257,10 +305,10 @@ export function resolveOffer(
     !linkUrl.success ||
     !linkId.success
   ) {
-    return { state: 'unavailable' };
+    return listed;
   }
   const price = formatPrice(amount.data, currency.data);
-  if (!price) return { state: 'unavailable' };
+  if (!price) return listed;
   return {
     state: 'purchasable',
     price,
@@ -299,13 +347,13 @@ export function resolvePlans(input: PlanEnvironment, paymentsOpen: boolean): Pla
     {
       id: 'pro',
       name: PLAN_NAMES.pro,
-      summary: 'A paid plan for one organization.',
+      summary: 'For one exporting business that prepares its own shipments.',
       offer: resolveOffer('pro', input, paymentsOpen),
     },
     {
       id: 'team',
       name: PLAN_NAMES.team,
-      summary: 'A paid plan for larger teams.',
+      summary: 'For a team that prepares shipments together in one organization.',
       offer: resolveOffer('team', input, paymentsOpen),
     },
   ];

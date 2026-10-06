@@ -72,11 +72,26 @@ export type ContentArticle = {
   /** Paths from PUBLIC_TOOLS that do what the article describes. */
   tools: readonly string[];
   callout: ArticleCallout;
+  /**
+   * Articles to link at the foot, as site paths (`/blog/<slug>` or `/guides/<slug>`), most
+   * relevant first, at most six. Without it the foot lists the newest articles of the same
+   * kind (lib/content/related).
+   */
+  related?: readonly string[];
   /** A credited Unsplash photo, hotlinked (D-016). */
   cover: UnsplashPhoto;
 };
 
 export const BYLINE = 'TradeDocs team';
+
+/**
+ * The listing order for posts and guides: newest `published` date first. The sort is stable,
+ * so articles published the same day keep the order of the index file's ENTRIES list, which
+ * lets each article live in its own file without one shared, hand-ordered array.
+ */
+export function orderArticles<T extends ContentArticle>(entries: readonly T[]): readonly T[] {
+  return [...entries].sort((a, b) => b.published.localeCompare(a.published));
+}
 
 export function countWords(text: string): number {
   return text.split(/\s+/).filter(Boolean).length;

@@ -38,7 +38,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
       <div className="app-page">
         <Panel title="Shipments">
           {shipments && shipments.length > 0 ? (
-            <DataTable caption="Shipments in this organization">
+            <DataTable caption="Shipments in this organization" stack>
               <thead>
                 <tr>
                   <th scope="col">Reference</th>
@@ -52,7 +52,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
               <tbody>
                 {shipments.map((shipment) => (
                   <tr key={shipment.id}>
-                    <td>
+                    <td className="stack-title">
                       <Link
                         className="text-link data"
                         href={`/app/${org}/shipments/${shipment.id}`}
@@ -60,11 +60,13 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
                         {shipment.reference}
                       </Link>
                     </td>
-                    <td>
+                    <td data-label="Status">
                       <ShipmentStatus state={shipment.status} />
                     </td>
-                    <td className="data">{shipment.currency}</td>
-                    <NumericCell value={String(shipment.revision)} />
+                    <td className="data" data-label="Currency">
+                      {shipment.currency}
+                    </td>
+                    <NumericCell label="Revision" value={String(shipment.revision)} />
                   </tr>
                 ))}
               </tbody>

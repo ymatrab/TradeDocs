@@ -40,7 +40,16 @@ const columns = {
  * same shape either way, and two near-identical forms drift apart in exactly the
  * fields that matter least often — which is where a wrong address comes from.
  */
-export function CompanyForm({ org, company }: { org: string; company?: CompanyValues }) {
+export function CompanyForm({
+  org,
+  company,
+  initialKind,
+}: {
+  org: string;
+  company?: CompanyValues;
+  /** Preselects the kind on a new company, as the setup checklist asks for one. */
+  initialKind?: string;
+}) {
   const [state, action, pending] = useActionState<ActionState, FormData>(saveCompany, {});
   const form = useRef<HTMLFormElement>(null);
   useInvalidFocus(form, state.fields);
@@ -69,7 +78,7 @@ export function CompanyForm({ org, company }: { org: string; company?: CompanyVa
             <Select
               id={id}
               name="kind"
-              defaultValue={company?.kind ?? 'customer'}
+              defaultValue={company?.kind ?? initialKind ?? 'customer'}
               invalid={invalid}
               aria-describedby={describedBy}
             >

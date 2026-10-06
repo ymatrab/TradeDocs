@@ -13,9 +13,20 @@ import {
 import { AlertTriangle, CheckCircle2, Info, X } from 'lucide-react';
 
 export type ToastTone = 'neutral' | 'success' | 'danger';
-type Toast = { id: number; tone: ToastTone; message: string };
+type Toast = { id: number; tone: ToastTone; message: string; silent: boolean };
 
-const ToastContext = createContext<((tone: ToastTone, message: string) => void) | null>(null);
+export type ToastOptions = {
+  /**
+   * Draw the toast without announcing it. For an outcome the page already announces in
+   * its own live region (an inline result callout), where a second announcement would
+   * only make a screen reader say the same thing twice.
+   */
+  silent?: boolean;
+};
+
+type Notify = (tone: ToastTone, message: string, options?: ToastOptions) => void;
+
+const ToastContext = createContext<Notify | null>(null);
 
 const icon = { neutral: Info, success: CheckCircle2, danger: AlertTriangle } as const;
 
@@ -37,9 +48,11 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const notify = useCallback(
-    (tone: ToastTone, message: string) => {
+    (tone: ToastTone, message: string, options?: ToastOptions) => {
       const id = Date.now() + Math.random();
-      setToasts((current) => [...current, { id, tone, message }]);
+      const silent = options?.silent ?? false;
+      // Three at a time is as many as anyone reads; older ones make way.
+      setToasts((current) => [...current, { id, tone, message, silent }].slice(-3));
       if (tone === 'danger') return;
       const timer = setTimeout(() => {
         timers.current.delete(timer);
@@ -60,9 +73,13 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => notify, [notify]);
 
-  const region = (tone: 'danger' | 'other') =>
+  const region = (kind: 'danger' | 'other' | 'silent') =>
     toasts
-      .filter((toast) => (tone === 'danger') === (toast.tone === 'danger'))
+      .filter((toast) =>
+        kind === 'silent'
+          ? toast.silent
+          : !toast.silent && (kind === 'danger') === (toast.tone === 'danger'),
+      )
       .map((toast) => {
         const Icon = icon[toast.tone];
         return (
@@ -96,6 +113,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         <div role="status" aria-live="polite" className="toast-stack">
           {region('other')}
         </div>
+        <div className="toast-stack">{region('silent')}</div>
       </div>
     </ToastContext.Provider>
   );
@@ -105,4 +123,14 @@ export function useToast() {
   const notify = useContext(ToastContext);
   if (!notify) throw new Error('useToast requires ToastProvider.');
   return notify;
+}
+
+const ignore: Notify = () => undefined;
+
+/**
+ * For components that may also render outside a provider (a preview, a test). Without
+ * one, a toast is simply not drawn; the outcome is still reported inline.
+ */
+export function useOptionalToast(): Notify {
+  return useContext(ToastContext) ?? ignore;
 }

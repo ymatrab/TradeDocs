@@ -114,6 +114,9 @@ jobs:
             echo "SUPABASE_URL=$API_URL"
             echo "SUPABASE_ANON_KEY=$ANON_KEY"
             echo "SUPABASE_SERVICE_ROLE_KEY=$SERVICE_ROLE_KEY"
+            # The stack's test mailbox (Mailpit; Inbucket on older CLIs). The reset-password
+            # e2e reads the email it sends from here; it skips when neither is present.
+            echo "E2E_MAILBOX_URL=${MAILPIT_URL:-${INBUCKET_URL:-}}"
           } >> "$GITHUB_ENV"
           rm -f stack.env
       - name: Build the service application
@@ -135,6 +138,8 @@ jobs:
           APPLICATION_MODE: service
           SUPABASE_PROJECT_REF: localtestproject
           SUPABASE_ENVIRONMENT: test
+          # A synthetic address the admin e2e signs up with; it exists only in this stack.
+          PLATFORM_ADMIN_EMAILS: e2e-admin@example.test
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

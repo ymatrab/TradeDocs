@@ -32,6 +32,12 @@ TradeDocs is not a customs broker, carrier, chamber, issuing authority, legal ad
 
 Product and finance must select the payment provider, currencies, actual prices, plans, quotas, refund/dispute policy and support commitments before production checkout is enabled. Product/legal must approve supported jurisdictions, disclosures, privacy/retention terms and external endorsement handling. Operations must approve domain, vendor projects, residency, recovery objectives and launch ownership. There are no approved values or named approvers yet.
 
+## Messaging & conversion (proposed 2026-10-06, owner to confirm)
+
+- Audience: small exporters and their teams preparing commercial invoices, proformas and packing lists. One primary CTA per page: the free generator (no account) or account creation where accounts are open.
+- Core message: enter the shipment once and every document agrees; documents are locked to their revision; no document meter. No competitor is named on public pages.
+- Pricing: Free (while early) / Pro / Team, billed per organization, never per document. Proposed prices in [docs/research/pricing-proposal-2026-10-06.md](docs/research/pricing-proposal-2026-10-06.md) render only with `PRICES_APPROVED=true`. Evidence: [docs/research/competitors-2026-10-06.md](docs/research/competitors-2026-10-06.md).
+
 ## Success measures
 
 Measure verified traffic-to-paid conversion, successful tool-to-workspace claiming, time to first coherent set, returning organizations creating a second shipment, data reuse, set generation reliability, reconciled revenue and support burden. Establish baselines before setting conversion targets. Required quality targets are 99.9% monthly availability for authenticated/purchase flows, WCAG 2.2 AA and public-page p75 LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1. [ANALYTICS.md](ANALYTICS.md) defines measurement ownership.

@@ -9,7 +9,9 @@ function newEmail(): string {
   sequence += 1;
   return `e2e-workspace-${run}-${sequence}@example.test`;
 }
-const password = 'correct-horse-battery-staple';
+// Unique per run: sign-up refuses passwords that appear in known breaches (HIBP), and a
+// well-known phrase such as "correct horse battery staple" is in every breach corpus.
+const password = `Td-e2e-${run}-quay-ledger`;
 
 async function signUp(page: Page): Promise<void> {
   await page.goto('/sign-up');

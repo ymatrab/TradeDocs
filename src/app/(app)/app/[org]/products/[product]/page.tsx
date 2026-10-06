@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
@@ -36,14 +35,13 @@ export default async function ProductPage({
   const archived = record.archived_at !== null;
 
   return (
-    <AppShell title={record.description} current="Products" orgId={org}>
+    <AppShell
+      title={record.description}
+      current="Products"
+      orgId={org}
+      parent={{ href: `/app/${org}/products`, label: 'Catalog' }}
+    >
       <div className="app-page">
-        <p>
-          <Link className="text-link" href={`/app/${org}/products`}>
-            ← Catalog
-          </Link>
-        </p>
-
         {archived ? (
           <Callout tone="warning" title="Archived">
             This product no longer appears when adding lines to a shipment. Lines already added keep

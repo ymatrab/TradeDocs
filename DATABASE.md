@@ -179,3 +179,22 @@ Tests: `supabase/tests/product_logic.test.sql` (49 assertions); `tenant_integrit
 Generated types were extended by hand (`organization_settings`, the four document columns,
 `duplicate_shipment`, `preview_document`, `void_document`, `import_products.dry_run`); the CI
 `database-evidence` artifact is authoritative. Rollback notes are in each migration header.
+## Accounts and access (20261006000900)
+
+- `account_deletion_requests` gains `last_purge_attempt_at` and `last_purge_outcome`
+  (`blocked_sole_owner` or null). `invitations.invited_by` becomes nullable; `invited_by` and
+  `accepted_by` are `on delete set null`, and the pairing check becomes "an accepter implies an
+  acceptance", so a purged account detaches from the invitations it sent or accepted.
+- `private.protect_last_owner` allows removing the last owner of a soft-deleted organization.
+- Policy `memberships_delete_scoped` replaces `memberships_delete_admin_or_self`: self, any
+  owner, or an administrator removing a plain member.
+- Authenticated routines (audited): `rename_organization`, `change_member_role` (owner),
+  `remove_member`, `revoke_invitation`, `reissue_invitation` (rotates the token digest, 7 more
+  days), and `create_invitation` replaced (refuses existing members, supersedes a pending
+  invitation to the same address).
+- Service-role routines: `purge_due_accounts(p_limit)`, `admin_force_account_deletion`,
+  `admin_search_users(p_query, p_limit)` (3–254 characters, at most 50 rows, wildcards
+  escaped), `admin_revoke_sessions`, `peek_rate_limit`. `private.purge_account` is callable
+  by none of the API roles.
+- pgTAP: `supabase/tests/accounts_access.test.sql`. Types hand-added; replace with the CI
+  `database-evidence` artifact. Rollback notes are in the migration header.

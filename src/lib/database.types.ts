@@ -37,18 +37,24 @@ export type Database = {
       account_deletion_requests: {
         Row: {
           cancelled_at: string | null
+          last_purge_attempt_at: string | null
+          last_purge_outcome: string | null
           purge_after: string
           requested_at: string
           user_id: string
         }
         Insert: {
           cancelled_at?: string | null
+          last_purge_attempt_at?: string | null
+          last_purge_outcome?: string | null
           purge_after: string
           requested_at?: string
           user_id: string
         }
         Update: {
           cancelled_at?: string | null
+          last_purge_attempt_at?: string | null
+          last_purge_outcome?: string | null
           purge_after?: string
           requested_at?: string
           user_id?: string
@@ -352,7 +358,7 @@ export type Database = {
           email: string
           expires_at: string
           id: string
-          invited_by: string
+          invited_by: string | null
           org_id: string
           revoked_at: string | null
           role: string
@@ -365,7 +371,7 @@ export type Database = {
           email: string
           expires_at: string
           id?: string
-          invited_by: string
+          invited_by?: string | null
           org_id: string
           revoked_at?: string | null
           role: string
@@ -378,7 +384,7 @@ export type Database = {
           email?: string
           expires_at?: string
           id?: string
-          invited_by?: string
+          invited_by?: string | null
           org_id?: string
           revoked_at?: string | null
           role?: string
@@ -927,11 +933,21 @@ export type Database = {
         }
         Returns: string
       }
+      admin_force_account_deletion: { Args: { p_user: string }; Returns: string }
+      admin_revoke_sessions: { Args: { p_user: string }; Returns: number }
+      admin_search_users: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: Json
+      }
       apply_billing_event: {
         Args: { p_action: Json; p_event_id: string; p_event_type: string }
         Returns: string
       }
       cancel_account_deletion: { Args: never; Returns: undefined }
+      change_member_role: {
+        Args: { new_role: string; target_org: string; target_user: string }
+        Returns: undefined
+      }
       consume_rate_limit: {
         Args: { p_key_hash: string; p_limit: number; p_window_seconds: number }
         Returns: {
@@ -970,7 +986,25 @@ export type Database = {
         Args: { document_kind: string; target_shipment: string }
         Returns: Json
       }
+      peek_rate_limit: {
+        Args: { p_key_hash: string; p_window_seconds: number }
+        Returns: number
+      }
+      purge_due_accounts: { Args: { p_limit?: number }; Returns: Json }
+      reissue_invitation: { Args: { target_invitation: string }; Returns: Json }
+      remove_member: {
+        Args: { target_org: string; target_user: string }
+        Returns: undefined
+      }
+      rename_organization: {
+        Args: { new_name: string; target_org: string }
+        Returns: undefined
+      }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
+      revoke_invitation: {
+        Args: { target_invitation: string }
+        Returns: undefined
+      }
       void_document: {
         Args: { reason: string; target_document: string }
         Returns: undefined

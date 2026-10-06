@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { DataTable, EmptyValue } from '@/components/primitives/table';
-import { roleLabel } from '@/lib/labels';
 import { MemberRow } from './member-row';
 import { InviteForm } from './invite-form';
+import { InvitationRow } from './invitation-row';
+import { RenameForm } from './rename-form';
 
 export const metadata: Metadata = { title: 'Members' };
 
@@ -48,7 +50,14 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
   return (
     <AppShell title={organization.name} current="Members" orgId={org}>
       <div className="app-page">
-        <Panel title="Members">
+        <Panel
+          title="Members"
+          actions={
+            <Link className="text-link" href="/app">
+              Switch organization
+            </Link>
+          }
+        >
           <DataTable caption={`People in ${organization.name}`}>
             <thead>
               <tr>
@@ -60,18 +69,25 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
               </tr>
             </thead>
             <tbody>
-              {(memberships ?? []).map((membership) => (
-                <MemberRow
-                  key={membership.user_id}
-                  org={org}
-                  userId={membership.user_id}
-                  name={nameFor.get(membership.user_id) ?? null}
-                  role={membership.role}
-                  isSelf={membership.user_id === user?.id}
-                  canAdminister={canAdminister}
-                  canChangeRole={viewerRole === 'owner'}
-                />
-              ))}
+              {(memberships ?? []).map((membership) => {
+                const isSelf = membership.user_id === user?.id;
+                return (
+                  <MemberRow
+                    key={membership.user_id}
+                    org={org}
+                    userId={membership.user_id}
+                    name={nameFor.get(membership.user_id) ?? null}
+                    role={membership.role}
+                    isSelf={isSelf}
+                    canRemove={
+                      isSelf ||
+                      viewerRole === 'owner' ||
+                      (viewerRole === 'admin' && membership.role === 'member')
+                    }
+                    canChangeRole={viewerRole === 'owner'}
+                  />
+                );
+              })}
             </tbody>
           </DataTable>
         </Panel>
@@ -89,17 +105,22 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
                       <th scope="col">Email</th>
                       <th scope="col">Role</th>
                       <th scope="col">Expires</th>
+                      <th scope="col">
+                        <span className="sr-only">Actions</span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {invitations.map((invitation) => (
-                      <tr key={invitation.id}>
-                        <td>{invitation.email}</td>
-                        <td>{roleLabel(invitation.role)}</td>
-                        <td className="data">
-                          {new Date(invitation.expires_at).toISOString().slice(0, 10)}
-                        </td>
-                      </tr>
+                      <InvitationRow
+                        key={invitation.id}
+                        org={org}
+                        id={invitation.id}
+                        email={invitation.email}
+                        role={invitation.role}
+                        expiresAt={invitation.expires_at}
+                        expired={isPast(invitation.expires_at)}
+                      />
                     ))}
                   </tbody>
                 </DataTable>
@@ -109,13 +130,22 @@ export default async function MembersPage({ params }: { params: Promise<{ org: s
                 </p>
               )}
             </Panel>
+            <Panel title="Organization settings">
+              <RenameForm org={org} name={organization.name} />
+            </Panel>
           </>
         ) : (
           <Callout tone="neutral" title="Member access">
-            Only an owner or an administrator can invite people or change roles here.
+            Only an owner or an administrator can invite people, rename the organization or change
+            roles here.
           </Callout>
         )}
       </div>
     </AppShell>
   );
+}
+
+/** Kept out of the component so rendering stays pure. */
+function isPast(timestamp: string): boolean {
+  return Date.parse(timestamp) <= Date.now();
 }

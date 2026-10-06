@@ -1,0 +1,95 @@
+{
+  "note": "Condensed transcription of an inline MCP response (the SERP endpoint returned inline, not to a file). Not the raw payload; fields kept: type, rank_absolute, domain, url, title.",
+  "id": "10060216-2048-0139-0000-11a80a9278bc",
+  "keyword": "what is a bill of lading",
+  "location": "United States",
+  "language": "en",
+  "retrieved": "2026-10-06",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_absolute": 1,
+      "cited": [
+        "nmfta.org",
+        "youtube.com",
+        "investopedia.com",
+        "bertling.com",
+        "parseur.com",
+        "chandra-asri.com",
+        "reddit.com"
+      ],
+      "summary": "Receipt of goods, contract of carriage, document of title; key fields list"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 2,
+      "domain": "denholmgoodlogistics.com",
+      "url": "https://denholmgoodlogistics.com/wp-content/uploads/Bill-of-Lading.pdf",
+      "title": "What is a Bill of Lading?"
+    },
+    {
+      "type": "people_also_ask",
+      "rank_absolute": 3,
+      "questions": [
+        "What is the purpose of a bill of lading?",
+        "Who gets the bill of lading?",
+        "What is the difference between a bill of lading and a freight bill?",
+        "Is a bill of lading necessary?"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 4,
+      "domain": "www.linkedin.com",
+      "url": "https://www.linkedin.com/pulse/what-bill-lading-3-things-you-need-know-kay-shipping-services-llc-jek7f",
+      "title": "What Is a Bill of Lading: 3 Things You Need to Know"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 5,
+      "domain": "www.becker.com",
+      "url": "https://www.becker.com/accounting-terms/bill-lading",
+      "title": "Bill of Lading Definition"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 6,
+      "domain": "transportlaw.com",
+      "url": "https://transportlaw.com/practice-items/bills-lading-tariffs/",
+      "title": "Bills of Lading and Tariffs"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 7,
+      "domain": "www.speedcommerce.com",
+      "url": "https://www.speedcommerce.com/what-is/bill-of-lading/",
+      "title": "Bill of Lading (BOL) Definition | TLDR"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 8,
+      "domain": "roadwarrior.app",
+      "url": "https://roadwarrior.app/blog/understanding-the-bill-of-lading-a-comprehensive-guide/",
+      "title": "Understanding the Bill of Lading: A Comprehensive Guide"
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 9,
+      "domain": "www.freightmango.com",
+      "url": "https://www.freightmango.com/shipping-glossary/b/bill-of-lading/",
+      "title": "Bill of Lading - Meaning, Functions, & Types"
+    },
+    {
+      "type": "perspectives",
+      "rank_absolute": 10,
+      "domains": ["tiktok.com", "reddit.com", "linkedin.com", "facebook.com"]
+    },
+    {
+      "type": "organic",
+      "rank_absolute": 11,
+      "domain": "www.embassyfreight.eu",
+      "url": "https://www.embassyfreight.eu/logistic-terms/bill-lading-bl",
+      "title": "Bill of Lading ( B/L )"
+    }
+  ]
+}
