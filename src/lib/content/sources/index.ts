@@ -1,4 +1,9 @@
 import type { SourceFields } from '@/lib/trade/sources';
+import brokerageFeesAndDutiesOnCourierShipments from './brokerage-fees-and-duties-on-courier-shipments';
+import cifVsFob from './cif-vs-fob';
+import commercialInvoiceForCanada from './commercial-invoice-for-canada';
+import eeiAesFilingItn from './eei-aes-filing-itn';
+import grossWeightVsNetWeight from './gross-weight-vs-net-weight';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -13,6 +18,11 @@ import type { SourceFields } from '@/lib/trade/sources';
 
 export const ARTICLE_SOURCE_FILES = [
   // One line per file, alphabetical by article slug.
+  brokerageFeesAndDutiesOnCourierShipments,
+  cifVsFob,
+  commercialInvoiceForCanada,
+  eeiAesFilingItn,
+  grossWeightVsNetWeight,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

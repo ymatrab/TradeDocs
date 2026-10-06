@@ -25,6 +25,26 @@ import proformaInvoiceExample from './proforma-invoice-example';
 import exportDocumentsChecklist from './export-documents-checklist';
 import packingListForShipping from './packing-list-for-shipping';
 import fcaVsFob from './fca-vs-fob';
+import brokerageFeesAndDutiesOnCourierShipments from './brokerage-fees-and-duties-on-courier-shipments';
+import cifVsFob from './cif-vs-fob';
+import commercialInvoiceForCanada from './commercial-invoice-for-canada';
+import commercialInvoiceForSamples from './commercial-invoice-for-samples';
+import commercialInvoiceUpsFedexDhl from './commercial-invoice-ups-fedex-dhl';
+import ddpVsDdu from './ddp-vs-ddu';
+import dutyVsTariff from './duty-vs-tariff';
+import exwVsFca from './exw-vs-fca';
+import exwVsFob from './exw-vs-fob';
+import fobPrice from './fob-price';
+import fobShippingPointVsFobDestination from './fob-shipping-point-vs-fob-destination';
+import fobVsDdp from './fob-vs-ddp';
+import howLongDoesCustomsClearanceTake from './how-long-does-customs-clearance-take';
+import howManyPalletsFitInAContainer from './how-many-pallets-fit-in-a-container';
+import howToCalculateImportDuty from './how-to-calculate-import-duty';
+import howToFindHsCode from './how-to-find-hs-code';
+import howToShipInternationallySmallBusiness from './how-to-ship-internationally-small-business';
+import incotermsForImportingFromChina from './incoterms-for-importing-from-china';
+import shippersLetterOfInstruction from './shippers-letter-of-instruction';
+import shippingMarks from './shipping-marks';
 
 export type Post = ContentArticle;
 
@@ -41,6 +61,26 @@ const ENTRIES: readonly Post[] = [
   packingListForShipping,
   fcaVsFob,
   // New posts, one line each, alphabetical by slug.
+  brokerageFeesAndDutiesOnCourierShipments,
+  cifVsFob,
+  commercialInvoiceForCanada,
+  commercialInvoiceForSamples,
+  commercialInvoiceUpsFedexDhl,
+  ddpVsDdu,
+  dutyVsTariff,
+  exwVsFca,
+  exwVsFob,
+  fobPrice,
+  fobShippingPointVsFobDestination,
+  fobVsDdp,
+  howLongDoesCustomsClearanceTake,
+  howManyPalletsFitInAContainer,
+  howToCalculateImportDuty,
+  howToFindHsCode,
+  howToShipInternationallySmallBusiness,
+  incotermsForImportingFromChina,
+  shippersLetterOfInstruction,
+  shippingMarks,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

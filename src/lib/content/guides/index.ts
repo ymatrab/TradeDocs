@@ -27,6 +27,16 @@ import {
 import lclVsFcl from './lcl-vs-fcl';
 import dapVsDdp from './dap-vs-ddp';
 import proformaVsCommercialInvoice from './proforma-vs-commercial-invoice';
+import eeiAesFilingItn from './eei-aes-filing-itn';
+import eoriNumber from './eori-number';
+import grossWeightVsNetWeight from './gross-weight-vs-net-weight';
+import howToExportFromTheUs from './how-to-export-from-the-us';
+import hsVsHtsVsScheduleB from './hs-vs-hts-vs-schedule-b';
+import landedCost from './landed-cost';
+import palletSizes from './pallet-sizes';
+import shipperConsigneeNotifyParty from './shipper-consignee-notify-party';
+import shippingContainerSizes from './shipping-container-sizes';
+import whatIsABillOfLading from './what-is-a-bill-of-lading';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -44,6 +54,16 @@ const ENTRIES: readonly Guide[] = [
   dapVsDdp,
   proformaVsCommercialInvoice,
   // New guides, one line each, alphabetical by slug.
+  eeiAesFilingItn,
+  eoriNumber,
+  grossWeightVsNetWeight,
+  howToExportFromTheUs,
+  hsVsHtsVsScheduleB,
+  landedCost,
+  palletSizes,
+  shipperConsigneeNotifyParty,
+  shippingContainerSizes,
+  whatIsABillOfLading,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);
