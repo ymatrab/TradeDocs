@@ -111,11 +111,13 @@ unreachable and Stripe will redeliver.
 
 ## Contact inbox, legal pages and platform admin (D-009, D-018)
 
+- **Chat.** `CHAT_PROVIDER` accepts only `none` today (D-019); any other value is treated as
+  `none`, so the help centre and contact form are the only support channels.
 - **Admin access.** Set `PLATFORM_ADMIN_EMAILS` (Production target only) to the owner's
   confirmed sign-in address(es). `/admin` checks the signed-in user against the list on every
-  request and action; anyone else gets a 404. It reads through the service role, so it shows
-  "Admin needs the production database" wherever `SUPABASE_SERVICE_ROLE_KEY` is absent
-  (every preview, D-011). Every admin view and action writes a `platform_admin.*` row to
+  request and action; anyone else gets a 404, and so does everyone on a deployment without a
+  database (every preview, D-011). With a database but no `SUPABASE_SERVICE_ROLE_KEY`, an
+  allowlisted admin sees "Admin needs the production database". Every admin view and action writes a `platform_admin.*` row to
   `audit_events`; if that write fails the page shows nothing but the cause.
 - **Contact messages.** `/contact` stores every valid message in `contact_messages` (service
   role) before attempting email. Email goes through Resend when `RESEND_API_KEY`,

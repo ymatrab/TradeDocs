@@ -68,10 +68,8 @@ test('contact says plainly when the form is not connected', async ({ page }) => 
 });
 
 test('the admin panel admits nobody without a database and allowlist', async ({ page }) => {
-  await page.goto('/admin');
-  const notice = page.getByRole('heading', { name: 'Admin needs the production database' });
-  await expect(notice).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+  const response = await page.goto('/admin');
+  expect(response?.status()).toBe(404);
 });
 
 test('sign-up links the terms and privacy policy, or says accounts are closed', async ({

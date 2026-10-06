@@ -27,7 +27,8 @@ export type AdminContext =
  * check in a layout alone would not stop a page from running its queries.
  */
 export const adminContext = cache(async (): Promise<AdminContext> => {
-  if (!isDatabaseConfigured()) return { kind: 'unavailable' };
+  // Without a database nobody can be identified, so the panel does not exist (404).
+  if (!isDatabaseConfigured()) notFound();
   let user: Awaited<ReturnType<typeof getUser>>;
   try {
     user = await getUser();
