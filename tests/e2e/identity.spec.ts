@@ -327,8 +327,31 @@ test('a password reset runs end to end and its link works once', async ({ browse
   ).toBeVisible();
 
   const link = await emailLink(page.request, email, 'recovery');
+  // Diagnostics: where the link points (token withheld) and what /auth/confirm answered, so a
+  // failure shows whether the session was lost at the link, the redirect or the next page.
+  const target = new URL(link);
+  console.log(`reset link: ${target.origin}${target.pathname} type=${target.searchParams.get('type')}`);
+  page.on('response', async (response) => {
+    const path = new URL(response.url()).pathname;
+    if (path !== '/auth/confirm' && path !== '/reset-password/new') return;
+    const cookies = (await response.headersArray())
+      .filter(({ name }) => name.toLowerCase() === 'set-cookie')
+      .map(({ value }) => {
+        const [pair = ''] = value.split(';');
+        const name = pair.split('=')[0];
+        return `${name}${/max-age=0|expires=thu, 01 jan 1970/i.test(value) ? ' (expired)' : ''}`;
+      });
+    console.log(
+      `${path}: ${response.status()} location=${response.headers()['location'] ?? '-'} set-cookie=[${cookies.join(', ')}]`,
+    );
+  });
   await page.goto(link);
   await page.waitForURL('**/reset-password/new');
+  console.log(
+    `cookies after redirect: ${(await context.cookies())
+      .map((cookie) => `${cookie.name}@${cookie.domain}`)
+      .join(', ')}`,
+  );
   const replacement = `${password}-renewed`;
   await page.getByLabel('New password').fill(replacement);
   await page.getByRole('button', { name: 'Save the new password' }).click();
