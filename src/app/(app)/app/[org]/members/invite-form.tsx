@@ -9,6 +9,36 @@ import { showsSummary } from '@/lib/form-errors';
 import { roleLabels } from '@/lib/labels';
 import { inviteMember, type ActionState } from '../../../actions';
 
+/**
+ * What happened to an invitation, in words that match what actually happened. Only an
+ * email that reached the invitee is called "sent"; every other outcome hands the link over.
+ */
+export function DeliveryOutcome({ state }: { state: ActionState }) {
+  if (state.delivery === 'emailed') {
+    return (
+      <Callout tone="success" title="Invitation sent" live>
+        {state.notice}
+      </Callout>
+    );
+  }
+  if (!state.link) return null;
+  const why =
+    state.delivery === 'email_failed'
+      ? 'The invitation email could not be sent just now, so nothing went out.'
+      : state.delivery === 'sandbox'
+        ? 'This is not the production deployment, so the email went to the test inbox, not to the invitee.'
+        : 'Email delivery is not set up on this deployment, so no email was sent.';
+  return (
+    <Callout tone="warning" title="Send this link yourself" live>
+      {state.notice} {why} Copy this single-use link and send it to them — it is shown once and
+      cannot be retrieved again:{' '}
+      <span className="data" style={{ overflowWrap: 'anywhere' }} data-testid="invitation-link">
+        {state.link}
+      </span>
+    </Callout>
+  );
+}
+
 export function InviteForm({ org }: { org: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(inviteMember, {});
   const form = useRef<HTMLFormElement>(null);
@@ -22,15 +52,7 @@ export function InviteForm({ org }: { org: string }) {
           {state.error}
         </Callout>
       ) : null}
-      {state.token ? (
-        <Callout tone="warning" title="Send this link yourself" live>
-          {state.notice} Automatic delivery arrives with transactional email. Until then, copy this
-          single-use link — it is shown once and cannot be retrieved again:{' '}
-          <span className="data" style={{ overflowWrap: 'anywhere' }}>
-            /invitations/accept?token={state.token}
-          </span>
-        </Callout>
-      ) : null}
+      <DeliveryOutcome state={state} />
 
       <div
         style={{
@@ -46,6 +68,7 @@ export function InviteForm({ org }: { org: string }) {
               name="email"
               type="email"
               required
+              maxLength={254}
               invalid={invalid}
               aria-describedby={describedBy}
             />
@@ -54,7 +77,7 @@ export function InviteForm({ org }: { org: string }) {
         <Field
           id="invite-role"
           label="Role"
-          hint="Administrators can invite and change roles."
+          hint="Administrators can invite and remove members."
           error={state.fields?.role}
         >
           {({ id, describedBy, invalid }) => (
