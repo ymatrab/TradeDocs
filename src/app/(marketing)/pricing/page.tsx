@@ -73,7 +73,14 @@ function priceSentence(plan: PaidPlanId): string {
   return `${first.month} a month or ${first.year} a year${suffix}`;
 }
 
-function questionsFor(state: PageState): Question[] {
+/** The price a plan's card shows: the live checkout price when open, otherwise the proposal. */
+function quotedPrice(plan: PaidPlanId, plans: ReturnType<typeof currentPlans>): string {
+  const offer = plans.find((entry) => entry.id === plan)?.offer;
+  if (offer?.state === 'purchasable') return `${offer.price} ${INTERVAL_LABELS[offer.interval]}`;
+  return priceSentence(plan);
+}
+
+function questionsFor(state: PageState, plans: ReturnType<typeof currentPlans>): Question[] {
   const priced = state !== 'unpriced';
   const monthsFree = listedPrices('pro')[0]?.monthsFree ?? 0;
   const list: Question[] = [
@@ -92,7 +99,7 @@ function questionsFor(state: PageState): Question[] {
     list.push(
       {
         q: 'What do Pro and Team cost?',
-        a: `Pro is ${priceSentence('pro')}. Team is ${priceSentence('team')}. ${
+        a: `Pro is ${quotedPrice('pro', plans)}. Team is ${quotedPrice('team', plans)}. ${
           state === 'open'
             ? 'Stripe’s checkout page shows the exact amount before you pay.'
             : 'Checkout is not open yet, so nobody can be charged today.'
@@ -275,7 +282,7 @@ export default function PricingPage() {
   const action = primaryAction(accountsOpen);
   const plans = currentPlans();
   const state = pageState(plans);
-  const questions = questionsFor(state);
+  const questions = questionsFor(state, plans);
 
   return (
     <>
