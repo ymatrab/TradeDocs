@@ -2,6 +2,18 @@
 
 ## Unreleased — 2026-09-06
 
+### Product logic review (D-020, docs/delivery/product-review-2026-10-06.md)
+
+- Documents: re-generating supersedes the earlier revision of that type and the new one states the number it replaces; voiding is owner/admin only, needs a reason and is audited; previews (`/api/shipments/[id]/preview`) are labelled "PREVIEW · NOT ISSUED" with no number; a stale document says why (lines, packing, terms, a party's details, issuer settings), and the ZIP set leaves content-stale documents out and lists them.
+- Snapshot schema 4 and renderer `tradedocs-pdf/4`: packing weights are count × per-package weight (they were per package), party blocks leave internal notes out, the notify party prints, long names and places stay inside their boxes, totals always share a page with the last row and never reach the footer, and invoices carry payment terms, bank details and a signatory line from the new document settings. Older documents render exactly as issued. The free generator moves to schema 4.
+- Document settings page (`/app/[org]/settings`): default currency, number prefix, payment terms, bank details, signatory, document note.
+- Reuse: "Reuse for a new shipment" copies parties, terms, lines and packing into a new draft without touching the original or its documents.
+- Packing: allocations cannot exceed the line; the panel adds up in exact decimals and shows row weights.
+- Shipments: Incoterms rule requires its named place; shipping date field; a save against an older revision is refused with a message instead of overwriting; saving an unchanged form no longer marks documents stale.
+- Import: "Check the file" validates without writing; every problem is reported per file line, including unreadable figures, duplicate SKUs in one file and rows with no description.
+- Actions: 0-row updates are reported (company/product edit and archive, role change, member removal, allocation removal); figures accept decimal commas and state their decimal-place limits.
+- Tests: pgTAP `product_logic` (49), vitest `pdf-layout`, `staleness`, `packing-and-inputs`, extended `shipment-actions` and `csv`; e2e reuse flow. All pending CI.
+
 ### Homepage v3: photos, search sections and navigation (D-018)
 
 - Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.

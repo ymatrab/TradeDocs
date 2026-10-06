@@ -135,3 +135,47 @@ insert on audit_events), which Supabase's default privileges already provided. R
 not yet decided (P-003) and the privacy draft says so. Rollback: drop the table; nothing
 references it, and `/contact` then reports the form unavailable. `src/lib/database.types.ts`
 was extended by hand for this table: replace it with the CI `database-evidence` artifact.
+
+## Document lineage, voiding and settings (20261006000300)
+
+`public.organization_settings` (one row per organization): `default_currency`,
+`number_prefix` (`^[A-Z0-9]{1,10}$`), `payment_terms`, `bank_details`, `signatory_name`,
+`signatory_title`, `document_notes`, `updated_by`. Members select; owners and admins insert
+and update (`has_org_role`). Settings reach documents only through new snapshots.
+
+`public.documents` gains `supersedes_id` (composite FK `(org_id, supersedes_id)` to
+`documents (org_id, id)`), `status_reason`, `status_changed_at`, `status_changed_by`.
+`freeze_document` also freezes `supersedes_id` and lets the status fields change only together
+with a final → superseded/voided transition. The `documents_void` policy and the
+`authenticated` UPDATE grant are removed: no API role writes documents directly.
+
+- `generate_document` locks the shipment row, allocates `<prefix->KIND-YYYY-NNNN`, writes a
+  schema 4 snapshot, supersedes every earlier final of the same kind ("Replaced by …") and
+  records the lineage in the row, the snapshot (`supersedes`) and the audit event.
+- `preview_document(shipment, kind)` returns the snapshot generation would write now, number
+  `PREVIEW`, `preview: true`; nothing is allocated or stored.
+- `void_document(document, reason)` — owner/admin, reason 3–500 characters, final only,
+  audited as `document.voided`.
+- Snapshot schema 4 (`private.document_snapshot`, shared by both): `supersedes`, `issuer`,
+  party blocks of printed fields only (`private.party_snapshot`, no notes or timestamps),
+  `packages[].net/gross_weight_total_kg` = count × per-package weight, and `packing_totals`
+  weights count-weighted and null when no package states one.
+
+## Reuse, allocation limits and import v2 (20261006000400)
+
+- `duplicate_shipment(source, reference)` copies parties (an archived party is left empty),
+  terms, currency, marks, lines, packages and allocations into a new revision-1 draft and
+  audits `shipment.duplicated`. Documents are never copied or changed.
+- `package_contents_same_shipment` also locks the line and refuses allocating more than its
+  quantity across packages; the error detail carries `line_quantity` and `allocated_elsewhere`.
+- `bump_own_revision` ignores an update that changes no column besides `updated_at`.
+- `import_products(org, rows, dry_run default false)` replaces the two-argument version:
+  every field is validated, all problems per row are reported against `rows[].line` (the
+  file line), duplicate SKUs within a file are refused, and a dry run writes nothing and
+  returns `{inserted, updated, problems, dry_run}`.
+
+Tests: `supabase/tests/product_logic.test.sql` (49 assertions); `tenant_integrity` and
+`trade_core` now prove the document trigger as the table owner and void through the routine.
+Generated types were extended by hand (`organization_settings`, the four document columns,
+`duplicate_shipment`, `preview_document`, `void_document`, `import_products.dry_run`); the CI
+`database-evidence` artifact is authoritative. Rollback notes are in each migration header.
