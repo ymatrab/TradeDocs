@@ -7,3 +7,5 @@ test-results
 tmp
 src/lib/database.types.ts
 
+# Go templates rendered by Supabase Auth; kept byte-for-byte as the hosted project uses them.
+supabase/templates

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { headers } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';
+import { safeNextPath } from '@/lib/security/redirect';
 import { getUser, isDatabaseConfigured } from '@/lib/supabase/server';
 
 // The session is verified per request; a signed-out caller never reaches a child page.
@@ -18,6 +20,10 @@ export default async function AuthenticatedLayout({ children }: { children: Reac
   // a missing route is accurate; a server error would suggest something had broken.
   if (!isDatabaseConfigured()) notFound();
   const user = await getUser();
-  if (!user) redirect('/sign-in');
+  if (!user) {
+    // Back to the page they asked for after signing in; the path holds ids, never personal data.
+    const next = safeNextPath((await headers()).get('x-request-path'));
+    redirect(next === '/app' ? '/sign-in' : `/sign-in?next=${encodeURIComponent(next)}`);
+  }
   return <>{children}</>;
 }

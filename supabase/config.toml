@@ -23,9 +23,19 @@ enabled = false
 [auth]
 enabled = true
 site_url = "http://127.0.0.1:3000"
-additional_redirect_urls = ["http://127.0.0.1:3000/auth/callback"]
+# Glob, so /auth/callback?next=... is accepted. The hosted project lists its own origin the
+# same way (RUNBOOK.md, "Auth settings on the hosted project").
+additional_redirect_urls = ["http://127.0.0.1:3000/**"]
 enable_signup = true
 enable_anonymous_sign_ins = false
+# Matches src/lib/security/password.ts. The server enforces it even if a client skips ours.
+minimum_password_length = 12
+
+# CI creates many accounts from one address; the hosted defaults stay in force elsewhere.
+[auth.rate_limit]
+email_sent = 100
+sign_in_sign_ups = 300
+token_verifications = 300
 
 # Local and CI only. A deployed environment MUST require email confirmation; that is set on
 # the hosted project, and Task 25 checks it before launch.
@@ -33,6 +43,25 @@ enable_anonymous_sign_ins = false
 enable_signup = true
 enable_confirmations = false
 double_confirm_changes = true
+max_frequency = "1s"
+
+# Token-hash links to /auth/confirm, which work on any device (PKCE links only work in the
+# browser that asked). The hosted project must use the same templates: RUNBOOK.md.
+[auth.email.template.confirmation]
+subject = "Confirm your TradeDocs account"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.magic_link]
+subject = "Your TradeDocs sign-in link"
+content_path = "./supabase/templates/magic-link.html"
+
+[auth.email.template.recovery]
+subject = "Reset your TradeDocs password"
+content_path = "./supabase/templates/recovery.html"
+
+[auth.email.template.email_change]
+subject = "Confirm your new TradeDocs email address"
+content_path = "./supabase/templates/email-change.html"
 
 [storage]
 enabled = true
