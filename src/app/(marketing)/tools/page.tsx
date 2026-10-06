@@ -69,7 +69,7 @@ export default function ToolsPage() {
       <section className="section" aria-labelledby="guides-title">
         <h2 id="guides-title">Guides</h2>
         <div className="form-grid">
-          {GUIDES.map((guide) => (
+          {GUIDES.slice(0, 6).map((guide) => (
             <Link key={guide.slug} href={`/guides/${guide.slug}`} className="form-cell">
               <BookOpen size={22} aria-hidden="true" className="icon" />
               <h3>{guide.title}</h3>
@@ -77,6 +77,15 @@ export default function ToolsPage() {
             </Link>
           ))}
         </div>
+        <p>
+          <Link className="text-link" href="/guides">
+            All {GUIDES.length} guides
+          </Link>{' '}
+          ·{' '}
+          <Link className="text-link" href="/blog">
+            The blog
+          </Link>
+        </p>
       </section>
 
       <section className="section">
