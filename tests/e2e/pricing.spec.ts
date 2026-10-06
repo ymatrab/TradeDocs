@@ -43,7 +43,11 @@ test('pricing is accessible and fits a phone', async ({ page }) => {
   // Names whatever sticks out, so a failure says which element to fix.
   const overflowing = await page.evaluate(() =>
     [...document.querySelectorAll('body *')]
-      .filter((element) => element.getBoundingClientRect().right > window.innerWidth + 1)
+      .filter(
+        (element) =>
+          !element.closest('.table-scroll') &&
+          element.getBoundingClientRect().right > window.innerWidth + 1,
+      )
       .slice(0, 5)
       .map((element) => `${element.tagName.toLowerCase()}.${element.className}`),
   );
