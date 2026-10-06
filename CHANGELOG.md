@@ -2,6 +2,15 @@
 
 ## Unreleased — 2026-09-06
 
+### Content plan v2 and one file per article (D-020)
+
+- Plan of record for 60 posts and 30 guides (`docs/research/content-plan-v2-2026-10-06.md`): 55 new posts and 27 new guides, each with slug, primary keyword, volume, KD, intent, tool, angle, sources and batch; launch batch 1 is 20 posts and 10 guides. It also covers routing to existing pages, exclusions, volume anomalies, free tool candidates (container fit as a CBM extension, an export price builder; no HS finder) and a 234-row candidate keyword appendix generated from the saved data. DataForSEO: 11 calls (6 of the 17 left under D-014 remain); responses in `docs/research/dataforseo-2026-10-06/`, excluded from Prettier so the raw files stay as returned.
+- `src/lib/content/posts.ts` and `guides.ts` are split into `posts/<slug>.ts` and `guides/<slug>.ts` with an `index.ts` each. Exports, order and content are unchanged. Listing order is now computed (`orderArticles`: newest `published` first, ties in index order).
+- Per-article sources: `src/lib/content/sources/<slug>.ts` files merge into `SOURCES` (`mergeSourceFiles`); their keys become `SourceId`s; a repeated id throws.
+- Optional `related` paths on an article choose its foot links (`src/lib/content/related.ts`); without them the foot lists at most six of the same kind (today: all others, as before).
+- `docs/content/WRITING_BRIEF.md`: the structure, field limits, sourcing, Unsplash and self-check rules every writer follows.
+- Tests in `tests/unit/posts.test.ts`: every article file is in its index and named after its slug, ordering, source-file merging and duplicate ids, related paths. Pending CI; nothing was run locally.
+
 ### Homepage v3: photos, search sections and navigation (D-018)
 
 - Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.
