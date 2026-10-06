@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {
   Boxes,
   Building2,
+  CreditCard,
   FileStack,
   LayoutDashboard,
   LogOut,
@@ -45,6 +46,7 @@ export function AppShell({
         { href: `/app/${orgId}/products`, label: 'Products', icon: Boxes },
         { href: `/app/${orgId}/companies`, label: 'Companies', icon: Building2 },
         { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
+        { href: `/app/${orgId}/billing`, label: 'Billing', icon: CreditCard },
       ]
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 
