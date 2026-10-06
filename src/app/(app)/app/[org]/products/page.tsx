@@ -76,7 +76,7 @@ export default async function ProductsPage({
 
             {rows.length > 0 ? (
               <>
-                <DataTable caption="Products in this catalog">
+                <DataTable caption="Products in this catalog" stack>
                   <thead>
                     <tr>
                       <th scope="col">Code</th>
@@ -92,16 +92,23 @@ export default async function ProductsPage({
                   <tbody>
                     {rows.map((product) => (
                       <tr key={product.id}>
-                        <td className="data">{product.sku ?? <EmptyValue />}</td>
-                        <td>
+                        <td className="data" data-label="Code">
+                          {product.sku ?? <EmptyValue />}
+                        </td>
+                        <td className="stack-title">
                           <Link className="text-link" href={`/app/${org}/products/${product.id}`}>
                             {product.description}
                           </Link>
                         </td>
-                        <td className="data">{product.hs_code ?? <EmptyValue />}</td>
-                        <td className="data">{product.country_of_origin ?? <EmptyValue />}</td>
-                        <td>{product.unit}</td>
+                        <td className="data" data-label="HS code">
+                          {product.hs_code ?? <EmptyValue />}
+                        </td>
+                        <td className="data" data-label="Origin">
+                          {product.country_of_origin ?? <EmptyValue />}
+                        </td>
+                        <td data-label="Unit">{product.unit}</td>
                         <NumericCell
+                          label="Price"
                           value={decimal(product.unit_price)}
                           unit={product.currency ?? undefined}
                         />

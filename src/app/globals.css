@@ -990,6 +990,520 @@ h3 {
   }
 }
 
+/* --- Workspace patterns (product UX) ------------------------------------ */
+/* The signed-in journey: setup checklist, quick actions, the shipment builder's steps and
+   sticky totals, per-row document actions, filter chips, the import preview and tables
+   that become cards on a phone. Only transforms move here; no text fades or recolours. */
+
+/* Breadcrumb: the caption above a record's title is the way back to its list. */
+.app-crumbs a.caption {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.app-crumbs a.caption:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Setup checklist */
+.checklist {
+  display: grid;
+  gap: var(--space-4);
+}
+.checklist-progress {
+  display: grid;
+  gap: var(--space-2);
+}
+.checklist-progress .caption {
+  margin: 0;
+  color: var(--ink);
+}
+.checklist-progress progress {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border: 0;
+  background: var(--surface-sunken);
+  color: var(--success);
+}
+.checklist-progress progress::-webkit-progress-bar {
+  background: var(--surface-sunken);
+}
+.checklist-progress progress::-webkit-progress-value {
+  background: var(--success);
+}
+.checklist-progress progress::-moz-progress-bar {
+  background: var(--success);
+}
+.checklist-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.checklist-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: start;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.checklist-mark {
+  display: inline-flex;
+  padding-top: 2px;
+  color: var(--muted);
+}
+.checklist-step.done .checklist-mark {
+  color: var(--success);
+}
+.checklist-step.next .checklist-mark {
+  color: var(--ink);
+}
+.checklist-text h3 {
+  margin: 0 0 2px;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.checklist-text p {
+  margin: 0;
+  font-size: 14px;
+  max-width: 60ch;
+}
+.checklist-ordinal {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 500;
+  background: var(--surface-sunken);
+  padding: 0 5px;
+  margin-right: var(--space-2);
+  vertical-align: 2px;
+}
+.checklist-step.done h3 {
+  color: var(--muted);
+}
+.checklist-done {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--success);
+}
+.checklist-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+@media (max-width: 640px) {
+  .checklist-step {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .checklist-actions {
+    grid-column: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+/* Small text under a cell's main value, such as a document's revision note. */
+.row-note {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: 34ch;
+}
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+.row-actions form {
+  margin: 0;
+}
+
+/* Filter chips: a set of links where the current one is drawn pressed, never by colour
+   alone (aria-current also sets the weight and the border). */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1.5px solid var(--control);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  text-decoration: none;
+}
+.filter-chip:hover {
+  background: var(--surface-sunken);
+}
+.filter-chip[aria-current='page'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--surface);
+  font-weight: 600;
+}
+.filter-count {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-variant-numeric: tabular-nums;
+  background: var(--surface-sunken);
+  color: var(--ink);
+  padding: 0 6px;
+}
+
+/* A GET search over a list, label above, button beside. */
+.list-search {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.list-search > .field {
+  flex: 1 1 240px;
+  margin: 0;
+}
+
+.form-submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Import */
+.import-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.import-start > .field {
+  flex: 1 1 320px;
+}
+.file-input {
+  font-size: 16px;
+  min-height: 44px;
+}
+.table tbody tr.row-flagged {
+  background: rgb(166 36 36 / 0.06);
+  box-shadow: inset 3px 0 0 var(--danger);
+}
+.table td .error-text {
+  margin: 0;
+}
+
+/* Shipment builder: steps across the top, the record's panels, and its totals beside
+   them on a wide screen. */
+.app-page.builder {
+  max-width: 1320px;
+}
+.builder-steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.builder-step a {
+  display: grid;
+  gap: 4px;
+  min-height: 44px;
+  height: 100%;
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--control);
+  color: var(--ink);
+  text-decoration: none;
+}
+.builder-step a:hover {
+  background: var(--surface-sunken);
+}
+.builder-step.done a {
+  border-top-color: var(--success);
+}
+.builder-step.check a {
+  border-top-color: var(--caution);
+}
+.builder-step.optional a {
+  border-top-style: dashed;
+}
+.builder-step-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.builder-step-ordinal {
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  font-weight: 500;
+  background: var(--surface-sunken);
+  padding: 0 5px;
+}
+.builder-step-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+.builder-step-state {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: var(--font-data);
+  font-size: var(--caption);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.builder-step.done .builder-step-state {
+  color: var(--success);
+}
+.builder-step.check .builder-step-state {
+  color: var(--caution);
+}
+.builder-step-detail {
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+}
+@media (max-width: 760px) {
+  .builder-steps ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.builder-layout {
+  display: grid;
+  gap: var(--space-5);
+  align-items: start;
+}
+.builder-main {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+.builder-summary {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--ink);
+}
+.builder-summary-head {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  gap: 4px;
+}
+.builder-summary-head .caption,
+.builder-summary-ref {
+  margin: 0;
+}
+.builder-summary-ref {
+  font-size: 17px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.builder-summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.builder-summary-figures {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+.builder-summary-figures > div {
+  display: grid;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  box-shadow: 0 0 0 0.5px var(--rule);
+}
+.builder-summary-figures dt {
+  margin: 0;
+}
+.builder-summary-figures dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 16px;
+}
+.builder-summary-figures .unit {
+  color: var(--muted);
+  font-size: var(--step--1);
+  font-weight: 400;
+  margin-left: 3px;
+}
+.builder-summary-total {
+  grid-column: 1 / -1;
+  background: var(--surface-sunken);
+}
+.builder-summary-total dd {
+  font-size: 20px;
+}
+@media (min-width: 1280px) {
+  .builder-layout {
+    grid-template-columns: minmax(0, 1fr) 272px;
+  }
+  .builder-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .builder-summary {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: calc(var(--topbar-height) + var(--space-4));
+  }
+  .builder-summary-figures {
+    grid-template-columns: 1fr;
+  }
+  .builder-summary-figures > div {
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    padding: 10px var(--space-4);
+    box-shadow: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .builder-summary-figures dd {
+    text-align: right;
+    font-size: 15px;
+  }
+  .builder-summary-total {
+    border-bottom: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .builder-summary-total dd {
+    font-size: 18px;
+  }
+}
+
+/* Tables that become cards below 640px. Each row is a card: its title cell first, its
+   actions beside the title, every other cell captioned by its column. */
+@media (max-width: 640px) {
+  .table-scroll.stacks {
+    overflow: visible;
+    max-block-size: none;
+    border: 0;
+    background: transparent;
+  }
+  .panel-body > .table-scroll.stacks:only-child {
+    margin: 0;
+  }
+  .table.stack,
+  .table.stack tbody,
+  .table.stack tfoot {
+    display: block;
+  }
+  /* The column heads are visually replaced by each cell's caption; they stay in the
+     accessibility tree for the table's own semantics. */
+  .table.stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .table.stack tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .table.stack tr:has(> .stack-actions) {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .table.stack tbody tr:hover {
+    background: none;
+  }
+  .table.stack td,
+  .table.stack th {
+    display: flow-root;
+    padding: 0;
+    border: 0;
+    grid-column: 1 / -1;
+    text-align: right;
+    font-size: 14px;
+  }
+  .table.stack td[data-label]::before {
+    content: attr(data-label);
+    float: left;
+    margin-right: var(--space-3);
+    font-family: var(--font-data);
+    font-size: var(--caption);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  .table.stack .stack-title,
+  .table.stack tfoot th {
+    order: -2;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .table.stack tr:has(> .stack-actions) > .stack-title {
+    grid-column: 1;
+  }
+  .table.stack .stack-actions {
+    order: -1;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .table.stack .stack-empty {
+    display: none;
+  }
+  .table.stack .row-note {
+    max-width: none;
+  }
+  .table.stack tfoot tr {
+    border-bottom: 0;
+    border-top: 1px solid var(--ink);
+  }
+}
+
+@media print {
+  .builder-steps,
+  .quick-actions,
+  .filter-chips,
+  .list-search,
+  .row-actions {
+    display: none;
+  }
+  .builder-summary {
+    position: static;
+  }
+}
+
 /* --- Shells -------------------------------------------------------------- */
 /* A standalone card for pages that carry no navigation: the closed accounts notice, 404
    and the error boundary. */

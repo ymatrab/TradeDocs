@@ -14,6 +14,7 @@ import {
 import { CommandMenu } from '@/components/shell/command-menu';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
 import { HelpLauncher } from '@/components/help/help-launcher';
+import { ToastProvider } from '@/components/primitives/toast';
 import { resolveChatProvider } from '@/lib/help/chat';
 
 type NavItem = { href: string; label: string; icon: typeof Package };
@@ -31,11 +32,17 @@ export function AppShell({
   title,
   current,
   orgId,
+  parent,
   children,
 }: {
   title: string;
   current?: string;
   orgId?: string;
+  /**
+   * The list this page belongs to, when it is one record of many (a shipment, a product,
+   * the import screen). The caption above the title becomes the way back to it.
+   */
+  parent?: { href: string; label: string };
   children: ReactNode;
 }) {
   const workspace: NavItem[] = orgId
@@ -108,16 +115,28 @@ export function AppShell({
             area instead, so the line above the heading is never a repeat of it.
           */}
           <div className="app-heading">
-            <p className="caption">{current && current !== title ? current : kicker}</p>
+            {parent ? (
+              <nav aria-label="Breadcrumb" className="app-crumbs">
+                <Link className="caption" href={parent.href}>
+                  <span aria-hidden="true">← </span>
+                  {parent.label}
+                </Link>
+              </nav>
+            ) : (
+              <p className="caption">{current && current !== title ? current : kicker}</p>
+            )}
             <h1 className="app-title">{title}</h1>
           </div>
           <div style={{ marginLeft: 'auto' }}>
             <CommandMenu orgId={orgId} />
           </div>
         </header>
-        <main id="main-content" className="app-main">
-          {children}
-        </main>
+        {/* Toasts confirm what an action changed; every page of the workspace can raise one. */}
+        <ToastProvider>
+          <main id="main-content" className="app-main">
+            {children}
+          </main>
+        </ToastProvider>
       </div>
       <HelpLauncher chat={resolveChatProvider(process.env.CHAT_PROVIDER)} />
     </div>

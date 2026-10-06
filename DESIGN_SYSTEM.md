@@ -2,7 +2,7 @@
 
 Status: implemented by Task 03; tokens and public components replaced by the "Manifest" redesign (D-005); type, spacing, motion and finish refined by design v2 (D-013, palette unchanged). Shipped token values and their measured contrast ratios are recorded below; component variants and states are demonstrated at `/design-system`, which returns 404 in production.
 
-Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-10-05.
+Proposed owner: Design/Accessibility Lead; named assignment pending. Review on token/component/interaction changes, new document family or template, localization requirements and each visual baseline update; quarterly accessibility regression. Last reviewed: 2026-10-06.
 
 ## Product character
 
@@ -287,3 +287,54 @@ the input keeps its width, and is named for what it will do rather than for the 
 Destructive actions confirm before they act, and the confirmation stays open until the action has
 actually succeeded: a rejected password or a refused removal keeps the user's input where they can
 correct it, instead of dropping them onto a page-level message with nothing left to edit.
+
+## Workspace patterns
+
+The signed-in journey of a first-time exporter, in the order they meet it. Styles live in the
+"Workspace patterns (product UX)" block of `globals.css`; only transforms move, nothing fades.
+
+- **Setup checklist** (`Checklist`, `components/primitives/checklist.tsx`): an ordered list on
+  the overview — your company, a customer, a product, the first shipment. Each step is ticked
+  from the data, never from a dismissed flag, and the whole panel disappears once every step is
+  done. The first step not done is the only primary button; done is a word ("Done") and a glyph
+  as well as `--success`, and the count ("2 of 4 done") is text beside a native `<progress>`.
+  No sample data until it can be created, labelled and deleted as such.
+- **Quick actions**: one row of compact buttons under the checklist — the primary is the next
+  thing a working exporter does (New shipment); the rest are secondary.
+- **Needs attention**: stale documents are listed by number with the revision they were rendered
+  from and a link to their shipment's documents panel. Nothing else on the overview asks for a
+  decision, so nothing else is listed there.
+- **Breadcrumb**: a page that is one record of many passes `parent` to `AppShell`; the mono caption
+  above the title becomes "← Shipments" (a link in a `Breadcrumb` nav) instead of a repeat of the
+  section name. In-page "← Back" links are retired.
+- **Shipment builder**: steps across the top (Parties and terms, Goods, Packing, Documents), each a
+  link to its panel with a state word and glyph: Done (`--success` top rule), To do, Check
+  (`--caution`, a mismatch or stale documents) and Optional (dashed rule; packing is never shown
+  as a gap). The summary — lines, quantity, net and gross kg, CBM, packages, total value — is the
+  same arithmetic as the panels (`figures.ts`), sticky in a 272px column from 1280px and a grid
+  above the panels below that. Gross weight and volume read "—" until a package is described.
+- **Line entry**: Enter in any field adds the line; after a success the cursor returns to the
+  description (one-off) or the catalog search, and choosing a catalog product moves it to the
+  quantity. A catalog choice lapses once that product is on the shipment.
+- **Outcome toasts** (`useOutcomeToast`): a success names what changed ("“Enamel sign” is on the
+  shipment: 100 pcs."), composed from what was submitted. The inline result callout remains the
+  announced record, so the toast is drawn silently (`notify(…, { silent: true })`) and at most
+  three show at once. Failures stay inline, next to the field or inside the confirmation.
+- **Document row actions**: the primary per state — Regenerate (accent) on a stale document whose
+  kind has no current copy, PDF on every row (secondary when final, quiet otherwise), the set
+  download only when it has a current document to bundle. A stale row says which revision it
+  came from and which the shipment is at. A preview frame waits until the PDF route can serve
+  inline.
+- **Filter chips**: links in a labelled `nav`, 44px high; the current one is drawn pressed (ink
+  ground, white, 600) and carries `aria-current`. Every filter keeps the others in the URL.
+- **List search**: a GET form (`role="search"`) so a search is shareable and works before script.
+- **Import preview**: rows as the browser reads them (same parser as the import), up to 50, with a
+  Check column; a figure that is not a number is flagged early, and the import's own row problems
+  are marked on the same rows (`--danger` inset rule, icon and text). Problems beyond the preview
+  are still listed below it.
+- **Stacked tables** (`DataTable stack`): below 640px every row becomes a card — its
+  `stack-title` cell first, `stack-actions` beside it, every other cell captioned by its
+  `data-label` (mono caption left, value right). Column heads stay in the accessibility tree.
+  Used for goods, packages, documents, shipments, products and companies; wide reference tables
+  keep the horizontal scroll.
+

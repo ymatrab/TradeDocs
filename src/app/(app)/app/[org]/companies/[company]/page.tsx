@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
@@ -46,14 +45,13 @@ export default async function CompanyPage({
   const archived = record.archived_at !== null;
 
   return (
-    <AppShell title={record.name} current="Companies" orgId={org}>
+    <AppShell
+      title={record.name}
+      current="Companies"
+      orgId={org}
+      parent={{ href: `/app/${org}/companies`, label: 'Companies' }}
+    >
       <div className="app-page">
-        <p>
-          <Link className="text-link" href={`/app/${org}/companies`}>
-            ← All companies
-          </Link>
-        </p>
-
         {archived ? (
           <Callout tone="warning" title="Archived">
             This company stays out of the shipment pickers. Documents that already name it are

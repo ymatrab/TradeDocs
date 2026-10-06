@@ -10,6 +10,15 @@
 - `/pricing`: copy, FAQ (with FAQPage JSON-LD) and metadata follow the three states; the comparison table header shows the plan's price when one is set; new "Why TradeDocs" section stating facts about TradeDocs only (account-dependent points hidden where accounts are closed). `/llms.txt` lists approved prices. Pro/Team summaries rewritten.
 - `.env.example` and RUNBOOK.md document `PRICES_APPROVED`. Unit tests in `tests/unit/billing.test.ts` cover the flag, listed prices and the fallback. Pending CI; nothing was run locally.
 
+### Workspace product UX: first run, shipment builder, documents, catalog (D-020)
+
+- Overview: a setup checklist for a new organization (add your company, add a customer, add a product, create the first shipment), ticked from real data and gone once done; quick actions; a "Needs attention" table listing stale documents with the revision they came from and a link to their shipment; recent shipments with dates; an error state if the reads fail. No sample data: it could not be labelled and deleted cleanly without new server logic.
+- Shipment builder: step links (Parties and terms, Goods, Packing, Documents) with a word + glyph state each; a summary of lines, quantity, net and gross kg, CBM, packages and total value, sticky beside the panels from 1280px and above them below that; the cursor returns to the description (or the catalog search) after a line is added; success toasts that name what changed, drawn silently because the inline result callouts still announce.
+- Documents: per-state actions (Regenerate on a stale document whose kind has no current copy, PDF on every row), "rendered from revision N; the shipment is now at revision M", the set download shown only when it has something to bundle; the documents page gains All / Needs attention / Current filters.
+- Catalog and companies: company search and kind filter; the CSV import previews the rows as read, flags figures that are not numbers, marks the import's own row problems in that preview and offers the template as a button. `/companies/new?kind=own|customer` preselects the kind.
+- Consistency: record pages put a breadcrumb in the topbar caption (`AppShell parent`); goods, packages, documents, shipments, products and companies tables become cards below 640px (`DataTable stack`, `data-label` per cell).
+- No server action, query semantics, migration or e2e selector changed. Nothing was run locally; format, lint, typecheck and e2e are pending CI. A PDF preview frame was not added: `/api/documents/[id]` serves the file as an attachment.
+
 ### Homepage v3: photos, search sections and navigation (D-018)
 
 - Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.
