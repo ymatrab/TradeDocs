@@ -90,3 +90,10 @@ export function GuideJsonLd({ slug }: { slug: string }) {
   if (guide.faq.length > 0) data.push(faqPageSchema(guide.faq));
   return <JsonLd data={data} />;
 }
+
+/** The pricing page: breadcrumbs and its visible FAQ. */
+export function PricingJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
+  const base = getPublicBaseUrl();
+  const crumbs: Crumb[] = [HOME, { name: 'Pricing', path: '/pricing' }];
+  return <JsonLd data={[breadcrumbSchema(base, crumbs), faqPageSchema(faq)]} />;
+}

@@ -102,6 +102,9 @@ export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS
  */
 const REDESIGN_ROUND = '2026-10-05';
 
+/** The pricing page and its plan list (src/lib/billing/plans.ts) were added this day. */
+const PRICING_ROUND = '2026-10-06';
+
 export type SitemapPage = {
   path: string;
   lastModified: string;
@@ -112,6 +115,7 @@ export type SitemapPage = {
 export const SITEMAP_PAGES: readonly SitemapPage[] = [
   { path: '/', lastModified: REDESIGN_ROUND, changeFrequency: 'weekly', priority: 1 },
   { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/pricing', lastModified: PRICING_ROUND, changeFrequency: 'monthly', priority: 0.7 },
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,
     lastModified: REDESIGN_ROUND,

@@ -2,6 +2,16 @@
 
 ## Unreleased — 2026-09-06
 
+### Pricing page and Stripe Payment Links (flag off)
+
+- `src/lib/billing/plans.ts` is the one source for plans, features and prices: "Free (while early)" with the features and limits the code really has (limits from `src/lib/limits.ts`, now shared with the routes), and Pro/Team whose price, currency, interval and Payment Link come only from env (`PRICE_<PLAN>_*`, `PAYMENT_LINK_<PLAN>_URL|ID`). Unset or invalid, or payments closed: "Not available yet", no price, no button (P-002). No feature is paid-only and nothing free is gated.
+- `/pricing`: all plans side by side with full feature lists, a comparison table, an honest FAQ (with FAQ JSON-LD) and a CTA that follows account capability. In the sitemap and llms.txt; not in the nav yet (design owns nav/footer).
+- `POST /api/billing/stripe/webhook`: 404 while payments are closed; verifies `Stripe-Signature` (HMAC-SHA256, constant time, 5-minute tolerance, no SDK), enforces live/test mode per environment, re-reads subscriptions and dispute charges from Stripe, and records event id plus effect in one transaction via `apply_billing_event` (service role only). Handles checkout.session.completed, customer.subscription.created/updated/deleted, charge.refunded (full only) and charge.dispute.created.
+- Migration `20261006000100_billing_entitlements.sql`: `public.entitlements` (members read own org, plan/date columns only), `private.billing_events` ledger. Cancelled keeps access to the paid period end; refund or dispute revokes and is sticky. pgTAP `billing_entitlements.test.sql` (27). DB types for the new objects were hand-added; CI's generated file is authoritative.
+- `/app/[org]/billing`: the organization's plan and status; an upgrade button (owners/admins, only when a plan is purchasable) that opens the Payment Link with `client_reference_id` = org id; otherwise "Paid plans aren't open yet". `hasEntitlement(org, feature)` fails closed.
+- `/api/ready` reports `payments: "misconfigured"` with a reason when payments are switched on but unusable.
+- Tests: `tests/unit/billing.test.ts` (signature fixtures with a synthetic secret, event mapping, subscription states, entitlement rules, offers), `tests/integration/billing-webhook.test.ts`, `tests/e2e/pricing.spec.ts`. All pending CI; nothing was run locally.
+
 ### Workspace documents at snapshot schema 3
 
 - Migration `20260910000100_document_snapshot_v3.sql` redefines `generate_document` (same org scoping as 20260909000100) to emit schema 3: new workspace invoices get the per-line Origin column and "Incoterms® 2020" caption, and net/gross weight totals that no line states are null instead of zero. Existing schema 1/2 documents are not rewritten and render as issued. pgTAP (`tenant_integrity.test.sql`, plan 44) asserts the new schema, the absent gross total and an untouched schema 2 row; pending CI.

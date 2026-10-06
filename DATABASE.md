@@ -94,3 +94,30 @@ definition; schema 3 documents issued meanwhile keep rendering as issued.
 
 `public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind
 `src/lib/security/rate-limit.ts`. It holds HMAC digests only, never addresses or user ids.
+
+## Billing entitlements (20261006000100)
+
+`public.entitlements` holds one row per organization with a paid plan: `plan` (`pro` or
+`team`), `status`, `paid_through`, `cancel_at_period_end`, `revoked_at`/`revoke_reason`, and the
+Stripe references (`customer_ref`, `subscription_ref` unique, `checkout_ref`). No row means the
+free plan. Members read their own organization's row through `entitlements_select_member`, and
+only the plan and date columns (column grant); the Stripe references are not readable by any API
+role. Nobody but `public.apply_billing_event` writes it.
+
+`private.billing_events` is the webhook ledger: one row per Stripe event id with its outcome
+(`applied`, `ignored`, `unmatched`). No API role can reach it.
+
+`public.apply_billing_event(p_event_id, p_event_type, p_action)` is executable by
+`service_role` only. It inserts the event id (a duplicate returns `duplicate` and does
+nothing) and applies the action in the same transaction, so a failed write leaves no ledger row
+and the retry is processed. Actions: `grant` (upsert for an existing, undeleted organization;
+a revoked row is never re-granted by the same checkout), `subscription` (status and dates by
+`subscription_ref`; `paid_through` only moves forward and only while Stripe reports the
+subscription active, so a cancelled or past-due plan ends when the paid period does), `revoke`
+(by `customer_ref`, sets `revoked_at`; later subscription events cannot undo it) and `ignore`.
+
+Tests: `supabase/tests/billing_entitlements.test.sql` (27 assertions: isolation, column
+grant, write refusal for members and anon, idempotency, cancel/past-due/refund rules).
+Rollback: drop the routine and both tables; every paid check then answers false.
+Generated types: `entitlements` and `apply_billing_event` were added to
+`src/lib/database.types.ts` by hand; the CI `database` job's generated file is authoritative.
