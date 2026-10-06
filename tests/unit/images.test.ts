@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
 import { GUIDES, GUIDES_HUB_COVER } from '@/lib/content/guides';
+import { HOME_PHOTOS } from '@/lib/content/home';
 import {
   COVER_WIDTHS,
   unsplashImage,
   unsplashReferral,
   unsplashShareImage,
   unsplashSrcSet,
+  unsplashSrcSetAt,
 } from '@/lib/content/images';
 import { buildContentSecurityPolicy } from '@/lib/security/headers';
 import { articleSchema, imageObjectSchema } from '@/lib/seo/json-ld';
@@ -102,6 +104,27 @@ describe('image delivery', () => {
     expect(others.join('; ')).not.toContain('unsplash');
   });
 
+  it('crops a section photo to the requested ratio at every width', () => {
+    const set = unsplashSrcSetAt(HOME_PHOTOS.warehouse, 4 / 3, [480, 960]);
+    const entries = set.split(', ').map((entry) => entry.split(' '));
+    expect(entries.map(([, width]) => width)).toEqual(['480w', '960w']);
+    for (const [url, width] of entries) {
+      const params = new URL(url!).searchParams;
+      expect(params.get('w')).toBe(width!.replace('w', ''));
+      expect(params.get('h')).toBe(String(Math.round(Number(params.get('w')) / (4 / 3))));
+      expect(params.get('fit')).toBe('crop');
+    }
+  });
+
+  it('credits every homepage photo to a photographer with an Unsplash page', () => {
+    for (const entry of Object.values(HOME_PHOTOS)) {
+      expect(entry.src).toMatch(/^https:\/\/images\.unsplash\.com\/photo-[\w-]+$/);
+      expect(entry.photographer.profile).toMatch(/^https:\/\/unsplash\.com\/@/);
+      expect(entry.page).toContain(entry.id);
+      expect(entry.alt.length).toBeGreaterThan(20);
+    }
+  });
+
   it('lists each guide cover and the hub cover in the image sitemap', () => {
     const entries = sitemap();
     const imagesFor = (suffix: string) =>
@@ -111,5 +134,6 @@ describe('image delivery', () => {
       expect(imagesFor(`/guides/${entry.slug}`)).toEqual([entry.cover.src]);
     }
     expect(imagesFor('/tools')).toEqual([]);
+    expect(imagesFor('/')).toEqual(Object.values(HOME_PHOTOS).map((entry) => entry.src));
   });
 });

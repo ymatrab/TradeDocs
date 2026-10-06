@@ -105,9 +105,18 @@ export function imageObjectSchema(photo: UnsplashPhoto): JsonLdObject {
   };
 }
 
+function organizationRef(base: string): JsonLdObject {
+  return {
+    '@type': 'Organization',
+    '@id': `${base}/#organization`,
+    name: SITE_NAME,
+    url: absolute(base, '/'),
+  };
+}
+
 /**
- * A guide. The author is the organization: guides carry a team byline, and naming a person
- * who did not write them would be an invented author.
+ * A guide or blog post. The author is the organization: articles carry a team byline, and
+ * naming a person who did not write them would be an invented author.
  */
 export function articleSchema(base: string, article: ArticleFacts): JsonLdObject {
   const url = absolute(base, article.path);
@@ -121,8 +130,10 @@ export function articleSchema(base: string, article: ArticleFacts): JsonLdObject
     datePublished: article.datePublished,
     dateModified: article.dateModified,
     inLanguage: 'en',
-    author: { '@id': `${base}/#organization` },
-    publisher: { '@id': `${base}/#organization` },
+    // Named in full, not only by @id: the Organization node is emitted on the home page, so
+    // an article read on its own still says who wrote and published it.
+    author: organizationRef(base),
+    publisher: organizationRef(base),
     ...(article.image ? { image: imageObjectSchema(article.image) } : {}),
   };
 }

@@ -39,12 +39,28 @@ function AccountsClosed() {
           Back to the overview
         </Link>
       </div>
+      <p className="muted" style={{ marginTop: 24, marginBottom: 0, fontSize: 14 }}>
+        Want to know when accounts open, or have a question?{' '}
+        <Link className="text-link" href="/contact">
+          Contact us
+        </Link>
+        .
+      </p>
     </>
   );
 }
 
+/** A configuration fault closes accounts here rather than failing the page (fails closed). */
+function accountsOpen(): boolean {
+  try {
+    return isDatabaseConfigured();
+  } catch {
+    return false;
+  }
+}
+
 export default function AuthLayout({ children }: { children: ReactNode }) {
-  const open = isDatabaseConfigured();
+  const open = accountsOpen();
   return (
     <main id="main-content" className="foundation">
       <article>

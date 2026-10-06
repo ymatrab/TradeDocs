@@ -66,3 +66,74 @@ Order matters; each step is the owner's unless marked agent.
    key.
 5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
    `/design-system` is 404, robots and sitemap match the indexing decision (D-007).
+
+## Opening paid plans (Stripe Payment Links)
+
+Owner steps; agents never handle the keys. Prices are the owner's decision (P-002) and are
+never written in code. Until every step is done, `/pricing` shows each paid plan as "Not
+available yet" and the webhook route answers 404.
+
+1. Publish the refund policy and the paid plans' features first. The pricing FAQ promises the
+   policy before paid plans open, and a paid card lists only features the code gates
+   (`src/lib/billing/plans.ts`); with none, the card says so.
+2. In Stripe (test mode first, on a preview), create one Product and recurring Price per plan
+   (Pro, optionally Team), then a **Payment Link** for each Price. Subscription mode only: a
+   one-time link is ignored by the webhook. Do not add custom fields that collect personal data.
+3. Create a webhook endpoint at `https://<APP_URL host>/api/billing/stripe/webhook` with the
+   events `checkout.session.completed`, `customer.subscription.created`,
+   `customer.subscription.updated`, `customer.subscription.deleted`, `charge.refunded` and
+   `charge.dispute.created`. Copy its signing secret.
+4. Create a restricted API key with read access to Subscriptions and Charges only.
+5. Set in Vercel for that environment: `PAYMENT_PROVIDER=stripe`, `PAYMENT_API_KEY` (the
+   restricted key), `PAYMENT_WEBHOOK_SECRET` (the signing secret), and per plan
+   `PRICE_<PLAN>_AMOUNT`, `PRICE_<PLAN>_CURRENCY`, `PRICE_<PLAN>_INTERVAL`,
+   `PAYMENT_LINK_<PLAN>_URL`, `PAYMENT_LINK_<PLAN>_ID` (see `.env.example`). The amount must
+   match the Stripe Price. Then `PAYMENTS_APPROVED=true` (recorded approval) and
+   `ENABLE_PAYMENTS=true`. Production requires live-mode keys and only acts on live events;
+   every other environment only acts on test events.
+6. Apply migration `20261006000100_billing_entitlements.sql` (the manual production migration
+   workflow) before enabling payments, then redeploy.
+7. Verify: `/api/ready` carries no `payments: "misconfigured"`; `/pricing` shows the price; as
+   an organization owner, `/app/<org>/billing` shows the upgrade button; a test checkout makes
+   the plan appear after Stripe's webhook (Stripe → webhook → event deliveries shows 200).
+   Cancel the test subscription: the plan stays until the period end. Refund it in full: the
+   plan ends at once.
+
+Rollback: set `ENABLE_PAYMENTS=false` and redeploy. The webhook answers 404 (Stripe retries for
+up to three days, so re-enabling within that window replays the backlog idempotently); stored
+entitlements remain and keep their dates.
+
+Webhook outcomes appear in the platform logs as `billing.webhook` lines with the event id, type
+and outcome only. `unmatched` means the event named a subscription or customer with no
+entitlement (for example a subscription event that arrived before its checkout; the checkout
+re-reads the live subscription when it lands). `retry` means Stripe or the database was
+unreachable and Stripe will redeliver.
+
+## Contact inbox, legal pages and platform admin (D-009, D-018)
+
+- **Chat.** `CHAT_PROVIDER` accepts only `none` today (D-019); any other value is treated as
+  `none`, so the help centre and contact form are the only support channels.
+- **Admin access.** Set `PLATFORM_ADMIN_EMAILS` (Production target only) to the owner's
+  confirmed sign-in address(es). `/admin` checks the signed-in user against the list on every
+  request and action; anyone else gets a 404, and so does everyone on a deployment without a
+  database (every preview, D-011). With a database but no `SUPABASE_SERVICE_ROLE_KEY`, an
+  allowlisted admin sees "Admin needs the production database". Every admin view and action writes a `platform_admin.*` row to
+  `audit_events`; if that write fails the page shows nothing but the cause.
+- **Contact messages.** `/contact` stores every valid message in `contact_messages` (service
+  role) before attempting email. Email goes through Resend when `RESEND_API_KEY`,
+  `EMAIL_FROM` and `LEGAL_CONTACT_EMAIL` are set; outside production only to
+  `EMAIL_SANDBOX_RECIPIENT`. The inbox shows each message's email outcome
+  (`sent` / `not_sent` / `failed` + reason code). Work the inbox at `/admin/messages` and mark
+  each handled. Quota: 5 messages per address per hour; a filled honeypot is answered as
+  sent and stored nowhere.
+- **Approving the legal pages.** Set `LEGAL_ENTITY_NAME`, `LEGAL_ENTITY_COUNTRY`,
+  `LEGAL_CONTACT_EMAIL` (plus `LEGAL_ENTITY_ADDRESS`, `LEGAL_GOVERNING_LAW`,
+  `LEGAL_DATA_REGION` where the text shows "to be provided"), review `/privacy`, `/terms` and
+  `/cookies`, then set `LEGAL_APPROVED_AT=YYYY-MM-DD` and redeploy. The draft banner and
+  noindex go, and the pages enter the sitemap and llms.txt dated by approval. Open items the
+  owner must decide before approving: transfer mechanism per provider, contact-message
+  retention, liability cap.
+- **Account deletion purge.** Requests wait 30 days in `account_deletion_requests`; no job
+  removes accounts when `purge_after` passes yet. Until one exists (needs the owner's go-ahead
+  for a scheduled job), check the table weekly and remove due accounts in the Supabase
+  dashboard, as the privacy policy promises removal after the grace period.

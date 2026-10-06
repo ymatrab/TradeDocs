@@ -1,5 +1,12 @@
 import type { UnsplashPhoto } from '@/lib/content/images';
-import type { SourceId } from '@/lib/trade/sources';
+import {
+  BYLINE,
+  articleWordCount,
+  type ArticleFaq,
+  type ArticleSection,
+  type ArticleTable,
+  type ContentArticle,
+} from '@/lib/content/article';
 
 /**
  * The guides, as data.
@@ -8,54 +15,17 @@ import type { SourceId } from '@/lib/trade/sources';
  * Article structured data, so a guide cannot be listed in one place and missing from
  * another. Each guide answers one question with measured search demand (see
  * docs/research/content-plan-2026-10-05.md) and points at the tool that does the work.
- *
- * Rules every entry follows: facts about customs, carriers or the Incoterms® rules come
- * from a record in lib/trade/sources and are listed in `sources`; there are no invented
- * figures, customers or authors (the byline is the team); and every page carries the
- * not-advice note. `reviewed` is the date the text was last checked against its sources,
- * which is not an approval: the source records still say "pending owner review".
+ * Guides and blog posts share one shape and its rules (lib/content/article).
  */
 
-export type GuideTable = {
-  caption: string;
-  head: readonly string[];
-  rows: readonly (readonly string[])[];
-};
+export type GuideTable = ArticleTable;
+export type GuideSection = ArticleSection;
+export type GuideFaq = ArticleFaq;
+export type Guide = ContentArticle;
 
-export type GuideSection = {
-  heading: string;
-  paragraphs: readonly string[];
-  list?: readonly string[];
-  table?: GuideTable;
-};
-
-export type GuideFaq = { q: string; a: string };
-
-export type Guide = {
-  slug: string;
-  /** The page's H1. */
-  title: string;
-  /** The <title>, phrased the way people search for it. */
-  metaTitle: string;
-  description: string;
-  lede: string;
-  /** The short answer, shown first so the question is answered before the detail. */
-  answer: string;
-  published: string;
-  updated: string;
-  reviewed: string;
-  byline: string;
-  sections: readonly GuideSection[];
-  faq: readonly GuideFaq[];
-  sources: readonly SourceId[];
-  /** Paths from PUBLIC_TOOLS that do what the guide describes. */
-  tools: readonly string[];
-  /** A credited Unsplash photo, hotlinked (D-016). */
-  cover: UnsplashPhoto;
-};
-
-const BYLINE = 'TradeDocs team';
 const CONTENT_ROUND = '2026-10-05';
+/** The GEO/AEO round: short answers, key facts, definitions and question headings added. */
+const GEO_ROUND = '2026-10-06';
 
 export const GUIDE_DISCLAIMER =
   'This guide explains general practice to help you ask the right questions. It is not legal, ' +
@@ -72,13 +42,39 @@ export const GUIDES: readonly Guide[] = [
     lede: 'Two ways to ship by sea in a container. One sells you space by the cubic metre, the other sells you the box. Which one is cheaper depends on your volume, and which one is safer depends on your cargo.',
     answer:
       'LCL (less than container load) means your cargo shares a container with other shippers’ goods and you pay for the space you use, measured in cubic metres. FCL (full container load) means you book the whole container for your cargo alone, even if it is not full, and pay a price per container.',
+    keyFacts: [
+      'LCL (less than container load) is charged on the space your cargo uses, usually per cubic metre or on weight or measure.',
+      'FCL (full container load) is charged per container, whether or not the container is full.',
+      'There is no fixed break-even volume; compare an LCL and an FCL quotation for the same cargo.',
+      'LCL cargo is consolidated and deconsolidated at container freight stations, so it is handled more often.',
+      'For container cargo, FCA in the Incoterms® 2020 rules usually describes the handover better than FOB.',
+    ],
+    definitions: [
+      {
+        term: 'LCL (less than container load)',
+        meaning: 'Sea freight in a container shared with other shippers’ consignments.',
+      },
+      {
+        term: 'FCL (full container load)',
+        meaning: 'Sea freight in a container booked for one shipper’s cargo alone.',
+      },
+      {
+        term: 'CBM',
+        meaning: 'Cubic metres, the volume LCL freight is measured and quoted in.',
+      },
+      {
+        term: 'W/M (weight or measure)',
+        meaning:
+          'Charging on whichever is greater, the weight in tonnes or the volume in cubic metres.',
+      },
+    ],
     published: CONTENT_ROUND,
-    updated: CONTENT_ROUND,
-    reviewed: CONTENT_ROUND,
+    updated: GEO_ROUND,
+    reviewed: GEO_ROUND,
     byline: BYLINE,
     sections: [
       {
-        heading: 'How LCL works',
+        heading: 'How does LCL shipping work?',
         paragraphs: [
           'You hand your cartons or pallets to a forwarder or carrier, usually at a container freight station near the port. They consolidate your consignment with others going the same way, load the shared container, ship it, and at destination deconsolidate it: the container is unpacked and each shipper’s goods are released separately.',
           'Because you are buying part of a box, the price is built from the space your cargo takes up. Maersk, for example, describes LCL as paying only for the container space you use, measured in CBM. In practice LCL is commonly quoted on weight or measure (W/M): the forwarder compares your cubic metres with your weight in tonnes and charges on whichever is greater, so dense cargo pays on weight and light, bulky cargo pays on volume. One tonne to one cubic metre is a common industry convention rather than a published standard; check your forwarder’s tariff.',
@@ -86,7 +82,7 @@ export const GUIDES: readonly Guide[] = [
         ],
       },
       {
-        heading: 'How FCL works',
+        heading: 'How does FCL shipping work?',
         paragraphs: [
           'You book an entire container. It is delivered to your premises or you deliver to it, it is loaded with your cargo only, sealed, and travels as one unit until it is opened at destination. Maersk describes FCL as a container fully booked and loaded by one shipper, even if it is not 100% full.',
           'The price is per container, not per cubic metre, so the cost of each extra carton inside the box is close to nothing until the container is full or reaches its maximum payload. That is why the unit cost falls sharply as you fill it.',
@@ -102,14 +98,21 @@ export const GUIDES: readonly Guide[] = [
         },
       },
       {
-        heading: 'Where the break-even sits',
+        heading: 'When is FCL cheaper than LCL?',
         paragraphs: [
           'There is no fixed number of cubic metres at which FCL becomes cheaper. It depends on the lane, the season, the forwarder and the handling charges on the LCL side. What is fixed is the shape of the comparison: an LCL quotation rises with every cubic metre, an FCL quotation is flat until the box is full.',
-          'The reliable method is to get both quotations for the same cargo. Work out your total CBM first, with the carton dimensions and count you will actually ship, and ask for an LCL price on that volume and an FCL price for the smallest container it fits in. If the two are close, the factors below usually decide it.',
+          'The reliable method is to get both quotations for the same cargo. If the two are close, the factors below usually decide it.',
+        ],
+        steps: [
+          'Work out the total CBM and gross weight from the carton dimensions and count you will actually ship.',
+          'Find the smallest container the cargo fits in, leaving room for how cartons really stow.',
+          'Ask for an LCL quotation on that volume and weight, with the origin and destination handling lines shown.',
+          'Ask for an FCL quotation for that container on the same lane and dates.',
+          'Compare the totals, then weigh transit time, handling and the value of the goods.',
         ],
       },
       {
-        heading: 'Speed, handling and risk',
+        heading: 'Is LCL slower or riskier than FCL?',
         paragraphs: [
           'An LCL consignment is handled more often. It is received and stowed at the origin station, unpacked at the destination station and released from there, and it may wait at origin until the consolidator has enough cargo for the container to sail. Maersk notes that FCL suits high-volume, high-value or time-sensitive shipments that need fewer handovers and lower risk.',
           'Shared containers have a second consequence: the container is cleared and released as a unit before it is unpacked. A question about someone else’s consignment in the same box can slow the release of yours. With FCL, your container’s timing depends on your own paperwork.',
@@ -120,7 +123,7 @@ export const GUIDES: readonly Guide[] = [
         ],
       },
       {
-        heading: 'What changes on the documents',
+        heading: 'What changes on the packing list and invoice?',
         paragraphs: [
           'In LCL your packages travel alongside other people’s, so the packing list and the marks on each carton are what keeps your consignment together. Every package should be identifiable and its weight and dimensions stated, and the totals on the packing list should agree with the commercial invoice and with what the forwarder measures at the station. Differences found at the station are re-measured and re-billed.',
           'In FCL the container number and seal number become part of the shipment record, and the packing list is still what customs and the receiver check the contents against.',
@@ -147,6 +150,13 @@ export const GUIDES: readonly Guide[] = [
       },
     ],
     sources: ['maersk-fcl-lcl', 'maersk-dry-containers', 'icc-incoterms-2020'],
+    primaryTool: '/tools/cbm-calculator',
+    callout: {
+      afterSection: 1,
+      tool: '/tools/cbm-calculator',
+      title: 'Work out your cubic metres first',
+      text: 'Both quotations start from your CBM. Enter the carton dimensions and count, and the CBM calculator gives the total and checks it against 20ft, 40ft and high-cube containers.',
+    },
     tools: ['/tools/cbm-calculator', '/tools/chargeable-weight', '/tools/packing-list-generator'],
     cover: {
       id: '2JNNpq4nGls',
@@ -168,13 +178,37 @@ export const GUIDES: readonly Guide[] = [
     lede: 'Two delivered rules that look almost the same on a quotation. The seller carries the goods all the way to the buyer under both. The difference is who deals with customs on arrival, and who pays what customs asks for.',
     answer:
       'Under DAP (Delivered at Place) the seller delivers to the named destination and the buyer clears the goods for import and pays the import duties and taxes. Under DDP (Delivered Duty Paid) the seller does that too: it clears the goods for import and pays the duties and taxes, so the buyer pays only the agreed price.',
+    keyFacts: [
+      'DAP and DDP are both delivered rules in the Incoterms® 2020 set, published by the ICC.',
+      'Under DAP the buyer clears the goods for import and pays import duty and taxes.',
+      'Under DDP the seller clears the goods for import and pays import duty and taxes.',
+      'Under both rules the buyer unloads; DPU is the only Incoterms® rule that puts unloading on the seller.',
+      'Neither DAP nor DDP obliges either party to insure the goods.',
+    ],
+    definitions: [
+      {
+        term: 'DAP (Delivered at Place)',
+        meaning:
+          'The seller delivers to the named place, ready for unloading; the buyer clears import.',
+      },
+      {
+        term: 'DDP (Delivered Duty Paid)',
+        meaning:
+          'As DAP, but the seller also clears the goods for import and pays the duties and taxes.',
+      },
+      {
+        term: 'Import clearance',
+        meaning:
+          'Lodging the import declaration and paying what customs assesses, so the goods are released.',
+      },
+    ],
     published: CONTENT_ROUND,
-    updated: CONTENT_ROUND,
-    reviewed: CONTENT_ROUND,
+    updated: GEO_ROUND,
+    reviewed: GEO_ROUND,
     byline: BYLINE,
     sections: [
       {
-        heading: 'What the two rules share',
+        heading: 'What do DAP and DDP have in common?',
         paragraphs: [
           'Both are delivered rules in the Incoterms® 2020 set, and both work for any mode of transport. The seller contracts and pays for carriage to the named destination and clears the goods for export. Risk stays with the seller for the whole journey and passes at the named place, when the goods are put at the buyer’s disposal on the arriving vehicle, ready for unloading.',
           'In both, the buyer unloads. Neither rule obliges anyone to insure, although the seller carries the risk until delivery, so insuring is usually in its own interest. If the seller is meant to unload, the rule you want is DPU, which is the only Incoterms® rule that puts unloading on the seller.',
@@ -198,34 +232,34 @@ export const GUIDES: readonly Guide[] = [
         },
       },
       {
-        heading: 'The one real difference',
+        heading: 'What is the difference between DAP and DDP?',
         paragraphs: [
           'Import clearance. Under DAP the buyer lodges the import declaration in its own country and pays whatever duty and import taxes are due. Under DDP the seller takes on both, in a country where it may have no establishment, which makes DDP the maximum obligation a seller can accept under the eleven rules.',
           'That shifts more than a fee. The party clearing the goods has to be able to act as the importer, or appoint someone who can, has to know the classification and value the goods will be declared at, and carries the cost if the duty turns out higher than expected.',
         ],
       },
       {
-        heading: 'When DDP goes wrong',
+        heading: 'What can go wrong under DDP?',
         paragraphs: [
           'The usual failure is a seller quoting DDP before checking that it can import into the destination at all. Some countries let a foreign company act as importer only through a registration or a local representative, and some do not allow it for certain goods. Settle how the import will be lodged, and by whom, before the price is agreed.',
           'The second is tax. The duties and taxes due on import normally include import VAT or its local equivalent. Under DDP the seller pays it, and whether a foreign seller can recover that tax depends on the destination country’s rules. If it cannot, the tax becomes a cost the seller did not price in. Some contracts use DDP with an agreed exclusion, such as VAT unpaid; if you do, write the exclusion into the contract rather than relying on the three letters.',
         ],
       },
       {
-        heading: 'When DAP goes wrong',
+        heading: 'What can go wrong under DAP?',
         paragraphs: [
           'Under DAP the trap is on the buyer’s side. If the buyer does not clear the goods for import, or is late doing it, and the goods are held at a port or terminal as a result, the extra risk and costs of the hold-up fall on the buyer, demurrage and storage included. A buyer agreeing DAP should have its broker lined up before the goods arrive.',
           'The other common problem is naming a destination the goods cannot reach until they are cleared, such as a buyer’s site inland when the goods will stop at the border for clearance. Agree what happens while they wait, or name the place where clearance actually happens.',
         ],
       },
       {
-        heading: 'Naming the place precisely',
+        heading: 'How should the named place be written?',
         paragraphs: [
           'Both rules deliver at a named place, and risk passes there, so the place carries more weight than the three letters. “DAP Germany” tells neither party where the seller’s responsibility ends; “DAP Hamburg, buyer’s warehouse” with its street address does. Name a point the carrier can actually reach, and agree who pays any charges at that point, such as a terminal handling fee, before the goods arrive. The more precise the place, the fewer costs fall into the gap between the two parties.',
         ],
       },
       {
-        heading: 'Choosing between them',
+        heading: 'Should I quote DAP or DDP?',
         paragraphs: [
           'DAP is the safer default for most exporters: the seller controls the journey it can control, and the buyer, who knows its own customs, clears the goods. DDP makes sense when the seller can genuinely import at the destination, through its own registration or an agent, and when the buyer needs one landed price with nothing more to pay, as with samples or sales to customers who cannot clear goods themselves.',
           'Whichever you choose, quote the rule with its place and its version, such as “DAP Oslo, buyer’s site, Incoterms® 2020”, and put the same wording on the commercial invoice. If you quote DDP, estimate the duty and taxes before you set the price; a landed cost estimate with the rates your broker gives you shows how much of the price customs will take.',
@@ -251,6 +285,13 @@ export const GUIDES: readonly Guide[] = [
       },
     ],
     sources: ['icc-incoterms-2020', 'trade-gov-commercial-invoice'],
+    primaryTool: '/tools/landed-cost-calculator',
+    callout: {
+      afterSection: 2,
+      tool: '/tools/landed-cost-calculator',
+      title: 'Quoting DDP? Estimate the duty first',
+      text: 'Enter the goods value, freight, insurance and the duty and tax rates your broker gives you, and the landed cost calculator shows the total and the cost per unit.',
+    },
     tools: ['/tools/incoterms', '/tools/landed-cost-calculator', '/tools/invoice-generator'],
     cover: {
       id: 'crHhZlES310',
@@ -271,14 +312,37 @@ export const GUIDES: readonly Guide[] = [
       'A proforma invoice is a quotation in invoice form, issued before the sale. A commercial invoice bills goods sold and is what customs values them from. What goes on each, and how they relate.',
     lede: 'They look alike and carry many of the same fields, which is exactly why they get confused. They are issued at different moments, for different readers, and only one of them is the basis customs works from.',
     answer:
-      'A proforma invoice is a quotation in the form of an invoice, sent before the sale is final so the buyer can arrange payment, a letter of credit or an import licence. A commercial invoice is issued for goods actually sold and shipped; it requests payment and is the document customs in the importing country uses to assess duties and taxes.',
+      'A proforma invoice is a quotation in the form of an invoice, sent before the sale is final so the buyer can arrange payment, a letter of credit or an import licence. A commercial invoice is issued for goods actually sold and shipped; it requests payment, and customs in the importing country assesses duties and taxes from it.',
+    keyFacts: [
+      'A proforma invoice is a quotation in invoice form, issued before the sale is final.',
+      'A commercial invoice bills goods actually sold and shipped.',
+      'Customs in the importing country assesses duties and taxes from the commercial invoice.',
+      'For U.S. imports, the contents of a commercial invoice are set out in 19 CFR 141.86.',
+      'Under 19 CFR 141.85 a U.S. importer may file a pro forma invoice when the commercial invoice is missing at entry.',
+    ],
+    definitions: [
+      {
+        term: 'Proforma invoice',
+        meaning:
+          'A formal quotation laid out as the final invoice will be, used to arrange payment or licences.',
+      },
+      {
+        term: 'Commercial invoice',
+        meaning: 'The seller’s bill for goods supplied, and the document customs values them from.',
+      },
+      {
+        term: 'Letter of credit',
+        meaning:
+          'A bank’s undertaking to pay the seller against documents that match the credit’s terms.',
+      },
+    ],
     published: CONTENT_ROUND,
-    updated: CONTENT_ROUND,
-    reviewed: CONTENT_ROUND,
+    updated: GEO_ROUND,
+    reviewed: GEO_ROUND,
     byline: BYLINE,
     sections: [
       {
-        heading: 'What a proforma invoice is for',
+        heading: 'What is a proforma invoice for?',
         paragraphs: [
           'The U.S. International Trade Administration describes a proforma invoice as a quote in an invoice format. It tells a prospective buyer exactly what it would be buying, at what price and on what terms, laid out the way the final invoice will be.',
           'Buyers ask for one because other parties need to see the deal before it happens. The ITA lists the common reasons: to apply for an import licence, to contract for a pre-shipment inspection, to open a letter of credit, and to arrange the transfer of currency. A bank or a licensing authority wants a document that looks like the invoice it will later see, which a plain price list is not.',
@@ -292,14 +356,14 @@ export const GUIDES: readonly Guide[] = [
         ],
       },
       {
-        heading: 'What a commercial invoice is for',
+        heading: 'What is a commercial invoice for?',
         paragraphs: [
           'The commercial invoice is issued when the goods are sold and shipped. It is the seller’s bill to the buyer, and it is also a customs document: the ITA calls it a required document for export and import clearance, and the one customs officials in the buyer’s country use to assess import duties and taxes.',
           'It carries the information from the proforma, updated to what was actually shipped, plus what customs needs: the country of origin, a precise description of each line, and usually the HS code of each product, which speeds clearance. Some importing countries specify what must appear. For goods entering the United States, the required contents are set out in 19 CFR 141.86, which include the port of entry, who sold the goods to whom and when, a detailed description with the marks and numbers of the packages, the quantities, the purchase price of each item in the currency of the purchase, the charges on the goods itemised by name and amount, and the country of origin.',
         ],
       },
       {
-        heading: 'The differences side by side',
+        heading: 'How do they differ, side by side?',
         paragraphs: [
           'Most of the fields overlap. The differences are in when the document is issued, what it commits the parties to and who relies on it.',
         ],
@@ -321,17 +385,23 @@ export const GUIDES: readonly Guide[] = [
         },
       },
       {
-        heading: 'When customs accepts a proforma',
+        heading: 'Does customs ever accept a proforma invoice?',
         paragraphs: [
           'There is one situation where a proforma invoice does reach customs, and it means something narrower. Under U.S. rules, an importer who does not yet have the seller’s commercial invoice when the goods are entered can file a pro forma invoice instead: a statement of value in the form set out in 19 CFR 141.85, in which the importer declares the prices or values, the basis for them and the country of origin, and undertakes to file the commercial invoice once it arrives.',
           'That is the importer’s stopgap declaration, not the seller’s sales quotation. Other countries have their own provisions for missing invoices. Either way, it is an exception for a document that is late, not a substitute you choose.',
         ],
       },
       {
-        heading: 'Keeping the two consistent',
+        heading: 'How do I keep the two invoices consistent?',
         paragraphs: [
           'Trouble usually starts when the shipment differs from the quotation and only one document is updated. If a letter of credit was opened against a proforma, the commercial invoice presented to the bank has to match the credit’s terms, so a change in quantity or price may need the credit amended first. And the commercial invoice, the packing list and the transport document have to agree with each other, because customs and the receiver compare them.',
-          'The simplest protection is to produce all of them from one set of figures: the same parties, the same lines, the same Incoterms® rule and place. Number them so the relationship is visible, for example by citing the proforma number as the reference on the commercial invoice.',
+          'The simplest protection is to produce all of them from one set of figures: the same parties, the same lines, the same Incoterms® rule and place.',
+        ],
+        steps: [
+          'Issue the proforma with its own reference number and a validity date.',
+          'If the quantities or prices change before shipment, issue a revised proforma and tell the buyer’s bank if a credit depends on it.',
+          'Prepare the commercial invoice and packing list from the same shipment figures, citing the proforma number as the reference.',
+          'Check the totals, the Incoterms® rule and the named place agree across every document before they leave.',
         ],
       },
     ],
@@ -359,6 +429,13 @@ export const GUIDES: readonly Guide[] = [
       'us-cbp-invoice-contents',
       'us-cbp-proforma-invoice',
     ],
+    primaryTool: '/tools/proforma-invoice-generator',
+    callout: {
+      afterSection: 1,
+      tool: '/tools/invoice-generator',
+      title: 'Turn the quotation into the invoice',
+      text: 'The commercial invoice generator lays out the fields customs reads, line by line, and downloads a PDF without an account.',
+    },
     tools: [
       '/tools/proforma-invoice-generator',
       '/tools/invoice-generator',
@@ -395,16 +472,5 @@ export function findGuide(slug: string): Guide | undefined {
 
 /** Visible words in a guide, for the content checks; the FAQ is counted because it is shown. */
 export function guideWordCount(guide: Guide): number {
-  const text = [
-    guide.lede,
-    guide.answer,
-    ...guide.sections.flatMap((section) => [
-      section.heading,
-      ...section.paragraphs,
-      ...(section.list ?? []),
-      ...(section.table ? section.table.rows.flat() : []),
-    ]),
-    ...guide.faq.flatMap((entry) => [entry.q, entry.a]),
-  ].join(' ');
-  return text.split(/\s+/).filter(Boolean).length;
+  return articleWordCount(guide);
 }

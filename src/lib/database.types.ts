@@ -176,6 +176,45 @@ export type Database = {
           },
         ]
       }
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          handled_at: string | null
+          handled_by: string | null
+          id: string
+          message: string
+          name: string
+          notification_detail: string | null
+          notification_status: string
+          topic: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          handled_at?: string | null
+          handled_by?: string | null
+          id?: string
+          message: string
+          name: string
+          notification_detail?: string | null
+          notification_status?: string
+          topic: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          handled_at?: string | null
+          handled_by?: string | null
+          id?: string
+          message?: string
+          name?: string
+          notification_detail?: string | null
+          notification_status?: string
+          topic?: string
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           created_at: string
@@ -227,6 +266,62 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "shipments"
             referencedColumns: ["org_id", "id"]
+          },
+        ]
+      }
+      entitlements: {
+        Row: {
+          cancel_at_period_end: boolean
+          checkout_ref: string
+          created_at: string
+          customer_ref: string
+          org_id: string
+          paid_through: string | null
+          plan: string
+          provider: string
+          revoke_reason: string | null
+          revoked_at: string | null
+          status: string
+          subscription_ref: string
+          updated_at: string
+        }
+        Insert: {
+          cancel_at_period_end?: boolean
+          checkout_ref: string
+          created_at?: string
+          customer_ref: string
+          org_id: string
+          paid_through?: string | null
+          plan: string
+          provider?: string
+          revoke_reason?: string | null
+          revoked_at?: string | null
+          status: string
+          subscription_ref: string
+          updated_at?: string
+        }
+        Update: {
+          cancel_at_period_end?: boolean
+          checkout_ref?: string
+          created_at?: string
+          customer_ref?: string
+          org_id?: string
+          paid_through?: string | null
+          plan?: string
+          provider?: string
+          revoke_reason?: string | null
+          revoked_at?: string | null
+          status?: string
+          subscription_ref?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "entitlements_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: true
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -761,6 +856,10 @@ export type Database = {
           target_product: string
           target_shipment: string
         }
+        Returns: string
+      }
+      apply_billing_event: {
+        Args: { p_action: Json; p_event_id: string; p_event_type: string }
         Returns: string
       }
       cancel_account_deletion: { Args: never; Returns: undefined }

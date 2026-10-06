@@ -69,3 +69,53 @@ controls by name in `degraded` (no values).
 - `WAIVE_SENTRY`: no external error ingestion; errors reach platform logs only.
 - `WAIVE_ANALYTICS`: no product analytics are collected.
 - `WAIVE_INDEXNOW`: no IndexNow submission; search engines discover pages through the sitemap.
+
+## Payments and entitlements
+
+Only verified, server-side Stripe facts change an entitlement:
+
+- `/api/billing/stripe/webhook` answers 404 unless payments are open (service mode,
+  `ENABLE_PAYMENTS` with `PAYMENTS_APPROVED`, Stripe keys and the service-role connection), and
+  503 when switched on but misconfigured (reported in `/api/ready` by reason, no values).
+- The `Stripe-Signature` is verified against the raw body with HMAC-SHA256 (node:crypto),
+  constant-time comparison of every `v1` signature, other schemes ignored, and a 5-minute
+  timestamp tolerance in both directions. Bodies over 256 KB are refused before verification.
+- Event ids are recorded in `private.billing_events`; a redelivery or replay of a seen id is a
+  no-op. Production acts on live-mode events only and other environments on test-mode only, so
+  a preview never acts on a real payment.
+- The organization comes from `client_reference_id`, which the in-app button sets to the org id
+  (a random UUID; no email, name or other personal data is put in the URL). The plan comes from
+  the session's `payment_link`, which Stripe sets, so editing the URL cannot change what was
+  bought. Subscription state and dispute customers are re-read from Stripe's API, never trusted
+  from the event body.
+- Paid checks (`hasEntitlement`) fail closed on a missing row, a query error, an unknown status
+  or plan, or an absent `paid_through`. Cancelled keeps access to the end of the paid period; a
+  full refund or a dispute revokes at once. No free feature is gated.
+- Logs carry event id, type and outcome only.
+
+Known limits: a refund or dispute revokes every entitlement paid by that Stripe customer (the
+safe direction). A refund that arrives before its checkout is recorded as `unmatched`, and the
+later checkout still grants; reconcile from the Stripe dashboard if that happens. A plan change
+made inside Stripe (Pro to Team) is not reflected; the plan is the one bought at checkout.
+
+## Contact form, help and platform admin (D-018)
+
+- `contact_messages` has RLS enabled, no policies and no grant to `anon` or `authenticated`
+  (pgTAP `contact_messages.test.sql`). Only the server writes it, with the service role, after
+  zod validation (`src/lib/contact/schema.ts`), the shared quota (`contact:message`, 5/hour per
+  attested address, fails closed with 503 when the store is down) and a honeypot field. The
+  table repeats the bounds as checks, including no line breaks in the name (header injection).
+  Nothing a visitor types is logged; results come back in form state, never a URL.
+- `/admin` is allowlisted by `PLATFORM_ADMIN_EMAILS`: exact, case-insensitive address match on
+  a user verified with the auth server, confirmed address required, empty list admits nobody
+  (`src/lib/admin/allowlist.ts`, unit tested). Non-admins and signed-out visitors get 404.
+  Each page and server action re-checks (`adminContext`), because layouts render in parallel
+  with pages. The service-role client is created only after that check. Admin views show
+  counts, members and roles, never shipment, party, product or document contents or audit
+  metadata. Every view and action is recorded in `audit_events` (`platform_admin.*`, actor id,
+  target, time) and the view fails closed when the record cannot be written; events about one
+  organization carry its `org_id`, so its owners see them.
+- `/admin` is noindex (metadata and X-Robots-Tag via `PRIVATE_PATH_PREFIXES`) and is not named
+  in robots.txt, the sitemap or llms.txt.
+- The help panel has no third-party chat and makes no AI calls (`CHAT_PROVIDER` only accepts
+  `none`). Search runs in the browser over `/api/help/faq`; queries are never sent or stored.

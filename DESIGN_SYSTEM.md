@@ -127,8 +127,9 @@ caption; panel titles are mono captions in `--ink`.
   scrolled past or collapsed. Once the 1px sentinel above it has scrolled away the row condenses
   from 64 to 52px under a deeper shadow; the boundary line never condenses. Below 900px:
   wordmark, one short offer and the menu; the card scrolls with the page rather than covering a
-  third of a phone. Navigation: How it works · Free tools · Free while early (`/#pricing`; there
-  are no prices, so the link is named for what the section says) · Sign in.
+  third of a phone. Navigation: Free tools · Guides · Blog · Pricing · Sign in, then the offer.
+  The phone menu adds Help and Contact. "Free while early" stays in the footer (`/#status`)
+  and in the status band, because there are still no prices.
 - **Primary offer**: follows `isDatabaseConfigured()`, the check the auth layout makes. With
   accounts open it is "Create a free account"; without them it is "Use the free invoice
   generator", and "No card required" is dropped.
@@ -157,7 +158,16 @@ caption; panel titles are mono captions in `--ink`.
   search, back to the active list).
 - **Fields**: 48px, white, 1.5px `--control`, square; label 14px/500 above; hint `--muted`;
   error `--danger` text plus icon, associated by `aria-describedby`.
-- **Footer**: hull, four columns → two → one, the boundary statement repeated verbatim.
+- **Footer**: hull, four columns → two → one: the boundary statement repeated verbatim with the
+  not-advice line and the primary offer (tape button), then Product, Free tools and Resources
+  (Guides, Blog, Help, Contact). The base row carries Privacy, Terms and Cookies.
+- **Section photo** (`SectionPhoto`): see "Photos" below.
+- **Checklist**: a white ruled list, one row per document: icon (check = prepares, clock = not
+  yet, minus = outside TradeDocs), name and purpose, who usually produces it, TradeDocs status.
+  Four columns collapse to icon + stacked text below 760px. Always followed by the not-advice
+  note.
+- **CTA band**: a full-bleed hull section halfway down the homepage, photo on a flat 8px tape
+  offset, tape primary button plus one secondary. One per page.
 - **Workspace**: the same tokens and fonts on a paper canvas with white square panels; hull
   sidebar with a tape rule on the current row. No tape marker, stack or pixel motion there.
 
@@ -200,6 +210,29 @@ Retained alongside the eight: the card wipe (`clip-path inset(0 0 100% 0) → 0`
 stagger, on reveal), the hero plates landing on load (`translate 16px → 0` with a clip wipe,
 70ms stagger), and in the workspace a 200–240ms rise on dialogs, menus and disclosures. The
 workspace has no marker, line rise or scroll motion.
+
+### Photos (D-016, homepage from 2026-10-06)
+
+- **Source**: Unsplash only, hotlinked from images.unsplash.com through a plain `<img>` (never
+  re-hosted, never `next/image`), resized and cropped by Unsplash's imgix parameters. Track the
+  download once per photo when it is chosen; reuse an already tracked photo before adding one.
+- **Credit**: every photo carries "Photo by {name} on Unsplash" as plain text under it, both
+  links with `utm_source=paydocs&utm_medium=referral` (`unsplashReferral`). The credit is never
+  hidden, clipped or faded.
+- **Role**: photos support a section; they never replace the product. The homepage hero is the
+  product frame and stays photo-free. At most one photo per section, beside the heading on
+  desktop and below it on a phone. Subjects are the real places the paperwork goes: a desk, a
+  warehouse, a port, a delivery. No people posed as customers, no logos, nothing that implies an
+  endorsement or a carrier/authority relationship.
+- **Markup**: `CoverFigure` (2:1, eager, one per page top) for article covers; `SectionPhoto`
+  (4:3 or 3:2, always lazy) for supporting photos. Both set explicit `width`/`height` and a
+  cropped `srcset`, so nothing shifts. Alt text says what the photo shows in the page's terms.
+- **Frame**: square, 1px `--rule` on paper; on hull no border and a flat 8px `--tape` offset.
+- **Motion**: on reveal the frame uncovers left to right (`clip-path`, 760ms enter) while the
+  image settles from `scale 1.08`. Only `clip-path` and `scale` move; reduced motion and no
+  script show the photo in place.
+- **Data**: photo records live in `src/lib/content/home.ts` (homepage) and
+  `src/lib/content/guides.ts` (guides); the sitemap lists each page's photos as image entries.
 
 ### The public column
 

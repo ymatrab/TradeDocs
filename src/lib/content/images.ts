@@ -85,6 +85,24 @@ export function unsplashSrcSet(photo: UnsplashPhoto): string {
   return entries.join(', ');
 }
 
+/**
+ * A `srcset` cropped to any ratio, for photos that sit beside a section's text rather than
+ * spanning the column. Unsplash crops each rendition, so the browser never downloads more
+ * of the original than the box shows.
+ */
+export function unsplashSrcSetAt(
+  photo: UnsplashPhoto,
+  ratio: number,
+  widths: readonly number[],
+): string {
+  return widths
+    .map((width) => {
+      const url = unsplashImage(photo, { width, height: Math.round(width / ratio) });
+      return `${url} ${width}w`;
+    })
+    .join(', ');
+}
+
 /** The Open Graph and Twitter card rendition: 1200 × 630 JPEG, which every network reads. */
 export function unsplashShareImage(photo: UnsplashPhoto): {
   url: string;

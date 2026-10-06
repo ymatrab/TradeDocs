@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {
   Boxes,
   Building2,
+  CreditCard,
   FileStack,
   LayoutDashboard,
   LogOut,
@@ -12,6 +13,8 @@ import {
 } from 'lucide-react';
 import { CommandMenu } from '@/components/shell/command-menu';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
+import { HelpLauncher } from '@/components/help/help-launcher';
+import { resolveChatProvider } from '@/lib/help/chat';
 
 type NavItem = { href: string; label: string; icon: typeof Package };
 
@@ -43,6 +46,7 @@ export function AppShell({
         { href: `/app/${orgId}/products`, label: 'Products', icon: Boxes },
         { href: `/app/${orgId}/companies`, label: 'Companies', icon: Building2 },
         { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
+        { href: `/app/${orgId}/billing`, label: 'Billing', icon: CreditCard },
       ]
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 
@@ -115,6 +119,7 @@ export function AppShell({
           {children}
         </main>
       </div>
+      <HelpLauncher chat={resolveChatProvider(process.env.CHAT_PROVIDER)} />
     </div>
   );
 }

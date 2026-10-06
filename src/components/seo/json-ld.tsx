@@ -11,7 +11,9 @@ import {
   type JsonLdObject,
   type QuestionAndAnswer,
 } from '@/lib/seo/json-ld';
+import type { ContentArticle } from '@/lib/content/article';
 import { findGuide } from '@/lib/content/guides';
+import { findPost } from '@/lib/content/posts';
 import { findPublicTool } from '@/lib/seo/site';
 import { findIncoterm } from '@/lib/trade/incoterms';
 
@@ -32,6 +34,7 @@ const HOME: Crumb = { name: 'Home', path: '/' };
 const TOOLS: Crumb = { name: 'Free tools', path: '/tools' };
 const INCOTERMS: Crumb = { name: 'Incoterms® 2020', path: '/tools/incoterms' };
 const GUIDES: Crumb = { name: 'Guides', path: '/guides' };
+const BLOG: Crumb = { name: 'Blog', path: '/blog' };
 
 export function HomeJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
@@ -70,23 +73,45 @@ export function GuidesHubJsonLd() {
   return <JsonLd data={[breadcrumbSchema(getPublicBaseUrl(), [HOME, GUIDES])]} />;
 }
 
+/** An article under a hub: breadcrumbs, the Article with its cover, and its visible FAQ. */
+function articleData(base: string, hub: Crumb, article: ContentArticle): JsonLdObject[] {
+  const path = `${hub.path}/${article.slug}`;
+  const data = [
+    breadcrumbSchema(base, [HOME, hub, { name: article.title, path }]),
+    articleSchema(base, {
+      path,
+      headline: article.title,
+      description: article.description,
+      datePublished: article.published,
+      dateModified: article.updated,
+      image: article.cover,
+    }),
+  ];
+  if (article.faq.length > 0) data.push(faqPageSchema(article.faq));
+  return data;
+}
+
 /** A guide: breadcrumbs, the article, and its visible FAQ. */
 export function GuideJsonLd({ slug }: { slug: string }) {
   const guide = findGuide(slug);
   if (!guide) return null;
+  return <JsonLd data={articleData(getPublicBaseUrl(), GUIDES, guide)} />;
+}
+
+export function BlogHubJsonLd() {
+  return <JsonLd data={[breadcrumbSchema(getPublicBaseUrl(), [HOME, BLOG])]} />;
+}
+
+/** A blog post: breadcrumbs, the article, and its visible FAQ. */
+export function PostJsonLd({ slug }: { slug: string }) {
+  const post = findPost(slug);
+  if (!post) return null;
+  return <JsonLd data={articleData(getPublicBaseUrl(), BLOG, post)} />;
+}
+
+/** The pricing page: breadcrumbs and its visible FAQ. */
+export function PricingJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
-  const path = `/guides/${guide.slug}`;
-  const data = [
-    breadcrumbSchema(base, [HOME, GUIDES, { name: guide.title, path }]),
-    articleSchema(base, {
-      path,
-      headline: guide.title,
-      description: guide.description,
-      datePublished: guide.published,
-      dateModified: guide.updated,
-      image: guide.cover,
-    }),
-  ];
-  if (guide.faq.length > 0) data.push(faqPageSchema(guide.faq));
-  return <JsonLd data={data} />;
+  const crumbs: Crumb[] = [HOME, { name: 'Pricing', path: '/pricing' }];
+  return <JsonLd data={[breadcrumbSchema(base, crumbs), faqPageSchema(faq)]} />;
 }

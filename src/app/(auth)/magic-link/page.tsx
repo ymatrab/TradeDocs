@@ -20,6 +20,10 @@ export default function MagicLinkPage() {
         <Link className="text-link" href="/sign-in">
           Use a password instead
         </Link>
+        {' · '}
+        <Link className="text-link" href="/sign-up">
+          Create an account
+        </Link>
       </p>
     </>
   );

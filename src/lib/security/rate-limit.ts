@@ -146,7 +146,10 @@ export function rateLimitMode(env: ServerEnv): RateLimitMode {
  * x-real-ip, so it is trusted there; anywhere else a client can set any header, so no
  * address is trusted and callers share one quota.
  */
-export function attestedClientAddress(request: Request, env: ServerEnv): string | null {
+export function attestedClientAddress(
+  request: Pick<Request, 'headers'>,
+  env: ServerEnv,
+): string | null {
   if (!env.VERCEL_ENV) return null;
   const value = request.headers.get('x-real-ip')?.trim();
   return value && /^[0-9A-Fa-f:.]{2,45}$/.test(value) ? value : null;
@@ -157,7 +160,8 @@ export function attestedClientAddress(request: Request, env: ServerEnv): string 
  * degraded (see rateLimitMode); otherwise allows, or throws a 429 or a retryable 503.
  */
 export async function limitPublicRequest(
-  request: Request,
+  /** A route's Request, or a server action's `{ headers: await headers() }`. */
+  request: Pick<Request, 'headers'>,
   policy: RateLimitPolicy,
   env: ServerEnv = getServerEnv(),
   provider?: RateLimitProvider,

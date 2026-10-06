@@ -94,3 +94,44 @@ definition; schema 3 documents issued meanwhile keep rendering as issued.
 
 `public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind
 `src/lib/security/rate-limit.ts`. It holds HMAC digests only, never addresses or user ids.
+
+## Billing entitlements (20261006000100)
+
+`public.entitlements` holds one row per organization with a paid plan: `plan` (`pro` or
+`team`), `status`, `paid_through`, `cancel_at_period_end`, `revoked_at`/`revoke_reason`, and the
+Stripe references (`customer_ref`, `subscription_ref` unique, `checkout_ref`). No row means the
+free plan. Members read their own organization's row through `entitlements_select_member`, and
+only the plan and date columns (column grant); the Stripe references are not readable by any API
+role. Nobody but `public.apply_billing_event` writes it.
+
+`private.billing_events` is the webhook ledger: one row per Stripe event id with its outcome
+(`applied`, `ignored`, `unmatched`). No API role can reach it.
+
+`public.apply_billing_event(p_event_id, p_event_type, p_action)` is executable by
+`service_role` only. It inserts the event id (a duplicate returns `duplicate` and does
+nothing) and applies the action in the same transaction, so a failed write leaves no ledger row
+and the retry is processed. Actions: `grant` (upsert for an existing, undeleted organization;
+a revoked row is never re-granted by the same checkout), `subscription` (status and dates by
+`subscription_ref`; `paid_through` only moves forward and only while Stripe reports the
+subscription active, so a cancelled or past-due plan ends when the paid period does), `revoke`
+(by `customer_ref`, sets `revoked_at`; later subscription events cannot undo it) and `ignore`.
+
+Tests: `supabase/tests/billing_entitlements.test.sql` (27 assertions: isolation, column
+grant, write refusal for members and anon, idempotency, cancel/past-due/refund rules).
+Rollback: drop the routine and both tables; every paid check then answers false.
+Generated types: `entitlements` and `apply_billing_event` were added to
+`src/lib/database.types.ts` by hand; the CI `database` job's generated file is authoritative.
+
+## Contact messages (20261006000100)
+
+`public.contact_messages` holds messages sent through `/contact`: name, email, topic
+(`question`, `account`, `problem`, `privacy`, `other`), message (10–5000 characters), the
+owner-notification outcome (`notification_status` pending/sent/not_sent/failed and a reason
+code of at most 100 characters) and `handled_at`/`handled_by` (set together by the admin
+inbox). RLS on, no policies, no `anon`/`authenticated` grants; `service_role` holds select,
+insert and update only. The migration also states the service-role grants the admin panel
+relies on (select on organizations, memberships, profiles, shipments, documents; select and
+insert on audit_events), which Supabase's default privileges already provided. Retention is
+not yet decided (P-003) and the privacy draft says so. Rollback: drop the table; nothing
+references it, and `/contact` then reports the form unavailable. `src/lib/database.types.ts`
+was extended by hand for this table: replace it with the CI `database-evidence` artifact.

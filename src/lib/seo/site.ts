@@ -1,4 +1,5 @@
 import { GUIDES } from '@/lib/content/guides';
+import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
 
@@ -101,6 +102,14 @@ export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS
  * changes later gets its own date here rather than moving the others.
  */
 const REDESIGN_ROUND = '2026-10-05';
+/** The homepage gained its photo, document, audience, checklist and FAQ sections. */
+const HOME_ROUND = '2026-10-06';
+
+/** The pricing page and its plan list (src/lib/billing/plans.ts) were added this day. */
+const PRICING_ROUND = '2026-10-06';
+
+/** The help centre and contact page were added on this date (D-018). */
+const SUPPORT_ROUND = '2026-10-06';
 
 export type SitemapPage = {
   path: string;
@@ -110,8 +119,9 @@ export type SitemapPage = {
 };
 
 export const SITEMAP_PAGES: readonly SitemapPage[] = [
-  { path: '/', lastModified: REDESIGN_ROUND, changeFrequency: 'weekly', priority: 1 },
+  { path: '/', lastModified: HOME_ROUND, changeFrequency: 'weekly', priority: 1 },
   { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/pricing', lastModified: PRICING_ROUND, changeFrequency: 'monthly', priority: 0.7 },
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,
     lastModified: REDESIGN_ROUND,
@@ -131,4 +141,50 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),
+  // The hub changes whenever a post is added, so it carries the newest post's date.
+  { path: '/blog', lastModified: BLOG_UPDATED, changeFrequency: 'weekly', priority: 0.6 },
+  ...POSTS.map((post) => ({
+    path: `/blog/${post.slug}`,
+    lastModified: post.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+
+  { path: '/help', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.5 },
+  { path: '/contact', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.4 },
 ];
+
+/**
+ * The legal pages (D-009). They are public routes but enter the sitemap and llms.txt only
+ * once the owner has approved them (LEGAL_APPROVED_AT with a complete identity); until then
+ * they are drafts, noindex and unlisted. Their date is the approval date, never this list's.
+ */
+export const LEGAL_PAGES: readonly { path: string; name: string; summary: string }[] = [
+  {
+    path: '/privacy',
+    name: 'Privacy policy',
+    summary: 'What personal data TradeDocs handles, why, who processes it and your rights.',
+  },
+  {
+    path: '/terms',
+    name: 'Terms of use',
+    summary:
+      'The agreement for using TradeDocs: what it is and is not, accounts, content, liability.',
+  },
+  {
+    path: '/cookies',
+    name: 'Cookie policy',
+    summary: 'The only cookies are the sign-in session; no analytics, advertising or tracking.',
+  },
+];
+
+/** Legal pages as sitemap entries, dated by their approval. Empty while they are drafts. */
+export function legalSitemapPages(approvedAt: string | null): SitemapPage[] {
+  if (!approvedAt) return [];
+  return LEGAL_PAGES.map((page) => ({
+    path: page.path,
+    lastModified: approvedAt,
+    changeFrequency: 'monthly' as const,
+    priority: 0.3,
+  }));
+}

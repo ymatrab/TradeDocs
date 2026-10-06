@@ -13,16 +13,25 @@ import { openGraphFor } from '@/lib/seo/social';
 import { documentKindLabels, partyRoleLabels, type DocumentKind } from '@/lib/labels';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
+import {
+  AudienceSection,
+  ChecklistSection,
+  CtaBand,
+  ReadingLinks,
+  TemplatesSection,
+} from './home-sections';
 import { ToolBench, type BenchIncoterm, type BenchTool } from './tool-bench';
 
+const HOME_DESCRIPTION =
+  'Free commercial invoice, proforma invoice and packing list generators, and a workspace that prepares the whole export document set from one shipment record.';
+
 export const metadata: Metadata = {
-  title: 'Trade documents that agree with each other',
-  description:
-    'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.',
+  title: 'Export documents from one shipment record',
+  description: HOME_DESCRIPTION,
   alternates: { canonical: '/' },
   openGraph: openGraphFor(
-    'TradeDocs: trade documents that agree with each other',
-    'Enter a shipment once and prepare a commercial invoice, proforma invoice, packing list and delivery note that carry the same figures.',
+    'TradeDocs: commercial invoice generator and export documents',
+    HOME_DESCRIPTION,
     '/',
   ),
 };
@@ -177,7 +186,31 @@ const notYet = [
   'Paid plans: none yet, and they will come with notice',
 ];
 
+/**
+ * Answer-first, so the first sentence is the answer an assistant can quote. The same array
+ * renders the visible FAQ and the FAQPage structured data, so they cannot drift apart.
+ */
 const questions = [
+  {
+    q: 'What is a commercial invoice?',
+    a: 'It is the seller’s bill for goods sold and shipped, and the document customs in the importing country assesses duties and taxes from. Its quantities and values have to agree with the packing list, which is why TradeDocs prepares both from one record.',
+  },
+  {
+    q: 'What is the difference between a proforma invoice and a commercial invoice?',
+    a: 'A proforma invoice is a quotation in invoice form, sent before the sale so the buyer can arrange payment, a letter of credit or an import licence. A commercial invoice is issued for goods actually sold and shipped, requests payment, and is what customs values the shipment from.',
+  },
+  {
+    q: 'Can I make a commercial invoice without an account?',
+    a: 'Yes. The commercial invoice, proforma invoice and packing list generators work without an account; what you type is sent once to render the PDF and is not stored. An account adds saved companies, products and shipments, so the next set starts from the last one.',
+  },
+  {
+    q: 'Which documents does an export shipment need?',
+    a: 'Usually a commercial invoice and a packing list, often a proforma invoice before the sale, and a transport document from the carrier. Some goods and routes need more, such as a certificate of origin. The set depends on the goods, the route and the countries involved, so confirm it with your buyer, forwarder or customs authority.',
+  },
+  {
+    q: 'Who is TradeDocs for?',
+    a: 'Exporters and the people who prepare their paperwork: in-house shipping teams, and consultants who keep each client in its own organization. Importers and freight forwarders use the free calculators. It is not a customs broker, a carrier or a freight booking system.',
+  },
   {
     q: 'Does TradeDocs issue or certify my documents?',
     a: 'No. TradeDocs prepares documents from the data you enter. Issuing, endorsing, certifying and clearing are done by carriers, chambers of commerce and customs authorities. Every document says so on its face, and that labelling cannot be removed.',
@@ -196,7 +229,7 @@ const questions = [
   },
   {
     q: 'What does it cost?',
-    a: 'Nothing today. TradeDocs is free while it is early, and paid plans will arrive later with clear notice.',
+    a: 'Nothing today. TradeDocs is free while it is early. Paid plans will be shown on the pricing page, and they will come with notice before anything changes.',
   },
 ];
 
@@ -423,6 +456,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
+      <TemplatesSection action={action} />
+      <CtaBand action={action} />
+      <AudienceSection action={action} />
+      <ChecklistSection action={action} />
+
       <RevealSection className="section" aria-labelledby="tools-title">
         <div className="section-head split">
           <div className="section-head" style={{ marginBottom: 0 }}>
@@ -464,9 +502,10 @@ export default function Home() {
           estimates what the goods cost once delivered, from the freight and the duty and tax rates
           you enter.
         </p>
+        <ReadingLinks />
       </RevealSection>
 
-      <RevealSection className="section dark" id="pricing" aria-labelledby="status-title">
+      <RevealSection className="section dark" id="status" aria-labelledby="status-title">
         <div className="pixel-edge" aria-hidden="true">
           {pixelOrder.map((order, column) => (
             <span key={column} style={{ '--i': order } as CSSProperties} />
@@ -481,7 +520,11 @@ export default function Home() {
             </Line>
           </h2>
           <p>
-            There is no price yet. Paid plans will come later, with notice.
+            There is no price yet. Paid plans will come later, with notice, on the{' '}
+            <Link className="text-link" href="/pricing">
+              pricing page
+            </Link>
+            .
             {accountsOpen
               ? null
               : ' Accounts are not open on this deployment yet; the free tools work now.'}
