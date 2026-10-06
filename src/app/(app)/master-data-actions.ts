@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import { fieldErrors, summaryOf } from '@/lib/form-errors';
 import { parseCatalog, readDecimal, type ImportRow } from '@/lib/csv';
+import { MAX_IMPORT_ROWS } from '@/lib/limits';
+import { countryField, decimalField, grossBelowNet, hsCodeField } from '@/lib/trade/inputs';
 import type { ActionState } from './actions';
 
 const uuid = z.uuid();
@@ -23,25 +25,13 @@ const optional = (max: number) =>
     .max(max)
     .transform((value) => value || null);
 
-const countryCode = z
-  .string()
-  .trim()
-  .toUpperCase()
-  .regex(/^([A-Z]{2})?$/, 'Use a two-letter country code, such as DE.')
-  .transform((value) => value || null);
+const countryCode = countryField;
+const hsCode = hsCodeField;
 
-const hsCode = z
-  .string()
-  .trim()
-  .regex(/^([0-9]{6,10})?$/, 'An HS code is 6 to 10 digits.')
-  .transform((value) => value || null);
-
-const decimal = (message: string) =>
-  z
-    .string()
-    .trim()
-    .transform((value) => (value === '' ? null : readDecimal(value)))
-    .refine((value) => value === null || Number(value) >= 0, message);
+/** Whether a database error carries this routine message. */
+function says(error: { message?: string } | null | undefined, text: string): boolean {
+  return Boolean(error?.message?.includes(text));
+}
 
 // ---------------------------------------------------------------------------
 // Companies
@@ -108,8 +98,15 @@ export async function saveCompany(
   const client = await createClient();
 
   if (company) {
-    const { error } = await client.from('companies').update(values).eq('id', company);
-    if (error) return { error: 'Those details could not be saved.' };
+    // Read back: an update the row policy filters out is not an error to PostgREST.
+    const { data: saved, error } = await client
+      .from('companies')
+      .update(values)
+      .eq('id', company)
+      .eq('org_id', org)
+      .select('id');
+    if (error) return { error: 'Those details could not be saved. Try again.' };
+    if (!saved?.length) return { error: 'That company could not be found in this organization.' };
     revalidatePath(`/app/${org}/companies/${company}`);
     revalidatePath(`/app/${org}/companies`);
     return { notice: 'Saved.' };
@@ -120,7 +117,10 @@ export async function saveCompany(
     .insert({ ...values, org_id: org })
     .select('id')
     .single();
-  if (error || !data) return { error: 'That company could not be added.' };
+  if (error || !data) {
+    if (error?.code === '42501') return { error: 'You are not a member of this organization.' };
+    return { error: 'That company could not be added. Try again.' };
+  }
   revalidatePath(`/app/${org}/companies`);
   redirect(`/app/${org}/companies/${data.id}`);
 }
@@ -140,11 +140,14 @@ export async function setCompanyArchived(
 
   const archiving = parsed.data.archived === 'true';
   const client = await createClient();
-  const { error } = await client
+  const { data: changed, error } = await client
     .from('companies')
     .update({ archived_at: archiving ? new Date().toISOString() : null })
-    .eq('id', parsed.data.company);
-  if (error) return { error: 'That change could not be saved.' };
+    .eq('id', parsed.data.company)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error) return { error: 'That change could not be saved. Try again.' };
+  if (!changed?.length) return { error: 'That company could not be found in this organization.' };
 
   revalidatePath(`/app/${parsed.data.org}/companies`);
   revalidatePath(`/app/${parsed.data.org}/companies/${parsed.data.company}`);
@@ -167,15 +170,15 @@ const productShape = z.object({
   hs_code: hsCode,
   country_of_origin: countryCode,
   unit: z.string().trim().min(1).max(12),
-  unit_price: decimal('Enter a price of zero or more.'),
+  unit_price: decimalField({ label: 'unit price', places: 4 }),
   currency: z
     .string()
     .trim()
     .toUpperCase()
     .regex(/^([A-Z]{3})?$/, 'Use a three-letter currency code.')
     .transform((value) => value || null),
-  net_weight_kg: decimal('A net weight cannot be negative.'),
-  gross_weight_kg: decimal('A gross weight cannot be negative.'),
+  net_weight_kg: decimalField({ label: 'net weight', places: 3 }),
+  gross_weight_kg: decimalField({ label: 'gross weight', places: 3 }),
   package_kind: optional(40),
   notes: optional(2000),
 });
@@ -205,11 +208,7 @@ export async function saveProduct(
   }
 
   const { org, product, unit_price, net_weight_kg, gross_weight_kg, ...rest } = parsed.data;
-  if (
-    net_weight_kg !== null &&
-    gross_weight_kg !== null &&
-    Number(gross_weight_kg) < Number(net_weight_kg)
-  ) {
+  if (grossBelowNet(net_weight_kg, gross_weight_kg)) {
     const message = 'Gross weight cannot be less than net weight.';
     return { error: message, fields: { gross_weight_kg: message } };
   }
@@ -223,14 +222,20 @@ export async function saveProduct(
   const client = await createClient();
 
   if (product) {
-    const { error } = await client.from('products').update(values).eq('id', product);
+    const { data: saved, error } = await client
+      .from('products')
+      .update(values)
+      .eq('id', product)
+      .eq('org_id', org)
+      .select('id');
     if (error) {
       if (error.code === '23505') {
         const message = 'Another active product already uses that code.';
         return { error: message, fields: { sku: message } };
       }
-      return { error: 'Those details could not be saved.' };
+      return { error: 'Those details could not be saved. Try again.' };
     }
+    if (!saved?.length) return { error: 'That product could not be found in this organization.' };
     revalidatePath(`/app/${org}/products/${product}`);
     revalidatePath(`/app/${org}/products`);
     return { notice: 'Saved. Lines already added to a shipment keep their own values.' };
@@ -267,11 +272,21 @@ export async function setProductArchived(
 
   const archiving = parsed.data.archived === 'true';
   const client = await createClient();
-  const { error } = await client
+  const { data: changed, error } = await client
     .from('products')
     .update({ archived_at: archiving ? new Date().toISOString() : null })
-    .eq('id', parsed.data.product);
-  if (error) return { error: 'That change could not be saved.' };
+    .eq('id', parsed.data.product)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error) {
+    if (error.code === '23505') {
+      return {
+        error: 'Another active product already uses this code. Change one of them, then restore.',
+      };
+    }
+    return { error: 'That change could not be saved. Try again.' };
+  }
+  if (!changed?.length) return { error: 'That product could not be found in this organization.' };
 
   revalidatePath(`/app/${parsed.data.org}/products`);
   revalidatePath(`/app/${parsed.data.org}/products/${parsed.data.product}`);
@@ -282,13 +297,20 @@ export async function setProductArchived(
   };
 }
 
-/** The problems the import routine reports, keyed to the row in the user's own file. */
+/** The problems the import routine reports, keyed to the line in the user's own file. */
 export type ImportProblem = { row: number; problem: string };
 
 export type ImportState = ActionState & {
   problems?: ImportProblem[];
   ignored?: string[];
   imported?: { inserted: number; updated: number };
+  /** Set by "Check the file": what an import would do. Nothing was written. */
+  previewed?: { inserted: number; updated: number };
+  /**
+   * The text that was checked, returned so it is still in the form for the import that
+   * follows: a form action resets its fields, and a chosen file cannot be restored.
+   */
+  checked?: string;
 };
 
 export async function importCatalog(
@@ -297,9 +319,14 @@ export async function importCatalog(
 ): Promise<ImportState> {
   const org = uuid.safeParse(read(formData, 'org'));
   if (!org.success) return { error: 'That organization could not be found.' };
+  // "Check the file" validates and counts without writing anything.
+  const preview = read(formData, 'intent') === 'preview';
 
   const upload = formData.get('file');
   const pasted = read(formData, 'text');
+  if (upload instanceof File && upload.size > 2_000_000) {
+    return { error: 'That file is larger than 2 MB. Split it and import in parts.' };
+  }
   const source =
     upload instanceof File && upload.size > 0 ? await upload.text() : pasted.trim() ? pasted : '';
 
@@ -322,11 +349,18 @@ export async function importCatalog(
   if (rows.length === 0) {
     return { error: 'That file has a heading row but no products under it.', ignored };
   }
+  if (rows.length > MAX_IMPORT_ROWS) {
+    return {
+      error: `That file has ${rows.length} products. Import at most ${MAX_IMPORT_ROWS} at a time.`,
+      ignored,
+    };
+  }
 
   const client = await createClient();
   const { data, error } = await client.rpc('import_products', {
     target_org: org.data,
     rows: rows.map(normalizeRow),
+    dry_run: preview,
   });
 
   if (error) {
@@ -338,31 +372,80 @@ export async function importCatalog(
         ignored,
       };
     }
-    return { error: 'That catalog could not be imported.', ignored };
+    if (error.code === '42501') return { error: 'You are not a member of this organization.' };
+    return { error: 'That catalog could not be imported. Nothing was changed.', ignored };
   }
 
-  const result = data as { inserted: number; updated: number };
+  const result = readImportResult(data);
+  if (!result) return { error: 'That catalog could not be imported. Nothing was changed.' };
+
+  if (preview) {
+    if (result.problems.length > 0) {
+      return {
+        error: `${result.problems.length} ${result.problems.length === 1 ? 'row needs' : 'rows need'} correcting before this file can be imported.`,
+        problems: result.problems,
+        ignored,
+        checked: source,
+      };
+    }
+    return {
+      notice: `The file is ready: ${result.inserted} new ${result.inserted === 1 ? 'product' : 'products'} and ${result.updated} to update. Nothing has been written yet.`,
+      previewed: { inserted: result.inserted, updated: result.updated },
+      ignored,
+      checked: source,
+    };
+  }
+
   revalidatePath(`/app/${org.data}/products`);
   return {
     notice: `Imported ${result.inserted} new ${result.inserted === 1 ? 'product' : 'products'} and updated ${result.updated}.`,
-    imported: result,
+    imported: { inserted: result.inserted, updated: result.updated },
     ignored,
   };
 }
 
-/** Numbers are re-read here so "1.234,56" reaches the database as a decimal it accepts. */
-function normalizeRow(row: ImportRow): Record<string, string | null> {
+/**
+ * Text is passed on as written. Numbers are re-read so "1.234,56" reaches the database as a
+ * decimal it accepts; one that cannot be read is passed on unchanged, so the import reports
+ * it against its line instead of treating it as blank.
+ */
+function normalizeRow(row: ImportRow): Record<string, string | number | null> {
+  const figure = (value: string | undefined) => readDecimal(value) ?? value ?? null;
   return {
+    line: row.line ?? null,
     sku: row.sku ?? null,
     description: row.description ?? null,
-    hs_code: row.hs_code?.replace(/\D/g, '') || null,
+    hs_code: row.hs_code?.replace(/[\s.]/g, '') || null,
     country_of_origin: row.country_of_origin?.toUpperCase() ?? null,
     unit: row.unit ?? null,
-    unit_price: readDecimal(row.unit_price),
-    net_weight_kg: readDecimal(row.net_weight_kg),
-    gross_weight_kg: readDecimal(row.gross_weight_kg),
+    unit_price: figure(row.unit_price),
+    net_weight_kg: figure(row.net_weight_kg),
+    gross_weight_kg: figure(row.gross_weight_kg),
     package_kind: row.package_kind ?? null,
   };
+}
+
+function readImportResult(
+  data: unknown,
+): { inserted: number; updated: number; problems: ImportProblem[] } | null {
+  if (typeof data !== 'object' || data === null) return null;
+  const { inserted, updated, problems } = data as Record<string, unknown>;
+  if (typeof inserted !== 'number' || typeof updated !== 'number') return null;
+  return {
+    inserted,
+    updated,
+    problems: Array.isArray(problems) ? problemsFrom(problems) : [],
+  };
+}
+
+function problemsFrom(entries: unknown[]): ImportProblem[] {
+  return entries.filter(
+    (entry): entry is ImportProblem =>
+      typeof entry === 'object' &&
+      entry !== null &&
+      typeof (entry as ImportProblem).row === 'number' &&
+      typeof (entry as ImportProblem).problem === 'string',
+  );
 }
 
 function readProblems(details: string | null | undefined): ImportProblem[] | null {
@@ -370,13 +453,7 @@ function readProblems(details: string | null | undefined): ImportProblem[] | nul
   try {
     const parsed: unknown = JSON.parse(details);
     if (!Array.isArray(parsed)) return null;
-    return parsed.filter(
-      (entry): entry is ImportProblem =>
-        typeof entry === 'object' &&
-        entry !== null &&
-        typeof (entry as ImportProblem).row === 'number' &&
-        typeof (entry as ImportProblem).problem === 'string',
-    );
+    return problemsFrom(parsed);
   } catch {
     return null;
   }
@@ -461,8 +538,8 @@ export async function addFromCatalog(
     .object({
       org: uuid,
       shipment: uuid,
-      product: uuid,
-      quantity: z.coerce.number().positive('Enter a quantity greater than zero.'),
+      product: z.uuid('Choose a product from the catalog.'),
+      quantity: decimalField({ label: 'quantity', places: 3, required: true, positive: true }),
     })
     .safeParse({
       org: read(formData, 'org'),
@@ -479,9 +556,20 @@ export async function addFromCatalog(
   const { error } = await client.rpc('add_product_to_shipment', {
     target_shipment: parsed.data.shipment,
     target_product: parsed.data.product,
-    line_quantity: parsed.data.quantity,
+    line_quantity: Number(parsed.data.quantity),
   });
-  if (error) return { error: 'That product could not be added to the shipment.' };
+  if (error) {
+    if (says(error, 'catalog entry is not available')) {
+      return { error: 'That product is archived or no longer in the catalog.' };
+    }
+    if (says(error, 'shipment is not available')) {
+      return { error: 'That shipment is not available to you.' };
+    }
+    if (error.code === '23514') {
+      return { error: 'A shipment holds at most 999 lines. Start a second shipment.' };
+    }
+    return { error: 'That product could not be added to the shipment. Try again.' };
+  }
 
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Line added from the catalog.' };
@@ -496,13 +584,24 @@ export async function addPackage(_previous: ActionState, formData: FormData): Pr
     .object({
       org: uuid,
       shipment: uuid,
-      kind: z.string().trim().min(1, 'Name the package type.').max(40),
-      package_count: z.coerce.number().int().positive('Enter how many there are.'),
-      length_cm: decimal('A length cannot be negative.'),
-      width_cm: decimal('A width cannot be negative.'),
-      height_cm: decimal('A height cannot be negative.'),
-      net_weight_kg: decimal('A net weight cannot be negative.'),
-      gross_weight_kg: decimal('A gross weight cannot be negative.'),
+      kind: z
+        .string()
+        .trim()
+        .min(1, 'Name the package type.')
+        .max(40, 'Use 40 characters or fewer.'),
+      package_count: z
+        .string()
+        .trim()
+        .regex(/^\d{1,6}$/, 'Enter how many there are, as a whole number.')
+        .transform(Number)
+        .refine((value) => value >= 1 && value <= 100_000, 'Enter between 1 and 100,000.'),
+      // Dimensions are per package and must be real measurements; zero is not a size.
+      length_cm: decimalField({ label: 'length', places: 2, positive: true }),
+      width_cm: decimalField({ label: 'width', places: 2, positive: true }),
+      height_cm: decimalField({ label: 'height', places: 2, positive: true }),
+      // Weights are per package. Documents multiply them by the count.
+      net_weight_kg: decimalField({ label: 'net weight', places: 3 }),
+      gross_weight_kg: decimalField({ label: 'gross weight', places: 3 }),
       marks: optional(500),
     })
     .safeParse({
@@ -523,6 +622,10 @@ export async function addPackage(_previous: ActionState, formData: FormData): Pr
   }
 
   const { org, shipment, ...values } = parsed.data;
+  if (grossBelowNet(values.net_weight_kg, values.gross_weight_kg)) {
+    const message = 'Gross weight cannot be less than net weight.';
+    return { error: message, fields: { gross_weight_kg: message } };
+  }
   const client = await createClient();
   // As with line items: the next ordinal follows the highest in use, so removing a
   // package cannot make the next one reuse a number that is still on screen.
@@ -530,6 +633,7 @@ export async function addPackage(_previous: ActionState, formData: FormData): Pr
     .from('shipment_packages')
     .select('position')
     .eq('shipment_id', shipment)
+    .eq('org_id', org)
     .order('position', { ascending: false })
     .limit(1)
     .maybeSingle();
@@ -547,7 +651,12 @@ export async function addPackage(_previous: ActionState, formData: FormData): Pr
     gross_weight_kg: values.gross_weight_kg === null ? null : Number(values.gross_weight_kg),
     marks: values.marks,
   });
-  if (error) return { error: 'That package could not be added.' };
+  if (error) {
+    if (error.code === '23514') {
+      return { error: 'A shipment holds at most 999 packages, and each needs valid figures.' };
+    }
+    return { error: 'That package could not be added. Reload the shipment and try again.' };
+  }
 
   revalidatePath(`/app/${org}/shipments/${shipment}`);
   return { notice: 'Package added.' };
@@ -588,7 +697,7 @@ export async function allocateToPackage(
       shipment: uuid,
       package: uuid,
       item: uuid,
-      quantity: z.coerce.number().positive('Enter a quantity greater than zero.'),
+      quantity: decimalField({ label: 'quantity', places: 3, required: true, positive: true }),
     })
     .safeParse({
       org: read(formData, 'org'),
@@ -608,11 +717,23 @@ export async function allocateToPackage(
       org_id: parsed.data.org,
       package_id: parsed.data.package,
       item_id: parsed.data.item,
-      quantity: parsed.data.quantity,
+      quantity: Number(parsed.data.quantity),
     },
     { onConflict: 'package_id,item_id' },
   );
-  if (error) return { error: 'That allocation could not be saved.' };
+  if (error) {
+    if (says(error, 'packs more than the line holds')) {
+      const limits = readAllocationLimits(error.details);
+      const message = limits
+        ? `That is more than the line holds: ${limits.line} in total, ${limits.elsewhere} already in other packages.`
+        : 'That is more than the line holds.';
+      return { error: message, fields: { quantity: message } };
+    }
+    if (says(error, 'its own shipment')) {
+      return { error: 'That line belongs to a different shipment.' };
+    }
+    return { error: 'That allocation could not be saved. Reload the shipment and try again.' };
+  }
 
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Contents updated.' };
@@ -630,9 +751,37 @@ export async function removeAllocation(
   if (!parsed.success) return { error: 'That allocation could not be found.' };
 
   const client = await createClient();
-  const { error } = await client.from('package_contents').delete().eq('id', parsed.data.allocation);
-  if (error) return { error: 'That allocation could not be removed.' };
+  const { data: removed, error } = await client
+    .from('package_contents')
+    .delete()
+    .eq('id', parsed.data.allocation)
+    .eq('org_id', parsed.data.org)
+    .select('id');
+  if (error || !removed?.length) {
+    return { error: 'That allocation could not be removed. It may already have been removed.' };
+  }
 
   revalidatePath(`/app/${parsed.data.org}/shipments/${parsed.data.shipment}`);
   return { notice: 'Contents updated.' };
+}
+
+/** The figures the allocation limit reports, for a message the user can act on. */
+function readAllocationLimits(
+  details: string | null | undefined,
+): { line: string; elsewhere: string } | null {
+  if (!details) return null;
+  try {
+    const parsed: unknown = JSON.parse(details);
+    if (typeof parsed !== 'object' || parsed === null) return null;
+    const { line_quantity, allocated_elsewhere } = parsed as Record<string, unknown>;
+    if (
+      (typeof line_quantity !== 'number' && typeof line_quantity !== 'string') ||
+      (typeof allocated_elsewhere !== 'number' && typeof allocated_elsewhere !== 'string')
+    ) {
+      return null;
+    }
+    return { line: String(Number(line_quantity)), elsewhere: String(Number(allocated_elsewhere)) };
+  } catch {
+    return null;
+  }
 }

@@ -9,7 +9,9 @@ function newEmail(): string {
   sequence += 1;
   return `e2e-workspace-${run}-${sequence}@example.test`;
 }
-const password = 'correct-horse-battery-staple';
+// Unique per run: sign-up refuses passwords that appear in known breaches (HIBP), and a
+// well-known phrase such as "correct horse battery staple" is in every breach corpus.
+const password = `Td-e2e-${run}-quay-ledger`;
 
 async function signUp(page: Page): Promise<void> {
   await page.goto('/sign-up');
@@ -203,7 +205,7 @@ test('a document set downloads as a ZIP of current revisions with a manifest', a
   for (const kind of ['Commercial invoice', 'Packing list']) {
     await page.getByLabel('Document type').selectOption({ label: kind });
     await page.getByRole('button', { name: 'Generate document' }).click();
-    await expect(page.getByText('Document generated.')).toBeVisible();
+    await expect(page.getByText(/Document [A-Z]{2}-[0-9]{4}-[0-9]{4} generated\./)).toBeVisible();
   }
 
   const archive = await page.request.get(setUrl);
@@ -219,7 +221,9 @@ test('a document set downloads as a ZIP of current revisions with a manifest', a
   // bundling a revision that no longer describes the goods.
   await page.getByLabel('Port of loading').fill('Felixstowe');
   await page.getByRole('button', { name: 'Save shipment' }).click();
-  await expect(page.getByText('Documents generated before now are marked stale.')).toBeVisible();
+  await expect(
+    page.getByText('Documents generated before a change are marked stale.'),
+  ).toBeVisible();
   expect((await page.request.get(setUrl)).status()).toBe(409);
 });
 
@@ -242,4 +246,40 @@ test('an archived product leaves the picker but its documents stay readable', as
 
   await createShipment(page, org, 'SHP-ARCHIVED-1');
   await expect(page.getByText('Your catalog is empty.')).toBeVisible();
+});
+
+test('a second shipment reuses the first without touching its documents', async ({ page }) => {
+  const org = await startOrganization(page, 'Fulmar Trading');
+  await createShipment(page, org, 'SHP-REUSE-1');
+  const firstUrl = page.url();
+
+  const oneOff = page.getByRole('form', { name: 'Add a one-off line' });
+  await oneOff.getByLabel('Description of goods').fill('Oak dowel');
+  await oneOff.getByLabel('Quantity').fill('15');
+  await oneOff.getByLabel('Unit price').fill('4.00');
+  await page.getByRole('button', { name: 'Add line' }).click();
+  await expect(page.getByText('Line added.')).toBeVisible();
+
+  await page.getByLabel('Document type').selectOption({ label: 'Commercial invoice' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/Document CI-[0-9]{4}-0001 generated\./)).toBeVisible();
+
+  // Generating the same type again replaces the first rather than leaving two current.
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(
+    page.getByText(/earlier revision of this type is now marked superseded/),
+  ).toBeVisible();
+  await expect(page.getByText(/Replaced by CI-[0-9]{4}-0002/)).toBeVisible();
+
+  await page.getByLabel('New shipment reference').fill('SHP-REUSE-2');
+  await page.getByRole('button', { name: 'Create the new shipment' }).click();
+  await page.waitForURL((url) => url.pathname !== new URL(firstUrl).pathname);
+  await expect(page.getByRole('region', { name: /Goods on this shipment/ })).toContainText(
+    'Oak dowel',
+  );
+  await expect(page.getByText(/No documents yet/)).toBeVisible();
+
+  // The first shipment keeps both of its documents, unchanged.
+  await page.goto(firstUrl);
+  await expect(page.getByText(/Replaced by CI-[0-9]{4}-0002/)).toBeVisible();
 });

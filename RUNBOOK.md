@@ -69,9 +69,15 @@ Order matters; each step is the owner's unless marked agent.
 
 ## Opening paid plans (Stripe Payment Links)
 
-Owner steps; agents never handle the keys. Prices are the owner's decision (P-002) and are
-never written in code. Until every step is done, `/pricing` shows each paid plan as "Not
-available yet" and the webhook route answers 404.
+Owner steps; agents never handle the keys. Prices are the owner's decision (P-002). The
+team's proposal is `PROPOSED_PRICES` in `src/lib/billing/plans.ts`
+(docs/research/pricing-proposal-2026-10-06.md); it shows only with `PRICES_APPROVED=true`.
+Without it `/pricing` shows each paid plan as "Not available yet". With it, and before the
+steps below, each paid plan shows its approved prices and "Checkout is not open yet". The
+webhook route answers 404 until payments are enabled.
+
+0. Approve or edit `PROPOSED_PRICES` (a code change), then set `PRICES_APPROVED=true` and
+   redeploy. Each Stripe Price created below must equal the approved amount.
 
 1. Publish the refund policy and the paid plans' features first. The pricing FAQ promises the
    policy before paid plans open, and a paid card lists only features the code gates
@@ -133,7 +139,58 @@ unreachable and Stripe will redeliver.
   noindex go, and the pages enter the sitemap and llms.txt dated by approval. Open items the
   owner must decide before approving: transfer mechanism per provider, contact-message
   retention, liability cap.
-- **Account deletion purge.** Requests wait 30 days in `account_deletion_requests`; no job
-  removes accounts when `purge_after` passes yet. Until one exists (needs the owner's go-ahead
-  for a scheduled job), check the table weekly and remove due accounts in the Supabase
-  dashboard, as the privacy policy promises removal after the grace period.
+- **Account deletion purge.** See "Account purge" below.
+
+## Account purge (owner decision: scheduling)
+
+Accounts whose deletion request is past `purge_after` (30 days) are removed by
+`public.purge_due_accounts(p_limit)`: it deletes the auth user (cascading profile, sessions and
+the request), soft-deletes organizations whose only member was that account, revokes
+invitations it sent, and writes `account.purged` to `audit_events`. It is idempotent and
+batch-bounded; an account that is the only owner of an organization with other members is
+held back (`last_purge_outcome = 'blocked_sole_owner'`, audited once) until ownership moves.
+
+**Nothing schedules it.** No cron exists in `vercel.json` or the database (factory rule: no
+scheduled jobs without the owner). Until the owner chooses, run it from `/admin/users` → "Run
+purge now" at least weekly. To schedule it, pick one:
+
+1. **Vercel Cron.** Set `CRON_SECRET` (32+ random characters) on the Production target, then
+   add to `vercel.json`: `"crons": [{ "path": "/api/internal/purge-accounts", "schedule":
+"0 3 * * *" }]`. Vercel sends `Authorization: Bearer $CRON_SECRET` itself.
+2. **Supabase pg_cron.** Enable the pg_cron extension, then
+   `select cron.schedule('purge-accounts', '0 3 * * *', $$select public.purge_due_accounts(50)$$);`
+   No secret is needed; the job runs inside the database.
+
+Manual call: `curl -H "Authorization: Bearer $CRON_SECRET" https://<host>/api/internal/purge-accounts`
+returns `{ purged, blocked, ran_at }`; 503 means `CRON_SECRET` is unset, 401 a wrong secret.
+Rollback: unschedule (remove the cron entry / `select cron.unschedule('purge-accounts')`).
+Purged accounts cannot be restored except from a database backup.
+
+## Auth settings on the hosted project (owner, Supabase dashboard)
+
+Local and CI read `supabase/config.toml`; the hosted project must be set by hand to match:
+
+- Authentication → Providers → Email: **Confirm email ON**, **Secure email change ON**,
+  minimum password length **12**. Leaked password protection ON if the plan offers it (the app
+  also checks HIBP).
+- URL configuration: Site URL = `APP_URL`; redirect URLs include `<APP_URL>/**`.
+- Email templates: paste `supabase/templates/confirmation.html`, `magic-link.html`,
+  `recovery.html` and `email-change.html` (subjects are in `config.toml`). They link to
+  `/auth/confirm` with a token hash, which works on any device; the default templates only
+  work in the browser that asked, and an admin-triggered reset or confirmation (sent from the
+  server) does not work with them at all.
+- SMTP: Resend (D-017), so auth email is not limited to Supabase's built-in sender.
+- Rate limits: keep the hosted defaults; the app adds its own quotas.
+
+## Account administration (`/admin/users`)
+
+Search by email (full address or first 3+ characters). The account page shows organizations
+and roles, created/last sign-in, confirmation, sign-in state and deletion status, with:
+disable/enable sign-in (ban + end sessions), resend confirmation, send password reset, cancel
+deletion, delete now (purges immediately; refused for a sole owner with colleagues). Every
+action is in `/admin/audit` as `platform_admin.*`.
+
+Turnstile: create a widget in Cloudflare for the production hostname, set
+`TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`, and unset `WAIVE_TURNSTILE`. Invitations are
+emailed once `RESEND_API_KEY`, `EMAIL_FROM` and `APP_URL` are set (previews: only to
+`EMAIL_SANDBOX_RECIPIENT`); otherwise inviters get a copy-link fallback labelled as such.

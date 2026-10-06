@@ -80,7 +80,7 @@ describe('money', () => {
 describe('free document snapshot', () => {
   it('records its schema and the currency places it was rounded to', () => {
     const snapshot = snapshotOf();
-    expect(snapshot.schema_version).toBe(3);
+    expect(snapshot.schema_version).toBe(4);
     expect(snapshot.money_places).toBe(2);
     expect(snapshot.items[0]?.line_total).toBe('0.30');
     expect(snapshot.totals.value).toBe('0.30');

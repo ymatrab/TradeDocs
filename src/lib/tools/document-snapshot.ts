@@ -130,7 +130,7 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
   const net = sumStated(input.lines.map((entry) => entry.net_weight_kg));
 
   return {
-    schema_version: 3,
+    schema_version: 4,
     money_places: places,
     kind: input.kind,
     number: input.number,

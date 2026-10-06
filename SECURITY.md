@@ -49,6 +49,51 @@ Authorization is not implemented in page code. Row policies and database routine
 outcome, so an API route, background job or console session added later inherits the same
 boundary instead of needing the check re-implemented correctly.
 
+## Accounts and access under real conditions (D-020)
+
+- **Passwords.** 12 characters minimum, 72 bytes maximum (bcrypt's limit in Supabase Auth);
+  no composition rules. New passwords (sign-up, reset, change) are checked against Have I
+  Been Pwned's k-anonymity range API: only the first 5 hex characters of the SHA-1 leave the
+  server. The check fails open (skipped) when HIBP cannot be reached within 1.5 s; length is
+  the primary control and never skips. Sign-in validates only that a password was typed.
+- **No account enumeration.** Sign-in failures share one message; sign-up for an existing
+  address gets the same "check your inbox" screen as a new one; magic link, reset and resend
+  answer identically for unknown addresses; email change to a taken address answers as if
+  sent. Supabase reports "email not confirmed" and "banned" only after the password matched,
+  so those two messages disclose nothing the caller has not proved.
+- **Quotas on every account action** (`src/lib/security/auth-limits.ts`), per attested
+  address and per account/address acted on, HMAC-hashed in the store: sign-in 30/15 min per
+  address and 10/15 min per account; sign-up 10/h per address; email-sending actions 10/15 min
+  per address and 3/15 min per account plus a 60 s resend cooldown; password/email/name
+  changes and deletion confirmations 10/h per account; invitations 30/h per inviter.
+  Degraded (no store) on local/CI only; production service mode requires the store.
+- **Turnstile** (`src/lib/security/turnstile.ts`) verifies server-side via siteverify on
+  sign-up, on sign-in once 3 failures per account or 10 per address are counted in 15 min,
+  on the contact form and on the free document generator. Active whenever either key exists;
+  skipped only under `WAIVE_TURNSTILE` with both keys absent. Once active it fails closed:
+  missing secret, missing/forged/replayed token, wrong action, or Cloudflare unreachable all
+  refuse. Where failures cannot be counted, sign-in requires the challenge every time.
+- **Re-authentication.** Changing the email address or password, and scheduling deletion,
+  require the current password. A password change or reset ends every other session.
+- **Email links.** `/auth/confirm` verifies token-hash links server-side (any device);
+  `/auth/callback` exchanges PKCE codes (same browser). Both are single use; a reused or
+  expired link lands on the screen that issues a new one. Post-sign-in redirects pass
+  `safeNextPath`: same-origin and only `/app`, `/admin`, `/invitations/accept`,
+  `/reset-password/new`. No email address is ever placed in a URL.
+- **Sign-out** is POST-only and refuses a cross-site Origin; "sign out everywhere" revokes
+  every refresh token (Supabase global scope).
+- **Organizations.** Role changes, removals, renames, invitation revoke/reissue run through
+  audited security-definer routines. Owners change roles and remove anyone; administrators
+  remove plain members only (policy `memberships_delete_scoped`); anyone may leave; the
+  last-owner trigger refuses orphaning a live organization. One live invitation per address;
+  reissue rotates the token (the old link dies); revoked, used or expired tokens are refused.
+- **Platform admin users.** Search is a POST whose query never enters a URL or the audit
+  record (count only); `admin_search_users` (service role only) needs 3+ characters and
+  returns at most 50 rows. Disable sign-in = Supabase ban plus `admin_revoke_sessions`;
+  admins cannot disable or delete their own account. Every view and action is audited.
+- **Purge.** `purge_due_accounts` and `/api/internal/purge-accounts` (bearer `CRON_SECRET`,
+  constant-time compare, closed without it) remove accounts past grace; see RUNBOOK.md.
+
 ## Public request quotas
 
 Unauthenticated endpoints that do real work (the free document generator) take a quota per

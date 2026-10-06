@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useRef } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
@@ -9,6 +9,7 @@ import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/tabl
 import { ConfirmButton } from '@/components/primitives/confirm';
 import { ActionResult as Result } from '@/components/primitives/action-result';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
+import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { currencyMinorUnits, lineTotal } from '@/lib/money';
 import { addItem, removeItem, updateShipment } from '../../../../shipment-actions';
 import type { ActionState } from '../../../../actions';
@@ -81,17 +82,47 @@ export function ShipmentEditor({
   useInvalidFocus(detailForm, detailState.fields);
   useInvalidFocus(itemForm, itemState.fields);
 
+  const rememberDetails = useOutcomeToast(detailState, () => 'Route and terms saved.');
+  const rememberLine = useOutcomeToast(itemState, (submitted) => {
+    const description = sent(submitted, 'description') ?? 'The line';
+    const amount = sent(submitted, 'quantity');
+    const unit = sent(submitted, 'unit') ?? '';
+    return amount
+      ? `“${description}” is on the shipment: ${amount} ${unit}.`.replace(' .', '.')
+      : `“${description}” is on the shipment.`;
+  });
+  const descriptionOf = new Map(items.map((item) => [item.id, item.description]));
+  const rememberRemoval = useOutcomeToast(removeState, (submitted) => {
+    const item = sent(submitted, 'item');
+    return `“${(item && descriptionOf.get(item)) ?? 'The line'}” is off the shipment.`;
+  });
+
+  // Entering lines is a run, not a single act: once one is on the shipment, the cursor
+  // goes back to the description so the next can be typed straight away.
+  const lastLine = useRef(itemState);
+  useEffect(() => {
+    if (itemState === lastLine.current) return;
+    lastLine.current = itemState;
+    if (itemState.notice) {
+      itemForm.current?.querySelector<HTMLInputElement>('input[name="description"]')?.focus();
+    }
+  }, [itemState]);
+
   return (
     <>
-      <Panel title="Shipment details">
+      <Panel title="Shipment details" id="terms">
         <form
           ref={detailForm}
           action={detailAction}
+          onSubmit={rememberDetails}
           style={{ display: 'grid', gap: 16 }}
           noValidate
         >
           <input type="hidden" name="org" value={org} />
           <input type="hidden" name="shipment" value={shipmentId} />
+          {/* The revision this form shows. A save against a newer one is refused rather
+              than overwriting someone else's change. */}
+          <input type="hidden" name="revision" value={String(shipment.revision ?? '')} />
           <Result state={detailState} />
           <div
             style={{
@@ -194,6 +225,24 @@ export function ShipmentEditor({
             </Field>
           </div>
           <Field
+            id="shipped_on"
+            label="Shipping date"
+            requirement="Optional"
+            hint="The date the goods leave, as stated on the delivery note."
+            error={detailState.fields?.shipped_on}
+          >
+            {({ id, describedBy, invalid }) => (
+              <Input
+                id={id}
+                name="shipped_on"
+                type="date"
+                invalid={invalid}
+                aria-describedby={describedBy}
+                defaultValue={String(shipment.shipped_on ?? '')}
+              />
+            )}
+          </Field>
+          <Field
             id="marks_and_numbers"
             label="Marks and numbers"
             error={detailState.fields?.marks_and_numbers}
@@ -215,7 +264,7 @@ export function ShipmentEditor({
         </form>
       </Panel>
 
-      <Panel title="Line items">
+      <Panel title="Line items" id="goods">
         <div style={{ display: 'grid', gap: 16 }}>
           {/* Adding and removing are separate actions; each reports its own outcome
               rather than one masking the other. A failed removal is reported inside
@@ -223,7 +272,7 @@ export function ShipmentEditor({
           <Result state={itemState} />
           <Result state={{ notice: removeState.notice }} />
           {items.length > 0 ? (
-            <DataTable caption="Goods on this shipment" density="compact">
+            <DataTable caption="Goods on this shipment" density="compact" stack>
               <thead>
                 <tr>
                   <th scope="col">Description</th>
@@ -245,19 +294,30 @@ export function ShipmentEditor({
               <tbody>
                 {items.map((item) => (
                   <tr key={item.id}>
-                    <td>{item.description}</td>
-                    <td className="data">{item.hs_code ?? <EmptyValue label="No HS code" />}</td>
-                    <NumericCell value={figure(Number(item.quantity), 3, 0)} unit={item.unit} />
-                    <NumericCell value={figure(Number(item.unit_price), 4)} />
+                    <td className="stack-title">{item.description}</td>
+                    <td className="data" data-label="HS code">
+                      {item.hs_code ?? <EmptyValue label="No HS code" />}
+                    </td>
                     <NumericCell
+                      label="Quantity"
+                      value={figure(Number(item.quantity), 3, 0)}
+                      unit={item.unit}
+                    />
+                    <NumericCell label="Unit price" value={figure(Number(item.unit_price), 4)} />
+                    <NumericCell
+                      label="Amount"
                       value={figure(
                         lineTotal(item.quantity, item.unit_price, moneyPlaces).toNumber(),
                         moneyPlaces,
                       )}
                       unit={currency}
                     />
-                    <td>
-                      <form id={`remove-item-${item.id}`} action={removeAction}>
+                    <td className="stack-actions">
+                      <form
+                        id={`remove-item-${item.id}`}
+                        action={removeAction}
+                        onSubmit={rememberRemoval}
+                      >
                         <input type="hidden" name="org" value={org} />
                         <input type="hidden" name="shipment" value={shipmentId} />
                         <input type="hidden" name="item" value={item.id} />
@@ -285,13 +345,14 @@ export function ShipmentEditor({
                     Total
                   </th>
                   <NumericCell value={figure(totals.value, moneyPlaces)} unit={currency} />
-                  <td />
+                  <td className="stack-empty" />
                 </tr>
               </tfoot>
             </DataTable>
           ) : (
             <p className="muted" style={{ marginBottom: 0 }}>
-              No lines yet. A document needs at least one.
+              No lines yet. A document needs at least one: pick a product from the catalog below, or
+              type a one-off line.
             </p>
           )}
 
@@ -318,6 +379,7 @@ export function ShipmentEditor({
           <form
             ref={itemForm}
             action={itemAction}
+            onSubmit={rememberLine}
             aria-label="Add a one-off line"
             style={{ display: 'grid', gap: 16 }}
             noValidate
@@ -432,10 +494,14 @@ export function ShipmentEditor({
                 )}
               </Field>
             </div>
-            <div>
+            <div className="form-submit-row">
               <Button type="submit" tone="secondary" pending={itemPending} pendingLabel="Adding…">
                 Add line
               </Button>
+              <p className="hint" style={{ margin: 0 }}>
+                Enter in any field adds the line; the cursor returns to the description for the next
+                one.
+              </p>
             </div>
           </form>
         </div>

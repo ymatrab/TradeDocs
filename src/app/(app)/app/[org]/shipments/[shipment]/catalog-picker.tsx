@@ -1,12 +1,13 @@
 'use client';
 
-import { useActionState, useMemo, useRef, useState } from 'react';
+import { useActionState, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { PackagePlus } from 'lucide-react';
 import { Button } from '@/components/primitives/button';
 import { Field, Input } from '@/components/primitives/form';
 import { ActionResult } from '@/components/primitives/action-result';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
+import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { decimal } from '@/lib/format';
 import { addFromCatalog } from '@/app/(app)/master-data-actions';
 import type { ActionState } from '@/app/(app)/actions';
@@ -46,9 +47,34 @@ export function CatalogPicker({
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(addFromCatalog, {});
   const [term, setTerm] = useState('');
-  const [chosen, setChosen] = useState<CatalogEntry | null>(null);
+  // A choice belongs to the result it was made under: once that product is on the
+  // shipment the choice lapses, so the next keystroke starts the next line rather than
+  // adding the same product twice.
+  const [choice, setChoice] = useState<{ entry: CatalogEntry; under: ActionState } | null>(null);
+  const chosen = choice && (choice.under === state || !state.notice) ? choice.entry : null;
+  const setChosen = (entry: CatalogEntry | null) =>
+    setChoice(entry ? { entry, under: state } : null);
   const form = useRef<HTMLFormElement>(null);
   useInvalidFocus(form, state.fields);
+
+  const byId = useMemo(() => new Map(catalog.map((entry) => [entry.id, entry])), [catalog]);
+  const remember = useOutcomeToast(state, (submitted) => {
+    const product = sent(submitted, 'product');
+    const entry = product ? byId.get(product) : undefined;
+    const amount = sent(submitted, 'quantity');
+    if (!entry) return 'The product is on the shipment.';
+    return amount
+      ? `“${entry.description}” is on the shipment: ${amount} ${entry.unit}.`
+      : `“${entry.description}” is on the shipment.`;
+  });
+
+  // After a product is added, the cursor goes back to the search for the next one.
+  const lastResult = useRef(state);
+  useEffect(() => {
+    if (state === lastResult.current) return;
+    lastResult.current = state;
+    if (state.notice) form.current?.querySelector<HTMLInputElement>('#catalog-filter')?.focus();
+  }, [state]);
 
   const matches = useMemo(() => {
     const needle = term.trim().toLowerCase();
@@ -78,6 +104,7 @@ export function CatalogPicker({
     <form
       ref={form}
       action={action}
+      onSubmit={remember}
       aria-label="Add from the catalog"
       style={{ display: 'grid', gap: 16 }}
       noValidate
@@ -153,7 +180,11 @@ export function CatalogPicker({
                     tone="quiet"
                     compact
                     block
-                    onClick={() => setChosen(entry)}
+                    onClick={() => {
+                      setChosen(entry);
+                      // Choosing is half the line; the quantity is the other half.
+                      form.current?.querySelector<HTMLInputElement>('#catalog-quantity')?.focus();
+                    }}
                     style={{ justifyContent: 'space-between', textAlign: 'left' }}
                   >
                     <span>{label(entry)}</span>

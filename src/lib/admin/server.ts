@@ -52,7 +52,17 @@ export type AdminEvent = {
     | 'view_organization'
     | 'view_contact_messages'
     | 'mark_contact_message_handled'
-    | 'view_audit_log';
+    | 'view_audit_log'
+    | 'view_users'
+    | 'search_users'
+    | 'view_user'
+    | 'disable_sign_in'
+    | 'enable_sign_in'
+    | 'resend_confirmation'
+    | 'send_password_reset'
+    | 'cancel_account_deletion'
+    | 'force_account_deletion'
+    | 'run_account_purge';
   targetType: string;
   targetId?: string | null;
   orgId?: string | null;

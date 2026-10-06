@@ -9,7 +9,14 @@ import { showsSummary } from '@/lib/form-errors';
 import { createShipment } from '../../../shipment-actions';
 import type { ActionState } from '../../../actions';
 
-export function CreateShipmentForm({ org }: { org: string }) {
+export function CreateShipmentForm({
+  org,
+  defaultCurrency = 'EUR',
+}: {
+  org: string;
+  /** The organization's default from its document settings. */
+  defaultCurrency?: string;
+}) {
   const [state, action, pending] = useActionState<ActionState, FormData>(createShipment, {});
   const form = useRef<HTMLFormElement>(null);
   useInvalidFocus(form, state.fields);
@@ -56,7 +63,7 @@ export function CreateShipmentForm({ org }: { org: string }) {
             <Input
               id={id}
               name="currency"
-              defaultValue="EUR"
+              defaultValue={defaultCurrency}
               maxLength={3}
               invalid={invalid}
               aria-describedby={describedBy}

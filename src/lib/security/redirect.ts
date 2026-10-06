@@ -30,3 +30,19 @@ export function safeReturnPath(value: unknown, fallback = fallbackPath): string 
     return fallback;
   }
 }
+
+/**
+ * Where a sign-in may send someone afterwards. Same-origin is necessary but not enough: only
+ * pages that exist for a signed-in person qualify, so a crafted `next` cannot bounce a fresh
+ * session through an arbitrary route (an API endpoint, the sign-out handler).
+ */
+const SIGNED_IN_DESTINATIONS = ['/app', '/admin', '/invitations/accept', '/reset-password/new'];
+
+export function safeNextPath(value: unknown, fallback = '/app'): string {
+  const path = safeReturnPath(value, fallback);
+  const pathname = path.split(/[?#]/, 1)[0] ?? '';
+  const allowed = SIGNED_IN_DESTINATIONS.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  );
+  return allowed ? path : fallback;
+}

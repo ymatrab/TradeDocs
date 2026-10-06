@@ -26,6 +26,12 @@ function planLine(plan: Plan): string {
     const term = INTERVAL_LABELS[plan.offer.interval];
     return `- ${plan.name}: ${plan.offer.price} ${term}. ${plan.summary}`;
   }
+  if (plan.offer.state === 'listed' && plan.offer.prices.length > 0) {
+    const prices = plan.offer.prices
+      .map((price) => `${price.month} per month or ${price.year} per year`)
+      .join(', or ');
+    return `- ${plan.name}: ${prices}; checkout is not open yet. ${plan.summary}`;
+  }
   return `- ${plan.name}: not available yet; no price is set.`;
 }
 

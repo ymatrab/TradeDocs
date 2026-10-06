@@ -59,17 +59,34 @@ export const IMPORT_COLUMNS = [
 ] as const;
 
 export type ImportColumn = (typeof IMPORT_COLUMNS)[number];
-export type ImportRow = Partial<Record<ImportColumn, string>>;
+export type ImportRow = Partial<Record<ImportColumn, string>> & {
+  /** The line in the user's file where this record starts; line 1 is the heading. */
+  line?: number;
+};
 
 /**
  * Splits CSV text into rows of fields, honouring quoted fields, escaped quotes and
  * newlines inside quotes. Accepts CRLF, LF and a leading BOM.
  */
 export function parseDelimited(text: string, delimiter = ','): string[][] {
-  const rows: string[][] = [];
+  return parseDelimitedLines(text, delimiter).map((record) => record.cells);
+}
+
+/** One record and the physical line of the file it starts on (1-based). */
+export type DelimitedRecord = { cells: string[]; line: number };
+
+/**
+ * As parseDelimited, keeping the line each record starts on, so a problem can be reported
+ * against the line number a spreadsheet or text editor shows. A quoted field may span
+ * lines; the record keeps the line it started on.
+ */
+export function parseDelimitedLines(text: string, delimiter = ','): DelimitedRecord[] {
+  const rows: DelimitedRecord[] = [];
   let row: string[] = [];
   let field = '';
   let quoted = false;
+  let line = 1;
+  let rowStart = 1;
   // Excel writes a BOM; left in place it becomes part of the first heading and that
   // heading then matches nothing.
   const source = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
@@ -86,6 +103,8 @@ export function parseDelimited(text: string, delimiter = ','): string[][] {
           quoted = false;
         }
       } else {
+        // A CRLF inside quotes is one line break, like one outside them.
+        if (char === '\n' || (char === '\r' && source[index + 1] !== '\n')) line += 1;
         field += char;
       }
       continue;
@@ -100,9 +119,11 @@ export function parseDelimited(text: string, delimiter = ','): string[][] {
       // A CRLF is one break, not two.
       if (char === '\r' && source[index + 1] === '\n') index += 1;
       row.push(field);
-      rows.push(row);
+      rows.push({ cells: row, line: rowStart });
       row = [];
       field = '';
+      line += 1;
+      rowStart = line;
     } else {
       field += char;
     }
@@ -110,11 +131,11 @@ export function parseDelimited(text: string, delimiter = ','): string[][] {
 
   if (field !== '' || row.length > 0) {
     row.push(field);
-    rows.push(row);
+    rows.push({ cells: row, line: rowStart });
   }
 
   // A trailing newline is punctuation, not an empty product.
-  return rows.filter((entry) => entry.some((value) => value.trim() !== ''));
+  return rows.filter((entry) => entry.cells.some((value) => value.trim() !== ''));
 }
 
 /**
@@ -157,11 +178,11 @@ export type ParsedImport = {
  * dropped silently, because a column quietly ignored is data the user believes was imported.
  */
 export function parseCatalog(text: string): ParsedImport {
-  const table = parseDelimited(text, detectDelimiter(text));
-  const [headingRow, ...body] = table;
-  if (!headingRow) return { rows: [], ignored: [], missingDescription: true };
+  const table = parseDelimitedLines(text, detectDelimiter(text));
+  const [heading, ...body] = table;
+  if (!heading) return { rows: [], ignored: [], missingDescription: true };
 
-  const headings = headingRow.map(normalizeHeading);
+  const headings = heading.cells.map(normalizeHeading);
   const mapped = headings.map((heading) => SYNONYMS[heading]);
   const ignored = headings.filter((heading, index) => heading !== '' && !mapped[index]);
 
@@ -169,8 +190,8 @@ export function parseCatalog(text: string): ParsedImport {
     return { rows: [], ignored, missingDescription: true };
   }
 
-  const rows = body.map((cells) => {
-    const row: ImportRow = {};
+  const rows = body.map(({ cells, line }) => {
+    const row: ImportRow = { line };
     mapped.forEach((column, index) => {
       if (!column) return;
       const value = (cells[index] ?? '').trim();
@@ -179,8 +200,11 @@ export function parseCatalog(text: string): ParsedImport {
     return row;
   });
 
+  // A row with values but no description is kept, so the import reports it by line rather
+  // than dropping a product the user believes they imported. Only rows whose mapped
+  // columns are all empty (data in ignored columns only) are left out.
   return {
-    rows: rows.filter((row) => (row.description ?? '') !== ''),
+    rows: rows.filter((row) => IMPORT_COLUMNS.some((column) => (row[column] ?? '') !== '')),
     ignored,
     missingDescription: false,
   };

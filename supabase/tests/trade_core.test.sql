@@ -108,7 +108,10 @@ select is(
   'a repeated allocation never reuses a number'
 );
 
--- A generated document is evidence and cannot be rewritten.
+-- A generated document is evidence and cannot be rewritten. No API role may update a
+-- document directly (20261006000300), so the trigger is proved as the table owner: it holds
+-- even for a caller that bypasses the grants.
+reset role;
 select throws_ok(
   $$update public.documents set snapshot = '{"tampered":true}'::jsonb
     where kind = 'packing_list'$$,
@@ -116,6 +119,7 @@ select throws_ok(
   null,
   'a generated document cannot be rewritten'
 );
+set local role authenticated;
 
 -- Changing the shipment must not change documents already sent.
 select is(

@@ -20,18 +20,21 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
     .maybeSingle();
   if (!organization) notFound();
 
-  const { data: shipments } = await client
-    .from('shipments')
-    .select('id, reference, status, currency, revision, created_at')
-    .eq('org_id', org)
-    .order('created_at', { ascending: false });
+  const [{ data: shipments }, { data: settings }] = await Promise.all([
+    client
+      .from('shipments')
+      .select('id, reference, status, currency, revision, created_at')
+      .eq('org_id', org)
+      .order('created_at', { ascending: false }),
+    client.from('organization_settings').select('default_currency').eq('org_id', org).maybeSingle(),
+  ]);
 
   return (
     <AppShell title="Shipments" current="Shipments" orgId={org}>
       <div className="app-page">
         <Panel title="Shipments">
           {shipments && shipments.length > 0 ? (
-            <DataTable caption="Shipments in this organization">
+            <DataTable caption="Shipments in this organization" stack>
               <thead>
                 <tr>
                   <th scope="col">Reference</th>
@@ -45,7 +48,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
               <tbody>
                 {shipments.map((shipment) => (
                   <tr key={shipment.id}>
-                    <td>
+                    <td className="stack-title">
                       <Link
                         className="text-link data"
                         href={`/app/${org}/shipments/${shipment.id}`}
@@ -53,11 +56,13 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
                         {shipment.reference}
                       </Link>
                     </td>
-                    <td>
+                    <td data-label="Status">
                       <ShipmentStatus state={shipment.status} />
                     </td>
-                    <td className="data">{shipment.currency}</td>
-                    <NumericCell value={String(shipment.revision)} />
+                    <td className="data" data-label="Currency">
+                      {shipment.currency}
+                    </td>
+                    <NumericCell label="Revision" value={String(shipment.revision)} />
                   </tr>
                 ))}
               </tbody>
@@ -75,7 +80,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
           )}
         </Panel>
         <Panel title="New shipment" id="new-shipment">
-          <CreateShipmentForm org={org} />
+          <CreateShipmentForm org={org} defaultCurrency={settings?.default_currency ?? 'EUR'} />
         </Panel>
       </div>
     </AppShell>

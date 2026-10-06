@@ -1,0 +1,5565 @@
+{
+  "id": "10060215-2048-0399-0000-b9dfa9b21d67",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "total_count": 2256,
+  "items": [
+    {
+      "keyword": "export control reform",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:08:52 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 11.49,
+        "search_volume": 18100,
+        "low_top_of_page_bid": 5.6,
+        "high_top_of_page_bid": 18.68,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 14800,
+          "2026-04": 22200,
+          "2026-03": 22200,
+          "2026-02": 22200,
+          "2026-01": 18100,
+          "2025-12": 18100,
+          "2025-11": 18100,
+          "2025-10": 22200,
+          "2025-09": 18100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ecr",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 22,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28.4,
+        "dofollow": 22.9,
+        "referring_pages": 27.3,
+        "referring_domains": 10.2,
+        "referring_main_domains": 9.8,
+        "rank": 38.4,
+        "main_domain_rank": 587.9,
+        "last_updated_time": "2024-10-12 14:13:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:04:31 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photo from iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:10:43 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 0.86,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.59,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368,
+          12701
+        ],
+        "monthly_searches": {
+          "2026-08": 18100,
+          "2026-07": 14800,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 14800,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 18100,
+          "2025-11": 14800,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export photos from iphone",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 48.4,
+        "dofollow": 16.9,
+        "referring_pages": 40.1,
+        "referring_domains": 12.9,
+        "referring_main_domains": 12.3,
+        "rank": 110.9,
+        "main_domain_rank": 757.9,
+        "last_updated_time": "2025-07-23 06:05:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:29:02 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone photos",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 16:55:45 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 0.86,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.59,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368,
+          12701
+        ],
+        "monthly_searches": {
+          "2026-08": 18100,
+          "2026-07": 14800,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 14800,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 18100,
+          "2025-11": 14800,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export photos from iphone",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 27.2,
+        "dofollow": 12.2,
+        "referring_pages": 21.1,
+        "referring_domains": 13.6,
+        "referring_main_domains": 12.6,
+        "rank": 95.4,
+        "main_domain_rank": 681.3,
+        "last_updated_time": "2026-06-18 10:42:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:29:02 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 15:02:34 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 0.86,
+        "search_volume": 14800,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.59,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 18100,
+          "2026-07": 14800,
+          "2026-06": 14800,
+          "2026-05": 14800,
+          "2026-04": 14800,
+          "2026-03": 14800,
+          "2026-02": 14800,
+          "2026-01": 18100,
+          "2025-12": 18100,
+          "2025-11": 14800,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28.5,
+        "dofollow": 12.6,
+        "referring_pages": 20.9,
+        "referring_domains": 13.7,
+        "referring_main_domains": 12.7,
+        "rank": 96.4,
+        "main_domain_rank": 709.1,
+        "last_updated_time": "2026-08-03 10:01:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:14:11 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to pc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:51:18 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 0.84,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.12,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 26.4,
+        "dofollow": 11.4,
+        "referring_pages": 18.8,
+        "referring_domains": 12.1,
+        "referring_main_domains": 11,
+        "rank": 86.5,
+        "main_domain_rank": 687.7,
+        "last_updated_time": "2026-07-30 09:59:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:11:14 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks from chrome browser",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:50:50 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 121.2,
+        "dofollow": 65.8,
+        "referring_pages": 109.9,
+        "referring_domains": 35.6,
+        "referring_main_domains": 31.5,
+        "rank": 80,
+        "main_domain_rank": 662,
+        "last_updated_time": "2026-05-15 07:43:36 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:36:48 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export chrome bookmarks",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:09:41 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export bookmarks from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 80.3,
+        "dofollow": 54.1,
+        "referring_pages": 68.2,
+        "referring_domains": 34.8,
+        "referring_main_domains": 30,
+        "rank": 67.9,
+        "main_domain_rank": 682.4,
+        "last_updated_time": "2026-07-30 09:59:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:39:40 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks in chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:44:03 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": 1380
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export bookmarks from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 100.9,
+        "dofollow": 64.5,
+        "referring_pages": 87,
+        "referring_domains": 35.3,
+        "referring_main_domains": 30.6,
+        "rank": 75.4,
+        "main_domain_rank": 675,
+        "last_updated_time": "2026-09-06 04:22:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:30:13 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photo from iphone to pc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:08:57 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 0.84,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.12,
+        "categories": [
+          10019,
+          10167,
+          10872
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export photos from iphone to pc",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-03 00:32:23 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 21:36:34 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export bookmarks from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 124.2,
+        "dofollow": 68.2,
+        "referring_pages": 113.2,
+        "referring_domains": 36.4,
+        "referring_main_domains": 32.3,
+        "rank": 98.4,
+        "main_domain_rank": 688.2,
+        "last_updated_time": "2026-05-15 07:32:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 07:12:58 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks on chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 15:19:58 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export bookmarks from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 124.7,
+        "dofollow": 68.4,
+        "referring_pages": 113.6,
+        "referring_domains": 36.9,
+        "referring_main_domains": 32.8,
+        "rank": 90.3,
+        "main_domain_rank": 694,
+        "last_updated_time": "2026-05-15 07:43:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:30:54 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone photos to pc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 17:07:28 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 0.84,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.12,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export photos from iphone to pc",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 160.3,
+        "dofollow": 75.2,
+        "referring_pages": 143.9,
+        "referring_domains": 41.6,
+        "referring_main_domains": 39.2,
+        "rank": 151.9,
+        "main_domain_rank": 681.3,
+        "last_updated_time": "2026-01-11 19:23:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:37:25 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export chrome favorites",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 11:20:41 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 124,
+        "dofollow": 68,
+        "referring_pages": 113,
+        "referring_domains": 36.3,
+        "referring_main_domains": 32.2,
+        "rank": 87.1,
+        "main_domain_rank": 676.1,
+        "last_updated_time": "2026-05-15 07:36:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:22:59 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone photos to computer",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:38:21 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 0.84,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.12,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.4,
+        "dofollow": 15.3,
+        "referring_pages": 25.1,
+        "referring_domains": 16.2,
+        "referring_main_domains": 15,
+        "rank": 115.8,
+        "main_domain_rank": 667.1,
+        "last_updated_time": "2026-09-02 22:58:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:53:14 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to computer",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 19:22:34 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 0.84,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 1.12,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 12100,
+          "2026-07": 9900,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 12100,
+          "2026-02": 9900,
+          "2026-01": 14800,
+          "2025-12": 14800,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export iphone photos to computer",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 99.1,
+        "dofollow": 37.9,
+        "referring_pages": 86.3,
+        "referring_domains": 26.5,
+        "referring_main_domains": 25.3,
+        "rank": 118.6,
+        "main_domain_rank": 746.2,
+        "last_updated_time": "2026-03-02 17:41:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:41:21 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks from chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:23:16 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 100.5,
+        "dofollow": 64.3,
+        "referring_pages": 86.7,
+        "referring_domains": 35,
+        "referring_main_domains": 30.4,
+        "rank": 73.8,
+        "main_domain_rank": 689.2,
+        "last_updated_time": "2026-09-02 22:56:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:10:58 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export the bookmarks from chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:04:52 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.07,
+        "search_volume": 12100,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 0.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 14800,
+          "2026-07": 12100,
+          "2026-06": 12100,
+          "2026-05": 12100,
+          "2026-04": 12100,
+          "2026-03": 14800,
+          "2026-02": 12100,
+          "2026-01": 12100,
+          "2025-12": 12100,
+          "2025-11": 12100,
+          "2025-10": 14800,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export bookmarks from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 120.7,
+        "dofollow": 65.3,
+        "referring_pages": 109.7,
+        "referring_domains": 35,
+        "referring_main_domains": 30.9,
+        "rank": 69.6,
+        "main_domain_rank": 612.7,
+        "last_updated_time": "2026-05-15 07:33:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:10:58 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone on mac",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 23:15:22 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.51,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          13112
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 8100,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 8100,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 8100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export photos from iphone to mac",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 18.2,
+        "dofollow": 6,
+        "referring_pages": 12.2,
+        "referring_domains": 5.8,
+        "referring_main_domains": 5.5,
+        "rank": 45.3,
+        "main_domain_rank": 686.6,
+        "last_updated_time": "2026-06-18 18:13:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:25:24 +00:00"
+      }
+    },
+    {
+      "keyword": "pdf export to word free",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 22:12:52 +00:00",
+        "competition": 0.69,
+        "competition_level": "HIGH",
+        "cpc": 3.08,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.64,
+        "high_top_of_page_bid": 2.79,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 8100,
+          "2026-04": 9900,
+          "2026-03": 9900,
+          "2026-02": 9900,
+          "2026-01": 9900,
+          "2025-12": 8100,
+          "2025-11": 9900,
+          "2025-10": 9900,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export pdf word free",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 46,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4825.5,
+        "dofollow": 2244.3,
+        "referring_pages": 4487.1,
+        "referring_domains": 519,
+        "referring_main_domains": 454.3,
+        "rank": 263,
+        "main_domain_rank": 524.6,
+        "last_updated_time": "2025-03-24 09:26:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:42:46 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pictures from iphone to mac",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:16:36 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.51,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          13112
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 8100,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 8100,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 8100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to transfer photos from iphone to mac",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 36.3,
+        "dofollow": 13.6,
+        "referring_pages": 35.5,
+        "referring_domains": 11.9,
+        "referring_main_domains": 11.1,
+        "rank": 73.3,
+        "main_domain_rank": 698.5,
+        "last_updated_time": "2024-10-12 14:57:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:18:13 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to mac",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 02:24:36 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.51,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          13112
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 8100,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 8100,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 8100,
+          "2025-09": 9900
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28.4,
+        "dofollow": 9.3,
+        "referring_pages": 22.4,
+        "referring_domains": 9.2,
+        "referring_main_domains": 8.6,
+        "rank": 76.3,
+        "main_domain_rank": 715.8,
+        "last_updated_time": "2026-07-30 15:14:39 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:29:18 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf to excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 17:26:29 +00:00",
+        "competition": 0.41,
+        "competition_level": "MEDIUM",
+        "cpc": 4.52,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 0.55,
+        "high_top_of_page_bid": 3.51,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 6600,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 8100,
+          "2025-12": 6600,
+          "2025-11": 6600,
+          "2025-10": 8100,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 54,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 530,
+        "dofollow": 417.4,
+        "referring_pages": 512.7,
+        "referring_domains": 108.3,
+        "referring_main_domains": 98.3,
+        "rank": 130.9,
+        "main_domain_rank": 740.2,
+        "last_updated_time": "2024-09-15 02:38:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:22:59 +00:00"
+      }
+    },
+    {
+      "keyword": "export from android to iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:56:32 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 2.47,
+        "search_volume": 6600,
+        "low_top_of_page_bid": 0.69,
+        "high_top_of_page_bid": 1.81,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 6600,
+          "2026-05": 5400,
+          "2026-04": 5400,
+          "2026-03": 6600,
+          "2026-02": 5400,
+          "2026-01": 6600,
+          "2025-12": 9900,
+          "2025-11": 6600,
+          "2025-10": 8100,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-05-02 15:33:16 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts from iphone to iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 10:41:53 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 2.03,
+        "search_volume": 6600,
+        "low_top_of_page_bid": 0.03,
+        "high_top_of_page_bid": 1.69,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13054,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 6600,
+          "2026-07": 6600,
+          "2026-06": 5400,
+          "2026-05": 6600,
+          "2026-04": 6600,
+          "2026-03": 6600,
+          "2026-02": 6600,
+          "2026-01": 6600,
+          "2025-12": 8100,
+          "2025-11": 6600,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 45.9,
+        "dofollow": 22.6,
+        "referring_pages": 36.9,
+        "referring_domains": 20.4,
+        "referring_main_domains": 18.3,
+        "rank": 70.7,
+        "main_domain_rank": 663.8,
+        "last_updated_time": "2026-03-12 21:29:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:34:16 +00:00"
+      }
+    },
+    {
+      "keyword": "pearl export tom",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 14:13:25 +00:00",
+        "competition": 0.58,
+        "competition_level": "MEDIUM",
+        "cpc": 0.44,
+        "search_volume": 5400,
+        "low_top_of_page_bid": 0.31,
+        "high_top_of_page_bid": 0.81,
+        "categories": [
+          10021,
+          10171,
+          10897
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 50,
+          "2026-06": 49500,
+          "2026-05": 18100,
+          "2026-04": 30,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 70,
+          "2025-10": 40,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": 80,
+          "quarterly": -100,
+          "yearly": 350
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.9,
+        "dofollow": 1.9,
+        "referring_pages": 2,
+        "referring_domains": 0.8,
+        "referring_main_domains": 0.8,
+        "rank": 10.6,
+        "main_domain_rank": 619.7,
+        "last_updated_time": "2026-09-03 12:40:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 19:21:31 +00:00"
+      }
+    },
+    {
+      "keyword": "iphone photos export to pc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 11:15:14 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "cpc": 1.22,
+        "search_volume": 5400,
+        "low_top_of_page_bid": 0.02,
+        "high_top_of_page_bid": 1.66,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 5400,
+          "2026-06": 4400,
+          "2026-05": 5400,
+          "2026-04": 4400,
+          "2026-03": 5400,
+          "2026-02": 4400,
+          "2026-01": 6600,
+          "2025-12": 6600,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "quarterly": 23,
+          "yearly": 53900
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export photo iphone to pc",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 285.8,
+        "dofollow": 156.3,
+        "referring_pages": 274.3,
+        "referring_domains": 51.5,
+        "referring_main_domains": 30.6,
+        "rank": 123.1,
+        "main_domain_rank": 767.8,
+        "last_updated_time": "2025-01-04 00:50:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:10:36 +00:00"
+      }
+    },
+    {
+      "keyword": "ig follower export tool",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:50:17 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.15,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.34,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 2900,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 86.4,
+        "dofollow": 60.5,
+        "referring_pages": 62.4,
+        "referring_domains": 4,
+        "referring_main_domains": 3.4,
+        "rank": 94.7,
+        "main_domain_rank": 480.9,
+        "last_updated_time": "2026-07-30 18:32:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 00:24:16 +00:00"
+      }
+    },
+    {
+      "keyword": "instagram follower export tool",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 07:42:23 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.15,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.34,
+        "categories": [
+          10108,
+          10584
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 2900,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 85.8,
+        "dofollow": 60.3,
+        "referring_pages": 62.2,
+        "referring_domains": 3.8,
+        "referring_main_domains": 3.2,
+        "rank": 89.4,
+        "main_domain_rank": 487.6,
+        "last_updated_time": "2026-07-30 18:33:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 23:45:42 +00:00"
+      }
+    },
+    {
+      "keyword": "instagram following export tool",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 12:31:40 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.15,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.34,
+        "categories": [
+          10108,
+          10584
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 2900,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "instagram follower export tool",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 87,
+        "dofollow": 12.5,
+        "referring_pages": 79.5,
+        "referring_domains": 4.6,
+        "referring_main_domains": 4.6,
+        "rank": 76.2,
+        "main_domain_rank": 516.5,
+        "last_updated_time": "2024-11-16 17:09:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-28 01:37:11 +00:00"
+      }
+    },
+    {
+      "keyword": "ig following export tool",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 18:25:42 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.15,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.34,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 2900,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ig follower export tool",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 129.8,
+        "dofollow": 43.3,
+        "referring_pages": 118.2,
+        "referring_domains": 15,
+        "referring_main_domains": 14.6,
+        "rank": 154.8,
+        "main_domain_rank": 381.1,
+        "last_updated_time": "2026-03-12 21:23:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 16:46:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone video to pc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 18:21:48 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 3.9,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.4,
+        "high_top_of_page_bid": 3.53,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368,
+          12705
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 4400,
+          "2026-04": 4400,
+          "2026-03": 4400,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 100,
+        "dofollow": 36.3,
+        "referring_pages": 88.7,
+        "referring_domains": 28,
+        "referring_main_domains": 27,
+        "rank": 96.9,
+        "main_domain_rank": 749.9,
+        "last_updated_time": "2026-03-13 08:51:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:36:18 +00:00"
+      }
+    },
+    {
+      "keyword": "ig follow export tool",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:54:55 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.15,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.34,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 2900,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 8100
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 15:12:54 +00:00"
+      }
+    },
+    {
+      "keyword": "export control classification",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:06:07 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 5.04,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 2.65,
+        "high_top_of_page_bid": 64.25,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.5,
+        "dofollow": 7.5,
+        "referring_pages": 12.8,
+        "referring_domains": 6.4,
+        "referring_main_domains": 6.1,
+        "rank": 42.7,
+        "main_domain_rank": 545.5,
+        "last_updated_time": "2025-09-05 14:28:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 13:58:34 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export and import bookmarks in chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:00:46 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 3600,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to import and export bookmarks in chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 278.2,
+        "dofollow": 241.6,
+        "referring_pages": 264.7,
+        "referring_domains": 39.2,
+        "referring_main_domains": 32.8,
+        "rank": 82,
+        "main_domain_rank": 696.6,
+        "last_updated_time": "2026-07-31 05:05:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:37:09 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pages from pdf",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:16:51 +00:00",
+        "competition": 0.23,
+        "competition_level": "LOW",
+        "cpc": 2.16,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.45,
+        "high_top_of_page_bid": 1.78,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 3600,
+          "2026-03": 4400,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 107.6,
+        "dofollow": 83,
+        "referring_pages": 99.6,
+        "referring_domains": 35.8,
+        "referring_main_domains": 32.7,
+        "rank": 109.8,
+        "main_domain_rank": 686.2,
+        "last_updated_time": "2024-10-12 17:29:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:35:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts from android to iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 15:35:49 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 1.49,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.42,
+        "high_top_of_page_bid": 1.46,
+        "categories": [
+          10007,
+          10878,
+          13378,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 5400,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 3600
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export iphone contacts to android",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 50,
+        "dofollow": 35.5,
+        "referring_pages": 44.5,
+        "referring_domains": 20,
+        "referring_main_domains": 17.2,
+        "rank": 96.3,
+        "main_domain_rank": 623.7,
+        "last_updated_time": "2026-03-13 08:51:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 02:53:55 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts to iphone from android",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 22:04:24 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 1.49,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 0.42,
+        "high_top_of_page_bid": 1.46,
+        "categories": [
+          10007,
+          10878,
+          13378,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 5400,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 3600
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export iphone contacts to android",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2,
+        "dofollow": 1.8,
+        "referring_pages": 2,
+        "referring_domains": 1.4,
+        "referring_main_domains": 1.4,
+        "rank": 36,
+        "main_domain_rank": 594.4,
+        "last_updated_time": "2026-09-03 23:31:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:53:14 +00:00"
+      }
+    },
+    {
+      "keyword": "export from spotify to apple music",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 09:50:30 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 3.23,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 1.36,
+        "high_top_of_page_bid": 2.93,
+        "categories": [
+          10013,
+          10109,
+          10591
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 2400,
+          "2026-02": 2900,
+          "2026-01": 3600,
+          "2025-12": 3600,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "yearly": -76
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 351.9,
+        "dofollow": 196.3,
+        "referring_pages": 225.7,
+        "referring_domains": 75.4,
+        "referring_main_domains": 66.9,
+        "rank": 140.4,
+        "main_domain_rank": 767.2,
+        "last_updated_time": "2026-03-29 18:51:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 15:05:18 +00:00"
+      }
+    },
+    {
+      "keyword": "pdf export to excel free",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:25:58 +00:00",
+        "competition": 0.54,
+        "competition_level": "MEDIUM",
+        "cpc": 2.93,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.34,
+        "high_top_of_page_bid": 2.99,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export pdf to excel for free",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 50,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1110.9,
+        "dofollow": 819.3,
+        "referring_pages": 1053.8,
+        "referring_domains": 209.2,
+        "referring_main_domains": 188.1,
+        "rank": 244.6,
+        "main_domain_rank": 462.9,
+        "last_updated_time": "2024-12-15 03:36:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:38:29 +00:00"
+      }
+    },
+    {
+      "keyword": "export from usa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 17:40:36 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 12.29,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 3.01,
+        "high_top_of_page_bid": 18.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usa exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1052.7,
+        "dofollow": 997,
+        "referring_pages": 1023.9,
+        "referring_domains": 139.3,
+        "referring_main_domains": 125.9,
+        "rank": 175,
+        "main_domain_rank": 621.7,
+        "last_updated_time": "2026-03-13 09:44:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:37:31 +00:00"
+      }
+    },
+    {
+      "keyword": "export from united states",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:50:03 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 12.29,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 3.01,
+        "high_top_of_page_bid": 18.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "united states exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2843.4,
+        "dofollow": 2656.7,
+        "referring_pages": 2736.8,
+        "referring_domains": 359.1,
+        "referring_main_domains": 334.9,
+        "rank": 246,
+        "main_domain_rank": 526.7,
+        "last_updated_time": "2026-05-17 09:53:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 18:04:06 +00:00"
+      }
+    },
+    {
+      "keyword": "export from the us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 18:32:52 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 12.29,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 3.01,
+        "high_top_of_page_bid": 18.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3087.2,
+        "dofollow": 2872.3,
+        "referring_pages": 2961.6,
+        "referring_domains": 404.6,
+        "referring_main_domains": 375.4,
+        "rank": 249.9,
+        "main_domain_rank": 524,
+        "last_updated_time": "2026-03-13 09:44:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:39:36 +00:00"
+      }
+    },
+    {
+      "keyword": "export from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:43:38 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 12.29,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 3.01,
+        "high_top_of_page_bid": 18.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7217.1,
+        "dofollow": 6341.5,
+        "referring_pages": 6951.8,
+        "referring_domains": 690.3,
+        "referring_main_domains": 605.2,
+        "rank": 241.2,
+        "main_domain_rank": 594.5,
+        "last_updated_time": "2024-10-04 18:10:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 16:56:39 +00:00"
+      }
+    },
+    {
+      "keyword": "free pdf export to excel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 20:04:00 +00:00",
+        "competition": 0.54,
+        "competition_level": "MEDIUM",
+        "cpc": 2.93,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.34,
+        "high_top_of_page_bid": 2.99,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export pdf to excel for free",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 50,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 833.3,
+        "dofollow": 492.5,
+        "referring_pages": 788.3,
+        "referring_domains": 349.5,
+        "referring_main_domains": 307.3,
+        "rank": 248.2,
+        "main_domain_rank": 440,
+        "last_updated_time": "2026-03-13 09:31:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 07:18:12 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to laptop",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 23:34:46 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 1.4,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 2.04,
+        "categories": [
+          10019,
+          10168,
+          12201
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2400,
+          "2026-01": 2900,
+          "2025-12": 2900,
+          "2025-11": 2900,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 102.4,
+        "dofollow": 40.1,
+        "referring_pages": 91.1,
+        "referring_domains": 29.8,
+        "referring_main_domains": 28.5,
+        "rank": 141.3,
+        "main_domain_rank": 766,
+        "last_updated_time": "2026-03-14 01:31:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:15:26 +00:00"
+      }
+    },
+    {
+      "keyword": "export from america",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:54:41 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 12.29,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 3.01,
+        "high_top_of_page_bid": 18.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 2900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "america exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 35,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11447.1,
+        "dofollow": 11169.2,
+        "referring_pages": 11336.4,
+        "referring_domains": 499.2,
+        "referring_main_domains": 454.4,
+        "rank": 214.4,
+        "main_domain_rank": 492.8,
+        "last_updated_time": "2026-06-22 10:10:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:45:32 +00:00"
+      }
+    },
+    {
+      "keyword": "export control",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:23:32 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 18.77,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 3.82,
+        "high_top_of_page_bid": 21.76,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 2900,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 2400,
+          "2025-10": 5400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "quarterly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 161.2,
+        "dofollow": 140.5,
+        "referring_pages": 154.8,
+        "referring_domains": 30.4,
+        "referring_main_domains": 27.2,
+        "rank": 110.3,
+        "main_domain_rank": 510.5,
+        "last_updated_time": "2026-06-30 10:37:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:53:20 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to flash drive",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:50:09 +00:00",
+        "competition": 0.31,
+        "competition_level": "LOW",
+        "cpc": 0.91,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.23,
+        "high_top_of_page_bid": 1.45,
+        "categories": [
+          10019,
+          10168,
+          10883,
+          12194,
+          13082
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 1900
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to transfer photos from iphone to flash drive",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 9,
+        "detected_language": "en",
+        "words_count": 9
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.6,
+        "dofollow": 0.8,
+        "referring_pages": 1.1,
+        "referring_domains": 1.1,
+        "referring_main_domains": 1.1,
+        "rank": 10.2,
+        "main_domain_rank": 583.4,
+        "last_updated_time": "2024-10-05 02:49:36 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:51:49 +00:00"
+      }
+    },
+    {
+      "keyword": "eccn export control classification number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 18:55:47 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 11.51,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.56,
+        "high_top_of_page_bid": 28.69,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.9,
+        "dofollow": 7.5,
+        "referring_pages": 13.6,
+        "referring_domains": 6.1,
+        "referring_main_domains": 5.4,
+        "rank": 43.5,
+        "main_domain_rank": 471.9,
+        "last_updated_time": "2026-03-14 02:10:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:50:46 +00:00"
+      }
+    },
+    {
+      "keyword": "firefox how to export bookmarks",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 00:16:57 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 0.08,
+        "search_volume": 2400,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 2900,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 134.3,
+        "dofollow": 90.7,
+        "referring_pages": 125.8,
+        "referring_domains": 27.7,
+        "referring_main_domains": 22.7,
+        "rank": 62.2,
+        "main_domain_rank": 676,
+        "last_updated_time": "2026-07-31 12:05:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:33:24 +00:00"
+      }
+    },
+    {
+      "keyword": "export controls",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:30:32 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 18.77,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 3.82,
+        "high_top_of_page_bid": 21.76,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 2900,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 2400,
+          "2025-10": 5400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "quarterly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export control",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 176.8,
+        "dofollow": 148.9,
+        "referring_pages": 170.2,
+        "referring_domains": 36.3,
+        "referring_main_domains": 33.2,
+        "rank": 107.7,
+        "main_domain_rank": 561.5,
+        "last_updated_time": "2026-09-04 12:06:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:51:14 +00:00"
+      }
+    },
+    {
+      "keyword": "export control classification numbers",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:13:36 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 11.51,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.56,
+        "high_top_of_page_bid": 28.69,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export control classification number",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.7,
+        "dofollow": 10.4,
+        "referring_pages": 16.9,
+        "referring_domains": 8.5,
+        "referring_main_domains": 7.7,
+        "rank": 74.5,
+        "main_domain_rank": 484.9,
+        "last_updated_time": "2026-03-14 02:07:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:37:46 +00:00"
+      }
+    },
+    {
+      "keyword": "export controlled",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:55:04 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 18.77,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 3.82,
+        "high_top_of_page_bid": 21.76,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 2900,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 2400,
+          "2025-10": 5400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "quarterly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export control",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 200280.9,
+        "dofollow": 144.9,
+        "referring_pages": 200274.4,
+        "referring_domains": 37.6,
+        "referring_main_domains": 33.9,
+        "rank": 119.8,
+        "main_domain_rank": 576.8,
+        "last_updated_time": "2026-03-14 09:03:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:55:40 +00:00"
+      }
+    },
+    {
+      "keyword": "export control classification number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 02:39:18 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 11.51,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.56,
+        "high_top_of_page_bid": 28.69,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 317.9,
+        "dofollow": 28.8,
+        "referring_pages": 81.1,
+        "referring_domains": 12.1,
+        "referring_main_domains": 10.8,
+        "rank": 105.3,
+        "main_domain_rank": 485.5,
+        "last_updated_time": "2026-09-04 12:20:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 15:15:10 +00:00"
+      }
+    },
+    {
+      "keyword": "ear export control classification number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:53:21 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 11.51,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.56,
+        "high_top_of_page_bid": 28.69,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "eccn number",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 418.5,
+        "dofollow": 347.1,
+        "referring_pages": 388.2,
+        "referring_domains": 122,
+        "referring_main_domains": 102.7,
+        "rank": 161.1,
+        "main_domain_rank": 546.5,
+        "last_updated_time": "2025-02-07 21:07:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 18:56:41 +00:00"
+      }
+    },
+    {
+      "keyword": "export from iphone to android",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:05:27 +00:00",
+        "competition": 0.24,
+        "competition_level": "LOW",
+        "cpc": 2.66,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 1.91,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 26,
+          "yearly": -17
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export from android to iphone",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 116.4,
+        "dofollow": 83.7,
+        "referring_pages": 94.9,
+        "referring_domains": 23.9,
+        "referring_main_domains": 20.5,
+        "rank": 69,
+        "main_domain_rank": 743,
+        "last_updated_time": "2024-10-12 18:25:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:39:37 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts from android to android",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:32:46 +00:00",
+        "competition": 0.24,
+        "competition_level": "LOW",
+        "cpc": 3.26,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.47,
+        "high_top_of_page_bid": 1.45,
+        "categories": [
+          10007,
+          10878,
+          13378,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 2400,
+          "2025-11": 1900,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 27.1,
+        "dofollow": 15.2,
+        "referring_pages": 23.8,
+        "referring_domains": 12.2,
+        "referring_main_domains": 11.2,
+        "rank": 49.3,
+        "main_domain_rank": 693,
+        "last_updated_time": "2026-03-14 17:05:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:36:48 +00:00"
+      }
+    },
+    {
+      "keyword": "ear export regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:28:25 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.13,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.04,
+        "high_top_of_page_bid": 10.23,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": -16,
+          "quarterly": -16,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 620.5,
+        "dofollow": 543.3,
+        "referring_pages": 582.8,
+        "referring_domains": 149.2,
+        "referring_main_domains": 125.1,
+        "rank": 265.3,
+        "main_domain_rank": 585.2,
+        "last_updated_time": "2024-10-12 18:26:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 18:21:08 +00:00"
+      }
+    },
+    {
+      "keyword": "what is export control reform",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:38:01 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1900,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 880,
+          "2026-06": 1000,
+          "2026-05": 1300,
+          "2026-04": 2900,
+          "2026-03": 2900,
+          "2026-02": 2900,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": 82,
+          "quarterly": 60
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 7,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 45.9,
+        "dofollow": 37.9,
+        "referring_pages": 41.5,
+        "referring_domains": 29.6,
+        "referring_main_domains": 28.3,
+        "rank": 81.7,
+        "main_domain_rank": 560.2,
+        "last_updated_time": "2026-09-04 14:26:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:24:15 +00:00"
+      }
+    },
+    {
+      "keyword": "export regulation administration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 08:37:05 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.13,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.04,
+        "high_top_of_page_bid": 10.23,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "monthly": -16,
+          "quarterly": -16,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export administration regulation",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 356,
+        "dofollow": 312.4,
+        "referring_pages": 336.9,
+        "referring_domains": 82.2,
+        "referring_main_domains": 71.5,
+        "rank": 232.1,
+        "main_domain_rank": 597.4,
+        "last_updated_time": "2024-11-29 00:30:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 16:11:15 +00:00"
+      }
+    },
+    {
+      "keyword": "export processing zones",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 12:21:30 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 0.55,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.36,
+        "high_top_of_page_bid": 0.84,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 590,
+          "2026-06": 720,
+          "2026-05": 2900,
+          "2026-04": 8100,
+          "2026-03": 4400,
+          "2026-02": 1900,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 284.1,
+        "dofollow": 279.2,
+        "referring_pages": 283.9,
+        "referring_domains": 23.2,
+        "referring_main_domains": 22.7,
+        "rank": 44.9,
+        "main_domain_rank": 521.9,
+        "last_updated_time": "2026-07-31 14:35:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 15:06:56 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks from one computer to another",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:00:30 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1900,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12210
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "quarterly": 19,
+          "yearly": 19
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 9
+      },
+      "avg_backlinks_info": {
+        "backlinks": 99.3,
+        "dofollow": 61.5,
+        "referring_pages": 84.5,
+        "referring_domains": 38.7,
+        "referring_main_domains": 32.4,
+        "rank": 94.9,
+        "main_domain_rank": 622.4,
+        "last_updated_time": "2026-07-31 19:51:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:52:00 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone photos to external hard drive",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:45:55 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 0.6,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.05,
+        "high_top_of_page_bid": 0.9,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12210
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 1900,
+          "2025-09": 1900
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 9
+      },
+      "avg_backlinks_info": {
+        "backlinks": 21.8,
+        "dofollow": 7.9,
+        "referring_pages": 15.5,
+        "referring_domains": 8.4,
+        "referring_main_domains": 8,
+        "rank": 54.8,
+        "main_domain_rank": 709.5,
+        "last_updated_time": "2026-05-17 20:10:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:34:30 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to external hard drive",
+      "keyword_info": {
+        "last_updated_time": "2026-09-18 09:57:00 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 0.6,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.05,
+        "high_top_of_page_bid": 0.9,
+        "categories": [
+          10019,
+          10168,
+          12201,
+          13090
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 1900,
+          "2025-09": 1900
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export iphone photos to external hard drive",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 10
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.9,
+        "dofollow": 3.1,
+        "referring_pages": 4.6,
+        "referring_domains": 3.5,
+        "referring_main_domains": 3.4,
+        "rank": 21,
+        "main_domain_rank": 746.1,
+        "last_updated_time": "2026-09-04 18:46:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:51:49 +00:00"
+      }
+    },
+    {
+      "keyword": "export processing zone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:43:50 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 0.55,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.36,
+        "high_top_of_page_bid": 0.84,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 590,
+          "2026-06": 720,
+          "2026-05": 2900,
+          "2026-04": 8100,
+          "2026-03": 4400,
+          "2026-02": 1900,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export processing zones",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 317.1,
+        "dofollow": 308.1,
+        "referring_pages": 315.3,
+        "referring_domains": 39.7,
+        "referring_main_domains": 38.3,
+        "rank": 74.9,
+        "main_domain_rank": 529.7,
+        "last_updated_time": "2026-06-30 10:57:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:37:31 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts to another phone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:44:15 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 2.61,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.49,
+        "high_top_of_page_bid": 1.66,
+        "categories": [
+          10007,
+          10878
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1600,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1900,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "yearly": 19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:16:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts to new phone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 22:07:34 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 2.61,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.49,
+        "high_top_of_page_bid": 1.66,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1600,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1900,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "yearly": 19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to transfer contacts to new phone",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 46.2,
+        "dofollow": 26.7,
+        "referring_pages": 41.3,
+        "referring_domains": 21.2,
+        "referring_main_domains": 20,
+        "rank": 98.5,
+        "main_domain_rank": 735.1,
+        "last_updated_time": "2026-03-15 03:46:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:54:40 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf in word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 19:07:48 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export pdf to word",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 356.2,
+        "dofollow": 208.9,
+        "referring_pages": 323.5,
+        "referring_domains": 132.1,
+        "referring_main_domains": 113.9,
+        "rank": 169.4,
+        "main_domain_rank": 744.6,
+        "last_updated_time": "2024-12-10 03:42:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:36:49 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export a pdf to word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:04:29 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export pdf to word",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1865.5,
+        "dofollow": 1370.7,
+        "referring_pages": 1659.5,
+        "referring_domains": 353.5,
+        "referring_main_domains": 323.3,
+        "rank": 126.1,
+        "main_domain_rank": 653.7,
+        "last_updated_time": "2026-03-15 03:46:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:11:14 +00:00"
+      }
+    },
+    {
+      "keyword": "oil export from usa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:05:24 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 5.09,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.95,
+        "high_top_of_page_bid": 5.74,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 880,
+          "2026-06": 1600,
+          "2026-05": 3600,
+          "2026-04": 6600,
+          "2026-03": 2900,
+          "2026-02": 260,
+          "2026-01": 720,
+          "2025-12": 390,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 14,
+          "quarterly": -38,
+          "yearly": 212
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "oil export usa",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 108.9,
+        "dofollow": 96.6,
+        "referring_pages": 102.9,
+        "referring_domains": 21.2,
+        "referring_main_domains": 20.1,
+        "rank": 78.9,
+        "main_domain_rank": 529.8,
+        "last_updated_time": "2026-09-05 00:40:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:40:44 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf to word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:43:03 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10050.1,
+        "dofollow": 9354.1,
+        "referring_pages": 9732,
+        "referring_domains": 598.8,
+        "referring_main_domains": 546,
+        "rank": 224.3,
+        "main_domain_rank": 679.1,
+        "last_updated_time": "2026-07-31 19:51:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:22:39 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf to word doc",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 15:26:39 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1838.7,
+        "dofollow": 1386.1,
+        "referring_pages": 1635.5,
+        "referring_domains": 369.6,
+        "referring_main_domains": 337.8,
+        "rank": 178.8,
+        "main_domain_rank": 678.9,
+        "last_updated_time": "2026-03-30 06:45:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-03 00:58:33 +00:00"
+      }
+    },
+    {
+      "keyword": "oil export from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:26:38 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 5.09,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.95,
+        "high_top_of_page_bid": 5.74,
+        "categories": [
+          10004,
+          10295,
+          12113
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 880,
+          "2026-06": 1600,
+          "2026-05": 3600,
+          "2026-04": 6600,
+          "2026-03": 2900,
+          "2026-02": 260,
+          "2026-01": 720,
+          "2025-12": 390,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 14,
+          "quarterly": -38,
+          "yearly": 212
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us oil exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 369.5,
+        "dofollow": 291.7,
+        "referring_pages": 336.9,
+        "referring_domains": 159.9,
+        "referring_main_domains": 147.8,
+        "rank": 119.9,
+        "main_domain_rank": 510.4,
+        "last_updated_time": "2026-09-05 00:40:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:48:07 +00:00"
+      }
+    },
+    {
+      "keyword": "export from india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 20:26:06 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.85,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 3.15,
+        "high_top_of_page_bid": 22.38,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1000,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "quarterly": 30,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "india exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 153480,
+        "dofollow": 144390.6,
+        "referring_pages": 144536.2,
+        "referring_domains": 2325.5,
+        "referring_main_domains": 2309.1,
+        "rank": 193.8,
+        "main_domain_rank": 580,
+        "last_updated_time": "2025-09-05 16:10:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 16:45:32 +00:00"
+      }
+    },
+    {
+      "keyword": "export from china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:55:05 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 8.07,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.48,
+        "high_top_of_page_bid": 6.78,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 720,
+          "2026-06": 880,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1000,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 2900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china export",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 28,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1077.3,
+        "dofollow": 815,
+        "referring_pages": 961.3,
+        "referring_domains": 372.2,
+        "referring_main_domains": 345.9,
+        "rank": 170.5,
+        "main_domain_rank": 538.4,
+        "last_updated_time": "2025-10-22 05:30:39 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 14:01:05 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf into word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:57:26 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export pdf to word",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 676.6,
+        "dofollow": 491.2,
+        "referring_pages": 638.2,
+        "referring_domains": 180.4,
+        "referring_main_domains": 157.3,
+        "rank": 146,
+        "main_domain_rank": 774.2,
+        "last_updated_time": "2024-09-19 15:37:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:39:22 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export a pdf file to word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:00:32 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 40,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10037.1,
+        "dofollow": 9341,
+        "referring_pages": 9719,
+        "referring_domains": 598.9,
+        "referring_main_domains": 546.1,
+        "rank": 216.7,
+        "main_domain_rank": 679.1,
+        "last_updated_time": "2026-07-31 19:52:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:26:53 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf as word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 08:02:04 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export as pdf in word",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:00:22 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export photos from iphone to android",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:20:58 +00:00",
+        "competition": 0.23,
+        "competition_level": "LOW",
+        "cpc": 2.72,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 2.12,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -16
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to transfer photos from iphone to android",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 21,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12.9,
+        "dofollow": 3.2,
+        "referring_pages": 12.1,
+        "referring_domains": 4,
+        "referring_main_domains": 3.7,
+        "rank": 12,
+        "main_domain_rank": 661.8,
+        "last_updated_time": "2024-10-05 00:41:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:59:38 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf file to word",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:25:42 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 4.5,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 3.11,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export a pdf file to word",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:16:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf to word for free",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 16:51:20 +00:00",
+        "competition": 0.54,
+        "competition_level": "MEDIUM",
+        "cpc": 4.25,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.89,
+        "high_top_of_page_bid": 3.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1900,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -16
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 59,
+        "detected_language": "en",
+        "words_count": 8
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10097.8,
+        "dofollow": 9400.5,
+        "referring_pages": 9778.4,
+        "referring_domains": 597.2,
+        "referring_main_domains": 544.4,
+        "rank": 220,
+        "main_domain_rank": 684.9,
+        "last_updated_time": "2026-07-31 20:06:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:13:29 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export pdf to word free",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:56:41 +00:00",
+        "competition": 0.54,
+        "competition_level": "MEDIUM",
+        "cpc": 4.25,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.89,
+        "high_top_of_page_bid": 3.67,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1900,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -16
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export pdf to word for free",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 42,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2393.1,
+        "dofollow": 1657.3,
+        "referring_pages": 2165.8,
+        "referring_domains": 422.3,
+        "referring_main_domains": 392,
+        "rank": 189.4,
+        "main_domain_rank": 589.8,
+        "last_updated_time": "2026-01-28 13:46:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 02:54:03 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks in mozilla",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:50:56 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.29,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mozilla how to export bookmarks",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 130.7,
+        "dofollow": 88.7,
+        "referring_pages": 123.7,
+        "referring_domains": 25.9,
+        "referring_main_domains": 21.8,
+        "rank": 46.2,
+        "main_domain_rank": 629.9,
+        "last_updated_time": "2026-07-31 19:50:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:02:17 +00:00"
+      }
+    },
+    {
+      "keyword": "what is an export control classification number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:06:23 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 7.06,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.07,
+        "high_top_of_page_bid": 20.17,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 1900,
+          "2026-06": 1600,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 26,
+          "quarterly": 50,
+          "yearly": 85
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "what is export control classification number",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 283.2,
+        "dofollow": 8.5,
+        "referring_pages": 59.1,
+        "referring_domains": 6.8,
+        "referring_main_domains": 6.1,
+        "rank": 78.4,
+        "main_domain_rank": 498.3,
+        "last_updated_time": "2026-03-15 08:22:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:35:07 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks firefox",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 18:06:52 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.29,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "firefox how to export bookmarks",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 158.7,
+        "dofollow": 102.2,
+        "referring_pages": 147.4,
+        "referring_domains": 37.6,
+        "referring_main_domains": 31.9,
+        "rank": 84.1,
+        "main_domain_rank": 653.4,
+        "last_updated_time": "2026-07-31 19:51:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:46:47 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts from iphone to android phone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:19:51 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 2.01,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.75,
+        "high_top_of_page_bid": 1.96,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 60,
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to transfer contacts from iphone to android",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 7,
+        "detected_language": "en",
+        "words_count": 9
+      },
+      "avg_backlinks_info": {
+        "backlinks": 75.9,
+        "dofollow": 46.2,
+        "referring_pages": 66.7,
+        "referring_domains": 38.8,
+        "referring_main_domains": 37.9,
+        "rank": 93.7,
+        "main_domain_rank": 714.9,
+        "last_updated_time": "2026-03-15 13:32:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:39:22 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export iphone messages",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:04:42 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 2.64,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 2.22,
+        "categories": [
+          10007,
+          10878,
+          11511,
+          12765,
+          13419
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export messages from iphone",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.6,
+        "dofollow": 3.5,
+        "referring_pages": 11,
+        "referring_domains": 8.7,
+        "referring_main_domains": 8,
+        "rank": 22.9,
+        "main_domain_rank": 652.2,
+        "last_updated_time": "2025-12-12 08:37:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:51:45 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export text from iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:53:23 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 2.64,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 2.22,
+        "categories": [
+          10007,
+          10878,
+          11511,
+          12765,
+          13419
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export text messages from iphone",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 8.8,
+        "dofollow": 3,
+        "referring_pages": 8.1,
+        "referring_domains": 6.3,
+        "referring_main_domains": 5.4,
+        "rank": 67.7,
+        "main_domain_rank": 613.5,
+        "last_updated_time": "2026-06-30 19:25:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:12:23 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export imovie to mp4",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:55:21 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.41,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.3,
+        "high_top_of_page_bid": 1.76,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368,
+          12705
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1300
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2.1,
+        "dofollow": 1.7,
+        "referring_pages": 2,
+        "referring_domains": 1.9,
+        "referring_main_domains": 1.8,
+        "rank": 29.4,
+        "main_domain_rank": 726.6,
+        "last_updated_time": "2026-08-01 05:26:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:37:09 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export passwords from chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 20:41:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "categories": [
+          10019,
+          10019,
+          10168,
+          10168,
+          10885,
+          10885,
+          12204,
+          13406,
+          13816
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 342.8,
+        "dofollow": 328.1,
+        "referring_pages": 337.5,
+        "referring_domains": 22.7,
+        "referring_main_domains": 21.3,
+        "rank": 88.2,
+        "main_domain_rank": 632.9,
+        "last_updated_time": "2026-09-05 10:11:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:27:04 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export sms messages from iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 04:29:24 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 2.64,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 2.22,
+        "categories": [
+          10007,
+          10007,
+          10878,
+          10878,
+          11511,
+          11511,
+          12765,
+          12765,
+          13419,
+          13419,
+          13759
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export iphone sms messages",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2.1,
+        "dofollow": 1.1,
+        "referring_pages": 2.1,
+        "referring_domains": 1.9,
+        "referring_main_domains": 1.9,
+        "rank": 24.6,
+        "main_domain_rank": 648.4,
+        "last_updated_time": "2026-03-15 13:32:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:18:13 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export imovie",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:22:11 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          11368,
+          12705
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1300,
+          "2025-09": 1000
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.1,
+        "dofollow": 2.4,
+        "referring_pages": 2.9,
+        "referring_domains": 2.6,
+        "referring_main_domains": 2.5,
+        "rank": 41.8,
+        "main_domain_rank": 753,
+        "last_updated_time": "2026-09-05 10:21:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:19:27 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export text messages from iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:53:44 +00:00",
+        "competition": 0.33,
+        "competition_level": "LOW",
+        "cpc": 2.64,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 2.22,
+        "categories": [
+          10007,
+          10007,
+          10878,
+          10878,
+          11511,
+          11511,
+          12765,
+          12765,
+          13419,
+          13419,
+          13759
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 8.2,
+        "dofollow": 2,
+        "referring_pages": 7.6,
+        "referring_domains": 6.5,
+        "referring_main_domains": 5.6,
+        "rank": 60.9,
+        "main_domain_rank": 707.7,
+        "last_updated_time": "2026-08-01 05:39:41 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:06:26 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export contacts from an iphone",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:14:56 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 1.84,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 1.46,
+        "categories": [
+          10007,
+          10878,
+          12161,
+          13381
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export contacts from iphone to iphone",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 7
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.7,
+        "dofollow": 5.1,
+        "referring_pages": 9.1,
+        "referring_domains": 5.5,
+        "referring_main_domains": 5.3,
+        "rank": 83.3,
+        "main_domain_rank": 591.9,
+        "last_updated_time": "2026-05-18 06:26:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:05:56 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks on firefox",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:59:38 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.29,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "firefox how to export bookmarks",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 134.2,
+        "dofollow": 90.6,
+        "referring_pages": 125.7,
+        "referring_domains": 27.6,
+        "referring_main_domains": 22.6,
+        "rank": 62,
+        "main_domain_rank": 617.7,
+        "last_updated_time": "2026-07-31 20:06:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:12:23 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export password from chrome",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:20:29 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export passwords from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 331.1,
+        "dofollow": 321.2,
+        "referring_pages": 328.5,
+        "referring_domains": 17.7,
+        "referring_main_domains": 16.5,
+        "rank": 67.7,
+        "main_domain_rank": 617,
+        "last_updated_time": "2026-08-01 05:41:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:41:30 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export bookmarks from firefox",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:04:37 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.29,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "firefox how to export bookmarks",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 134.2,
+        "dofollow": 90.6,
+        "referring_pages": 125.7,
+        "referring_domains": 27.6,
+        "referring_main_domains": 22.6,
+        "rank": 62,
+        "main_domain_rank": 676,
+        "last_updated_time": "2026-07-31 19:51:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:01:58 +00:00"
+      }
+    },
+    {
+      "keyword": "what is export control classification number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:45:07 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 7.06,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.07,
+        "high_top_of_page_bid": 20.17,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 1900,
+          "2026-06": 1600,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 26,
+          "quarterly": 50,
+          "yearly": 85
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 313,
+        "dofollow": 26.1,
+        "referring_pages": 78,
+        "referring_domains": 10.7,
+        "referring_main_domains": 9.4,
+        "rank": 101,
+        "main_domain_rank": 491.7,
+        "last_updated_time": "2026-07-31 21:28:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 15:40:57 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export chrome passwords",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:44:48 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13406
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export passwords from chrome",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 331.1,
+        "dofollow": 321.2,
+        "referring_pages": 328.5,
+        "referring_domains": 17.7,
+        "referring_main_domains": 16.5,
+        "rank": 67.7,
+        "main_domain_rank": 617,
+        "last_updated_time": "2026-08-01 05:38:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 09:46:55 +00:00"
+      }
+    },
+    {
+      "keyword": "export to csv",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:25:44 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 7.34,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.72,
+        "high_top_of_page_bid": 7.35,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12210
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 19,
+          "quarterly": 46,
+          "yearly": 46
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "csv export",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 828.6,
+        "dofollow": 391.4,
+        "referring_pages": 652.5,
+        "referring_domains": 144,
+        "referring_main_domains": 128.3,
+        "rank": 82.6,
+        "main_domain_rank": 565,
+        "last_updated_time": "2026-08-01 06:10:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 18:35:35 +00:00"
+      }
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import { Callout, Panel } from '@/components/primitives/feedback';
 import { DataTable, EmptyValue, NumericCell } from '@/components/primitives/table';
 import { ConfirmButton } from '@/components/primitives/confirm';
 import { ActionResult } from '@/components/primitives/action-result';
+import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { decimal, quantity as showQuantity } from '@/lib/format';
 import {
   addPackage,
@@ -16,6 +17,8 @@ import {
   removePackage,
 } from '@/app/(app)/master-data-actions';
 import type { ActionState } from '@/app/(app)/actions';
+import { rowWeight } from '@/lib/trade/packing';
+import { packingTotals, unreconciledLines } from './figures';
 
 export type PackageContent = {
   id: string;
@@ -90,29 +93,30 @@ export function PackingPanel({
   );
 
   const byItem = new Map(items.map((item) => [item.id, item]));
-  const allocated = new Map<string, number>();
-  for (const row of packages) {
-    for (const content of row.contents) {
-      allocated.set(content.item_id, (allocated.get(content.item_id) ?? 0) + content.quantity);
-    }
-  }
+  const byPackage = new Map(packages.map((row) => [row.id, row]));
+  const unreconciled = unreconciledLines(items, packages);
+  const totals = packingTotals(packages);
 
-  const unreconciled = items
-    .map((item) => ({ item, packed: allocated.get(item.id) ?? 0 }))
-    .filter(({ item, packed }) => Math.abs(packed - item.quantity) > 0.0005);
-
-  const totals = packages.reduce(
-    (sum, row) => ({
-      count: sum.count + row.package_count,
-      gross: sum.gross + Number(row.gross_weight_kg ?? 0),
-      net: sum.net + Number(row.net_weight_kg ?? 0),
-      volume: sum.volume + Number(row.volume_m3 ?? 0),
-    }),
-    { count: 0, gross: 0, net: 0, volume: 0 },
-  );
+  const rememberAdd = useOutcomeToast(addState, (submitted) => {
+    const count = sent(submitted, 'package_count') ?? '1';
+    const kind = sent(submitted, 'kind') ?? 'package';
+    return `${count} × ${kind} on the packing list.`;
+  });
+  const rememberRemove = useOutcomeToast(removeState, (submitted) => {
+    const row = byPackage.get(sent(submitted, 'package') ?? '');
+    return row ? `${row.kind} ${row.position} is off the packing list.` : 'Package removed.';
+  });
+  const rememberAllocate = useOutcomeToast(allocateState, (submitted) => {
+    const item = byItem.get(sent(submitted, 'item') ?? '');
+    const row = byPackage.get(sent(submitted, 'package') ?? '');
+    const amount = sent(submitted, 'quantity');
+    if (!item || !row || !amount) return 'Allocation saved.';
+    return `Packed ${amount} ${item.unit} of “${item.description}” in ${row.kind} ${row.position}.`;
+  });
+  const rememberDrop = useOutcomeToast(dropState, () => 'Taken out of the package.');
 
   return (
-    <Panel title="Packing">
+    <Panel title="Packing" id="packing">
       <div style={{ display: 'grid', gap: 20 }}>
         <ActionResult state={addState} successTitle="Added" />
         {/* The removal error is reported inside its confirmation, so only the success
@@ -123,7 +127,7 @@ export function PackingPanel({
 
         {packages.length > 0 ? (
           <>
-            <DataTable caption="Packages on this shipment" density="compact">
+            <DataTable caption="Packages on this shipment" density="compact" stack>
               <thead>
                 <tr>
                   <th scope="col">Package</th>
@@ -146,7 +150,7 @@ export function PackingPanel({
               <tbody>
                 {packages.map((row) => (
                   <tr key={row.id}>
-                    <td>
+                    <td className="stack-title">
                       {row.kind}
                       {row.marks ? (
                         <>
@@ -155,19 +159,29 @@ export function PackingPanel({
                         </>
                       ) : null}
                     </td>
-                    <NumericCell value={String(row.package_count)} />
-                    <td className="data">
+                    <NumericCell label="Count" value={String(row.package_count)} />
+                    <td className="data" data-label="Dimensions">
                       {dimensions(row) ?? <EmptyValue label="Not measured" />}
                     </td>
                     <NumericCell
+                      label="Volume"
                       value={row.volume_m3 === null ? '—' : decimal(row.volume_m3, 3)}
                       unit={row.volume_m3 === null ? undefined : 'm³'}
                     />
+                    {/* The row's weight: count x per-package gross, which the total adds. */}
                     <NumericCell
-                      value={row.gross_weight_kg === null ? '—' : decimal(row.gross_weight_kg, 3)}
+                      label="Gross"
+                      value={
+                        row.gross_weight_kg === null
+                          ? '—'
+                          : decimal(
+                              rowWeight(row.package_count, row.gross_weight_kg)?.toNumber() ?? 0,
+                              3,
+                            )
+                      }
                       unit={row.gross_weight_kg === null ? undefined : 'kg'}
                     />
-                    <td>
+                    <td data-label="Contents">
                       {row.contents.length === 0 ? (
                         <EmptyValue label="Nothing allocated" />
                       ) : (
@@ -180,6 +194,7 @@ export function PackingPanel({
                                 {item?.description ?? 'Removed line'}{' '}
                                 <form
                                   action={dropAction}
+                                  onSubmit={rememberDrop}
                                   style={{ display: 'inline' }}
                                   aria-label={`Remove ${item?.description ?? 'this line'} from ${row.kind} ${row.position}`}
                                 >
@@ -202,8 +217,12 @@ export function PackingPanel({
                         </ul>
                       )}
                     </td>
-                    <td>
-                      <form id={`remove-package-${row.id}`} action={removeAction}>
+                    <td className="stack-actions">
+                      <form
+                        id={`remove-package-${row.id}`}
+                        action={removeAction}
+                        onSubmit={rememberRemove}
+                      >
                         <input type="hidden" name="org" value={org} />
                         <input type="hidden" name="shipment" value={shipmentId} />
                         <input type="hidden" name="package" value={row.id} />
@@ -228,11 +247,11 @@ export function PackingPanel({
               <tfoot>
                 <tr>
                   <th scope="row">Total</th>
-                  <NumericCell value={String(totals.count)} />
-                  <td />
-                  <NumericCell value={decimal(totals.volume, 3)} unit="m³" />
-                  <NumericCell value={decimal(totals.gross, 3)} unit="kg" />
-                  <td colSpan={2} />
+                  <NumericCell label="Count" value={String(totals.count)} />
+                  <td className="stack-empty" />
+                  <NumericCell label="Volume" value={decimal(totals.volume, 3)} unit="m³" />
+                  <NumericCell label="Gross" value={decimal(totals.gross, 3)} unit="kg" />
+                  <td className="stack-empty" colSpan={2} />
                 </tr>
               </tfoot>
             </DataTable>
@@ -274,6 +293,7 @@ export function PackingPanel({
           </h3>
           <form
             action={addAction}
+            onSubmit={rememberAdd}
             aria-label="Add a package"
             style={{ display: 'grid', gap: 16 }}
             noValidate
@@ -389,6 +409,7 @@ export function PackingPanel({
             </h3>
             <form
               action={allocateAction}
+              onSubmit={rememberAllocate}
               aria-label="Allocate goods to a package"
               style={{
                 display: 'grid',
@@ -426,7 +447,7 @@ export function PackingPanel({
               <Field
                 id="allocate_quantity"
                 label="Quantity in this package"
-                hint="Replaces any earlier amount for this line in this package."
+                hint="The total across every package in that row. Replaces any earlier amount for this line there."
                 error={allocateState.fields?.quantity}
               >
                 {({ id, describedBy, invalid }) => (

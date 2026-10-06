@@ -1,0 +1,5453 @@
+{
+  "id": "10060215-2048-0399-0000-fee1a6ec8ba3",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "total_count": 1130,
+  "items": [
+    {
+      "keyword": "customs broker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:59:35 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "cpc": 18.81,
+        "search_volume": 9900,
+        "low_top_of_page_bid": 4.03,
+        "high_top_of_page_bid": 20.65,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 9900,
+          "2026-06": 6600,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 9900,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "quarterly": 50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 172.1,
+        "dofollow": 127.4,
+        "referring_pages": 147.8,
+        "referring_domains": 52.9,
+        "referring_main_domains": 50.7,
+        "rank": 210.2,
+        "main_domain_rank": 454.1,
+        "last_updated_time": "2026-08-03 10:28:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 02:19:59 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokering",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:42:53 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "cpc": 18.81,
+        "search_volume": 9900,
+        "low_top_of_page_bid": 4.03,
+        "high_top_of_page_bid": 20.65,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 9900,
+          "2026-06": 6600,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 9900,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "quarterly": 50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-26 01:57:24 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokers",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:15:02 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "cpc": 18.81,
+        "search_volume": 9900,
+        "low_top_of_page_bid": 4.03,
+        "high_top_of_page_bid": 20.65,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 9900,
+          "2026-07": 9900,
+          "2026-06": 6600,
+          "2026-05": 8100,
+          "2026-04": 8100,
+          "2026-03": 9900,
+          "2026-02": 8100,
+          "2026-01": 9900,
+          "2025-12": 9900,
+          "2025-11": 8100,
+          "2025-10": 9900,
+          "2025-09": 14800
+        },
+        "search_volume_trend": {
+          "quarterly": 50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 159.1,
+        "dofollow": 88.8,
+        "referring_pages": 116.5,
+        "referring_domains": 34.9,
+        "referring_main_domains": 32.9,
+        "rank": 155.8,
+        "main_domain_rank": 447,
+        "last_updated_time": "2026-06-18 14:09:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-30 06:40:28 +00:00"
+      }
+    },
+    {
+      "keyword": "usps customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:23:42 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20523.9,
+        "dofollow": 14486.9,
+        "referring_pages": 18001.4,
+        "referring_domains": 45.5,
+        "referring_main_domains": 38.2,
+        "rank": 166.4,
+        "main_domain_rank": 605.1,
+        "last_updated_time": "2026-07-30 19:28:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 23:54:11 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:57:43 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 3.48,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10015,
+          10135,
+          10719
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2900,
+          "2026-05": 5400,
+          "2026-04": 4400,
+          "2026-03": 6600,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": 21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 770.4,
+        "dofollow": 544.5,
+        "referring_pages": 620.9,
+        "referring_domains": 183.8,
+        "referring_main_domains": 163.8,
+        "rank": 182.3,
+        "main_domain_rank": 577.4,
+        "last_updated_time": "2026-07-30 20:09:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 03:17:09 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 19:29:24 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15256.4,
+        "dofollow": 13239.8,
+        "referring_pages": 13270.3,
+        "referring_domains": 43.2,
+        "referring_main_domains": 36.3,
+        "rank": 152.2,
+        "main_domain_rank": 646.4,
+        "last_updated_time": "2026-01-27 21:59:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-26 05:35:25 +00:00"
+      }
+    },
+    {
+      "keyword": "us post office customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:26:47 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 49316.4,
+        "dofollow": 28910.9,
+        "referring_pages": 32445.2,
+        "referring_domains": 70.1,
+        "referring_main_domains": 59.1,
+        "rank": 154.8,
+        "main_domain_rank": 531.2,
+        "last_updated_time": "2026-07-30 19:28:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-30 02:45:44 +00:00"
+      }
+    },
+    {
+      "keyword": "customs forms usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:55:39 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10004,
+          10276,
+          10305,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23077,
+        "dofollow": 21624.8,
+        "referring_pages": 21649.9,
+        "referring_domains": 44.7,
+        "referring_main_domains": 36.9,
+        "rank": 154.1,
+        "main_domain_rank": 575.6,
+        "last_updated_time": "2025-05-11 21:18:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 05:22:07 +00:00"
+      }
+    },
+    {
+      "keyword": "us postal customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:26:57 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305,
+          11327
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20649.5,
+        "dofollow": 14551.2,
+        "referring_pages": 18076.9,
+        "referring_domains": 43.3,
+        "referring_main_domains": 37.6,
+        "rank": 113.3,
+        "main_domain_rank": 621.1,
+        "last_updated_time": "2026-09-03 16:05:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-05-02 14:54:57 +00:00"
+      }
+    },
+    {
+      "keyword": "japanese customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 06:00:31 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 3.48,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10015,
+          10135,
+          10719
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2900,
+          "2026-05": 5400,
+          "2026-04": 4400,
+          "2026-03": 6600,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": 21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "japanese customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 263.7,
+        "dofollow": 216.4,
+        "referring_pages": 239.5,
+        "referring_domains": 77.5,
+        "referring_main_domains": 72.2,
+        "rank": 192.8,
+        "main_domain_rank": 556.4,
+        "last_updated_time": "2025-10-21 17:54:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 05:34:44 +00:00"
+      }
+    },
+    {
+      "keyword": "us postal customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 11:58:22 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305,
+          11327
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us postal customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25884.1,
+        "dofollow": 24987.9,
+        "referring_pages": 25022.6,
+        "referring_domains": 39.9,
+        "referring_main_domains": 33,
+        "rank": 110.4,
+        "main_domain_rank": 563.3,
+        "last_updated_time": "2024-09-15 08:19:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:59:28 +00:00"
+      }
+    },
+    {
+      "keyword": "usps customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:14:02 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25911.5,
+        "dofollow": 25006.7,
+        "referring_pages": 25047.6,
+        "referring_domains": 49.1,
+        "referring_main_domains": 40.5,
+        "rank": 169.3,
+        "main_domain_rank": 658.5,
+        "last_updated_time": "2024-09-15 08:18:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-30 01:04:25 +00:00"
+      }
+    },
+    {
+      "keyword": "japanese customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:57:44 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 3.48,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10015,
+          10135,
+          10719
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2900,
+          "2026-05": 5400,
+          "2026-04": 4400,
+          "2026-03": 6600,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": 21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 511.2,
+        "dofollow": 366.5,
+        "referring_pages": 402.7,
+        "referring_domains": 88.4,
+        "referring_main_domains": 77.8,
+        "rank": 127.6,
+        "main_domain_rank": 602.1,
+        "last_updated_time": "2026-07-30 20:09:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 03:42:30 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form japan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 08:29:06 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 3.48,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10015,
+          10135,
+          10719
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2400,
+          "2026-06": 2900,
+          "2026-05": 5400,
+          "2026-04": 4400,
+          "2026-03": 6600,
+          "2026-02": 4400,
+          "2026-01": 4400,
+          "2025-12": 4400,
+          "2025-11": 4400,
+          "2025-10": 5400,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": 21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "japan customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 687.7,
+        "dofollow": 506.6,
+        "referring_pages": 564.4,
+        "referring_domains": 166.2,
+        "referring_main_domains": 151.6,
+        "rank": 149.2,
+        "main_domain_rank": 516.8,
+        "last_updated_time": "2026-03-13 10:11:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 03:59:49 +00:00"
+      }
+    },
+    {
+      "keyword": "customs forms for usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:52:51 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.89,
+        "search_volume": 4400,
+        "low_top_of_page_bid": 1.23,
+        "high_top_of_page_bid": 3.87,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 4400,
+          "2026-06": 4400,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 4400,
+          "2025-12": 6600,
+          "2025-11": 4400,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25919,
+        "dofollow": 25009.1,
+        "referring_pages": 25055.1,
+        "referring_domains": 52.1,
+        "referring_main_domains": 43.5,
+        "rank": 186.4,
+        "main_domain_rank": 569.8,
+        "last_updated_time": "2024-09-15 09:44:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-26 01:53:27 +00:00"
+      }
+    },
+    {
+      "keyword": "customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:56:20 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 13.59,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 2.65,
+        "high_top_of_page_bid": 12.9,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 2900,
+          "2026-05": 2900,
+          "2026-04": 2900,
+          "2026-03": 3600,
+          "2026-02": 2400,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 2900,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "quarterly": 24,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 28,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 84.2,
+        "dofollow": 71.1,
+        "referring_pages": 81.7,
+        "referring_domains": 32.5,
+        "referring_main_domains": 31.7,
+        "rank": 162.8,
+        "main_domain_rank": 480.5,
+        "last_updated_time": "2026-09-04 00:43:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:40:11 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 09:59:15 +00:00",
+        "competition": 0.22,
+        "competition_level": "LOW",
+        "cpc": 13.41,
+        "search_volume": 3600,
+        "low_top_of_page_bid": 2,
+        "high_top_of_page_bid": 19.57,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2900,
+          "2026-07": 2900,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 3600,
+          "2026-01": 3600,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 4400,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice for customs",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 24,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 123.2,
+        "dofollow": 95.2,
+        "referring_pages": 115,
+        "referring_domains": 34.3,
+        "referring_main_domains": 32,
+        "rank": 81.9,
+        "main_domain_rank": 549.1,
+        "last_updated_time": "2024-12-11 00:11:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 05:00:40 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokerage services",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:08:48 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 12.84,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 6.73,
+        "high_top_of_page_bid": 33.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 679,
+        "dofollow": 501.6,
+        "referring_pages": 578,
+        "referring_domains": 99.1,
+        "referring_main_domains": 94.3,
+        "rank": 191.1,
+        "main_domain_rank": 430.9,
+        "last_updated_time": "2025-10-22 22:51:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 22:11:50 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker service",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:28:46 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 12.84,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 6.73,
+        "high_top_of_page_bid": 33.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker services",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 296,
+        "dofollow": 182.9,
+        "referring_pages": 224.9,
+        "referring_domains": 67.9,
+        "referring_main_domains": 65.5,
+        "rank": 192.6,
+        "main_domain_rank": 419.3,
+        "last_updated_time": "2026-03-14 02:25:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-30 04:03:44 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker services",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 06:15:40 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 12.84,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 6.73,
+        "high_top_of_page_bid": 33.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 52.9,
+        "dofollow": 33.4,
+        "referring_pages": 47.1,
+        "referring_domains": 14.8,
+        "referring_main_domains": 14,
+        "rank": 65.5,
+        "main_domain_rank": 351.9,
+        "last_updated_time": "2026-07-31 06:03:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-30 04:03:44 +00:00"
+      }
+    },
+    {
+      "keyword": "livingston customs broker pars tracker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 10:11:41 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 5.18,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 1.4,
+        "high_top_of_page_bid": 3.6,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 2900,
+          "2026-04": 3600,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 3600,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "yearly": 89
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 478.1,
+        "dofollow": 351.7,
+        "referring_pages": 386.9,
+        "referring_domains": 59.7,
+        "referring_main_domains": 50.4,
+        "rank": 82.5,
+        "main_domain_rank": 368.1,
+        "last_updated_time": "2026-07-31 11:21:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-28 16:26:55 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokers services",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:52:54 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 12.84,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 6.73,
+        "high_top_of_page_bid": 33.14,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 2400,
+          "2026-06": 1900,
+          "2026-05": 2400,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker services",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 35,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 181.5,
+        "dofollow": 110.3,
+        "referring_pages": 136.5,
+        "referring_domains": 24.3,
+        "referring_main_domains": 23,
+        "rank": 162.7,
+        "main_domain_rank": 443.8,
+        "last_updated_time": "2026-09-04 06:18:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-26 23:49:20 +00:00"
+      }
+    },
+    {
+      "keyword": "argentina customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:21:07 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 2900,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 4400,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 5400,
+          "2026-04": 5400,
+          "2026-03": 3600,
+          "2026-02": 2900,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 132,
+          "quarterly": 132,
+          "yearly": 400
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.8,
+        "dofollow": 0.8,
+        "referring_pages": 0.8,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.6,
+        "rank": 11.5,
+        "main_domain_rank": 620.7,
+        "last_updated_time": "2026-07-31 12:34:36 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 01:30:29 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokerage license",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 16:54:13 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 147.7,
+        "dofollow": 61.9,
+        "referring_pages": 139.2,
+        "referring_domains": 36.5,
+        "referring_main_domains": 35.5,
+        "rank": 98.7,
+        "main_domain_rank": 497.4,
+        "last_updated_time": "2024-09-16 01:19:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 09:18:40 +00:00"
+      }
+    },
+    {
+      "keyword": "license for customs broker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:24:51 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 173.5,
+        "dofollow": 70.6,
+        "referring_pages": 165,
+        "referring_domains": 42.1,
+        "referring_main_domains": 41.1,
+        "rank": 123.7,
+        "main_domain_rank": 478.7,
+        "last_updated_time": "2024-10-05 00:38:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 15:14:23 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker license",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:51:55 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 66.6,
+        "dofollow": 57,
+        "referring_pages": 61.8,
+        "referring_domains": 22.6,
+        "referring_main_domains": 21.1,
+        "rank": 81.5,
+        "main_domain_rank": 492.4,
+        "last_updated_time": "2026-07-31 12:20:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 03:45:05 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker permit",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 02:17:50 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 170,
+        "dofollow": 77.2,
+        "referring_pages": 161.8,
+        "referring_domains": 38.2,
+        "referring_main_domains": 36.7,
+        "rank": 130.7,
+        "main_domain_rank": 549.8,
+        "last_updated_time": "2024-10-12 21:57:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 08:22:10 +00:00"
+      }
+    },
+    {
+      "keyword": "licensed customs brokers",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:37:51 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 401.4,
+        "dofollow": 249.1,
+        "referring_pages": 387.3,
+        "referring_domains": 50.2,
+        "referring_main_domains": 47.5,
+        "rank": 178.5,
+        "main_domain_rank": 538.5,
+        "last_updated_time": "2024-09-16 00:01:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-28 10:20:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokers licence",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:26:39 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 70.1,
+        "dofollow": 58.2,
+        "referring_pages": 65.5,
+        "referring_domains": 23.6,
+        "referring_main_domains": 19.7,
+        "rank": 86.7,
+        "main_domain_rank": 406.8,
+        "last_updated_time": "2026-06-30 10:51:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 13:40:33 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker licence",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:19:55 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs brokers licence",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 39.3,
+        "dofollow": 34.6,
+        "referring_pages": 37.6,
+        "referring_domains": 11.4,
+        "referring_main_domains": 10.4,
+        "rank": 54.5,
+        "main_domain_rank": 332.8,
+        "last_updated_time": "2026-09-04 12:47:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 06:40:28 +00:00"
+      }
+    },
+    {
+      "keyword": "license customs broker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:08:49 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 158.7,
+        "dofollow": 67,
+        "referring_pages": 151.8,
+        "referring_domains": 38.1,
+        "referring_main_domains": 37.1,
+        "rank": 115.5,
+        "main_domain_rank": 540.3,
+        "last_updated_time": "2024-09-16 00:04:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 15:37:12 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty calculator usa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 14:08:23 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 3.43,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.32,
+        "high_top_of_page_bid": 5.31,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1900,
+          "2026-01": 2900,
+          "2025-12": 2900,
+          "2025-11": 3600,
+          "2025-10": 3600,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 53,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35907.4,
+        "dofollow": 32295.2,
+        "referring_pages": 33646.8,
+        "referring_domains": 201.4,
+        "referring_main_domains": 187.7,
+        "rank": 250.3,
+        "main_domain_rank": 459.1,
+        "last_updated_time": "2026-09-04 12:43:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:09:16 +00:00"
+      }
+    },
+    {
+      "keyword": "customs clearance license",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 16:34:23 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 67.5,
+        "dofollow": 57.9,
+        "referring_pages": 62.7,
+        "referring_domains": 23,
+        "referring_main_domains": 21.4,
+        "rank": 89.6,
+        "main_domain_rank": 520.5,
+        "last_updated_time": "2026-07-31 12:14:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 07:22:47 +00:00"
+      }
+    },
+    {
+      "keyword": "import customs duty calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 18:38:14 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 4.01,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.44,
+        "high_top_of_page_bid": 5.11,
+        "categories": [
+          10004,
+          10004,
+          10012,
+          10300,
+          11093,
+          11328,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1900,
+          "2026-04": 2900,
+          "2026-03": 2400,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2900,
+          "2025-10": 2900,
+          "2025-09": 4400
+        },
+        "search_volume_trend": {
+          "monthly": -45,
+          "quarterly": -45,
+          "yearly": -63
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 50,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35947,
+        "dofollow": 32366.3,
+        "referring_pages": 33697.5,
+        "referring_domains": 183.9,
+        "referring_main_domains": 170.4,
+        "rank": 285.9,
+        "main_domain_rank": 439.7,
+        "last_updated_time": "2026-09-04 11:14:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:58:49 +00:00"
+      }
+    },
+    {
+      "keyword": "licensed customs broker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 00:25:48 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 100,
+        "dofollow": 56.8,
+        "referring_pages": 78,
+        "referring_domains": 23,
+        "referring_main_domains": 21.4,
+        "rank": 101.2,
+        "main_domain_rank": 459.7,
+        "last_updated_time": "2026-03-14 06:53:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-28 12:07:59 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokerage licence",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 21:48:14 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 13.28,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 2.34,
+        "high_top_of_page_bid": 10.98,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 2400,
+          "2026-07": 2400,
+          "2026-06": 2400,
+          "2026-05": 2400,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 1900,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 2900,
+          "2025-09": 2400
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker license",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 68.2,
+        "dofollow": 58,
+        "referring_pages": 64.7,
+        "referring_domains": 20.9,
+        "referring_main_domains": 16.9,
+        "rank": 84.5,
+        "main_domain_rank": 398.1,
+        "last_updated_time": "2026-03-14 09:40:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-26 01:46:53 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:03:04 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 1.62,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 1.37,
+        "high_top_of_page_bid": 6.78,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 590,
+          "2026-06": 720,
+          "2026-05": 1000,
+          "2026-04": 1300,
+          "2026-03": 1900,
+          "2026-02": 2400,
+          "2026-01": 2900,
+          "2025-12": 3600,
+          "2025-11": 2900,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 69,
+          "quarterly": 39,
+          "yearly": -58
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2054.5,
+        "dofollow": 921.6,
+        "referring_pages": 942.8,
+        "referring_domains": 64.7,
+        "referring_main_domains": 60.3,
+        "rank": 190.8,
+        "main_domain_rank": 505.1,
+        "last_updated_time": "2026-07-31 12:21:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:10:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs forms for jamaica",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 12:16:52 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "cpc": 2.43,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.85,
+        "high_top_of_page_bid": 2.29,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 2900,
+          "2025-11": 1900,
+          "2025-10": 1600,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "quarterly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "jamaica customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 153.2,
+        "dofollow": 122.2,
+        "referring_pages": 137.7,
+        "referring_domains": 33.4,
+        "referring_main_domains": 32,
+        "rank": 151.8,
+        "main_domain_rank": 361.3,
+        "last_updated_time": "2024-09-15 12:05:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:48:44 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form jamaica",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 20:12:59 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "cpc": 2.43,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.85,
+        "high_top_of_page_bid": 2.29,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 2900,
+          "2025-11": 1900,
+          "2025-10": 1600,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "quarterly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "jamaica customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 199.2,
+        "dofollow": 167.1,
+        "referring_pages": 181.9,
+        "referring_domains": 62.3,
+        "referring_main_domains": 59.3,
+        "rank": 94.3,
+        "main_domain_rank": 387.4,
+        "last_updated_time": "2026-06-30 11:11:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 12:33:24 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form for jamaica",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 09:00:54 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "cpc": 2.43,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.85,
+        "high_top_of_page_bid": 2.29,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 2900,
+          "2025-11": 1900,
+          "2025-10": 1600,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "quarterly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "jamaica customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 135.5,
+        "dofollow": 113.5,
+        "referring_pages": 120.2,
+        "referring_domains": 25.7,
+        "referring_main_domains": 24.6,
+        "rank": 131.8,
+        "main_domain_rank": 498.1,
+        "last_updated_time": "2024-09-15 12:05:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 11:43:24 +00:00"
+      }
+    },
+    {
+      "keyword": "jamaica customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:20:52 +00:00",
+        "competition": 0.16,
+        "competition_level": "LOW",
+        "cpc": 2.43,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.85,
+        "high_top_of_page_bid": 2.29,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1900,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 2900,
+          "2025-11": 1900,
+          "2025-10": 1600,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "quarterly": -21,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 223.3,
+        "dofollow": 181.8,
+        "referring_pages": 203,
+        "referring_domains": 67.1,
+        "referring_main_domains": 63.9,
+        "rank": 132,
+        "main_domain_rank": 447.9,
+        "last_updated_time": "2026-09-04 10:59:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 18:16:13 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty from canada to us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 01:16:04 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "cpc": 2.99,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.44,
+        "high_top_of_page_bid": 2.16,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1600,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": 30,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 29,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5054.9,
+        "dofollow": 2325.2,
+        "referring_pages": 4060.8,
+        "referring_domains": 151.7,
+        "referring_main_domains": 143.1,
+        "rank": 236.9,
+        "main_domain_rank": 487.4,
+        "last_updated_time": "2024-10-06 01:43:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 11:43:24 +00:00"
+      }
+    },
+    {
+      "keyword": "us border and customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:53:27 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.04,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 2.25,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 34744.4,
+        "dofollow": 32584.9,
+        "referring_pages": 32961,
+        "referring_domains": 615.8,
+        "referring_main_domains": 477.8,
+        "rank": 236.7,
+        "main_domain_rank": 540,
+        "last_updated_time": "2024-10-12 17:10:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 22:51:56 +00:00"
+      }
+    },
+    {
+      "keyword": "usps customs form online",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:42:24 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 3.68,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -32,
+          "quarterly": -46,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 48799.1,
+        "dofollow": 28596.1,
+        "referring_pages": 32141.8,
+        "referring_domains": 72.9,
+        "referring_main_domains": 61.7,
+        "rank": 183.1,
+        "main_domain_rank": 573.6,
+        "last_updated_time": "2026-07-31 21:57:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-30 00:51:21 +00:00"
+      }
+    },
+    {
+      "keyword": "usps online customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 15:05:12 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 3.68,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -32,
+          "quarterly": -46,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form online",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 58537.6,
+        "dofollow": 42302.1,
+        "referring_pages": 42380.4,
+        "referring_domains": 96,
+        "referring_main_domains": 81.5,
+        "rank": 220.5,
+        "main_domain_rank": 592.5,
+        "last_updated_time": "2026-03-16 06:30:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-30 01:13:17 +00:00"
+      }
+    },
+    {
+      "keyword": "us customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 03:52:48 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.04,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 2.25,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 27455,
+        "dofollow": 26120.1,
+        "referring_pages": 26402,
+        "referring_domains": 371.2,
+        "referring_main_domains": 289.3,
+        "rank": 319.7,
+        "main_domain_rank": 598.4,
+        "last_updated_time": "2024-09-25 09:41:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:37:01 +00:00"
+      }
+    },
+    {
+      "keyword": "united states customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:29:14 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.04,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 2.25,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us customs form",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 47,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 26857,
+        "dofollow": 25635.9,
+        "referring_pages": 25840.5,
+        "referring_domains": 256.4,
+        "referring_main_domains": 198.3,
+        "rank": 249.4,
+        "main_domain_rank": 563.2,
+        "last_updated_time": "2024-09-25 09:41:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 23:30:14 +00:00"
+      }
+    },
+    {
+      "keyword": "online customs form usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:57:43 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 3.68,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -32,
+          "quarterly": -46,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form online",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 41734.9,
+        "dofollow": 26522.7,
+        "referring_pages": 26585.8,
+        "referring_domains": 74,
+        "referring_main_domains": 62,
+        "rank": 212.3,
+        "main_domain_rank": 701.6,
+        "last_updated_time": "2026-01-21 14:02:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 17:29:54 +00:00"
+      }
+    },
+    {
+      "keyword": "us customs form 7501",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 14:29:05 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 4.3,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.36,
+        "high_top_of_page_bid": 6.19,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1900,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 52.1,
+        "dofollow": 41.7,
+        "referring_pages": 46.7,
+        "referring_domains": 23.4,
+        "referring_main_domains": 22.6,
+        "rank": 67.4,
+        "main_domain_rank": 405.6,
+        "last_updated_time": "2026-05-17 23:01:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:57:21 +00:00"
+      }
+    },
+    {
+      "keyword": "online customs forms usps",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:10:59 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 3.68,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10305,
+          11327,
+          13724
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -32,
+          "quarterly": -46,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form online",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-07-04 12:45:51 +00:00"
+      }
+    },
+    {
+      "keyword": "import customs clearance complete",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:19:49 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 5.84,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 2.3,
+        "high_top_of_page_bid": 4.96,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1600,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1900,
+          "2026-02": 1300,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import customs clearance completed",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22.1,
+        "dofollow": 15.9,
+        "referring_pages": 20.5,
+        "referring_domains": 9.1,
+        "referring_main_domains": 8.3,
+        "rank": 66.3,
+        "main_domain_rank": 542.5,
+        "last_updated_time": "2026-03-14 16:48:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 01:55:03 +00:00"
+      }
+    },
+    {
+      "keyword": "us customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:32:27 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.04,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 2.25,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17396.6,
+        "dofollow": 14723.5,
+        "referring_pages": 14800.1,
+        "referring_domains": 116.6,
+        "referring_main_domains": 104.4,
+        "rank": 199.5,
+        "main_domain_rank": 574.8,
+        "last_updated_time": "2026-09-04 22:49:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:01:17 +00:00"
+      }
+    },
+    {
+      "keyword": "us border protection customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 16:14:40 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 6.04,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.26,
+        "high_top_of_page_bid": 2.25,
+        "categories": [
+          10018
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1600,
+          "2026-05": 1600,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us customs form",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 47,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16451.4,
+        "dofollow": 14263.9,
+        "referring_pages": 14325.1,
+        "referring_domains": 101.2,
+        "referring_main_domains": 89.8,
+        "rank": 186.5,
+        "main_domain_rank": 510.2,
+        "last_updated_time": "2026-03-14 12:32:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 02:44:24 +00:00"
+      }
+    },
+    {
+      "keyword": "import customs clearance completed",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 23:32:39 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 5.84,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 2.3,
+        "high_top_of_page_bid": 4.96,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1600,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1900,
+          "2026-02": 1300,
+          "2026-01": 1900,
+          "2025-12": 1900,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.2,
+        "dofollow": 1.8,
+        "referring_pages": 2.4,
+        "referring_domains": 1.9,
+        "referring_main_domains": 1.5,
+        "rank": 42.9,
+        "main_domain_rank": 404.8,
+        "last_updated_time": "2026-09-05 01:58:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 15:26:45 +00:00"
+      }
+    },
+    {
+      "keyword": "us postal customs forms online",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 15:53:34 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 3.68,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 1.03,
+        "high_top_of_page_bid": 3.31,
+        "categories": [
+          10004,
+          10276,
+          11099,
+          12398
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1900,
+          "2026-06": 2400,
+          "2026-05": 1600,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1900,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -32,
+          "quarterly": -46,
+          "yearly": 48
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "usps customs form online",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 34,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16296.4,
+        "dofollow": 14145.3,
+        "referring_pages": 14182.3,
+        "referring_domains": 60.2,
+        "referring_main_domains": 52.9,
+        "rank": 151.7,
+        "main_domain_rank": 581.5,
+        "last_updated_time": "2026-03-16 06:33:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 23:02:21 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form declaration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:43:28 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.15,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.53,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -38
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs declaration form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13759,
+        "dofollow": 12113.2,
+        "referring_pages": 12159.4,
+        "referring_domains": 163.2,
+        "referring_main_domains": 149.1,
+        "rank": 264.5,
+        "main_domain_rank": 555.2,
+        "last_updated_time": "2025-11-10 12:57:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 06:35:06 +00:00"
+      }
+    },
+    {
+      "keyword": "import customs duties",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:39:05 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 3.76,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 1.18,
+        "high_top_of_page_bid": 9.36,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 60,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22237.3,
+        "dofollow": 20260.3,
+        "referring_pages": 20340.2,
+        "referring_domains": 227.1,
+        "referring_main_domains": 213,
+        "rank": 279.2,
+        "main_domain_rank": 555.9,
+        "last_updated_time": "2026-06-30 18:02:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 09:12:10 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 07:58:47 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.15,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.53,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -38
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs declaration form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15531.5,
+        "dofollow": 14072.3,
+        "referring_pages": 14107.8,
+        "referring_domains": 94.2,
+        "referring_main_domains": 82.7,
+        "rank": 213.4,
+        "main_domain_rank": 589.7,
+        "last_updated_time": "2025-07-15 01:57:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-26 21:31:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration sheet",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 12:57:55 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.15,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.53,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": 9900
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs declaration form",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 26,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:50:22 +00:00"
+      }
+    },
+    {
+      "keyword": "how long does customs clearance take",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 19:31:42 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1300,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1600,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1000,
+          "2025-10": 1600,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.8,
+        "dofollow": 0.4,
+        "referring_pages": 1.8,
+        "referring_domains": 1,
+        "referring_main_domains": 1,
+        "rank": 11,
+        "main_domain_rank": 494.5,
+        "last_updated_time": "2026-07-31 19:57:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 04:16:15 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokers near me",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:05:52 +00:00",
+        "competition": 0.64,
+        "competition_level": "MEDIUM",
+        "cpc": 14.53,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 4.33,
+        "high_top_of_page_bid": 18.47,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": -23,
+          "yearly": -47
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs broker near me",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 54,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 853.6,
+        "dofollow": 397.8,
+        "referring_pages": 468,
+        "referring_domains": 112.6,
+        "referring_main_domains": 99.3,
+        "rank": 194.2,
+        "main_domain_rank": 333.4,
+        "last_updated_time": "2026-03-15 05:44:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-25 23:15:32 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration format",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 19:55:05 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.15,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.53,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -38
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16328.6,
+        "dofollow": 14167.8,
+        "referring_pages": 14213.7,
+        "referring_domains": 69,
+        "referring_main_domains": 60,
+        "rank": 149.5,
+        "main_domain_rank": 430.7,
+        "last_updated_time": "2026-03-15 05:50:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 07:57:12 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:38:06 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 7.15,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.53,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "yearly": -38
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16899,
+        "dofollow": 14389.5,
+        "referring_pages": 14435,
+        "referring_domains": 64.7,
+        "referring_main_domains": 56.9,
+        "rank": 168.4,
+        "main_domain_rank": 558.1,
+        "last_updated_time": "2026-08-01 06:23:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:20:04 +00:00"
+      }
+    },
+    {
+      "keyword": "us customs duty calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:34:39 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 4.33,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.38,
+        "high_top_of_page_bid": 4.61,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us custom duties calculator",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 37,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 35877,
+        "dofollow": 32270.4,
+        "referring_pages": 33618.3,
+        "referring_domains": 198.7,
+        "referring_main_domains": 185.2,
+        "rank": 225.4,
+        "main_domain_rank": 457.3,
+        "last_updated_time": "2026-09-04 22:46:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:09:38 +00:00"
+      }
+    },
+    {
+      "keyword": "customs broker near me",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:32:21 +00:00",
+        "competition": 0.64,
+        "competition_level": "MEDIUM",
+        "cpc": 14.53,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 4.33,
+        "high_top_of_page_bid": 18.47,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1300,
+          "2026-05": 1000,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "quarterly": -23,
+          "yearly": -47
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 54,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2756.9,
+        "dofollow": 1480.1,
+        "referring_pages": 1711.1,
+        "referring_domains": 199.2,
+        "referring_main_domains": 185.2,
+        "rank": 199.7,
+        "main_domain_rank": 352.2,
+        "last_updated_time": "2026-03-15 05:44:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 14:00:34 +00:00"
+      }
+    },
+    {
+      "keyword": "palos garza mexican customs brokers",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 02:46:27 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 0.24,
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "yearly": 14
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.5,
+        "dofollow": 0.4,
+        "referring_pages": 0.5,
+        "referring_domains": 0.4,
+        "referring_main_domains": 0.4,
+        "rank": 10.1,
+        "main_domain_rank": 495.2,
+        "last_updated_time": "2026-09-05 17:11:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 18:58:45 +00:00"
+      }
+    },
+    {
+      "keyword": "ups customs broker pars",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 04:20:39 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 13.9,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 10,
+        "high_top_of_page_bid": 31.41,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -12,
+          "yearly": 49
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 43.5,
+        "dofollow": 22.1,
+        "referring_pages": 22.8,
+        "referring_domains": 4.1,
+        "referring_main_domains": 3.5,
+        "rank": 60.1,
+        "main_domain_rank": 417.6,
+        "last_updated_time": "2026-09-05 14:41:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-30 00:00:48 +00:00"
+      }
+    },
+    {
+      "keyword": "definition customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 20:15:54 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom duties definition",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 330.9,
+        "dofollow": 184.3,
+        "referring_pages": 200.8,
+        "referring_domains": 65.9,
+        "referring_main_domains": 60.9,
+        "rank": 128.7,
+        "main_domain_rank": 505.2,
+        "last_updated_time": "2026-09-05 20:59:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 14:23:22 +00:00"
+      }
+    },
+    {
+      "keyword": "do you have to go through customs for a layover",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 08:51:25 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10017,
+          10144
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 1000,
+          "2026-05": 1300,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -28,
+          "yearly": -28
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "do you have to go through customs on a layover",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 10
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5.4,
+        "dofollow": 5,
+        "referring_pages": 5.2,
+        "referring_domains": 2.6,
+        "referring_main_domains": 1.6,
+        "rank": 29.3,
+        "main_domain_rank": 612.7,
+        "last_updated_time": "2026-08-01 12:25:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 15:24:08 +00:00"
+      }
+    },
+    {
+      "keyword": "do you have to go through customs on a layover",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:08:08 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10017,
+          10144,
+          10778
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 1000,
+          "2026-05": 1300,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -28,
+          "yearly": -28
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 10
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.5,
+        "dofollow": 3.9,
+        "referring_pages": 4.2,
+        "referring_domains": 1.8,
+        "referring_main_domains": 0.8,
+        "rank": 18.7,
+        "main_domain_rank": 599,
+        "last_updated_time": "2026-08-01 12:26:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:20:18 +00:00"
+      }
+    },
+    {
+      "keyword": "ups customs broker pars tracker",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 14:35:45 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 13.9,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 10,
+        "high_top_of_page_bid": 31.41,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          13724
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1300,
+          "2026-04": 1600,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -12,
+          "yearly": 49
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 43.4,
+        "dofollow": 22,
+        "referring_pages": 22.8,
+        "referring_domains": 4.2,
+        "referring_main_domains": 3.6,
+        "rank": 57,
+        "main_domain_rank": 369,
+        "last_updated_time": "2026-08-01 08:22:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 23:51:12 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duties meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 07:50:33 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs duty meaning",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 491.4,
+        "dofollow": 318.7,
+        "referring_pages": 350.7,
+        "referring_domains": 102.6,
+        "referring_main_domains": 97.4,
+        "rank": 142.5,
+        "main_domain_rank": 441.6,
+        "last_updated_time": "2026-08-01 12:36:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:28:19 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duties definition",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 15:07:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom duties definition",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1387.5,
+        "dofollow": 430.6,
+        "referring_pages": 589.4,
+        "referring_domains": 114.5,
+        "referring_main_domains": 105.2,
+        "rank": 154.9,
+        "main_domain_rank": 477.3,
+        "last_updated_time": "2026-08-01 12:37:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:20:04 +00:00"
+      }
+    },
+    {
+      "keyword": "define customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 13:21:55 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "define custom duty",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 301,
+        "dofollow": 160,
+        "referring_pages": 174,
+        "referring_domains": 58.7,
+        "referring_main_domains": 55.1,
+        "rank": 116.8,
+        "main_domain_rank": 504.6,
+        "last_updated_time": "2026-08-01 12:34:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 14:34:04 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty definition",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 10:49:08 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom duties definition",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 299.9,
+        "dofollow": 159.3,
+        "referring_pages": 172.9,
+        "referring_domains": 58.4,
+        "referring_main_domains": 54.8,
+        "rank": 103.7,
+        "main_domain_rank": 522.9,
+        "last_updated_time": "2026-08-01 12:25:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:00:34 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:10:19 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 2.32,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.39,
+        "high_top_of_page_bid": 7.51,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1000,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 880,
+          "2026-02": 880,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 880,
+          "2025-10": 1300,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -12,
+          "quarterly": -12,
+          "yearly": -32
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 42,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17238.8,
+        "dofollow": 14589.6,
+        "referring_pages": 14631.2,
+        "referring_domains": 67.7,
+        "referring_main_domains": 58.7,
+        "rank": 171.5,
+        "main_domain_rank": 524.6,
+        "last_updated_time": "2026-09-05 20:50:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:08:40 +00:00"
+      }
+    },
+    {
+      "keyword": "customs brokerage",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:08:04 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 21.27,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 4.82,
+        "high_top_of_page_bid": 21.02,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 1600,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 60,
+          "quarterly": 82,
+          "yearly": 60
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "brokerage custom",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 148.7,
+        "dofollow": 110.8,
+        "referring_pages": 129.2,
+        "referring_domains": 48.8,
+        "referring_main_domains": 46.5,
+        "rank": 161.8,
+        "main_domain_rank": 559.3,
+        "last_updated_time": "2026-09-05 20:50:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 11:56:33 +00:00"
+      }
+    },
+    {
+      "keyword": "tax customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:17:08 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 43.33,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.4,
+        "high_top_of_page_bid": 20.21,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 590,
+          "2026-06": 590,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1900
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 63,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2739.4,
+        "dofollow": 1643.3,
+        "referring_pages": 1692.5,
+        "referring_domains": 129.1,
+        "referring_main_domains": 121.7,
+        "rank": 281.5,
+        "main_domain_rank": 549.6,
+        "last_updated_time": "2026-06-30 18:05:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:57:19 +00:00"
+      }
+    },
+    {
+      "keyword": "what is customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:35:56 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1000,
+          "2026-05": 880,
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 880,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 64.7,
+        "dofollow": 57.3,
+        "referring_pages": 62.8,
+        "referring_domains": 23.9,
+        "referring_main_domains": 23.4,
+        "rank": 118.9,
+        "main_domain_rank": 516.1,
+        "last_updated_time": "2026-07-31 21:44:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 05:51:36 +00:00"
+      }
+    },
+    {
+      "keyword": "definition of customs duties",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:45:02 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom duties definition",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 323.5,
+        "dofollow": 179.1,
+        "referring_pages": 194.3,
+        "referring_domains": 63.7,
+        "referring_main_domains": 58.8,
+        "rank": 133.6,
+        "main_domain_rank": 569.2,
+        "last_updated_time": "2026-08-01 12:16:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 14:14:23 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duty meaning",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 06:29:05 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 304.9,
+        "dofollow": 163.2,
+        "referring_pages": 176.9,
+        "referring_domains": 60.1,
+        "referring_main_domains": 56.5,
+        "rank": 98.5,
+        "main_domain_rank": 481.8,
+        "last_updated_time": "2026-09-05 21:04:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:14:00 +00:00"
+      }
+    },
+    {
+      "keyword": "meaning of customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:32:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 590,
+          "2026-04": 880,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1600,
+          "2025-12": 1300,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 247,
+          "quarterly": 181,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs duty meaning",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 304.2,
+        "dofollow": 162.4,
+        "referring_pages": 176.4,
+        "referring_domains": 61.2,
+        "referring_main_domains": 57.3,
+        "rank": 123.4,
+        "main_domain_rank": 493.1,
+        "last_updated_time": "2026-08-01 10:58:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:52:32 +00:00"
+      }
+    },
+    {
+      "keyword": "guam customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:29:34 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 880,
+          "2026-06": 1000,
+          "2026-05": 1000,
+          "2026-04": 720,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "quarterly": -12,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "guam customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 424.1,
+        "dofollow": 386.1,
+        "referring_pages": 389.5,
+        "referring_domains": 26.3,
+        "referring_main_domains": 24.9,
+        "rank": 139.3,
+        "main_domain_rank": 468.5,
+        "last_updated_time": "2026-08-02 09:01:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:14:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs clearance completion",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:36:56 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 3.22,
+        "search_volume": 880,
+        "low_top_of_page_bid": 2.24,
+        "high_top_of_page_bid": 6.23,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance completed",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15.9,
+        "dofollow": 11.6,
+        "referring_pages": 14.1,
+        "referring_domains": 6.6,
+        "referring_main_domains": 6.2,
+        "rank": 58.9,
+        "main_domain_rank": 410.8,
+        "last_updated_time": "2025-12-11 09:15:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:18:37 +00:00"
+      }
+    },
+    {
+      "keyword": "customs forms mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:08:43 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.64,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 1.75,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17030.1,
+        "dofollow": 15124.9,
+        "referring_pages": 15219.1,
+        "referring_domains": 177.7,
+        "referring_main_domains": 162.6,
+        "rank": 236.3,
+        "main_domain_rank": 415.6,
+        "last_updated_time": "2025-07-24 04:09:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 19:28:14 +00:00"
+      }
+    },
+    {
+      "keyword": "what is customs brokerage",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:15:13 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 22.93,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.37,
+        "high_top_of_page_bid": 6.8,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 880
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 89.4,
+        "dofollow": 51.6,
+        "referring_pages": 68.1,
+        "referring_domains": 29.5,
+        "referring_main_domains": 28.3,
+        "rank": 113.1,
+        "main_domain_rank": 577.8,
+        "last_updated_time": "2026-09-05 23:34:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 06:09:56 +00:00"
+      }
+    },
+    {
+      "keyword": "customs clearance complete",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:59:26 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 3.22,
+        "search_volume": 880,
+        "low_top_of_page_bid": 2.24,
+        "high_top_of_page_bid": 6.23,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance completed",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22.1,
+        "dofollow": 15.9,
+        "referring_pages": 20.5,
+        "referring_domains": 9.1,
+        "referring_main_domains": 8.3,
+        "rank": 66.3,
+        "main_domain_rank": 504.2,
+        "last_updated_time": "2026-03-15 15:32:20 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:49:57 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duties",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:06:51 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 1.98,
+        "search_volume": 880,
+        "low_top_of_page_bid": 1.63,
+        "high_top_of_page_bid": 12.86,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 720,
+          "2026-04": 590,
+          "2026-03": 720,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs duty",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1675.5,
+        "dofollow": 421.8,
+        "referring_pages": 437.5,
+        "referring_domains": 56.4,
+        "referring_main_domains": 52.8,
+        "rank": 138.7,
+        "main_domain_rank": 440.4,
+        "last_updated_time": "2026-09-06 06:41:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:58:27 +00:00"
+      }
+    },
+    {
+      "keyword": "us customs declaration form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:07:51 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.56,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.1,
+        "high_top_of_page_bid": 0.7,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1300
+        },
+        "search_volume_trend": {
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 24,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16970.2,
+        "dofollow": 14431.7,
+        "referring_pages": 14499.3,
+        "referring_domains": 99,
+        "referring_main_domains": 89.3,
+        "rank": 160.7,
+        "main_domain_rank": 538.8,
+        "last_updated_time": "2026-08-01 08:35:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:36:21 +00:00"
+      }
+    },
+    {
+      "keyword": "customs bonded",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:20:41 +00:00",
+        "competition": 0.3,
+        "competition_level": "LOW",
+        "cpc": 14.56,
+        "search_volume": 880,
+        "low_top_of_page_bid": 3.72,
+        "high_top_of_page_bid": 14.42,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 880,
+          "2026-05": 880,
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 1300,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs bond",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 87.4,
+        "dofollow": 56.9,
+        "referring_pages": 70.3,
+        "referring_domains": 38.8,
+        "referring_main_domains": 35.6,
+        "rank": 120.3,
+        "main_domain_rank": 487.8,
+        "last_updated_time": "2024-09-16 18:24:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:40:32 +00:00"
+      }
+    },
+    {
+      "keyword": "customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:10:33 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 8.37,
+        "search_volume": 880,
+        "low_top_of_page_bid": 1.47,
+        "high_top_of_page_bid": 6.55,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 880,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 56,
+        "detected_language": "en",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20516.6,
+        "dofollow": 14487.3,
+        "referring_pages": 18038.8,
+        "referring_domains": 107.2,
+        "referring_main_domains": 97,
+        "rank": 214.1,
+        "main_domain_rank": 567.2,
+        "last_updated_time": "2026-08-02 10:59:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 04:46:27 +00:00"
+      }
+    },
+    {
+      "keyword": "cbp customs declaration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:20:54 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 2.4,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.54,
+        "high_top_of_page_bid": 7.39,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 880,
+          "2026-06": 1000,
+          "2026-05": 880,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": -12,
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us customs declaration",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 43,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 334.4,
+        "dofollow": 268.8,
+        "referring_pages": 300.9,
+        "referring_domains": 69.1,
+        "referring_main_domains": 61.2,
+        "rank": 215.1,
+        "main_domain_rank": 521.4,
+        "last_updated_time": "2026-09-06 07:04:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-05-04 02:46:53 +00:00"
+      }
+    },
+    {
+      "keyword": "customs fees from japan to us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:34:52 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 3.38,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.29,
+        "high_top_of_page_bid": 2.4,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en",
+        "words_count": 6
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1698,
+        "dofollow": 440.2,
+        "referring_pages": 458.4,
+        "referring_domains": 57.6,
+        "referring_main_domains": 55,
+        "rank": 134.2,
+        "main_domain_rank": 529.3,
+        "last_updated_time": "2026-09-05 12:08:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 04:19:44 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs forms",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:40:08 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.64,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 1.75,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3089.8,
+        "dofollow": 1619.4,
+        "referring_pages": 1689.6,
+        "referring_domains": 105.6,
+        "referring_main_domains": 95.4,
+        "rank": 153.9,
+        "main_domain_rank": 365.3,
+        "last_updated_time": "2026-01-29 06:37:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:25:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs duties calculator",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 00:02:41 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 5.33,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 7,
+        "categories": [
+          10004,
+          10012,
+          11093,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 480,
+          "2026-06": 590,
+          "2026-05": 720,
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -52
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "duty customs calculator",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14840,
+        "dofollow": 13326.5,
+        "referring_pages": 13394.5,
+        "referring_domains": 171.7,
+        "referring_main_domains": 156.4,
+        "rank": 297.2,
+        "main_domain_rank": 393.1,
+        "last_updated_time": "2026-03-16 02:48:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:50:22 +00:00"
+      }
+    },
+    {
+      "keyword": "customs forms for mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:03:50 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.64,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 1.75,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico customs form",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en",
+        "words_count": 4
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3055.2,
+        "dofollow": 1637.6,
+        "referring_pages": 1709,
+        "referring_domains": 100.2,
+        "referring_main_domains": 90,
+        "rank": 142.2,
+        "main_domain_rank": 462.3,
+        "last_updated_time": "2026-07-01 00:29:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 06:35:36 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs paperwork",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:03:45 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.64,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 1.75,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2836.3,
+        "dofollow": 1471.2,
+        "referring_pages": 1625.9,
+        "referring_domains": 86.2,
+        "referring_main_domains": 78.7,
+        "rank": 114.9,
+        "main_domain_rank": 422.8,
+        "last_updated_time": "2026-09-06 03:12:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:21:21 +00:00"
+      }
+    },
+    {
+      "keyword": "define customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:46:48 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 4.13,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.79,
+        "high_top_of_page_bid": 5.5,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 880,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 880,
+          "2025-11": 590,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -12,
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance meaning",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 10,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.6,
+        "dofollow": 11.9,
+        "referring_pages": 13.3,
+        "referring_domains": 9.9,
+        "referring_main_domains": 9.3,
+        "rank": 91.5,
+        "main_domain_rank": 491.3,
+        "last_updated_time": "2026-03-16 15:06:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 14:24:43 +00:00"
+      }
+    },
+    {
+      "keyword": "mexican customs form",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:24:53 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.64,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.28,
+        "high_top_of_page_bid": 1.75,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 880,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico customs form",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 4,
+        "detected_language": "en",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2029.9,
+        "dofollow": 1074.5,
+        "referring_pages": 1130.2,
+        "referring_domains": 91.8,
+        "referring_main_domains": 85.5,
+        "rank": 111.7,
+        "main_domain_rank": 309.4,
+        "last_updated_time": "2025-09-28 12:03:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:07:26 +00:00"
+      }
+    },
+    {
+      "keyword": "customs fees japan to us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:49:51 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 3.38,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.29,
+        "high_top_of_page_bid": 2.4,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 720,
+          "2026-06": 720,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1300,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs fees from japan to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 43,
+        "detected_language": "en",
+        "words_count": 5
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5516.4,
+        "dofollow": 2976.3,
+        "referring_pages": 3635.8,
+        "referring_domains": 114.9,
+        "referring_main_domains": 111,
+        "rank": 178.6,
+        "main_domain_rank": 549.1,
+        "last_updated_time": "2026-03-15 05:50:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 04:19:44 +00:00"
+      }
+    }
+  ]
+}

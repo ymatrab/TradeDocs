@@ -10,9 +10,12 @@ import {
 import {
   FEATURES,
   PAID_PLAN_IDS,
+  PROPOSED_PRICES,
   featurePlans,
+  listedPrices,
   paidOnlyFeatures,
   paymentLinkPlans,
+  pricesApproved,
   resolveOffer,
   resolvePlans,
   upgradeUrl,
@@ -292,6 +295,7 @@ describe('entitlement rules', () => {
 
 describe('plans and offers', () => {
   const configured = {
+    PRICES_APPROVED: 'true',
     PRICE_PRO_AMOUNT: '29',
     PRICE_PRO_CURRENCY: 'USD',
     PRICE_PRO_INTERVAL: 'month',
@@ -315,9 +319,48 @@ describe('plans and offers', () => {
       interval: 'month',
       paymentLinkUrl: 'https://buy.stripe.com/test_synthetic',
     });
-    expect(resolveOffer('pro', configured, false)).toEqual({ state: 'unavailable' });
+    // Approved but not buyable: the proposed prices show, with nothing to buy.
+    expect(resolveOffer('pro', configured, false)).toEqual({
+      state: 'listed',
+      prices: listedPrices('pro'),
+    });
     for (const key of Object.keys(configured)) {
-      expect(resolveOffer('pro', { ...configured, [key]: '' }, true).state).toBe('unavailable');
+      expect(resolveOffer('pro', { ...configured, [key]: '' }, true).state).toBe(
+        key === 'PRICES_APPROVED' ? 'unavailable' : 'listed',
+      );
+    }
+  });
+
+  it('shows no price at all until the owner approves the prices', () => {
+    for (const value of [undefined, '', 'false', 'TRUE', '1', 'yes']) {
+      expect(pricesApproved({ PRICES_APPROVED: value })).toBe(false);
+      expect(resolveOffer('pro', { ...configured, PRICES_APPROVED: value }, true)).toEqual({
+        state: 'unavailable',
+      });
+    }
+    expect(pricesApproved({ PRICES_APPROVED: 'true' })).toBe(true);
+  });
+
+  it('lists the proposed prices, monthly and yearly, in US dollars and euros', () => {
+    const plans = resolvePlans({ PRICES_APPROVED: 'true' }, false);
+    expect(plans.map((plan) => [plan.id, plan.offer.state])).toEqual([
+      ['free', 'free'],
+      ['pro', 'listed'],
+      ['team', 'listed'],
+    ]);
+    expect(listedPrices('pro')).toEqual([
+      { currency: 'USD', month: '$19', year: '$190', monthsFree: 2 },
+      { currency: 'EUR', month: '€19', year: '€190', monthsFree: 2 },
+    ]);
+    expect(listedPrices('team').map((price) => [price.month, price.year])).toEqual([
+      ['$49', '$490'],
+      ['€49', '€490'],
+    ]);
+    for (const plan of PAID_PLAN_IDS) {
+      for (const currency of ['USD', 'EUR'] as const) {
+        const { month, year } = PROPOSED_PRICES[plan][currency];
+        expect(year).toBeLessThan(month * 12);
+      }
     }
   });
 
@@ -332,9 +375,7 @@ describe('plans and offers', () => {
     ['PAYMENT_LINK_PRO_URL', 'https://buy.stripe.com/test_synthetic?prefilled_email=a@b.c'],
     ['PAYMENT_LINK_PRO_ID', 'not-a-link'],
   ])('fails one plan closed on an invalid %s', (key, value) => {
-    expect(resolveOffer('pro', { ...configured, [key]: value }, true)).toEqual({
-      state: 'unavailable',
-    });
+    expect(resolveOffer('pro', { ...configured, [key]: value }, true).state).toBe('listed');
   });
 
   it('maps Payment Link ids to plans independently of the displayed price', () => {

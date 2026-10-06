@@ -29,12 +29,25 @@ export async function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
   requestHeaders.set('Content-Security-Policy', csp);
+  // Lets a layout send a signed-out visitor to sign-in and back to the page they asked for.
+  // Set here from the URL, never trusted from the client: any incoming value is overwritten.
+  requestHeaders.set('x-request-path', `${request.nextUrl.pathname}${request.nextUrl.search}`);
   let response = NextResponse.next({ request: { headers: requestHeaders } });
 
   // An access token that expires mid-session must be refreshed somewhere that can write
   // cookies. A Server Component cannot, so it happens here or not at all. In foundation
   // mode the configuration resolves to no database and this is skipped entirely.
-  if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
+  //
+  // Two cases are left alone. /auth/* establishes the session itself; and a request with no
+  // session cookie has nothing to refresh. In both, getUser() would find no session and
+  // auth-js would "clean up" by expiring the session and PKCE code-verifier cookies, and that
+  // expiry rode on the same response as the session /auth/confirm had just written, so the
+  // browser dropped it: a verified reset link reached /reset-password/new signed out.
+  const holdsSession = request.cookies
+    .getAll()
+    .some(({ name }) => /^sb-.+-auth-token(\.\d+)?$/.test(name));
+  const establishesSession = request.nextUrl.pathname.startsWith('/auth/');
+  if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY && holdsSession && !establishesSession) {
     const client = createServerClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY, {
       cookies: {
         getAll() {
@@ -42,6 +55,8 @@ export async function proxy(request: NextRequest) {
         },
         setAll(written) {
           for (const { name, value } of written) request.cookies.set(name, value);
+          // The page must render with the refreshed pair, not the cookies the browser sent.
+          requestHeaders.set('cookie', request.cookies.toString());
           response = NextResponse.next({ request: { headers: requestHeaders } });
           for (const { name, value, options } of written) {
             response.cookies.set(name, value, options);

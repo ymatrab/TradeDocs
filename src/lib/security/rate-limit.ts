@@ -169,7 +169,67 @@ export async function limitPublicRequest(
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY || !env.RATE_LIMIT_KEY_SECRET) {
     return null;
   }
-  const subject = `ip:${attestedClientAddress(request, env) ?? 'unattested'}`;
+  const key = rateLimitKey(addressSubject(request, env), policy, env.RATE_LIMIT_KEY_SECRET);
+  return enforceRateLimit(provider ?? createSupabaseRateLimitProvider(env), key, policy);
+}
+
+/** The subject a public request is counted under. Shared by consume and peek. */
+export function addressSubject(request: Pick<Request, 'headers'>, env: ServerEnv): string {
+  return `ip:${attestedClientAddress(request, env) ?? 'unattested'}`;
+}
+
+/**
+ * Applies a quota to an arbitrary subject (an account id, a normalised email address). The
+ * subject is HMAC-hashed before it leaves the process, so no address reaches the store.
+ * Returns null when degraded; otherwise allows, or throws a 429 or a retryable 503.
+ */
+export async function limitSubject(
+  subject: string,
+  policy: RateLimitPolicy,
+  env: ServerEnv = getServerEnv(),
+  provider?: RateLimitProvider,
+): Promise<RateLimitResult | null> {
+  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY || !env.RATE_LIMIT_KEY_SECRET) {
+    return null;
+  }
   const key = rateLimitKey(subject, policy, env.RATE_LIMIT_KEY_SECRET);
   return enforceRateLimit(provider ?? createSupabaseRateLimitProvider(env), key, policy);
+}
+
+/**
+ * How many times a quota has been consumed in its current window, without consuming it.
+ * Used where a count gates something softer than a refusal, such as asking for a bot
+ * challenge after repeated failed sign-ins. Returns null when the deployment runs degraded;
+ * throws when the store is configured but unreachable, so the caller can fail closed.
+ */
+export async function peekRateLimit(
+  subject: string,
+  policy: RateLimitPolicy,
+  env: ServerEnv = getServerEnv(),
+  fetcher: typeof fetch = fetch,
+): Promise<number | null> {
+  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY || !env.RATE_LIMIT_KEY_SECRET) {
+    return null;
+  }
+  const keyHash = rateLimitKey(subject, policy, env.RATE_LIMIT_KEY_SECRET);
+  const response = await fetcher(new URL('/rest/v1/rpc/peek_rate_limit', env.SUPABASE_URL), {
+    method: 'POST',
+    headers: {
+      apikey: env.SUPABASE_SERVICE_ROLE_KEY,
+      Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ p_key_hash: keyHash, p_window_seconds: policy.windowSeconds }),
+    cache: 'no-store',
+    redirect: 'error',
+    signal: AbortSignal.timeout(2_000),
+  });
+  if (!response.ok) throw new Error('Rate limit provider unavailable.');
+  const parsed = z
+    .number()
+    .int()
+    .min(0)
+    .safeParse(await response.json());
+  if (!parsed.success) throw new Error('Invalid rate limit provider response.');
+  return parsed.data;
 }

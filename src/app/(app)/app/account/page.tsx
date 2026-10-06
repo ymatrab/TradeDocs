@@ -4,21 +4,41 @@ import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { AccountLifecycle } from './account-lifecycle';
+import { EmailForm, NameForm, PasswordForm } from './settings-forms';
 
 export const metadata: Metadata = { title: 'Account' };
 
-export default async function AccountPage() {
+export default async function AccountPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ email?: string }>;
+}) {
   const client = await createClient();
   const user = await getUser();
-  const { data: request } = await client
-    .from('account_deletion_requests')
-    .select('purge_after, cancelled_at')
-    .maybeSingle();
+  const { email: emailOutcome } = await searchParams;
+  const [{ data: request }, { data: profile }] = await Promise.all([
+    client.from('account_deletion_requests').select('purge_after, cancelled_at').maybeSingle(),
+    user
+      ? client.from('profiles').select('display_name').eq('id', user.id).maybeSingle()
+      : Promise.resolve({ data: null }),
+  ]);
   const pendingDeletion = request && !request.cancelled_at ? request.purge_after : null;
 
   return (
     <AppShell title="Account" current="Account">
       <div style={{ display: 'grid', gap: 24, maxWidth: 820 }}>
+        {emailOutcome === 'changed' ? (
+          <Callout tone="success" title="Email address confirmed">
+            Sign in with the new address from now on. If a second confirmation was sent to your
+            previous address, open that one too to complete the change.
+          </Callout>
+        ) : null}
+        {emailOutcome === 'link-expired' ? (
+          <Callout tone="warning" title="That confirmation link can’t be used">
+            It has expired or was already used. Start the change again below.
+          </Callout>
+        ) : null}
+
         <BoxGrid label="Account record">
           <FieldBox ordinal="1" caption="Email address" value={user?.email ?? undefined} />
           <FieldBox
@@ -39,8 +59,16 @@ export default async function AccountPage() {
           </Callout>
         ) : null}
 
-        <Panel title="Your data">
-          <AccountLifecycle deletionScheduled={Boolean(pendingDeletion)} />
+        <Panel title="Profile">
+          <NameForm current={profile?.display_name ?? null} />
+        </Panel>
+
+        <Panel title="Email address">
+          <EmailForm pending={user?.new_email ?? null} />
+        </Panel>
+
+        <Panel title="Password">
+          <PasswordForm />
         </Panel>
 
         <Panel title="Sessions">
@@ -53,6 +81,10 @@ export default async function AccountPage() {
               Sign out on all devices
             </button>
           </form>
+        </Panel>
+
+        <Panel title="Your data">
+          <AccountLifecycle deletionScheduled={Boolean(pendingDeletion)} />
         </Panel>
       </div>
     </AppShell>

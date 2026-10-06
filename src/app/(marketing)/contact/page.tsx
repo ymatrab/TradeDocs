@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { shown } from '@/lib/legal/identity';
 import { getLegalIdentity } from '@/lib/legal/server';
 import { openGraphFor } from '@/lib/seo/social';
+import { publicSiteKey } from '@/lib/security/turnstile';
 import { hasServiceRole } from '@/lib/supabase/admin';
 import { ContactForm } from './contact-form';
 
@@ -40,7 +41,7 @@ export default function ContactPage() {
 
       <section className="section contact-layout">
         <div className="contact-form-col">
-          <ContactForm available={hasServiceRole()} />
+          <ContactForm available={hasServiceRole()} siteKey={publicSiteKey()} />
         </div>
         <aside className="contact-aside" aria-label="Other ways to reach us">
           <p className="caption">By email</p>

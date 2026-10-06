@@ -37,18 +37,24 @@ export type Database = {
       account_deletion_requests: {
         Row: {
           cancelled_at: string | null
+          last_purge_attempt_at: string | null
+          last_purge_outcome: string | null
           purge_after: string
           requested_at: string
           user_id: string
         }
         Insert: {
           cancelled_at?: string | null
+          last_purge_attempt_at?: string | null
+          last_purge_outcome?: string | null
           purge_after: string
           requested_at?: string
           user_id: string
         }
         Update: {
           cancelled_at?: string | null
+          last_purge_attempt_at?: string | null
+          last_purge_outcome?: string | null
           purge_after?: string
           requested_at?: string
           user_id?: string
@@ -227,6 +233,10 @@ export type Database = {
           shipment_revision: number
           snapshot: Json
           status: string
+          status_changed_at: string | null
+          status_changed_by: string | null
+          status_reason: string | null
+          supersedes_id: string | null
         }
         Insert: {
           created_at?: string
@@ -239,6 +249,10 @@ export type Database = {
           shipment_revision: number
           snapshot: Json
           status?: string
+          status_changed_at?: string | null
+          status_changed_by?: string | null
+          status_reason?: string | null
+          supersedes_id?: string | null
         }
         Update: {
           created_at?: string
@@ -251,6 +265,10 @@ export type Database = {
           shipment_revision?: number
           snapshot?: Json
           status?: string
+          status_changed_at?: string | null
+          status_changed_by?: string | null
+          status_reason?: string | null
+          supersedes_id?: string | null
         }
         Relationships: [
           {
@@ -265,6 +283,13 @@ export type Database = {
             columns: ["org_id", "shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
+            referencedColumns: ["org_id", "id"]
+          },
+          {
+            foreignKeyName: "documents_supersedes_id_fkey"
+            columns: ["org_id", "supersedes_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
             referencedColumns: ["org_id", "id"]
           },
         ]
@@ -333,7 +358,7 @@ export type Database = {
           email: string
           expires_at: string
           id: string
-          invited_by: string
+          invited_by: string | null
           org_id: string
           revoked_at: string | null
           role: string
@@ -346,7 +371,7 @@ export type Database = {
           email: string
           expires_at: string
           id?: string
-          invited_by: string
+          invited_by?: string | null
           org_id: string
           revoked_at?: string | null
           role: string
@@ -359,7 +384,7 @@ export type Database = {
           email?: string
           expires_at?: string
           id?: string
-          invited_by?: string
+          invited_by?: string | null
           org_id?: string
           revoked_at?: string | null
           role?: string
@@ -428,6 +453,56 @@ export type Database = {
             foreignKeyName: "numbering_sequences_org_id_fkey"
             columns: ["org_id"]
             isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organization_settings: {
+        Row: {
+          bank_details: string | null
+          created_at: string
+          default_currency: string
+          document_notes: string | null
+          number_prefix: string | null
+          org_id: string
+          payment_terms: string | null
+          signatory_name: string | null
+          signatory_title: string | null
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          bank_details?: string | null
+          created_at?: string
+          default_currency?: string
+          document_notes?: string | null
+          number_prefix?: string | null
+          org_id: string
+          payment_terms?: string | null
+          signatory_name?: string | null
+          signatory_title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          bank_details?: string | null
+          created_at?: string
+          default_currency?: string
+          document_notes?: string | null
+          number_prefix?: string | null
+          org_id?: string
+          payment_terms?: string | null
+          signatory_name?: string | null
+          signatory_title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organization_settings_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: true
             referencedRelation: "organizations"
             referencedColumns: ["id"]
           },
@@ -858,11 +933,24 @@ export type Database = {
         }
         Returns: string
       }
+      admin_force_account_deletion: {
+        Args: { p_user: string }
+        Returns: string
+      }
+      admin_revoke_sessions: { Args: { p_user: string }; Returns: number }
+      admin_search_users: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: Json
+      }
       apply_billing_event: {
         Args: { p_action: Json; p_event_id: string; p_event_type: string }
         Returns: string
       }
       cancel_account_deletion: { Args: never; Returns: undefined }
+      change_member_role: {
+        Args: { new_role: string; target_org: string; target_user: string }
+        Returns: undefined
+      }
       consume_rate_limit: {
         Args: { p_key_hash: string; p_limit: number; p_window_seconds: number }
         Returns: {
@@ -884,16 +972,46 @@ export type Database = {
         Args: { organization_name: string }
         Returns: string
       }
+      duplicate_shipment: {
+        Args: { new_reference: string; source_shipment: string }
+        Returns: string
+      }
       export_account_data: { Args: never; Returns: Json }
       generate_document: {
         Args: { document_kind: string; target_shipment: string }
         Returns: string
       }
       import_products: {
-        Args: { rows: Json; target_org: string }
+        Args: { dry_run?: boolean; rows: Json; target_org: string }
         Returns: Json
       }
+      peek_rate_limit: {
+        Args: { p_key_hash: string; p_window_seconds: number }
+        Returns: number
+      }
+      preview_document: {
+        Args: { document_kind: string; target_shipment: string }
+        Returns: Json
+      }
+      purge_due_accounts: { Args: { p_limit?: number }; Returns: Json }
+      reissue_invitation: { Args: { target_invitation: string }; Returns: Json }
+      remove_member: {
+        Args: { target_org: string; target_user: string }
+        Returns: undefined
+      }
+      rename_organization: {
+        Args: { new_name: string; target_org: string }
+        Returns: undefined
+      }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
+      revoke_invitation: {
+        Args: { target_invitation: string }
+        Returns: undefined
+      }
+      void_document: {
+        Args: { reason: string; target_document: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

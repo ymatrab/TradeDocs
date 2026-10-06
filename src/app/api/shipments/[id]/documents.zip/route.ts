@@ -9,6 +9,7 @@ import { RENDERER_VERSION, renderTradeDocument } from '@/lib/pdf/trade-document'
 import { createZip, safeFileName, type ZipEntry } from '@/lib/zip';
 import { documentKindLabel } from '@/lib/labels';
 import { MAX_SET_DOCUMENTS } from '@/lib/limits';
+import { freshnessOf } from '@/lib/trade/staleness';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -58,15 +59,28 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     .maybeSingle();
   if (!shipment) return new NextResponse('Not found', { status: 404 });
 
-  const { data: documents } = await client
-    .from('documents')
-    .select('id, kind, number, status, shipment_revision, snapshot, created_at')
-    .eq('shipment_id', id)
-    .eq('status', 'final')
-    .eq('shipment_revision', shipment.revision)
-    .order('kind');
+  const [{ data: documents }, { data: now }] = await Promise.all([
+    client
+      .from('documents')
+      .select('id, kind, number, status, shipment_revision, snapshot, created_at')
+      .eq('shipment_id', id)
+      .eq('status', 'final')
+      .order('kind'),
+    // What the shipment would produce now. A document whose parties or issuer details have
+    // changed since is stale even though the shipment revision has not moved. Without this
+    // (an older database) the revision alone decides, as it always did.
+    client.rpc('preview_document', { target_shipment: id, document_kind: 'commercial_invoice' }),
+  ]);
 
-  const current = documents ?? [];
+  const finals = documents ?? [];
+  const freshness = new Map(
+    finals.map((document) => [
+      document.id,
+      freshnessOf(document, shipment.revision, now ?? undefined),
+    ]),
+  );
+  const current = finals.filter((document) => !freshness.get(document.id)?.stale);
+  const excluded = finals.filter((document) => freshness.get(document.id)?.stale);
   if (current.length === 0) {
     return new NextResponse(
       'This shipment has no current documents. Generate one, or re-issue the stale revisions.',
@@ -85,7 +99,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     `Archive built: ${new Date().toISOString()}`,
     `Renderer: ${RENDERER_VERSION}`,
     '',
-    'Each line below is the SHA-256 of the file as it appears in this archive. Re-render',
+    'Each line in the next block is the SHA-256 of a file as it appears in this archive. Re-render',
     'a document from TradeDocs at any time and it produces these same bytes, because a',
     'document is rendered from the snapshot it was generated with and never from the',
     'live shipment.',
@@ -93,6 +107,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   ];
 
   const schemas = new Set<number>();
+  // Kept apart from the checksum lines so the manifest still works with `sha256sum -c`.
+  const details: string[] = [];
   for (const document of current) {
     let pdf: Uint8Array;
     try {
@@ -110,6 +126,9 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     entries.push({ name, data: pdf, modified: new Date(document.created_at) });
     const digest = createHash('sha256').update(pdf).digest('hex');
     manifest.push(`${digest}  ${name}`);
+    details.push(
+      `${document.number}  ${documentKindLabel(document.kind)} · shipment revision ${document.shipment_revision} · generated ${new Date(document.created_at).toISOString()}`,
+    );
     schemas.add(schemaVersionOf(document.snapshot));
   }
 
@@ -120,7 +139,17 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   }
 
   const versions = [...schemas].sort((left, right) => left - right).join(', ');
-  manifest.push('', `Snapshot schema versions: ${versions}`);
+  manifest.push('', `Snapshot schema versions: ${versions}`, '', 'Documents:', ...details);
+  if (excluded.length > 0) {
+    manifest.push(
+      '',
+      'Left out because they no longer match the shipment (download them one at a time):',
+      ...excluded.map(
+        (document) =>
+          `${document.number}  ${documentKindLabel(document.kind)} · ${freshness.get(document.id)?.reason ?? 'Out of date.'}`,
+      ),
+    );
+  }
   entries.push({
     name: 'manifest.txt',
     data: new TextEncoder().encode(`${manifest.join('\n')}\n`),

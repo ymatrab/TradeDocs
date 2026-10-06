@@ -6,6 +6,7 @@ import { Button } from '@/components/primitives/button';
 import { Field, Select } from '@/components/primitives/form';
 import { Panel } from '@/components/primitives/feedback';
 import { ActionResult } from '@/components/primitives/action-result';
+import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { partyRoleLabels, type PartyRole } from '@/lib/labels';
 import { setShipmentParty } from '@/app/(app)/master-data-actions';
 import type { ActionState } from '@/app/(app)/actions';
@@ -50,10 +51,20 @@ export function PartiesPanel({
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(setShipmentParty, {});
   const roles = Object.keys(partyRoleLabels) as PartyRole[];
+  const nameOf = new Map(options.map((option) => [option.id, option.name]));
+  const remember = useOutcomeToast(state, (submitted) => {
+    const role = sent(submitted, 'role') as PartyRole | null;
+    const label = role && Object.hasOwn(partyRoleLabels, role) ? partyRoleLabels[role] : 'Party';
+    const company = sent(submitted, 'company');
+    return company
+      ? `${label} set to ${nameOf.get(company) ?? 'the chosen company'}.`
+      : `${label} cleared.`;
+  });
 
   return (
     <Panel
       title="Parties"
+      id="parties"
       actions={
         <Link className="text-link" href={`/app/${org}/companies`}>
           Manage companies
@@ -66,10 +77,14 @@ export function PartiesPanel({
         {options.length === 0 ? (
           <p className="muted" style={{ marginBottom: 0 }}>
             No companies saved yet.{' '}
-            <Link className="text-link" href={`/app/${org}/companies/new`}>
-              Add one
+            <Link className="text-link" href={`/app/${org}/companies/new?kind=own`}>
+              Add your own company
             </Link>{' '}
-            and every document in this set will carry the same address, spelled the same way.
+            and{' '}
+            <Link className="text-link" href={`/app/${org}/companies/new?kind=customer`}>
+              a customer
+            </Link>
+            , and every document in this set will carry the same addresses, spelled the same way.
           </p>
         ) : (
           <div
@@ -80,7 +95,12 @@ export function PartiesPanel({
             }}
           >
             {roles.map((role) => (
-              <form key={role} action={action} style={{ display: 'grid', gap: 10 }}>
+              <form
+                key={role}
+                action={action}
+                onSubmit={remember}
+                style={{ display: 'grid', gap: 10 }}
+              >
                 <input type="hidden" name="org" value={org} />
                 <input type="hidden" name="shipment" value={shipmentId} />
                 <input type="hidden" name="role" value={role} />
