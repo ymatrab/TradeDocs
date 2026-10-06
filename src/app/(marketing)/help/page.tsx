@@ -75,8 +75,7 @@ export default function HelpPage() {
       <section className="section sunken" aria-labelledby="help-contact">
         <h2 id="help-contact">Still stuck? Contact us</h2>
         <p className="measure">
-          If none of these answers it, send a message and a person will reply to the address you
-          give.
+          If none of these answers it, send a message through the contact form.
         </p>
         <div className="cta-row">
           <Link className="btn" href="/contact">

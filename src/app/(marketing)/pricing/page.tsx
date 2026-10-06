@@ -54,7 +54,7 @@ const questions = [
   },
   {
     q: 'If I cancel a paid plan later, when does it end?',
-    a: 'At the end of the period you paid for: cancelling stops the renewal, not the access you have already paid for. A refunded or disputed payment ends the plan straight away.',
+    a: 'At the end of the period you paid for: cancelling stops the renewal, not the access you have already paid for. A fully refunded or disputed payment ends the plan straight away.',
   },
   {
     q: 'Who will take the payment?',

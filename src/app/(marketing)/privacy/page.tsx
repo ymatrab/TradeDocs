@@ -142,9 +142,13 @@ export default function PrivacyPage() {
             sign-in links and password resets, and a copy of contact-form messages to our inbox.
           </li>
           <li>
-            <strong>Unsplash</strong> serves the cover photos on the guides. Your browser fetches
-            them from Unsplash’s image servers directly, so Unsplash receives your network address
-            and browser details when you open a guide.
+            <strong>Unsplash</strong> serves the photos on the homepage, guides and blog. Your
+            browser fetches them from Unsplash’s image servers directly, so Unsplash receives your
+            network address and browser details when you open those pages.
+          </li>
+          <li>
+            <strong>Stripe</strong> will process payments once paid plans open. It is not used
+            today, and no payment data is collected until then.
           </li>
         </ul>
         <p>
@@ -168,15 +172,15 @@ export default function PrivacyPage() {
           <li>Account and workspace data: for as long as the account or organization exists.</li>
           <li>
             Deleting your account: from Account in the workspace, confirmed with your password. The
-            request waits 30 days, during which you can withdraw it; after that the account and the
-            personal data attached to it are removed. Organizations you own are not removed with
+            request waits 30 days, during which you can withdraw it; the account and the personal data
+            attached to it are removed shortly after those 30 days end. Organizations you own are not removed with
             you; hand ownership over first.
           </li>
           <li>
             Activity record: kept with the organization it belongs to. When an account is removed,
             entries it made stay but no longer point to the person.
           </li>
-          <li>Request quota counters: removed after at most two days.</li>
+          <li>Request quota counters: deleted once they are more than two days old.</li>
           <li>Free tool submissions: not kept at all.</li>
           <li>Contact messages: until your enquiry is resolved, then for {shown(null)}.</li>
         </ul>
