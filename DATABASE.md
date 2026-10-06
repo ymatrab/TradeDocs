@@ -199,3 +199,35 @@ Generated types were extended by hand (`organization_settings`, the four documen
   by none of the API roles.
 - pgTAP: `supabase/tests/accounts_access.test.sql`. Types hand-added; replace with the CI
   `database-evidence` artifact. Rollback notes are in the migration header.
+
+## PDF branding (20261007000100, D-021)
+
+- Storage bucket `org-branding`: private (`public = false`), 1 MiB per object, `image/png` and
+  `image/jpeg` only. Objects are content-addressed, `org/<org id>/assets/<sha-256>.<png|jpg>`
+  (`private.branding_object_org` accepts nothing else), and never overwritten: there is no
+  UPDATE policy. Members of the organization in the path read; owners and admins insert while
+  the organization is entitled, and delete whether or not it is. `anon` has no policy.
+- `public.branding_assets` (primary key `org_id, slot`; `slot` is `logo` or `signature`):
+  `sha256`, `format` (`png`/`jpeg`), `object_path`, `width`/`height` (1–2000), `byte_size`
+  (≤ 1 MiB), `updated_by`. A check ties `object_path` to the row's own organization and hash.
+  Members select; owners and admins insert and update while entitled, and delete.
+- `private.org_entitled(org, plans)` is `entitlementGrants` (src/lib/billing/entitlements.ts)
+  in SQL, and `private.branding_entitled(org)` applies it to Pro and Team, the plans of
+  `pdf_branding` in `src/lib/billing/plans.ts`. Both answer false on no row (fail closed).
+- Snapshot schema 5: `private.document_snapshot` adds `branding.{logo,signature}`
+  (`object_path`, `sha256`, `format`, `width`, `height`) and `schema_version: 5` only when the
+  organization is entitled at that moment and has an image; every other snapshot is schema 4
+  exactly as before. The renderer (`tradedocs-pdf/5`) fetches each image by its recorded path,
+  checks its SHA-256 and draws only those bytes, so a finalized document re-renders identically
+  after the logo changes; issued documents are never re-rendered without their images.
+- `generate_document` takes `for share` on the organization's `branding_assets` rows before the
+  snapshot, so a concurrent replace/remove waits until the document is committed.
+- `branding_asset_in_use(org, sha256)` (authenticated): true when either slot or any document of
+  the organization, in any status, refers to the image, or the caller is not a member. The
+  upload/remove actions delete an old object only when it answers false.
+- pgTAP: `supabase/tests/pdf_branding.test.sql` (bucket privacy, member read, cross-org read and
+  write denied, member write denied, owner write allowed, free org denied, no overwrite, delete
+  authority, schema 5 capture and lapse). Types for `branding_assets` and
+  `branding_asset_in_use` were added by hand; the CI `database-evidence` artifact is
+  authoritative. Rollback notes are in the migration header (keep the bucket and the schema 5
+  renderer while schema 5 documents exist).

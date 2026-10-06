@@ -24,6 +24,22 @@ Inspect provider event identity/signature status, order snapshot and ledger stat
 
 Inspect tenant-scoped job attempts, schema/template/renderer versions and per-artifact status. Preserve existing final objects. Retry failed work with stable idempotency keys and bounded concurrency. Verify every selected output hash and manifest member before marking the set complete. Check storage access and signed-link expiry without making buckets public. A misleading legal label requires feature disable and legal review, not silent regeneration of historical purchased artifacts.
 
+### PDF branding images (D-021)
+
+The private `org-branding` bucket and its policies are created by migration
+`20261007000100_pdf_branding.sql`; there is nothing to set up by hand. Storage is enabled on
+every Supabase project by default; if the hosted project has it switched off, enable it in the
+dashboard before running the migration. Never make the bucket public.
+
+- A branded document that answers 503 ("logo or signature image could not be loaded"): check
+  that the object named in its snapshot (`snapshot -> 'branding'`) exists in `org-branding` and
+  that its SHA-256 matches. Do not regenerate or edit the document; restore the object from
+  backup under the same name. Documents never render without the images they were issued with.
+- Previews fall back to no branding when the entitlement or an image cannot be read; that is
+  expected fail-closed behaviour, not an incident.
+- Orphaned objects (an upload whose record failed) are harmless; delete one only after
+  `branding_asset_in_use(org, sha256)` answers false.
+
 ## Email or regulatory incident
 
 For delivery incidents inspect template/event IDs, provider webhook verification and suppression state; use sandbox recipients for diagnostics, respect complaints/bounces and never resend blindly. For source/claim incidents disable the affected feature, identify versions/pages/documents from the registry, assign qualified review and preserve prior artifact provenance. Alerts never approve new legal behavior automatically.

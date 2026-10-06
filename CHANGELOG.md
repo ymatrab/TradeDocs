@@ -2,6 +2,30 @@
 
 ## Unreleased — 2026-09-06
 
+### PDF branding, the Pro feature (D-021)
+
+- Pro and Team organizations can add their logo (top left of every page, fitted to 53 × 14 mm)
+  and a signature or stamp image (above the signatory line, fitted to 64 × 18 mm) on the
+  document settings page, with previews, replace and remove. Free organizations see the
+  controls disabled with "Branding is part of Pro" and links to Billing and pricing; nothing
+  they had changes.
+- Feature `pdf_branding` in `src/lib/billing/plans.ts` (Pro, Team). Pricing, the comparison,
+  the billing page and `/llms.txt` list it as the paid-only feature; "Paid-only features: none
+  yet" is gone for Pro and Team.
+- Snapshot schema 5 and renderer `tradedocs-pdf/5`: new documents of entitled organizations
+  record each image's path and SHA-256 and render those exact bytes; schema 1–4 documents render
+  byte for byte as before. Previews use the current branding. A changed logo marks earlier
+  branded documents stale ("Logo or signature image changed").
+- Dependency-free PNG/JPEG reader and PDF image embedding (JPEG as DCTDecode, PNG via
+  FlateDecode with node:zlib, transparency as an SMask).
+- Private bucket `org-branding` with storage RLS, table `branding_assets`, SQL entitlement check
+  `private.branding_entitled` (migration `20261007000100_pdf_branding.sql`). Server actions
+  accept bodies up to 2 MB (was 1 MB) so a 1 MB image fits.
+- Tests: vitest `branding` (image parsing and embedding, upload validation, fail-closed gate,
+  renderer dispatch, schema 4 unchanged) and `branding-actions`; pgTAP `pdf_branding` (35).
+  e2e not added: an entitled organization needs a verified Stripe entitlement the CI database
+  job does not have. All pending CI.
+
 ### Product logic review (D-020, docs/delivery/product-review-2026-10-06.md)
 
 - Documents: re-generating supersedes the earlier revision of that type and the new one states the number it replaces; voiding is owner/admin only, needs a reason and is audited; previews (`/api/shipments/[id]/preview`) are labelled "PREVIEW · NOT ISSUED" with no number; a stale document says why (lines, packing, terms, a party's details, issuer settings), and the ZIP set leaves content-stale documents out and lists them.
