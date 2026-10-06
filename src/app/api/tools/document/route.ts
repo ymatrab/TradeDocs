@@ -2,7 +2,12 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { getServerEnv } from '@/lib/config/server';
 import { HttpError, readJsonBody } from '@/lib/http/request';
 import { renderTradeDocument } from '@/lib/pdf/trade-document';
-import { limitPublicRequest, type RateLimitPolicy } from '@/lib/security/rate-limit';
+import {
+  attestedClientAddress,
+  limitPublicRequest,
+  type RateLimitPolicy,
+} from '@/lib/security/rate-limit';
+import { TURNSTILE_HEADER, challengeMessage, verifyChallenge } from '@/lib/security/turnstile';
 import {
   buildToolSnapshot,
   toolRequestSchema,
@@ -47,12 +52,24 @@ export async function POST(request: NextRequest) {
     return refuse(TOO_LARGE, 413);
   }
 
+  let env: ReturnType<typeof getServerEnv>;
   try {
-    await limitPublicRequest(request, POLICY, getServerEnv());
+    env = getServerEnv();
+    await limitPublicRequest(request, POLICY, env);
   } catch (error) {
     if (error instanceof HttpError) return refuse(error.publicMessage, error.status, error.headers);
     return refuse('This tool is temporarily unavailable.', 503, { 'Retry-After': '30' });
   }
+
+  // Bot challenge whenever Turnstile is configured (D-017); the token rides in a header so
+  // the document schema stays exactly the document.
+  const check = await verifyChallenge(
+    env,
+    request.headers.get(TURNSTILE_HEADER),
+    'tool_document',
+    attestedClientAddress(request, env),
+  );
+  if (!check.ok) return refuse(challengeMessage(check), check.reason === 'unavailable' ? 503 : 403);
 
   let input: ToolRequest;
   try {
