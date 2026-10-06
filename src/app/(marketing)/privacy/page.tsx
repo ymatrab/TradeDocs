@@ -172,9 +172,9 @@ export default function PrivacyPage() {
           <li>Account and workspace data: for as long as the account or organization exists.</li>
           <li>
             Deleting your account: from Account in the workspace, confirmed with your password. The
-            request waits 30 days, during which you can withdraw it; the account and the personal data
-            attached to it are removed shortly after those 30 days end. Organizations you own are not removed with
-            you; hand ownership over first.
+            request waits 30 days, during which you can withdraw it; the account and the personal
+            data attached to it are removed shortly after those 30 days end. Organizations you own
+            are not removed with you; hand ownership over first.
           </li>
           <li>
             Activity record: kept with the organization it belongs to. When an account is removed,

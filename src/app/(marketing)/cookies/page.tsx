@@ -72,8 +72,8 @@ export default function CookiesPage() {
 
       <LegalSection id="third-party" number={3} title="Other services">
         <p>
-          Photos on the homepage, guides and blog load from Unsplash’s image servers. We set no cookie for them; what
-          Unsplash records is described in its own privacy policy. The{' '}
+          Photos on the homepage, guides and blog load from Unsplash’s image servers. We set no
+          cookie for them; what Unsplash records is described in its own privacy policy. The{' '}
           <Link className="text-link" href="/privacy">
             privacy policy
           </Link>{' '}
