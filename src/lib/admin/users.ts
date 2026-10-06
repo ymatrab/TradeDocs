@@ -68,7 +68,7 @@ export type DetailOutcome =
 export async function getUserDetail(client: TradeDocsClient, id: string): Promise<DetailOutcome> {
   const { data, error } = await client.auth.admin.getUserById(id);
   if (error || !data.user) {
-    if (error?.status === 404 || !data?.user) return { ok: false, missing: true };
+    if (!error || error.status === 404) return { ok: false, missing: true };
     return { ok: false, missing: false, cause: `${error.code ?? error.status}: ${error.message}` };
   }
   const user = data.user;

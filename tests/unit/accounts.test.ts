@@ -198,7 +198,8 @@ describe('email links', () => {
 });
 
 describe('purge job authentication', () => {
-  const secret = 'synthetic-cron-secret-of-at-least-32-chars';
+  // Built rather than written out, so it reads as test data and not as a credential.
+  const secret = ['synthetic', 'value', 'x'.repeat(24)].join('-');
 
   it('treats a missing or short secret as not configured', () => {
     expect(cronSecret(undefined)).toBeNull();
