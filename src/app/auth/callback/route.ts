@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createRouteClient } from '@/lib/supabase/route';
 import { safeNextPath } from '@/lib/security/redirect';
 import { NEXT_COOKIE, expiredLandingFor } from '@/lib/supabase/auth-links';
 
@@ -23,12 +23,13 @@ export async function GET(request: NextRequest) {
   const next = safeNextPath(rawNext);
 
   let destination = expiredLandingFor(null, rawNext);
+  // Reads the PKCE verifier from the request and writes the session onto the redirect.
+  const { client, bind } = createRouteClient(request);
   if (code && !url.searchParams.get('error_code')) {
-    const client = await createClient();
     const { error } = await client.auth.exchangeCodeForSession(code);
     if (!error) destination = next;
   }
-  const response = NextResponse.redirect(new URL(destination, url.origin), 303);
+  const response = bind(NextResponse.redirect(new URL(destination, url.origin), 303));
   response.cookies.delete(NEXT_COOKIE);
   return response;
 }
