@@ -3172,6 +3172,13 @@ a.form-cell:active {
 .pricing-closing {
   margin-top: var(--space-6);
 }
+/* A plan card is narrower than the hero, so a long call to action wraps instead of
+   pushing the page sideways on a phone. */
+.pricing-plan .card-foot .btn,
+.pricing-closing .btn {
+  white-space: normal;
+  text-align: left;
+}
 
 /* --- Legal, contact, help and admin (ops pages, D-018) ------------------------ */
 /* Namespaced additions only; everything else reuses the Manifest classes above. */

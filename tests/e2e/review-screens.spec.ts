@@ -29,9 +29,13 @@ test.describe('review screens', () => {
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(path);
       await page.waitForLoadState('networkidle');
+      // Chromium cannot capture past 32,767 px, which a long page on a phone exceeds.
+      const height = await page.evaluate(() => document.documentElement.scrollHeight);
+      const width = page.viewportSize()?.width ?? 1280;
       await page.screenshot({
         path: `test-results/review/${info.project.name}-${name}.png`,
         fullPage: true,
+        clip: { x: 0, y: 0, width, height: Math.min(height, 16000) },
       });
     });
   }

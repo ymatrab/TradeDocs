@@ -42,7 +42,9 @@ export function HelpSearch({
         <input
           id={`${base}-query`}
           className="input"
-          type="search"
+          type="text"
+          role="searchbox"
+          enterKeyHint="search"
           autoComplete="off"
           spellCheck={false}
           maxLength={120}
