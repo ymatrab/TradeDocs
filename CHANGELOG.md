@@ -2,6 +2,14 @@
 
 ## Unreleased — 2026-09-06
 
+### Competitor analysis and proposed pricing (D-020, prices behind PRICES_APPROVED)
+
+- `docs/research/competitors-2026-10-06.md`: IncoDocs, ovrseas, Shipping Solutions, Zoho Invoice, Refrens and Invoice-Generator.com, from their live pages retrieved 2026-10-06 (plans, prices, limits, features, weak spots; unverified items marked), where TradeDocs is already better, ranked launch gaps and positioning lines that name no competitor.
+- `docs/research/pricing-proposal-2026-10-06.md`: proposed Free / Pro $19 / Team $49 a month (yearly = 10 months, USD and EUR), rationale with sources, owner confirmations and the exact env to flip. Proposed Free limits and the Pro member cap are documented only: not enforced, not displayed, nothing free reduced.
+- `src/lib/billing/plans.ts`: `PROPOSED_PRICES`, `PRICE_CURRENCIES`, `pricesApproved()` and `listedPrices()`; new offer state `listed` (approved prices on show, no button). Without `PRICES_APPROVED=true` every paid plan stays "Not available yet" with no price, as before; a buy button still needs payments open and all five `PRICE_<PLAN>_*`/`PAYMENT_LINK_<PLAN>_*` values. An invalid checkout value now falls back to `listed` (still nothing to buy).
+- `/pricing`: copy, FAQ (with FAQPage JSON-LD) and metadata follow the three states; the comparison table header shows the plan's price when one is set; new "Why TradeDocs" section stating facts about TradeDocs only (account-dependent points hidden where accounts are closed). `/llms.txt` lists approved prices. Pro/Team summaries rewritten.
+- `.env.example` and RUNBOOK.md document `PRICES_APPROVED`. Unit tests in `tests/unit/billing.test.ts` cover the flag, listed prices and the fallback. Pending CI; nothing was run locally.
+
 ### Homepage v3: photos, search sections and navigation (D-018)
 
 - Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.

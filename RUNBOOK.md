@@ -69,9 +69,15 @@ Order matters; each step is the owner's unless marked agent.
 
 ## Opening paid plans (Stripe Payment Links)
 
-Owner steps; agents never handle the keys. Prices are the owner's decision (P-002) and are
-never written in code. Until every step is done, `/pricing` shows each paid plan as "Not
-available yet" and the webhook route answers 404.
+Owner steps; agents never handle the keys. Prices are the owner's decision (P-002). The
+team's proposal is `PROPOSED_PRICES` in `src/lib/billing/plans.ts`
+(docs/research/pricing-proposal-2026-10-06.md); it shows only with `PRICES_APPROVED=true`.
+Without it `/pricing` shows each paid plan as "Not available yet". With it, and before the
+steps below, each paid plan shows its approved prices and "Checkout is not open yet". The
+webhook route answers 404 until payments are enabled.
+
+0. Approve or edit `PROPOSED_PRICES` (a code change), then set `PRICES_APPROVED=true` and
+   redeploy. Each Stripe Price created below must equal the approved amount.
 
 1. Publish the refund policy and the paid plans' features first. The pricing FAQ promises the
    policy before paid plans open, and a paid card lists only features the code gates
