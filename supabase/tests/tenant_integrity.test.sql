@@ -113,7 +113,7 @@ select is(
     current_setting('tests.org_a')::uuid,
     '[{"sku":"MC-200","description":"Seal kit","unit_price":"26.75"},
       {"sku":"mc-100","description":"Bearing housing, revised","unit_price":"16","net_weight_kg":"3.65"}]'::jsonb
-  ),
+  ) - 'dry_run',
   '{"inserted":1,"updated":1}'::jsonb,
   'an import adds new articles and corrects known ones by SKU'
 );
@@ -328,7 +328,7 @@ select lives_ok(
 );
 select is(
   (select snapshot ->> 'schema_version' from public.documents where id = current_setting('tests.document')::uuid),
-  '3',
+  '4',
   'a new snapshot records the schema it follows'
 );
 select is(
@@ -341,7 +341,7 @@ select is(
   (select snapshot -> 'totals' -> 'gross_weight_kg'
    from public.documents where id = current_setting('tests.document')::uuid),
   'null'::jsonb,
-  'a gross weight no line states is absent from a schema 3 snapshot, not zero'
+  'a gross weight no line states is absent from a schema 4 snapshot, not zero'
 );
 select is(
   (select snapshot from public.documents where id = current_setting('tests.legacy_document')::uuid),
@@ -359,6 +359,9 @@ select is(
   'Meridian Components Ltd',
   'the document carries its own organization''s party'
 );
+-- No API role updates documents directly since 20261006000300, so the trigger is proved as
+-- the table owner.
+reset role;
 select throws_ok(
   $$update public.documents set org_id = current_setting('tests.org_b')::uuid
     where id = current_setting('tests.document')::uuid$$,
@@ -366,16 +369,19 @@ select throws_ok(
   null,
   'a document cannot be moved to another organization'
 );
+set local role authenticated;
 select lives_ok(
-  $$update public.documents set status = 'voided' where id = current_setting('tests.document')::uuid$$,
+  $$select public.void_document(current_setting('tests.document')::uuid, 'Issued in error')$$,
   'a final document can be voided'
 );
+reset role;
 select throws_ok(
   $$update public.documents set status = 'final' where id = current_setting('tests.document')::uuid$$,
   '23514',
   null,
   'a voided document cannot be reinstated'
 );
+set local role authenticated;
 select throws_ok(
   $$delete from public.shipments where id = current_setting('tests.shipment_a')::uuid$$,
   '23503',
@@ -384,12 +390,12 @@ select throws_ok(
 );
 
 set local request.jwt.claims = '{"sub":"dddddddd-dddd-dddd-dddd-dddddddddddd","role":"authenticated"}';
-with attempted as (
-  update public.documents set status = 'superseded'
-  where org_id = current_setting('tests.org_a')::uuid
-  returning 1
-)
-select is((select count(*)::int from attempted), 0, 'another tenant cannot change a document''s status');
+select throws_ok(
+  $$select public.void_document(current_setting('tests.legacy_document')::uuid, 'Not mine')$$,
+  '42501',
+  null,
+  'another tenant cannot change a document''s status'
+);
 
 -- Rate limiting is a service-role routine only.
 select throws_ok(

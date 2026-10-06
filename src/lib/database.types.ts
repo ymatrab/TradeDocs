@@ -227,6 +227,10 @@ export type Database = {
           shipment_revision: number
           snapshot: Json
           status: string
+          status_changed_at: string | null
+          status_changed_by: string | null
+          status_reason: string | null
+          supersedes_id: string | null
         }
         Insert: {
           created_at?: string
@@ -239,6 +243,10 @@ export type Database = {
           shipment_revision: number
           snapshot: Json
           status?: string
+          status_changed_at?: string | null
+          status_changed_by?: string | null
+          status_reason?: string | null
+          supersedes_id?: string | null
         }
         Update: {
           created_at?: string
@@ -251,6 +259,10 @@ export type Database = {
           shipment_revision?: number
           snapshot?: Json
           status?: string
+          status_changed_at?: string | null
+          status_changed_by?: string | null
+          status_reason?: string | null
+          supersedes_id?: string | null
         }
         Relationships: [
           {
@@ -265,6 +277,13 @@ export type Database = {
             columns: ["org_id", "shipment_id"]
             isOneToOne: false
             referencedRelation: "shipments"
+            referencedColumns: ["org_id", "id"]
+          },
+          {
+            foreignKeyName: "documents_supersedes_id_fkey"
+            columns: ["org_id", "supersedes_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
             referencedColumns: ["org_id", "id"]
           },
         ]
@@ -428,6 +447,56 @@ export type Database = {
             foreignKeyName: "numbering_sequences_org_id_fkey"
             columns: ["org_id"]
             isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organization_settings: {
+        Row: {
+          bank_details: string | null
+          created_at: string
+          default_currency: string
+          document_notes: string | null
+          number_prefix: string | null
+          org_id: string
+          payment_terms: string | null
+          signatory_name: string | null
+          signatory_title: string | null
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          bank_details?: string | null
+          created_at?: string
+          default_currency?: string
+          document_notes?: string | null
+          number_prefix?: string | null
+          org_id: string
+          payment_terms?: string | null
+          signatory_name?: string | null
+          signatory_title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          bank_details?: string | null
+          created_at?: string
+          default_currency?: string
+          document_notes?: string | null
+          number_prefix?: string | null
+          org_id?: string
+          payment_terms?: string | null
+          signatory_name?: string | null
+          signatory_title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organization_settings_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: true
             referencedRelation: "organizations"
             referencedColumns: ["id"]
           },
@@ -884,16 +953,28 @@ export type Database = {
         Args: { organization_name: string }
         Returns: string
       }
+      duplicate_shipment: {
+        Args: { new_reference: string; source_shipment: string }
+        Returns: string
+      }
       export_account_data: { Args: never; Returns: Json }
       generate_document: {
         Args: { document_kind: string; target_shipment: string }
         Returns: string
       }
       import_products: {
-        Args: { rows: Json; target_org: string }
+        Args: { dry_run?: boolean; rows: Json; target_org: string }
+        Returns: Json
+      }
+      preview_document: {
+        Args: { document_kind: string; target_shipment: string }
         Returns: Json
       }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
+      void_document: {
+        Args: { reason: string; target_document: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
