@@ -72,7 +72,7 @@ const ORG = '11111111-1111-4111-8111-111111111111';
 function form(values: Record<string, string>, image?: Uint8Array, type = 'image/png'): FormData {
   const data = new FormData();
   for (const [key, value] of Object.entries(values)) data.set(key, value);
-  if (image) data.set('image', new File([image], 'logo.png', { type }));
+  if (image) data.set('image', new File([new Uint8Array(image)], 'logo.png', { type }));
   return data;
 }
 
