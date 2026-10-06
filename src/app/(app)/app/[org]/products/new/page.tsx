@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
@@ -19,13 +18,13 @@ export default async function NewProductPage({ params }: { params: Promise<{ org
   if (!organization) notFound();
 
   return (
-    <AppShell title="Add product" current="Products" orgId={org}>
+    <AppShell
+      title="Add product"
+      current="Products"
+      orgId={org}
+      parent={{ href: `/app/${org}/products`, label: 'Catalog' }}
+    >
       <div className="app-page">
-        <p>
-          <Link className="text-link" href={`/app/${org}/products`}>
-            ← Catalog
-          </Link>
-        </p>
         <Panel title="New product">
           <ProductForm org={org} />
         </Panel>
