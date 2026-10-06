@@ -91,7 +91,8 @@ export const FEATURES = [
   {
     key: 'workspace.revisions',
     group: 'Workspace',
-    label: 'Documents locked to the revision they came from, marked stale when the shipment changes',
+    label:
+      'Documents locked to the revision they came from, marked stale when the shipment changes',
     plans: EVERY_PLAN,
     needsAccount: true,
   },

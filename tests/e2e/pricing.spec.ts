@@ -24,8 +24,7 @@ test('pricing structured data matches the visible questions', async ({ page }) =
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const items = blocks.flatMap((text) => JSON.parse(text) as { '@type': string }[]);
   const faq = items.find((item) => item['@type'] === 'FAQPage') as
-    | { mainEntity: { name: string }[] }
-    | undefined;
+    { mainEntity: { name: string }[] } | undefined;
   expect(faq?.mainEntity.length).toBeGreaterThan(0);
   for (const question of faq?.mainEntity ?? []) {
     await expect(page.locator('summary', { hasText: question.name })).toHaveCount(1);

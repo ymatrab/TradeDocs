@@ -27,7 +27,7 @@ export default async function AdminOverviewPage() {
     );
   }
 
-  const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+  const since = sevenDaysAgo();
   const { client } = context;
   const head = { count: 'exact', head: true } as const;
 
@@ -111,4 +111,9 @@ export default async function AdminOverviewPage() {
       </div>
     </AdminShell>
   );
+}
+
+/** The start of the overview window. Kept out of the component so rendering stays pure. */
+function sevenDaysAgo(): string {
+  return new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 }

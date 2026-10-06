@@ -158,7 +158,10 @@ it('asks Stripe to retry when the ledger cannot be written', async () => {
 
 it('asks Stripe to retry when the subscription cannot be read', async () => {
   openPayments();
-  vi.stubGlobal('fetch', vi.fn(async () => new Response('unavailable', { status: 503 })));
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => new Response('unavailable', { status: 503 })),
+  );
   expect((await webhook(signedRequest(checkoutEvent()))).status).toBe(503);
 });
 

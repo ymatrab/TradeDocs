@@ -73,9 +73,7 @@ export function GET(): Response {
     '## Guides',
     '',
     `- [All guides](${base}/guides): the index of the guides below.`,
-    ...GUIDES.map(
-      (guide) => `- [${guide.title}](${base}/guides/${guide.slug}): ${guide.answer}`,
-    ),
+    ...GUIDES.map((guide) => `- [${guide.title}](${base}/guides/${guide.slug}): ${guide.answer}`),
     '',
     '## Blog',
     '',

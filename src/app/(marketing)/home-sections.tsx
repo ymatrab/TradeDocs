@@ -101,9 +101,8 @@ export function TemplatesSection({ action }: { action: Action }) {
           {action.label} <ArrowRight size={18} aria-hidden="true" />
         </LinkButton>
         <p className="note">
-          In the workspace the {documentKindLabels.delivery_note.toLowerCase()} comes from the
-          same record. Descriptions follow the U.S. International Trade Administration’s export
-          guidance:{' '}
+          In the workspace the {documentKindLabels.delivery_note.toLowerCase()} comes from the same
+          record. Descriptions follow the U.S. International Trade Administration’s export guidance:{' '}
           {TEMPLATE_SOURCES.map((id, index) => (
             <span key={id}>
               {index > 0 ? ', ' : null}
@@ -208,8 +207,8 @@ export function AudienceSection({ action }: { action: Action }) {
               <Line>For the people who prepare the paperwork.</Line>
             </h2>
             <p>
-              TradeDocs is built for whoever types the shipment up: the exporter’s own team, or
-              the consultant doing it for them. Importers and forwarders use the free tools.
+              TradeDocs is built for whoever types the shipment up: the exporter’s own team, or the
+              consultant doing it for them. Importers and forwarders use the free tools.
             </p>
           </div>
         </div>
@@ -324,9 +323,9 @@ export function ChecklistSection({ action }: { action: Action }) {
               <Line>What a shipment usually needs, and what TradeDocs prepares.</Line>
             </h2>
             <p>
-              Most export shipments travel with a commercial invoice and a packing list, often
-              after a proforma invoice. Transport and customs documents come from the carrier and
-              the customs filing, not from TradeDocs.
+              Most export shipments travel with a commercial invoice and a packing list, often after
+              a proforma invoice. Transport and customs documents come from the carrier and the
+              customs filing, not from TradeDocs.
             </p>
           </div>
         </div>
@@ -363,8 +362,8 @@ export function ChecklistSection({ action }: { action: Action }) {
         })}
       </ol>
       <p className="note measure">
-        A general orientation, not legal or customs advice. The documents a shipment needs depend
-        on the goods, the route and the countries involved; confirm them with your buyer, your
+        A general orientation, not legal or customs advice. The documents a shipment needs depend on
+        the goods, the route and the countries involved; confirm them with your buyer, your
         forwarder or the customs authority.
       </p>
       <div className="section-foot">

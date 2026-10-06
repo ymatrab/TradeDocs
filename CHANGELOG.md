@@ -9,6 +9,7 @@
 - FAQ grows from five to ten answer-first questions; the same array feeds FAQPage JSON-LD (new e2e check in `tests/e2e/seo.spec.ts`).
 - Metadata: "Commercial invoice generator & export documents", description names the three generators; canonical `/` kept. Sitemap: `/` dated 2026-10-06 and lists its four photos.
 - Navigation: Free tools · Guides · Blog · Pricing · Sign in; the phone menu adds Help and Contact. Footer: Product (How it works, Documents, Checklist, Pricing, Free while early), Free tools, Resources (Guides, Blog, Help, Contact), the offer, and Privacy/Terms/Cookies. The status band anchor moves from `/#pricing` to `/#status` and links `/pricing`. `/pricing`, `/blog`, `/help`, `/contact` and the legal pages are built in parallel branches; merge them together.
+
 ### Pricing page and Stripe Payment Links (flag off)
 
 - `src/lib/billing/plans.ts` is the one source for plans, features and prices: "Free (while early)" with the features and limits the code really has (limits from `src/lib/limits.ts`, now shared with the routes), and Pro/Team whose price, currency, interval and Payment Link come only from env (`PRICE_<PLAN>_*`, `PAYMENT_LINK_<PLAN>_URL|ID`). Unset or invalid, or payments closed: "Not available yet", no price, no button (P-002). No feature is paid-only and nothing free is gated.

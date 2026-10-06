@@ -6,11 +6,7 @@
 export type Searchable = { q: string; a: string; source: { label: string } };
 
 function normalize(value: string): string {
-  return value
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/®/g, '')
-    .toLowerCase();
+  return value.normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/®/g, '').toLowerCase();
 }
 
 function tokens(query: string): string[] {

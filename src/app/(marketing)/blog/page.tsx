@@ -33,9 +33,9 @@ export default function BlogPage() {
         <p className="eyebrow">Blog</p>
         <h1>Export paperwork, explained</h1>
         <p className="lede">
-          What goes on each document, in what order, and why customs, carriers and banks read it
-          the way they do. Every article answers the question first, cites its sources and links to
-          the free tool that does the work.
+          What goes on each document, in what order, and why customs, carriers and banks read it the
+          way they do. Every article answers the question first, cites its sources and links to the
+          free tool that does the work.
         </p>
       </section>
 

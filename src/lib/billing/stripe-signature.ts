@@ -20,8 +20,7 @@ export const SIGNATURE_TOLERANCE_SECONDS = 300;
 
 export type SignatureFailure = 'missing' | 'malformed' | 'no_match' | 'outside_tolerance';
 export type SignatureResult =
-  | { ok: true; timestamp: number }
-  | { ok: false; reason: SignatureFailure };
+  { ok: true; timestamp: number } | { ok: false; reason: SignatureFailure };
 
 const MAX_HEADER_LENGTH = 4096;
 

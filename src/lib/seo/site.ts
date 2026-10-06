@@ -168,7 +168,8 @@ export const LEGAL_PAGES: readonly { path: string; name: string; summary: string
   {
     path: '/terms',
     name: 'Terms of use',
-    summary: 'The agreement for using TradeDocs: what it is and is not, accounts, content, liability.',
+    summary:
+      'The agreement for using TradeDocs: what it is and is not, accounts, content, liability.',
   },
   {
     path: '/cookies',

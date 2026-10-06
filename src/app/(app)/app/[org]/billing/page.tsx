@@ -109,8 +109,8 @@ export default async function BillingPage({ params }: { params: Promise<{ org: s
             </Callout>
           ) : entitled ? (
             <p className="muted" style={{ marginBottom: 0 }}>
-              This organization already has a paid plan. If it is cancelled, it runs to the end
-              of the period already paid.
+              This organization already has a paid plan. If it is cancelled, it runs to the end of
+              the period already paid.
             </p>
           ) : !canManage ? (
             <Callout tone="neutral" title="Ask an owner or administrator">

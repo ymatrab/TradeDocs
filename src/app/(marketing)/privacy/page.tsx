@@ -36,8 +36,8 @@ export default function PrivacyPage() {
       <LegalSection id="controller" number={1} title="Who is responsible">
         <p>
           {business} ({shown(identity.country)}) runs TradeDocs and is the controller for the
-          personal data described here: your account, the contact form and the records that keep
-          the service secure. Write to{' '}
+          personal data described here: your account, the contact form and the records that keep the
+          service secure. Write to{' '}
           {identity.contactEmail ? (
             <a className="text-link" href={`mailto:${identity.contactEmail}`}>
               {identity.contactEmail}
@@ -115,8 +115,8 @@ export default function PrivacyPage() {
         </DataTable>
         <p>
           <strong>The free tools store nothing.</strong> The calculators run in your browser. The
-          invoice, proforma and packing list generators send what you typed once, to render the
-          PDF, and keep no copy: there is no record of the parties, goods or prices afterwards.
+          invoice, proforma and packing list generators send what you typed once, to render the PDF,
+          and keep no copy: there is no record of the parties, goods or prices afterwards.
         </p>
         <p>
           We do not use analytics, advertising or tracking services, we do not sell personal data
@@ -129,12 +129,12 @@ export default function PrivacyPage() {
         <ul>
           <li>
             <strong>Supabase</strong> hosts the database and the sign-in service: accounts,
-            workspace data, the activity record, contact messages and request quotas. Data
-            region: {shown(identity.dataRegion)}.
+            workspace data, the activity record, contact messages and request quotas. Data region:{' '}
+            {shown(identity.dataRegion)}.
           </li>
           <li>
-            <strong>Vercel</strong> hosts and serves the website and application, and processes
-            the technical details of each request (network address, browser, the page asked for) to
+            <strong>Vercel</strong> hosts and serves the website and application, and processes the
+            technical details of each request (network address, browser, the page asked for) to
             deliver it.
           </li>
           <li>
@@ -159,16 +159,13 @@ export default function PrivacyPage() {
           Some of these providers, or their sub-processors, operate outside the UK and the European
           Economic Area. Where personal data leaves them, we rely on the safeguards the provider
           offers, such as standard contractual clauses or an adequacy decision. The mechanism used
-          for each provider is {shown(null)} and will be listed here before this policy is
-          approved.
+          for each provider is {shown(null)} and will be listed here before this policy is approved.
         </p>
       </LegalSection>
 
       <LegalSection id="retention" number={5} title="How long we keep it">
         <ul>
-          <li>
-            Account and workspace data: for as long as the account or organization exists.
-          </li>
+          <li>Account and workspace data: for as long as the account or organization exists.</li>
           <li>
             Deleting your account: from Account in the workspace, confirmed with your password. The
             request waits 30 days, during which you can withdraw it; after that the account and the
@@ -197,10 +194,10 @@ export default function PrivacyPage() {
           and we will answer within one month.
         </p>
         <p>
-          For data your organization entered about other people, contact that organization first;
-          we will help it respond. You can also complain to a data protection authority, such as
-          the Information Commissioner’s Office in the UK or the authority where you live or work
-          in the EU.
+          For data your organization entered about other people, contact that organization first; we
+          will help it respond. You can also complain to a data protection authority, such as the
+          Information Commissioner’s Office in the UK or the authority where you live or work in the
+          EU.
         </p>
       </LegalSection>
 

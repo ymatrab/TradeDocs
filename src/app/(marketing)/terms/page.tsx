@@ -29,8 +29,8 @@ export default function TermsPage() {
     >
       <LegalSection id="agreement" number={1} title="The agreement">
         <p>
-          These terms are between you and {business} ({shown(identity.country)}). Using the
-          website, the free tools or an account means you accept them. If you use TradeDocs for an
+          These terms are between you and {business} ({shown(identity.country)}). Using the website,
+          the free tools or an account means you accept them. If you use TradeDocs for an
           organization, you confirm you may accept them on its behalf.
         </p>
       </LegalSection>
@@ -98,8 +98,8 @@ export default function TermsPage() {
       <LegalSection id="availability" number={7} title="Availability and changes">
         <p>
           We work to keep TradeDocs available and correct, but it is provided as it is, without a
-          guaranteed level of service. Features may change; when a change removes something you
-          rely on, we will give reasonable notice where we can.
+          guaranteed level of service. Features may change; when a change removes something you rely
+          on, we will give reasonable notice where we can.
         </p>
       </LegalSection>
 
