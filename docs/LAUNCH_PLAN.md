@@ -20,6 +20,40 @@ panel (email allowlist, audited), legal drafts (privacy, terms, cookies — noin
 approved), homepage v3 (photos, keyword sections, answer-first FAQ, new nav/footer), blog with
 5 posts + RSS + llms-full.txt, guides upgraded for AI answers (D-018, D-019).
 
+## Round 3 — overnight 2026-10-06/07 (launch-v3, PR #13)
+
+Built while the owner slept (D-020); not on production until the owner merges.
+
+- **Product:** documents supersede earlier finals and record lineage; void needs owner/admin
+  and a reason; staleness says why; packing totals are count × weight; concurrent edits are
+  refused; CSV import reports problems by file line with a dry run; reuse a shipment as a new
+  draft; organization document settings (currency, prefix, payment terms, bank details,
+  signatory, note); "PREVIEW · NOT ISSUED" PDF; renderer v4 for new documents (old documents
+  render exactly as issued); onboarding checklist, shipment step links, sticky totals,
+  stacked tables on phones, document filters and Regenerate.
+- **Accounts:** 12-character passwords with a breached-password check, email confirmation
+  with resend, password reset end to end (fixed a host mismatch that dropped the session),
+  change email/password/name, roles and emailed invites, Turnstile verification whenever keys
+  exist, admin user management (search, disable, resend, reset, deletion), purge routine
+  (not scheduled — owner decision).
+- **Pricing:** competitor analysis (docs/research/competitors-2026-10-06.md) and proposed
+  packages (docs/research/pricing-proposal-2026-10-06.md): Free $0, Pro $19/mo or $190/yr,
+  Team $49/mo or $490/yr, per organization. Hidden until `PRICES_APPROVED=true`.
+- **Content:** 60 posts + 30 guides planned (docs/research/content-plan-v2-2026-10-06.md);
+  launch batch published on the branch: 20 posts + 10 guides (25 posts and 13 guides total).
+
+## Owner morning checklist (round 3)
+
+1. Prices: approve or change the proposal, then set `PRICES_APPROVED=true` in Vercel.
+2. Paid-plan value: Pro/Team add nothing yet. Suggested: make PDF branding (logo, signature)
+   the Pro feature — approve and the team builds it.
+3. Merge PR #13 (CI green, sign-offs OK; production stays in foundation mode).
+4. Supabase dashboard: confirm email on, minimum password length 12, Site URL + redirect
+   `<APP_URL>/**`, paste the 4 templates from supabase/templates/ (required before admin
+   resend/reset emails work).
+5. Then the Phase 1 list above (Resend, database secret + migrations, production env,
+   `PLATFORM_ADMIN_EMAILS`, purge schedule choice, legal details, Stripe, domain).
+
 ## Phase 0 — merge (owner, today)
 
 1. Merge PR #10 into `main` once CI is green. Production stays in foundation mode: no data,
