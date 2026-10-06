@@ -17,6 +17,7 @@ const pages = [
   ['landed-cost', '/tools/landed-cost-calculator'],
   ['guides', '/guides'],
   ['guide-lcl-fcl', '/guides/lcl-vs-fcl'],
+  ['pricing', '/pricing'],
 ] as const;
 
 test.describe('review screens', () => {

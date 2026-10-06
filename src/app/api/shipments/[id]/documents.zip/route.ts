@@ -8,6 +8,7 @@ import {
 import { RENDERER_VERSION, renderTradeDocument } from '@/lib/pdf/trade-document';
 import { createZip, safeFileName, type ZipEntry } from '@/lib/zip';
 import { documentKindLabel } from '@/lib/labels';
+import { MAX_SET_DOCUMENTS } from '@/lib/limits';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -21,8 +22,8 @@ function schemaVersionOf(snapshot: unknown): number {
   return 1;
 }
 
-/** Beyond this a set is not a set; it is a report, and should be built as a job. */
-const MAX_DOCUMENTS = 60;
+/** Beyond MAX_SET_DOCUMENTS a set is not a set; it is a report, and should be built as a job. */
+const MAX_DOCUMENTS = MAX_SET_DOCUMENTS;
 
 /**
  * Serves the current document set for one shipment as a ZIP with a manifest.

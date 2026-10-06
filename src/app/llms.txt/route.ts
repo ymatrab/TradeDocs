@@ -1,4 +1,6 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
+import { currentPlans } from '@/lib/billing/server';
+import { FEATURES, INTERVAL_LABELS, type Plan } from '@/lib/billing/plans';
 import { GUIDES } from '@/lib/content/guides';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { documentKindLabels } from '@/lib/labels';
@@ -7,6 +9,16 @@ import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
 
 // The links name the deployment's canonical origin, so this is resolved per request.
 export const dynamic = 'force-dynamic';
+
+/** A plan's status in one line, from the same module the pricing page renders. */
+function planLine(plan: Plan): string {
+  if (plan.offer.state === 'free') return `- ${plan.name}: free, no card. ${plan.summary}`;
+  if (plan.offer.state === 'purchasable') {
+    const term = INTERVAL_LABELS[plan.offer.interval];
+    return `- ${plan.name}: ${plan.offer.price} ${term}. ${plan.summary}`;
+  }
+  return `- ${plan.name}: not available yet; no price is set.`;
+}
 
 /**
  * A plain-text map of the public site for language-model crawlers (llmstxt.org).
@@ -28,6 +40,17 @@ export function GET(): Response {
     '## Documents it prepares',
     '',
     ...PUBLIC_DOCUMENT_KINDS.map((kind) => `- ${documentKindLabels[kind]}`),
+    '',
+    '## Pricing',
+    '',
+    `- [Pricing](${base}/pricing): every plan, its features and limits, and the billing questions.`,
+    ...currentPlans().map(planLine),
+    '',
+    'Included in the free plan:',
+    '',
+    ...FEATURES.filter((feature) => feature.plans.includes('free')).map(
+      (feature) => `- ${feature.label}${'limit' in feature ? ` (${feature.limit})` : ''}`,
+    ),
     '',
     '## Free tools (no account)',
     '',

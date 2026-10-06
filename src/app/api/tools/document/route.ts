@@ -9,6 +9,7 @@ import {
   type ToolRequest,
 } from '@/lib/tools/document-snapshot';
 import { safeFileName } from '@/lib/zip';
+import { TOOL_DOCUMENT_QUOTA } from '@/lib/limits';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -27,7 +28,7 @@ export const runtime = 'nodejs';
  */
 const MAX_BODY_BYTES = 64 * 1024;
 
-const POLICY: RateLimitPolicy = { namespace: 'tools:document', limit: 30, windowSeconds: 600 };
+const POLICY: RateLimitPolicy = { namespace: 'tools:document', ...TOOL_DOCUMENT_QUOTA };
 
 /** The generator reads `{ error: string }`; keep that shape for every refusal. */
 function refuse(message: string, status: number, headers?: HeadersInit) {

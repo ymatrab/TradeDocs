@@ -1,6 +1,7 @@
 import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
+import { billingConfig, type BillingConfig } from '@/lib/billing/server';
 import {
   DEGRADED_RATE_LIMIT_REASON,
   rateLimitMode,
@@ -17,10 +18,14 @@ export async function GET(): Promise<Response> {
   let rateLimiting: RateLimitMode = { mode: 'degraded', reason: DEGRADED_RATE_LIMIT_REASON };
   // Controls the owner waived by name (D-017); names only, never configuration values.
   let degraded: WaivableControl[] = [];
+  // Payments switched on but unusable fail the billing feature alone; the reason names the gap,
+  // never a value. Closed payments are the normal state and are not reported.
+  let billing: BillingConfig = { state: 'disabled' };
   try {
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
     degraded = degradedControls(configuration);
+    billing = billingConfig(configuration);
     if (hasSupabaseConfiguration()) {
       const env = getServerEnv();
       if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
@@ -44,6 +49,9 @@ export async function GET(): Promise<Response> {
       rate_limiting: rateLimiting.mode,
       ...(rateLimiting.mode === 'degraded' ? { reason: rateLimiting.reason } : {}),
       ...(degraded.length > 0 ? { degraded } : {}),
+      ...(billing.state === 'misconfigured'
+        ? { payments: 'misconfigured', payments_reason: billing.reason }
+        : {}),
     },
     {
       status: ready ? 200 : 503,

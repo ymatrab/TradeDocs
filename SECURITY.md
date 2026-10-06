@@ -69,3 +69,31 @@ controls by name in `degraded` (no values).
 - `WAIVE_SENTRY`: no external error ingestion; errors reach platform logs only.
 - `WAIVE_ANALYTICS`: no product analytics are collected.
 - `WAIVE_INDEXNOW`: no IndexNow submission; search engines discover pages through the sitemap.
+
+## Payments and entitlements
+
+Only verified, server-side Stripe facts change an entitlement:
+
+- `/api/billing/stripe/webhook` answers 404 unless payments are open (service mode,
+  `ENABLE_PAYMENTS` with `PAYMENTS_APPROVED`, Stripe keys and the service-role connection), and
+  503 when switched on but misconfigured (reported in `/api/ready` by reason, no values).
+- The `Stripe-Signature` is verified against the raw body with HMAC-SHA256 (node:crypto),
+  constant-time comparison of every `v1` signature, other schemes ignored, and a 5-minute
+  timestamp tolerance in both directions. Bodies over 256 KB are refused before verification.
+- Event ids are recorded in `private.billing_events`; a redelivery or replay of a seen id is a
+  no-op. Production acts on live-mode events only and other environments on test-mode only, so
+  a preview never acts on a real payment.
+- The organization comes from `client_reference_id`, which the in-app button sets to the org id
+  (a random UUID; no email, name or other personal data is put in the URL). The plan comes from
+  the session's `payment_link`, which Stripe sets, so editing the URL cannot change what was
+  bought. Subscription state and dispute customers are re-read from Stripe's API, never trusted
+  from the event body.
+- Paid checks (`hasEntitlement`) fail closed on a missing row, a query error, an unknown status
+  or plan, or an absent `paid_through`. Cancelled keeps access to the end of the paid period; a
+  full refund or a dispute revokes at once. No free feature is gated.
+- Logs carry event id, type and outcome only.
+
+Known limits: a refund or dispute revokes every entitlement paid by that Stripe customer (the
+safe direction). A refund that arrives before its checkout is recorded as `unmatched`, and the
+later checkout still grants; reconcile from the Stripe dashboard if that happens. A plan change
+made inside Stripe (Pro to Team) is not reflected; the plan is the one bought at checkout.
