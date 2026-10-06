@@ -1,4 +1,5 @@
 import { TrueTypeFont } from './truetype';
+import type { PdfImage } from './image';
 
 /**
  * A minimal PDF writer with an embedded Unicode font.
@@ -88,10 +89,17 @@ export function wrap(
 /** Where a piece of text was placed. Kept so layout can be tested without parsing a PDF. */
 export type PlacedText = { text: string; x: number; y: number; size: number; width: number };
 
+/** Where an image was drawn, bottom-left corner and size in points. Not part of the output. */
+export type PlacedImage = { image: PdfImage; x: number; y: number; width: number; height: number };
+
 export class Page {
   private readonly operations: string[] = [];
   /** Every text run on the page, in drawing order. Not part of the output. */
   readonly texts: PlacedText[] = [];
+  /** Every image drawn on the page, in drawing order. Not part of the output. */
+  readonly images: PlacedImage[] = [];
+  /** The distinct images the page draws; /Im0, /Im1 … in its resources, in first-use order. */
+  private readonly resources: PdfImage[] = [];
 
   constructor(private readonly fonts: FontSet) {}
 
@@ -124,6 +132,20 @@ export class Page {
     this.operations.push(
       `q ${grey} g ${x.toFixed(2)} ${y.toFixed(2)} ${width.toFixed(2)} ${height.toFixed(2)} re f Q`,
     );
+  }
+
+  /** Draws an image scaled to `width` × `height` points with its bottom-left corner at x, y. */
+  image(image: PdfImage, x: number, y: number, width: number, height: number): void {
+    let index = this.resources.indexOf(image);
+    if (index === -1) index = this.resources.push(image) - 1;
+    this.images.push({ image, x, y, width, height });
+    this.operations.push(
+      `q ${width.toFixed(2)} 0 0 ${height.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} cm /Im${index} Do Q`,
+    );
+  }
+
+  usedImages(): readonly PdfImage[] {
+    return this.resources;
   }
 
   build(): string {
@@ -237,15 +259,46 @@ export function renderPdf(pages: readonly Page[], fonts: FontSet): Uint8Array {
     );
   }
 
+  // Each distinct image once, however many pages draw it. A document without images adds no
+  // object here, so its bytes are exactly what they were before images existed.
+  const imageIds = new Map<PdfImage, number>();
+  for (const page of pages) {
+    for (const image of page.usedImages()) {
+      if (imageIds.has(image)) continue;
+      const mask = image.alpha
+        ? add(
+            `<< /Type /XObject /Subtype /Image /Width ${image.width} /Height ${image.height} ` +
+              `/ColorSpace /DeviceGray /BitsPerComponent 8 /Filter /FlateDecode ` +
+              `/Length ${image.alpha.byteLength} >>`,
+            image.alpha,
+          )
+        : undefined;
+      imageIds.set(
+        image,
+        add(
+          `<< /Type /XObject /Subtype /Image /Width ${image.width} /Height ${image.height} ` +
+            `/ColorSpace /${image.colorSpace} /BitsPerComponent 8 /Filter /${image.filter}` +
+            `${mask === undefined ? '' : ` /SMask ${mask} 0 R`} /Length ${image.data.byteLength} >>`,
+          image.data,
+        ),
+      );
+    }
+  }
+
   const pageIds: number[] = [];
   for (const page of pages) {
     const stream = bytes(page.build());
     const contentId = add(`<< /Length ${stream.byteLength} >>`, stream);
+    const used = page.usedImages();
+    const xobjects =
+      used.length === 0
+        ? ''
+        : ` /XObject << ${used.map((image, index) => `/Im${index} ${imageIds.get(image)} 0 R`).join(' ')} >>`;
     pageIds.push(
       add(
         `<< /Type /Page /Parent ${pagesId} 0 R ` +
           `/MediaBox [0 0 ${PAGE_WIDTH.toFixed(2)} ${PAGE_HEIGHT.toFixed(2)}] ` +
-          `/Resources << /Font << /F1 ${fontIds.regular} 0 R /F2 ${fontIds.bold} 0 R >> >> ` +
+          `/Resources << /Font << /F1 ${fontIds.regular} 0 R /F2 ${fontIds.bold} 0 R >>${xobjects} >> ` +
           `/Contents ${contentId} 0 R >>`,
       ),
     );

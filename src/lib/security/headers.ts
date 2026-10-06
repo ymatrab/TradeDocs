@@ -12,8 +12,12 @@ export function buildContentSecurityPolicy({
 }: ContentSecurityPolicyOptions): string {
   if (!/^[A-Za-z0-9+/_=-]{16,128}$/.test(nonce)) throw new Error('Invalid CSP nonce.');
   const connectOrigins = ["'self'", 'https://challenges.cloudflare.com'];
+  const imageSources = ["'self'", 'data:', 'blob:', 'https://images.unsplash.com'];
   if (supabaseUrl) {
     const service = new URL(supabaseUrl);
+    // Branding previews on the settings page: short-lived signed URLs into the private
+    // org-branding bucket, and nothing else of the storage service.
+    imageSources.push(`${service.origin}/storage/v1/object/sign/org-branding/`);
     connectOrigins.push(
       service.origin,
       `${service.protocol === 'https:' ? 'wss:' : 'ws:'}//${service.host}`,
@@ -26,7 +30,7 @@ export function buildContentSecurityPolicy({
     // Next, Tailwind and accessible overlays can apply inline style attributes.
     "style-src 'self' 'unsafe-inline'",
     // Guide covers are hotlinked from Unsplash, as its API guidelines require (D-016).
-    "img-src 'self' data: blob: https://images.unsplash.com",
+    `img-src ${imageSources.join(' ')}`,
     "font-src 'self'",
     `connect-src ${connectOrigins.join(' ')}`,
     'frame-src https://challenges.cloudflare.com',

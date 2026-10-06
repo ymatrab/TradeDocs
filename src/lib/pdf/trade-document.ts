@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import {
   FontSet,
@@ -7,9 +8,12 @@ import {
   renderPdf,
   wrap,
   type FontName,
+  type PlacedImage,
   type PlacedText,
 } from './writer';
 import { createFontSet } from './fonts';
+import { embedImage, fitWithin, type PdfImage } from './image';
+import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
 
 /**
  * Renders a stored document snapshot as a PDF.
@@ -24,7 +28,7 @@ import { createFontSet } from './fonts';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/4';
+export const RENDERER_VERSION = 'tradedocs-pdf/5';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -45,6 +49,17 @@ const partySchema = z
   .nullable()
   .optional();
 
+/** One branding image a snapshot refers to: where it is stored and the hash of its bytes. */
+export const brandingAssetSchema = z.object({
+  object_path: z.string(),
+  sha256: z.string().regex(/^[0-9a-f]{64}$/),
+  format: z.enum(['png', 'jpeg']),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+});
+
+export type BrandingAssetRef = z.infer<typeof brandingAssetSchema>;
+
 export const snapshotSchema = z.object({
   /**
    * Absent on snapshots taken before versioning, which are schema 1. Schema 2 adds
@@ -53,7 +68,9 @@ export const snapshotSchema = z.object({
    * state one, and the registered "Incoterms® 2020" caption. Schema 4 adds `supersedes`,
    * `issuer`, per-package row weights and count-weighted packing totals, and lays out
    * long party/terms text inside its box, the notify party, and totals that always share a
-   * page with the last row of their table. Each change applies only from
+   * page with the last row of their table. Schema 5 adds `branding`: the organization's
+   * logo, drawn at the top left of every page, and its signature or stamp image, drawn above
+   * the signatory line. Each change applies only from
    * the schema that introduced it, so a document issued under an older schema re-renders
    * exactly as it was issued.
    */
@@ -89,6 +106,18 @@ export const snapshotSchema = z.object({
       signatory_name: z.string().nullable().optional(),
       signatory_title: z.string().nullable().optional(),
       document_notes: z.string().nullable().optional(),
+    })
+    .nullable()
+    .optional(),
+  /**
+   * Schema 5: the branding images this document was issued with, by content hash. Captured
+   * only for an organization entitled to PDF branding when the document was generated; the
+   * bytes are fetched by hash at render time, so a later logo change cannot alter it.
+   */
+  branding: z
+    .object({
+      logo: brandingAssetSchema.nullable().optional(),
+      signature: brandingAssetSchema.nullable().optional(),
     })
     .nullable()
     .optional(),
@@ -197,6 +226,65 @@ const DISCLOSURE =
 
 const MARGIN = 42;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
+
+export { LOGO_BOX, SIGNATURE_BOX };
+
+/**
+ * Branding image bytes by SHA-256 (hex). The renderer checks every image against the hash
+ * its snapshot recorded, so only the exact bytes a document was issued with are drawn.
+ */
+export type BrandingImages = ReadonlyMap<string, Uint8Array>;
+
+/** A branded snapshot whose images were not supplied, or not the bytes it recorded. */
+export class BrandingUnavailableError extends Error {
+  constructor() {
+    super('A branding image this document needs is not available.');
+    this.name = 'BrandingUnavailableError';
+  }
+}
+
+/** The branding images a snapshot needs, so the caller can fetch exactly those. */
+export function brandingAssetsOf(input: unknown): BrandingAssetRef[] {
+  const parsed = snapshotSchema.safeParse(input);
+  if (!parsed.success || (parsed.data.schema_version ?? 1) < 5) return [];
+  const { branding } = parsed.data;
+  return [branding?.logo, branding?.signature].filter(
+    (asset): asset is BrandingAssetRef => asset != null,
+  );
+}
+
+/**
+ * The same snapshot without its branding: what a preview falls back to when the
+ * organization is not entitled, or an image cannot be read. Never used on an issued
+ * document, which renders as issued or not at all.
+ */
+export function withoutBranding(input: unknown): unknown {
+  if (typeof input !== 'object' || input === null || !('branding' in input)) return input;
+  const rest: Record<string, unknown> = { ...(input as Record<string, unknown>) };
+  delete rest.branding;
+  return rest;
+}
+
+function resolveBranding(
+  snapshot: DocumentSnapshot,
+  images: BrandingImages | undefined,
+): { logo?: PdfImage; signature?: PdfImage } {
+  if ((snapshot.schema_version ?? 1) < 5 || !snapshot.branding) return {};
+  const embedded = new Map<string, PdfImage>();
+  const load = (asset: BrandingAssetRef | null | undefined): PdfImage | undefined => {
+    if (!asset) return undefined;
+    const cached = embedded.get(asset.sha256);
+    if (cached) return cached;
+    const bytes = images?.get(asset.sha256);
+    if (!bytes || createHash('sha256').update(bytes).digest('hex') !== asset.sha256) {
+      throw new BrandingUnavailableError();
+    }
+    const image = embedImage(bytes);
+    embedded.set(asset.sha256, image);
+    return image;
+  };
+  return { logo: load(snapshot.branding.logo), signature: load(snapshot.branding.signature) };
+}
 
 type Column = {
   header: string;
@@ -386,10 +474,15 @@ function fitLines(
 const CONTENT_BOTTOM = MARGIN + 44;
 
 /** Lays a stored snapshot out as pages. */
-function layoutTradeDocument(input: unknown, fonts: FontSet): Page[] {
+function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingImages): Page[] {
   const snapshot = snapshotSchema.parse(input);
   const moneyPlaces = snapshot.money_places ?? 2;
   const schema = schemaOf(snapshot);
+  // Schema 5 branding; empty for every older document, which therefore lays out as before.
+  const branding = resolveBranding(snapshot, images);
+  const logo = branding.logo
+    ? { image: branding.logo, ...fitWithin(branding.logo, LOGO_BOX) }
+    : null;
   // Layout fixes from schema 4 apply only to documents issued under it, so an older document
   // re-renders exactly as it was issued.
   const v4 = schema >= 4;
@@ -407,6 +500,14 @@ function layoutTradeDocument(input: unknown, fonts: FontSet): Page[] {
     page = new Page(fonts);
     pages.push(page);
     cursor = PAGE_HEIGHT - MARGIN;
+
+    if (logo) {
+      // Top-aligned in its box, which starts where the title's capitals would; the title row
+      // moves down below the box.
+      const top = PAGE_HEIGHT - MARGIN + 12;
+      page.image(logo.image, MARGIN, top - logo.height, logo.width, logo.height);
+      cursor = top - LOGO_BOX.height - 20;
+    }
 
     page.text(titles[snapshot.kind].toUpperCase(), MARGIN, cursor, { size: 16, font: 'bold' });
     if (snapshot.preview) {
@@ -698,17 +799,26 @@ function layoutTradeDocument(input: unknown, fonts: FontSet): Page[] {
     block('MARKS AND NUMBERS', snapshot.shipment.marks_and_numbers);
   }
 
-  if (v4 && snapshot.issuer) {
-    const issuer = snapshot.issuer;
+  const signature = branding.signature
+    ? { image: branding.signature, ...fitWithin(branding.signature, SIGNATURE_BOX) }
+    : null;
+  if (v4 && (snapshot.issuer || signature)) {
+    const issuer: NonNullable<DocumentSnapshot['issuer']> = snapshot.issuer ?? {};
     const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
     if (invoice && issuer.payment_terms) block('PAYMENT TERMS', issuer.payment_terms);
     if (invoice && issuer.bank_details) block('BANK DETAILS', issuer.bank_details);
     if (issuer.document_notes) block('NOTES', issuer.document_notes);
-    if (issuer.signatory_name) {
-      // A place to sign and the name it is signed for. Not a signature: the document stays
-      // a preparation until a person signs it.
-      if (cursor - 48 < CONTENT_BOTTOM) startPage(true);
+    if (issuer.signatory_name || signature) {
+      // A place to sign and the name it is signed for. Without an uploaded signature image
+      // it is not a signature: the document stays a preparation until a person signs it.
+      // Schema 5 draws the organization's own signature or stamp image above the line.
+      const imageHeight = signature ? signature.height + 4 : 0;
+      if (cursor - 48 - imageHeight < CONTENT_BOTTOM) startPage(true);
       cursor -= 30;
+      if (signature) {
+        cursor -= imageHeight;
+        page.image(signature.image, MARGIN, cursor + 3, signature.width, signature.height);
+      }
       page.line(MARGIN, cursor, MARGIN + 200, cursor, 0.5, 0.35);
       cursor -= 10;
       page.text(
@@ -741,13 +851,35 @@ function layoutTradeDocument(input: unknown, fonts: FontSet): Page[] {
   return pages;
 }
 
-export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
-  return renderPdf(layoutTradeDocument(input, fonts), fonts);
+/**
+ * Renders a snapshot. A schema 5 snapshot with branding needs `images` holding the exact
+ * bytes it recorded; without them it throws BrandingUnavailableError rather than render a
+ * document that differs from the one issued.
+ */
+export function renderTradeDocument(
+  input: unknown,
+  fonts: FontSet = createFontSet(),
+  images?: BrandingImages,
+): Uint8Array {
+  return renderPdf(layoutTradeDocument(input, fonts, images), fonts);
 }
 
 /** Exported for tests: the text each page carries and where, in drawing order. */
-export function documentLayout(input: unknown, fonts: FontSet = createFontSet()): PlacedText[][] {
-  return layoutTradeDocument(input, fonts).map((page) => [...page.texts]);
+export function documentLayout(
+  input: unknown,
+  fonts: FontSet = createFontSet(),
+  images?: BrandingImages,
+): PlacedText[][] {
+  return layoutTradeDocument(input, fonts, images).map((page) => [...page.texts]);
+}
+
+/** Exported for tests: the images each page draws and where, in drawing order. */
+export function documentImages(
+  input: unknown,
+  images: BrandingImages,
+  fonts: FontSet = createFontSet(),
+): PlacedImage[][] {
+  return layoutTradeDocument(input, fonts, images).map((page) => [...page.images]);
 }
 
 /** Exported for tests: the width a description column receives for a given document type. */

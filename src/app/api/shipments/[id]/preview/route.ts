@@ -5,7 +5,13 @@ import {
   DatabaseUnavailableError,
   type TradeDocsClient,
 } from '@/lib/supabase/server';
-import { renderTradeDocument } from '@/lib/pdf/trade-document';
+import {
+  renderTradeDocument,
+  withoutBranding,
+  type BrandingImages,
+} from '@/lib/pdf/trade-document';
+import { hasEntitlement } from '@/lib/billing/server';
+import { loadBrandingImages, needsBranding } from '@/lib/branding/server';
 import { safeFileName } from '@/lib/zip';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
@@ -28,6 +34,11 @@ const kinds = z.enum([
  *
  * Authorization is the routine's: preview_document runs as the caller and refuses a
  * shipment outside their organizations, which this route reports as not found.
+ *
+ * Branding is the organization's current logo and signature, and is a paid feature checked
+ * twice: the database adds it to the snapshot only for an entitled organization, and this
+ * route checks the entitlement again before drawing it. Either check failing, or an image
+ * that cannot be read, renders the preview without branding (fail closed).
  */
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -65,9 +76,25 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     });
   }
 
+  let rendered: unknown = snapshot;
+  let images: BrandingImages | undefined;
+  if (needsBranding(snapshot)) {
+    const { data: owner } = await client
+      .from('shipments')
+      .select('org_id')
+      .eq('id', shipment.data)
+      .maybeSingle();
+    const loaded =
+      owner && (await hasEntitlement(owner.org_id, 'pdf_branding'))
+        ? await loadBrandingImages(client, owner.org_id, snapshot)
+        : null;
+    if (loaded) images = loaded;
+    else rendered = withoutBranding(snapshot);
+  }
+
   let pdf: Uint8Array;
   try {
-    pdf = renderTradeDocument(snapshot);
+    pdf = renderTradeDocument(rendered, undefined, images);
   } catch {
     return new NextResponse('This preview could not be rendered.', { status: 500 });
   }

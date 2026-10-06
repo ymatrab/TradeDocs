@@ -36,6 +36,8 @@ export const AUTH_LIMITS = {
   /** Password, email and name changes, and deletion confirmations, per account. */
   accountChange: { namespace: 'auth:account-change', limit: 10, windowSeconds: 3600 },
   invitationSend: { namespace: 'org:invite-send', limit: 30, windowSeconds: 3600 },
+  /** Logo and signature uploads, per account: each one decodes an image in full. */
+  brandingUpload: { namespace: 'org:branding-upload', limit: 30, windowSeconds: 3600 },
 } as const satisfies Record<string, RateLimitPolicy>;
 
 export type Quota = readonly [RateLimitPolicy, string];

@@ -105,6 +105,56 @@ export type Database = {
           },
         ]
       }
+      branding_assets: {
+        Row: {
+          byte_size: number
+          created_at: string
+          format: string
+          height: number
+          object_path: string
+          org_id: string
+          sha256: string
+          slot: string
+          updated_at: string
+          updated_by: string | null
+          width: number
+        }
+        Insert: {
+          byte_size: number
+          created_at?: string
+          format: string
+          height: number
+          object_path: string
+          org_id: string
+          sha256: string
+          slot: string
+          updated_at?: string
+          updated_by?: string | null
+          width: number
+        }
+        Update: {
+          byte_size?: number
+          created_at?: string
+          format?: string
+          height?: number
+          object_path?: string
+          org_id?: string
+          sha256?: string
+          slot?: string
+          updated_at?: string
+          updated_by?: string | null
+          width?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "branding_assets_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       companies: {
         Row: {
           address_line1: string | null
@@ -945,6 +995,10 @@ export type Database = {
       apply_billing_event: {
         Args: { p_action: Json; p_event_id: string; p_event_type: string }
         Returns: string
+      }
+      branding_asset_in_use: {
+        Args: { asset_sha256: string; target_org: string }
+        Returns: boolean
       }
       cancel_account_deletion: { Args: never; Returns: undefined }
       change_member_role: {
