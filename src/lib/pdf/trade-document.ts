@@ -1,5 +1,14 @@
 import { z } from 'zod';
-import { FontSet, Page, PAGE_HEIGHT, PAGE_WIDTH, renderPdf, wrap } from './writer';
+import {
+  FontSet,
+  Page,
+  PAGE_HEIGHT,
+  PAGE_WIDTH,
+  renderPdf,
+  wrap,
+  type FontName,
+  type PlacedText,
+} from './writer';
 import { createFontSet } from './fonts';
 
 /**
@@ -15,7 +24,7 @@ import { createFontSet } from './fonts';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/3';
+export const RENDERER_VERSION = 'tradedocs-pdf/4';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -30,6 +39,8 @@ const partySchema = z
     postal_code: z.string().nullable().optional(),
     country_code: z.string().nullable().optional(),
     tax_number: z.string().nullable().optional(),
+    contact_name: z.string().nullable().optional(),
+    registration_number: z.string().nullable().optional(),
   })
   .nullable()
   .optional();
@@ -39,7 +50,10 @@ export const snapshotSchema = z.object({
    * Absent on snapshots taken before versioning, which are schema 1. Schema 2 adds
    * money_places, and a stated-or-absent gross weight total. Schema 3 adds a
    * stated-or-absent net weight total, a per-line origin column on invoices whose lines
-   * state one, and the registered "Incoterms® 2020" caption. Each change applies only from
+   * state one, and the registered "Incoterms® 2020" caption. Schema 4 adds `supersedes`,
+   * `issuer`, per-package row weights and count-weighted packing totals, and lays out
+   * long party/terms text inside its box, the notify party, and totals that always share a
+   * page with the last row of their table. Each change applies only from
    * the schema that introduced it, so a document issued under an older schema re-renders
    * exactly as it was issued.
    */
@@ -63,6 +77,21 @@ export const snapshotSchema = z.object({
    * it was generated. Absent on every workspace snapshot so far, which print generated_at.
    */
   issued_on: z.string().nullable().optional(),
+  /** Schema 4: the number of the document this one replaces, printed under the header. */
+  supersedes: z.string().nullable().optional(),
+  /** Set only on a preview, which is never stored and is labelled as not issued. */
+  preview: z.boolean().optional(),
+  /** Schema 4: the issuer's own terms, from the organization's document settings. */
+  issuer: z
+    .object({
+      payment_terms: z.string().nullable().optional(),
+      bank_details: z.string().nullable().optional(),
+      signatory_name: z.string().nullable().optional(),
+      signatory_title: z.string().nullable().optional(),
+      document_notes: z.string().nullable().optional(),
+    })
+    .nullable()
+    .optional(),
   shipment: z.object({
     reference: z.string(),
     incoterm: z.string().nullable().optional(),
@@ -120,6 +149,9 @@ export const snapshotSchema = z.object({
         net_weight_kg: numeric.nullable().optional(),
         gross_weight_kg: numeric.nullable().optional(),
         volume_m3: numeric.nullable().optional(),
+        /** Schema 4: package_count x per-package weight, the figure the totals add up. */
+        net_weight_total_kg: numeric.nullable().optional(),
+        gross_weight_total_kg: numeric.nullable().optional(),
         marks: z.string().nullable().optional(),
         contents: z
           .array(
@@ -137,8 +169,9 @@ export const snapshotSchema = z.object({
   packing_totals: z
     .object({
       packages: numeric,
-      gross_weight_kg: numeric,
-      net_weight_kg: numeric,
+      /** Null from schema 4 when no package states one; count-weighted from schema 4. */
+      gross_weight_kg: numeric.nullable(),
+      net_weight_kg: numeric.nullable(),
       volume_m3: numeric,
     })
     .optional(),
@@ -326,10 +359,40 @@ function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
   return totals;
 }
 
-export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
+/**
+ * Lines of text cut to a width and a count. A line that had to be cut ends in an ellipsis,
+ * so a reader can see something was left out rather than read a truncated value as whole.
+ */
+function fitLines(
+  fonts: FontSet,
+  lines: readonly string[],
+  width: number,
+  size: number,
+  max: number,
+  font: FontName = 'regular',
+): string[] {
+  const wrapped = lines.flatMap((line) => wrap(fonts, line, width, size, font));
+  if (wrapped.length <= max) return wrapped;
+  const kept = wrapped.slice(0, max);
+  let last = kept[max - 1] ?? '';
+  while (last.length > 1 && fonts.measure(`${last}…`, size, font) > width) {
+    last = last.slice(0, -1).trimEnd();
+  }
+  kept[max - 1] = `${last}…`;
+  return kept;
+}
+
+/** The lowest a schema 4 page's content may reach: the disclosure rule sits just below. */
+const CONTENT_BOTTOM = MARGIN + 44;
+
+/** Lays a stored snapshot out as pages. */
+function layoutTradeDocument(input: unknown, fonts: FontSet): Page[] {
   const snapshot = snapshotSchema.parse(input);
   const moneyPlaces = snapshot.money_places ?? 2;
   const schema = schemaOf(snapshot);
+  // Layout fixes from schema 4 apply only to documents issued under it, so an older document
+  // re-renders exactly as it was issued.
+  const v4 = schema >= 4;
   const columns = columnsFor(snapshot.kind, moneyPlaces, showsLineOrigin(snapshot));
   const fixed = columns.reduce((total, column) => total + column.width, 0);
   const layout = columns.map((column) =>
@@ -346,10 +409,22 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     cursor = PAGE_HEIGHT - MARGIN;
 
     page.text(titles[snapshot.kind].toUpperCase(), MARGIN, cursor, { size: 16, font: 'bold' });
-    page.text(`No. ${snapshot.number}`, PAGE_WIDTH - MARGIN, cursor, { size: 10, align: 'right' });
+    if (snapshot.preview) {
+      page.text('PREVIEW · NOT ISSUED', PAGE_WIDTH - MARGIN, cursor, {
+        size: 10,
+        align: 'right',
+        font: 'bold',
+      });
+    } else {
+      page.text(`No. ${snapshot.number}`, PAGE_WIDTH - MARGIN, cursor, {
+        size: 10,
+        align: 'right',
+      });
+    }
     cursor -= 14;
+    const replaces = v4 && snapshot.supersedes ? ` · replaces No. ${snapshot.supersedes}` : '';
     page.text(
-      `Shipment ${snapshot.shipment.reference} · revision ${snapshot.shipment.revision} · issued ${snapshot.issued_on ?? snapshot.generated_at.slice(0, 10)}`,
+      `Shipment ${snapshot.shipment.reference} · revision ${snapshot.shipment.revision} · issued ${snapshot.issued_on ?? snapshot.generated_at.slice(0, 10)}${replaces}`,
       MARGIN,
       cursor,
       { size: 7.5 },
@@ -393,7 +468,12 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     drawBox(page, x, cursor, boxWidth, boxHeight, caption);
     if (party) {
       let lineY = cursor - 24;
-      for (const line of partyLines(party)) {
+      // From schema 4 a long legal name or address wraps inside its box, and what cannot fit
+      // ends in an ellipsis, instead of running into the neighbouring box.
+      const lines = v4
+        ? fitLines(fonts, partyLines(party), boxWidth - 12, 8.5, 6)
+        : partyLines(party);
+      for (const line of lines) {
         page.text(line, x + 6, lineY, { size: 8.5 });
         lineY -= 10;
       }
@@ -402,6 +482,22 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     }
   });
   cursor -= boxHeight + 10;
+
+  // Schema 4 prints the notify party the snapshot always carried.
+  if (v4 && snapshot.notify) {
+    const notify = snapshot.notify;
+    const summary = [
+      notify.legal_name || notify.name || '',
+      [notify.postal_code, notify.city].filter(Boolean).join(' '),
+      notify.country_code ?? '',
+    ]
+      .filter((part) => part.trim().length > 0)
+      .join(', ');
+    drawBox(page, MARGIN, cursor, CONTENT_WIDTH, 34, 'Notify party');
+    const [line] = fitLines(fonts, [summary], CONTENT_WIDTH - 12, 8.5, 1);
+    page.text(line ?? '', MARGIN + 6, cursor - 24, { size: 8.5 });
+    cursor -= 44;
+  }
 
   // Shipment terms.
   const terms: [string, string][] = [
@@ -418,20 +514,40 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
   terms.forEach(([caption, value], index) => {
     const x = MARGIN + index * termWidth;
     drawBox(page, x, cursor, termWidth, 34, caption);
-    page.text(value, x + 6, cursor - 24, { size: 8.5 });
+    if (v4 && fonts.measure(value, 8.5) > termWidth - 12) {
+      // A long named place or port takes a second, smaller line rather than overflowing.
+      fitLines(fonts, [value], termWidth - 12, 7.5, 2).forEach((line, lineIndex) => {
+        page.text(line, x + 6, cursor - 21 - lineIndex * 8.5, { size: 7.5 });
+      });
+    } else {
+      page.text(value, x + 6, cursor - 24, { size: 8.5 });
+    }
   });
   cursor -= 44;
 
+  // Measured before the tables are drawn, so the last row of the final table can take the
+  // totals with it (schema 4): a totals block is never alone at the top of a page.
+  const totals = totalsFor(snapshot);
+  const totalsHeight = 6 + totals.length * 12;
+  const packedOn = snapshot.kind === 'packing_list' || snapshot.kind === 'delivery_note';
+  const packing = packedOn ? (snapshot.packages ?? []) : [];
+
   drawTableHeader();
 
-  for (const item of snapshot.items) {
+  snapshot.items.forEach((item, itemIndex) => {
     const descriptionColumn = layout[0];
-    if (!descriptionColumn) break;
+    if (!descriptionColumn) return;
     const lines = wrap(fonts, item.description, descriptionColumn.width - 12, 8.5);
     const rowHeight = Math.max(lines.length * 10 + 6, 18);
 
-    // Keep room for the totals block and the disclosure.
-    if (cursor - rowHeight < MARGIN + 80) {
+    if (v4) {
+      const last = itemIndex === snapshot.items.length - 1 && packing.length === 0;
+      if (cursor - rowHeight - (last ? totalsHeight : 0) < CONTENT_BOTTOM) {
+        startPage(true);
+        drawTableHeader();
+      }
+    } else if (cursor - rowHeight < MARGIN + 80) {
+      // Keep room for the totals block and the disclosure.
       startPage(true);
       drawTableHeader();
     }
@@ -458,14 +574,11 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     });
     cursor -= rowHeight;
     page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.4, 0.82);
-  }
+  });
 
   // How the goods are packed, on the documents whose readers load and check the truck.
   // Drawn from explicitly described packages; when none were described the document falls
   // back to the per-line carton counts, which is all it ever had.
-  const packedOn = snapshot.kind === 'packing_list' || snapshot.kind === 'delivery_note';
-  const packing = packedOn ? (snapshot.packages ?? []) : [];
-
   if (packing.length > 0) {
     if (cursor < MARGIN + 150) startPage(true);
     cursor -= 14;
@@ -477,8 +590,9 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
       ['Qty', 40, true],
       ['Dimensions (cm)', 110, false],
       ['Volume m³', 55, true],
-      ['Net kg', 45, true],
-      ['Gross kg', 50, true],
+      // From schema 4 the weights are the row's: count x per-package weight.
+      [v4 ? 'Net kg row' : 'Net kg', 45, true],
+      [v4 ? 'Gross kg row' : 'Gross kg', 50, true],
     ];
 
     const packHeader = (): void => {
@@ -497,10 +611,16 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     };
     packHeader();
 
-    for (const box of packing) {
+    packing.forEach((box, boxIndex) => {
       const contents = box.contents ?? [];
       const rowHeight = 14 + contents.length * 9 + (box.marks ? 9 : 0);
-      if (cursor - rowHeight < MARGIN + 80) {
+      if (v4) {
+        const last = boxIndex === packing.length - 1;
+        if (cursor - rowHeight - (last ? totalsHeight : 0) < CONTENT_BOTTOM) {
+          startPage(true);
+          packHeader();
+        }
+      } else if (cursor - rowHeight < MARGIN + 80) {
         startPage(true);
         packHeader();
       }
@@ -509,13 +629,15 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
         box.length_cm != null && box.width_cm != null && box.height_cm != null
           ? `${decimal(box.length_cm, 1)} × ${decimal(box.width_cm, 1)} × ${decimal(box.height_cm, 1)}`
           : '—';
+      const net = v4 ? box.net_weight_total_kg : box.net_weight_kg;
+      const gross = v4 ? box.gross_weight_total_kg : box.gross_weight_kg;
       const values: string[] = [
         `${box.position}. ${box.kind}`,
         decimal(box.package_count, 0),
         size,
         box.volume_m3 == null ? '—' : decimal(box.volume_m3, 3),
-        box.net_weight_kg == null ? '—' : decimal(box.net_weight_kg, 3),
-        box.gross_weight_kg == null ? '—' : decimal(box.gross_weight_kg, 3),
+        net == null ? '—' : decimal(net, 3),
+        gross == null ? '—' : decimal(gross, 3),
       ];
 
       let x = MARGIN;
@@ -543,12 +665,11 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
       }
       cursor -= rowHeight;
       page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.4, 0.82);
-    }
+    });
   }
 
   // Totals. Every document type states the figures its readers reconcile against.
   cursor -= 6;
-  const totals = totalsFor(snapshot);
   for (const [label, value] of totals) {
     const bold = label.startsWith('Total amount') || totals.length === 1;
     page.text(label, PAGE_WIDTH - MARGIN - 130, cursor - 10, { size: 8.5, align: 'right' });
@@ -560,21 +681,54 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     cursor -= 12;
   }
 
-  if (snapshot.shipment.marks_and_numbers) {
+  /** A captioned block of wrapped text; from schema 4 it moves to a new page whole. */
+  const block = (caption: string, text: string): void => {
+    const lines = wrap(fonts, text, CONTENT_WIDTH, 8.5);
+    if (v4 && cursor - (18 + lines.length * 10) < CONTENT_BOTTOM) startPage(true);
     cursor -= 8;
-    page.text('MARKS AND NUMBERS', MARGIN, cursor, { size: 6.5, font: 'bold' });
+    page.text(caption, MARGIN, cursor, { size: 6.5, font: 'bold' });
     cursor -= 10;
-    for (const line of wrap(fonts, snapshot.shipment.marks_and_numbers, CONTENT_WIDTH, 8.5)) {
+    for (const line of lines) {
       page.text(line, MARGIN, cursor, { size: 8.5 });
       cursor -= 10;
+    }
+  };
+
+  if (snapshot.shipment.marks_and_numbers) {
+    block('MARKS AND NUMBERS', snapshot.shipment.marks_and_numbers);
+  }
+
+  if (v4 && snapshot.issuer) {
+    const issuer = snapshot.issuer;
+    const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
+    if (invoice && issuer.payment_terms) block('PAYMENT TERMS', issuer.payment_terms);
+    if (invoice && issuer.bank_details) block('BANK DETAILS', issuer.bank_details);
+    if (issuer.document_notes) block('NOTES', issuer.document_notes);
+    if (issuer.signatory_name) {
+      // A place to sign and the name it is signed for. Not a signature: the document stays
+      // a preparation until a person signs it.
+      if (cursor - 48 < CONTENT_BOTTOM) startPage(true);
+      cursor -= 30;
+      page.line(MARGIN, cursor, MARGIN + 200, cursor, 0.5, 0.35);
+      cursor -= 10;
+      page.text(
+        [issuer.signatory_name, issuer.signatory_title].filter(Boolean).join(', '),
+        MARGIN,
+        cursor,
+        { size: 8.5 },
+      );
+      cursor -= 8;
     }
   }
 
   // The disclosure and page numbers go on every page, added once the count is known.
+  const disclosure = snapshot.preview
+    ? `Preview only: not finalized and without a document number. ${DISCLOSURE}`
+    : DISCLOSURE;
   pages.forEach((rendered, index) => {
     let y = MARGIN + 26;
     rendered.line(MARGIN, y + 12, PAGE_WIDTH - MARGIN, y + 12, 0.5, 0.72);
-    for (const line of wrap(fonts, DISCLOSURE, CONTENT_WIDTH - 90, 6.5)) {
+    for (const line of wrap(fonts, disclosure, CONTENT_WIDTH - 90, 6.5)) {
       rendered.text(line, MARGIN, y, { size: 6.5 });
       y -= 8;
     }
@@ -584,7 +738,16 @@ export function renderTradeDocument(input: unknown, fonts: FontSet = createFontS
     });
   });
 
-  return renderPdf(pages, fonts);
+  return pages;
+}
+
+export function renderTradeDocument(input: unknown, fonts: FontSet = createFontSet()): Uint8Array {
+  return renderPdf(layoutTradeDocument(input, fonts), fonts);
+}
+
+/** Exported for tests: the text each page carries and where, in drawing order. */
+export function documentLayout(input: unknown, fonts: FontSet = createFontSet()): PlacedText[][] {
+  return layoutTradeDocument(input, fonts).map((page) => [...page.texts]);
 }
 
 /** Exported for tests: the width a description column receives for a given document type. */

@@ -85,8 +85,13 @@ export function wrap(
   return lines.length > 0 ? lines : [''];
 }
 
+/** Where a piece of text was placed. Kept so layout can be tested without parsing a PDF. */
+export type PlacedText = { text: string; x: number; y: number; size: number; width: number };
+
 export class Page {
   private readonly operations: string[] = [];
+  /** Every text run on the page, in drawing order. Not part of the output. */
+  readonly texts: PlacedText[] = [];
 
   constructor(private readonly fonts: FontSet) {}
 
@@ -101,6 +106,7 @@ export class Page {
     const { glyphs, width: rawWidth } = this.fonts.encode(value, font);
     const width = (rawWidth * size) / 1000;
     const start = align === 'right' ? x - width : align === 'center' ? x - width / 2 : x;
+    this.texts.push({ text: value, x: start, y, size, width });
     const hex = glyphs.map((glyph) => glyph.toString(16).padStart(4, '0')).join('');
     const resource = font === 'bold' ? '/F2' : '/F1';
     this.operations.push(
