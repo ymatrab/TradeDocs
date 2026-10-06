@@ -330,7 +330,9 @@ test('a password reset runs end to end and its link works once', async ({ browse
   // Diagnostics: where the link points (token withheld) and what /auth/confirm answered, so a
   // failure shows whether the session was lost at the link, the redirect or the next page.
   const target = new URL(link);
-  console.log(`reset link: ${target.origin}${target.pathname} type=${target.searchParams.get('type')}`);
+  console.log(
+    `reset link: ${target.origin}${target.pathname} type=${target.searchParams.get('type')}`,
+  );
   page.on('response', async (response) => {
     const path = new URL(response.url()).pathname;
     if (path !== '/auth/confirm' && path !== '/reset-password/new') return;

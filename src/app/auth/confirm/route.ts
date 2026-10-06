@@ -46,7 +46,12 @@ export async function GET(request: NextRequest) {
     }
   }
   // The session cookies ride on this redirect, so the next page request carries them.
-  const response = bind(NextResponse.redirect(new URL(destination, url.origin), 303));
+  // A relative Location keeps the browser on the host it is already on. Building it from
+  // request.url can name a different host (localhost for 127.0.0.1 behind the dev server or a
+  // proxy), and the session cookies set for this host would then not travel with the redirect.
+  const response = bind(
+    new NextResponse(null, { status: 303, headers: { Location: destination } }),
+  );
   response.cookies.delete(NEXT_COOKIE);
   return response;
 }

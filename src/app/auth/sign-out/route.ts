@@ -20,8 +20,9 @@ export async function POST(request: NextRequest) {
   const client = await createClient();
   const everywhere = url.searchParams.get('scope') === 'global';
   await client.auth.signOut({ scope: everywhere ? 'global' : 'local' });
-  return NextResponse.redirect(
-    new URL(everywhere ? '/sign-in?signed-out=everywhere' : '/sign-in', url.origin),
-    303,
-  );
+  // Relative, so the cleared cookies and the next page stay on the same host.
+  return new NextResponse(null, {
+    status: 303,
+    headers: { Location: everywhere ? '/sign-in?signed-out=everywhere' : '/sign-in' },
+  });
 }
