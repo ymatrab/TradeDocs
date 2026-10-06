@@ -31,8 +31,7 @@ const article: ContentArticle = {
     },
     {
       term: 'HTS (Harmonized Tariff Schedule of the United States)',
-      meaning:
-        'The US import tariff, which extends the HS to 10 digits and sets the duty rates.',
+      meaning: 'The US import tariff, which extends the HS to 10 digits and sets the duty rates.',
     },
     {
       term: 'Schedule B',
@@ -164,7 +163,11 @@ const article: ContentArticle = {
     'w4-trade-gov-export-transaction',
   ],
   primaryTool: '/tools/invoice-generator',
-  tools: ['/tools/invoice-generator', '/tools/packing-list-generator', '/tools/landed-cost-calculator'],
+  tools: [
+    '/tools/invoice-generator',
+    '/tools/packing-list-generator',
+    '/tools/landed-cost-calculator',
+  ],
   callout: {
     afterSection: 2,
     tool: '/tools/invoice-generator',

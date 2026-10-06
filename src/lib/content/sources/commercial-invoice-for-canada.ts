@@ -32,7 +32,8 @@ export default {
   },
   'w2-cbp-samples': {
     authority: 'U.S. Customs and Border Protection (CBP)',
-    title: 'What Every Member of the Trade Community Should Know About: Importation of Commercial Samples (informed compliance publication, PDF)',
+    title:
+      'What Every Member of the Trade Community Should Know About: Importation of Commercial Samples (informed compliance publication, PDF)',
     url: 'https://www.cbp.gov/sites/default/files/documents/icp066_3.pdf',
     jurisdiction: 'United States (imports)',
     supports:

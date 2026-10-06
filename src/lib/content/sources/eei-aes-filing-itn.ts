@@ -18,7 +18,8 @@ export default {
   },
   'w5-ftr-30-3': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.3), via Cornell LII',
-    title: '15 CFR § 30.3 — Electronic Export Information filer requirements, parties to export transactions, and responsibilities of parties',
+    title:
+      '15 CFR § 30.3 — Electronic Export Information filer requirements, parties to export transactions, and responsibilities of parties',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.3',
     jurisdiction: 'United States (export reporting)',
     supports:
@@ -28,11 +29,11 @@ export default {
   },
   'w5-ftr-30-4': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.4), via Cornell LII',
-    title: '15 CFR § 30.4 — Electronic Export Information filing procedures, deadlines, and certification statements',
+    title:
+      '15 CFR § 30.4 — Electronic Export Information filing procedures, deadlines, and certification statements',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.4',
     jurisdiction: 'United States (export reporting)',
-    supports:
-      'the predeparture filing deadlines for vessel, air, truck, rail and mail exports',
+    supports: 'the predeparture filing deadlines for vessel, air, truck, rail and mail exports',
     retrieved: '2026-10-06',
     reviewer: 'pending owner review',
   },
@@ -48,7 +49,8 @@ export default {
   },
   'w5-ftr-30-7': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.7), via Cornell LII',
-    title: '15 CFR § 30.7 — Annotating the bill of lading, air waybill, or other commercial loading documents with proof of filing citations, and exemption legends',
+    title:
+      '15 CFR § 30.7 — Annotating the bill of lading, air waybill, or other commercial loading documents with proof of filing citations, and exemption legends',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.7',
     jurisdiction: 'United States (export reporting)',
     supports:
@@ -58,7 +60,8 @@ export default {
   },
   'w5-ftr-30-10': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.10), via Cornell LII',
-    title: '15 CFR § 30.10 — Retention of export information and the authority to require production of documents',
+    title:
+      '15 CFR § 30.10 — Retention of export information and the authority to require production of documents',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.10',
     jurisdiction: 'United States (export reporting)',
     supports: 'keeping export shipment documents for five years from the date of export',

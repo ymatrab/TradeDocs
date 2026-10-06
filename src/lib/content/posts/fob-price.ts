@@ -72,7 +72,12 @@ const article: ContentArticle = {
           ['Export clearance', 'Buyer', 'Included', 'Included'],
           ['Loading on board', 'Buyer', 'Included', 'Included'],
           ['Ocean freight', 'Buyer', 'Buyer', 'Included'],
-          ['Insurance for the voyage', 'Buyer (not required)', 'Buyer (not required)', 'Included (minimum cover)'],
+          [
+            'Insurance for the voyage',
+            'Buyer (not required)',
+            'Buyer (not required)',
+            'Included (minimum cover)',
+          ],
           ['Import clearance, duties and taxes', 'Buyer', 'Buyer', 'Buyer'],
         ],
       },
@@ -156,7 +161,12 @@ const article: ContentArticle = {
       a: 'Yes. Show the unit price and the line total for each item, the currency and the term, such as “FOB Ningbo, Incoterms® 2020”, so customs can see what the price covers.',
     },
   ],
-  sources: ['icc-incoterms-2020', 'wto-customs-valuation', 'w2-cornell-19-usc-1401a', 'us-cbp-invoice-contents'],
+  sources: [
+    'icc-incoterms-2020',
+    'wto-customs-valuation',
+    'w2-cornell-19-usc-1401a',
+    'us-cbp-invoice-contents',
+  ],
   primaryTool: '/tools/landed-cost-calculator',
   tools: ['/tools/landed-cost-calculator', '/tools/proforma-invoice-generator', '/tools/incoterms'],
   callout: {

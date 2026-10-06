@@ -28,7 +28,8 @@ const article: ContentArticle = {
   definitions: [
     {
       term: 'Euro pallet (EPAL 1)',
-      meaning: 'The 1,200 × 800 mm wooden pallet made to the European Pallet Association’s specification.',
+      meaning:
+        'The 1,200 × 800 mm wooden pallet made to the European Pallet Association’s specification.',
     },
     {
       term: 'GMA-style pallet',
@@ -67,7 +68,13 @@ const article: ContentArticle = {
         caption: 'Common pallet sizes and their published specifications',
         head: ['Pallet', 'Footprint', 'Height', 'Own weight', 'Safe working load'],
         rows: [
-          ['US GMA-style', '48 × 40 in (1,219 × 1,016 mm)', 'Varies by build', 'Varies by build', 'Ask your supplier'],
+          [
+            'US GMA-style',
+            '48 × 40 in (1,219 × 1,016 mm)',
+            'Varies by build',
+            'Varies by build',
+            'Ask your supplier',
+          ],
           ['EPAL 1 euro pallet', '1,200 × 800 mm', '144 mm', 'About 25 kg', '1,500 kg'],
           ['EPAL 2', '1,200 × 1,000 mm', '162 mm', 'About 35 kg', '1,250 kg'],
         ],
@@ -158,7 +165,10 @@ const article: ContentArticle = {
     height: 4912,
     alt: 'A tall stack of wooden shipping pallets, the flat platforms cargo is built on for export',
     caption: 'Wooden pallets stacked on top of each other',
-    photographer: { name: 'Lucas van Oort', profile: 'https://unsplash.com/@switch_dtp_fotografie' },
+    photographer: {
+      name: 'Lucas van Oort',
+      profile: 'https://unsplash.com/@switch_dtp_fotografie',
+    },
     page: 'https://unsplash.com/photos/a-large-stack-of-wooden-pallets-stacked-on-top-of-each-other-tWLgDQCKRYU',
   },
 };

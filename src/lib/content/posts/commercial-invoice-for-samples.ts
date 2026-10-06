@@ -87,7 +87,13 @@ const article: ContentArticle = {
         caption: 'Worked example of sample invoice lines, invented parties and figures (USD)',
         head: ['Description', 'Qty', 'Unit value', 'Line value', 'Origin'],
         rows: [
-          ['Ceramic coffee mug, 350 ml, glazed stoneware, marked “SAMPLE” on the base', '6', '4.50', '27.00', 'Portugal'],
+          [
+            'Ceramic coffee mug, 350 ml, glazed stoneware, marked “SAMPLE” on the base',
+            '6',
+            '4.50',
+            '27.00',
+            'Portugal',
+          ],
           ['Linen tea towel, 50 × 70 cm, 100% linen, cut corner', '4', '3.20', '12.80', 'Portugal'],
           ['Printed product catalogue, 24 pages', '2', '1.00', '2.00', 'Portugal'],
           ['Invoice total (free of charge; values for customs purposes only)', '', '', '41.80', ''],
@@ -146,7 +152,11 @@ const article: ContentArticle = {
     'w2-dhl-commercial-invoice',
   ],
   primaryTool: '/tools/invoice-generator',
-  tools: ['/tools/invoice-generator', '/tools/proforma-invoice-generator', '/tools/packing-list-generator'],
+  tools: [
+    '/tools/invoice-generator',
+    '/tools/proforma-invoice-generator',
+    '/tools/packing-list-generator',
+  ],
   callout: {
     afterSection: 2,
     tool: '/tools/invoice-generator',

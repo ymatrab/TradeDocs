@@ -32,7 +32,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Consignee',
-      meaning: 'The party the carrier will deliver the goods to, or to whose order they are consigned.',
+      meaning:
+        'The party the carrier will deliver the goods to, or to whose order they are consigned.',
     },
     {
       term: 'Straight bill of lading',

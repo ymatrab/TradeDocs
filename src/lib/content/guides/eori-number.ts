@@ -30,7 +30,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Economic operator',
-      meaning: 'A business or person that takes part in customs activities, such as importing or exporting.',
+      meaning:
+        'A business or person that takes part in customs activities, such as importing or exporting.',
     },
     {
       term: 'Established',
@@ -93,8 +94,18 @@ const article: ContentArticle = {
         rows: [
           ['Issued by', 'Customs authority of one EU country', 'HMRC', 'HMRC'],
           ['Starts with', 'The issuing country’s two-letter code', 'GB', 'XI'],
-          ['Used for', 'Customs operations in the EU', 'Customs activity involving Great Britain', 'Customs activity involving Northern Ireland'],
-          ['Prerequisite', 'Established in the EU, or a first customs operation there', 'Usually established in the UK', 'A GB EORI number'],
+          [
+            'Used for',
+            'Customs operations in the EU',
+            'Customs activity involving Great Britain',
+            'Customs activity involving Northern Ireland',
+          ],
+          [
+            'Prerequisite',
+            'Established in the EU, or a first customs operation there',
+            'Usually established in the UK',
+            'A GB EORI number',
+          ],
         ],
       },
     },

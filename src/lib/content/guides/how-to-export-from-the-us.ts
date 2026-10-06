@@ -35,11 +35,13 @@ const article: ContentArticle = {
     },
     {
       term: 'EAR99',
-      meaning: 'The designation for items subject to the EAR that match no ECCN on the Commerce Control List.',
+      meaning:
+        'The designation for items subject to the EAR that match no ECCN on the Commerce Control List.',
     },
     {
       term: 'USPPI',
-      meaning: 'The US principal party in interest, usually the US seller, named in the export filing.',
+      meaning:
+        'The US principal party in interest, usually the US seller, named in the export filing.',
     },
   ],
   published: ROUND,

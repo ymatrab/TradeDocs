@@ -30,7 +30,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Value for duty',
-      meaning: 'The value on which Canadian customs duty is assessed, used in the CAD 2,500 threshold.',
+      meaning:
+        'The value on which Canadian customs duty is assessed, used in the CAD 2,500 threshold.',
     },
     {
       term: 'Date of direct shipment',
@@ -71,19 +72,55 @@ const article: ContentArticle = {
         caption: 'Appendix A fields of CBSA Memorandum D1-4-1, grouped',
         head: ['Fields', 'What they ask for'],
         rows: [
-          ['1 Vendor', 'Full name and address of the seller and, if different, the party consigning the goods'],
-          ['2 Date of direct shipment to Canada', 'The date the goods began their continuous journey to Canada'],
-          ['3 Other references', 'Useful references, such as your invoice number and the buyer’s order number'],
-          ['4 Consignee; 5 Purchaser', 'Who the goods are shipped to, and who they are sold to if different'],
-          ['6 Country of transhipment', 'Any country the goods passed through in transit under customs control'],
+          [
+            '1 Vendor',
+            'Full name and address of the seller and, if different, the party consigning the goods',
+          ],
+          [
+            '2 Date of direct shipment to Canada',
+            'The date the goods began their continuous journey to Canada',
+          ],
+          [
+            '3 Other references',
+            'Useful references, such as your invoice number and the buyer’s order number',
+          ],
+          [
+            '4 Consignee; 5 Purchaser',
+            'Who the goods are shipped to, and who they are sold to if different',
+          ],
+          [
+            '6 Country of transhipment',
+            'Any country the goods passed through in transit under customs control',
+          ],
           ['7 Country of origin of goods', 'Where the goods were grown, produced or manufactured'],
-          ['8 Transportation', 'The mode and the place from which the goods began their journey to Canada'],
-          ['9 Conditions of sale; 10 Currency of settlement', 'The terms of sale and payment, and the invoice currency'],
-          ['11 Number of packages; 12 Specification of commodities', 'Package count and kind, marks and numbers, and a commercial description'],
-          ['13 Quantity; 14 Unit price; 15 Total', 'Per line, in the currency of settlement; N/A where nothing is paid'],
-          ['16 Total weight; 17 Invoice total', 'Net and gross weight, and the total price paid or payable'],
-          ['19 Exporter; 20 Originator; 21 CBSA ruling', 'Who ships the goods, who completed the invoice, and any CBSA ruling number and date'],
-          ['22–25 Adjustments to price', 'Costs included or excluded from the price, including export packing'],
+          [
+            '8 Transportation',
+            'The mode and the place from which the goods began their journey to Canada',
+          ],
+          [
+            '9 Conditions of sale; 10 Currency of settlement',
+            'The terms of sale and payment, and the invoice currency',
+          ],
+          [
+            '11 Number of packages; 12 Specification of commodities',
+            'Package count and kind, marks and numbers, and a commercial description',
+          ],
+          [
+            '13 Quantity; 14 Unit price; 15 Total',
+            'Per line, in the currency of settlement; N/A where nothing is paid',
+          ],
+          [
+            '16 Total weight; 17 Invoice total',
+            'Net and gross weight, and the total price paid or payable',
+          ],
+          [
+            '19 Exporter; 20 Originator; 21 CBSA ruling',
+            'Who ships the goods, who completed the invoice, and any CBSA ruling number and date',
+          ],
+          [
+            '22–25 Adjustments to price',
+            'Costs included or excluded from the price, including export packing',
+          ],
         ],
       },
     },
@@ -143,7 +180,11 @@ const article: ContentArticle = {
   ],
   sources: ['w2-cbsa-d1-4-1'],
   primaryTool: '/tools/invoice-generator',
-  tools: ['/tools/invoice-generator', '/tools/packing-list-generator', '/tools/landed-cost-calculator'],
+  tools: [
+    '/tools/invoice-generator',
+    '/tools/packing-list-generator',
+    '/tools/landed-cost-calculator',
+  ],
   callout: {
     afterSection: 2,
     tool: '/tools/invoice-generator',

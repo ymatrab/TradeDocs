@@ -25,7 +25,8 @@ const article: ContentArticle = {
   definitions: [
     {
       term: 'Shipping marks',
-      meaning: 'The marks and numbers printed on each package so it can be matched to the documents.',
+      meaning:
+        'The marks and numbers printed on each package so it can be matched to the documents.',
     },
     {
       term: 'Shipper’s mark',
@@ -38,7 +39,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Cautionary marks',
-      meaning: 'Handling instructions such as “This Side Up” or “Use No Hooks”, in words or pictorial symbols.',
+      meaning:
+        'Handling instructions such as “This Side Up” or “Use No Hooks”, in words or pictorial symbols.',
     },
   ],
   published: ROUND,
@@ -79,13 +81,29 @@ const article: ContentArticle = {
         caption: 'Worked example of a carton mark, invented buyer and figures',
         head: ['Line on the carton', 'Example', 'What it does'],
         rows: [
-          ['Shipper’s mark', 'NRT / PO 4471', 'Identifies the buyer and the order without naming the goods'],
-          ['Destination', 'Port of entry: Rotterdam', 'Tells the carrier where the package is going'],
+          [
+            'Shipper’s mark',
+            'NRT / PO 4471',
+            'Identifies the buyer and the order without naming the goods',
+          ],
+          [
+            'Destination',
+            'Port of entry: Rotterdam',
+            'Tells the carrier where the package is going',
+          ],
           ['Package number', 'C/No. 3 of 12', 'Shows which package this is and how many there are'],
           ['Gross weight', '18.4 kg / 40.6 lb', 'Matches the packing list for that carton'],
-          ['Dimensions', '60 × 40 × 40 cm / 23.6 × 15.7 × 15.7 in', 'Lets the forwarder check volume and stacking'],
+          [
+            'Dimensions',
+            '60 × 40 × 40 cm / 23.6 × 15.7 × 15.7 in',
+            'Lets the forwarder check volume and stacking',
+          ],
           ['Origin', 'Made in USA', 'States the country of origin on the package'],
-          ['Handling', 'This Side Up; Keep Dry (symbols and words)', 'Tells handlers how to treat the carton'],
+          [
+            'Handling',
+            'This Side Up; Keep Dry (symbols and words)',
+            'Tells handlers how to treat the carton',
+          ],
         ],
       },
     },
@@ -147,7 +165,12 @@ const article: ContentArticle = {
       a: 'Express parcels carry the carrier’s label, which identifies them. Numbering multi-piece shipments and matching the packing list still helps when a piece is checked or delayed.',
     },
   ],
-  sources: ['w2-ita-labeling', 'trade-gov-packing-list', 'us-cbp-invoice-contents', 'w2-cbsa-d1-4-1'],
+  sources: [
+    'w2-ita-labeling',
+    'trade-gov-packing-list',
+    'us-cbp-invoice-contents',
+    'w2-cbsa-d1-4-1',
+  ],
   primaryTool: '/tools/packing-list-generator',
   tools: ['/tools/packing-list-generator', '/tools/cbm-calculator', '/tools/invoice-generator'],
   callout: {

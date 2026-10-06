@@ -26,7 +26,8 @@ const article: ContentArticle = {
   definitions: [
     {
       term: 'Shipper (consignor)',
-      meaning: 'The party that tenders the goods to the carrier and is named as shipper on the transport document.',
+      meaning:
+        'The party that tenders the goods to the carrier and is named as shipper on the transport document.',
     },
     {
       term: 'Consignee',
@@ -34,7 +35,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Notify party',
-      meaning: 'A party the carrier contacts when the goods arrive; it gets no right to the goods by being named.',
+      meaning:
+        'A party the carrier contacts when the goods arrive; it gets no right to the goods by being named.',
     },
     {
       term: 'Ultimate consignee',
@@ -78,10 +80,20 @@ const article: ContentArticle = {
         caption: 'Who appears where, in a sale with invented parties',
         head: ['Box', 'Document', 'Who usually goes there', 'In this invented sale'],
         rows: [
-          ['Seller', 'Commercial invoice', 'The party selling the goods', 'Harbour Lane Ceramics Ltd'],
+          [
+            'Seller',
+            'Commercial invoice',
+            'The party selling the goods',
+            'Harbour Lane Ceramics Ltd',
+          ],
           ['Buyer', 'Commercial invoice', 'The party paying for the goods', 'Nordvik Interiors AS'],
           ['Shipper', 'Bill of lading', 'The seller or its forwarder', 'Harbour Lane Ceramics Ltd'],
-          ['Consignee', 'Bill of lading', 'The party collecting the goods, or “to order”', 'To order of Example Bank'],
+          [
+            'Consignee',
+            'Bill of lading',
+            'The party collecting the goods, or “to order”',
+            'To order of Example Bank',
+          ],
           ['Notify party', 'Bill of lading', 'The buyer or its broker', 'Nordvik Interiors AS'],
         ],
       },

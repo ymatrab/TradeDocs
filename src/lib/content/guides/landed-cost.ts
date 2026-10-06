@@ -136,7 +136,12 @@ const article: ContentArticle = {
       a: 'Whoever sets a price on it. A seller quoting DDP needs it to price the offer; a buyer needs it to compare offers on different Incoterms® rules and to set its own selling price.',
     },
   ],
-  sources: ['wto-customs-valuation', 'w5-usc-19-1401a', 'icc-incoterms-2020', 'trade-gov-commercial-invoice'],
+  sources: [
+    'wto-customs-valuation',
+    'w5-usc-19-1401a',
+    'icc-incoterms-2020',
+    'trade-gov-commercial-invoice',
+  ],
   primaryTool: '/tools/landed-cost-calculator',
   tools: ['/tools/landed-cost-calculator', '/tools/incoterms', '/tools/invoice-generator'],
   callout: {

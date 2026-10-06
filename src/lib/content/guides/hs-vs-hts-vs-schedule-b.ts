@@ -31,7 +31,8 @@ const article: ContentArticle = {
     },
     {
       term: 'HTS (Harmonized Tariff Schedule of the United States)',
-      meaning: 'The US import tariff: 10-digit codes with their duty rates, maintained by the USITC.',
+      meaning:
+        'The US import tariff: 10-digit codes with their duty rates, maintained by the USITC.',
     },
     {
       term: 'Schedule B',
@@ -85,9 +86,19 @@ const article: ContentArticle = {
             'U.S. International Trade Commission',
             'U.S. Census Bureau',
           ],
-          ['Used for', 'All countries using the HS', 'Goods imported into the US', 'Goods exported from the US'],
+          [
+            'Used for',
+            'All countries using the HS',
+            'Goods imported into the US',
+            'Goods exported from the US',
+          ],
           ['Carries a duty rate', 'No', 'Yes', 'No'],
-          ['Where you look it up', 'The importing country’s tariff', 'The USITC’s HTS search', 'The Census Bureau’s Schedule B search'],
+          [
+            'Where you look it up',
+            'The importing country’s tariff',
+            'The USITC’s HTS search',
+            'The Census Bureau’s Schedule B search',
+          ],
         ],
       },
     },
@@ -149,7 +160,11 @@ const article: ContentArticle = {
     'w5-bis-classify',
   ],
   primaryTool: '/tools/invoice-generator',
-  tools: ['/tools/invoice-generator', '/tools/proforma-invoice-generator', '/tools/landed-cost-calculator'],
+  tools: [
+    '/tools/invoice-generator',
+    '/tools/proforma-invoice-generator',
+    '/tools/landed-cost-calculator',
+  ],
   callout: {
     afterSection: 4,
     tool: '/tools/invoice-generator',

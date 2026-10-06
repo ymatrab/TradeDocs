@@ -42,7 +42,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Reason for export',
-      meaning: 'The purpose of the shipment as stated on the invoice: sale, sample, repair, return or gift.',
+      meaning:
+        'The purpose of the shipment as stated on the invoice: sale, sample, repair, return or gift.',
     },
   ],
   published: ROUND,
@@ -63,7 +64,8 @@ const article: ContentArticle = {
         'The carriers describe the same core document in different words. The table summarises each one’s US page as retrieved on 6 October 2026. Carrier practice changes, so check the page before you rely on a detail.',
       ],
       table: {
-        caption: 'Commercial invoice practice at UPS, FedEx and DHL Express (US pages, retrieved 6 October 2026)',
+        caption:
+          'Commercial invoice practice at UPS, FedEx and DHL Express (US pages, retrieved 6 October 2026)',
         head: ['', 'UPS', 'FedEx', 'DHL Express'],
         rows: [
           ['Who prepares it', 'The exporter', 'The exporter', 'The seller'],

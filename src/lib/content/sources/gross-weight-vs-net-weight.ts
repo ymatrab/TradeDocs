@@ -151,7 +151,8 @@ export default {
   },
   'w4-usda-gma-pallet': {
     authority: 'USDA Forest Service, Research and Development (Treesearch)',
-    title: 'Comparative performance of new, repaired, and remanufactured 48- by 40-inch GMA-style wood pallets',
+    title:
+      'Comparative performance of new, repaired, and remanufactured 48- by 40-inch GMA-style wood pallets',
     url: 'https://research.fs.usda.gov/treesearch/21517',
     jurisdiction: 'United States (research)',
     supports:

@@ -29,7 +29,8 @@ const article: ContentArticle = {
   definitions: [
     {
       term: 'Door opening',
-      meaning: 'The clear width and height of the open container doors, which limits what can be loaded.',
+      meaning:
+        'The clear width and height of the open container doors, which limits what can be loaded.',
     },
     {
       term: 'High cube',
@@ -64,12 +65,47 @@ const article: ContentArticle = {
       ],
       table: {
         caption: 'Inside dimensions and volume, Maersk steel dry containers',
-        head: ['Container', 'Outside (L × W × H)', 'Inside length', 'Inside width', 'Inside height', 'Volume'],
+        head: [
+          'Container',
+          'Outside (L × W × H)',
+          'Inside length',
+          'Inside width',
+          'Inside height',
+          'Volume',
+        ],
         rows: [
-          ['20ft standard', '20 ft × 8 ft × 8 ft 6 in', '5,896 mm', '2,350 mm', '2,393 mm', '33 m³'],
-          ['40ft standard', '40 ft × 8 ft × 8 ft 6 in', '12,032 mm', '2,350 mm', '2,393 mm', '67 m³'],
-          ['40ft high cube', '40 ft × 8 ft × 9 ft 6 in', '12,032 mm', '2,350 mm', '2,697 mm', '76 m³'],
-          ['45ft high cube', '45 ft × 8 ft × 9 ft 6 in', '13,556 mm', '2,352 mm', '2,698 mm', '85 m³'],
+          [
+            '20ft standard',
+            '20 ft × 8 ft × 8 ft 6 in',
+            '5,896 mm',
+            '2,350 mm',
+            '2,393 mm',
+            '33 m³',
+          ],
+          [
+            '40ft standard',
+            '40 ft × 8 ft × 8 ft 6 in',
+            '12,032 mm',
+            '2,350 mm',
+            '2,393 mm',
+            '67 m³',
+          ],
+          [
+            '40ft high cube',
+            '40 ft × 8 ft × 9 ft 6 in',
+            '12,032 mm',
+            '2,350 mm',
+            '2,697 mm',
+            '76 m³',
+          ],
+          [
+            '45ft high cube',
+            '45 ft × 8 ft × 9 ft 6 in',
+            '13,556 mm',
+            '2,352 mm',
+            '2,698 mm',
+            '85 m³',
+          ],
         ],
       },
     },

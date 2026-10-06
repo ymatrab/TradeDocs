@@ -181,14 +181,14 @@ const article: ContentArticle = {
     '/blog/commercial-invoice-requirements',
   ],
   cover: {
-    id: 'q8kR_ie6WnI',
-    src: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59',
-    width: 7952,
-    height: 5304,
-    alt: 'Cardboard parcels stacked in the back of a delivery van, ready for courier delivery',
-    caption: 'Cardboard shipping boxes in the back of a delivery van',
-    photographer: { name: 'Claudio Schwarz', profile: 'https://unsplash.com/@purzlbaum' },
-    page: 'https://unsplash.com/photos/cardboard-shipping-boxes-in-delivery-van-q8kR_ie6WnI',
+    id: 'OL84QWu3Ong',
+    src: 'https://images.unsplash.com/photo-1641199788912-9a7385a35c82',
+    width: 6214,
+    height: 3497,
+    alt: 'A white delivery van parked at the roadside, the kind couriers use for the last mile',
+    caption: 'A white van parked on the side of the road',
+    photographer: { name: 'Mathias Reding', profile: 'https://unsplash.com/@matreding' },
+    page: 'https://unsplash.com/photos/a-white-van-parked-on-the-side-of-the-road-OL84QWu3Ong',
   },
 };
 
