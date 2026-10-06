@@ -4,12 +4,41 @@ import { ShieldAlert } from 'lucide-react';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
 import { NavSentinel } from '@/components/shell/nav-condense';
 
+/** The header row: the four destinations a buyer looks for, then Sign in and the offer. */
 const navigation = [
-  { href: '/#how', label: 'How it works' },
   { href: '/tools', label: 'Free tools' },
   { href: '/guides', label: 'Guides' },
-  // There are no prices yet, so the link is named for what the section actually says.
-  { href: '/#pricing', label: 'Free while early' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/pricing', label: 'Pricing' },
+] as const;
+
+/** The phone menu has the room the header row does not, so it carries support too. */
+const mobileNavigation = [
+  ...navigation,
+  { href: '/help', label: 'Help' },
+  { href: '/contact', label: 'Contact' },
+] as const;
+
+const footerProduct = [
+  { href: '/#how', label: 'How it works' },
+  { href: '/#documents', label: 'Documents' },
+  { href: '/#checklist', label: 'Export document checklist' },
+  { href: '/pricing', label: 'Pricing' },
+  // There are no prices yet; this line says so in the words the status band uses.
+  { href: '/#status', label: 'Free while early' },
+] as const;
+
+const footerResources = [
+  { href: '/guides', label: 'Guides' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/help', label: 'Help' },
+  { href: '/contact', label: 'Contact' },
+] as const;
+
+const footerLegal = [
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
+  { href: '/cookies', label: 'Cookies' },
 ] as const;
 
 const footerTools = [
@@ -102,35 +131,54 @@ export function PublicShell({
           <div>
             <Wordmark />
             <p className="footer-statement">{BOUNDARY_STATEMENT}</p>
+            <p className="footer-note">
+              Preparation software. Not legal, customs or compliance advice.
+            </p>
+            <Link href={action.href} className="btn tape footer-cta">
+              {action.label}
+            </Link>
           </div>
-          <nav className="footer-col" aria-label="Product">
-            <p className="caption">Product</p>
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
+          <FooterColumn label="Product" links={footerProduct}>
             <Link href="/sign-in">Sign in</Link>
-          </nav>
-          <nav className="footer-col" aria-label="Free tools">
-            <p className="caption">Free tools</p>
-            {footerTools.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="footer-col">
-            <p className="caption">Boundary</p>
-            <p>Preparation software. Not legal, customs or compliance advice.</p>
-          </div>
+          </FooterColumn>
+          <FooterColumn label="Free tools" links={footerTools} />
+          <FooterColumn label="Resources" links={footerResources} />
         </div>
         <div className="footer-base">
           <span>© {new Date().getFullYear()} TradeDocs</span>
+          <nav className="footer-legal" aria-label="Legal">
+            {footerLegal.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <span>Prepared · not issued</span>
         </div>
       </footer>
     </div>
+  );
+}
+
+function FooterColumn({
+  label,
+  links,
+  children,
+}: {
+  label: string;
+  links: readonly { href: string; label: string }[];
+  children?: ReactNode;
+}) {
+  return (
+    <nav className="footer-col" aria-label={label}>
+      <p className="caption">{label}</p>
+      {links.map((item) => (
+        <Link key={item.href} href={item.href}>
+          {item.label}
+        </Link>
+      ))}
+      {children}
+    </nav>
   );
 }
 
@@ -142,7 +190,7 @@ export function PublicShell({
 export function MobileNav({ action }: { action: ReturnType<typeof primaryAction> }) {
   return (
     <NavDisclosure className="mobile-nav" summary="Menu" label="Primary, mobile">
-      {navigation.map((item) => (
+      {mobileNavigation.map((item) => (
         <Link key={item.href} href={item.href} className="btn quiet">
           {item.label}
         </Link>

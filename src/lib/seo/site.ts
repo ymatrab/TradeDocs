@@ -101,6 +101,8 @@ export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS
  * changes later gets its own date here rather than moving the others.
  */
 const REDESIGN_ROUND = '2026-10-05';
+/** The homepage gained its photo, document, audience, checklist and FAQ sections. */
+const HOME_ROUND = '2026-10-06';
 
 export type SitemapPage = {
   path: string;
@@ -110,7 +112,7 @@ export type SitemapPage = {
 };
 
 export const SITEMAP_PAGES: readonly SitemapPage[] = [
-  { path: '/', lastModified: REDESIGN_ROUND, changeFrequency: 'weekly', priority: 1 },
+  { path: '/', lastModified: HOME_ROUND, changeFrequency: 'weekly', priority: 1 },
   { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,

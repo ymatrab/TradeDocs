@@ -58,3 +58,27 @@ test('a guide cover is hotlinked from Unsplash, sized and credited', async ({ pa
     await expect(link).toHaveAttribute('href', /utm_source=paydocs&utm_medium=referral/);
   }
 });
+
+test('the homepage FAQ data matches its visible questions and its photos are credited', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+  const items = blocks.flatMap((text) => JSON.parse(text) as { '@type': string }[]);
+  const faq = items.find((item) => item['@type'] === 'FAQPage') as
+    { mainEntity: { name: string }[] } | undefined;
+  expect(faq?.mainEntity.length).toBeGreaterThan(5);
+  for (const question of faq?.mainEntity ?? []) {
+    await expect(page.locator('summary', { hasText: question.name })).toHaveCount(1);
+  }
+
+  const photos = page.locator('.section-photo img');
+  await expect(photos).toHaveCount(4);
+  for (const photo of await photos.all()) {
+    await expect(photo).toHaveAttribute('src', /^https:\/\/images\.unsplash\.com\/photo-/);
+    await expect(photo).toHaveAttribute('loading', 'lazy');
+  }
+  for (const link of await page.locator('.section-photo figcaption a').all()) {
+    await expect(link).toHaveAttribute('href', /utm_source=paydocs&utm_medium=referral/);
+  }
+});

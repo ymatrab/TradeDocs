@@ -2827,3 +2827,282 @@ a.form-cell:active {
   font-size: 14px;
   color: var(--muted);
 }
+
+/* --- Section photos (D-016, homepage) ---------------------------------------- */
+/* Photos support a section; the hero's product frame stays the only hero. A photo sits
+   beside the section's heading on desktop and below it on a phone, square-cornered with a
+   1px rule like every other plate, and always carries its credit as plain text. */
+.photo-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.photo-split-text {
+  display: grid;
+  gap: var(--space-6);
+  align-content: start;
+}
+@media (min-width: 901px) {
+  .photo-split.reverse > .section-photo {
+    order: -1;
+  }
+}
+@media (max-width: 900px) {
+  .photo-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.section-photo {
+  margin: 0;
+  min-width: 0;
+}
+.section-photo-frame {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--surface-sunken);
+}
+.section-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.section-photo figcaption {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  color: var(--muted);
+}
+.section.dark .section-photo-frame {
+  border-color: transparent;
+  box-shadow: 8px 8px 0 var(--tape);
+}
+
+/* One primary action at the end of a section, with a note beside or below it. */
+.section-foot {
+  margin-top: clamp(32px, 5vw, 48px);
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+.section-foot .note {
+  margin: 0;
+  max-width: 72ch;
+}
+
+/* The three documents a visitor can make free, as a ruled list beside the desk photo. */
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.doc-list > li {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.doc-list h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 20px;
+}
+.doc-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.doc-list .doc-list-links {
+  margin-top: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  font-size: 15px;
+}
+.doc-list-links a,
+.card-links a,
+.reading-all a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* The mid-page band: hull, full bleed, the warehouse photo on a tape offset. */
+.cta-band .photo-split {
+  margin-bottom: 0;
+}
+.cta-band .cta-row {
+  margin: 0;
+}
+.photo-split + .section-foot {
+  margin-top: 0;
+}
+
+/* Who it's for: four cards, each ending in the two pages that audience starts from. */
+.card-links {
+  list-style: none;
+  margin: auto 0 0;
+  padding: var(--space-2) 0 0;
+  border-top: 1px solid var(--rule);
+  font-size: 15px;
+}
+
+/* The export document checklist: a ruled list, one row per document. */
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.checklist-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-3) var(--space-5);
+  align-items: start;
+  padding: var(--space-4) var(--space-5);
+}
+.checklist-row + .checklist-row {
+  border-top: 1px solid var(--rule);
+}
+.checklist-row > p,
+.checklist-name > * {
+  margin: 0;
+}
+.checklist-name h3 {
+  font-size: 18px;
+  margin-bottom: var(--space-1);
+}
+.checklist-name p,
+.checklist-who,
+.checklist-status {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.checklist-who,
+.checklist-status {
+  display: grid;
+  gap: 2px;
+}
+.checklist-status {
+  color: var(--ink);
+}
+.checklist-icon {
+  margin-top: 3px;
+}
+.checklist-row.prepares .checklist-icon {
+  color: var(--success);
+}
+.checklist-row.not-yet .checklist-icon {
+  color: var(--caution);
+}
+.checklist-row.outside .checklist-icon {
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .checklist-row {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: var(--space-4);
+  }
+  .checklist-who,
+  .checklist-status {
+    grid-column: 2;
+  }
+}
+
+/* Reading links under the free tools, generated from the guides. */
+.reading {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--rule);
+}
+.reading-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.reading-head h3,
+.reading-all {
+  margin: 0;
+}
+.reading-all {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+.reading-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.reading-list .card {
+  height: 100%;
+}
+.reading-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.reading-list .card-cta {
+  margin-top: auto;
+}
+
+/* Footer additions: the advice line, the offer, and the legal links in the base row. */
+.footer-note {
+  margin-top: var(--space-3) !important;
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 44ch;
+}
+.public-footer .footer-cta {
+  margin-top: var(--space-5);
+  --lift-shadow: var(--surface);
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-4);
+}
+.footer-legal a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.footer-legal a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer-base {
+  align-items: center;
+}
+
+/* Photo reveal: the image is uncovered left to right and settles from a slight zoom. Only
+   clip-path and transform move; the credit is text and is never touched. Reduced motion
+   and no script both leave the photo in place. */
+@media (prefers-reduced-motion: no-preference) {
+  .section-photo-frame {
+    clip-path: inset(0);
+    transition: clip-path 760ms var(--ease-enter) 120ms;
+  }
+  .section-photo img {
+    transition: scale 1100ms var(--ease-enter) 120ms;
+  }
+  [data-reveal='pending'] .section-photo-frame {
+    clip-path: inset(0 100% 0 0);
+  }
+  [data-reveal='pending'] .section-photo img {
+    scale: 1.08;
+  }
+}

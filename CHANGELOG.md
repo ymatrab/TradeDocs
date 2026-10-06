@@ -2,6 +2,14 @@
 
 ## Unreleased — 2026-09-06
 
+### Homepage v3: photos, search sections and navigation (D-018)
+
+- Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.
+- New sections: commercial invoice, proforma and packing list from one record (`#documents`, links to each generator and guide, ITA sources), a mid-page hull CTA band, who it's for (exporters, importers, forwarders, consultants, each with what TradeDocs does not do), and an export document checklist (`#checklist`) that marks what TradeDocs prepares, what is not offered (certificate of origin) and what is outside it, with a not-advice note. The free tools section links every guide and the blog. Each section ends on the capability-aware primary offer; no sticky mobile CTA, because it would cover content.
+- FAQ grows from five to ten answer-first questions; the same array feeds FAQPage JSON-LD (new e2e check in `tests/e2e/seo.spec.ts`).
+- Metadata: "Commercial invoice generator & export documents", description names the three generators; canonical `/` kept. Sitemap: `/` dated 2026-10-06 and lists its four photos.
+- Navigation: Free tools · Guides · Blog · Pricing · Sign in; the phone menu adds Help and Contact. Footer: Product (How it works, Documents, Checklist, Pricing, Free while early), Free tools, Resources (Guides, Blog, Help, Contact), the offer, and Privacy/Terms/Cookies. The status band anchor moves from `/#pricing` to `/#status` and links `/pricing`. `/pricing`, `/blog`, `/help`, `/contact` and the legal pages are built in parallel branches; merge them together.
+
 ### Workspace documents at snapshot schema 3
 
 - Migration `20260910000100_document_snapshot_v3.sql` redefines `generate_document` (same org scoping as 20260909000100) to emit schema 3: new workspace invoices get the per-line Origin column and "Incoterms® 2020" caption, and net/gross weight totals that no line states are null instead of zero. Existing schema 1/2 documents are not rewritten and render as issued. pgTAP (`tenant_integrity.test.sql`, plan 44) asserts the new schema, the absent gross total and an untouched schema 2 row; pending CI.
