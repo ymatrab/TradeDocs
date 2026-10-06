@@ -40,9 +40,14 @@ test('pricing is accessible and fits a phone', async ({ page }) => {
         .analyze()
     ).violations,
   ).toEqual([]);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
-    true,
+  // Names whatever sticks out, so a failure says which element to fix.
+  const overflowing = await page.evaluate(() =>
+    [...document.querySelectorAll('body *')]
+      .filter((element) => element.getBoundingClientRect().right > window.innerWidth + 1)
+      .slice(0, 5)
+      .map((element) => `${element.tagName.toLowerCase()}.${element.className}`),
   );
+  expect(overflowing).toEqual([]);
 });
 
 test('pricing is in the sitemap and llms.txt', async ({ request }) => {

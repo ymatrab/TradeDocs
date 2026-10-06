@@ -35,6 +35,7 @@ test.describe('review screens', () => {
       await page.screenshot({
         path: `test-results/review/${info.project.name}-${name}.png`,
         fullPage: true,
+        scale: 'css',
         clip: { x: 0, y: 0, width, height: Math.min(height, 16000) },
       });
     });
