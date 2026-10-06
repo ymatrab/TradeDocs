@@ -12,6 +12,14 @@ Written 2026-10-05 after the /elliot launch-readiness run. Decisions referenced 
 - **Production today:** `trade-docs-six.vercel.app` runs the old design in foundation mode
   (free tools only, accounts closed, indexing closed).
 
+## Built in round 2 (launch-v2, PR #12)
+
+Pricing page + Stripe Payment Links plumbing (flag off, no prices until the owner sets them),
+in-app billing page, contact form + inbox, help centre + floating help button, platform admin
+panel (email allowlist, audited), legal drafts (privacy, terms, cookies — noindex until
+approved), homepage v3 (photos, keyword sections, answer-first FAQ, new nav/footer), blog with
+5 posts + RSS + llms-full.txt, guides upgraded for AI answers (D-018, D-019).
+
 ## Phase 0 — merge (owner, today)
 
 1. Merge PR #10 into `main` once CI is green. Production stays in foundation mode: no data,
@@ -42,23 +50,33 @@ Written 2026-10-05 after the /elliot launch-readiness run. Decisions referenced 
 
 Ranked by risk to customers first, then growth.
 
-1. **Turnstile verification on sign-up and the free generators** — the config exists but no
+1. **Automatic account removal after the 30-day grace period** — today a weekly manual check
+   (RUNBOOK); the privacy text says "shortly after". (privacy)
+2. **Turnstile verification on sign-up and the free generators** — the config exists but no
    code verifies tokens yet. Build before removing `WAIVE_TURNSTILE`. (security)
-2. **Error monitoring** — Sentry needs its SDK (a dependency change via CI/Dependabot) or keep
+3. **Error monitoring** — Sentry needs its SDK (a dependency change via CI/Dependabot) or keep
    Vercel logs + deploy alerts; decide before real traffic. (operations)
-3. **Transactional email for invitations** — invites are copy-links today; send them via
+4. **Transactional email for invitations** — invites are copy-links today; send them via
    Resend once the sender is verified. (product)
-4. **Payments** — deferred by the owner; provider, prices, refund policy and webhook
-   entitlements are a separate project (P-002). Copy says "free while early" until then.
-5. **Certificate of origin** — stays gated until a recorded legal review (D-008).
-6. **Content backlog with measured demand** (docs/research/content-plan-2026-10-05.md):
+5. **Payments** — plumbing built (Payment Links + verified webhook, flag off); owner creates
+   Stripe Payment Links, sets prices, refund policy and webhook secret (P-002). Copy says
+   "free while early" until then. Known limits: a refund revokes every org paid by that
+   Stripe customer; plan changes made inside Stripe are not reflected.
+6. **Certificate of origin** — stays gated until a recorded legal review (D-008).
+7. **Content backlog with measured demand** (docs/research/content-plan-2026-10-05.md):
    "how to fill out a commercial invoice" guide, certificate of origin explainer, Incodocs
    comparison page (facts from Incodocs' live pages, dated), container loading calculator.
-7. **Analytics** — consent-aware, after the domain; needs a cookie decision. (measurement)
-8. **IndexNow** — after Search Console is live.
-9. **Dependabot backlog** — merge the open dependency PRs through CI (supabase-js + ssr
+8. **Analytics** — consent-aware, after the domain; needs a cookie decision. (measurement)
+9. **IndexNow** — after Search Console is live.
+10. **Dependabot backlog** — merge the open dependency PRs through CI (supabase-js + ssr
    together).
-10. **Generator fields** — proforma validity date and payment terms; buyer reference.
+11. **Generator fields** — proforma validity date and payment terms; buyer reference.
+
+## Owner inputs still needed for legal approval
+
+Business name, country, address, contact email, governing law, data region; the transfer
+mechanism per provider; contact-message retention period; liability cap in the terms.
+Then set LEGAL_* env values and LEGAL_APPROVED_AT.
 
 ## Rollback
 
