@@ -69,7 +69,7 @@ Ranked by risk to customers first, then growth.
 8. **Analytics** — consent-aware, after the domain; needs a cookie decision. (measurement)
 9. **IndexNow** — after Search Console is live.
 10. **Dependabot backlog** — merge the open dependency PRs through CI (supabase-js + ssr
-   together).
+    together).
 11. **Generator fields** — proforma validity date and payment terms; buyer reference.
 
 ## Owner inputs still needed for legal approval
