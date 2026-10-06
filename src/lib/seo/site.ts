@@ -1,4 +1,5 @@
 import { GUIDES } from '@/lib/content/guides';
+import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
 
@@ -128,6 +129,14 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
   ...GUIDES.map((guide) => ({
     path: `/guides/${guide.slug}`,
     lastModified: guide.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+  // The hub changes whenever a post is added, so it carries the newest post's date.
+  { path: '/blog', lastModified: BLOG_UPDATED, changeFrequency: 'weekly', priority: 0.6 },
+  ...POSTS.map((post) => ({
+    path: `/blog/${post.slug}`,
+    lastModified: post.updated,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),

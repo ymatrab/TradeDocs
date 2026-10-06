@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { GuidesHubJsonLd } from '@/components/seo/json-ld';
 import { CoverFigure } from '@/components/content/cover-figure';
 import { GUIDES, GUIDES_HUB_COVER } from '@/lib/content/guides';
+import { POSTS } from '@/lib/content/posts';
 import { unsplashShareImage } from '@/lib/content/images';
 import { shortDate } from '@/lib/format';
 import { openGraphFor, twitterFor } from '@/lib/seo/social';
@@ -46,6 +47,25 @@ export default function GuidesPage() {
               <h2>{guide.title}</h2>
               <p>{guide.description}</p>
               <p className="muted">Last reviewed {shortDate(guide.reviewed)}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="blog-title">
+        <h2 id="blog-title">From the blog</h2>
+        <p className="measure">
+          Shorter, practical articles on the documents themselves: what goes on them and in what
+          order.{' '}
+          <Link className="text-link" href="/blog">
+            All posts
+          </Link>
+        </p>
+        <div className="form-grid">
+          {POSTS.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="form-cell">
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
             </Link>
           ))}
         </div>

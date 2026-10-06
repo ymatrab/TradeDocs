@@ -58,3 +58,43 @@ test('a guide cover is hotlinked from Unsplash, sized and credited', async ({ pa
     await expect(link).toHaveAttribute('href', /utm_source=paydocs&utm_medium=referral/);
   }
 });
+
+test('a blog post answers first and its structured data matches the page', async ({ page }) => {
+  await page.goto('/blog/commercial-invoice-requirements');
+  await expect(page.getByRole('heading', { level: 2, name: 'Short answer' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Key facts' })).toBeVisible();
+
+  const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+  const items = blocks.flatMap((text) => JSON.parse(text) as { '@type': string }[]);
+  const types = items.map((item) => item['@type']);
+  expect(types).toEqual(expect.arrayContaining(['BreadcrumbList', 'Article', 'FAQPage']));
+  const article = items.find((item) => item['@type'] === 'Article') as
+    { image?: { '@type': string }; author?: { name?: string } } | undefined;
+  expect(article?.image?.['@type']).toBe('ImageObject');
+  expect(article?.author?.name).toBe('TradeDocs');
+
+  const faq = items.find((item) => item['@type'] === 'FAQPage') as
+    { mainEntity: { name: string }[] } | undefined;
+  for (const question of faq?.mainEntity ?? []) {
+    await expect(page.locator('summary', { hasText: question.name })).toHaveCount(1);
+  }
+});
+
+test('the blog feed and the full-text file list the posts', async ({ request }) => {
+  const feed = await request.get('/blog/rss.xml');
+  expect(feed.status()).toBe(200);
+  expect(feed.headers()['content-type']).toContain('application/rss+xml');
+  const xml = await feed.text();
+  expect(xml).toContain('<rss version="2.0"');
+  expect(xml).toContain('/blog/fca-vs-fob</link>');
+
+  const llms = await (await request.get('/llms.txt')).text();
+  expect(llms).toContain('## Blog');
+  expect(llms).toContain('/blog/export-documents-checklist');
+
+  const full = await request.get('/llms-full.txt');
+  expect(full.status()).toBe(200);
+  const text = await full.text();
+  expect(text).toContain('Short answer:');
+  expect(text).not.toContain('Certificate of origin');
+});

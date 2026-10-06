@@ -1,5 +1,6 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { GUIDES } from '@/lib/content/guides';
+import { POSTS } from '@/lib/content/posts';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { documentKindLabels } from '@/lib/labels';
 import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS, SITE_DESCRIPTION, SITE_NAME } from '@/lib/seo/site';
@@ -11,10 +12,12 @@ export const dynamic = 'force-dynamic';
 /**
  * A plain-text map of the public site for language-model crawlers (llmstxt.org).
  *
- * Generated from the data the pages render: the tool list, the guides, the eleven Incoterms
- * rules and the document types on offer, which leave the certificate of origin out while
- * D-008 holds. Served on every deployment, because it only restates public pages; whether those
- * pages may be indexed is still decided by robots.txt and X-Robots-Tag.
+ * Generated from the data the pages render: the tool list, the guides and blog posts (each
+ * summarised by its visible short answer), the eleven Incoterms rules and the document
+ * types on offer, which leave the certificate of origin out while D-008 holds. The full text
+ * of the guides and posts is at /llms-full.txt. Served on every deployment, because it only
+ * restates public pages; whether those pages may be indexed is still decided by robots.txt
+ * and X-Robots-Tag.
  */
 export function GET(): Response {
   const base = getPublicBaseUrl();
@@ -38,8 +41,13 @@ export function GET(): Response {
     '',
     `- [All guides](${base}/guides): the index of the guides below.`,
     ...GUIDES.map(
-      (guide) => `- [${guide.title}](${base}/guides/${guide.slug}): ${guide.description}`,
+      (guide) => `- [${guide.title}](${base}/guides/${guide.slug}): ${guide.answer}`,
     ),
+    '',
+    '## Blog',
+    '',
+    `- [All posts](${base}/blog): the index of the posts below; RSS at ${base}/blog/rss.xml.`,
+    ...POSTS.map((post) => `- [${post.title}](${base}/blog/${post.slug}): ${post.answer}`),
     '',
     '## Incoterms 2020 reference',
     '',
@@ -49,6 +57,10 @@ export function GET(): Response {
       (term) =>
         `- [${term.code}: ${term.name}](${base}/tools/incoterms/${term.code.toLowerCase()}): ${term.riskPasses}`,
     ),
+    '',
+    '## Optional',
+    '',
+    `- [Full text of the guides and blog posts](${base}/llms-full.txt): every article as plain text, with its sources and dates.`,
     '',
   ];
 

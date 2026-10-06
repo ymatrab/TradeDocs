@@ -2467,6 +2467,20 @@ a.form-cell:active {
 .section > .table-scroll + h2 {
   margin-top: var(--space-7);
 }
+/* Articles: the tool callout sits between sections, and the terms follow the key facts. */
+.section > :is(p, ul, ol, .table-scroll) + .callout {
+  margin-top: var(--space-6);
+}
+.section > .callout + h2 {
+  margin-top: var(--space-7);
+}
+.section > ul.measure + h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+.section > p.measure + .cta-row {
+  margin-top: var(--space-5);
+}
 
 /* --- Footer ------------------------------------------------------------------ */
 .public-footer {

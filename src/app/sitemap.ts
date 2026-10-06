@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { GUIDES_HUB_COVER, findGuide } from '@/lib/content/guides';
+import { BLOG_HUB_COVER, findPost } from '@/lib/content/posts';
 import type { UnsplashPhoto } from '@/lib/content/images';
 import { SITEMAP_PAGES } from '@/lib/seo/site';
 
@@ -36,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 /** The cover a page shows, so the image sitemap lists exactly what the page renders. */
 function coverFor(path: string): UnsplashPhoto | undefined {
   if (path === '/guides') return GUIDES_HUB_COVER;
-  const slug = path.startsWith('/guides/') ? path.slice('/guides/'.length) : undefined;
-  return slug ? findGuide(slug)?.cover : undefined;
+  if (path === '/blog') return BLOG_HUB_COVER;
+  if (path.startsWith('/guides/')) return findGuide(path.slice('/guides/'.length))?.cover;
+  if (path.startsWith('/blog/')) return findPost(path.slice('/blog/'.length))?.cover;
+  return undefined;
 }

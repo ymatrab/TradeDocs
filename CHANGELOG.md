@@ -2,6 +2,16 @@
 
 ## Unreleased — 2026-09-06
 
+### Blog and GEO/AEO round (D-018)
+
+- `/blog` hub and `/blog/[slug]` from one data module (`src/lib/content/posts.ts`), rendered by the shared `ArticleView` (`src/components/content/article-view.tsx`) that the guides now use too. Five posts chosen from measured demand in the 2026-10-05 plan: commercial invoice requirements, proforma invoice example, export documents checklist, packing list for shipping, FCA vs FOB. "Incodocs alternatives" was not written (0 measured searches; the plan defers it).
+- Guides and posts share one shape (`src/lib/content/article.ts`): a 40–60-word short answer, key facts, terms defined, question-style H2s, step lists and comparison tables, a visible FAQ feeding FAQPage JSON-LD, published/updated/last-reviewed dates and a team byline. The three guides were upgraded to it (question headings, key facts, definitions, steps).
+- Conversion: an in-context tool button under each short answer (capability-aware: the account offer appears only where accounts are open), a mid-article tool callout, the closing `ToolCta`, and a plain link to `/pricing`.
+- Structured data: Article + ImageObject, BreadcrumbList and FAQPage on every post; Article `author`/`publisher` now name the Organization in full. Each post has its own credited Unsplash cover (downloads tracked once per photo), and so does the hub.
+- Discovery: sitemap entries with cover images for `/blog` and every post; llms.txt gains a Blog section and summarises guides and posts by their short answer; new `/llms-full.txt` (full text with sources) and `/blog/rss.xml` (RSS 2.0). The guides hub links the posts and the blog hub links the guides.
+- Source registry: ITA "Common Export Documents" (retrieved 2026-10-06).
+- Tests: `tests/unit/posts.test.ts` (word range, title length, sources, covers, sitemap, answer-first structure for posts and guides, gated phrase, plain text); e2e checks for post structured data, the feed and llms-full.txt; review captures for `/blog` and one post.
+
 ### Workspace documents at snapshot schema 3
 
 - Migration `20260910000100_document_snapshot_v3.sql` redefines `generate_document` (same org scoping as 20260909000100) to emit schema 3: new workspace invoices get the per-line Origin column and "Incoterms® 2020" caption, and net/gross weight totals that no line states are null instead of zero. Existing schema 1/2 documents are not rewritten and render as issued. pgTAP (`tenant_integrity.test.sql`, plan 44) asserts the new schema, the absent gross total and an untouched schema 2 row; pending CI.
