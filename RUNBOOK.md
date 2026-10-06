@@ -108,3 +108,30 @@ and outcome only. `unmatched` means the event named a subscription or customer w
 entitlement (for example a subscription event that arrived before its checkout; the checkout
 re-reads the live subscription when it lands). `retry` means Stripe or the database was
 unreachable and Stripe will redeliver.
+
+## Contact inbox, legal pages and platform admin (D-009, D-018)
+
+- **Admin access.** Set `PLATFORM_ADMIN_EMAILS` (Production target only) to the owner's
+  confirmed sign-in address(es). `/admin` checks the signed-in user against the list on every
+  request and action; anyone else gets a 404. It reads through the service role, so it shows
+  "Admin needs the production database" wherever `SUPABASE_SERVICE_ROLE_KEY` is absent
+  (every preview, D-011). Every admin view and action writes a `platform_admin.*` row to
+  `audit_events`; if that write fails the page shows nothing but the cause.
+- **Contact messages.** `/contact` stores every valid message in `contact_messages` (service
+  role) before attempting email. Email goes through Resend when `RESEND_API_KEY`,
+  `EMAIL_FROM` and `LEGAL_CONTACT_EMAIL` are set; outside production only to
+  `EMAIL_SANDBOX_RECIPIENT`. The inbox shows each message's email outcome
+  (`sent` / `not_sent` / `failed` + reason code). Work the inbox at `/admin/messages` and mark
+  each handled. Quota: 5 messages per address per hour; a filled honeypot is answered as
+  sent and stored nowhere.
+- **Approving the legal pages.** Set `LEGAL_ENTITY_NAME`, `LEGAL_ENTITY_COUNTRY`,
+  `LEGAL_CONTACT_EMAIL` (plus `LEGAL_ENTITY_ADDRESS`, `LEGAL_GOVERNING_LAW`,
+  `LEGAL_DATA_REGION` where the text shows "to be provided"), review `/privacy`, `/terms` and
+  `/cookies`, then set `LEGAL_APPROVED_AT=YYYY-MM-DD` and redeploy. The draft banner and
+  noindex go, and the pages enter the sitemap and llms.txt dated by approval. Open items the
+  owner must decide before approving: transfer mechanism per provider, contact-message
+  retention, liability cap.
+- **Account deletion purge.** Requests wait 30 days in `account_deletion_requests`; no job
+  removes accounts when `purge_after` passes yet. Until one exists (needs the owner's go-ahead
+  for a scheduled job), check the table weekly and remove due accounts in the Supabase
+  dashboard, as the privacy policy promises removal after the grace period.

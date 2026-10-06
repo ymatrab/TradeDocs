@@ -29,6 +29,15 @@
 - Source registry: ITA "Common Export Documents" (retrieved 2026-10-06).
 - Tests: `tests/unit/posts.test.ts` (word range, title length, sources, covers, sitemap, answer-first structure for posts and guides, gated phrase, plain text); e2e checks for post structured data, the feed and llms-full.txt; review captures for `/blog` and one post.
 
+### Legal pages, contact, help centre and platform admin (D-009, D-018)
+
+- `/privacy`, `/terms`, `/cookies` drafted from what the code does (Supabase auth/Postgres, Vercel, Resend when configured, Unsplash hotlinks, session cookies only, generators store nothing, HMAC quota keys, 30-day revocable deletion). Identity comes from `LEGAL_*` env; missing values print "to be provided". Until `LEGAL_APPROVED_AT` is set with a complete identity they show "Draft — pending owner approval", are noindex and stay out of the sitemap and llms.txt.
+- `/contact`: validated form (name, email, topic, message, honeypot) → server action → `contact_messages` (migration `20261006000100`, RLS with no policies, service-role insert only, pgTAP `contact_messages.test.sql`) with a 5/hour quota; Resend notification to `LEGAL_CONTACT_EMAIL` when configured (sandbox recipient outside production), outcome recorded per row.
+- `/help`: every FAQ on the site searchable in the browser, from one module (`src/lib/content/faq.ts`; the six tool pages now import their FAQ from it). A floating Help button on the public and workspace shells opens a native modal panel (focus trap, Escape, focus return) with search and a contact link; `CHAT_PROVIDER` is a vendor slot that only accepts `none`.
+- `/admin` (noindex, unlisted): `PLATFORM_ADMIN_EMAILS` allowlist checked per request and action, 404 otherwise; overview counts, organizations list/detail (members, roles, counts only), contact inbox with mark-handled, audit log. Service role on the server only; every view and action audited as `platform_admin.*`; fails closed without the service-role key.
+- Sign-up links the terms and privacy policy; magic-link and reset pages cross-link; the accounts-closed state links to contact and survives a configuration fault.
+- Unit tests `tests/unit/ops-pages.test.ts` (allowlist, contact validation/honeypot, legal approval state, sitemap exclusion, help search, email recipient). Pending CI: format, lint, typecheck, unit, pgTAP, build, and the database-types artifact (types for `contact_messages` were added by hand).
+
 ### Workspace documents at snapshot schema 3
 
 - Migration `20260910000100_document_snapshot_v3.sql` redefines `generate_document` (same org scoping as 20260909000100) to emit schema 3: new workspace invoices get the per-line Origin column and "Incoterms® 2020" caption, and net/gross weight totals that no line states are null instead of zero. Existing schema 1/2 documents are not rewritten and render as issued. pgTAP (`tenant_integrity.test.sql`, plan 44) asserts the new schema, the absent gross total and an untouched schema 2 row; pending CI.

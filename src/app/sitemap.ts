@@ -4,7 +4,9 @@ import { GUIDES_HUB_COVER, findGuide } from '@/lib/content/guides';
 import { HOME_PHOTOS } from '@/lib/content/home';
 import { BLOG_HUB_COVER, findPost } from '@/lib/content/posts';
 import type { UnsplashPhoto } from '@/lib/content/images';
-import { SITEMAP_PAGES } from '@/lib/seo/site';
+import { isLegalApproved } from '@/lib/legal/identity';
+import { getLegalIdentity } from '@/lib/legal/server';
+import { SITEMAP_PAGES, legalSitemapPages } from '@/lib/seo/site';
 
 // Reads the deployment environment, so it must be resolved per request rather than
 // frozen into the build output.
@@ -22,7 +24,13 @@ export const dynamic = 'force-dynamic';
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getPublicBaseUrl();
-  return SITEMAP_PAGES.map((page) => {
+  // Draft legal pages stay out until the owner approves them (D-009).
+  const legal = getLegalIdentity();
+  const pages = [
+    ...SITEMAP_PAGES,
+    ...legalSitemapPages(isLegalApproved(legal) ? legal.approvedAt : null),
+  ];
+  return pages.map((page) => {
     const images = photosFor(page.path);
     return {
       url: `${base}${page.path}`,

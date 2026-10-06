@@ -9,6 +9,7 @@ import { ToolJsonLd } from '@/components/seo/json-ld';
 import { RelatedTools } from '@/components/seo/related-tools';
 import { openGraphFor } from '@/lib/seo/social';
 import { CbmCalculator } from './calculator';
+import { CBM_CALCULATOR_FAQ } from '@/lib/content/faq';
 
 export const metadata: Metadata = {
   title: 'CBM calculator — cubic metres and cubic feet for shipping cartons',
@@ -26,28 +27,7 @@ export const metadata: Metadata = {
 const CUBIC_METRE_EXAMPLES = [1, 2.5, 10, 33, 67, 76] as const;
 const CUBIC_FOOT_EXAMPLES = [1, 100, 500, 1000] as const;
 
-const faq = [
-  {
-    q: 'How do I convert CBM to cubic feet?',
-    a: 'Multiply by 35.3147. One foot is exactly 0.3048 metres, so one cubic foot is 0.0283168 m³ and one cubic metre is about 35.3147 ft³. To go the other way, multiply cubic feet by 0.0283168, or divide by 35.3147.',
-  },
-  {
-    q: 'What is CBM?',
-    a: 'CBM is cubic metres — length × width × height, in metres, multiplied by the number of cartons. It is the figure sea freight quotations for LCL cargo are built from, because a shipper pays for the space a consignment occupies as much as for what it weighs.',
-  },
-  {
-    q: 'How do I calculate CBM by hand?',
-    a: 'Convert every dimension to metres, multiply the three together for one carton, then multiply by the carton count. A 40 × 30 × 20 cm carton is 0.4 × 0.3 × 0.2 = 0.024 m³, so fifty of them are 1.2 CBM.',
-  },
-  {
-    q: 'Does the carrier charge on CBM or on weight?',
-    a: 'On whichever produces the larger figure. Sea LCL commonly bills at one tonne per cubic metre, so 2 CBM weighing 1,500 kg is charged as 2,000 kg. Air freight applies a volumetric divisor instead.',
-  },
-  {
-    q: 'How many CBM fit in a 20ft container?',
-    a: 'Typically about 33 m³ of internal volume, against roughly 67 m³ in a 40ft standard and 76 m³ in a 40ft high cube — the figures Maersk, for example, publishes for its dry containers. Individual boxes vary by series and carrier, and loaded cargo rarely reaches those figures, because cartons do not divide neatly into the floor and cannot always be stacked.',
-  },
-];
+const faq = CBM_CALCULATOR_FAQ;
 
 export default function CbmPage() {
   return (

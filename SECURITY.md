@@ -97,3 +97,25 @@ Known limits: a refund or dispute revokes every entitlement paid by that Stripe 
 safe direction). A refund that arrives before its checkout is recorded as `unmatched`, and the
 later checkout still grants; reconcile from the Stripe dashboard if that happens. A plan change
 made inside Stripe (Pro to Team) is not reflected; the plan is the one bought at checkout.
+
+## Contact form, help and platform admin (D-018)
+
+- `contact_messages` has RLS enabled, no policies and no grant to `anon` or `authenticated`
+  (pgTAP `contact_messages.test.sql`). Only the server writes it, with the service role, after
+  zod validation (`src/lib/contact/schema.ts`), the shared quota (`contact:message`, 5/hour per
+  attested address, fails closed with 503 when the store is down) and a honeypot field. The
+  table repeats the bounds as checks, including no line breaks in the name (header injection).
+  Nothing a visitor types is logged; results come back in form state, never a URL.
+- `/admin` is allowlisted by `PLATFORM_ADMIN_EMAILS`: exact, case-insensitive address match on
+  a user verified with the auth server, confirmed address required, empty list admits nobody
+  (`src/lib/admin/allowlist.ts`, unit tested). Non-admins and signed-out visitors get 404.
+  Each page and server action re-checks (`adminContext`), because layouts render in parallel
+  with pages. The service-role client is created only after that check. Admin views show
+  counts, members and roles, never shipment, party, product or document contents or audit
+  metadata. Every view and action is recorded in `audit_events` (`platform_admin.*`, actor id,
+  target, time) and the view fails closed when the record cannot be written; events about one
+  organization carry its `org_id`, so its owners see them.
+- `/admin` is noindex (metadata and X-Robots-Tag via `PRIVATE_PATH_PREFIXES`) and is not named
+  in robots.txt, the sitemap or llms.txt.
+- The help panel has no third-party chat and makes no AI calls (`CHAT_PROVIDER` only accepts
+  `none`). Search runs in the browser over `/api/help/faq`; queries are never sent or stored.

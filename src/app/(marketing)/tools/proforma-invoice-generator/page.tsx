@@ -7,6 +7,7 @@ import { openGraphFor } from '@/lib/seo/social';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { DocumentGenerator } from '../invoice-generator/generator';
 import { SourcesBlock, ToolCta } from '../page-parts';
+import { PROFORMA_GENERATOR_FAQ } from '@/lib/content/faq';
 
 const PATH = '/tools/proforma-invoice-generator';
 
@@ -30,24 +31,7 @@ const contents = [
   'The estimated shipping date and the date the quotation is valid until',
 ];
 
-const faq = [
-  {
-    q: 'What is a proforma invoice?',
-    a: 'A quotation laid out as an invoice. It tells a prospective buyer exactly what it would be buying, at what price and on what terms, before the sale is final. The buyer uses it to arrange payment, open a letter of credit or apply for an import licence.',
-  },
-  {
-    q: 'Is a proforma invoice the same as a commercial invoice?',
-    a: 'No. A proforma is issued before the sale and does not request payment for goods delivered. The commercial invoice is issued when the goods are sold and shipped, and it is the document customs values them from. Most fields are shared, which is why this generator can produce both.',
-  },
-  {
-    q: 'Can I add a validity date and payment terms?',
-    a: 'The generator prints the parties, the goods, the prices, the Incoterms® rule and place and the document date. It does not yet have fields for a validity date, payment terms, a buyer reference, package dimensions or a shipping date, so state those in the message you send the proforma with. The proforma PDF shows no weights either; those print only on the packing list.',
-  },
-  {
-    q: 'Is anything I type here saved?',
-    a: 'No. The details are sent once to render the PDF and nothing is written to a database. Close the tab and they are gone.',
-  },
-];
+const faq = PROFORMA_GENERATOR_FAQ;
 
 export default function ProformaGeneratorPage() {
   return (

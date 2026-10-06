@@ -7,6 +7,7 @@ import { openGraphFor } from '@/lib/seo/social';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { DocumentGenerator } from '../invoice-generator/generator';
 import { SourcesBlock, ToolCta } from '../page-parts';
+import { PACKING_LIST_GENERATOR_FAQ } from '@/lib/content/faq';
 
 const PATH = '/tools/packing-list-generator';
 
@@ -30,24 +31,7 @@ const contents = [
   'The Incoterms® rule and named place, so the set states one set of terms',
 ];
 
-const faq = [
-  {
-    q: 'What is a packing list used for?',
-    a: 'It itemises what is in each package of a shipment. Freight forwarders use it to work out weights and shipping costs, and customs officials use it to check the contents of packages against the declaration, as the U.S. International Trade Administration describes.',
-  },
-  {
-    q: 'Does a packing list show prices?',
-    a: 'Not normally, and this one does not: the PDF prints packages, quantities and weights, not unit prices or values. The values belong on the commercial invoice. The unit price field on the form is used only if you switch the type to an invoice.',
-  },
-  {
-    q: 'Do the packing list and commercial invoice have to match?',
-    a: 'They should describe the same goods in the same quantities, with the same parties and terms. A packing list that disagrees with its invoice is a common reason for questions at customs, which is why preparing both from the same figures matters.',
-  },
-  {
-    q: 'Can I download the packing list as Excel?',
-    a: 'Not from this page; it produces a PDF, which is what is usually sent with the shipment. With an account, a shipment’s documents download together, and the product catalog imports from the spreadsheet you already keep.',
-  },
-];
+const faq = PACKING_LIST_GENERATOR_FAQ;
 
 export default function PackingListGeneratorPage() {
   return (

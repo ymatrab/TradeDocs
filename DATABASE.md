@@ -121,3 +121,17 @@ grant, write refusal for members and anon, idempotency, cancel/past-due/refund r
 Rollback: drop the routine and both tables; every paid check then answers false.
 Generated types: `entitlements` and `apply_billing_event` were added to
 `src/lib/database.types.ts` by hand; the CI `database` job's generated file is authoritative.
+
+## Contact messages (20261006000100)
+
+`public.contact_messages` holds messages sent through `/contact`: name, email, topic
+(`question`, `account`, `problem`, `privacy`, `other`), message (10–5000 characters), the
+owner-notification outcome (`notification_status` pending/sent/not_sent/failed and a reason
+code of at most 100 characters) and `handled_at`/`handled_by` (set together by the admin
+inbox). RLS on, no policies, no `anon`/`authenticated` grants; `service_role` holds select,
+insert and update only. The migration also states the service-role grants the admin panel
+relies on (select on organizations, memberships, profiles, shipments, documents; select and
+insert on audit_events), which Supabase's default privileges already provided. Retention is
+not yet decided (P-003) and the privacy draft says so. Rollback: drop the table; nothing
+references it, and `/contact` then reports the form unavailable. `src/lib/database.types.ts`
+was extended by hand for this table: replace it with the CI `database-evidence` artifact.

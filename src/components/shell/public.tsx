@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ShieldAlert } from 'lucide-react';
 import { NavDisclosure } from '@/components/shell/nav-disclosure';
 import { NavSentinel } from '@/components/shell/nav-condense';
+import { HelpLauncher } from '@/components/help/help-launcher';
+import { resolveChatProvider } from '@/lib/help/chat';
 
 /** The header row: the four destinations a buyer looks for, then Sign in and the offer. */
 const navigation = [
@@ -156,6 +158,7 @@ export function PublicShell({
           <span>Prepared · not issued</span>
         </div>
       </footer>
+      <HelpLauncher chat={resolveChatProvider(process.env.CHAT_PROVIDER)} />
     </div>
   );
 }
