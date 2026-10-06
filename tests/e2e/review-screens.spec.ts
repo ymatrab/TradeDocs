@@ -18,6 +18,8 @@ const pages = [
   ['guides', '/guides'],
   ['guide-lcl-fcl', '/guides/lcl-vs-fcl'],
   ['pricing', '/pricing'],
+  ['blog', '/blog'],
+  ['post-commercial-invoice', '/blog/commercial-invoice-requirements'],
 ] as const;
 
 test.describe('review screens', () => {

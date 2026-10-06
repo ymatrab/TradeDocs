@@ -24,7 +24,8 @@ export type SourceId =
   | 'trade-gov-packing-list'
   | 'nist-si-volume'
   | 'maersk-fcl-lcl'
-  | 'wto-customs-valuation';
+  | 'wto-customs-valuation'
+  | 'trade-gov-export-documents';
 
 export type SourceRecord = {
   id: SourceId;
@@ -40,6 +41,8 @@ export type SourceRecord = {
 };
 
 const RETRIEVED = '2026-10-05';
+/** The blog round: sources first cited by the blog posts. */
+const RETRIEVED_BLOG = '2026-10-06';
 const PENDING = 'pending owner review';
 
 export const SOURCES: Record<SourceId, SourceRecord> = {
@@ -193,6 +196,17 @@ export const SOURCES: Record<SourceId, SourceRecord> = {
     supports:
       'transaction value as the main basis of customs value, and freight and insurance being added where a member values on a CIF basis',
     retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'trade-gov-export-documents': {
+    id: 'trade-gov-export-documents',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Common Export Documents',
+    url: 'https://www.trade.gov/common-export-documents',
+    jurisdiction: 'United States (export guidance)',
+    supports:
+      'the documents a typical export uses, the bill of lading as the carrier contract, and Electronic Export Information being filed in AES when a Schedule B line is over $2,500 or another mandatory filing requirement applies',
+    retrieved: RETRIEVED_BLOG,
     reviewer: PENDING,
   },
 };

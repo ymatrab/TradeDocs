@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { GUIDES_HUB_COVER, findGuide } from '@/lib/content/guides';
 import { HOME_PHOTOS } from '@/lib/content/home';
+import { BLOG_HUB_COVER, findPost } from '@/lib/content/posts';
 import type { UnsplashPhoto } from '@/lib/content/images';
 import { SITEMAP_PAGES } from '@/lib/seo/site';
 
@@ -38,7 +39,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 function photosFor(path: string): UnsplashPhoto[] {
   if (path === '/') return Object.values(HOME_PHOTOS);
   if (path === '/guides') return [GUIDES_HUB_COVER];
-  const slug = path.startsWith('/guides/') ? path.slice('/guides/'.length) : undefined;
-  const cover = slug ? findGuide(slug)?.cover : undefined;
+  if (path === '/blog') return [BLOG_HUB_COVER];
+  const cover = path.startsWith('/guides/')
+    ? findGuide(path.slice('/guides/'.length))?.cover
+    : path.startsWith('/blog/')
+      ? findPost(path.slice('/blog/'.length))?.cover
+      : undefined;
   return cover ? [cover] : [];
 }
