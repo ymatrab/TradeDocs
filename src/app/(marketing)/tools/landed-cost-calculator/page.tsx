@@ -7,6 +7,7 @@ import { openGraphFor } from '@/lib/seo/social';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../page-parts';
 import { LandedCostCalculator } from './calculator';
+import { LANDED_COST_FAQ } from '@/lib/content/faq';
 
 const PATH = '/tools/landed-cost-calculator';
 
@@ -31,24 +32,7 @@ const assumptions = [
   'The cost per unit spreads the whole landed cost evenly over the units you enter.',
 ];
 
-const faq = [
-  {
-    q: 'What is landed cost?',
-    a: 'The total cost of getting goods to your door: what you pay the supplier, plus freight, insurance, import duty, import taxes and the other charges along the way, such as broker and port fees. Divided by the number of units, it is the cost you price your products from.',
-  },
-  {
-    q: 'How do I calculate landed cost?',
-    a: 'Add the goods value, freight and insurance, then the duty (the duty rate times the customs value), then import taxes (the tax rate times the value they are charged on), then any other costs. The calculator does exactly that with the figures and rates you enter.',
-  },
-  {
-    q: 'Is duty charged on the goods value or on the CIF value?',
-    a: 'It depends on the importing country. Customs value starts from the price paid for the goods, and countries that value on a CIF basis add the freight and insurance to the place of importation, as the WTO Customs Valuation Agreement describes. Ask your broker which basis applies, and choose it in the calculator.',
-  },
-  {
-    q: 'Where do I find the duty rate for my product?',
-    a: 'In the importing country’s tariff, under the HS code of the product, or from your customs broker. The rate can depend on the origin of the goods and on any trade agreement claimed, which is why this calculator leaves it to you.',
-  },
-];
+const faq = LANDED_COST_FAQ;
 
 export default function LandedCostPage() {
   return (

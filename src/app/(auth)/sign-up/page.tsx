@@ -17,6 +17,17 @@ export default function SignUpPage() {
         passwordHint="At least 12 characters. Length protects an account better than punctuation does."
         autoCompletePassword="new-password"
       />
+      <p className="muted" style={{ marginTop: 16, marginBottom: 0, fontSize: 14 }}>
+        By creating an account you agree to the{' '}
+        <Link className="text-link" href="/terms">
+          Terms of use
+        </Link>{' '}
+        and confirm you have read the{' '}
+        <Link className="text-link" href="/privacy">
+          Privacy policy
+        </Link>
+        .
+      </p>
       <p className="muted" style={{ marginTop: 24, marginBottom: 0, fontSize: 14 }}>
         Already have an account?{' '}
         <Link className="text-link" href="/sign-in">

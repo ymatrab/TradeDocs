@@ -101,6 +101,8 @@ export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS
  * changes later gets its own date here rather than moving the others.
  */
 const REDESIGN_ROUND = '2026-10-05';
+/** The help centre and contact page were added on this date (D-018). */
+const SUPPORT_ROUND = '2026-10-06';
 
 export type SitemapPage = {
   path: string;
@@ -131,4 +133,40 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),
+  { path: '/help', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.5 },
+  { path: '/contact', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.4 },
 ];
+
+/**
+ * The legal pages (D-009). They are public routes but enter the sitemap and llms.txt only
+ * once the owner has approved them (LEGAL_APPROVED_AT with a complete identity); until then
+ * they are drafts, noindex and unlisted. Their date is the approval date, never this list's.
+ */
+export const LEGAL_PAGES: readonly { path: string; name: string; summary: string }[] = [
+  {
+    path: '/privacy',
+    name: 'Privacy policy',
+    summary: 'What personal data TradeDocs handles, why, who processes it and your rights.',
+  },
+  {
+    path: '/terms',
+    name: 'Terms of use',
+    summary: 'The agreement for using TradeDocs: what it is and is not, accounts, content, liability.',
+  },
+  {
+    path: '/cookies',
+    name: 'Cookie policy',
+    summary: 'The only cookies are the sign-in session; no analytics, advertising or tracking.',
+  },
+];
+
+/** Legal pages as sitemap entries, dated by their approval. Empty while they are drafts. */
+export function legalSitemapPages(approvedAt: string | null): SitemapPage[] {
+  if (!approvedAt) return [];
+  return LEGAL_PAGES.map((page) => ({
+    path: page.path,
+    lastModified: approvedAt,
+    changeFrequency: 'monthly' as const,
+    priority: 0.3,
+  }));
+}

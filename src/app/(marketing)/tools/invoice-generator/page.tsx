@@ -7,6 +7,7 @@ import { ToolJsonLd } from '@/components/seo/json-ld';
 import { RelatedTools } from '@/components/seo/related-tools';
 import { openGraphFor } from '@/lib/seo/social';
 import { DocumentGenerator } from './generator';
+import { INVOICE_GENERATOR_FAQ } from '@/lib/content/faq';
 
 export const metadata: Metadata = {
   title: 'Commercial invoice template and generator — free PDF',
@@ -69,36 +70,7 @@ const fields = [
   },
 ];
 
-const faq = [
-  {
-    q: 'How do I create my own commercial invoice?',
-    a: 'Fill in the form above: a document number, the seller and buyer, and one line for each kind of goods with its quantity and unit price. Add the currency, the Incoterms® rule and place and the country of origin, then download the PDF. Nothing needs installing and no account is required.',
-  },
-  {
-    q: 'Is there a standard commercial invoice format?',
-    a: 'There is no single worldwide form. Most countries accept the seller’s own invoice as long as it carries the information they require, which is why the content matters more than the layout. For goods entering the United States, the required contents are set out in 19 CFR 141.86.',
-  },
-  {
-    q: 'What has to be on a commercial invoice?',
-    a: 'The usual core is the seller and buyer with full addresses, an invoice number and date, a description of the goods, quantities, unit prices and the total, the currency and the country of origin, with the agreed Incoterms® rule and its named place beside them. What is actually required depends on the importing country; for the United States it is set out in 19 CFR 141.86. HS codes are not always mandatory, but customs work is faster with them.',
-  },
-  {
-    q: 'Which fields does the generator need?',
-    a: 'A document number, the names of both companies and at least one described line of goods with a quantity above zero. Everything marked optional can be left blank and the PDF will still be produced, but the customs authority in the importing country may expect it, so fill in what applies to your shipment.',
-  },
-  {
-    q: 'What is the difference between a commercial invoice and a proforma invoice?',
-    a: 'A proforma is issued before the sale is concluded — it is a formal quotation the buyer uses to arrange payment or open a letter of credit. A commercial invoice is the demand for payment for goods actually sold, and it is the document customs values the consignment from.',
-  },
-  {
-    q: 'Is anything I type here saved?',
-    a: 'No. The form runs in your browser, the details are sent once to render the PDF, and nothing is written to a database. Close the tab and it is gone — which also means we cannot recover it for you.',
-  },
-  {
-    q: 'Is the PDF watermarked?',
-    a: 'No. It is produced by the same engine the product uses, so what you download is the real output. Every document carries a line stating that it was prepared from your own data and is not issued or certified by any authority — that line is on every TradeDocs document and cannot be removed.',
-  },
-];
+const faq = INVOICE_GENERATOR_FAQ;
 
 export default function GeneratorPage() {
   return (

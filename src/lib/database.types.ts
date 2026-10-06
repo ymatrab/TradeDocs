@@ -176,6 +176,45 @@ export type Database = {
           },
         ]
       }
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          handled_at: string | null
+          handled_by: string | null
+          id: string
+          message: string
+          name: string
+          notification_detail: string | null
+          notification_status: string
+          topic: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          handled_at?: string | null
+          handled_by?: string | null
+          id?: string
+          message: string
+          name: string
+          notification_detail?: string | null
+          notification_status?: string
+          topic: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          handled_at?: string | null
+          handled_by?: string | null
+          id?: string
+          message?: string
+          name?: string
+          notification_detail?: string | null
+          notification_status?: string
+          topic?: string
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           created_at: string

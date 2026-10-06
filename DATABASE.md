@@ -94,3 +94,17 @@ definition; schema 3 documents issued meanwhile keep rendering as issued.
 
 `public.consume_rate_limit` (20260909000200) is the service-role-only quota store behind
 `src/lib/security/rate-limit.ts`. It holds HMAC digests only, never addresses or user ids.
+
+## Contact messages (20261006000100)
+
+`public.contact_messages` holds messages sent through `/contact`: name, email, topic
+(`question`, `account`, `problem`, `privacy`, `other`), message (10–5000 characters), the
+owner-notification outcome (`notification_status` pending/sent/not_sent/failed and a reason
+code of at most 100 characters) and `handled_at`/`handled_by` (set together by the admin
+inbox). RLS on, no policies, no `anon`/`authenticated` grants; `service_role` holds select,
+insert and update only. The migration also states the service-role grants the admin panel
+relies on (select on organizations, memberships, profiles, shipments, documents; select and
+insert on audit_events), which Supabase's default privileges already provided. Retention is
+not yet decided (P-003) and the privacy draft says so. Rollback: drop the table; nothing
+references it, and `/contact` then reports the form unavailable. `src/lib/database.types.ts`
+was extended by hand for this table: replace it with the CI `database-evidence` artifact.

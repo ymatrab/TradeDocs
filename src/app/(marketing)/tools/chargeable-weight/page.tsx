@@ -5,6 +5,7 @@ import { ToolJsonLd } from '@/components/seo/json-ld';
 import { RelatedTools } from '@/components/seo/related-tools';
 import { openGraphFor } from '@/lib/seo/social';
 import { ChargeableWeightCalculator } from './calculator';
+import { CHARGEABLE_WEIGHT_FAQ } from '@/lib/content/faq';
 
 export const metadata: Metadata = {
   title: 'Dimensional weight calculator — volumetric vs actual weight',
@@ -18,28 +19,7 @@ export const metadata: Metadata = {
   ),
 };
 
-const faq = [
-  {
-    q: 'What is dimensional weight?',
-    a: 'A weight worked out from a package’s size rather than its mass: length × width × height divided by the carrier’s divisor. It is called dimensional or DIM weight by FedEx and UPS, and volumetric weight by DHL and IATA. The idea is the same under both names.',
-  },
-  {
-    q: 'What is chargeable weight?',
-    a: 'The greater of a consignment’s actual weight and its volumetric weight. Carriers sell space as well as lift, so a light bulky consignment is billed on the room it takes up rather than what it weighs.',
-  },
-  {
-    q: 'What is the volumetric divisor for air freight?',
-    a: 'The general IATA convention is 6,000 cm³ per kilogram, which works out at about 167 kg per cubic metre. DHL Express, FedEx and UPS publish 5,000 cm³ per kilogram for their express services, or 200 kg per cubic metre, which produces a higher charge for the same box.',
-  },
-  {
-    q: 'How is volumetric weight calculated?',
-    a: 'Multiply length by width by height to get the volume, then divide by the carrier’s divisor. For a 60 × 40 × 40 cm carton that is 96,000 cm³; at the IATA divisor of 6,000 that is 16 kg, whatever the scales say.',
-  },
-  {
-    q: 'Does sea freight use volumetric weight?',
-    a: 'LCL sea freight uses the same idea under a different name — weight or measure, W/M — and bills at whichever is greater, commonly treating one cubic metre as one tonne — a common industry convention, so check your forwarder’s tariff. Full container loads are priced per container instead, so the comparison does not arise.',
-  },
-];
+const faq = CHARGEABLE_WEIGHT_FAQ;
 
 export default function ChargeableWeightPage() {
   return (

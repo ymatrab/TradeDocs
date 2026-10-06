@@ -2827,3 +2827,241 @@ a.form-cell:active {
   font-size: 14px;
   color: var(--muted);
 }
+
+/* --- Legal, contact, help and admin (ops pages, D-018) ------------------------ */
+/* Namespaced additions only; everything else reuses the Manifest classes above. */
+.legal-doc {
+  display: grid;
+  gap: var(--space-6);
+}
+.legal-doc > * {
+  max-width: var(--measure);
+}
+.legal-doc > .table-scroll,
+.legal-section > .table-scroll {
+  max-width: none;
+}
+.legal-stamp {
+  margin: 0;
+}
+.legal-identity {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.legal-identity > div {
+  background: var(--surface);
+  padding: var(--space-3) var(--space-4);
+  min-width: 0;
+}
+.legal-identity dd {
+  margin: var(--space-1) 0 0;
+  overflow-wrap: anywhere;
+}
+.legal-section {
+  display: grid;
+  gap: var(--space-3);
+}
+.legal-section h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.legal-number {
+  font-family: var(--font-data);
+  color: var(--muted);
+}
+.legal-section p,
+.legal-section ul {
+  margin: 0;
+  line-height: 1.65;
+}
+.legal-section ul {
+  padding-left: 1.25em;
+  list-style: disc;
+  display: grid;
+  gap: var(--space-2);
+}
+.legal-foot {
+  margin: 0;
+  font-size: 14px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-7);
+  align-items: start;
+}
+.contact-form-col {
+  max-width: 640px;
+}
+.contact-aside {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+.contact-aside p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.contact-aside .caption + p {
+  margin-bottom: var(--space-3);
+}
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+/* The honeypot: out of view and out of the accessibility tree, but still in the form. */
+.contact-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.help-launcher {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--tape);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: var(--shadow-offset);
+  cursor: pointer;
+  transition:
+    translate 120ms var(--ease-state),
+    box-shadow 120ms var(--ease-state);
+}
+.help-launcher:hover {
+  translate: -2px -2px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.help-launcher:active {
+  translate: 0 0;
+  box-shadow: none;
+}
+.help-launcher:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+@media print {
+  .help-launcher {
+    display: none;
+  }
+}
+.help-search {
+  display: grid;
+  gap: var(--space-3);
+}
+.help-search-box {
+  position: relative;
+  max-width: 640px;
+}
+.help-search-box > svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  translate: 0 -50%;
+  color: var(--muted);
+  pointer-events: none;
+}
+.help-search-box .input {
+  width: 100%;
+  padding-left: 42px;
+}
+.help-search-status {
+  margin: 0;
+  min-height: 1.5em;
+  font-size: 14px;
+}
+.help-results {
+  max-width: var(--measure);
+}
+.dialog .help-results {
+  max-height: min(48vh, 420px);
+  overflow-y: auto;
+}
+.help-source {
+  font-size: 14px;
+  color: var(--muted);
+}
+.help-retry {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-identity {
+  margin: 0 0 var(--space-2);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+/* The sidebar carries the admin links on wide screens; below it they sit in the topbar. */
+.admin-topnav {
+  display: none;
+}
+@media (max-width: 900px) {
+  .app-topbar:has(.admin-topnav) {
+    flex-wrap: wrap;
+  }
+  .admin-topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+    width: 100%;
+    font-size: 14px;
+  }
+  .admin-topnav a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: 44px;
+    color: inherit;
+  }
+  .admin-topnav a[aria-current='page'] {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+.admin-inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+.admin-messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+.admin-message-body {
+  display: grid;
+  gap: var(--space-3);
+}
+.admin-message-text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

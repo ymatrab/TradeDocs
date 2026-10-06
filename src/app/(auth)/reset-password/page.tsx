@@ -20,6 +20,10 @@ export default function ResetPasswordPage() {
         <Link className="text-link" href="/sign-in">
           Back to sign in
         </Link>
+        {' · '}
+        <Link className="text-link" href="/magic-link">
+          Email me a link instead
+        </Link>
       </p>
     </>
   );

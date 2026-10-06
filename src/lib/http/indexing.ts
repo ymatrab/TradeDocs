@@ -17,6 +17,8 @@ export const PRIVATE_PATH_PREFIXES = [
   '/invitations',
   '/design-system',
   '/api',
+  // Platform admin: never indexed, and deliberately not named in robots.txt.
+  '/admin',
 ] as const;
 
 export function isPrivatePath(pathname: string): boolean {

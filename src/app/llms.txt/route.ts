@@ -2,7 +2,15 @@ import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { GUIDES } from '@/lib/content/guides';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { documentKindLabels } from '@/lib/labels';
-import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS, SITE_DESCRIPTION, SITE_NAME } from '@/lib/seo/site';
+import { isLegalApproved } from '@/lib/legal/identity';
+import { getLegalIdentity } from '@/lib/legal/server';
+import {
+  LEGAL_PAGES,
+  PUBLIC_DOCUMENT_KINDS,
+  PUBLIC_TOOLS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from '@/lib/seo/site';
 import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
 
 // The links name the deployment's canonical origin, so this is resolved per request.
@@ -18,6 +26,8 @@ export const dynamic = 'force-dynamic';
  */
 export function GET(): Response {
   const base = getPublicBaseUrl();
+  // Draft legal pages are not offered to crawlers of any kind until approved (D-009).
+  const legalApproved = isLegalApproved(getLegalIdentity());
   const lines = [
     `# ${SITE_NAME}`,
     '',
@@ -49,6 +59,14 @@ export function GET(): Response {
       (term) =>
         `- [${term.code}: ${term.name}](${base}/tools/incoterms/${term.code.toLowerCase()}): ${term.riskPasses}`,
     ),
+    '',
+    '## Help and contact',
+    '',
+    `- [Help centre](${base}/help): every answer on the site, searchable in one place.`,
+    `- [Contact](${base}/contact): questions, problems and privacy requests, read by a person.`,
+    ...(legalApproved
+      ? LEGAL_PAGES.map((page) => `- [${page.name}](${base}${page.path}): ${page.summary}`)
+      : []),
     '',
   ];
 
