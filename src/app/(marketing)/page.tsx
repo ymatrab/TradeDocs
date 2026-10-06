@@ -26,7 +26,7 @@ const HOME_DESCRIPTION =
   'Free commercial invoice, proforma invoice and packing list generators, and a workspace that prepares the whole export document set from one shipment record.';
 
 export const metadata: Metadata = {
-  title: 'Commercial invoice generator & export documents',
+  title: 'Export documents from one shipment record',
   description: HOME_DESCRIPTION,
   alternates: { canonical: '/' },
   openGraph: openGraphFor(

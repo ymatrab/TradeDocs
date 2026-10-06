@@ -94,6 +94,13 @@ function PlanPrice({ plan }: { plan: Plan }) {
 }
 
 function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boolean }) {
+  // A paid plan that adds nothing over Free says so instead of repeating Free's list.
+  const extras = FEATURES.filter(
+    (feature) => planIncludes(feature, plan) && !planIncludes(feature, 'free'),
+  );
+  if (plan !== 'free' && extras.length === 0) {
+    return <p className="pricing-note">Everything in Free. Paid-only features: none yet.</p>;
+  }
   return (
     <ul className="ledger" aria-label="Included features">
       {FEATURES.filter((feature) => planIncludes(feature, plan)).map((feature) => {
@@ -221,7 +228,12 @@ export default function PricingPage() {
                   </th>
                   {plans.map((plan) => (
                     <td key={plan.id}>
-                      {planIncludes(feature, plan.id) ? (
+                      {planIncludes(feature, plan.id) && feature.needsAccount && !accountsOpen ? (
+                        <>
+                          <Clock size={17} aria-hidden="true" className="not-yet" />
+                          <span className="sr-only">Not open yet</span>
+                        </>
+                      ) : planIncludes(feature, plan.id) ? (
                         <>
                           <Check size={17} aria-hidden="true" className="yes" />
                           <span className="sr-only">Included</span>
