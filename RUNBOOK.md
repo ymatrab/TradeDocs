@@ -156,7 +156,7 @@ purge now" at least weekly. To schedule it, pick one:
 
 1. **Vercel Cron.** Set `CRON_SECRET` (32+ random characters) on the Production target, then
    add to `vercel.json`: `"crons": [{ "path": "/api/internal/purge-accounts", "schedule":
-   "0 3 * * *" }]`. Vercel sends `Authorization: Bearer $CRON_SECRET` itself.
+"0 3 * * *" }]`. Vercel sends `Authorization: Bearer $CRON_SECRET` itself.
 2. **Supabase pg_cron.** Enable the pg_cron extension, then
    `select cron.schedule('purge-accounts', '0 3 * * *', $$select public.purge_due_accounts(50)$$);`
    No secret is needed; the job runs inside the database.

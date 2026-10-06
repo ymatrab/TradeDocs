@@ -205,8 +205,8 @@ export function ImportForm({ org }: { org: string }) {
           <div style={{ display: 'grid', gap: 12 }}>
             {shown.missingDescription ? (
               <Callout tone="warning" title="No description column found">
-                The heading row needs a description column (also read as product, product name,
-                name or goods). Nothing below can be imported until it has one.
+                The heading row needs a description column (also read as product, product name, name
+                or goods). Nothing below can be imported until it has one.
               </Callout>
             ) : (
               <p className="muted" style={{ margin: 0 }}>

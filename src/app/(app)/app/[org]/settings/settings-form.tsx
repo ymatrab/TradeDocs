@@ -27,10 +27,7 @@ export function SettingsForm({
   settings: DocumentSettings;
   canManage: boolean;
 }) {
-  const [state, action, pending] = useActionState<ActionState, FormData>(
-    saveDocumentSettings,
-    {},
-  );
+  const [state, action, pending] = useActionState<ActionState, FormData>(saveDocumentSettings, {});
   const form = useRef<HTMLFormElement>(null);
   useInvalidFocus(form, state.fields);
 

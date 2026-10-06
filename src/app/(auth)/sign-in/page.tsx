@@ -25,8 +25,8 @@ export default async function SignInPage({ searchParams }: { searchParams: AuthS
       {link === 'expired' ? (
         <div style={{ marginBottom: 20 }}>
           <Callout tone="warning" title="That link can’t be used">
-            It has expired or was already used. If you just confirmed your address, sign in
-            below. Otherwise, ask for a new sign-in link.
+            It has expired or was already used. If you just confirmed your address, sign in below.
+            Otherwise, ask for a new sign-in link.
           </Callout>
         </div>
       ) : null}

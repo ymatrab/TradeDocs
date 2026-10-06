@@ -132,8 +132,8 @@ export function TurnstileWidget({
       <div ref={container} />
       {failed ? (
         <p className="error-text" role="alert" style={{ margin: '8px 0 0' }}>
-          The security check could not load. Reload the page, or allow
-          challenges.cloudflare.com if a blocker is stopping it.
+          The security check could not load. Reload the page, or allow challenges.cloudflare.com if
+          a blocker is stopping it.
         </p>
       ) : null}
     </div>

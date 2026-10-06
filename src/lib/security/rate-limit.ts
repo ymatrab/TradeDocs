@@ -225,7 +225,11 @@ export async function peekRateLimit(
     signal: AbortSignal.timeout(2_000),
   });
   if (!response.ok) throw new Error('Rate limit provider unavailable.');
-  const parsed = z.number().int().min(0).safeParse(await response.json());
+  const parsed = z
+    .number()
+    .int()
+    .min(0)
+    .safeParse(await response.json());
   if (!parsed.success) throw new Error('Invalid rate limit provider response.');
   return parsed.data;
 }

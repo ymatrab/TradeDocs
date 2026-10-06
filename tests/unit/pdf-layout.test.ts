@@ -199,7 +199,9 @@ describe('schema 4 content', () => {
   });
 
   it('prints payment terms, bank details and the signatory on an invoice', () => {
-    const texts = documentLayout(snapshot(2), createFontSet()).flat().map((placed) => placed.text);
+    const texts = documentLayout(snapshot(2), createFontSet())
+      .flat()
+      .map((placed) => placed.text);
     expect(texts).toContain('PAYMENT TERMS');
     expect(texts).toContain('BANK DETAILS');
     expect(texts).toContain('Olga Owner, Director');

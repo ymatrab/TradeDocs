@@ -115,9 +115,7 @@ test('an unknown password reports nothing about whether the account exists', asy
   ).toBeVisible();
 });
 
-test('signing up with an address that already has an account reveals nothing', async ({
-  page,
-}) => {
+test('signing up with an address that already has an account reveals nothing', async ({ page }) => {
   const email = newEmail();
   await signUp(page, email);
   await page.context().clearCookies();
@@ -127,9 +125,7 @@ test('signing up with an address that already has an account reveals nothing', a
   await page.getByRole('button', { name: 'Create account' }).click();
   // The same "check your inbox" a new address gets, with a resend on a cooldown.
   await expect(page.getByRole('heading', { name: 'Check your inbox' })).toBeVisible();
-  await expect(
-    page.getByRole('button', { name: /Resend the link \(available in/ }),
-  ).toBeDisabled();
+  await expect(page.getByRole('button', { name: /Resend the link \(available in/ })).toBeDisabled();
 });
 
 test('a signed-out visitor is sent to sign in rather than shown the workspace', async ({
@@ -447,9 +443,9 @@ test('a platform admin finds an account by email, without the address in any URL
   await result.click();
   await adminPage.waitForURL(/\/admin\/users\/[0-9a-f-]{36}$/);
   await expect(adminPage.getByText('Admin Search Exports')).toBeVisible();
-  await expect(
-    adminPage.getByRole('region', { name: 'Organizations', exact: true }),
-  ).toContainText('Owner');
+  await expect(adminPage.getByRole('region', { name: 'Organizations', exact: true })).toContainText(
+    'Owner',
+  );
 
   // Disabling sign-in takes effect at once, and is reversible.
   await adminPage.getByRole('button', { name: 'Disable sign-in' }).click();

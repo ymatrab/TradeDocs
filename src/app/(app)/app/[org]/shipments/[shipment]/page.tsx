@@ -301,8 +301,8 @@ export default async function ShipmentPage({
             <Panel title="Audit">
               <p className="muted" style={{ marginBottom: 0 }}>
                 Every generated document keeps an immutable copy of the shipment it came from.
-                Editing this shipment never changes a document you have already sent; it marks
-                that document stale so you can decide whether to re-issue it.
+                Editing this shipment never changes a document you have already sent; it marks that
+                document stale so you can decide whether to re-issue it.
               </p>
             </Panel>
           </div>

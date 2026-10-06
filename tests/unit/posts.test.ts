@@ -211,7 +211,10 @@ describe('one file per article (parallel writing)', () => {
       }
       const links = relatedLinks(article, kind);
       expect(links.length, article.slug).toBeLessThanOrEqual(MAX_RELATED);
-      expect(links.map((link) => link.href), article.slug).not.toContain(own);
+      expect(
+        links.map((link) => link.href),
+        article.slug,
+      ).not.toContain(own);
     }
     expect(findArticleByPath('/blog/not-a-post')).toBeUndefined();
     expect(findArticleByPath('/tools/cbm-calculator')).toBeUndefined();

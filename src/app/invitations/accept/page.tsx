@@ -39,8 +39,8 @@ export default async function AcceptInvitationPage({
         ) : !user ? (
           <>
             <p className="muted">
-              Sign in with the address the invitation was sent to, or create an account with it.
-              An invitation only works for the address it names, and only once.
+              Sign in with the address the invitation was sent to, or create an account with it. An
+              invitation only works for the address it names, and only once.
             </p>
             <div className="cta-row" style={{ marginTop: 0 }}>
               <Link className="btn" href={`/sign-in?next=${back}`}>

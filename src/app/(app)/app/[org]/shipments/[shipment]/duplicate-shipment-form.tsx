@@ -39,9 +39,9 @@ export function DuplicateShipmentForm({
         <input type="hidden" name="shipment" value={shipmentId} />
         <ActionResult state={state} />
         <p className="muted" style={{ margin: 0 }}>
-          Starts a new draft with the same parties, terms, lines and packing. Line values are
-          copied as they are here, so check prices and quantities before generating.{' '}
-          {reference} and its documents are not changed.
+          Starts a new draft with the same parties, terms, lines and packing. Line values are copied
+          as they are here, so check prices and quantities before generating. {reference} and its
+          documents are not changed.
         </p>
         <Field
           id="duplicate_reference"

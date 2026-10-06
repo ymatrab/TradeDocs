@@ -35,8 +35,8 @@ export default async function NewPasswordPage() {
     <>
       <h1 style={{ fontSize: 28 }}>Choose a new password</h1>
       <p className="muted">
-        For <span className="data">{user.email}</span>. Once saved, you sign in with this
-        password, and every other session is signed out.
+        For <span className="data">{user.email}</span>. Once saved, you sign in with this password,
+        and every other session is signed out.
       </p>
       <AuthForm
         action={updatePassword}

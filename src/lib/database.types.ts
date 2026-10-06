@@ -933,7 +933,10 @@ export type Database = {
         }
         Returns: string
       }
-      admin_force_account_deletion: { Args: { p_user: string }; Returns: string }
+      admin_force_account_deletion: {
+        Args: { p_user: string }
+        Returns: string
+      }
       admin_revoke_sessions: { Args: { p_user: string }; Returns: number }
       admin_search_users: {
         Args: { p_limit?: number; p_query: string }
@@ -982,13 +985,13 @@ export type Database = {
         Args: { dry_run?: boolean; rows: Json; target_org: string }
         Returns: Json
       }
-      preview_document: {
-        Args: { document_kind: string; target_shipment: string }
-        Returns: Json
-      }
       peek_rate_limit: {
         Args: { p_key_hash: string; p_window_seconds: number }
         Returns: number
+      }
+      preview_document: {
+        Args: { document_kind: string; target_shipment: string }
+        Returns: Json
       }
       purge_due_accounts: { Args: { p_limit?: number }; Returns: Json }
       reissue_invitation: { Args: { target_invitation: string }; Returns: Json }

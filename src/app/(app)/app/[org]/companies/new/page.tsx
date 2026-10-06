@@ -37,8 +37,7 @@ export default async function NewCompanyPage({
       <div className="app-page">
         {initialKind === 'own' ? (
           <p className="muted" style={{ margin: 0 }}>
-            Your own company is the exporter on every document. Enter it exactly as it should
-            print.
+            Your own company is the exporter on every document. Enter it exactly as it should print.
           </p>
         ) : null}
         <Panel title="New company">

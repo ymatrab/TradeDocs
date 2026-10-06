@@ -181,8 +181,8 @@ export default async function OverviewPage({ params }: { params: Promise<{ org: 
             <div style={{ display: 'grid', gap: 16 }}>
               <Callout tone="warning" title="Some documents no longer match their shipment">
                 {stale.length === 1 ? 'One document was' : `${stale.length} documents were`}{' '}
-                rendered from an earlier revision. Nothing has been rewritten; open the shipment
-                and regenerate the ones you still need to send.
+                rendered from an earlier revision. Nothing has been rewritten; open the shipment and
+                regenerate the ones you still need to send.
               </Callout>
               <DataTable caption="Documents rendered from an earlier shipment revision" stack>
                 <thead>

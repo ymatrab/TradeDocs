@@ -13,6 +13,7 @@
 - Import: "Check the file" validates without writing; every problem is reported per file line, including unreadable figures, duplicate SKUs in one file and rows with no description.
 - Actions: 0-row updates are reported (company/product edit and archive, role change, member removal, allocation removal); figures accept decimal commas and state their decimal-place limits.
 - Tests: pgTAP `product_logic` (49), vitest `pdf-layout`, `staleness`, `packing-and-inputs`, extended `shipment-actions` and `csv`; e2e reuse flow. All pending CI.
+
 ### Competitor analysis and proposed pricing (D-020, prices behind PRICES_APPROVED)
 
 - `docs/research/competitors-2026-10-06.md`: IncoDocs, ovrseas, Shipping Solutions, Zoho Invoice, Refrens and Invoice-Generator.com, from their live pages retrieved 2026-10-06 (plans, prices, limits, features, weak spots; unverified items marked), where TradeDocs is already better, ranked launch gaps and positioning lines that name no competitor.

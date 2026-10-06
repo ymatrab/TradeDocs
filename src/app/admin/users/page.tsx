@@ -22,8 +22,8 @@ export default async function AdminUsersPage() {
             <p className="muted" style={{ marginTop: 0 }}>
               Accounts whose 30-day deletion grace has ended are removed by the purge. It is not
               scheduled yet: scheduling is an owner decision (RUNBOOK.md, “Account purge”). Until
-              then, run it here. It is safe to run any number of times; an account that is the
-              only owner of an organization with other members is held back and reported.
+              then, run it here. It is safe to run any number of times; an account that is the only
+              owner of an organization with other members is held back and reported.
             </p>
             <PurgeNow />
           </Panel>

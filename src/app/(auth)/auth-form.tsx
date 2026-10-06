@@ -143,8 +143,8 @@ function CheckInbox({ email, next }: { email: string; next?: string }) {
         Check your inbox
       </h2>
       <p style={{ margin: 0 }}>
-        We sent a confirmation link to <strong className="data">{email}</strong>. Open it to
-        finish creating your account. The link works once and expires, so use it soon.
+        We sent a confirmation link to <strong className="data">{email}</strong>. Open it to finish
+        creating your account. The link works once and expires, so use it soon.
       </p>
       <p className="muted" style={{ margin: 0 }}>
         Nothing there after a few minutes? Check spam or promotions, or send it again. If this

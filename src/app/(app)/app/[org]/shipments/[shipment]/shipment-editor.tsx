@@ -351,8 +351,8 @@ export function ShipmentEditor({
             </DataTable>
           ) : (
             <p className="muted" style={{ marginBottom: 0 }}>
-              No lines yet. A document needs at least one: pick a product from the catalog below,
-              or type a one-off line.
+              No lines yet. A document needs at least one: pick a product from the catalog below, or
+              type a one-off line.
             </p>
           )}
 
@@ -499,8 +499,8 @@ export function ShipmentEditor({
                 Add line
               </Button>
               <p className="hint" style={{ margin: 0 }}>
-                Enter in any field adds the line; the cursor returns to the description for the
-                next one.
+                Enter in any field adds the line; the cursor returns to the description for the next
+                one.
               </p>
             </div>
           </form>

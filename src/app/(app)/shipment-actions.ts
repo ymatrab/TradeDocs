@@ -300,13 +300,11 @@ export async function generateDocument(
   _previous: ActionState,
   formData: FormData,
 ): Promise<ActionState> {
-  const parsed = z
-    .object({ org: uuid, shipment: uuid, kind: z.enum(DOCUMENT_KINDS) })
-    .safeParse({
-      org: read(formData, 'org'),
-      shipment: read(formData, 'shipment'),
-      kind: read(formData, 'kind'),
-    });
+  const parsed = z.object({ org: uuid, shipment: uuid, kind: z.enum(DOCUMENT_KINDS) }).safeParse({
+    org: read(formData, 'org'),
+    shipment: read(formData, 'shipment'),
+    kind: read(formData, 'kind'),
+  });
   if (!parsed.success) return { error: 'Choose a document type.' };
   if (isRegulatedDocumentKind(parsed.data.kind) && !regulatedDocumentsEnabled()) {
     return { error: REGULATED_DOCUMENT_LIMITATION };

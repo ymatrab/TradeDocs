@@ -337,4 +337,3 @@ The signed-in journey of a first-time exporter, in the order they meet it. Style
   `data-label` (mono caption left, value right). Column heads stay in the accessibility tree.
   Used for goods, packages, documents, shipments, products and companies; wide reference tables
   keep the horizontal scroll.
-

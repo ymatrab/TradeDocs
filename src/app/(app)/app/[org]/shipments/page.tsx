@@ -26,11 +26,7 @@ export default async function ShipmentsPage({ params }: { params: Promise<{ org:
       .select('id, reference, status, currency, revision, created_at')
       .eq('org_id', org)
       .order('created_at', { ascending: false }),
-    client
-      .from('organization_settings')
-      .select('default_currency')
-      .eq('org_id', org)
-      .maybeSingle(),
+    client.from('organization_settings').select('default_currency').eq('org_id', org).maybeSingle(),
   ]);
 
   return (

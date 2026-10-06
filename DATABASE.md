@@ -179,6 +179,7 @@ Tests: `supabase/tests/product_logic.test.sql` (49 assertions); `tenant_integrit
 Generated types were extended by hand (`organization_settings`, the four document columns,
 `duplicate_shipment`, `preview_document`, `void_document`, `import_products.dry_run`); the CI
 `database-evidence` artifact is authoritative. Rollback notes are in each migration header.
+
 ## Accounts and access (20261006000900)
 
 - `account_deletion_requests` gains `last_purge_attempt_at` and `last_purge_outcome`
