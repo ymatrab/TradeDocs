@@ -29,6 +29,9 @@ export async function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
   requestHeaders.set('Content-Security-Policy', csp);
+  // Lets a layout send a signed-out visitor to sign-in and back to the page they asked for.
+  // Set here from the URL, never trusted from the client: any incoming value is overwritten.
+  requestHeaders.set('x-request-path', `${request.nextUrl.pathname}${request.nextUrl.search}`);
   let response = NextResponse.next({ request: { headers: requestHeaders } });
 
   // An access token that expires mid-session must be refreshed somewhere that can write

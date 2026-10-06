@@ -47,7 +47,7 @@ export default async function AdminOverviewPage() {
 
   const rows: { label: string; total: Count; week: Count; href?: string }[] = [
     { label: 'Organizations', total: orgs, week: orgsWeek, href: '/admin/organizations' },
-    { label: 'Users', total: users, week: usersWeek },
+    { label: 'Users', total: users, week: usersWeek, href: '/admin/users' },
     { label: 'Shipments', total: shipments, week: shipmentsWeek },
     { label: 'Documents generated', total: docs, week: docsWeek },
   ];

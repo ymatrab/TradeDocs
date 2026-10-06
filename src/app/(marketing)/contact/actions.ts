@@ -7,7 +7,12 @@ import { parseContact, type ContactInput } from '@/lib/contact/schema';
 import { sendContactNotification } from '@/lib/email/contact-notification';
 import { HttpError } from '@/lib/http/request';
 import { getLegalIdentity } from '@/lib/legal/server';
-import { limitPublicRequest, type RateLimitPolicy } from '@/lib/security/rate-limit';
+import {
+  attestedClientAddress,
+  limitPublicRequest,
+  type RateLimitPolicy,
+} from '@/lib/security/rate-limit';
+import { TURNSTILE_FIELD, challengeMessage, verifyChallenge } from '@/lib/security/turnstile';
 import { createServiceClient, hasServiceRole } from '@/lib/supabase/admin';
 
 export type ContactState = {
@@ -64,9 +69,10 @@ export async function sendContactMessage(
   }
 
   let env: ServerEnv;
+  const request = { headers: new Headers(await headers()) };
   try {
     env = getServerEnv();
-    await limitPublicRequest({ headers: new Headers(await headers()) }, POLICY, env);
+    await limitPublicRequest(request, POLICY, env);
   } catch (error) {
     if (error instanceof HttpError && error.status === 429) {
       return { error: 'You have sent several messages already. Try again in an hour.', values };
@@ -76,6 +82,16 @@ export async function sendContactMessage(
     });
     return { error: 'The form is temporarily unavailable. Try again in a minute.', values };
   }
+
+  // Bot challenge, whenever Turnstile is configured (D-017). Checked after the quota so a
+  // flood is refused without a call to Cloudflare for every attempt.
+  const check = await verifyChallenge(
+    env,
+    read(formData, TURNSTILE_FIELD),
+    'contact',
+    attestedClientAddress(request, env),
+  );
+  if (!check.ok) return { error: challengeMessage(check), values };
 
   const message: ContactInput = parsed.data;
   const client = createServiceClient();

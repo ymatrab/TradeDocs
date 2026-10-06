@@ -6,10 +6,18 @@ import { Button } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { Field, Input, Select, Textarea } from '@/components/primitives/form';
 import { useInvalidFocus } from '@/components/primitives/use-invalid-focus';
+import { TurnstileWidget } from '@/components/security/turnstile-widget';
 import { CONTACT_LIMITS, CONTACT_TOPICS, HONEYPOT_FIELD } from '@/lib/contact/fields';
 import { sendContactMessage, type ContactState } from './actions';
 
-export function ContactForm({ available }: { available: boolean }) {
+export function ContactForm({
+  available,
+  siteKey = null,
+}: {
+  available: boolean;
+  /** Turnstile's public key when the challenge is active (D-017). */
+  siteKey?: string | null;
+}) {
   const [state, action, pending] = useActionState<ContactState, FormData>(sendContactMessage, {});
   const form = useRef<HTMLFormElement>(null);
   useInvalidFocus(form, state.fields);
@@ -149,6 +157,8 @@ export function ContactForm({ available }: { available: boolean }) {
         </Link>
         .
       </p>
+
+      {available ? <TurnstileWidget siteKey={siteKey} action="contact" resetKey={state} /> : null}
 
       <div>
         <Button type="submit" pending={pending} pendingLabel="Sending…" disabled={!available}>

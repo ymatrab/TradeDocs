@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { Building2, Inbox, LayoutDashboard, LogOut, ScrollText } from 'lucide-react';
+import { Building2, Inbox, LayoutDashboard, LogOut, ScrollText, Users } from 'lucide-react';
 import { ErrorState } from '@/components/primitives/feedback';
 
 const navigation = [
   { href: '/admin', label: 'Overview', icon: LayoutDashboard },
+  { href: '/admin/users', label: 'Users', icon: Users },
   { href: '/admin/organizations', label: 'Organizations', icon: Building2 },
   { href: '/admin/messages', label: 'Messages', icon: Inbox },
   { href: '/admin/audit', label: 'Audit log', icon: ScrollText },

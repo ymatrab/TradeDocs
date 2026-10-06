@@ -28,6 +28,19 @@
 - `docs/content/WRITING_BRIEF.md`: the structure, field limits, sourcing, Unsplash and self-check rules every writer follows.
 - Tests in `tests/unit/posts.test.ts`: every article file is in its index and named after its slug, ordering, source-file merging and duplicate ids, related paths. Pending CI; nothing was run locally.
 
+### Accounts and access under real conditions (D-020)
+
+- Sign-up: 12-character minimum (72-byte maximum), Have I Been Pwned k-anonymity check on every new password (fails open on outage), Turnstile when configured, and a "check your inbox" screen with a resend on a 60-second cooldown. An address that already has an account gets the same screen.
+- Sign-in: password or magic link, generic failures, Turnstile after 3 failures per account or 10 per address in 15 minutes, clear messages for unconfirmed (with resend) and disabled accounts, and a return to the page that was asked for (`?next=`, safe-listed to `/app`, `/admin`, `/invitations/accept`, `/reset-password/new`).
+- Password reset end to end: request → email → `/auth/confirm` (token hash, any device) or `/auth/callback` (PKCE) → `/reset-password/new` → `/reset-password/done`, signed in, other sessions ended. Used or expired links land on a "can’t be used" screen with a fresh request. Token-hash email templates in `supabase/templates/` (hosted project must use them: RUNBOOK).
+- Quotas on every account action (`src/lib/security/auth-limits.ts`); `peek_rate_limit` reads a counter without consuming it. Sign-out refuses cross-site posts.
+- Account settings: change name, change email (current password, re-confirmation, pending state), change password (current password, ends other sessions), sign out everywhere, deletion as before.
+- Account purge: `purge_due_accounts()` (service role, idempotent, batch-bounded, holds back a sole owner with colleagues), `/api/internal/purge-accounts` (bearer `CRON_SECRET`), and "Run purge now" in `/admin/users`. Not scheduled; RUNBOOK lists the owner's two options.
+- Organizations: rename, switch (shell link), audited role change/removal/invite routines; administrators can no longer remove owners or other administrators. Invitations are emailed through Resend when configured, with an honestly labelled copy-link fallback otherwise; resend rotates the token, revoke kills the link, one live invitation per address, existing members cannot be re-invited.
+- Turnstile verification (siteverify, fail closed once active) on sign-up, sign-in after failures, the contact form and the free document generator.
+- `/admin/users`: email search by POST (exact/prefix, never in a URL), account view (organizations, roles, created, last sign-in, confirmation, sign-in and deletion state), disable/enable sign-in (ban + end sessions), resend confirmation, send password reset, cancel or force deletion; all audited.
+- Migration `20261006000900_accounts_access.sql`; pgTAP `accounts_access.test.sql` (41); unit `tests/unit/accounts.test.ts`; e2e `identity.spec.ts` extended (duplicate sign-up, return-to-page, reset via the stack's mailbox, invite fallback, resend/revoke, role change, password change, admin search/disable, non-admin 404). CI exposes the stack mailbox and a synthetic admin address to the database job. E2E passwords are unique per run because the breach check refuses well-known phrases. DB types hand-added; CI's generated file is authoritative. Nothing was run locally; all gates pending CI.
+
 ### Homepage v3: photos, search sections and navigation (D-018)
 
 - Four credited Unsplash photos support homepage sections (`SectionPhoto`, `HOME_PHOTOS` in `src/lib/content/home.ts`): desk (spScdgWY-_c, 2H Media), warehouse (VnMbc9Szs-E, Arum Visuals, download tracked 2026-10-06), port (b4lmjXJi9e4, Cosmin Andrei Buzamat) and truck (crHhZlES310, Maxim Tolchinskiy). Lazy, explicit dimensions, cropped `srcset` (`unsplashSrcSetAt`), clip-path/scale reveal only, reduced-motion safe. The hero product frame is unchanged.

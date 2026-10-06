@@ -9,3 +9,5 @@ src/lib/database.types.ts
 
 # Raw DataForSEO responses, kept byte for byte as the API returned them.
 docs/research/dataforseo-2026-10-06/
+# Go templates rendered by Supabase Auth; kept byte-for-byte as the hosted project uses them.
+supabase/templates

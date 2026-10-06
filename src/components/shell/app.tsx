@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
+  ArrowLeftRight,
   Boxes,
   Building2,
   CreditCard,
@@ -54,6 +55,8 @@ export function AppShell({
         { href: `/app/${orgId}/companies`, label: 'Companies', icon: Building2 },
         { href: `/app/${orgId}/members`, label: 'Members', icon: Users },
         { href: `/app/${orgId}/billing`, label: 'Billing', icon: CreditCard },
+        // Switching organization is the list of them, each with the caller's role.
+        { href: '/app', label: 'Switch organization', icon: ArrowLeftRight },
       ]
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 

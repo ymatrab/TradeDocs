@@ -12,7 +12,7 @@ export function MemberRow({
   name,
   role,
   isSelf,
-  canAdminister,
+  canRemove,
   canChangeRole,
 }: {
   org: string;
@@ -20,7 +20,8 @@ export function MemberRow({
   name: string | null;
   role: string;
   isSelf: boolean;
-  canAdminister: boolean;
+  /** Owners remove anyone, administrators remove plain members, anyone may leave. */
+  canRemove: boolean;
   canChangeRole: boolean;
 }) {
   const [roleState, roleAction, rolePending] = useActionState<ActionState, FormData>(
@@ -64,6 +65,11 @@ export function MemberRow({
             {roleState.error}
           </p>
         ) : null}
+        {roleState.notice && !roleState.error ? (
+          <p className="muted" role="status" style={{ marginTop: 6, marginBottom: 0 }}>
+            {roleState.notice}
+          </p>
+        ) : null}
       </td>
       <td>
         {canChangeRole ? (
@@ -93,7 +99,7 @@ export function MemberRow({
         )}
       </td>
       <td>
-        {canAdminister || isSelf ? (
+        {canRemove ? (
           <>
             {/* The form holds the action and its fields; the confirmation submits it
                 by id, so the click that starts a removal is not the click that
