@@ -1,6 +1,6 @@
 # Content inventory and plan
 
-Proposed owner: Content Lead; named assignment pending. Route indexation, metadata and structured data are governed by [SEO.md](SEO.md); regulated wording by [LEGAL.md](LEGAL.md). Plan of record: [docs/research/content-plan-v2-2026-10-06.md](docs/research/content-plan-v2-2026-10-06.md) (60 posts, 30 guides, launch batch 1), extending [content-plan-2026-10-05.md](docs/research/content-plan-2026-10-05.md). Writers follow [docs/content/WRITING_BRIEF.md](docs/content/WRITING_BRIEF.md). Last reviewed: 2026-10-06.
+Proposed owner: Content Lead; named assignment pending. Route indexation, metadata and structured data are governed by [SEO.md](SEO.md); regulated wording by [LEGAL.md](LEGAL.md). Plan of record: [docs/research/content-plan-v3-2026-10-07.md](docs/research/content-plan-v3-2026-10-07.md) (D-022: 224 demand-backed pages in waves A–D, 250 with the owner's wave E choice; 100 posts, glossary, country pages, new tools), extending [docs/research/content-plan-v2-2026-10-06.md](docs/research/content-plan-v2-2026-10-06.md) (60 posts, 30 guides, launch batch 1), which extends [content-plan-2026-10-05.md](docs/research/content-plan-2026-10-05.md). Writers follow [docs/content/WRITING_BRIEF.md](docs/content/WRITING_BRIEF.md). Last reviewed: 2026-10-07.
 
 ## Current public pages
 

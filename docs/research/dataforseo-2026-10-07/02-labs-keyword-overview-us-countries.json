@@ -1,0 +1,6929 @@
+{
+  "id": "10070144-2048-0607-0000-730e07dd0ced",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "keyword": "australia customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 16:01:43 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "australia customs regulation",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:52:59 +00:00"
+      }
+    },
+    {
+      "keyword": "australia import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 20:23:30 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:38:00 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 20:00:38 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 4.01,
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 30,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 40,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations brazil",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 43.7,
+        "dofollow": 25.2,
+        "referring_pages": 42.3,
+        "referring_domains": 14.9,
+        "referring_main_domains": 21.8,
+        "rank": 76.9,
+        "main_domain_rank": 506,
+        "last_updated_time": "2023-11-27 17:39:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:26:17 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 03:31:55 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:19:25 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 09:08:49 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:12:12 +00:00"
+      }
+    },
+    {
+      "keyword": "canada customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 04:30:06 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 6.29,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.05,
+        "high_top_of_page_bid": 17.37,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 390,
+          "2025-12": 390,
+          "2025-11": 480,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.5,
+        "dofollow": 15.5,
+        "referring_pages": 16,
+        "referring_domains": 7.3,
+        "referring_main_domains": 6.7,
+        "rank": 44.9,
+        "main_domain_rank": 471.9,
+        "last_updated_time": "2026-08-03 02:56:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:34:26 +00:00"
+      }
+    },
+    {
+      "keyword": "canada customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:22:22 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 40,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "yearly": -60
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations for canada",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 62,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3855.9,
+        "dofollow": 2831.9,
+        "referring_pages": 3489.7,
+        "referring_domains": 398.4,
+        "referring_main_domains": 363.6,
+        "rank": 295.5,
+        "main_domain_rank": 539.2,
+        "last_updated_time": "2025-11-02 21:41:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 09:35:12 +00:00"
+      }
+    },
+    {
+      "keyword": "canada customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:13:36 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs requirements for canada",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 66,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10185.4,
+        "dofollow": 8152,
+        "referring_pages": 8662,
+        "referring_domains": 395.1,
+        "referring_main_domains": 352.3,
+        "rank": 319.6,
+        "main_domain_rank": 549.6,
+        "last_updated_time": "2024-04-14 11:58:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:08:16 +00:00"
+      }
+    },
+    {
+      "keyword": "canada import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 13:36:40 +00:00",
+        "competition": 0.21,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 67,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7834.4,
+        "dofollow": 7737.6,
+        "referring_pages": 7819.4,
+        "referring_domains": 76.3,
+        "referring_main_domains": 70.5,
+        "rank": 201.5,
+        "main_domain_rank": 522.7,
+        "last_updated_time": "2023-09-03 09:12:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 09:35:43 +00:00"
+      }
+    },
+    {
+      "keyword": "china customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-06-14 23:58:47 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:19:18 +00:00"
+      }
+    },
+    {
+      "keyword": "china customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:40:54 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china custom regulations",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 44.6,
+        "dofollow": 26.2,
+        "referring_pages": 43.4,
+        "referring_domains": 19.9,
+        "referring_main_domains": 19.5,
+        "rank": 115.8,
+        "main_domain_rank": 565.4,
+        "last_updated_time": "2024-11-15 07:56:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 05:12:31 +00:00"
+      }
+    },
+    {
+      "keyword": "china customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:09:04 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 04:39:48 +00:00"
+      }
+    },
+    {
+      "keyword": "china import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 00:23:05 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:37:49 +00:00"
+      }
+    },
+    {
+      "keyword": "colombia customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 08:12:04 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 131.9,
+        "dofollow": 90,
+        "referring_pages": 113.7,
+        "referring_domains": 71.8,
+        "referring_main_domains": 63.7,
+        "rank": 62.1,
+        "main_domain_rank": 426,
+        "last_updated_time": "2023-07-29 19:40:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 04:30:46 +00:00"
+      }
+    },
+    {
+      "keyword": "colombia import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-13 20:59:09 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 06:38:09 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:44:11 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-04": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-26 18:41:03 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice brazil",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:53:58 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10012,
+          11093
+        ],
+        "monthly_searches": {
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-10": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "brazil commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 05:09:44 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice canada",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:01:57 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 6.29,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.05,
+        "high_top_of_page_bid": 17.37,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 390,
+          "2025-12": 390,
+          "2025-11": 480,
+          "2025-10": 720,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20.8,
+        "dofollow": 18.7,
+        "referring_pages": 19.3,
+        "referring_domains": 9.3,
+        "referring_main_domains": 8.1,
+        "rank": 77,
+        "main_domain_rank": 402.6,
+        "last_updated_time": "2026-09-07 04:10:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:00:45 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:57:38 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 40,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "quarterly": 100,
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-26 08:42:02 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice germany",
+      "keyword_info": {
+        "last_updated_time": "2026-06-13 18:14:56 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "core_keyword": "germany commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 05:00:45 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:37:23 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 200
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 03:35:27 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice israel",
+      "keyword_info": {
+        "last_updated_time": "2026-06-12 10:32:07 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 09:14:40 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:48:53 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 1.32,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice for mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 23:57:05 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice netherlands",
+      "keyword_info": {
+        "last_updated_time": "2026-06-14 04:03:55 +00:00",
+        "categories": [
+          10012,
+          11093
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 06:22:00 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice philippines",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:27:25 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:26:02 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice saudi arabia",
+      "keyword_info": {
+        "last_updated_time": "2026-06-15 04:53:45 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "core_keyword": "saudi arabia commercial invoice",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:40:34 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice singapore",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:50:30 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 05:29:59 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice south africa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 07:06:56 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-26 18:27:47 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice uk",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 08:54:59 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:17:19 +00:00"
+      }
+    },
+    {
+      "keyword": "dubai customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 14:57:09 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2025-12": 10,
+          "2025-10": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations dubai",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:15:23 +00:00"
+      }
+    },
+    {
+      "keyword": "dubai import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 06:31:31 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2025-12": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 13:05:26 +00:00"
+      }
+    },
+    {
+      "keyword": "export to australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:09:12 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 38.52,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "australia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 88.3,
+        "dofollow": 52.3,
+        "referring_pages": 77.9,
+        "referring_domains": 40.3,
+        "referring_main_domains": 37,
+        "rank": 168.8,
+        "main_domain_rank": 538.3,
+        "last_updated_time": "2024-02-04 03:02:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:01:05 +00:00"
+      }
+    },
+    {
+      "keyword": "export to brazil",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 21:34:41 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 40,
+          "2026-06": 110,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 260,
+          "2025-11": 390,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 75,
+          "quarterly": -36,
+          "yearly": -73
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "brazil exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 139.9,
+        "dofollow": 117.7,
+        "referring_pages": 131.1,
+        "referring_domains": 75.1,
+        "referring_main_domains": 71,
+        "rank": 90.1,
+        "main_domain_rank": 421.3,
+        "last_updated_time": "2026-08-10 02:54:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:19:23 +00:00"
+      }
+    },
+    {
+      "keyword": "export to canada",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 00:36:50 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "low_top_of_page_bid": 5.73,
+        "high_top_of_page_bid": 14.19,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 70,
+          "2026-06": 110,
+          "2026-05": 260,
+          "2026-04": 210,
+          "2026-03": 170,
+          "2026-02": 320,
+          "2026-01": 210,
+          "2025-12": 210,
+          "2025-11": 210,
+          "2025-10": 390,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "quarterly": 91,
+          "yearly": 24
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "canada exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 44,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 562.3,
+        "dofollow": 481.5,
+        "referring_pages": 521.4,
+        "referring_domains": 177.7,
+        "referring_main_domains": 168.4,
+        "rank": 216.2,
+        "main_domain_rank": 527.8,
+        "last_updated_time": "2026-08-10 02:55:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 15:56:31 +00:00"
+      }
+    },
+    {
+      "keyword": "export to china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:25:42 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 17.74,
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.95,
+        "high_top_of_page_bid": 12.42,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 110,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 210,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -58
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china export",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 594.7,
+        "dofollow": 463.9,
+        "referring_pages": 536.8,
+        "referring_domains": 303.3,
+        "referring_main_domains": 281.9,
+        "rank": 146.9,
+        "main_domain_rank": 527.4,
+        "last_updated_time": "2026-07-05 03:49:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 09:07:31 +00:00"
+      }
+    },
+    {
+      "keyword": "export to colombia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:34:27 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "colombia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 74.5,
+        "dofollow": 55,
+        "referring_pages": 63.6,
+        "referring_domains": 42.6,
+        "referring_main_domains": 39.5,
+        "rank": 102.7,
+        "main_domain_rank": 487.6,
+        "last_updated_time": "2026-02-01 20:42:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 18:59:29 +00:00"
+      }
+    },
+    {
+      "keyword": "export to dubai",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:09:25 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dubai exporters",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.2,
+        "dofollow": 3.6,
+        "referring_pages": 4.2,
+        "referring_domains": 2.6,
+        "referring_main_domains": 2.5,
+        "rank": 19.9,
+        "main_domain_rank": 537.7,
+        "last_updated_time": "2024-02-04 03:02:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 07:50:08 +00:00"
+      }
+    },
+    {
+      "keyword": "export to france",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:54:32 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "france exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 37.2,
+        "dofollow": 25.5,
+        "referring_pages": 34.7,
+        "referring_domains": 20.6,
+        "referring_main_domains": 18.1,
+        "rank": 108.6,
+        "main_domain_rank": 550.3,
+        "last_updated_time": "2024-02-20 19:48:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 15:46:39 +00:00"
+      }
+    },
+    {
+      "keyword": "export to germany",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 10:53:52 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "germany exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 241.9,
+        "dofollow": 125.8,
+        "referring_pages": 225.9,
+        "referring_domains": 69.8,
+        "referring_main_domains": 64.8,
+        "rank": 115,
+        "main_domain_rank": 495.9,
+        "last_updated_time": "2024-03-04 08:57:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:44:35 +00:00"
+      }
+    },
+    {
+      "keyword": "export to india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:22:54 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 170,
+          "2026-04": 170,
+          "2026-03": 210,
+          "2026-02": 110,
+          "2026-01": 170,
+          "2025-12": 90,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": -29,
+          "yearly": -29
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "india exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 543,
+        "dofollow": 476.6,
+        "referring_pages": 517.2,
+        "referring_domains": 155.9,
+        "referring_main_domains": 149.6,
+        "rank": 126.8,
+        "main_domain_rank": 543.4,
+        "last_updated_time": "2026-09-15 21:21:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:26:41 +00:00"
+      }
+    },
+    {
+      "keyword": "export to israel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:55:21 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "israel exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 28,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:09:47 +00:00"
+      }
+    },
+    {
+      "keyword": "export to italy",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 20:33:41 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "italy exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 80.8,
+        "dofollow": 51,
+        "referring_pages": 64.5,
+        "referring_domains": 26,
+        "referring_main_domains": 24,
+        "rank": 75.9,
+        "main_domain_rank": 596.1,
+        "last_updated_time": "2024-02-02 09:55:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 15:38:40 +00:00"
+      }
+    },
+    {
+      "keyword": "export to japan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:24:03 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 30,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "yearly": -60
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "japan exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 398.3,
+        "dofollow": 386.9,
+        "referring_pages": 391.3,
+        "referring_domains": 20.9,
+        "referring_main_domains": 20.1,
+        "rank": 92.9,
+        "main_domain_rank": 479.4,
+        "last_updated_time": "2025-11-26 12:07:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:26:41 +00:00"
+      }
+    },
+    {
+      "keyword": "export to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:44:35 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "low_top_of_page_bid": 2.54,
+        "high_top_of_page_bid": 11.62,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -25,
+          "yearly": -25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 32.5,
+        "dofollow": 22.8,
+        "referring_pages": 29.4,
+        "referring_domains": 13.8,
+        "referring_main_domains": 13.1,
+        "rank": 36.5,
+        "main_domain_rank": 417.6,
+        "last_updated_time": "2026-08-30 06:56:05 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 08:07:00 +00:00"
+      }
+    },
+    {
+      "keyword": "export to netherlands",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 15:01:41 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "netherlands exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 15:46:39 +00:00"
+      }
+    },
+    {
+      "keyword": "export to new zealand",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:33:04 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "new zealand exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 484.6,
+        "dofollow": 385.7,
+        "referring_pages": 405.2,
+        "referring_domains": 42.5,
+        "referring_main_domains": 38.7,
+        "rank": 169,
+        "main_domain_rank": 428.8,
+        "last_updated_time": "2024-02-04 03:02:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 15:38:40 +00:00"
+      }
+    },
+    {
+      "keyword": "export to nigeria",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 01:56:28 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "nigeria exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 16:11:14 +00:00"
+      }
+    },
+    {
+      "keyword": "export to philippines",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:18:37 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "exporters in the philippines",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 48.3,
+        "dofollow": 21.7,
+        "referring_pages": 44.6,
+        "referring_domains": 24.8,
+        "referring_main_domains": 22.2,
+        "rank": 57.8,
+        "main_domain_rank": 544.4,
+        "last_updated_time": "2024-04-15 11:45:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 17:49:01 +00:00"
+      }
+    },
+    {
+      "keyword": "export to saudi arabia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:50:47 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "saudi arabia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 34.6,
+        "dofollow": 16.9,
+        "referring_pages": 34.1,
+        "referring_domains": 23.4,
+        "referring_main_domains": 20.8,
+        "rank": 61.6,
+        "main_domain_rank": 488.9,
+        "last_updated_time": "2024-02-04 03:02:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:32:24 +00:00"
+      }
+    },
+    {
+      "keyword": "export to singapore",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:24:11 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "singapore exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 584.2,
+        "dofollow": 519.1,
+        "referring_pages": 542.3,
+        "referring_domains": 68.9,
+        "referring_main_domains": 61.1,
+        "rank": 84.8,
+        "main_domain_rank": 447.6,
+        "last_updated_time": "2026-03-11 13:24:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:41:35 +00:00"
+      }
+    },
+    {
+      "keyword": "export to south africa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:14:26 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "south africa exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:26:07 +00:00"
+      }
+    },
+    {
+      "keyword": "export to south korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 04:02:07 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 20,
+          "2026-06": 50,
+          "2026-05": 260,
+          "2026-04": 170,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 90,
+          "2025-12": 90,
+          "2025-11": 110,
+          "2025-10": 90,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": 150,
+          "yearly": -44
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 32,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4014.9,
+        "dofollow": 3840.6,
+        "referring_pages": 3894.9,
+        "referring_domains": 353.4,
+        "referring_main_domains": 342,
+        "rank": 200.6,
+        "main_domain_rank": 491.2,
+        "last_updated_time": "2026-09-17 23:47:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 08:39:19 +00:00"
+      }
+    },
+    {
+      "keyword": "export to spain",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:27:29 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-01": 10,
+          "2025-10": 10,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "spain exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 17:38:23 +00:00"
+      }
+    },
+    {
+      "keyword": "export to uae",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:04:32 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "uae exporters",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 56.4,
+        "dofollow": 42.5,
+        "referring_pages": 51.6,
+        "referring_domains": 15.7,
+        "referring_main_domains": 20.6,
+        "rank": 135.6,
+        "main_domain_rank": 542.4,
+        "last_updated_time": "2023-08-20 11:28:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-05-02 05:35:50 +00:00"
+      }
+    },
+    {
+      "keyword": "export to uk",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 09:55:38 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -86
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 546.4,
+        "dofollow": 505.7,
+        "referring_pages": 518.1,
+        "referring_domains": 72.2,
+        "referring_main_domains": 67.7,
+        "rank": 159.5,
+        "main_domain_rank": 556.4,
+        "last_updated_time": "2026-05-31 05:36:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 12:11:48 +00:00"
+      }
+    },
+    {
+      "keyword": "export to vietnam",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 22:58:42 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vietnam exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 08:04:46 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 22:40:40 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 38.52,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "australia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25.6,
+        "dofollow": 15.2,
+        "referring_pages": 23.4,
+        "referring_domains": 14.6,
+        "referring_main_domains": 13.1,
+        "rank": 92.8,
+        "main_domain_rank": 558.9,
+        "last_updated_time": "2024-02-04 03:02:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-05-02 12:49:16 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to brazil",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:36:56 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 40,
+          "2026-06": 110,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 260,
+          "2025-11": 390,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 75,
+          "quarterly": -36,
+          "yearly": -73
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "brazil exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 139.7,
+        "dofollow": 117.9,
+        "referring_pages": 131.3,
+        "referring_domains": 75,
+        "referring_main_domains": 71,
+        "rank": 94.3,
+        "main_domain_rank": 472.7,
+        "last_updated_time": "2026-08-10 02:56:25 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 18:34:22 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to canada",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:32:15 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 260,
+        "low_top_of_page_bid": 5.73,
+        "high_top_of_page_bid": 14.19,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 70,
+          "2026-06": 110,
+          "2026-05": 260,
+          "2026-04": 210,
+          "2026-03": 170,
+          "2026-02": 320,
+          "2026-01": 210,
+          "2025-12": 210,
+          "2025-11": 210,
+          "2025-10": 390,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "quarterly": 91,
+          "yearly": 24
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "canada exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 40,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 430.9,
+        "dofollow": 412.5,
+        "referring_pages": 424.5,
+        "referring_domains": 38.1,
+        "referring_main_domains": 35.6,
+        "rank": 175.8,
+        "main_domain_rank": 424.3,
+        "last_updated_time": "2026-08-10 03:10:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:09:48 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:43:32 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 17.74,
+        "search_volume": 260,
+        "low_top_of_page_bid": 2.95,
+        "high_top_of_page_bid": 12.42,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 110,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 210,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -58
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "china export",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 19.4,
+        "dofollow": 15.6,
+        "referring_pages": 18.6,
+        "referring_domains": 11.4,
+        "referring_main_domains": 10.8,
+        "rank": 59.5,
+        "main_domain_rank": 515.2,
+        "last_updated_time": "2026-07-05 09:43:19 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 18:17:27 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to colombia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 10:30:37 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "colombia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2.2,
+        "dofollow": 2,
+        "referring_pages": 2,
+        "referring_domains": 1,
+        "referring_main_domains": 0.9,
+        "rank": 16.1,
+        "main_domain_rank": 496.7,
+        "last_updated_time": "2026-02-01 20:41:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 18:29:41 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to dubai",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 21:41:03 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "dubai exporters",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.5,
+        "dofollow": 3.8,
+        "referring_pages": 4.5,
+        "referring_domains": 2.9,
+        "referring_main_domains": 2.8,
+        "rank": 22.6,
+        "main_domain_rank": 526.4,
+        "last_updated_time": "2024-02-04 03:02:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:57:06 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to france",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 21:30:39 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "france exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 57.3,
+        "dofollow": 29.8,
+        "referring_pages": 49.6,
+        "referring_domains": 30.7,
+        "referring_main_domains": 25.8,
+        "rank": 109.5,
+        "main_domain_rank": 484.2,
+        "last_updated_time": "2024-02-02 09:54:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 15:38:12 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to germany",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:34:07 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "germany exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 30,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 144.5,
+        "dofollow": 57.4,
+        "referring_pages": 123.5,
+        "referring_domains": 32.5,
+        "referring_main_domains": 30.6,
+        "rank": 72.7,
+        "main_domain_rank": 497.9,
+        "last_updated_time": "2024-03-13 13:36:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:57:06 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 06:08:26 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 170,
+          "2026-04": 170,
+          "2026-03": 210,
+          "2026-02": 110,
+          "2026-01": 170,
+          "2025-12": 90,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": -29,
+          "yearly": -29
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "india exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 108696.9,
+        "dofollow": 108521.5,
+        "referring_pages": 108627.6,
+        "referring_domains": 2141,
+        "referring_main_domains": 2130.1,
+        "rank": 168.9,
+        "main_domain_rank": 569.4,
+        "last_updated_time": "2026-06-04 18:48:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:45:26 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to israel",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 09:42:57 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "israel exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 28,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 19:07:31 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to italy",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 14:30:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "italy exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 73.9,
+        "dofollow": 45.5,
+        "referring_pages": 66.3,
+        "referring_domains": 29,
+        "referring_main_domains": 26.8,
+        "rank": 70.5,
+        "main_domain_rank": 576.2,
+        "last_updated_time": "2024-02-02 09:54:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:12:11 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to japan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:33:10 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 30,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "yearly": -60
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "japan exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 17,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 51.5,
+        "dofollow": 39.7,
+        "referring_pages": 44.4,
+        "referring_domains": 18.8,
+        "referring_main_domains": 18.3,
+        "rank": 75,
+        "main_domain_rank": 333.9,
+        "last_updated_time": "2025-11-03 02:05:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:12:20 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 03:27:49 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "low_top_of_page_bid": 2.54,
+        "high_top_of_page_bid": 11.62,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -25,
+          "yearly": -25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "mexico exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.9,
+        "dofollow": 4.1,
+        "referring_pages": 4.3,
+        "referring_domains": 1.3,
+        "referring_main_domains": 1.3,
+        "rank": 28.3,
+        "main_domain_rank": 431.8,
+        "last_updated_time": "2026-08-30 06:46:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 18:34:22 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to netherlands",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 14:34:35 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "netherlands exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-05-01 09:10:37 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to new zealand",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:18:59 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "new zealand exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 77.2,
+        "dofollow": 50.2,
+        "referring_pages": 71.1,
+        "referring_domains": 45.6,
+        "referring_main_domains": 41.1,
+        "rank": 166.3,
+        "main_domain_rank": 463.1,
+        "last_updated_time": "2024-02-04 03:02:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:04:31 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to nigeria",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 10:21:38 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "nigeria exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:05:22 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to philippines",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 19:44:23 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "exporters in the philippines",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 24.9,
+        "dofollow": 16.6,
+        "referring_pages": 23.9,
+        "referring_domains": 13,
+        "referring_main_domains": 11.7,
+        "rank": 50.6,
+        "main_domain_rank": 516.9,
+        "last_updated_time": "2024-02-19 04:11:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:57:06 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to saudi arabia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:22:21 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "saudi arabia exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.2,
+        "dofollow": 15.5,
+        "referring_pages": 32.8,
+        "referring_domains": 22.7,
+        "referring_main_domains": 20.2,
+        "rank": 58.9,
+        "main_domain_rank": 473.3,
+        "last_updated_time": "2024-02-04 03:02:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 10:57:01 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to singapore",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:59:16 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "singapore exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 13.8,
+        "dofollow": 12,
+        "referring_pages": 12.8,
+        "referring_domains": 9.4,
+        "referring_main_domains": 8.2,
+        "rank": 27.6,
+        "main_domain_rank": 474.6,
+        "last_updated_time": "2026-03-11 13:24:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:26:59 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to south africa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 09:30:32 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "south africa exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:57:06 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to south korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:48:03 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 20,
+          "2026-06": 50,
+          "2026-05": 260,
+          "2026-04": 170,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 90,
+          "2025-12": 90,
+          "2025-11": 110,
+          "2025-10": 90,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": 150,
+          "yearly": -44
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export to south korea",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 41.9,
+        "dofollow": 31,
+        "referring_pages": 37.2,
+        "referring_domains": 20.9,
+        "referring_main_domains": 19.3,
+        "rank": 70.6,
+        "main_domain_rank": 472.8,
+        "last_updated_time": "2026-09-17 23:46:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 08:45:26 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to spain",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:27:58 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-01": 10,
+          "2025-10": 10,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "spain exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:09:48 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to uae",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 00:26:53 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "uae exporters",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 54.6,
+        "dofollow": 38.6,
+        "referring_pages": 51.9,
+        "referring_domains": 12.6,
+        "referring_main_domains": 20.6,
+        "rank": 79.4,
+        "main_domain_rank": 587.1,
+        "last_updated_time": "2023-11-11 13:08:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 16:10:43 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to uk",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:45:25 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -86
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 455.4,
+        "dofollow": 432.1,
+        "referring_pages": 434.3,
+        "referring_domains": 27.3,
+        "referring_main_domains": 23.9,
+        "rank": 108.5,
+        "main_domain_rank": 470.6,
+        "last_updated_time": "2026-05-31 05:36:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:38:42 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to vietnam",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:41:30 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "vietnam exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 16:26:07 +00:00"
+      }
+    },
+    {
+      "keyword": "france customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:23:52 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations for france",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 10:06:20 +00:00"
+      }
+    },
+    {
+      "keyword": "france import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-13 11:46:23 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:16:41 +00:00"
+      }
+    },
+    {
+      "keyword": "germany customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-06-17 14:40:49 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:14:42 +00:00"
+      }
+    },
+    {
+      "keyword": "germany customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 05:17:32 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations germany",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 26,
+        "dofollow": 21.1,
+        "referring_pages": 24,
+        "referring_domains": 11.2,
+        "referring_main_domains": 9.8,
+        "rank": 106,
+        "main_domain_rank": 476.2,
+        "last_updated_time": "2025-10-19 21:52:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 15:34:43 +00:00"
+      }
+    },
+    {
+      "keyword": "india customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 00:13:04 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations india",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 43.1,
+        "dofollow": 10.9,
+        "referring_pages": 42.8,
+        "referring_domains": 10.7,
+        "referring_main_domains": 10.7,
+        "rank": 83.7,
+        "main_domain_rank": 382.8,
+        "last_updated_time": "2025-01-05 01:09:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:56:57 +00:00"
+      }
+    },
+    {
+      "keyword": "india customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-12 17:19:53 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "core_keyword": "customs requirements for india",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:35:22 +00:00"
+      }
+    },
+    {
+      "keyword": "india import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 07:23:24 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28.4,
+        "dofollow": 24.3,
+        "referring_pages": 28.4,
+        "referring_domains": 7.9,
+        "referring_main_domains": 7.8,
+        "rank": 73.5,
+        "main_domain_rank": 539.7,
+        "last_updated_time": "2025-01-05 01:05:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 10:34:20 +00:00"
+      }
+    },
+    {
+      "keyword": "israel customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:59:48 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12.7,
+        "dofollow": 12.1,
+        "referring_pages": 12.5,
+        "referring_domains": 9.5,
+        "referring_main_domains": 8.9,
+        "rank": 47.2,
+        "main_domain_rank": 453.9,
+        "last_updated_time": "2025-01-03 11:43:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 05:44:50 +00:00"
+      }
+    },
+    {
+      "keyword": "israel import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-18 05:28:56 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:28:05 +00:00"
+      }
+    },
+    {
+      "keyword": "italy customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:27:39 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations italy",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 437.8,
+        "dofollow": 240.9,
+        "referring_pages": 284.4,
+        "referring_domains": 77,
+        "referring_main_domains": 67,
+        "rank": 92,
+        "main_domain_rank": 539.4,
+        "last_updated_time": "2025-01-03 09:48:25 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 05:28:02 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-06-15 07:45:28 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 12:38:34 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:16:45 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 123.4,
+        "dofollow": 64.7,
+        "referring_pages": 119.6,
+        "referring_domains": 39.5,
+        "referring_main_domains": 35.5,
+        "rank": 136.2,
+        "main_domain_rank": 536.7,
+        "last_updated_time": "2024-04-01 18:40:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 07:39:19 +00:00"
+      }
+    },
+    {
+      "keyword": "japan import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-15 18:22:42 +00:00",
+        "categories": [
+          10004,
+          10015,
+          10135,
+          10719,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 03:08:35 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:20:43 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "cpc": 1.32,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:07:26 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:51:04 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 30,
+          "2026-02": 50,
+          "2026-01": 40,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": -67,
+          "quarterly": -50,
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 87.1,
+        "dofollow": 65.7,
+        "referring_pages": 71.8,
+        "referring_domains": 42.5,
+        "referring_main_domains": 32.9,
+        "rank": 111.5,
+        "main_domain_rank": 370.2,
+        "last_updated_time": "2026-08-28 07:33:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:48:29 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 21:20:42 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "cpc": 0.34,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 36,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 118.4,
+        "dofollow": 87.9,
+        "referring_pages": 106.3,
+        "referring_domains": 51.6,
+        "referring_main_domains": 49.9,
+        "rank": 152,
+        "main_domain_rank": 458.2,
+        "last_updated_time": "2026-01-11 09:11:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:36:09 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:21:34 +00:00",
+        "competition": 0.23,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2938.1,
+        "dofollow": 2632.8,
+        "referring_pages": 2801,
+        "referring_domains": 78.3,
+        "referring_main_domains": 99.3,
+        "rank": 92.5,
+        "main_domain_rank": 506,
+        "last_updated_time": "2023-08-06 08:50:36 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-04 20:14:21 +00:00"
+      }
+    },
+    {
+      "keyword": "netherlands customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:20:05 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 43,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 79.2,
+        "dofollow": 69.6,
+        "referring_pages": 76.8,
+        "referring_domains": 47.3,
+        "referring_main_domains": 32.3,
+        "rank": 129.8,
+        "main_domain_rank": 545.8,
+        "last_updated_time": "2023-09-04 19:39:25 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:54:29 +00:00"
+      }
+    },
+    {
+      "keyword": "new zealand customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 09:00:58 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:50:22 +00:00"
+      }
+    },
+    {
+      "keyword": "new zealand customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 07:58:42 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:57:57 +00:00"
+      }
+    },
+    {
+      "keyword": "new zealand import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:03:26 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2025-11": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:44:03 +00:00"
+      }
+    },
+    {
+      "keyword": "nigeria customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 12:01:39 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:44:50 +00:00"
+      }
+    },
+    {
+      "keyword": "nigeria customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:58:32 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:41:11 +00:00"
+      }
+    },
+    {
+      "keyword": "nigeria import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 13:37:22 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:41:11 +00:00"
+      }
+    },
+    {
+      "keyword": "philippines customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:29:48 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:37:21 +00:00"
+      }
+    },
+    {
+      "keyword": "saudi arabia customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:59:01 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 42,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42.7,
+        "dofollow": 32,
+        "referring_pages": 38.7,
+        "referring_domains": 18.1,
+        "referring_main_domains": 16,
+        "rank": 117.9,
+        "main_domain_rank": 464.9,
+        "last_updated_time": "2023-01-13 20:25:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:16:50 +00:00"
+      }
+    },
+    {
+      "keyword": "saudi arabia import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:07:51 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 40,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:46:15 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to australia from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 14:39:45 +00:00",
+        "competition": 0.49,
+        "competition_level": "MEDIUM",
+        "cpc": 3,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 4.3,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 390,
+          "2026-06": 390,
+          "2026-05": 390,
+          "2026-04": 320,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from us to australia",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14566.7,
+        "dofollow": 14497.8,
+        "referring_pages": 14542.2,
+        "referring_domains": 56.5,
+        "referring_main_domains": 51.9,
+        "rank": 116.8,
+        "main_domain_rank": 512.6,
+        "last_updated_time": "2026-09-07 22:43:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 22:32:27 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to brazil from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:04:39 +00:00",
+        "competition": 0.47,
+        "competition_level": "MEDIUM",
+        "cpc": 4.08,
+        "search_volume": 140,
+        "low_top_of_page_bid": 1.14,
+        "high_top_of_page_bid": 4.81,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 90,
+          "2026-06": 140,
+          "2026-05": 170,
+          "2026-04": 170,
+          "2026-03": 140,
+          "2026-02": 140,
+          "2026-01": 140,
+          "2025-12": 140,
+          "2025-11": 140,
+          "2025-10": 110,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": -22,
+          "quarterly": -50,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10.7,
+        "dofollow": 8.7,
+        "referring_pages": 10.3,
+        "referring_domains": 1.6,
+        "referring_main_domains": 1.6,
+        "rank": 41.4,
+        "main_domain_rank": 564.4,
+        "last_updated_time": "2026-09-14 16:44:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 20:57:38 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to canada from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 08:53:51 +00:00",
+        "competition": 0.4,
+        "competition_level": "MEDIUM",
+        "cpc": 4.18,
+        "search_volume": 880,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 4.94,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 880,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 1000,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "monthly": 14,
+          "quarterly": 14,
+          "yearly": 39
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from the us to canada",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28985.9,
+        "dofollow": 14528.5,
+        "referring_pages": 14560.3,
+        "referring_domains": 37.3,
+        "referring_main_domains": 32.6,
+        "rank": 113.4,
+        "main_domain_rank": 534,
+        "last_updated_time": "2026-09-06 00:52:50 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:25:53 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to china from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:26:25 +00:00",
+        "competition": 0.38,
+        "competition_level": "MEDIUM",
+        "cpc": 3.89,
+        "search_volume": 10,
+        "low_top_of_page_bid": 1.35,
+        "high_top_of_page_bid": 5.1,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from china to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14305.6,
+        "dofollow": 14179.7,
+        "referring_pages": 14237.7,
+        "referring_domains": 69.4,
+        "referring_main_domains": 62.1,
+        "rank": 135.8,
+        "main_domain_rank": 509.4,
+        "last_updated_time": "2026-02-06 16:26:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 22:23:22 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to colombia from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 21:19:38 +00:00",
+        "competition": 0.42,
+        "competition_level": "MEDIUM",
+        "cpc": 2.93,
+        "search_volume": 110,
+        "low_top_of_page_bid": 0.76,
+        "high_top_of_page_bid": 4,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 110,
+          "2026-06": 70,
+          "2026-05": 90,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 170,
+          "2025-10": 140,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "quarterly": 57,
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from us to colombia",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.8,
+        "dofollow": 5.7,
+        "referring_pages": 8,
+        "referring_domains": 2.8,
+        "referring_main_domains": 2.8,
+        "rank": 42.5,
+        "main_domain_rank": 555.6,
+        "last_updated_time": "2026-09-16 20:51:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 22:31:20 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to germany from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:15:04 +00:00",
+        "competition": 0.52,
+        "competition_level": "MEDIUM",
+        "cpc": 3.04,
+        "search_volume": 210,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 3.38,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12406
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 140,
+          "2026-06": 140,
+          "2026-05": 170,
+          "2026-04": 210,
+          "2026-03": 170,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 260,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 21,
+          "quarterly": 21,
+          "yearly": -65
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 11,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14376,
+        "dofollow": 14297.2,
+        "referring_pages": 14351.6,
+        "referring_domains": 72.1,
+        "referring_main_domains": 66.7,
+        "rank": 109.4,
+        "main_domain_rank": 474.3,
+        "last_updated_time": "2026-08-09 23:56:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 22:54:06 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to india from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:03:43 +00:00",
+        "competition": 0.47,
+        "competition_level": "MEDIUM",
+        "cpc": 4.54,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.12,
+        "high_top_of_page_bid": 4.83,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 590,
+          "2026-06": 390,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 390,
+          "2026-01": 480,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 480,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship from india to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15.7,
+        "dofollow": 11.5,
+        "referring_pages": 14.4,
+        "referring_domains": 8.3,
+        "referring_main_domains": 8.1,
+        "rank": 64,
+        "main_domain_rank": 567.3,
+        "last_updated_time": "2026-08-03 07:03:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 20:55:21 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to israel from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 17:16:09 +00:00",
+        "competition": 0.47,
+        "competition_level": "MEDIUM",
+        "cpc": 4.15,
+        "search_volume": 70,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 4.11,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 140,
+          "2026-03": 110,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 70,
+          "2025-11": 40,
+          "2025-10": 30,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.5,
+        "dofollow": 2.1,
+        "referring_pages": 3.4,
+        "referring_domains": 2.4,
+        "referring_main_domains": 2.4,
+        "rank": 25.4,
+        "main_domain_rank": 540.7,
+        "last_updated_time": "2026-09-22 05:11:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 20:29:29 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to japan from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 02:52:13 +00:00",
+        "competition": 0.44,
+        "competition_level": "MEDIUM",
+        "cpc": 2.26,
+        "search_volume": 140,
+        "low_top_of_page_bid": 0.55,
+        "high_top_of_page_bid": 2.1,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 110,
+          "2026-06": 140,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 140,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 210,
+          "2025-10": 90,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "quarterly": -21,
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship from japan to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 13,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14264.2,
+        "dofollow": 14167.9,
+        "referring_pages": 14237.8,
+        "referring_domains": 64,
+        "referring_main_domains": 57.7,
+        "rank": 107.1,
+        "main_domain_rank": 593.6,
+        "last_updated_time": "2026-09-14 17:01:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 20:55:21 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to mexico from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:58:52 +00:00",
+        "competition": 0.49,
+        "competition_level": "MEDIUM",
+        "cpc": 3.07,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 4.07,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 390,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28523.6,
+        "dofollow": 14292.3,
+        "referring_pages": 14320.7,
+        "referring_domains": 30.8,
+        "referring_main_domains": 26.2,
+        "rank": 79.7,
+        "main_domain_rank": 522.4,
+        "last_updated_time": "2026-08-03 07:01:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 03:28:30 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to netherlands from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 05:10:44 +00:00",
+        "competition": 0.57,
+        "competition_level": "MEDIUM",
+        "cpc": 3.71,
+        "search_volume": 40,
+        "low_top_of_page_bid": 0.71,
+        "high_top_of_page_bid": 3.21,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 40,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -50,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from the netherlands to the us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14579.4,
+        "dofollow": 14500.3,
+        "referring_pages": 14557.9,
+        "referring_domains": 49.5,
+        "referring_main_domains": 45.7,
+        "rank": 88.1,
+        "main_domain_rank": 471.1,
+        "last_updated_time": "2026-10-01 22:33:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 22:03:39 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to new zealand from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 13:57:17 +00:00",
+        "competition": 0.27,
+        "competition_level": "LOW",
+        "cpc": 3.45,
+        "search_volume": 90,
+        "low_top_of_page_bid": 0.65,
+        "high_top_of_page_bid": 3.78,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 70,
+          "2026-05": 110,
+          "2026-04": 90,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 110,
+          "2025-12": 90,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 57,
+          "yearly": -66
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us to new zealand shipping",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.7,
+        "dofollow": 3.8,
+        "referring_pages": 6.9,
+        "referring_domains": 4,
+        "referring_main_domains": 3.9,
+        "rank": 53.5,
+        "main_domain_rank": 481.6,
+        "last_updated_time": "2026-09-19 03:33:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 21:21:48 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to nigeria from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 18:28:14 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship from us to nigeria",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 207.3,
+        "dofollow": 141.4,
+        "referring_pages": 182.4,
+        "referring_domains": 30.8,
+        "referring_main_domains": 48.6,
+        "rank": 85.4,
+        "main_domain_rank": 278.2,
+        "last_updated_time": "2023-11-26 09:09:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 20:32:29 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to saudi arabia from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:12:27 +00:00",
+        "competition": 0.7,
+        "competition_level": "HIGH",
+        "cpc": 3.59,
+        "search_volume": 50,
+        "low_top_of_page_bid": 0.98,
+        "high_top_of_page_bid": 5.91,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -20,
+          "quarterly": -20,
+          "yearly": -20
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.2,
+        "dofollow": 0.2,
+        "referring_pages": 0.2,
+        "referring_domains": 0.2,
+        "referring_main_domains": 0.2,
+        "rank": 9.5,
+        "main_domain_rank": 569,
+        "last_updated_time": "2026-09-26 12:03:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 20:49:35 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to south africa from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 20:08:34 +00:00",
+        "competition": 0.64,
+        "competition_level": "MEDIUM",
+        "cpc": 3.57,
+        "search_volume": 50,
+        "low_top_of_page_bid": 0.85,
+        "high_top_of_page_bid": 4.39,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 30,
+          "2026-04": 40,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 67,
+          "quarterly": 25
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "us shipping to south africa",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.6,
+        "dofollow": 3.5,
+        "referring_pages": 10.9,
+        "referring_domains": 8.1,
+        "referring_main_domains": 8.1,
+        "rank": 38,
+        "main_domain_rank": 502.5,
+        "last_updated_time": "2024-10-09 01:19:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 21:31:52 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to south korea from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:25:04 +00:00",
+        "competition": 0.52,
+        "competition_level": "MEDIUM",
+        "cpc": 2.9,
+        "search_volume": 20,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 5.31,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "quarterly": 100,
+          "yearly": 300
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "south korea shipping to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12006.2,
+        "dofollow": 11902.4,
+        "referring_pages": 11961.6,
+        "referring_domains": 62,
+        "referring_main_domains": 56.5,
+        "rank": 71.5,
+        "main_domain_rank": 536,
+        "last_updated_time": "2025-10-18 06:31:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 22:32:27 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to spain from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 14:09:45 +00:00",
+        "competition": 0.65,
+        "competition_level": "MEDIUM",
+        "cpc": 4.28,
+        "search_volume": 90,
+        "low_top_of_page_bid": 0.77,
+        "high_top_of_page_bid": 5.96,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 50,
+          "2026-06": 70,
+          "2026-05": 90,
+          "2026-04": 90,
+          "2026-03": 110,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 140,
+          "2025-10": 140,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 80,
+          "quarterly": 29,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping spain to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 15818.1,
+        "dofollow": 15754.7,
+        "referring_pages": 15799.7,
+        "referring_domains": 48,
+        "referring_main_domains": 44.2,
+        "rank": 109.2,
+        "main_domain_rank": 501.6,
+        "last_updated_time": "2026-09-19 03:33:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:31:06 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to uae from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 07:59:37 +00:00",
+        "competition": 0.7,
+        "competition_level": "HIGH",
+        "cpc": 4.1,
+        "search_volume": 30,
+        "low_top_of_page_bid": 1.34,
+        "high_top_of_page_bid": 6.21,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 30,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from us to uae",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 6.3,
+        "dofollow": 4.3,
+        "referring_pages": 6.2,
+        "referring_domains": 2.9,
+        "referring_main_domains": 2.6,
+        "rank": 29.1,
+        "main_domain_rank": 447.7,
+        "last_updated_time": "2025-05-14 22:31:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 22:48:55 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to uk from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 09:21:01 +00:00",
+        "competition": 0.57,
+        "competition_level": "MEDIUM",
+        "cpc": 5.11,
+        "search_volume": 50,
+        "low_top_of_page_bid": 1.35,
+        "high_top_of_page_bid": 6.05,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 70,
+          "2025-12": 90,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -33,
+          "yearly": -71
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship from us to uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 60860.5,
+        "dofollow": 50803,
+        "referring_pages": 58095.3,
+        "referring_domains": 248.4,
+        "referring_main_domains": 229.9,
+        "rank": 217.7,
+        "main_domain_rank": 569.5,
+        "last_updated_time": "2025-04-18 03:27:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 22:56:58 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to vietnam from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:05:23 +00:00",
+        "competition": 0.59,
+        "competition_level": "MEDIUM",
+        "cpc": 1.84,
+        "search_volume": 10,
+        "low_top_of_page_bid": 0.84,
+        "high_top_of_page_bid": 2.81,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          11103,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from vietnam to us",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.7,
+        "dofollow": 0.4,
+        "referring_pages": 0.7,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.7,
+        "rank": 4.6,
+        "main_domain_rank": 430,
+        "last_updated_time": "2024-08-25 03:44:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 21:22:19 +00:00"
+      }
+    },
+    {
+      "keyword": "singapore customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 10:15:24 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "singapore custom regulation",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 50,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:05:52 +00:00"
+      }
+    },
+    {
+      "keyword": "singapore import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 19:25:07 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:35:10 +00:00"
+      }
+    },
+    {
+      "keyword": "south africa customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:27:25 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations south africa",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:33:23 +00:00"
+      }
+    },
+    {
+      "keyword": "south korea customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 22:42:39 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 40,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 122.8,
+        "dofollow": 94.1,
+        "referring_pages": 109.2,
+        "referring_domains": 37.1,
+        "referring_main_domains": 32.5,
+        "rank": 129.6,
+        "main_domain_rank": 580.2,
+        "last_updated_time": "2024-01-19 04:39:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:05:56 +00:00"
+      }
+    },
+    {
+      "keyword": "south korea import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-17 00:32:41 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:37:04 +00:00"
+      }
+    },
+    {
+      "keyword": "spain customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:59:23 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations for spain",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 386.3,
+        "dofollow": 356.7,
+        "referring_pages": 383.3,
+        "referring_domains": 30.1,
+        "referring_main_domains": 27.5,
+        "rank": 146.1,
+        "main_domain_rank": 431.1,
+        "last_updated_time": "2026-02-06 15:44:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:33:22 +00:00"
+      }
+    },
+    {
+      "keyword": "spain customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:06:23 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:26:39 +00:00"
+      }
+    },
+    {
+      "keyword": "uae customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:52:27 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:39:40 +00:00"
+      }
+    },
+    {
+      "keyword": "uae import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:08:58 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:47:19 +00:00"
+      }
+    },
+    {
+      "keyword": "uk customs invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 11:01:18 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs invoice uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:45:25 +00:00"
+      }
+    },
+    {
+      "keyword": "uk customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 21:28:01 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -50,
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 225.9,
+        "dofollow": 118.2,
+        "referring_pages": 211.7,
+        "referring_domains": 58.2,
+        "referring_main_domains": 73.2,
+        "rank": 190.9,
+        "main_domain_rank": 601,
+        "last_updated_time": "2023-12-17 01:15:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:53:46 +00:00"
+      }
+    },
+    {
+      "keyword": "uk customs requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:57:24 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:03:31 +00:00"
+      }
+    },
+    {
+      "keyword": "vietnam customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 11:57:19 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 11.4,
+        "dofollow": 9.1,
+        "referring_pages": 11,
+        "referring_domains": 9.6,
+        "referring_main_domains": 8.9,
+        "rank": 74.9,
+        "main_domain_rank": 429.6,
+        "last_updated_time": "2023-09-03 22:55:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:04:32 +00:00"
+      }
+    },
+    {
+      "keyword": "vietnam import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 10:09:47 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 03:44:28 +00:00"
+      }
+    },
+    {
+      "keyword": "chile customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:41:52 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 47,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 22:02:59 +00:00"
+      }
+    },
+    {
+      "keyword": "eu customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:29:07 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 30,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -67,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 150.6,
+        "dofollow": 124.5,
+        "referring_pages": 137,
+        "referring_domains": 47.4,
+        "referring_main_domains": 42.9,
+        "rank": 122,
+        "main_domain_rank": 611.7,
+        "last_updated_time": "2025-09-03 06:27:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 11:37:30 +00:00"
+      }
+    },
+    {
+      "keyword": "eu import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:10:38 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 30,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "quarterly": 100,
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 47.1,
+        "dofollow": 35.3,
+        "referring_pages": 42.8,
+        "referring_domains": 15.1,
+        "referring_main_domains": 11.1,
+        "rank": 103.9,
+        "main_domain_rank": 516.5,
+        "last_updated_time": "2026-03-11 14:06:58 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:53:00 +00:00"
+      }
+    },
+    {
+      "keyword": "export to chile",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 22:03:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "chile exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 17:55:46 +00:00"
+      }
+    },
+    {
+      "keyword": "export to eu",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:19:35 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 110,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "quarterly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "eu exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 17:38:23 +00:00"
+      }
+    },
+    {
+      "keyword": "export to switzerland",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 21:05:49 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "switzerland exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 15:59:14 +00:00"
+      }
+    },
+    {
+      "keyword": "export to taiwan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:52:03 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export taiwan",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 274.9,
+        "dofollow": 215.7,
+        "referring_pages": 250.3,
+        "referring_domains": 93.9,
+        "referring_main_domains": 110.5,
+        "rank": 116.9,
+        "main_domain_rank": 597.1,
+        "last_updated_time": "2023-10-16 12:22:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:58:34 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to chile",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:05:54 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "chile exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 13:57:06 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to eu",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:43:28 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 110,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "quarterly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "eu exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 375.6,
+        "dofollow": 190.7,
+        "referring_pages": 206.4,
+        "referring_domains": 49.1,
+        "referring_main_domains": 46.8,
+        "rank": 118.7,
+        "main_domain_rank": 496.1,
+        "last_updated_time": "2026-09-29 20:32:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 13:23:45 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to ireland",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 18:38:14 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ireland exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 17:41:51 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to switzerland",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 03:49:57 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "switzerland exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 08:04:21 +00:00"
+      }
+    },
+    {
+      "keyword": "exporting to taiwan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 13:35:42 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export taiwan",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 49.9,
+        "dofollow": 40.4,
+        "referring_pages": 47.7,
+        "referring_domains": 36.3,
+        "referring_main_domains": 34.4,
+        "rank": 76.5,
+        "main_domain_rank": 556.1,
+        "last_updated_time": "2023-09-08 05:22:04 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-27 17:33:05 +00:00"
+      }
+    },
+    {
+      "keyword": "ireland customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 19:36:52 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations ireland",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 22.1,
+        "dofollow": 15.1,
+        "referring_pages": 22,
+        "referring_domains": 12.6,
+        "referring_main_domains": 12.1,
+        "rank": 81,
+        "main_domain_rank": 478.6,
+        "last_updated_time": "2025-01-15 18:41:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:49:28 +00:00"
+      }
+    },
+    {
+      "keyword": "ireland import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-13 19:18:59 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:31:54 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to chile from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 12:23:35 +00:00",
+        "competition": 0.54,
+        "competition_level": "MEDIUM",
+        "cpc": 23.16,
+        "search_volume": 20,
+        "low_top_of_page_bid": 1.18,
+        "high_top_of_page_bid": 5.57,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship to chile from us",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 8.6,
+        "dofollow": 7.2,
+        "referring_pages": 8.6,
+        "referring_domains": 1.3,
+        "referring_main_domains": 1.3,
+        "rank": 41,
+        "main_domain_rank": 526.6,
+        "last_updated_time": "2025-08-30 19:43:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 21:22:19 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to eu from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 09:52:41 +00:00",
+        "competition": 0.39,
+        "competition_level": "MEDIUM",
+        "cpc": 5.18,
+        "search_volume": 90,
+        "low_top_of_page_bid": 0.86,
+        "high_top_of_page_bid": 5.5,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 90,
+          "2026-04": 90,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22,
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping us to eu",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 10,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28243.6,
+        "dofollow": 14155.8,
+        "referring_pages": 14187,
+        "referring_domains": 35.6,
+        "referring_main_domains": 31.2,
+        "rank": 107.7,
+        "main_domain_rank": 466,
+        "last_updated_time": "2026-09-19 03:33:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:37:59 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to switzerland from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 04:07:44 +00:00",
+        "competition": 0.36,
+        "competition_level": "MEDIUM",
+        "cpc": 0.23,
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "ship to switzerland from us",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12369.7,
+        "dofollow": 12232.4,
+        "referring_pages": 12309.4,
+        "referring_domains": 93.4,
+        "referring_main_domains": 85.4,
+        "rank": 108.6,
+        "main_domain_rank": 549.1,
+        "last_updated_time": "2025-11-27 23:31:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:11:56 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to taiwan from us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 05:43:40 +00:00",
+        "competition": 0.29,
+        "competition_level": "LOW",
+        "cpc": 2.01,
+        "search_volume": 30,
+        "low_top_of_page_bid": 1.18,
+        "high_top_of_page_bid": 4.46,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 40,
+          "2025-12": 40,
+          "2025-11": 20,
+          "2025-10": 30,
+          "2025-09": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping from us to taiwan",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.2,
+        "dofollow": 1.9,
+        "referring_pages": 2.9,
+        "referring_domains": 1.9,
+        "referring_main_domains": 1.9,
+        "rank": 8.7,
+        "main_domain_rank": 514.4,
+        "last_updated_time": "2025-03-14 22:21:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 22:38:02 +00:00"
+      }
+    },
+    {
+      "keyword": "switzerland customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:06:44 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs regulations switzerland",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:45:13 +00:00"
+      }
+    },
+    {
+      "keyword": "switzerland import requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-06-16 18:05:33 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:49:26 +00:00"
+      }
+    },
+    {
+      "keyword": "taiwan customs regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:21:27 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4604,
+        "dofollow": 4578.1,
+        "referring_pages": 4589.8,
+        "referring_domains": 34.4,
+        "referring_main_domains": 30.8,
+        "rank": 140.7,
+        "main_domain_rank": 506.2,
+        "last_updated_time": "2024-03-05 02:45:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:33:38 +00:00"
+      }
+    }
+  ]
+}
