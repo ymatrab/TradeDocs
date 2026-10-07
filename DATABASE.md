@@ -231,3 +231,21 @@ Generated types were extended by hand (`organization_settings`, the four documen
   `branding_asset_in_use` were added by hand; the CI `database-evidence` artifact is
   authoritative. Rollback notes are in the migration header (keep the bucket and the schema 5
   renderer while schema 5 documents exist).
+
+### Commercial terms (migration 20261007000200_document_commercial_terms.sql)
+
+- `public.shipments.buyer_reference` (text, 1–60 characters after trimming; null when not
+  stated) and `public.shipments.proforma_valid_until` (date). No new table, policy or grant: the
+  existing shipments policies cover both, and an update bumps the shipment revision.
+  `duplicate_shipment` does not copy them (a new order has its own PO and offer).
+- Snapshot schema 6: `private.document_snapshot` adds `shipment.buyer_reference` and
+  `shipment.proforma_valid_until` and `schema_version: 6` only when the shipment states one of
+  them; every other snapshot is schema 4 or 5 exactly as before (branding is still recorded on a
+  schema 6 snapshot). Renderer `tradedocs-pdf/6` prints the buyer reference on commercial and
+  proforma invoices and the validity date on proforma invoices, in a second row of term boxes,
+  from schema 6 only. The free generator emits schema 6 under the same rule and keeps payment
+  terms in the schema 4 `issuer` block.
+- pgTAP: `supabase/tests/document_commercial_terms.test.sql` (schema 4 unchanged, length and
+  blank checks, schema 6 capture on preview and generation, cross-tenant read and write denied).
+  The two columns were added to `src/lib/database.types.ts` by hand; the CI
+  `database-evidence` artifact is authoritative. Rollback in the migration header.

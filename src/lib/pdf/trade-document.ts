@@ -28,7 +28,7 @@ import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/5';
+export const RENDERER_VERSION = 'tradedocs-pdf/6';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -70,9 +70,10 @@ export const snapshotSchema = z.object({
    * long party/terms text inside its box, the notify party, and totals that always share a
    * page with the last row of their table. Schema 5 adds `branding`: the organization's
    * logo, drawn at the top left of every page, and its signature or stamp image, drawn above
-   * the signatory line. Each change applies only from
-   * the schema that introduced it, so a document issued under an older schema re-renders
-   * exactly as it was issued.
+   * the signatory line. Schema 6 adds the shipment's `buyer_reference` (printed on
+   * commercial and proforma invoices) and `proforma_valid_until` (on proforma invoices), in
+   * a second row of term boxes. Each change applies only from the schema that introduced it,
+   * so a document issued under an older schema re-renders exactly as it was issued.
    */
   schema_version: z.number().int().min(1).optional(),
   /**
@@ -132,6 +133,10 @@ export const snapshotSchema = z.object({
     currency: z.string(),
     shipped_on: z.string().nullable().optional(),
     marks_and_numbers: z.string().nullable().optional(),
+    /** Schema 6: the buyer's own reference for the order, usually a purchase order number. */
+    buyer_reference: z.string().nullable().optional(),
+    /** Schema 6: the last day a proforma's offer stands, YYYY-MM-DD. */
+    proforma_valid_until: z.string().nullable().optional(),
     revision: z.number(),
   }),
   exporter: partySchema,
@@ -470,6 +475,21 @@ function fitLines(
   return kept;
 }
 
+/**
+ * Schema 6: the commercial terms an invoice prints in a second row of term boxes, as caption
+ * and value. Empty for every older snapshot and for documents that are not invoices.
+ */
+function commercialTermsFor(snapshot: DocumentSnapshot): [string, string][] {
+  if (schemaOf(snapshot) < 6) return [];
+  const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
+  if (!invoice) return [];
+  const terms: [string, string][] = [];
+  const { buyer_reference: buyerReference, proforma_valid_until: validUntil } = snapshot.shipment;
+  if (buyerReference) terms.push(['Buyer reference / PO', buyerReference]);
+  if (snapshot.kind === 'proforma_invoice' && validUntil) terms.push(['Valid until', validUntil]);
+  return terms;
+}
+
 /** The lowest a schema 4 page's content may reach: the disclosure rule sits just below. */
 const CONTENT_BOTTOM = MARGIN + 44;
 
@@ -612,19 +632,25 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
     ['Country of origin', snapshot.shipment.country_of_origin || '—'],
   ];
   const termWidth = CONTENT_WIDTH / terms.length;
-  terms.forEach(([caption, value], index) => {
-    const x = MARGIN + index * termWidth;
-    drawBox(page, x, cursor, termWidth, 34, caption);
-    if (v4 && fonts.measure(value, 8.5) > termWidth - 12) {
-      // A long named place or port takes a second, smaller line rather than overflowing.
-      fitLines(fonts, [value], termWidth - 12, 7.5, 2).forEach((line, lineIndex) => {
-        page.text(line, x + 6, cursor - 21 - lineIndex * 8.5, { size: 7.5 });
-      });
-    } else {
-      page.text(value, x + 6, cursor - 24, { size: 8.5 });
-    }
-  });
-  cursor -= 44;
+  const drawTerms = (row: readonly [string, string][]): void => {
+    row.forEach(([caption, value], index) => {
+      const x = MARGIN + index * termWidth;
+      drawBox(page, x, cursor, termWidth, 34, caption);
+      if (v4 && fonts.measure(value, 8.5) > termWidth - 12) {
+        // A long named place or port takes a second, smaller line rather than overflowing.
+        fitLines(fonts, [value], termWidth - 12, 7.5, 2).forEach((line, lineIndex) => {
+          page.text(line, x + 6, cursor - 21 - lineIndex * 8.5, { size: 7.5 });
+        });
+      } else {
+        page.text(value, x + 6, cursor - 24, { size: 8.5 });
+      }
+    });
+    cursor -= 44;
+  };
+  drawTerms(terms);
+  // Schema 6: buyer reference and validity, in boxes the width of those above.
+  const commercial = commercialTermsFor(snapshot);
+  if (commercial.length > 0) drawTerms(commercial);
 
   // Measured before the tables are drawn, so the last row of the final table can take the
   // totals with it (schema 4): a totals block is never alone at the top of a page.
@@ -901,6 +927,11 @@ export function columnHeaders(input: unknown): string[] {
 }
 
 export { titles };
+
+/** Exported for tests: the schema 6 commercial terms a snapshot prints, as caption and value. */
+export function documentCommercialTerms(input: unknown): [string, string][] {
+  return commercialTermsFor(snapshotSchema.parse(input));
+}
 
 /** Exported for tests: the totals a snapshot prints, as label and value. */
 export function documentTotals(input: unknown): [string, string][] {

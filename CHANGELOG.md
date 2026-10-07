@@ -2,6 +2,20 @@
 
 ## Unreleased — 2026-09-06
 
+### Buyer reference, proforma validity and payment terms (snapshot schema 6)
+
+- Shipments gain a buyer reference / PO number and a proforma valid-until date (shipment
+  editor, `updateShipment`); payment terms stay in the organization's document settings. The
+  free generators gain the same two fields plus payment terms on invoices and proformas.
+- Snapshot schema 6 and renderer `tradedocs-pdf/6`: the buyer reference prints on commercial
+  and proforma invoices and the validity date on proformas, in a second row of term boxes,
+  only on snapshots that state one; schema 1–5 documents render byte for byte as before.
+  Setting either marks earlier documents stale ("Shipment terms changed").
+- The free generator also offers the delivery note (the renderer already supported it).
+- Migration `20261007000200_document_commercial_terms.sql`; tests: vitest `tool-document`,
+  `staleness`, `shipment-actions`, `branding` (renderer version); pgTAP
+  `document_commercial_terms` (9). All pending CI.
+
 ### PDF branding, the Pro feature (D-021)
 
 - Pro and Team organizations can add their logo (top left of every page, fitted to 53 × 14 mm)

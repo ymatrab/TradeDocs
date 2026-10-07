@@ -64,11 +64,17 @@ const calendarDate = z
   .transform((value) => value || null);
 
 export const toolRequestSchema = z.object({
-  kind: z.enum(['commercial_invoice', 'proforma_invoice', 'packing_list']),
+  kind: z.enum(['commercial_invoice', 'proforma_invoice', 'packing_list', 'delivery_note']),
   number: z.string().trim().min(1).max(60),
   /** The date printed as the document's issue date; the generation day when not stated. */
   issued_on: calendarDate.optional(),
   reference: z.string().trim().max(60).default(''),
+  /** The buyer's own reference for the order, usually its PO number. Invoices only. */
+  buyer_reference: text(60),
+  /** The last day a proforma's offer stands. Proforma invoices only. */
+  valid_until: calendarDate.optional(),
+  /** Printed under the totals of an invoice, as the workspace's own payment terms are. */
+  payment_terms: text(1000),
   currency: z
     .string()
     .trim()
@@ -123,14 +129,36 @@ function toItem(entry: ToolLine, index: number, places: number) {
   };
 }
 
+const INVOICE_KINDS: readonly ToolRequest['kind'][] = ['commercial_invoice', 'proforma_invoice'];
+
+/**
+ * The terms only an invoice prints, kept off every other kind so a packing list or delivery
+ * note stays exactly the schema 4 document it was before these fields existed.
+ */
+function commercialTerms(input: ToolRequest) {
+  const invoice = INVOICE_KINDS.includes(input.kind);
+  return {
+    buyerReference: invoice ? input.buyer_reference : null,
+    validUntil: input.kind === 'proforma_invoice' ? (input.valid_until ?? null) : null,
+    paymentTerms: invoice ? input.payment_terms : null,
+  };
+}
+
+/**
+ * Schema 4, or schema 6 when a buyer reference or validity date is stated: the renderer
+ * prints those only from schema 6, so a document without them is the same schema 4 one it
+ * always was. The free tool never carries branding (schema 5).
+ */
 export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Date()) {
   const places = currencyMinorUnits(input.currency);
+  const terms = commercialTerms(input);
+  const schema6 = terms.buyerReference !== null || terms.validUntil !== null;
   const items = input.lines.map((entry, index) => toItem(entry, index, places));
   const gross = sumStated(input.lines.map((entry) => entry.gross_weight_kg));
   const net = sumStated(input.lines.map((entry) => entry.net_weight_kg));
 
   return {
-    schema_version: 4,
+    schema_version: schema6 ? 6 : 4,
     money_places: places,
     kind: input.kind,
     number: input.number,
@@ -149,7 +177,12 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
       marks_and_numbers: input.marks_and_numbers,
       // A one-off document has no history to be a revision of.
       revision: 1,
+      ...(schema6
+        ? { buyer_reference: terms.buyerReference, proforma_valid_until: terms.validUntil }
+        : {}),
     },
+    // Schema 4's issuer block, holding only what a visitor can state here.
+    ...(terms.paymentTerms ? { issuer: { payment_terms: terms.paymentTerms } } : {}),
     exporter: input.seller,
     consignee: input.buyer,
     notify: null,

@@ -2,7 +2,11 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { NextRequest } from 'next/server';
 import { POST } from '@/app/api/tools/document/route';
 import { currencyMinorUnits, lineTotal, sumLineTotals } from '@/lib/money';
-import { renderTradeDocument } from '@/lib/pdf/trade-document';
+import {
+  documentCommercialTerms,
+  documentLayout,
+  renderTradeDocument,
+} from '@/lib/pdf/trade-document';
 import { buildToolSnapshot, toolRequestSchema } from '@/lib/tools/document-snapshot';
 
 afterEach(() => {
@@ -149,6 +153,75 @@ describe('free document snapshot', () => {
     expect(renderTradeDocument(dated).byteLength).toBeGreaterThan(2_000);
     expect(toolRequestSchema.safeParse(request({ issued_on: '2026-02-31' })).success).toBe(false);
     expect(toolRequestSchema.safeParse(request({ issued_on: '30/09/2026' })).success).toBe(false);
+  });
+});
+
+describe('free document commercial terms (schema 6)', () => {
+  const terms = { buyer_reference: 'PO-4471', valid_until: '2026-11-30' };
+
+  it('stays schema 4, without the new keys, when no buyer reference or validity is stated', () => {
+    const plain = snapshotOf({ kind: 'proforma_invoice', buyer_reference: '', valid_until: '' });
+    expect(plain.schema_version).toBe(4);
+    expect(plain.shipment).not.toHaveProperty('buyer_reference');
+    expect(documentCommercialTerms(plain)).toEqual([]);
+  });
+
+  it('moves a proforma to schema 6 and prints the buyer reference and validity date', () => {
+    const proforma = snapshotOf({ kind: 'proforma_invoice', ...terms });
+    expect(proforma.schema_version).toBe(6);
+    expect(proforma.shipment).toMatchObject({
+      buyer_reference: 'PO-4471',
+      proforma_valid_until: '2026-11-30',
+    });
+    expect(documentCommercialTerms(proforma)).toEqual([
+      ['Buyer reference / PO', 'PO-4471'],
+      ['Valid until', '2026-11-30'],
+    ]);
+    const printed = documentLayout(proforma)
+      .flat()
+      .map((entry) => entry.text);
+    expect(printed).toContain('PO-4471');
+    expect(printed).toContain('2026-11-30');
+  });
+
+  it('prints the buyer reference but no validity date on a commercial invoice', () => {
+    const invoice = snapshotOf({ kind: 'commercial_invoice', ...terms });
+    expect(invoice.schema_version).toBe(6);
+    expect(documentCommercialTerms(invoice)).toEqual([['Buyer reference / PO', 'PO-4471']]);
+  });
+
+  it('keeps a packing list and a delivery note at schema 4 whatever terms are sent', () => {
+    for (const kind of ['packing_list', 'delivery_note'] as const) {
+      const built = snapshotOf({ kind, ...terms, payment_terms: '30 days net' });
+      expect(built.schema_version).toBe(4);
+      expect(built).not.toHaveProperty('issuer');
+      expect(renderTradeDocument(built).byteLength).toBeGreaterThan(2_000);
+    }
+  });
+
+  it('prints payment terms on an invoice through the schema 4 issuer block', () => {
+    const invoice = snapshotOf({ payment_terms: '30% deposit, balance against B/L copy' });
+    expect(invoice.schema_version).toBe(4);
+    expect(invoice).toMatchObject({
+      issuer: { payment_terms: '30% deposit, balance against B/L copy' },
+    });
+    const printed = documentLayout(invoice)
+      .flat()
+      .map((entry) => entry.text);
+    expect(printed).toContain('PAYMENT TERMS');
+  });
+
+  it('refuses an impossible validity date and an over-long buyer reference', () => {
+    expect(toolRequestSchema.safeParse(request({ valid_until: '2026-02-30' })).success).toBe(false);
+    expect(toolRequestSchema.safeParse(request({ buyer_reference: 'P'.repeat(61) })).success).toBe(
+      false,
+    );
+  });
+
+  it('renders an older snapshot exactly as before: no schema 6 terms below schema 6', () => {
+    const proforma = snapshotOf({ kind: 'proforma_invoice', ...terms });
+    const downgraded = { ...proforma, schema_version: 5 };
+    expect(documentCommercialTerms(downgraded)).toEqual([]);
   });
 });
 

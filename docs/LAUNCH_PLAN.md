@@ -104,7 +104,7 @@ Ranked by risk to customers first, then growth.
 9. **IndexNow** — after Search Console is live.
 10. **Dependabot backlog** — merge the open dependency PRs through CI (supabase-js + ssr
     together).
-11. **Generator fields** — proforma validity date and payment terms; buyer reference.
+11. **Generator fields** — built 2026-10-07 (snapshot schema 6): proforma validity date, payment terms, buyer reference.
 
 ## Owner inputs still needed for legal approval
 

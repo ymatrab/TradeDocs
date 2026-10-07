@@ -91,6 +91,10 @@ const TERM_FIELDS = [
   'currency',
   'shipped_on',
   'marks_and_numbers',
+  // Schema 6. Absent from older snapshots and from a shipment that states neither, which
+  // compare as equal; setting either marks an invoice generated before it as stale.
+  'buyer_reference',
+  'proforma_valid_until',
 ] as const;
 
 const LINE_FIELDS = [
