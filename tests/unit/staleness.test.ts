@@ -139,3 +139,29 @@ describe('document freshness', () => {
     );
   });
 });
+
+describe('schema 6 commercial terms', () => {
+  const base = snapshot();
+  const withTerms = (terms: Record<string, unknown>) =>
+    snapshot({ schema_version: 6, shipment: { ...base.shipment, ...terms } });
+
+  it('treats a schema 4 document as current while the shipment states no terms', () => {
+    expect(staleReasons(base, snapshot())).toEqual([]);
+  });
+
+  it('marks a document stale once a buyer reference is set or changed', () => {
+    expect(staleReasons(base, withTerms({ buyer_reference: 'PO-1' }))).toEqual(['terms']);
+    expect(
+      staleReasons(withTerms({ buyer_reference: 'PO-1' }), withTerms({ buyer_reference: 'PO-2' })),
+    ).toEqual(['terms']);
+  });
+
+  it('marks a proforma stale when its validity date moves', () => {
+    expect(
+      staleReasons(
+        withTerms({ proforma_valid_until: '2026-11-30' }),
+        withTerms({ proforma_valid_until: '2026-12-15' }),
+      ),
+    ).toEqual(['terms']);
+  });
+});

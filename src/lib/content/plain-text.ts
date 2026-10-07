@@ -1,5 +1,14 @@
 import type { ContentArticle } from '@/lib/content/article';
-import { sourcesFor } from '@/lib/trade/sources';
+import type { CountryPage } from '@/lib/content/country';
+import type { GlossaryTerm } from '@/lib/content/glossary-term';
+import { sourcesFor, type SourceId } from '@/lib/trade/sources';
+
+function sourceLines(ids: readonly SourceId[]): string[] {
+  return sourcesFor(ids).map(
+    (record) =>
+      `- ${record.title} (${record.authority}), ${record.url}. Retrieved ${record.retrieved}; ${record.reviewer}.`,
+  );
+}
 
 /**
  * An article as Markdown-flavoured plain text, for /llms-full.txt.
@@ -40,12 +49,81 @@ export function articlePlainText(article: ContentArticle, url: string, disclaime
   lines.push('## Questions people ask', '');
   for (const entry of article.faq) lines.push(`Q: ${entry.q}`, `A: ${entry.a}`, '');
   lines.push(`Note: ${disclaimer}`, '', 'Sources:', '');
-  lines.push(
-    ...sourcesFor(article.sources).map(
-      (record) =>
-        `- ${record.title} (${record.authority}), ${record.url}. Retrieved ${record.retrieved}; ${record.reviewer}.`,
+  lines.push(...sourceLines(article.sources), '');
+  return lines.join('\n');
+}
+
+/** A glossary term as plain text, in the order its page renders it. */
+export function termPlainText(term: GlossaryTerm, url: string, disclaimer: string): string {
+  const lines: string[] = [
+    `# ${term.term}`,
+    '',
+    `URL: ${url}`,
+    `By the TradeDocs team. Published ${term.published}; last reviewed ${term.reviewed}.`,
+    '',
+    `Definition: ${term.shortDefinition}`,
+    '',
+    ...term.definition.flatMap((paragraph) => [paragraph, '']),
+    '## On your documents',
+    '',
+    ...term.onYourDocuments.flatMap((paragraph) => [paragraph, '']),
+    `## Example (${term.example.caption})`,
+    '',
+    ...term.example.paragraphs.flatMap((paragraph) => [paragraph, '']),
+  ];
+  const table = term.example.table;
+  if (table) {
+    lines.push(`| ${table.head.join(' | ')} |`, `| ${table.head.map(() => '---').join(' | ')} |`);
+    lines.push(...table.rows.map((row) => `| ${row.join(' | ')} |`), '');
+  }
+  if (term.confusedWith && term.confusedWith.length > 0) {
+    lines.push('## Not to be confused with', '');
+    lines.push(...term.confusedWith.map((entry) => `- ${entry.term}: ${entry.difference}`), '');
+  }
+  lines.push('## Questions people ask', '');
+  for (const entry of term.faq) lines.push(`Q: ${entry.q}`, `A: ${entry.a}`, '');
+  lines.push(`Note: ${disclaimer}`, '', 'Sources:', '', ...sourceLines(term.sources), '');
+  return lines.join('\n');
+}
+
+/** A country page as plain text, every fact followed by its source's authority. */
+export function countryPlainText(country: CountryPage, url: string, disclaimer: string): string {
+  const authority = (id: SourceId) => sourcesFor([id])[0]?.authority ?? '';
+  const lines: string[] = [
+    `# Export documents for ${country.name}`,
+    '',
+    `URL: ${url}`,
+    `By the TradeDocs team. Published ${country.published}; last checked against sources ${country.reviewed}.`,
+    '',
+    `Short answer: ${country.answer}`,
+    '',
+    `Customs authority: ${country.customsAuthority.name}, ${country.customsAuthority.url}`,
+    '',
+    '## Documents',
+    '',
+    ...country.documents.map(
+      (row) => `- ${row.document} (${row.status}): ${row.condition} [${authority(row.sourceId)}]`,
     ),
     '',
-  );
+    '## Commercial invoice',
+    '',
+    ...country.invoiceRequirements.map((line) => `- ${line.text} [${authority(line.sourceId)}]`),
+    '',
+    '## Importer identifiers',
+    '',
+    ...country.importerIdentifiers.map(
+      (row) => `- ${row.name}: ${row.whoNeedsIt} [${authority(row.sourceId)}]`,
+    ),
+    '',
+    '## Who can be the importer',
+    '',
+    ...country.incotermsNotes.flatMap((line) => [`${line.text} [${authority(line.sourceId)}]`, '']),
+  ];
+  for (const section of country.sections) {
+    lines.push(`## ${section.heading}`, '', ...section.paragraphs.flatMap((p) => [p, '']));
+  }
+  lines.push('## Questions people ask', '');
+  for (const entry of country.faq) lines.push(`Q: ${entry.q}`, `A: ${entry.a}`, '');
+  lines.push(`Note: ${disclaimer}`, '', 'Sources:', '', ...sourceLines(country.sources), '');
   return lines.join('\n');
 }

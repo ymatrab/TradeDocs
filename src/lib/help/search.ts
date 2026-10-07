@@ -3,7 +3,13 @@
  * so a query never leaves the device and never lands in a URL or a log.
  */
 
-export type Searchable = { q: string; a: string; source: { label: string } };
+export type Searchable = {
+  q: string;
+  a: string;
+  source: { label: string };
+  /** Other phrasings that should match but are not shown, such as a glossary term's aliases. */
+  keywords?: string;
+};
 
 function normalize(value: string): string {
   return value.normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/®/g, '').toLowerCase();
@@ -31,7 +37,7 @@ export function searchHelp<T extends Searchable>(
   const scored: { entry: T; score: number; index: number }[] = [];
   entries.forEach((entry, index) => {
     const question = normalize(entry.q);
-    const rest = normalize(`${entry.a} ${entry.source.label}`);
+    const rest = normalize(`${entry.a} ${entry.source.label} ${entry.keywords ?? ''}`);
     let score = 0;
     for (const word of words) {
       const inQuestion = question.includes(word);

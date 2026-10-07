@@ -2,6 +2,62 @@
 
 ## Unreleased — 2026-09-06
 
+### Glossary, export documents by country, CBM-to-cubic-feet and pallet calculator (D-022 wave A)
+
+- `/glossary` hub (A–Z, in-browser search, DefinedTermSet) and `/glossary/[term]` (DefinedTerm
+  in the hub set, BreadcrumbList, FAQPage) from `src/lib/content/glossary/<slug>.ts`. Wave A
+  terms: cbm, consignor, dunnage, feu, teu, verified-gross-mass, waybill, plus 18 hub-only
+  entries linked to the guide or tool that owns them. Regulated terms stay noindex and out of
+  the sitemap and llms until a review record exists.
+- `/export-documents` and `/export-documents/[country]` (Article, BreadcrumbList, FAQPage) from
+  `src/lib/content/countries/<slug>.ts`: Mexico (ANAM, SAT, ITA guide) and India (CBIC, DGFT,
+  ITA guide), every row sourced, no rates. Always regulated: both pages and the hub are noindex
+  and out of the sitemap and llms.txt until a named review record is added.
+- `/tools/cbm-to-cubic-feet` (m³, ft³, cm³, in³, L, exact decimal factors; new source
+  `nist-si-volume-units`) and `/tools/pallet-calculator` (cartons per layer and pallet, loaded
+  height, gross weight; EPAL and 48 × 40 in presets; `src/lib/trade/pallet.ts`).
+- FedEx and UPS chargeable-weight presets not published: both carriers' live pages refused
+  WebFetch on 2026-10-07, so no divisor could be read with a retrieval date.
+- New source files: teu, dunnage, waybill, consignor, mexico, india. Footer and phone menu link
+  the glossary and the country hub. Tests: vitest `glossary`, `pallet`; e2e additions in
+  `tools.spec.ts`. All pending CI.
+
+### Three free tools: container loading, unit converter, delivery note
+
+- `/tools/container-loading-calculator`: cartons or pallets per 20ft, 40ft and 40ft HC by
+  volume and by weight (Maersk figures in `CONTAINERS`), an optional usable-volume share and
+  the containers a quantity needs; labelled an estimate, not a stow plan. Exact decimal
+  arithmetic in `src/lib/trade/container-loading.ts`.
+- `/tools/unit-converter`: CBM ↔ ft³ and kg ↔ lb both ways with the exact defined factors
+  (`src/lib/trade/conversions.ts`); new source record `nist-si-mass` (NIST SP 811 B.9,
+  retrieved 2026-10-07, pending owner review).
+- `/tools/delivery-note-generator`: the free generator preset to the delivery note.
+- Each has an answer-first intro, visible FAQ (`src/lib/tools/faq.ts`), sources, ToolCta and
+  SoftwareApplication + FAQPage JSON-LD, and is registered in `PUBLIC_TOOLS` (tools hub,
+  related tools, sitemap dated 2026-10-07, llms.txt), the footer and the home page.
+- Tests: vitest `container-loading` (bounds, units, rounding, refusals, sources); e2e
+  `tools.spec.ts` (calculator, converter, delivery note and proforma downloads, registration,
+  axe on the new pages). All pending CI.
+
+### Buyer reference, proforma validity and payment terms (snapshot schema 6)
+
+- Shipments gain a buyer reference / PO number and a proforma valid-until date (shipment
+  editor, `updateShipment`); payment terms stay in the organization's document settings. The
+  free generators gain the same two fields plus payment terms on invoices and proformas.
+- Snapshot schema 6 and renderer `tradedocs-pdf/6`: the buyer reference prints on commercial
+  and proforma invoices and the validity date on proformas, in a second row of term boxes,
+  only on snapshots that state one; schema 1–5 documents render byte for byte as before.
+  Setting either marks earlier documents stale ("Shipment terms changed").
+- The free generator also offers the delivery note (the renderer already supported it).
+- Migration `20261007000200_document_commercial_terms.sql`; tests: vitest `tool-document`,
+  `staleness`, `shipment-actions`, `branding` (renderer version); pgTAP
+  `document_commercial_terms` (9). All pending CI.
+
+### Content plan v3 toward 250 pages (D-022)
+
+- Plan of record `docs/research/content-plan-v3-2026-10-07.md`: 161 new public pages in waves A–D (40, 42, 42, 37) on top of the 63 live ones, so 224 pages backed by measured demand or a named conversion role: 75 posts (100 in total), 25 guides, a glossary hub and 38 term pages (threshold 200 a month), an export-documents hub and 10 country pages (threshold 150 a month, five sourced country facts each), 8 free tool pages and 3 use-case pages. Wave E (20 help articles and 6 glossary terms at 100–199 a month) reaches 250 and waits for the owner's choice. Includes routing, exclusions, data-model specs for glossary and country pages, and a 660-row keyword appendix generated from the saved data.
+- DataForSEO: the last 6 calls under D-014 (5 US and 1 UK keyword overviews), responses in `docs/research/dataforseo-2026-10-07/`, excluded from Prettier. A further 12 calls are listed for owner approval.
+
 ### PDF branding, the Pro feature (D-021)
 
 - Pro and Team organizations can add their logo (top left of every page, fitted to 53 × 14 mm)

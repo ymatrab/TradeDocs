@@ -167,3 +167,59 @@ export function faqPageSchema(entries: readonly QuestionAndAnswer[]): JsonLdObje
     })),
   };
 }
+
+export type DefinedTermFacts = {
+  path: string;
+  name: string;
+  description: string;
+  alternateNames?: readonly string[];
+  termCode?: string;
+};
+
+/** The glossary hub as a DefinedTermSet; each term page points back at its `@id`. */
+export function definedTermSetSchema(
+  base: string,
+  set: { path: string; name: string; description: string },
+  terms: readonly DefinedTermFacts[],
+): JsonLdObject {
+  const url = absolute(base, set.path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    '@id': `${url}#set`,
+    name: set.name,
+    description: set.description,
+    url,
+    inLanguage: 'en',
+    publisher: organizationRef(base),
+    hasDefinedTerm: terms.map((term) => ({
+      '@type': 'DefinedTerm',
+      '@id': `${absolute(base, term.path)}#term`,
+      name: term.name,
+      description: term.description,
+      url: absolute(base, term.path),
+    })),
+  };
+}
+
+/** One glossary term, inside the hub's set. The description is the visible short definition. */
+export function definedTermSchema(
+  base: string,
+  term: DefinedTermFacts,
+  setPath: string,
+): JsonLdObject {
+  const url = absolute(base, term.path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    '@id': `${url}#term`,
+    name: term.name,
+    description: term.description,
+    url,
+    ...(term.termCode ? { termCode: term.termCode } : {}),
+    ...(term.alternateNames && term.alternateNames.length > 0
+      ? { alternateName: [...term.alternateNames] }
+      : {}),
+    inDefinedTermSet: { '@type': 'DefinedTermSet', '@id': `${absolute(base, setPath)}#set` },
+  };
+}

@@ -19,12 +19,19 @@ export function HelpSearch({
   limit = 20,
   autoFocus,
   label = 'Search the help centre',
+  placeholder = 'Try “delete account” or “CBM”',
+  emptyMessage = 'No answer matches that yet. Try other words, or contact us.',
+  noun = ['answer', 'answers'],
 }: {
   entries: readonly HelpEntry[];
   suggestions?: readonly HelpEntry[];
   limit?: number;
   autoFocus?: boolean;
   label?: string;
+  placeholder?: string;
+  emptyMessage?: string;
+  /** Singular and plural for the result count. */
+  noun?: readonly [string, string];
 }) {
   const [query, setQuery] = useState('');
   const base = useId();
@@ -48,7 +55,7 @@ export function HelpSearch({
           autoComplete="off"
           spellCheck={false}
           maxLength={120}
-          placeholder="Try “delete account” or “CBM”"
+          placeholder={placeholder}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           aria-describedby={`${base}-status`}
@@ -63,8 +70,8 @@ export function HelpSearch({
       >
         {searching
           ? results.length === 0
-            ? 'No answer matches that yet. Try other words, or contact us.'
-            : `${results.length} ${results.length === 1 ? 'answer' : 'answers'}`
+            ? emptyMessage
+            : `${results.length} ${results.length === 1 ? noun[0] : noun[1]}`
           : ''}
       </p>
       {shown.length > 0 ? (

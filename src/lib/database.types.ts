@@ -873,6 +873,7 @@ export type Database = {
       }
       shipments: {
         Row: {
+          buyer_reference: string | null
           consignee_id: string | null
           country_of_destination: string | null
           country_of_origin: string | null
@@ -888,6 +889,7 @@ export type Database = {
           org_id: string
           port_of_discharge: string | null
           port_of_loading: string | null
+          proforma_valid_until: string | null
           reference: string
           revision: number
           shipped_on: string | null
@@ -895,6 +897,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          buyer_reference?: string | null
           consignee_id?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
@@ -910,6 +913,7 @@ export type Database = {
           org_id: string
           port_of_discharge?: string | null
           port_of_loading?: string | null
+          proforma_valid_until?: string | null
           reference: string
           revision?: number
           shipped_on?: string | null
@@ -917,6 +921,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          buyer_reference?: string | null
           consignee_id?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
@@ -932,6 +937,7 @@ export type Database = {
           org_id?: string
           port_of_discharge?: string | null
           port_of_loading?: string | null
+          proforma_valid_until?: string | null
           reference?: string
           revision?: number
           shipped_on?: string | null

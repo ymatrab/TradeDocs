@@ -257,6 +257,8 @@ export default async function ShipmentPage({
                 country_of_destination: shipment.country_of_destination,
                 marks_and_numbers: shipment.marks_and_numbers,
                 shipped_on: shipment.shipped_on,
+                buyer_reference: shipment.buyer_reference,
+                proforma_valid_until: shipment.proforma_valid_until,
                 revision: shipment.revision,
                 currency: shipment.currency,
               }}

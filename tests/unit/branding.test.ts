@@ -388,8 +388,8 @@ const images = new Map([
 ]);
 
 describe('renderer dispatch: schema 5 branding, older documents unchanged', () => {
-  it('identifies itself as renderer 5', () => {
-    expect(RENDERER_VERSION).toBe('tradedocs-pdf/5');
+  it('identifies itself as renderer 6', () => {
+    expect(RENDERER_VERSION).toBe('tradedocs-pdf/6');
   });
 
   it('renders a schema 4 document byte for byte the same, whatever images are offered', () => {

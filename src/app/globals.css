@@ -3931,3 +3931,12 @@ a.form-cell:active {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+
+/* Glossary A–Z jump links: each letter is a 44px target, so the row passes target-size. */
+.glossary-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}

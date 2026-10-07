@@ -242,6 +242,50 @@ export function ShipmentEditor({
               />
             )}
           </Field>
+          <div
+            style={{
+              display: 'grid',
+              gap: 16,
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            }}
+          >
+            <Field
+              id="buyer_reference"
+              label="Buyer reference / PO number"
+              requirement="Optional"
+              hint="Printed on the commercial and proforma invoice."
+              error={detailState.fields?.buyer_reference}
+            >
+              {({ id, describedBy, invalid }) => (
+                <Input
+                  id={id}
+                  name="buyer_reference"
+                  maxLength={60}
+                  invalid={invalid}
+                  aria-describedby={describedBy}
+                  defaultValue={String(shipment.buyer_reference ?? '')}
+                />
+              )}
+            </Field>
+            <Field
+              id="proforma_valid_until"
+              label="Proforma valid until"
+              requirement="Optional"
+              hint="The last day the proforma's prices and terms stand."
+              error={detailState.fields?.proforma_valid_until}
+            >
+              {({ id, describedBy, invalid }) => (
+                <Input
+                  id={id}
+                  name="proforma_valid_until"
+                  type="date"
+                  invalid={invalid}
+                  aria-describedby={describedBy}
+                  defaultValue={String(shipment.proforma_valid_until ?? '')}
+                />
+              )}
+            </Field>
+          </div>
           <Field
             id="marks_and_numbers"
             label="Marks and numbers"

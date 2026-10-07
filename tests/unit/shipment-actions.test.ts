@@ -186,6 +186,47 @@ describe('shipment terms', () => {
     );
     expect(result.fields?.shipped_on).toBeTruthy();
   });
+
+  it('saves a buyer reference and proforma validity date when the form carries them', async () => {
+    state.rows = [{ id: SHIPMENT }];
+    await updateShipment(
+      {},
+      form({
+        org: ORG,
+        shipment: SHIPMENT,
+        buyer_reference: '  PO-4471 ',
+        proforma_valid_until: '2026-11-30',
+      }),
+    );
+    const update = state.calls.find((call) => call[0] === 'update');
+    expect(update?.[1]).toMatchObject({
+      buyer_reference: 'PO-4471',
+      proforma_valid_until: '2026-11-30',
+    });
+  });
+
+  it('never clears the commercial terms from a form without those fields', async () => {
+    state.rows = [{ id: SHIPMENT }];
+    await updateShipment({}, form({ org: ORG, shipment: SHIPMENT }));
+    const update = state.calls.find((call) => call[0] === 'update');
+    expect(update?.[1]).not.toHaveProperty('buyer_reference');
+    expect(update?.[1]).not.toHaveProperty('proforma_valid_until');
+  });
+
+  it('refuses a buyer reference over 60 characters and an impossible validity date', async () => {
+    const result = await updateShipment(
+      {},
+      form({
+        org: ORG,
+        shipment: SHIPMENT,
+        buyer_reference: 'P'.repeat(61),
+        proforma_valid_until: '2026-02-30',
+      }),
+    );
+    expect(result.fields?.buyer_reference).toBeTruthy();
+    expect(result.fields?.proforma_valid_until).toBeTruthy();
+    expect(state.calls).toEqual([]);
+  });
 });
 
 describe('lines', () => {

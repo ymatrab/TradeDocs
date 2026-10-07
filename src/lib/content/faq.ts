@@ -1,3 +1,4 @@
+import { LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { INCOTERMS, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
 
@@ -56,7 +57,7 @@ export const PROFORMA_GENERATOR_FAQ: readonly FaqEntry[] = [
   },
   {
     q: 'Can I add a validity date and payment terms?',
-    a: 'The generator prints the parties, the goods, the prices, the Incoterms® rule and place and the document date. It does not yet have fields for a validity date, payment terms, a buyer reference, package dimensions or a shipping date, so state those in the message you send the proforma with. The proforma PDF shows no weights either; those print only on the packing list.',
+    a: 'Yes. Under the document details, set a valid-until date for the offer, the buyer’s reference or purchase order number, and your payment terms; the PDF prints the first two beside the shipment terms and the payment terms under the total. Leave any of them blank and it is left off. Package dimensions and a shipping date are not on the proforma, and it shows no weights; those print on the packing list.',
   },
   {
     q: 'Is anything I type here saved?',
@@ -212,6 +213,8 @@ export type HelpEntry = FaqEntry & {
   id: string;
   /** Where the answer lives, so a reader can go to its context. */
   source: { href: string; label: string };
+  /** Other phrasings the search matches without showing them. */
+  keywords?: string;
 };
 
 type Group = { href: string; label: string; entries: readonly FaqEntry[] };
@@ -256,6 +259,18 @@ function groups(): Group[] {
       href: `/guides/${guide.slug}`,
       label: guide.title,
       entries: guide.faq,
+    })),
+    // Each listed glossary term: its definition first, then its own questions.
+    ...LISTED_GLOSSARY.map((term) => ({
+      href: `/glossary/${term.slug}`,
+      label: `Glossary: ${term.term}`,
+      entries: [
+        {
+          q: `What does ${term.abbreviation ?? term.term.toLowerCase()} mean?`,
+          a: term.shortDefinition,
+        },
+        ...term.faq,
+      ],
     })),
   ];
 }

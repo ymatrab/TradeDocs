@@ -176,7 +176,7 @@ export default {
     url: 'https://www.imo.org/en/OurWork/Safety/Pages/Verification-of-the-gross-mass.aspx',
     jurisdiction: 'International (SOLAS)',
     supports:
-      'SOLAS regulation VI/2 making the shipper responsible for the verified gross mass, the two methods of obtaining it, VGM being a condition for loading, and entry into force on 1 July 2016',
+      'SOLAS regulation VI/2 making the shipper (the party named as shipper on the bill of lading, sea waybill or equivalent document, or that concluded the contract of carriage) responsible for the verified gross mass, the two methods of obtaining it (weighing the packed container, or weighing all packages, pallets, dunnage and securing material under a certified method and adding the container tare), VGM being a condition for loading, and entry into force on 1 July 2016',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },

@@ -1,3 +1,5 @@
+import { COUNTRIES_UPDATED, LISTED_COUNTRIES } from '@/lib/content/countries';
+import { GLOSSARY_UPDATED, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { INCOTERMS } from '@/lib/trade/incoterms';
@@ -18,8 +20,10 @@ export const SITE_DESCRIPTION =
   'You record a shipment’s parties, goods and terms once, and it prepares the commercial ' +
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
   'figures agree across the set. It is free while early, and its free tools work without an ' +
-  'account: commercial invoice, proforma invoice and packing list generators, a landed cost ' +
-  'calculator, CBM and chargeable weight calculators and an Incoterms 2020 guide.';
+  'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
+  'a landed cost calculator, CBM, chargeable weight, container loading and pallet ' +
+  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an Incoterms 2020 guide and a ' +
+  'glossary of shipping terms.';
 
 export type PublicTool = {
   path: string;
@@ -27,7 +31,15 @@ export type PublicTool = {
   summary: string;
   /** An interactive tool is software; a reference page is not, and is not marked up as one. */
   kind: 'application' | 'reference';
+  /** YYYY-MM-DD the page's content last changed, when later than the redesign round. */
+  updated?: string;
 };
+
+/**
+ * The day the delivery note, container loading and unit converter pages were added, and the
+ * CBM-to-cubic-feet converter and pallet calculator after them.
+ */
+const TOOLS_ROUND = '2026-10-07';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
   {
@@ -52,6 +64,14 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     kind: 'application',
   },
   {
+    path: '/tools/delivery-note-generator',
+    name: 'Delivery note generator',
+    summary:
+      'A delivery note with the parties, goods and quantities and no prices, downloaded as a PDF. No account, nothing stored.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
     path: '/tools/cbm-calculator',
     name: 'CBM calculator',
     summary:
@@ -64,6 +84,38 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     summary:
       'Dimensional against actual weight for air, express, road groupage and sea LCL, and which one you will be billed on.',
     kind: 'application',
+  },
+  {
+    path: '/tools/container-loading-calculator',
+    name: 'Container loading calculator',
+    summary:
+      'How many cartons or pallets fit a 20ft, 40ft or high-cube container by volume and weight, and how many containers you need. An estimate, not a stow plan.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/unit-converter',
+    name: 'CBM to cubic feet and kg to lb converter',
+    summary:
+      'Cubic metres to cubic feet and kilograms to pounds, both ways, with the exact factors NIST lists.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/cbm-to-cubic-feet',
+    name: 'CBM to cubic feet converter',
+    summary:
+      'A volume in cubic metres, cubic feet, cm³, cubic inches or litres, shown in all five with the exact factors NIST lists.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/pallet-calculator',
+    name: 'Pallet calculator',
+    summary:
+      'Cartons per layer and per pallet, the loaded height and the pallet gross weight, for 48 × 40 in, euro and 1,200 × 1,000 mm pallets.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
   },
   {
     path: '/tools/landed-cost-calculator',
@@ -120,11 +172,11 @@ export type SitemapPage = {
 
 export const SITEMAP_PAGES: readonly SitemapPage[] = [
   { path: '/', lastModified: HOME_ROUND, changeFrequency: 'weekly', priority: 1 },
-  { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/tools', lastModified: TOOLS_ROUND, changeFrequency: 'monthly', priority: 0.8 },
   { path: '/pricing', lastModified: PRICING_ROUND, changeFrequency: 'monthly', priority: 0.7 },
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,
-    lastModified: REDESIGN_ROUND,
+    lastModified: tool.updated ?? REDESIGN_ROUND,
     changeFrequency: 'monthly' as const,
     priority: tool.path === '/tools/invoice-generator' ? 0.8 : 0.7,
   })),
@@ -146,6 +198,32 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
   ...POSTS.map((post) => ({
     path: `/blog/${post.slug}`,
     lastModified: post.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+
+  // The glossary: the hub and every term not held back by the review gate.
+  { path: '/glossary', lastModified: GLOSSARY_UPDATED, changeFrequency: 'monthly', priority: 0.6 },
+  ...LISTED_GLOSSARY.map((term) => ({
+    path: `/glossary/${term.slug}`,
+    lastModified: term.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  })),
+  // Country pages are regulated: listed only once reviewed, and the hub with the first of them.
+  ...(LISTED_COUNTRIES.length > 0
+    ? [
+        {
+          path: '/export-documents',
+          lastModified: COUNTRIES_UPDATED,
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
+        },
+      ]
+    : []),
+  ...LISTED_COUNTRIES.map((country) => ({
+    path: `/export-documents/${country.slug}`,
+    lastModified: country.updated,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),

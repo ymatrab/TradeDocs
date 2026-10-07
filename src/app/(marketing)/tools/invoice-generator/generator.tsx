@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Download, Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/primitives/button';
-import { Field, Input, Select } from '@/components/primitives/form';
+import { Field, Input, Select, Textarea } from '@/components/primitives/form';
 import { Callout, Panel } from '@/components/primitives/feedback';
 import { TurnstileWidget } from '@/components/security/turnstile-widget';
 import { decimal } from '@/lib/format';
@@ -58,6 +58,7 @@ const KINDS = {
   commercial_invoice: 'Commercial invoice',
   proforma_invoice: 'Proforma invoice',
   packing_list: 'Packing list',
+  delivery_note: 'Delivery note',
 } as const;
 
 /** The document types the free generator renders; a page presets one of them. */
@@ -68,7 +69,13 @@ const NUMBER_PLACEHOLDER: Record<GeneratorKind, string> = {
   commercial_invoice: 'INV-2026-001',
   proforma_invoice: 'PI-2026-001',
   packing_list: 'PL-2026-001',
+  delivery_note: 'DN-2026-001',
 };
+
+/** Whether a document type prints prices, and so the invoice-only terms below. */
+function isInvoice(kind: GeneratorKind): boolean {
+  return kind === 'commercial_invoice' || kind === 'proforma_invoice';
+}
 
 const INCOTERMS = ['', 'EXW', 'FCA', 'FAS', 'FOB', 'CFR', 'CIF', 'CPT', 'CIP', 'DAP', 'DPU', 'DDP'];
 
@@ -98,6 +105,9 @@ export function DocumentGenerator({
   const [currency, setCurrency] = useState('EUR');
   const [incoterm, setIncoterm] = useState('');
   const [incotermPlace, setIncotermPlace] = useState('');
+  const [buyerReference, setBuyerReference] = useState('');
+  const [validUntil, setValidUntil] = useState('');
+  const [paymentTerms, setPaymentTerms] = useState('');
   const [seller, setSeller] = useState<Party>(emptyParty);
   const [buyer, setBuyer] = useState<Party>(emptyParty);
   const [lines, setLines] = useState<Line[]>([emptyLine(1)]);
@@ -235,6 +245,10 @@ export function DocumentGenerator({
           kind,
           number: documentNumber,
           issued_on: issuedOn,
+          // Sent only for the types that print them; the server drops them for others too.
+          buyer_reference: isInvoice(kind) ? buyerReference : '',
+          valid_until: kind === 'proforma_invoice' ? validUntil : '',
+          payment_terms: isInvoice(kind) ? paymentTerms : '',
           currency,
           incoterm,
           incoterm_place: incotermPlace,
@@ -391,6 +405,64 @@ export function DocumentGenerator({
             )}
           </Field>
         </div>
+        {isInvoice(kind) ? (
+          <div className="form-row roomy" style={{ marginTop: 14 }}>
+            <Field
+              id="buyer-reference"
+              label="Buyer reference or PO number"
+              hint="The buyer's own order number, so their accounts team can match the invoice."
+              requirement="Optional"
+            >
+              {({ id, describedBy }) => (
+                <Input
+                  id={id}
+                  value={buyerReference}
+                  maxLength={60}
+                  className="input data"
+                  placeholder="PO-4471"
+                  aria-describedby={describedBy}
+                  onChange={(event) => setBuyerReference(event.target.value)}
+                />
+              )}
+            </Field>
+            {kind === 'proforma_invoice' ? (
+              <Field
+                id="valid-until"
+                label="Valid until"
+                hint="The last day the prices and terms on this proforma stand."
+                requirement="Optional"
+              >
+                {({ id, describedBy }) => (
+                  <Input
+                    id={id}
+                    type="date"
+                    value={validUntil}
+                    className="input data"
+                    aria-describedby={describedBy}
+                    onChange={(event) => setValidUntil(event.target.value)}
+                  />
+                )}
+              </Field>
+            ) : null}
+            <Field
+              id="payment-terms"
+              label="Payment terms"
+              hint="Printed under the total, such as 30% deposit, balance against copy of B/L."
+              requirement="Optional"
+            >
+              {({ id, describedBy }) => (
+                <Textarea
+                  id={id}
+                  value={paymentTerms}
+                  maxLength={1000}
+                  rows={2}
+                  aria-describedby={describedBy}
+                  onChange={(event) => setPaymentTerms(event.target.value)}
+                />
+              )}
+            </Field>
+          </div>
+        ) : null}
       </Panel>
 
       {partyFields('Issued by', seller, setSeller, 'seller')}

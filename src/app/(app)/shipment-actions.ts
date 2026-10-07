@@ -125,6 +125,8 @@ export async function updateShipment(
       country_of_destination: countryField,
       shipped_on: calendarDateField,
       marks_and_numbers: optionalText(2000),
+      buyer_reference: optionalText(60),
+      proforma_valid_until: calendarDateField,
     })
     .superRefine((value, context) => {
       // An Incoterms rule without its named place does not say where risk passes.
@@ -148,15 +150,23 @@ export async function updateShipment(
       country_of_destination: read(formData, 'country_of_destination'),
       shipped_on: read(formData, 'shipped_on'),
       marks_and_numbers: read(formData, 'marks_and_numbers'),
+      buyer_reference: read(formData, 'buyer_reference'),
+      proforma_valid_until: read(formData, 'proforma_valid_until'),
     });
   if (!parsed.success) {
     const fields = fieldErrors(parsed.error);
     return { error: summaryOf(fields, 'Check the details.'), fields };
   }
 
-  const { org, shipment, revision, shipped_on, ...rest } = parsed.data;
-  // Only sent when the form has the field, so a form without it never clears the date.
-  const fields = formData.has('shipped_on') ? { ...rest, shipped_on } : rest;
+  const { org, shipment, revision, shipped_on, buyer_reference, proforma_valid_until, ...rest } =
+    parsed.data;
+  // Each only sent when the form has the field, so a form without it never clears it.
+  const fields = {
+    ...rest,
+    ...(formData.has('shipped_on') ? { shipped_on } : {}),
+    ...(formData.has('buyer_reference') ? { buyer_reference } : {}),
+    ...(formData.has('proforma_valid_until') ? { proforma_valid_until } : {}),
+  };
   const client = await createClient();
   // Scoped to the organization in the form and read back, because a filter that matches
   // nothing is not an error to PostgREST: without the row count a shipment the caller

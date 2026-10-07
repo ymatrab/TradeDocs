@@ -490,10 +490,14 @@ export default function Home() {
           , a{' '}
           <Link className="text-link" href="/tools/proforma-invoice-generator">
             proforma invoice
-          </Link>{' '}
-          and a{' '}
+          </Link>
+          , a{' '}
           <Link className="text-link" href="/tools/packing-list-generator">
             packing list
+          </Link>{' '}
+          and a{' '}
+          <Link className="text-link" href="/tools/delivery-note-generator">
+            delivery note
           </Link>
           , each downloaded as a PDF. Before you quote, the{' '}
           <Link className="text-link" href="/tools/landed-cost-calculator">

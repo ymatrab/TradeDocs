@@ -2,6 +2,8 @@ import { getPublicBaseUrl } from '@/lib/http/base-url';
 import {
   articleSchema,
   breadcrumbSchema,
+  definedTermSchema,
+  definedTermSetSchema,
   faqPageSchema,
   jsonLdScript,
   organizationSchema,
@@ -12,6 +14,13 @@ import {
   type QuestionAndAnswer,
 } from '@/lib/seo/json-ld';
 import type { ContentArticle } from '@/lib/content/article';
+import { COUNTRIES_HUB, findCountry } from '@/lib/content/countries';
+import {
+  GLOSSARY_HUB,
+  GLOSSARY_HUB_ENTRIES,
+  LISTED_GLOSSARY,
+  findTerm,
+} from '@/lib/content/glossary';
 import { findGuide } from '@/lib/content/guides';
 import { findPost } from '@/lib/content/posts';
 import { findPublicTool } from '@/lib/seo/site';
@@ -35,6 +44,8 @@ const TOOLS: Crumb = { name: 'Free tools', path: '/tools' };
 const INCOTERMS: Crumb = { name: 'Incoterms® 2020', path: '/tools/incoterms' };
 const GUIDES: Crumb = { name: 'Guides', path: '/guides' };
 const BLOG: Crumb = { name: 'Blog', path: '/blog' };
+const GLOSSARY: Crumb = { name: 'Glossary', path: '/glossary' };
+const COUNTRIES: Crumb = { name: COUNTRIES_HUB.title, path: '/export-documents' };
 
 export function HomeJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
@@ -114,4 +125,79 @@ export function PricingJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
   const crumbs: Crumb[] = [HOME, { name: 'Pricing', path: '/pricing' }];
   return <JsonLd data={[breadcrumbSchema(base, crumbs), faqPageSchema(faq)]} />;
+}
+
+/** The glossary hub: breadcrumbs and the DefinedTermSet of every term it lists. */
+export function GlossaryHubJsonLd() {
+  const base = getPublicBaseUrl();
+  const terms = [
+    ...LISTED_GLOSSARY.map((term) => ({
+      path: `/glossary/${term.slug}`,
+      name: term.term,
+      description: term.shortDefinition,
+    })),
+    ...GLOSSARY_HUB_ENTRIES.map((entry) => ({
+      path: entry.href,
+      name: entry.term,
+      description: entry.definition,
+    })),
+  ];
+  const set = {
+    path: GLOSSARY.path,
+    name: GLOSSARY_HUB.setName,
+    description: GLOSSARY_HUB.description,
+  };
+  return (
+    <JsonLd
+      data={[breadcrumbSchema(base, [HOME, GLOSSARY]), definedTermSetSchema(base, set, terms)]}
+    />
+  );
+}
+
+/** A term page: breadcrumbs, the DefinedTerm inside the hub's set, and its visible FAQ. */
+export function GlossaryTermJsonLd({ slug }: { slug: string }) {
+  const term = findTerm(slug);
+  if (!term) return null;
+  const base = getPublicBaseUrl();
+  const path = `/glossary/${term.slug}`;
+  const data = [
+    breadcrumbSchema(base, [HOME, GLOSSARY, { name: term.term, path }]),
+    definedTermSchema(
+      base,
+      {
+        path,
+        name: term.term,
+        description: term.shortDefinition,
+        alternateNames: term.aliases,
+        termCode: term.abbreviation,
+      },
+      GLOSSARY.path,
+    ),
+  ];
+  if (term.faq.length > 0) data.push(faqPageSchema(term.faq));
+  return <JsonLd data={data} />;
+}
+
+export function CountriesHubJsonLd() {
+  return <JsonLd data={[breadcrumbSchema(getPublicBaseUrl(), [HOME, COUNTRIES])]} />;
+}
+
+/** A country page: breadcrumbs, the Article and its visible FAQ. */
+export function CountryJsonLd({ slug }: { slug: string }) {
+  const country = findCountry(slug);
+  if (!country) return null;
+  const base = getPublicBaseUrl();
+  const path = `/export-documents/${country.slug}`;
+  const data = [
+    breadcrumbSchema(base, [HOME, COUNTRIES, { name: country.name, path }]),
+    articleSchema(base, {
+      path,
+      headline: `Export documents for ${country.name}`,
+      description: country.description,
+      datePublished: country.published,
+      dateModified: country.updated,
+    }),
+  ];
+  if (country.faq.length > 0) data.push(faqPageSchema(country.faq));
+  return <JsonLd data={data} />;
 }
