@@ -46,8 +46,8 @@
     "@types/react-dom": "19.2.7",
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.8",
-    "prettier": "3.9.6",
-    "supabase": "2.116.0",
+    "prettier": "3.9.9",
+    "supabase": "2.119.0",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
     "vitest": "4.1.11"
