@@ -219,8 +219,8 @@ export function ContainerLoadingCalculator() {
         </>
       ) : started ? (
         <Callout tone="warning" title="Enter one unit's outside size" live>
-          Length, width and height as positive numbers; any weight or quantity as a positive
-          number, the quantity whole; usable volume between 1 and 100.
+          Length, width and height as positive numbers; any weight or quantity as a positive number,
+          the quantity whole; usable volume between 1 and 100.
         </Callout>
       ) : null}
 

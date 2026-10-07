@@ -262,11 +262,12 @@ describe('country pages', () => {
     expect(COUNTRY_DISCLAIMER).toMatch(/not legal, customs or tax advice/);
   });
 
-  it('stay out of the sitemap until a named review record exists', () => {
+  // D-015: sourced fact pages are published at launch and reviewed afterwards.
+  it('are listed in the sitemap once sourced, with or without a review record', () => {
     for (const country of COUNTRIES) {
       expect(country.regulated).toBe(true);
       const listed = LISTED_COUNTRIES.includes(country);
-      expect(listed, country.slug).toBe(country.review !== null);
+      expect(listed, country.slug).toBe(country.sources.length > 0);
       expect(sitemapPaths.has(`/export-documents/${country.slug}`), country.slug).toBe(listed);
     }
     expect(sitemapPaths.has('/export-documents')).toBe(LISTED_COUNTRIES.length > 0);

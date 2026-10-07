@@ -69,7 +69,12 @@ const term: GlossaryTerm = {
       a: 'A TEU is a counting unit, so it has no fixed capacity. A typical 20ft dry container on Maersk’s published sheet holds about 33 m³ with a maximum payload of 28,200 kg; other carriers’ boxes differ slightly.',
     },
   ],
-  sources: ['era-eurostat-teu', 'unctad-containerised-transport', 'w4-iso-668', 'maersk-dry-containers'],
+  sources: [
+    'era-eurostat-teu',
+    'unctad-containerised-transport',
+    'w4-iso-668',
+    'maersk-dry-containers',
+  ],
   regulated: false,
   review: null,
   published: ROUND,

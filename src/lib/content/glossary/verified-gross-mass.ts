@@ -56,7 +56,12 @@ const term: GlossaryTerm = {
         'Payload is how much cargo a container may carry; VGM is how much the packed container actually weighs.',
     },
   ],
-  related: ['dunnage', 'teu', '/guides/gross-weight-vs-net-weight', '/blog/packing-list-for-shipping'],
+  related: [
+    'dunnage',
+    'teu',
+    '/guides/gross-weight-vs-net-weight',
+    '/blog/packing-list-for-shipping',
+  ],
   tool: '/tools/packing-list-generator',
   toolPitch:
     'The packing list generator totals net and gross weight per line, the figures a Method 2 VGM starts from.',

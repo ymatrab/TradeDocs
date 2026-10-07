@@ -129,8 +129,8 @@ export default function GlossaryPage() {
       <section className="section">
         <h2>Free tools for these terms</h2>
         <p className="measure">
-          Most of these words end up as a figure or a box on a document. The{' '}
-          {PUBLIC_TOOLS.length} free tools work them out or fill them in, without an account.
+          Most of these words end up as a figure or a box on a document. The {PUBLIC_TOOLS.length}{' '}
+          free tools work them out or fill them in, without an account.
         </p>
         <p className="measure">
           <Link className="text-link" href="/tools">

@@ -13,8 +13,7 @@ const article: ContentArticle = {
   metaTitle: 'Demurrage vs detention: the difference',
   description:
     'What demurrage and detention charges are, when free time ends and each charge starts, what a US invoice for them must show under FMC rules, and how to dispute one.',
-  lede:
-    'A container that sits too long costs money twice over: once while it waits in the terminal, and again while you keep the box. Those are demurrage and detention, and both start when the free time runs out.',
+  lede: 'A container that sits too long costs money twice over: once while it waits in the terminal, and again while you keep the box. Those are demurrage and detention, and both start when the free time runs out.',
   answer:
     'Demurrage is charged when a container stays at the marine terminal beyond its free time. Detention is charged for keeping the carrier’s container or other equipment beyond the free time once it has left the terminal. In the US, the Federal Maritime Commission sets rules for how carriers and terminals bill both charges.',
   keyFacts: [
@@ -148,23 +147,19 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is detention the same as per diem?',
-      a:
-        'In the US rules they are treated together: 46 CFR 541.3 defines demurrage or detention to include per diem charges for the use of shipping containers.',
+      a: 'In the US rules they are treated together: 46 CFR 541.3 defines demurrage or detention to include per diem charges for the use of shipping containers.',
     },
     {
       q: 'Who pays demurrage, the shipper or the consignee?',
-      a:
-        'It depends on the contract and the Incoterms® 2020 rule agreed. Under 46 CFR 541.3, the billed party is the person who receives the invoice and is responsible for paying it.',
+      a: 'It depends on the contract and the Incoterms® 2020 rule agreed. Under 46 CFR 541.3, the billed party is the person who receives the invoice and is responsible for paying it.',
     },
     {
       q: 'Can a carrier send a demurrage invoice months later?',
-      a:
-        'In the US, 46 CFR 541.7 requires issue within 30 calendar days of the date the charge was last incurred; otherwise the billed party is not required to pay.',
+      a: 'In the US, 46 CFR 541.7 requires issue within 30 calendar days of the date the charge was last incurred; otherwise the billed party is not required to pay.',
     },
     {
       q: 'Where do I find the free time for my container?',
-      a:
-        'In the carrier’s or terminal’s published terms and your contract or quote. The FMC rules require the invoice to state the allowed free time and its start and end dates.',
+      a: 'In the carrier’s or terminal’s published terms and your contract or quote. The FMC rules require the invoice to state the allowed free time and its start and end dates.',
     },
   ],
   sources: [
@@ -185,8 +180,7 @@ const article: ContentArticle = {
     afterSection: 4,
     tool: '/tools/packing-list-generator',
     title: 'Send a packing list that matches the invoice',
-    text:
-      'Build the packing list from the same items as the commercial invoice, so the broker has consistent documents before the container lands.',
+    text: 'Build the packing list from the same items as the commercial invoice, so the broker has consistent documents before the container lands.',
   },
   related: [
     '/guides/lcl-vs-fcl',
@@ -200,12 +194,10 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1678182451047-196f22a4143e',
     width: 5464,
     height: 3640,
-    alt:
-      'Rows of shipping containers stacked at the Dar es Salaam port terminal, where free time runs',
+    alt: 'Rows of shipping containers stacked at the Dar es Salaam port terminal, where free time runs',
     caption: 'Containers stacked at the port of Dar es Salaam',
     photographer: { name: 'Ali Mkumbwa', profile: 'https://unsplash.com/@mkumbwajr' },
-    page:
-      'https://unsplash.com/photos/a-large-amount-of-containers-are-stacked-on-top-of-each-other-Annl9CjEaEs',
+    page: 'https://unsplash.com/photos/a-large-amount-of-containers-are-stacked-on-top-of-each-other-Annl9CjEaEs',
   },
 };
 

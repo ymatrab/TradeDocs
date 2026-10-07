@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CountriesHubJsonLd } from '@/components/seo/json-ld';
-import {
-  COUNTRIES,
-  COUNTRIES_HUB,
-  COUNTRY_POSTS,
-  LISTED_COUNTRIES,
-} from '@/lib/content/countries';
+import { COUNTRIES, COUNTRIES_HUB, COUNTRY_POSTS, LISTED_COUNTRIES } from '@/lib/content/countries';
 import { COUNTRY_DISCLAIMER } from '@/lib/content/country';
 import { shortDate } from '@/lib/format';
 import { openGraphFor } from '@/lib/seo/social';
@@ -56,10 +51,10 @@ export default function ExportDocumentsHubPage() {
       <section className="section">
         <h2>How these pages are written</h2>
         <p className="measure">
-          From the destination’s customs authority and the U.S. International Trade
-          Administration’s country commercial guides, with the source beside every line and the
-          date it was checked. A country is added only when at least five of its facts can be
-          sourced. {COUNTRY_DISCLAIMER}
+          From the destination’s customs authority and the U.S. International Trade Administration’s
+          country commercial guides, with the source beside every line and the date it was checked.
+          A country is added only when at least five of its facts can be sourced.{' '}
+          {COUNTRY_DISCLAIMER}
         </p>
         <p className="measure">
           <Link className="text-link" href="/blog/export-documents-checklist">

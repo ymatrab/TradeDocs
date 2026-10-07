@@ -15,8 +15,7 @@ const article: ContentArticle = {
   metaTitle: 'What is a proforma invoice? Meaning and uses',
   description:
     'A proforma invoice is a quotation in invoice form. What it is for, what it should show, whether it binds you, and how it leads to the commercial invoice.',
-  lede:
-    'A buyer asks for a proforma before they have agreed to buy, or before their bank or government will let them pay. It looks like an invoice, but it does a different job, and getting it right early saves rewriting every document that follows.',
+  lede: 'A buyer asks for a proforma before they have agreed to buy, or before their bank or government will let them pay. It looks like an invoice, but it does a different job, and getting it right early saves rewriting every document that follows.',
   answer:
     'A proforma invoice is a seller’s quotation laid out as an invoice. It lists the buyer, the goods, prices, the Incoterms® rule, payment terms and the expected shipping date. The International Trade Administration calls it a quote in invoice format that buyers use to open a letter of credit or apply for an import licence.',
   keyFacts: [
@@ -131,28 +130,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is a proforma invoice a request for payment?',
-      a:
-        'Not in the way a final invoice is. It sets out what the buyer will pay if they go ahead. Some sellers ask for advance payment against it, and then the proforma should state the payment terms and bank details.',
+      a: 'Not in the way a final invoice is. It sets out what the buyer will pay if they go ahead. Some sellers ask for advance payment against it, and then the proforma should state the payment terms and bank details.',
     },
     {
       q: 'How long is a proforma invoice valid?',
-      a:
-        'As long as the validity date you put on it. The ITA lists a validity date among the details a pro forma should carry. There is no standard period; choose one that reflects how long your prices and capacity hold.',
+      a: 'As long as the validity date you put on it. The ITA lists a validity date among the details a pro forma should carry. There is no standard period; choose one that reflects how long your prices and capacity hold.',
     },
     {
       q: 'Should a proforma invoice have an invoice number?',
-      a:
-        'Give it a reference number of its own, and mark it clearly as a proforma, so it is never confused with a commercial invoice in your records or the buyer’s.',
+      a: 'Give it a reference number of its own, and mark it clearly as a proforma, so it is never confused with a commercial invoice in your records or the buyer’s.',
     },
     {
       q: 'Can I change a proforma invoice after sending it?',
-      a:
-        'Issue a revised one with a new number and date. The ITA advises that changes should not be made without the buyer’s consent, especially once a bank or authority has relied on the first version.',
+      a: 'Issue a revised one with a new number and date. The ITA advises that changes should not be made without the buyer’s consent, especially once a bank or authority has relied on the first version.',
     },
     {
       q: 'Does a proforma invoice need the HS code?',
-      a:
-        'It is not on the ITA’s list, but a buyer applying for an import licence may ask for it. If you include one, take it from the official tariff of the country concerned; do not guess.',
+      a: 'It is not on the ITA’s list, but a buyer applying for an import licence may ask for it. If you include one, take it from the official tariff of the country concerned; do not guess.',
     },
   ],
   sources: [
@@ -167,8 +161,7 @@ const article: ContentArticle = {
     afterSection: 2,
     tool: '/tools/proforma-invoice-generator',
     title: 'Fill in a proforma with every field on the list',
-    text:
-      'The proforma invoice generator has the buyer’s reference, Incoterms® rule, payment terms and validity date built in. Enter the goods and download the PDF.',
+    text: 'The proforma invoice generator has the buyer’s reference, Incoterms® rule, payment terms and validity date built in. Enter the goods and download the PDF.',
   },
   tools: [
     '/tools/proforma-invoice-generator',
@@ -187,8 +180,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1625225233840-695456021cde',
     width: 6000,
     height: 4000,
-    alt:
-      'Blank sheet of paper on a desk beside a pen and a calculator, ready for a price quotation',
+    alt: 'Blank sheet of paper on a desk beside a pen and a calculator, ready for a price quotation',
     caption: 'A blank sheet, a pen and a calculator on a desk',
     photographer: { name: 'Mediamodifier', profile: 'https://unsplash.com/@mediamodifier' },
     page: 'https://unsplash.com/photos/black-calculator-beside-black-pen-on-white-printer-paper-I3HPUolh5hA',

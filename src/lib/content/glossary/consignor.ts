@@ -37,7 +37,11 @@ const term: GlossaryTerm = {
       head: ['Role', 'Party', 'Where it appears'],
       rows: [
         ['Seller / exporter', 'Oakmere Textiles Ltd', 'Commercial invoice'],
-        ['Consignor (shipper)', 'Oakmere Textiles Ltd, c/o Dockside Logistics', 'Bill of lading shipper box'],
+        [
+          'Consignor (shipper)',
+          'Oakmere Textiles Ltd, c/o Dockside Logistics',
+          'Bill of lading shipper box',
+        ],
         ['Consignee', 'Bayview Retail', 'Invoice, packing list and bill of lading'],
       ],
     },
@@ -54,7 +58,11 @@ const term: GlossaryTerm = {
         'The exporter is the party responsible for the export in customs terms; it is often, but not always, the consignor.',
     },
   ],
-  related: ['waybill', '/guides/shipper-consignee-notify-party', '/guides/what-is-a-bill-of-lading'],
+  related: [
+    'waybill',
+    '/guides/shipper-consignee-notify-party',
+    '/guides/what-is-a-bill-of-lading',
+  ],
   tool: '/tools/invoice-generator',
   toolPitch:
     'The commercial invoice generator puts the seller, consignee and shipping details in the boxes customs and carriers look for.',

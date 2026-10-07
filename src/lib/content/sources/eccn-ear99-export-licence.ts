@@ -85,8 +85,7 @@ export default {
     authority: 'HM Revenue & Customs (GOV.UK)',
     title:
       'Checking the origin of your goods using product specific rules when trading between the UK and EU',
-    url:
-      'https://www.gov.uk/guidance/using-the-harmonised-system-and-product-specific-rules-for-trade-between-the-uk-and-eu',
+    url: 'https://www.gov.uk/guidance/using-the-harmonised-system-and-product-specific-rules-for-trade-between-the-uk-and-eu',
     jurisdiction: 'United Kingdom',
     supports:
       'classifying goods to a 10-digit commodity code when importing into the UK and an 8-digit code when exporting, and the chapter (2-digit), heading (4-digit) and subheading (6-digit) levels',
@@ -96,8 +95,7 @@ export default {
   'a5-gov-uk-cds-commodity-codes': {
     authority: 'HM Revenue & Customs (GOV.UK)',
     title: 'Using commodity codes and related additional codes in the Customs Declaration Service',
-    url:
-      'https://www.gov.uk/guidance/using-commodity-codes-and-related-additional-codes-in-the-customs-declaration-service',
+    url: 'https://www.gov.uk/guidance/using-commodity-codes-and-related-additional-codes-in-the-customs-declaration-service',
     jurisdiction: 'United Kingdom',
     supports:
       'data element 6/14 carrying the first 8 digits of the commodity code used for imports and exports, and data element 6/15 carrying digits 9 and 10, which can affect duty and measures',

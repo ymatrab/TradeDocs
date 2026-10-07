@@ -15,8 +15,7 @@ const article: ContentArticle = {
   metaTitle: 'Importing into the US: entry, bond and documents',
   description:
     'The US import process step by step: who the importer of record is, the entry documents CBP asks for, the bond, ISF for ocean cargo, and the 15-day and 10-day deadlines.',
-  lede:
-    'Importing into the United States is a sequence with fixed deadlines, most of them set in Title 19 of the Code of Federal Regulations. Knowing the order, and which document each step relies on, is how you keep goods moving instead of sitting in a warehouse.',
+  lede: 'Importing into the United States is a sequence with fixed deadlines, most of them set in Title 19 of the Code of Federal Regulations. Knowing the order, and which document each step relies on, is how you keep goods moving instead of sitting in a warehouse.',
   answer:
     'To import into the US, the importer of record files entry documents with CBP within 15 calendar days of arrival: an entry form, evidence of the right to make entry, a commercial invoice and a packing list. A bond must be on file before release, and the entry summary with estimated duties follows within 10 working days.',
   keyFacts: [
@@ -132,28 +131,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Can I import into the US without a customs broker?',
-      a:
-        'CBP’s guidance says certain resident importers may file entries on their own behalf, though many first-time importers use a licensed broker. Either way, the importer of record is responsible for the entry.',
+      a: 'CBP’s guidance says certain resident importers may file entries on their own behalf, though many first-time importers use a licensed broker. Either way, the importer of record is responsible for the entry.',
     },
     {
       q: 'Do small shipments need a formal entry?',
-      a:
-        'Not always. Under 19 CFR 143.21, shipments valued at $2,500 or less are generally eligible for informal entry, with exceptions for certain goods. Check the current rules with CBP or your broker for your goods.',
+      a: 'Not always. Under 19 CFR 143.21, shipments valued at $2,500 or less are generally eligible for informal entry, with exceptions for certain goods. Check the current rules with CBP or your broker for your goods.',
     },
     {
       q: 'Who files the Importer Security Filing?',
-      a:
-        'The ISF importer or its authorised agent, for cargo arriving by vessel. It is due no later than 24 hours before the cargo is laden aboard the vessel at the foreign port.',
+      a: 'The ISF importer or its authorised agent, for cargo arriving by vessel. It is due no later than 24 hours before the cargo is laden aboard the vessel at the foreign port.',
     },
     {
       q: 'What number goes in the importer number field?',
-      a:
-        'CBP says it is your IRS business registration number or, if you have no registered business, your social security number.',
+      a: 'CBP says it is your IRS business registration number or, if you have no registered business, your social security number.',
     },
     {
       q: 'Can I get the duty rate confirmed before I import?',
-      a:
-        'Yes. CBP issues binding rulings on classification. The USITC tariff database gives an approximate rate, but CBP makes the final determination at entry.',
+      a: 'Yes. CBP issues binding rulings on classification. The USITC tariff database gives an approximate rate, but CBP makes the final determination at entry.',
     },
   ],
   sources: [
@@ -177,8 +171,7 @@ const article: ContentArticle = {
     afterSection: 2,
     tool: '/tools/invoice-generator',
     title: 'Send your supplier an invoice that meets 19 CFR 141.86',
-    text:
-      'The commercial invoice generator has the fields a US entry relies on: parties, description, quantities, unit prices, currency, origin and the Incoterms® rule.',
+    text: 'The commercial invoice generator has the fields a US entry relies on: parties, description, quantities, unit prices, currency, origin and the Incoterms® rule.',
   },
   tools: [
     '/tools/landed-cost-calculator',
@@ -198,8 +191,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1571244222371-0b0b60f3c92b',
     width: 4896,
     height: 3264,
-    alt:
-      'Container ship and stacked shipping containers at the port of Los Angeles, a main US entry point',
+    alt: 'Container ship and stacked shipping containers at the port of Los Angeles, a main US entry point',
     caption: 'Container ship and stacked containers at Los Angeles, California',
     photographer: { name: 'Diego Fernandez', profile: 'https://unsplash.com/@diegitane' },
     page: 'https://unsplash.com/photos/black-and-red-ship-on-body-of-water-at-daytime-6Vg8N8u61aI',

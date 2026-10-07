@@ -58,7 +58,8 @@ const country: CountryPage = {
     {
       document: 'Commercial invoice, in Spanish',
       status: 'required',
-      condition: 'Accompanies the pedimento. Prepare it in Spanish, or agree a bilingual layout with the buyer’s broker.',
+      condition:
+        'Accompanies the pedimento. Prepare it in Spanish, or agree a bilingual layout with the buyer’s broker.',
       sourceId: 'trade-gov-ccg-mx',
       tool: '/tools/invoice-generator',
     },
@@ -183,12 +184,7 @@ const country: CountryPage = {
       a: 'Only if a party in Mexico is registered to import the goods, because every importer must be listed in the Padrón de Importadores, with an active RFC and a customs agent or representative. Otherwise, sell on DAP or an earlier rule so the buyer imports.',
     },
   ],
-  sources: [
-    'anam-mexico',
-    'trade-gov-ccg-mx',
-    'sat-padron-importadores',
-    'trade-gov-packing-list',
-  ],
+  sources: ['anam-mexico', 'trade-gov-ccg-mx', 'sat-padron-importadores', 'trade-gov-packing-list'],
   regulated: true,
   review: null,
   tool: '/tools/invoice-generator',

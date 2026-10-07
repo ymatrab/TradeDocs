@@ -14,8 +14,7 @@ const article: ContentArticle = {
   metaTitle: 'What is an air waybill (AWB)? A plain guide',
   description:
     'The air waybill is the contract of carriage for air cargo and a receipt, but not a document of title. What it shows, who makes it out, the e-AWB, and how weight is charged.',
-  lede:
-    'Every air cargo shipment travels under an air waybill. It looks like the air version of a bill of lading, and it does two of the same jobs, but the third one, control of the goods, is missing, and that changes how you get paid.',
+  lede: 'Every air cargo shipment travels under an air waybill. It looks like the air version of a bill of lading, and it does two of the same jobs, but the third one, control of the goods, is missing, and that changes how you get paid.',
   answer:
     'An air waybill (AWB) is the document for cargo carried by air. IATA describes it as the contract of carriage between the shipper and the airline, and under the Montreal Convention it is evidence of that contract and of the carrier’s acceptance of the cargo. Unlike an order bill of lading, it is not negotiable.',
   keyFacts: [
@@ -120,23 +119,19 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'What is the difference between an air waybill and a bill of lading?',
-      a:
-        'Both are evidence of the contract of carriage and a receipt for the goods. A bill of lading for sea cargo can be negotiable and act as a document of title; an air waybill is not negotiable.',
+      a: 'Both are evidence of the contract of carriage and a receipt for the goods. A bill of lading for sea cargo can be negotiable and act as a document of title; an air waybill is not negotiable.',
     },
     {
       q: 'How many originals of an air waybill are there?',
-      a:
-        'Three, under Article 7 of the Montreal Convention: one marked for the carrier, one marked for the consignee, and one the carrier signs and hands to the consignor after accepting the cargo.',
+      a: 'Three, under Article 7 of the Montreal Convention: one marked for the carrier, one marked for the consignee, and one the carrier signs and hands to the consignor after accepting the cargo.',
     },
     {
       q: 'What weight should I give for the air waybill?',
-      a:
-        'The actual gross weight of the consignment, which Article 5 requires the air waybill to show, plus each piece’s dimensions so the volumetric weight can be worked out. Take both from your packing list.',
+      a: 'The actual gross weight of the consignment, which Article 5 requires the air waybill to show, plus each piece’s dimensions so the volumetric weight can be worked out. Take both from your packing list.',
     },
     {
       q: 'Does the air waybill replace the commercial invoice?',
-      a:
-        'No. The air waybill covers carriage. Customs at destination still needs the commercial invoice, and usually the packing list, to clear the goods.',
+      a: 'No. The air waybill covers carriage. Customs at destination still needs the commercial invoice, and usually the packing list, to clear the goods.',
     },
   ],
   sources: [
@@ -152,8 +147,7 @@ const article: ContentArticle = {
     afterSection: 3,
     tool: '/tools/chargeable-weight',
     title: 'Check the weight your air waybill will be charged on',
-    text:
-      'Enter carton dimensions and actual weight, and the chargeable weight calculator shows volumetric against actual for air and express, and which one you will be billed on.',
+    text: 'Enter carton dimensions and actual weight, and the chargeable weight calculator shows volumetric against actual for air and express, and which one you will be billed on.',
   },
   tools: ['/tools/chargeable-weight', '/tools/packing-list-generator', '/tools/invoice-generator'],
   related: [
@@ -168,8 +162,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1750783306461-9c40dd99e1ae',
     width: 4669,
     height: 4000,
-    alt:
-      'Ground crew loading cargo into an aircraft on the airport apron before an air freight flight',
+    alt: 'Ground crew loading cargo into an aircraft on the airport apron before an air freight flight',
     caption: 'An aircraft being loaded on the tarmac',
     photographer: { name: 'Zero Vo', profile: 'https://unsplash.com/@z3ro' },
     page: 'https://unsplash.com/photos/an-airplane-is-being-loaded-on-the-tarmac-kjBMLHxvHSk',

@@ -66,9 +66,9 @@ export default function UnitConverterPage() {
         <p className="eyebrow">Free tool</p>
         <h1>CBM to cubic feet and kg to lb converter</h1>
         <p className="lede">
-          One cubic metre is 35.3147 cubic feet, and one kilogram is 2.2046 pounds. Type a figure
-          in either field below and the other fills in, using the exact definitions of the foot
-          and the pound. Everything is worked out in your browser.
+          One cubic metre is 35.3147 cubic feet, and one kilogram is 2.2046 pounds. Type a figure in
+          either field below and the other fills in, using the exact definitions of the foot and the
+          pound. Everything is worked out in your browser.
         </p>
       </section>
 
@@ -131,9 +131,9 @@ export default function UnitConverterPage() {
       <section className="section">
         <h2>One unit across the set</h2>
         <p className="measure">
-          A packing list in kilograms beside an invoice in pounds is a question waiting to be
-          asked. With an account, a shipment holds its weights once and every document prints the
-          same figures.
+          A packing list in kilograms beside an invoice in pounds is a question waiting to be asked.
+          With an account, a shipment holds its weights once and every document prints the same
+          figures.
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>

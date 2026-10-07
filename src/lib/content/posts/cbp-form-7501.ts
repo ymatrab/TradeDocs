@@ -76,7 +76,8 @@ const article: ContentArticle = {
         'Most of the line-level data. Under 19 CFR 141.86, a US import invoice must show the parties, a detailed description, quantities, the purchase price in the currency of sale, itemised charges and the country of origin. The broker transfers those facts into the blocks below, following CBP’s instructions for each.',
       ],
       table: {
-        caption: 'Form 7501 blocks filled from the invoice and shipping documents (CBP Form 7501, 02/26)',
+        caption:
+          'Form 7501 blocks filled from the invoice and shipping documents (CBP Form 7501, 02/26)',
         head: ['Block or column', 'What CBP’s instructions ask for', 'Where the broker gets it'],
         rows: [
           [

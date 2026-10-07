@@ -15,8 +15,7 @@ const article: ContentArticle = {
   metaTitle: 'Letter of credit and other export payment terms',
   description:
     'Cash in advance, letters of credit, documentary collections and open account compared: the risk each puts on seller and buyer, and the documents each one depends on.',
-  lede:
-    'How you get paid decides how much of the shipment is really at risk. The five usual payment methods move that risk between seller and buyer in steps, and the safer ones for the seller depend on documents being exactly right.',
+  lede: 'How you get paid decides how much of the shipment is really at risk. The five usual payment methods move that risk between seller and buyer in steps, and the safer ones for the seller depend on documents being exactly right.',
   answer:
     'A letter of credit is a commitment by the buyer’s bank to pay the exporter once the documents the credit requires are presented and comply. It sits between cash in advance, safest for the seller, and open account, safest for the buyer. Documentary collections use banks to exchange documents for payment without a bank guarantee.',
   keyFacts: [
@@ -127,28 +126,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is a letter of credit the same as a documentary credit?',
-      a:
-        'Yes. The ICC’s rules call it a documentary credit; in practice both names describe a bank’s undertaking to pay against documents that comply with the credit.',
+      a: 'Yes. The ICC’s rules call it a documentary credit; in practice both names describe a bank’s undertaking to pay against documents that comply with the credit.',
     },
     {
       q: 'Who pays for a letter of credit?',
-      a:
-        'It is a matter for the contract and the banks. The ITA describes letters of credit as relatively expensive because of bank fees, and suggests asking your bank what one costs and who pays before you agree terms.',
+      a: 'It is a matter for the contract and the banks. The ITA describes letters of credit as relatively expensive because of bank fees, and suggests asking your bank what one costs and who pays before you agree terms.',
     },
     {
       q: 'What is the difference between D/P and D/A?',
-      a:
-        'Under D/P the buyer’s bank releases the documents when the buyer pays. Under D/A it releases them when the buyer accepts a bill of exchange promising to pay at a later date.',
+      a: 'Under D/P the buyer’s bank releases the documents when the buyer pays. Under D/A it releases them when the buyer accepts a bill of exchange promising to pay at a later date.',
     },
     {
       q: 'Does a letter of credit guarantee I will be paid?',
-      a:
-        'Only if your documents comply with the credit. The bank’s commitment is to pay against a complying presentation, so discrepancies can delay or put payment at risk.',
+      a: 'Only if your documents comply with the credit. The bank’s commitment is to pay against a complying presentation, so discrepancies can delay or put payment at risk.',
     },
     {
       q: 'Which payment term is safest for the buyer?',
-      a:
-        'Open account and consignment, according to the ITA, because the buyer receives the goods before it pays.',
+      a: 'Open account and consignment, according to the ITA, because the buyer receives the goods before it pays.',
     },
   ],
   sources: [
@@ -163,8 +157,7 @@ const article: ContentArticle = {
     afterSection: 2,
     tool: '/tools/proforma-invoice-generator',
     title: 'Start the letter of credit with a clean proforma',
-    text:
-      'The proforma invoice generator carries the payment terms, Incoterms® rule, buyer’s reference and validity date a bank will read when the credit is opened.',
+    text: 'The proforma invoice generator carries the payment terms, Incoterms® rule, buyer’s reference and validity date a bank will read when the credit is opened.',
   },
   tools: [
     '/tools/proforma-invoice-generator',
@@ -182,8 +175,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85',
     width: 7360,
     height: 4912,
-    alt:
-      'Person signing a document at a desk, as a buyer or bank would when agreeing payment terms',
+    alt: 'Person signing a document at a desk, as a buyer or bank would when agreeing payment terms',
     caption: 'Signing a document at a desk',
     photographer: { name: 'Scott Graham', profile: 'https://unsplash.com/@amstram' },
     page: 'https://unsplash.com/photos/man-writing-on-paper-OQMZwNd3ThU',

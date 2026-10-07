@@ -54,9 +54,9 @@ export default function PalletCalculatorPage() {
         <h1>Pallet calculator</h1>
         <p className="lede">
           Cartons per pallet = cartons per layer × layers. Divide the deck by the carton both ways
-          round for the layer, and the height you may load to, less the pallet itself, by the
-          carton height for the layers; a weight limit can cap it lower. Enter your carton below
-          for the count, loaded height and gross weight. It runs in your browser.
+          round for the layer, and the height you may load to, less the pallet itself, by the carton
+          height for the layers; a weight limit can cap it lower. Enter your carton below for the
+          count, loaded height and gross weight. It runs in your browser.
         </p>
       </section>
 

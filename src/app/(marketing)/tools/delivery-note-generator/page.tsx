@@ -90,9 +90,9 @@ export default function DeliveryNoteGeneratorPage() {
       <section className="section">
         <h2>The note, the list and the invoice, from one record</h2>
         <p className="measure">
-          Retyping the goods for every document is where they start to disagree. With an account,
-          a shipment holds the goods once, and the delivery note, packing list and commercial
-          invoice are all prepared from it.
+          Retyping the goods for every document is where they start to disagree. With an account, a
+          shipment holds the goods once, and the delivery note, packing list and commercial invoice
+          are all prepared from it.
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>

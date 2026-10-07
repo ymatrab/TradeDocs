@@ -47,7 +47,11 @@ const term: GlossaryTerm = {
         'Both are carrier documents naming a consignee; one is issued for air cargo, the other by an ocean carrier as an alternative to the bill of lading.',
     },
   ],
-  related: ['consignor', '/guides/what-is-a-bill-of-lading', '/guides/shipper-consignee-notify-party'],
+  related: [
+    'consignor',
+    '/guides/what-is-a-bill-of-lading',
+    '/guides/shipper-consignee-notify-party',
+  ],
   tool: '/tools/packing-list-generator',
   toolPitch:
     'The packing list generator gives you the package count, gross weight and marks the waybill has to repeat.',

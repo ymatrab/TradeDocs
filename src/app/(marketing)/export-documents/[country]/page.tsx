@@ -78,9 +78,8 @@ export default async function CountryDocumentsPage({
         <p className="lede">{country.lede}</p>
         <p className="muted">
           TradeDocs team · Published{' '}
-          <time dateTime={country.published}>{shortDate(country.published)}</time> · Last
-          checked against sources{' '}
-          <time dateTime={country.reviewed}>{shortDate(country.reviewed)}</time>
+          <time dateTime={country.published}>{shortDate(country.published)}</time> · Last checked
+          against sources <time dateTime={country.reviewed}>{shortDate(country.reviewed)}</time>
         </p>
       </section>
 
@@ -254,11 +253,7 @@ export default async function CountryDocumentsPage({
           <h2 id="other-countries-title">Other destinations</h2>
           <div className="form-grid">
             {others.map((entry) => (
-              <Link
-                key={entry.slug}
-                href={`/export-documents/${entry.slug}`}
-                className="form-cell"
-              >
+              <Link key={entry.slug} href={`/export-documents/${entry.slug}`} className="form-cell">
                 <h3>Export documents for {entry.name}</h3>
                 <p>{entry.description}</p>
               </Link>

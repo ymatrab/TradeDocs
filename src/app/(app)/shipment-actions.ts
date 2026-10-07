@@ -158,15 +158,8 @@ export async function updateShipment(
     return { error: summaryOf(fields, 'Check the details.'), fields };
   }
 
-  const {
-    org,
-    shipment,
-    revision,
-    shipped_on,
-    buyer_reference,
-    proforma_valid_until,
-    ...rest
-  } = parsed.data;
+  const { org, shipment, revision, shipped_on, buyer_reference, proforma_valid_until, ...rest } =
+    parsed.data;
   // Each only sent when the form has the field, so a form without it never clears it.
   const fields = {
     ...rest,

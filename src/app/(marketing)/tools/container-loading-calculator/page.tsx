@@ -53,9 +53,9 @@ export default function ContainerLoadingPage() {
         <p className="eyebrow">Free tool</p>
         <h1>Container loading calculator</h1>
         <p className="lede">
-          At most, a container takes its internal volume divided by the volume of one carton, or
-          its payload divided by the weight of one carton, whichever is smaller. Enter one carton
-          or pallet below for that ceiling in a 20ft, 40ft and 40ft high-cube container. It is an
+          At most, a container takes its internal volume divided by the volume of one carton, or its
+          payload divided by the weight of one carton, whichever is smaller. Enter one carton or
+          pallet below for that ceiling in a 20ft, 40ft and 40ft high-cube container. It is an
           estimate, not a stow plan, and it runs in your browser.
         </p>
       </section>
@@ -67,8 +67,8 @@ export default function ContainerLoadingPage() {
       <section className="section" aria-labelledby="examples-title">
         <h2 id="examples-title">Worked examples</h2>
         <p className="measure">
-          The same arithmetic on two common units, at 100% usable volume. Read them as ceilings:
-          the floor layout and stacking decide how close a real load gets.
+          The same arithmetic on two common units, at 100% usable volume. Read them as ceilings: the
+          floor layout and stacking decide how close a real load gets.
         </p>
         <DataTable caption="Upper-bound units per container for two example units">
           <thead>
@@ -104,8 +104,8 @@ export default function ContainerLoadingPage() {
         </DataTable>
         <p className="muted measure">
           The pallet row shows why these are ceilings: pallets 150 cm tall cannot go two high in any
-          of these containers, and a single tier covers the floor long before the volume is used,
-          so far fewer fit in practice. For the floor itself, see{' '}
+          of these containers, and a single tier covers the floor long before the volume is used, so
+          far fewer fit in practice. For the floor itself, see{' '}
           <Link className="text-link" href="/guides/pallet-sizes">
             pallet sizes
           </Link>{' '}
@@ -166,9 +166,9 @@ export default function ContainerLoadingPage() {
       <section className="section">
         <h2>Once the load is booked</h2>
         <p className="measure">
-          The cartons you counted here end up on the packing list. With an account, a shipment
-          holds the packages, weights and dimensions once, works out the volume, and prints the
-          packing list and the commercial invoice from the same figures.
+          The cartons you counted here end up on the packing list. With an account, a shipment holds
+          the packages, weights and dimensions once, works out the volume, and prints the packing
+          list and the commercial invoice from the same figures.
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />
       </section>

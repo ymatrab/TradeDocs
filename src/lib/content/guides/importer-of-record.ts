@@ -12,8 +12,7 @@ const article: ContentArticle = {
   metaTitle: 'Importer of record: who it is and what it owes',
   description:
     'Who the importer of record is under US customs law, what it is liable for, how the Incoterms rule you agree changes who takes the role, and what a foreign seller needs under DDP.',
-  lede:
-    'Every formal US import has one party that answers to CBP for the entry and the duty. Agree a delivered price without knowing who that party is and you may find it is you.',
+  lede: 'Every formal US import has one party that answers to CBP for the entry and the duty. Agree a delivered price without knowing who that party is and you may find it is you.',
   answer:
     'The importer of record is the party that makes entry of goods into the United States and is responsible to CBP for the entry and the duties. Under 19 U.S.C. 1484, it is the owner or purchaser of the goods, or a licensed customs broker designated by them. Using a broker does not move the duty liability.',
   keyFacts: [
@@ -112,23 +111,19 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is the importer of record the same as the consignee?',
-      a:
-        'Often, but not necessarily. The consignee is the party the goods are delivered to; the importer of record is the party making entry with CBP. Under 19 U.S.C. 1484 that is the owner or purchaser, or a broker they designate.',
+      a: 'Often, but not necessarily. The consignee is the party the goods are delivered to; the importer of record is the party making entry with CBP. Under 19 U.S.C. 1484 that is the owner or purchaser, or a broker they designate.',
     },
     {
       q: 'Does my customs broker become liable for the duty?',
-      a:
-        'CBP says the importer of record remains ultimately responsible for the entry and the duties, and 19 CFR 141.1 says paying a broker who fails to pay CBP does not discharge the importer’s liability.',
+      a: 'CBP says the importer of record remains ultimately responsible for the entry and the duties, and 19 CFR 141.1 says paying a broker who fails to pay CBP does not discharge the importer’s liability.',
     },
     {
       q: 'Can a company outside the US be importer of record?',
-      a:
-        'A nonresident corporation can make entry if it meets 19 CFR 141.18: a resident agent authorised to accept service of process and a bond with a resident corporate surety.',
+      a: 'A nonresident corporation can make entry if it meets 19 CFR 141.18: a resident agent authorised to accept service of process and a bond with a resident corporate surety.',
     },
     {
       q: 'What is CBP Form 5106 for?',
-      a:
-        'CBP says a party can request a CBP-assigned importer number on Form 5106, presented to the entry branch at a port of entry.',
+      a: 'CBP says a party can request a CBP-assigned importer number on Form 5106, presented to the entry branch at a port of entry.',
     },
   ],
   sources: [
@@ -145,8 +140,7 @@ const article: ContentArticle = {
     afterSection: 3,
     tool: '/tools/landed-cost-calculator',
     title: 'Price the duty before you agree to DDP',
-    text:
-      'Add freight, insurance, duty and fees to the goods value to see what the importer of record will pay, using a rate you have checked.',
+    text: 'Add freight, insurance, duty and fees to the goods value to see what the importer of record will pay, using a rate you have checked.',
   },
   related: [
     '/guides/dap-vs-ddp',
@@ -160,12 +154,10 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1703226741497-6de4f67c6e11',
     width: 5472,
     height: 3648,
-    alt:
-      'Container ship guided into port by tugboats beside cranes and stacked containers, where imports are entered',
+    alt: 'Container ship guided into port by tugboats beside cranes and stacked containers, where imports are entered',
     caption: 'A container ship guided into port by tugboats',
     photographer: { name: 'Bernd Dittrich', profile: 'https://unsplash.com/@hdbernd' },
-    page:
-      'https://unsplash.com/photos/a-tug-boat-in-the-water-next-to-a-large-cargo-ship-huciLx_BveI',
+    page: 'https://unsplash.com/photos/a-tug-boat-in-the-water-next-to-a-large-cargo-ship-huciLx_BveI',
   },
 };
 

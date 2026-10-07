@@ -13,8 +13,7 @@ const article: ContentArticle = {
   metaTitle: 'ECCN and EAR99: when an export licence applies',
   description:
     'What an ECCN and EAR99 mean under the US Export Administration Regulations, how items get classified, and the official steps BIS sets out for checking whether a licence is needed.',
-  lede:
-    'Before a US export leaves, someone has to know how the item is controlled. That answer is its ECCN, or EAR99 if it has none, and it decides whether the next question about a licence is short or long.',
+  lede: 'Before a US export leaves, someone has to know how the item is controlled. That answer is its ECCN, or EAR99 if it has none, and it decides whether the next question about a licence is short or long.',
   answer:
     'An ECCN (Export Control Classification Number) is a five-character code on the Commerce Control List that identifies how an item is controlled under the US Export Administration Regulations. EAR99 is the designation for items subject to the EAR that fit no ECCN. EAR99 items generally need no licence, except for restricted destinations, end users or end uses.',
   keyFacts: [
@@ -117,28 +116,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is EAR99 the same as “no licence required”?',
-      a:
-        'Not always. BIS says EAR99 items generally need no licence but may need one for a prohibited or restricted destination, end user or end use.',
+      a: 'Not always. BIS says EAR99 items generally need no licence but may need one for a prohibited or restricted destination, end user or end use.',
     },
     {
       q: 'Can I use the ECCN my supplier gave me?',
-      a:
-        'BIS lists asking the manufacturer as one way to classify, and says to check the answer against the current Commerce Control List because classifications change.',
+      a: 'BIS lists asking the manufacturer as one way to classify, and says to check the answer against the current Commerce Control List because classifications change.',
     },
     {
       q: 'Is an ECCN the same as an HS code or Schedule B number?',
-      a:
-        'No. BIS treats the ECCN as an export control classification; Schedule B and HTS numbers are commodity codes for statistics and import duty. One shipment usually needs both kinds.',
+      a: 'No. BIS treats the ECCN as an export control classification; Schedule B and HTS numbers are commodity codes for statistics and import duty. One shipment usually needs both kinds.',
     },
     {
       q: 'How do I ask BIS to classify an item?',
-      a:
-        'BIS accepts classification requests through its SNAP-R system, following section 748.3 of the EAR, and then determines the ECCN.',
+      a: 'BIS accepts classification requests through its SNAP-R system, following section 748.3 of the EAR, and then determines the ECCN.',
     },
     {
       q: 'Do I check the buyer even for an EAR99 item?',
-      a:
-        'BIS treats restricted end users and end uses as reasons an EAR99 item may need a licence, and the Consolidated Screening List is the ITA’s combined list for checking parties.',
+      a: 'BIS treats restricted end users and end uses as reasons an EAR99 item may need a licence, and the Consolidated Screening List is the ITA’s combined list for checking parties.',
     },
   ],
   sources: [
@@ -155,8 +149,7 @@ const article: ContentArticle = {
     afterSection: 3,
     tool: '/tools/invoice-generator',
     title: 'Put the export details on one invoice',
-    text:
-      'Once the classification and licence check are done, build the commercial invoice with the same description, quantity and value you will report in the EEI.',
+    text: 'Once the classification and licence check are done, build the commercial invoice with the same description, quantity and value you will report in the EEI.',
   },
   related: [
     '/guides/how-to-export-from-the-us',
@@ -169,8 +162,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1562408590-e32931084e23',
     width: 3895,
     height: 2597,
-    alt:
-      'Close-up of a printed circuit board, the kind of technical item an exporter checks against export controls',
+    alt: 'Close-up of a printed circuit board, the kind of technical item an exporter checks against export controls',
     caption: 'Printed circuit board in close-up',
     photographer: { name: 'Umberto', profile: 'https://unsplash.com/@umby' },
     page: 'https://unsplash.com/photos/blue-circuit-board-jXd2FSvcRr8',

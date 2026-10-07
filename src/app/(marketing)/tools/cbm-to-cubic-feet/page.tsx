@@ -53,8 +53,8 @@ export default function CbmToCubicFeetPage() {
         <p className="measure">
           Cubic feet = cubic metres × 35.3147. Cubic metres = cubic feet × 0.028 316 846 592. The
           foot is defined as exactly 0.3048 m, so the cubic foot is exactly 0.3048³ m³; the
-          converter uses that exact figure and rounds only the answer. The inch is exactly 0.0254
-          m and the litre exactly 0.001 m³, so those conversions are exact too.
+          converter uses that exact figure and rounds only the answer. The inch is exactly 0.0254 m
+          and the litre exactly 0.001 m³, so those conversions are exact too.
         </p>
       </section>
 

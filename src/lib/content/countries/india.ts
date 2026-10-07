@@ -58,7 +58,8 @@ const country: CountryPage = {
     {
       document: 'Signed commercial invoice',
       status: 'required',
-      condition: 'Generally required with the bill of entry. Sign it, as Indian customs lists a signed invoice.',
+      condition:
+        'Generally required with the bill of entry. Sign it, as Indian customs lists a signed invoice.',
       sourceId: 'cbic-chennai-import-procedure',
       tool: '/tools/invoice-generator',
     },

@@ -37,11 +37,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function GlossaryTermPage({
-  params,
-}: {
-  params: Promise<{ term: string }>;
-}) {
+export default async function GlossaryTermPage({ params }: { params: Promise<{ term: string }> }) {
   const { term: slug } = await params;
   const term = findTerm(slug);
   if (!term) notFound();
@@ -60,9 +56,7 @@ export default async function GlossaryTermPage({
         </p>
         <h1>{term.term}</h1>
         <p className="lede">{term.shortDefinition}</p>
-        {term.aliases.length > 0 ? (
-          <p className="muted">Also: {term.aliases.join(' · ')}</p>
-        ) : null}
+        {term.aliases.length > 0 ? <p className="muted">Also: {term.aliases.join(' · ')}</p> : null}
         <p className="muted">
           TradeDocs team · Published{' '}
           <time dateTime={term.published}>{shortDate(term.published)}</time> · Last reviewed{' '}

@@ -13,8 +13,7 @@ const article: ContentArticle = {
   metaTitle: 'Commodity code UK: how the digits work',
   description:
     'How UK commodity codes are built from the Harmonized System, why imports use 10 digits and exports 8, where to look a code up and how to get HMRC’s advice or a binding ruling.',
-  lede:
-    'Every UK customs declaration names the goods by a commodity code. The first six digits are shared with most of the world, the rest are the UK’s own, and the number you need depends on which way the goods are moving.',
+  lede: 'Every UK customs declaration names the goods by a commodity code. The first six digits are shared with most of the world, the rest are the UK’s own, and the number you need depends on which way the goods are moving.',
   answer:
     'A UK commodity code is the number that identifies goods on a UK customs declaration and sets the duty, import VAT and other measures. HMRC says goods are classified to a 10-digit code when imported into the UK and an 8-digit code when exported. The first six digits follow the international Harmonized System.',
   keyFacts: [
@@ -112,28 +111,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Is a commodity code the same as an HS code?',
-      a:
-        'The HS code is the first six digits. A UK commodity code adds national digits after them: 8 for exports and 10 for imports, according to HMRC.',
+      a: 'The HS code is the first six digits. A UK commodity code adds national digits after them: 8 for exports and 10 for imports, according to HMRC.',
     },
     {
       q: 'Does a UK commodity code work in the EU or the US?',
-      a:
-        'Only the first six digits are shared worldwide, GOV.UK says. The digits after that are set by each country or customs union, so the importing side uses its own tariff.',
+      a: 'Only the first six digits are shared worldwide, GOV.UK says. The digits after that are set by each country or customs union, so the importing side uses its own tariff.',
     },
     {
       q: 'How long does an Advance Tariff Ruling take?',
-      a:
-        'HMRC says it responds to applications in 30 to 120 days, and each type of goods needs its own application.',
+      a: 'HMRC says it responds to applications in 30 to 120 days, and each type of goods needs its own application.',
     },
     {
       q: 'Is HMRC’s email classification advice binding?',
-      a:
-        'No. HMRC describes it as non-legally binding advice. A legally binding decision comes from an Advance Tariff Ruling.',
+      a: 'No. HMRC describes it as non-legally binding advice. A legally binding decision comes from an Advance Tariff Ruling.',
     },
     {
       q: 'Where does the commodity code go on a commercial invoice?',
-      a:
-        'Usually against each line item, next to its description. Use the code that matches the declaration and confirm with the importer which national code it needs.',
+      a: 'Usually against each line item, next to its description. Use the code that matches the declaration and confirm with the importer which national code it needs.',
     },
   ],
   sources: [
@@ -154,8 +148,7 @@ const article: ContentArticle = {
     afterSection: 3,
     tool: '/tools/invoice-generator',
     title: 'Put the code on every invoice line',
-    text:
-      'Enter the commodity code you have confirmed against each item, so the invoice and the declaration describe the goods the same way.',
+    text: 'Enter the commodity code you have confirmed against each item, so the invoice and the declaration describe the goods the same way.',
   },
   related: [
     '/guides/hs-vs-hts-vs-schedule-b',

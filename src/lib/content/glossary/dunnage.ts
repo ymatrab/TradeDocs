@@ -55,7 +55,12 @@ const term: GlossaryTerm = {
         'Packaging (cartons, crates, wrapping) belongs to each package; dunnage works on the load as a whole.',
     },
   ],
-  related: ['verified-gross-mass', 'teu', '/guides/pallet-sizes', '/guides/gross-weight-vs-net-weight'],
+  related: [
+    'verified-gross-mass',
+    'teu',
+    '/guides/pallet-sizes',
+    '/guides/gross-weight-vs-net-weight',
+  ],
   tool: '/tools/container-loading-calculator',
   toolPitch:
     'The container loading calculator shows how many cartons or pallets a container takes, so you can see how much space is left to brace.',

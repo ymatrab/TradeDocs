@@ -15,8 +15,7 @@ const article: ContentArticle = {
   metaTitle: 'CMR note: the road consignment note explained',
   description:
     'What a CMR consignment note is, when the CMR Convention applies, the particulars it must show, who signs the three copies, and how it matches your invoice and packing list.',
-  lede:
-    'Send goods by lorry from one country to another in Europe and the driver will ask for a CMR. It is the road equivalent of the bill of lading’s receipt and contract roles, and most of what goes on it comes from your packing list.',
+  lede: 'Send goods by lorry from one country to another in Europe and the driver will ask for a CMR. It is the road equivalent of the bill of lading’s receipt and contract roles, and most of what goes on it comes from your packing list.',
   answer:
     'A CMR note is the consignment note for international road carriage under the CMR Convention. It confirms the contract of carriage between sender and carrier and records the goods, packages, gross weight and the parties. It is made out in three originals signed by the sender and the carrier, and one travels with the goods.',
   keyFacts: [
@@ -133,28 +132,23 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Who keeps each copy of the CMR note?',
-      a:
-        'Under Article 5 the first original goes to the sender, the second travels with the goods to the consignee, and the third is kept by the carrier.',
+      a: 'Under Article 5 the first original goes to the sender, the second travels with the goods to the consignee, and the third is kept by the carrier.',
     },
     {
       q: 'Who is responsible for the details on a CMR note?',
-      a:
-        'Each party for what it supplies. Under Article 7 the sender bears the cost of particulars it gave that prove inaccurate or inadequate, such as the description, packages or gross weight.',
+      a: 'Each party for what it supplies. Under Article 7 the sender bears the cost of particulars it gave that prove inaccurate or inadequate, such as the description, packages or gross weight.',
     },
     {
       q: 'Does the CMR apply to UK to EU road freight?',
-      a:
-        'Yes, where the carriage is by road for reward between two countries and at least one is a contracting country. The UK’s Protocol of Signature keeps UK to Republic of Ireland traffic outside it.',
+      a: 'Yes, where the carriage is by road for reward between two countries and at least one is a contracting country. The UK’s Protocol of Signature keeps UK to Republic of Ireland traffic outside it.',
     },
     {
       q: 'What weight goes on the CMR note?',
-      a:
-        'The gross weight of the goods, packaging included, or their quantity otherwise expressed. Take it from the total on your packing list so the two documents agree.',
+      a: 'The gross weight of the goods, packaging included, or their quantity otherwise expressed. Take it from the total on your packing list so the two documents agree.',
     },
     {
       q: 'How long do I have to make a claim under the CMR?',
-      a:
-        'Article 32 sets one year, or three years for wilful misconduct. Notice of damage is due sooner: under Article 30, apparent damage at delivery, other damage within seven days, and delay within 21 days.',
+      a: 'Article 32 sets one year, or three years for wilful misconduct. Notice of damage is due sooner: under Article 30, apparent damage at delivery, other damage within seven days, and delay within 21 days.',
     },
   ],
   sources: ['a4-cmr-convention', 'a4-gov-uk-e-cmr-protocol', 'trade-gov-packing-list'],
@@ -163,8 +157,7 @@ const article: ContentArticle = {
     afterSection: 2,
     tool: '/tools/packing-list-generator',
     title: 'Get the packages, marks and gross weight right first',
-    text:
-      'The packing list generator totals packages and net and gross weights per line, so the figures you give the carrier for the CMR note match your other documents.',
+    text: 'The packing list generator totals packages and net and gross weights per line, so the figures you give the carrier for the CMR note match your other documents.',
   },
   tools: ['/tools/packing-list-generator', '/tools/invoice-generator', '/tools/incoterms'],
   related: [

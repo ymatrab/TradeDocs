@@ -1,10 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { PALLET_PRESETS, palletLoad, type PalletInput } from '@/lib/trade/pallet';
-import {
-  VOLUME_UNIT_KEYS,
-  convertVolume,
-  convertVolumeToAll,
-} from '@/lib/trade/conversions';
+import { VOLUME_UNIT_KEYS, convertVolume, convertVolumeToAll } from '@/lib/trade/conversions';
 import { PAGE_SOURCES, SOURCES } from '@/lib/trade/sources';
 
 const EURO: PalletInput = {

@@ -386,7 +386,7 @@ Writers follow [docs/content/WRITING_BRIEF.md](../content/WRITING_BRIEF.md) and 
   2. 2 × `dataforseo_labs_google_keyword_overview` for Canada and Australia (same country, glossary and tool lists): English markets not yet measured; likely adds country and term volume above threshold.
   3. 3 × `dataforseo_labs_google_keyword_suggestions` (US, trade-filtered) for "container", "pallet" and "invoice": long-tail posts not yet measured.
   4. 2 × `dataforseo_labs_google_ranked_keywords` for two competitor domains (the competitor page export the seo agent owns): which page types earn their traffic beyond the ones measured here.
-  Expected effect: 15–35 more demand-backed pages, which would replace wave E's help articles as the route to 250.
+     Expected effect: 15–35 more demand-backed pages, which would replace wave E's help articles as the route to 250.
 
 ## Appendix: v3 keyword rows
 

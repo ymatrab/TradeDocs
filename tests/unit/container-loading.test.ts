@@ -6,11 +6,7 @@ import {
   parseDecimal,
   type LoadUnitInput,
 } from '@/lib/trade/container-loading';
-import {
-  convert,
-  CUBIC_METRES_PER_CUBIC_FOOT,
-  KILOGRAMS_PER_POUND,
-} from '@/lib/trade/conversions';
+import { convert, CUBIC_METRES_PER_CUBIC_FOOT, KILOGRAMS_PER_POUND } from '@/lib/trade/conversions';
 import { PAGE_SOURCES } from '@/lib/trade/sources';
 
 function load(overrides: Partial<LoadUnitInput> = {}) {
