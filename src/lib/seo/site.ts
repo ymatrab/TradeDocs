@@ -1,3 +1,5 @@
+import { COUNTRIES_UPDATED, LISTED_COUNTRIES } from '@/lib/content/countries';
+import { GLOSSARY_UPDATED, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { INCOTERMS } from '@/lib/trade/incoterms';
@@ -20,7 +22,8 @@ export const SITE_DESCRIPTION =
   'figures agree across the set. It is free while early, and its free tools work without an ' +
   'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
   'a landed cost calculator, CBM, chargeable weight and container loading calculators, a ' +
-  'CBM-to-cubic-feet and kg-to-lb converter and an Incoterms 2020 guide.';
+  'CBM-to-cubic-feet and kg-to-lb converter, an Incoterms 2020 guide and a glossary of ' +
+  'shipping terms.';
 
 export type PublicTool = {
   path: string;
@@ -176,6 +179,32 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
   ...POSTS.map((post) => ({
     path: `/blog/${post.slug}`,
     lastModified: post.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  })),
+
+  // The glossary: the hub and every term not held back by the review gate.
+  { path: '/glossary', lastModified: GLOSSARY_UPDATED, changeFrequency: 'monthly', priority: 0.6 },
+  ...LISTED_GLOSSARY.map((term) => ({
+    path: `/glossary/${term.slug}`,
+    lastModified: term.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  })),
+  // Country pages are regulated: listed only once reviewed, and the hub with the first of them.
+  ...(LISTED_COUNTRIES.length > 0
+    ? [
+        {
+          path: '/export-documents',
+          lastModified: COUNTRIES_UPDATED,
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
+        },
+      ]
+    : []),
+  ...LISTED_COUNTRIES.map((country) => ({
+    path: `/export-documents/${country.slug}`,
+    lastModified: country.updated,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   })),

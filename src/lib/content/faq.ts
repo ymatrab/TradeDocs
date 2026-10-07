@@ -1,3 +1,4 @@
+import { LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { INCOTERMS, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
 
@@ -212,6 +213,8 @@ export type HelpEntry = FaqEntry & {
   id: string;
   /** Where the answer lives, so a reader can go to its context. */
   source: { href: string; label: string };
+  /** Other phrasings the search matches without showing them. */
+  keywords?: string;
 };
 
 type Group = { href: string; label: string; entries: readonly FaqEntry[] };
@@ -256,6 +259,18 @@ function groups(): Group[] {
       href: `/guides/${guide.slug}`,
       label: guide.title,
       entries: guide.faq,
+    })),
+    // Each listed glossary term: its definition first, then its own questions.
+    ...LISTED_GLOSSARY.map((term) => ({
+      href: `/glossary/${term.slug}`,
+      label: `Glossary: ${term.term}`,
+      entries: [
+        {
+          q: `What does ${term.abbreviation ?? term.term.toLowerCase()} mean?`,
+          a: term.shortDefinition,
+        },
+        ...term.faq,
+      ],
     })),
   ];
 }

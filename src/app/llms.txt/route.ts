@@ -1,6 +1,8 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { currentPlans } from '@/lib/billing/server';
 import { FEATURES, INTERVAL_LABELS, paidOnlyFeatures, type Plan } from '@/lib/billing/plans';
+import { COUNTRIES_HUB, LISTED_COUNTRIES } from '@/lib/content/countries';
+import { GLOSSARY_HUB_ENTRIES, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { POSTS } from '@/lib/content/posts';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
@@ -93,6 +95,26 @@ export function GET(): Response {
     `- [All posts](${base}/blog): the index of the posts below; RSS at ${base}/blog/rss.xml.`,
     ...POSTS.map((post) => `- [${post.title}](${base}/blog/${post.slug}): ${post.answer}`),
     '',
+    '## Glossary',
+    '',
+    `- [Shipping terms glossary](${base}/glossary): every term below, plus ${GLOSSARY_HUB_ENTRIES.length} more defined in a line and linked to the guide or tool that explains them.`,
+    ...LISTED_GLOSSARY.map(
+      (term) => `- [${term.term}](${base}/glossary/${term.slug}): ${term.shortDefinition}`,
+    ),
+    '',
+    // Country pages state customs facts, so they are offered only once reviewed.
+    ...(LISTED_COUNTRIES.length > 0
+      ? [
+          `## ${COUNTRIES_HUB.title}`,
+          '',
+          `- [${COUNTRIES_HUB.title}](${base}/export-documents): ${COUNTRIES_HUB.description}`,
+          ...LISTED_COUNTRIES.map(
+            (country) =>
+              `- [Export documents for ${country.name}](${base}/export-documents/${country.slug}): ${country.answer}`,
+          ),
+          '',
+        ]
+      : []),
     '## Incoterms 2020 reference',
     '',
     INCOTERMS_DISCLAIMER,
@@ -112,7 +134,7 @@ export function GET(): Response {
     '',
     '## Optional',
     '',
-    `- [Full text of the guides and blog posts](${base}/llms-full.txt): every article as plain text, with its sources and dates.`,
+    `- [Full text of the guides, blog posts and glossary](${base}/llms-full.txt): every article and term as plain text, with its sources and dates.`,
     '',
   ];
 

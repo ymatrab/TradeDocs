@@ -3,6 +3,8 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
 import { countWords, orderArticles, type ContentArticle } from '@/lib/content/article';
+import { COUNTRIES } from '@/lib/content/countries';
+import { GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { MAX_RELATED, findArticleByPath, relatedLinks } from '@/lib/content/related';
 import { ARTICLE_SOURCE_FILES } from '@/lib/content/sources';
@@ -179,8 +181,12 @@ describe('one file per article (parallel writing)', () => {
     expect(orderArticles(entries).map((article) => article.slug)).toEqual(['c', 'b', 'a']);
   });
 
-  it('merges per-article source files, named after an article, without repeating an id', () => {
-    const slugs = new Set([...POSTS, ...GUIDES].map((article) => article.slug));
+  it('merges per-page source files, named after a page, without repeating an id', () => {
+    const slugs = new Set([
+      ...[...POSTS, ...GUIDES].map((article) => article.slug),
+      ...GLOSSARY.map((term) => term.slug),
+      ...COUNTRIES.map((country) => country.slug),
+    ]);
     for (const slug of articleFiles('sources')) expect(slugs.has(slug), slug).toBe(true);
     expect(articleFiles('sources')).toHaveLength(ARTICLE_SOURCE_FILES.length);
 
