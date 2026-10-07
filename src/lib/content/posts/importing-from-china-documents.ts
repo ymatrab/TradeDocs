@@ -66,10 +66,22 @@ const article: ContentArticle = {
           ['Commercial invoice', 'Chinese supplier', 'Before shipment; needed for entry'],
           ['Packing list', 'Chinese supplier', 'Before shipment, with the invoice'],
           ['Bill of lading or air waybill', 'Carrier or forwarder', 'When the goods are loaded'],
-          ['Importer Security Filing (ocean only)', 'Importer or its broker', 'No later than 24 hours before loading in China'],
+          [
+            'Importer Security Filing (ocean only)',
+            'Importer or its broker',
+            'No later than 24 hours before loading in China',
+          ],
           ['Customs bond', 'Importer, through a surety, often via a broker', 'Before entry'],
-          ['Entry (CBP Form 3461 or electronic) and entry summary', 'Importer or its licensed customs broker', 'At or before arrival, within the CBP time limits'],
-          ['Other agency documents', 'Importer, with the supplier’s data', 'As the agency requires for the goods'],
+          [
+            'Entry (CBP Form 3461 or electronic) and entry summary',
+            'Importer or its licensed customs broker',
+            'At or before arrival, within the CBP time limits',
+          ],
+          [
+            'Other agency documents',
+            'Importer, with the supplier’s data',
+            'As the agency requires for the goods',
+          ],
         ],
       },
     },
@@ -165,7 +177,11 @@ const article: ContentArticle = {
     'icc-incoterms-2020',
   ],
   primaryTool: '/tools/landed-cost-calculator',
-  tools: ['/tools/landed-cost-calculator', '/tools/invoice-generator', '/tools/packing-list-generator'],
+  tools: [
+    '/tools/landed-cost-calculator',
+    '/tools/invoice-generator',
+    '/tools/packing-list-generator',
+  ],
   callout: {
     afterSection: 1,
     tool: '/tools/invoice-generator',

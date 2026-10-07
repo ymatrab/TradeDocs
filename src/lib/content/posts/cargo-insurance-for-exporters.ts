@@ -96,9 +96,21 @@ const article: ContentArticle = {
         caption: 'Who bears transit risk, and who must insure, under the Incoterms 2020 rules',
         head: ['Rules', 'Risk passes to the buyer', 'Insurance obligation'],
         rows: [
-          ['EXW, FCA, FAS, FOB', 'At or near the seller’s end, at the named delivery point', 'None; the buyer usually insures the main carriage'],
-          ['CPT, CFR', 'When the goods are handed to the first carrier, or loaded on board', 'None; the buyer bears the transit risk though the seller pays freight'],
-          ['CIP, CIF', 'As for CPT and CFR', 'Seller insures for the buyer: (A) cover under CIP, (C) under CIF'],
+          [
+            'EXW, FCA, FAS, FOB',
+            'At or near the seller’s end, at the named delivery point',
+            'None; the buyer usually insures the main carriage',
+          ],
+          [
+            'CPT, CFR',
+            'When the goods are handed to the first carrier, or loaded on board',
+            'None; the buyer bears the transit risk though the seller pays freight',
+          ],
+          [
+            'CIP, CIF',
+            'As for CPT and CFR',
+            'Seller insures for the buyer: (A) cover under CIP, (C) under CIF',
+          ],
           ['DAP, DPU, DDP', 'At the named destination', 'None; the seller bears the transit risk'],
         ],
       },
@@ -192,7 +204,10 @@ const article: ContentArticle = {
     height: 2848,
     alt: 'A tanker ploughing through rough Mediterranean waves, the transit risk cargo insurance covers',
     caption: 'A ship in rough seas in the Mediterranean',
-    photographer: { name: 'Mauro Shared Pictures', profile: 'https://unsplash.com/@maurosharedpictures' },
+    photographer: {
+      name: 'Mauro Shared Pictures',
+      profile: 'https://unsplash.com/@maurosharedpictures',
+    },
     page: 'https://unsplash.com/photos/red-ship-on-sea-waves-during-daytime-ShNfoSk81co',
   },
 };

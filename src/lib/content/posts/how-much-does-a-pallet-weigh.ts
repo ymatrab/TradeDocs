@@ -66,7 +66,12 @@ const article: ContentArticle = {
           ['EPAL 1 (euro pallet)', '1,200 × 800 × 144', 'About 25 kg (55.1 lb)', '1,500 kg'],
           ['EPAL 2', '1,200 × 1,000 × 162', 'About 35 kg (77.2 lb)', '1,250 kg'],
           ['EPAL 3', '1,000 × 1,200 × 144', 'About 30 kg (66.1 lb)', '1,500 kg'],
-          ['48 × 40 in (GMA-style)', 'About 1,219 × 1,016', 'No single published figure: weigh it', 'Set by the maker'],
+          [
+            '48 × 40 in (GMA-style)',
+            'About 1,219 × 1,016',
+            'No single published figure: weigh it',
+            'Set by the maker',
+          ],
         ],
       },
     },

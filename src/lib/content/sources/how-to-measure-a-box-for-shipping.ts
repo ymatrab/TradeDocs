@@ -55,7 +55,8 @@ export default {
     authority: 'FEFCO (European Federation of Corrugated Board Manufacturers)',
     title: 'FEFCO Code',
     url: 'https://www.fefco.org/technical-information/fefco-code',
-    jurisdiction: 'Industry classification (adopted by the International Corrugated Case Association)',
+    jurisdiction:
+      'Industry classification (adopted by the International Corrugated Case Association)',
     supports:
       'the FEFCO code being the internationally applied system that gives a code number to each common corrugated box design',
     retrieved: RETRIEVED,
@@ -143,7 +144,8 @@ export default {
   },
   'a1-whitehouse-eo-14388': {
     authority: 'The White House',
-    title: 'Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries (20 February 2026)',
+    title:
+      'Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries (20 February 2026)',
     url: 'https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/',
     jurisdiction: 'United States (imports)',
     supports: 'the suspension of duty-free de minimis treatment being continued in February 2026',

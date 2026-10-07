@@ -105,12 +105,7 @@ const article: ContentArticle = {
             '6.61 kg',
             'Dimensional, 6.61 kg',
           ],
-          [
-            '6,000 (cm, kg)',
-            '33,046 cm³ ÷ 6,000',
-            '5.51 kg',
-            'Actual, 6 kg',
-          ],
+          ['6,000 (cm, kg)', '33,046 cm³ ÷ 6,000', '5.51 kg', 'Actual, 6 kg'],
           [
             '139 (in, lb, USPS)',
             '16 × 12 × 10 = 1,920 in³ ÷ 139',

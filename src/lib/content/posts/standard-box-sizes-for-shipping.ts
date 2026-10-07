@@ -66,13 +66,19 @@ const article: ContentArticle = {
         'The point of a module is that cartons built from it fill a pallet edge to edge. The table shows our arithmetic for one layer of module-sized footprints on matching pallets. The full series of carton sizes is in the standard itself, which ISO and national standards bodies sell.',
       ],
       table: {
-        caption: 'Module footprints per pallet layer, our arithmetic from the ISO 3394 and ISO 3676 dimensions',
+        caption:
+          'Module footprints per pallet layer, our arithmetic from the ISO 3394 and ISO 3676 dimensions',
         head: ['Module (mm)', 'Pallet (mm)', 'Layout', 'Footprints per layer'],
         rows: [
           ['600 × 400', '1,200 × 800 (euro pallet size)', '2 along × 2 across', '4'],
           ['600 × 500', '1,200 × 1,000', '2 along × 2 across', '4'],
           ['550 × 366', '1,100 × 1,100', '2 along × 3 across', '6 (1,100 × 1,098 mm used)'],
-          ['400 × 300 (half of 600 × 400)', '1,200 × 800 (euro pallet size)', '4 along × 2 across', '8'],
+          [
+            '400 × 300 (half of 600 × 400)',
+            '1,200 × 800 (euro pallet size)',
+            '4 along × 2 across',
+            '8',
+          ],
         ],
       },
     },
@@ -164,7 +170,11 @@ const article: ContentArticle = {
     'trade-gov-packing-list',
   ],
   primaryTool: '/tools/cbm-calculator',
-  tools: ['/tools/cbm-calculator', '/tools/chargeable-weight', '/tools/container-loading-calculator'],
+  tools: [
+    '/tools/cbm-calculator',
+    '/tools/chargeable-weight',
+    '/tools/container-loading-calculator',
+  ],
   callout: {
     afterSection: 1,
     tool: '/tools/container-loading-calculator',
