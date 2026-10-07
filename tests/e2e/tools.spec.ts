@@ -56,7 +56,7 @@ test('the free generator produces a real PDF for a visitor with no account', asy
 test('the container loading calculator bounds a load by volume and weight', async ({ page }) => {
   await page.goto('/tools/container-loading-calculator');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Container loading calculator');
-  await expect(page.getByText('An estimate, not a stow plan')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'An estimate, not a stow plan' })).toBeVisible();
 
   await page.getByLabel('Length').fill('60');
   await page.getByLabel('Width').fill('40');
@@ -176,7 +176,7 @@ test('the pallet calculator counts cartons per layer and per pallet', async ({ p
   await expect(page.getByText(/Not even one layer fits/)).toBeVisible();
 });
 
-test('glossary and country pages render, and country pages wait for review', async ({ page }) => {
+test('glossary and country pages render and are listed once sourced (D-015)', async ({ page }) => {
   await page.goto('/glossary');
   await page.getByRole('searchbox', { name: 'Search the glossary' }).fill('vgm');
   await expect(page.getByText('Verified gross mass (VGM)').first()).toBeVisible();
@@ -188,10 +188,9 @@ test('glossary and country pages render, and country pages wait for review', asy
 
   await page.goto('/export-documents/india');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Export documents for India');
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
   const sitemap = await (await page.request.get('/sitemap.xml')).text();
   expect(sitemap).toContain('/glossary/teu</loc>');
-  expect(sitemap).not.toContain('/export-documents/india</loc>');
+  expect(sitemap).toContain('/export-documents/india</loc>');
   expect((await page.goto('/glossary/not-a-term'))?.status()).toBe(404);
 });
 

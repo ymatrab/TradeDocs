@@ -88,7 +88,7 @@ export default function GlossaryPage() {
         <h2 id="az-title">A–Z</h2>
         <nav aria-label="Glossary letters" className="cta-row">
           {groups.map((group) => (
-            <a key={group.letter} className="text-link" href={`#letter-${group.letter}`}>
+            <a key={group.letter} className="text-link glossary-letter" href={`#letter-${group.letter}`}>
               {group.letter}
             </a>
           ))}
