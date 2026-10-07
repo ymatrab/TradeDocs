@@ -58,6 +58,8 @@ import scheduleBNumber from './schedule-b-number';
 import howMuchDoesAPalletWeigh from './how-much-does-a-pallet-weigh';
 import howToMeasureABoxForShipping from './how-to-measure-a-box-for-shipping';
 import standardBoxSizesForShipping from './standard-box-sizes-for-shipping';
+import cargoInsuranceForExporters from './cargo-insurance-for-exporters';
+import importingFromChinaDocuments from './importing-from-china-documents';
 
 export type Post = ContentArticle;
 
@@ -107,6 +109,8 @@ const ENTRIES: readonly Post[] = [
   howMuchDoesAPalletWeigh,
   howToMeasureABoxForShipping,
   standardBoxSizesForShipping,
+  cargoInsuranceForExporters,
+  importingFromChinaDocuments,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
