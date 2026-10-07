@@ -1,0 +1,7001 @@
+{
+  "id": "10070149-2048-0607-0000-8cfb5698ffc9",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "keyword": "american goods returned",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 22:33:35 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 90,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 90,
+          "2026-03": 110,
+          "2026-02": 140,
+          "2026-01": 110,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 110,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 29,
+          "quarterly": 29,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "good american returns",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2013.8,
+        "dofollow": 1332.5,
+        "referring_pages": 1441.9,
+        "referring_domains": 114.9,
+        "referring_main_domains": 103,
+        "rank": 81.1,
+        "main_domain_rank": 338.3,
+        "last_updated_time": "2026-09-21 03:26:06 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 18:43:21 +00:00"
+      }
+    },
+    {
+      "keyword": "atlas zoll",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:34:12 +00:00",
+        "competition": 0.57,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "zoll atlas",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "navigational",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 07:49:04 +00:00"
+      }
+    },
+    {
+      "keyword": "australia customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:39:49 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 480,
+          "2025-12": 480,
+          "2025-11": 390,
+          "2025-10": 590,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": 24,
+          "quarterly": 24,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 27,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1086.8,
+        "dofollow": 808.3,
+        "referring_pages": 923.7,
+        "referring_domains": 193.4,
+        "referring_main_domains": 175.8,
+        "rank": 179.7,
+        "main_domain_rank": 499.2,
+        "last_updated_time": "2026-08-04 03:36:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:12:21 +00:00"
+      }
+    },
+    {
+      "keyword": "australia customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 12:36:12 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 90,
+          "2025-12": 70,
+          "2025-11": 140,
+          "2025-10": 210,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "quarterly": 200,
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance australia",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 25,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 753.7,
+        "dofollow": 123.5,
+        "referring_pages": 741.3,
+        "referring_domains": 45.2,
+        "referring_main_domains": 42.2,
+        "rank": 142.3,
+        "main_domain_rank": 392.8,
+        "last_updated_time": "2026-09-30 18:56:52 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 23:52:43 +00:00"
+      }
+    },
+    {
+      "keyword": "australia import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:34:58 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 90,
+          "2026-06": 70,
+          "2026-05": 110,
+          "2026-04": 140,
+          "2026-03": 70,
+          "2026-02": 90,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 140,
+          "2025-10": 170,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -22,
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1761.9,
+        "dofollow": 1719.4,
+        "referring_pages": 1729.3,
+        "referring_domains": 42.2,
+        "referring_main_domains": 40.3,
+        "rank": 144.1,
+        "main_domain_rank": 481.1,
+        "last_updated_time": "2026-09-16 05:40:13 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 00:40:12 +00:00"
+      }
+    },
+    {
+      "keyword": "bill of entry india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:01:09 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10018,
+          13414
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": 600,
+          "yearly": 600
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:36:40 +00:00"
+      }
+    },
+    {
+      "keyword": "bill of lading vs air waybill",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:44:53 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "air waybill vs bill of lading",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 02:35:55 +00:00"
+      }
+    },
+    {
+      "keyword": "bill of lading vs airway bill",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 06:34:56 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10011,
+          10091,
+          10510
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "bill of lading vs air waybill",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-03 03:52:14 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 03:29:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 320,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 110,
+          "2026-06": 140,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 260,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 390,
+          "2025-11": 390,
+          "2025-10": 480,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": 27,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs brazil",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 16.6,
+        "dofollow": 9.7,
+        "referring_pages": 11.3,
+        "referring_domains": 7.5,
+        "referring_main_domains": 6.9,
+        "rank": 76.3,
+        "main_domain_rank": 456,
+        "last_updated_time": "2026-09-09 12:51:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 07:59:36 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 04:05:53 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 11.12,
+        "search_volume": 30,
+        "low_top_of_page_bid": 3.6,
+        "high_top_of_page_bid": 7.97,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 70,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "yearly": -71
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.3,
+        "dofollow": 2.4,
+        "referring_pages": 2.7,
+        "referring_domains": 1.8,
+        "referring_main_domains": 1.8,
+        "rank": 23.6,
+        "main_domain_rank": 335.8,
+        "last_updated_time": "2026-08-31 20:16:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 04:41:04 +00:00"
+      }
+    },
+    {
+      "keyword": "brazil import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 08:53:25 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 110,
+          "2026-06": 70,
+          "2026-05": 140,
+          "2026-04": 140,
+          "2026-03": 140,
+          "2026-02": 90,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "monthly": -36,
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import taxes to brazil",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 90.7,
+        "dofollow": 21.5,
+        "referring_pages": 55.9,
+        "referring_domains": 13.8,
+        "referring_main_domains": 9.3,
+        "rank": 66.8,
+        "main_domain_rank": 511.5,
+        "last_updated_time": "2026-09-18 06:09:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:28:34 +00:00"
+      }
+    },
+    {
+      "keyword": "carta porte",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:40:18 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 320,
+        "categories": [
+          10012,
+          10097,
+          11842
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 320,
+          "2026-06": 320,
+          "2026-05": 320,
+          "2026-04": 390,
+          "2026-03": 320,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 480,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "fr",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.6,
+        "dofollow": 7.4,
+        "referring_pages": 7.6,
+        "referring_domains": 3.5,
+        "referring_main_domains": 3,
+        "rank": 56.6,
+        "main_domain_rank": 429.1,
+        "last_updated_time": "2026-08-04 01:00:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 07:34:48 +00:00"
+      }
+    },
+    {
+      "keyword": "cbp form 28",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 02:29:59 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 110,
+          "2026-06": 110,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 90,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 110
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1801.8,
+        "dofollow": 1792.8,
+        "referring_pages": 1794.7,
+        "referring_domains": 13.2,
+        "referring_main_domains": 12.4,
+        "rank": 45.4,
+        "main_domain_rank": 415.7,
+        "last_updated_time": "2026-09-18 04:06:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 09:13:29 +00:00"
+      }
+    },
+    {
+      "keyword": "cbp form 29",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:11:59 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 90,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 90
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 67.4,
+        "dofollow": 54,
+        "referring_pages": 58.7,
+        "referring_domains": 12.7,
+        "referring_main_domains": 11.8,
+        "rank": 51.1,
+        "main_domain_rank": 329.1,
+        "last_updated_time": "2026-09-24 16:27:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:27:36 +00:00"
+      }
+    },
+    {
+      "keyword": "cbp form 3299",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:10:57 +00:00",
+        "competition": 0.08,
+        "competition_level": "LOW",
+        "cpc": 1.95,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.72,
+        "high_top_of_page_bid": 1.89,
+        "categories": [
+          10018,
+          10161,
+          10163,
+          10844
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 480,
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 390,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 23,
+          "yearly": 51
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 79.8,
+        "dofollow": 62.9,
+        "referring_pages": 71,
+        "referring_domains": 18.2,
+        "referring_main_domains": 16.7,
+        "rank": 56.8,
+        "main_domain_rank": 469.9,
+        "last_updated_time": "2026-09-08 10:30:18 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 21:03:32 +00:00"
+      }
+    },
+    {
+      "keyword": "cbp form 3461",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:08:02 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.9,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.7,
+        "high_top_of_page_bid": 15.09,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 320,
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.2,
+        "dofollow": 6.5,
+        "referring_pages": 7.5,
+        "referring_domains": 2.6,
+        "referring_main_domains": 2.3,
+        "rank": 23,
+        "main_domain_rank": 386.6,
+        "last_updated_time": "2026-09-09 11:52:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:27:36 +00:00"
+      }
+    },
+    {
+      "keyword": "china customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:35:44 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 260,
+          "2026-06": 320,
+          "2026-05": 590,
+          "2026-04": 480,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 390,
+          "2025-12": 480,
+          "2025-11": 390,
+          "2025-10": 480,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": 50,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 52,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 284331.3,
+        "dofollow": 264712.2,
+        "referring_pages": 276211.5,
+        "referring_domains": 564.2,
+        "referring_main_domains": 439,
+        "rank": 291.7,
+        "main_domain_rank": 473.7,
+        "last_updated_time": "2026-08-03 20:12:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:37:51 +00:00"
+      }
+    },
+    {
+      "keyword": "china customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 10:46:56 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "low_top_of_page_bid": 1.87,
+        "high_top_of_page_bid": 5.06,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "monthly": -20,
+          "quarterly": -20,
+          "yearly": -20
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom clearance in china",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.4,
+        "dofollow": 0.7,
+        "referring_pages": 1.2,
+        "referring_domains": 0.9,
+        "referring_main_domains": 0.9,
+        "rank": 8,
+        "main_domain_rank": 389.4,
+        "last_updated_time": "2026-09-30 04:49:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 04:07:21 +00:00"
+      }
+    },
+    {
+      "keyword": "ci and pl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:55:36 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 05:24:11 +00:00"
+      }
+    },
+    {
+      "keyword": "ci pl",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 07:16:48 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 30,
+          "2026-05": 40,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 30,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "quarterly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "cipl",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "it",
+        "is_another_language": true
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 06:05:02 +00:00"
+      }
+    },
+    {
+      "keyword": "cisg",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 06:38:31 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 480,
+          "2026-06": 480,
+          "2026-05": 720,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1600,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 108,
+          "quarterly": 108,
+          "yearly": 14
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "the cisg",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "fr",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 107.6,
+        "dofollow": 74.8,
+        "referring_pages": 95.4,
+        "referring_domains": 31.3,
+        "referring_main_domains": 30,
+        "rank": 87.5,
+        "main_domain_rank": 373.1,
+        "last_updated_time": "2026-09-05 21:28:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:08:14 +00:00"
+      }
+    },
+    {
+      "keyword": "cnpj",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 02:37:53 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 4.76,
+        "search_volume": 8100,
+        "low_top_of_page_bid": 2.05,
+        "high_top_of_page_bid": 6.78,
+        "categories": [
+          10018,
+          10161,
+          10163,
+          10842
+        ],
+        "monthly_searches": {
+          "2026-08": 3600,
+          "2026-07": 3600,
+          "2026-06": 3600,
+          "2026-05": 3600,
+          "2026-04": 3600,
+          "2026-03": 4400,
+          "2026-02": 9900,
+          "2026-01": 12100,
+          "2025-12": 18100,
+          "2025-11": 12100,
+          "2025-10": 8100,
+          "2025-09": 6600
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 66,
+        "detected_language": "pt",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 19783.4,
+        "dofollow": 18753.7,
+        "referring_pages": 19645,
+        "referring_domains": 132.7,
+        "referring_main_domains": 122.6,
+        "rank": 298.1,
+        "main_domain_rank": 583.5,
+        "last_updated_time": "2026-09-03 06:14:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 16:35:44 +00:00"
+      }
+    },
+    {
+      "keyword": "commerce control list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 09:55:55 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 2.38,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 0.68,
+        "high_top_of_page_bid": 9.64,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40500,
+          "2026-07": 33100,
+          "2026-06": 40500,
+          "2026-05": 40500,
+          "2026-04": 49500,
+          "2026-03": 49500,
+          "2026-02": 40500,
+          "2026-01": 40500,
+          "2025-12": 33100,
+          "2025-11": 33100,
+          "2025-10": 40500,
+          "2025-09": 49500
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 334.7,
+        "dofollow": 276.2,
+        "referring_pages": 277.9,
+        "referring_domains": 36.6,
+        "referring_main_domains": 31.1,
+        "rank": 103.1,
+        "main_domain_rank": 554.6,
+        "last_updated_time": "2026-05-14 20:30:46 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:03:17 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice and packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 02:23:24 +00:00",
+        "competition": 0.1,
+        "competition_level": "LOW",
+        "search_volume": 40,
+        "low_top_of_page_bid": 5.67,
+        "high_top_of_page_bid": 40,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 40,
+          "2026-06": 20,
+          "2026-05": 40,
+          "2026-04": 40,
+          "2026-03": 40,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 30,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 75,
+          "quarterly": 250,
+          "yearly": 75
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 30.8,
+        "dofollow": 30.8,
+        "referring_pages": 30.8,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.6,
+        "rank": 39.6,
+        "main_domain_rank": 587.8,
+        "last_updated_time": "2026-09-02 13:48:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 05:17:19 +00:00"
+      }
+    },
+    {
+      "keyword": "commercial invoice for gift",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 11:43:57 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "commercial invoice gift",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-26 14:10:14 +00:00"
+      }
+    },
+    {
+      "keyword": "container loading tips",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 18:36:40 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-05": 10,
+          "2026-02": 10,
+          "2025-10": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:26:24 +00:00"
+      }
+    },
+    {
+      "keyword": "continuous bond",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 15:31:43 +00:00",
+        "competition": 0.34,
+        "competition_level": "MEDIUM",
+        "cpc": 8.61,
+        "search_volume": 210,
+        "low_top_of_page_bid": 3.45,
+        "high_top_of_page_bid": 15.15,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 170,
+          "2026-06": 210,
+          "2026-05": 170,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 210,
+          "2025-11": 170,
+          "2025-10": 260,
+          "2025-09": 260
+        },
+        "search_volume_trend": {
+          "monthly": 24,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 45.3,
+        "dofollow": 23.6,
+        "referring_pages": 24.5,
+        "referring_domains": 3.5,
+        "referring_main_domains": 3.1,
+        "rank": 41.2,
+        "main_domain_rank": 384.5,
+        "last_updated_time": "2026-09-12 04:17:56 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:00:10 +00:00"
+      }
+    },
+    {
+      "keyword": "country commercial guides",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:44:26 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 5.83,
+        "search_volume": 90,
+        "low_top_of_page_bid": 2.89,
+        "high_top_of_page_bid": 25.82,
+        "categories": [
+          10108,
+          10756,
+          13600
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 90,
+          "2026-03": 110,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": -44,
+          "yearly": -44
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "country commercial guide",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 33,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2956.4,
+        "dofollow": 2586.4,
+        "referring_pages": 2769.6,
+        "referring_domains": 361.2,
+        "referring_main_domains": 337.1,
+        "rank": 195.5,
+        "main_domain_rank": 585.2,
+        "last_updated_time": "2026-09-20 16:20:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 06:56:18 +00:00"
+      }
+    },
+    {
+      "keyword": "customs bond cost",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 23:51:08 +00:00",
+        "competition": 0.23,
+        "competition_level": "LOW",
+        "cpc": 15.97,
+        "search_volume": 20,
+        "low_top_of_page_bid": 2.98,
+        "high_top_of_page_bid": 10.36,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "monthly": 100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.2,
+        "dofollow": 2.8,
+        "referring_pages": 3.6,
+        "referring_domains": 2.4,
+        "referring_main_domains": 2.4,
+        "rank": 30.3,
+        "main_domain_rank": 340.5,
+        "last_updated_time": "2026-02-26 00:56:03 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-26 07:43:55 +00:00"
+      }
+    },
+    {
+      "keyword": "customs clearance agent",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 21:56:23 +00:00",
+        "competition": 0.46,
+        "competition_level": "MEDIUM",
+        "cpc": 25.28,
+        "search_volume": 210,
+        "low_top_of_page_bid": 4.05,
+        "high_top_of_page_bid": 16.55,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 170,
+          "2026-06": 170,
+          "2026-05": 170,
+          "2026-04": 210,
+          "2026-03": 320,
+          "2026-02": 210,
+          "2026-01": 170,
+          "2025-12": 210,
+          "2025-11": 170,
+          "2025-10": 260,
+          "2025-09": 260
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "custom clearance agent",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 280.8,
+        "dofollow": 171,
+        "referring_pages": 232.7,
+        "referring_domains": 69,
+        "referring_main_domains": 66.8,
+        "rank": 191.5,
+        "main_domain_rank": 375.3,
+        "last_updated_time": "2025-07-17 00:30:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 19:38:29 +00:00"
+      }
+    },
+    {
+      "keyword": "customs declaration service",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 17:23:38 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 7.06,
+        "search_volume": 40,
+        "low_top_of_page_bid": 3.4,
+        "high_top_of_page_bid": 7.86,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 40,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 133,
+          "quarterly": 133,
+          "yearly": 133
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5.7,
+        "dofollow": 4.7,
+        "referring_pages": 5.2,
+        "referring_domains": 3.3,
+        "referring_main_domains": 2.6,
+        "rank": 30,
+        "main_domain_rank": 320.5,
+        "last_updated_time": "2026-10-04 09:01:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 21:42:11 +00:00"
+      }
+    },
+    {
+      "keyword": "customs entry",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:39:48 +00:00",
+        "competition": 0.41,
+        "competition_level": "MEDIUM",
+        "cpc": 5.9,
+        "search_volume": 170,
+        "low_top_of_page_bid": 3.55,
+        "high_top_of_page_bid": 10.46,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 170,
+          "2026-06": 110,
+          "2026-05": 140,
+          "2026-04": 170,
+          "2026-03": 170,
+          "2026-02": 110,
+          "2026-01": 140,
+          "2025-12": 110,
+          "2025-11": 140,
+          "2025-10": 140,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": 27,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs entries",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1870.4,
+        "dofollow": 1503.6,
+        "referring_pages": 1602.4,
+        "referring_domains": 372,
+        "referring_main_domains": 345.3,
+        "rank": 110.6,
+        "main_domain_rank": 486.4,
+        "last_updated_time": "2026-09-13 19:27:11 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:40:33 +00:00"
+      }
+    },
+    {
+      "keyword": "documentary credit",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:58:48 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 14.01,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 6.25,
+        "high_top_of_page_bid": 23.04,
+        "categories": [
+          10013,
+          13417,
+          13522
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1600,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "quarterly": 14,
+          "yearly": 14
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "documentary credits",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 113.7,
+        "dofollow": 42.5,
+        "referring_pages": 109.8,
+        "referring_domains": 84,
+        "referring_main_domains": 52.6,
+        "rank": 95.5,
+        "main_domain_rank": 375.1,
+        "last_updated_time": "2026-06-30 22:53:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 12:36:31 +00:00"
+      }
+    },
+    {
+      "keyword": "eccn lookup",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 15:23:57 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "cpc": 6.09,
+        "search_volume": 720,
+        "low_top_of_page_bid": 3.03,
+        "high_top_of_page_bid": 5.78,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 590,
+          "2026-06": 720,
+          "2026-05": 590,
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 880,
+          "2025-10": 880,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -41
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "eccn number lookup",
+        "synonym_clustering_algorithm": "keyword_metrics",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 18.4,
+        "dofollow": 10.6,
+        "referring_pages": 17.6,
+        "referring_domains": 9.1,
+        "referring_main_domains": 8.1,
+        "rank": 80,
+        "main_domain_rank": 525.1,
+        "last_updated_time": "2026-03-16 14:34:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 11:16:20 +00:00"
+      }
+    },
+    {
+      "keyword": "entry summary",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 06:43:28 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 19.54,
+        "search_volume": 110,
+        "categories": [
+          10016,
+          10141,
+          10755
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 110,
+          "2026-05": 110,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 90,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "quarterly": 27
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 32,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 778.5,
+        "dofollow": 359,
+        "referring_pages": 714.8,
+        "referring_domains": 135.2,
+        "referring_main_domains": 129.1,
+        "rank": 153.4,
+        "main_domain_rank": 425,
+        "last_updated_time": "2026-09-17 23:55:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:14:27 +00:00"
+      }
+    },
+    {
+      "keyword": "eu commercial invoice requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:41:05 +00:00",
+        "competition": 0.18,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:26:36 +00:00"
+      }
+    },
+    {
+      "keyword": "eu import vat",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 02:24:43 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10012
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import vat eu",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "pt",
+        "is_another_language": true
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 17:10:05 +00:00"
+      }
+    },
+    {
+      "keyword": "eu vat on imports",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 09:18:35 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import vat eu",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:14:54 +00:00"
+      }
+    },
+    {
+      "keyword": "export carton",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 08:29:55 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 14:30:52 +00:00"
+      }
+    },
+    {
+      "keyword": "export sales contract",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:52:41 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          10837,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export sales contracts",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 15:21:02 +00:00"
+      }
+    },
+    {
+      "keyword": "export to europe",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 05:18:35 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 110,
+          "2026-02": 40,
+          "2026-01": 30,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "quarterly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "europe exports",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 408.1,
+        "dofollow": 217.1,
+        "referring_pages": 235.3,
+        "referring_domains": 96.6,
+        "referring_main_domains": 93.2,
+        "rank": 120.5,
+        "main_domain_rank": 533.9,
+        "last_updated_time": "2026-09-29 20:32:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 13:57:05 +00:00"
+      }
+    },
+    {
+      "keyword": "export.gov country commercial guide",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 00:52:28 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export.gov country commercial guides",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 45,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 08:28:44 +00:00"
+      }
+    },
+    {
+      "keyword": "express release bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 12:28:40 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305,
+          11104
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "quarterly": -50,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.9,
+        "dofollow": 1.4,
+        "referring_pages": 1.6,
+        "referring_domains": 0.9,
+        "referring_main_domains": 0.8,
+        "rank": 14.5,
+        "main_domain_rank": 345.1,
+        "last_updated_time": "2026-03-11 13:23:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-27 15:53:46 +00:00"
+      }
+    },
+    {
+      "keyword": "formal entry vs informal entry",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 14:50:30 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10018,
+          10161,
+          10163
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "quarterly": 200,
+          "yearly": 200
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-27 20:01:47 +00:00"
+      }
+    },
+    {
+      "keyword": "freight insurance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:06:54 +00:00",
+        "competition": 0.46,
+        "competition_level": "MEDIUM",
+        "cpc": 64.71,
+        "search_volume": 390,
+        "low_top_of_page_bid": 13.11,
+        "high_top_of_page_bid": 66.04,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 320,
+          "2026-07": 260,
+          "2026-06": 320,
+          "2026-05": 390,
+          "2026-04": 390,
+          "2026-03": 480,
+          "2026-02": 390,
+          "2026-01": 480,
+          "2025-12": 320,
+          "2025-11": 390,
+          "2025-10": 390,
+          "2025-09": 480
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.5,
+        "dofollow": 12.3,
+        "referring_pages": 17.2,
+        "referring_domains": 7.4,
+        "referring_main_domains": 7,
+        "rank": 63,
+        "main_domain_rank": 376.3,
+        "last_updated_time": "2026-08-03 23:29:45 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 12:32:14 +00:00"
+      }
+    },
+    {
+      "keyword": "germany customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 11:19:50 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.39,
+        "search_volume": 210,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 110,
+          "2026-06": 90,
+          "2026-05": 260,
+          "2026-04": 210,
+          "2026-03": 170,
+          "2026-02": 320,
+          "2026-01": 210,
+          "2025-12": 260,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 260
+        },
+        "search_volume_trend": {
+          "monthly": 55,
+          "quarterly": 89
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs germany",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 28,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 398.2,
+        "dofollow": 352.4,
+        "referring_pages": 377.4,
+        "referring_domains": 49.1,
+        "referring_main_domains": 43,
+        "rank": 148.3,
+        "main_domain_rank": 523.2,
+        "last_updated_time": "2026-09-11 23:20:32 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:37:46 +00:00"
+      }
+    },
+    {
+      "keyword": "germany customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 05:08:05 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance germany",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 135.4,
+        "dofollow": 100,
+        "referring_pages": 119.5,
+        "referring_domains": 37.4,
+        "referring_main_domains": 45.3,
+        "rank": 121.2,
+        "main_domain_rank": 504,
+        "last_updated_time": "2023-10-06 09:10:26 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 12:03:53 +00:00"
+      }
+    },
+    {
+      "keyword": "germany import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:20:51 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 50,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 33,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 18,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33625.9,
+        "dofollow": 32837.5,
+        "referring_pages": 32904.6,
+        "referring_domains": 154.2,
+        "referring_main_domains": 143.1,
+        "rank": 142,
+        "main_domain_rank": 475.6,
+        "last_updated_time": "2026-09-28 12:44:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:11:23 +00:00"
+      }
+    },
+    {
+      "keyword": "gift customs declaration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 06:37:39 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs gift declaration",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 51.2,
+        "dofollow": 32.2,
+        "referring_pages": 46.1,
+        "referring_domains": 32.7,
+        "referring_main_domains": 29.5,
+        "rank": 124.9,
+        "main_domain_rank": 535,
+        "last_updated_time": "2023-04-20 01:17:23 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 22:22:16 +00:00"
+      }
+    },
+    {
+      "keyword": "hmrc commercial invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 04:22:55 +00:00",
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ]
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 20:12:07 +00:00"
+      }
+    },
+    {
+      "keyword": "how many cartons in a 20ft container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 16:17:32 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:08:40 +00:00"
+      }
+    },
+    {
+      "keyword": "how much does a pallet weigh",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:29:17 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 4.8,
+        "search_volume": 1900,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1600,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 1900,
+          "2026-02": 1600,
+          "2026-01": 1600,
+          "2025-12": 1600,
+          "2025-11": 1600,
+          "2025-10": 1900,
+          "2025-09": 1600
+        },
+        "search_volume_trend": {
+          "monthly": 19
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42.1,
+        "dofollow": 24.8,
+        "referring_pages": 25.3,
+        "referring_domains": 2.2,
+        "referring_main_domains": 2.2,
+        "rank": 26.8,
+        "main_domain_rank": 264.4,
+        "last_updated_time": "2026-09-04 18:51:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:45:18 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 00:10:43 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export from australia",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:57:17 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to brazil",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:49:52 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export from brazil",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20.5,
+        "dofollow": 12.3,
+        "referring_pages": 19.7,
+        "referring_domains": 10.2,
+        "referring_main_domains": 9.4,
+        "rank": 398.1,
+        "main_domain_rank": 398.1,
+        "last_updated_time": "2022-09-15 19:34:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:15:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to canada",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:14:18 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 59,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 102.2,
+        "dofollow": 93.2,
+        "referring_pages": 96.9,
+        "referring_domains": 24.8,
+        "referring_main_domains": 22.1,
+        "rank": 177.2,
+        "main_domain_rank": 496.5,
+        "last_updated_time": "2023-09-02 20:00:42 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 02:54:04 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 07:48:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export from china",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 50,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 80.7,
+        "dofollow": 61.7,
+        "referring_pages": 72.4,
+        "referring_domains": 40.4,
+        "referring_main_domains": 38.1,
+        "rank": 119.7,
+        "main_domain_rank": 551.3,
+        "last_updated_time": "2023-07-18 15:01:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:51:49 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to europe",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 04:26:47 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-05": 10,
+          "2026-02": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-02 03:53:40 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to germany",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 04:36:55 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:59:38 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:28:17 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 30,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "how to export from india",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 62.4,
+        "dofollow": 44.4,
+        "referring_pages": 59.7,
+        "referring_domains": 28.5,
+        "referring_main_domains": 27.1,
+        "rank": 114.8,
+        "main_domain_rank": 550.2,
+        "last_updated_time": "2023-08-31 12:51:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:22:11 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to japan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 03:09:40 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10015,
+          10135,
+          10719,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:06:26 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 05:05:33 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-02": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:48:30 +00:00"
+      }
+    },
+    {
+      "keyword": "how to export to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:10:25 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:53:14 +00:00"
+      }
+    },
+    {
+      "keyword": "how to load a container",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 19:01:47 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305,
+          11374
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 30,
+          "2026-05": 50,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 10,
+          "2025-11": 30,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -67,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.3,
+        "dofollow": 1.2,
+        "referring_pages": 1.3,
+        "referring_domains": 1,
+        "referring_main_domains": 0.7,
+        "rank": 12.5,
+        "main_domain_rank": 572.4,
+        "last_updated_time": "2025-10-19 12:51:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 21:34:44 +00:00"
+      }
+    },
+    {
+      "keyword": "how to pack a pallet",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 10:00:46 +00:00",
+        "competition": 0.28,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 40,
+          "2026-05": 40,
+          "2026-04": 30,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "quarterly": -50,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 5.5,
+        "dofollow": 4.5,
+        "referring_pages": 4.9,
+        "referring_domains": 2.8,
+        "referring_main_domains": 2.8,
+        "rank": 20.6,
+        "main_domain_rank": 464.7,
+        "last_updated_time": "2026-08-29 08:34:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:43:43 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship from china to usa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:35:30 +00:00",
+        "competition": 0.68,
+        "competition_level": "HIGH",
+        "cpc": 7.29,
+        "search_volume": 40,
+        "low_top_of_page_bid": 1.97,
+        "high_top_of_page_bid": 9.51,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 30,
+          "2026-05": 40,
+          "2026-04": 40,
+          "2026-03": 50,
+          "2026-02": 20,
+          "2026-01": 40,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 30,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "yearly": -40
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.9,
+        "dofollow": 1.7,
+        "referring_pages": 4.1,
+        "referring_domains": 2.9,
+        "referring_main_domains": 1.8,
+        "rank": 12.5,
+        "main_domain_rank": 417.9,
+        "last_updated_time": "2026-10-03 10:24:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:48:15 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to australia",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 12:30:34 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "cpc": 2.96,
+        "search_volume": 70,
+        "low_top_of_page_bid": 0.9,
+        "high_top_of_page_bid": 3.05,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 50,
+          "2026-06": 70,
+          "2026-05": 90,
+          "2026-04": 90,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "quarterly": -29,
+          "yearly": -29
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42468.8,
+        "dofollow": 28289.2,
+        "referring_pages": 28385.5,
+        "referring_domains": 80.2,
+        "referring_main_domains": 71.8,
+        "rank": 141.8,
+        "main_domain_rank": 534,
+        "last_updated_time": "2026-09-23 14:18:08 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:48:45 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to brazil",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 06:01:00 +00:00",
+        "competition": 0.24,
+        "competition_level": "LOW",
+        "cpc": 0.52,
+        "search_volume": 20,
+        "low_top_of_page_bid": 0.63,
+        "high_top_of_page_bid": 1.53,
+        "categories": [
+          10004,
+          10305,
+          13604
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 30,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28227.5,
+        "dofollow": 14150.6,
+        "referring_pages": 14186,
+        "referring_domains": 31.6,
+        "referring_main_domains": 26.5,
+        "rank": 62.8,
+        "main_domain_rank": 600.5,
+        "last_updated_time": "2026-03-10 19:49:55 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 19:55:01 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to china",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 08:47:53 +00:00",
+        "competition": 0.23,
+        "competition_level": "LOW",
+        "cpc": 4.35,
+        "search_volume": 110,
+        "low_top_of_page_bid": 0.87,
+        "high_top_of_page_bid": 5,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          11103,
+          12400,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 210,
+          "2026-06": 140,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 70,
+          "2025-10": 70,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": 21,
+          "yearly": 89
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 14136.8,
+        "dofollow": 14113.7,
+        "referring_pages": 14129.1,
+        "referring_domains": 23,
+        "referring_main_domains": 19.8,
+        "rank": 70.8,
+        "main_domain_rank": 499.6,
+        "last_updated_time": "2026-09-17 13:50:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 17:40:42 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to germany",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:07:16 +00:00",
+        "competition": 0.4,
+        "competition_level": "MEDIUM",
+        "cpc": 1.5,
+        "search_volume": 70,
+        "low_top_of_page_bid": 0.4,
+        "high_top_of_page_bid": 1.63,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 70,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 40,
+          "quarterly": 40,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 29,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28672.2,
+        "dofollow": 28426,
+        "referring_pages": 28508,
+        "referring_domains": 90.9,
+        "referring_main_domains": 82.6,
+        "rank": 165.7,
+        "main_domain_rank": 596.2,
+        "last_updated_time": "2026-09-23 14:18:51 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:05:30 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to india",
+      "keyword_info": {
+        "last_updated_time": "2026-09-18 00:01:37 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 2.63,
+        "search_volume": 20,
+        "low_top_of_page_bid": 0.51,
+        "high_top_of_page_bid": 4.74,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 30,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 30,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": 50,
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12056.3,
+        "dofollow": 11965.1,
+        "referring_pages": 12014.1,
+        "referring_domains": 66.4,
+        "referring_main_domains": 61,
+        "rank": 112.5,
+        "main_domain_rank": 593.1,
+        "last_updated_time": "2025-12-23 14:04:49 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:35:27 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to japan",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 14:33:52 +00:00",
+        "competition": 0.13,
+        "competition_level": "LOW",
+        "cpc": 1.89,
+        "search_volume": 30,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 40,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 30,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "yearly": -60
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 15,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42962.1,
+        "dofollow": 28661,
+        "referring_pages": 28703.1,
+        "referring_domains": 51.8,
+        "referring_main_domains": 44,
+        "rank": 104.8,
+        "main_domain_rank": 665.9,
+        "last_updated_time": "2026-08-15 23:38:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:06:57 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 15:32:54 +00:00",
+        "competition": 0.34,
+        "competition_level": "MEDIUM",
+        "cpc": 8.99,
+        "search_volume": 70,
+        "low_top_of_page_bid": 0.8,
+        "high_top_of_page_bid": 3.52,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 70,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 40,
+          "quarterly": 40
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28264.6,
+        "dofollow": 14160.7,
+        "referring_pages": 14199.3,
+        "referring_domains": 30.5,
+        "referring_main_domains": 26.1,
+        "rank": 79.1,
+        "main_domain_rank": 629.6,
+        "last_updated_time": "2026-09-23 14:18:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 22:29:58 +00:00"
+      }
+    },
+    {
+      "keyword": "how to ship to south korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 21:03:46 +00:00",
+        "competition": 0.6,
+        "competition_level": "MEDIUM",
+        "cpc": 1.44,
+        "search_volume": 10,
+        "low_top_of_page_bid": 0.71,
+        "high_top_of_page_bid": 2.57,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 6.6,
+        "dofollow": 2,
+        "referring_pages": 5.6,
+        "referring_domains": 4,
+        "referring_main_domains": 4,
+        "rank": 28.2,
+        "main_domain_rank": 568.1,
+        "last_updated_time": "2024-06-06 13:49:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 23:15:54 +00:00"
+      }
+    },
+    {
+      "keyword": "how to stack boxes on a pallet",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 08:16:52 +00:00",
+        "competition": 0.11,
+        "competition_level": "LOW",
+        "search_volume": 110,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 90,
+          "2026-06": 90,
+          "2026-05": 90,
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 90,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 110,
+          "2025-10": 110,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 44.6,
+        "dofollow": 37.3,
+        "referring_pages": 43,
+        "referring_domains": 30.2,
+        "referring_main_domains": 29.3,
+        "rank": 62.2,
+        "main_domain_rank": 563.3,
+        "last_updated_time": "2026-09-17 13:58:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:52:19 +00:00"
+      }
+    },
+    {
+      "keyword": "how to wrap a pallet",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:19:03 +00:00",
+        "competition": 0.28,
+        "competition_level": "LOW",
+        "cpc": 0.12,
+        "search_volume": 140,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 260,
+          "2026-07": 110,
+          "2026-06": 140,
+          "2026-05": 140,
+          "2026-04": 140,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": 136,
+          "quarterly": 86,
+          "yearly": 53
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.6,
+        "dofollow": 0.5,
+        "referring_pages": 0.5,
+        "referring_domains": 0.4,
+        "referring_main_domains": 0.4,
+        "rank": 5.4,
+        "main_domain_rank": 485.7,
+        "last_updated_time": "2026-09-15 20:37:07 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 20:07:30 +00:00"
+      }
+    },
+    {
+      "keyword": "icc a clause",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:20:48 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10018,
+          10161,
+          10163,
+          10833
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 30,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 19.6,
+        "dofollow": 18.6,
+        "referring_pages": 18.9,
+        "referring_domains": 2.1,
+        "referring_main_domains": 2.1,
+        "rank": 55.2,
+        "main_domain_rank": 295.8,
+        "last_updated_time": "2026-06-16 22:00:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 16:05:34 +00:00"
+      }
+    },
+    {
+      "keyword": "india customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:46:32 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 14.01,
+        "search_volume": 880,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 390,
+          "2026-06": 480,
+          "2026-05": 720,
+          "2026-04": 880,
+          "2026-03": 720,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 880,
+          "2025-11": 1000,
+          "2025-10": 1600,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 51,
+          "quarterly": 23,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs in india",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 19,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 709.5,
+        "dofollow": 537.8,
+        "referring_pages": 546.9,
+        "referring_domains": 24.3,
+        "referring_main_domains": 22.1,
+        "rank": 125.1,
+        "main_domain_rank": 380.1,
+        "last_updated_time": "2025-10-23 13:33:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 03:51:52 +00:00"
+      }
+    },
+    {
+      "keyword": "india customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:02:28 +00:00",
+        "competition": 0.12,
+        "competition_level": "LOW",
+        "cpc": 13.92,
+        "search_volume": 30,
+        "low_top_of_page_bid": 3.88,
+        "high_top_of_page_bid": 10.82,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 20,
+          "2026-06": 30,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 100,
+          "quarterly": 33,
+          "yearly": 100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "india custom clearance",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 827.5,
+        "dofollow": 644,
+        "referring_pages": 659.9,
+        "referring_domains": 20.1,
+        "referring_main_domains": 18.1,
+        "rank": 94.1,
+        "main_domain_rank": 394.7,
+        "last_updated_time": "2026-03-10 18:11:21 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:13:21 +00:00"
+      }
+    },
+    {
+      "keyword": "india import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 23:32:14 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 210,
+          "2026-06": 140,
+          "2026-05": 260,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 480,
+          "2026-01": 590,
+          "2025-12": 390,
+          "2025-11": 390,
+          "2025-10": 480,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": 21,
+          "yearly": -83
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import tax india",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 12.6,
+        "dofollow": 10.2,
+        "referring_pages": 12,
+        "referring_domains": 8.1,
+        "referring_main_domains": 7.8,
+        "rank": 69.6,
+        "main_domain_rank": 564.4,
+        "last_updated_time": "2026-08-03 15:52:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 06:39:59 +00:00"
+      }
+    },
+    {
+      "keyword": "indian customs duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:49:46 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 170,
+          "2026-07": 210,
+          "2026-06": 140,
+          "2026-05": 260,
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 480,
+          "2026-01": 590,
+          "2025-12": 390,
+          "2025-11": 390,
+          "2025-10": 480,
+          "2025-09": 880
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": 21,
+          "yearly": -83
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 402.6,
+        "dofollow": 316.2,
+        "referring_pages": 325.7,
+        "referring_domains": 21.5,
+        "referring_main_domains": 19.2,
+        "rank": 88.1,
+        "main_domain_rank": 413.9,
+        "last_updated_time": "2026-08-03 15:51:27 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 03:53:16 +00:00"
+      }
+    },
+    {
+      "keyword": "informal entry",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 21:30:38 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10016,
+          10139,
+          10747,
+          13696
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 50,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 50,
+          "2025-10": 90,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": -44,
+          "yearly": -55
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 33.4,
+        "dofollow": 18.1,
+        "referring_pages": 19.3,
+        "referring_domains": 6.1,
+        "referring_main_domains": 5.7,
+        "rank": 75.6,
+        "main_domain_rank": 466.1,
+        "last_updated_time": "2026-09-23 13:15:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 06:06:41 +00:00"
+      }
+    },
+    {
+      "keyword": "inspection certificate",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 21:42:49 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 5.38,
+        "search_volume": 260,
+        "low_top_of_page_bid": 1.28,
+        "high_top_of_page_bid": 10,
+        "categories": [
+          10004,
+          10282,
+          11149
+        ],
+        "monthly_searches": {
+          "2026-08": 210,
+          "2026-07": 210,
+          "2026-06": 210,
+          "2026-05": 260,
+          "2026-04": 260,
+          "2026-03": 260,
+          "2026-02": 170,
+          "2026-01": 260,
+          "2025-12": 260,
+          "2025-11": 210,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "certification inspection",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 25.2,
+        "dofollow": 16.2,
+        "referring_pages": 17.7,
+        "referring_domains": 7,
+        "referring_main_domains": 6.6,
+        "rank": 64,
+        "main_domain_rank": 436,
+        "last_updated_time": "2026-09-10 10:18:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:30:59 +00:00"
+      }
+    },
+    {
+      "keyword": "institute cargo clauses",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 00:15:49 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305,
+          11103,
+          12401
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 40,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 30,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "institute cargo clause",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 17.1,
+        "dofollow": 16.6,
+        "referring_pages": 16.8,
+        "referring_domains": 1.2,
+        "referring_main_domains": 1.2,
+        "rank": 34.7,
+        "main_domain_rank": 334.9,
+        "last_updated_time": "2026-06-16 20:40:14 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 05:19:59 +00:00"
+      }
+    },
+    {
+      "keyword": "international sales contract",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 11:41:59 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 2.57,
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10018,
+          10161,
+          10163,
+          10837,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 10,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 366.8,
+        "dofollow": 261.7,
+        "referring_pages": 335.3,
+        "referring_domains": 63.1,
+        "referring_main_domains": 59.4,
+        "rank": 72.5,
+        "main_domain_rank": 399.8,
+        "last_updated_time": "2025-11-03 19:29:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 15:41:49 +00:00"
+      }
+    },
+    {
+      "keyword": "invoice and packing list",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 01:54:12 +00:00",
+        "competition": 0.5,
+        "competition_level": "MEDIUM",
+        "cpc": 49.29,
+        "search_volume": 30,
+        "low_top_of_page_bid": 3.26,
+        "high_top_of_page_bid": 11.18,
+        "categories": [
+          10017,
+          10143,
+          10776,
+          12075
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 30,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": 400,
+          "yearly": 25
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1,
+        "dofollow": 0.8,
+        "referring_pages": 1,
+        "referring_domains": 0.6,
+        "referring_main_domains": 0.4,
+        "rank": 12,
+        "main_domain_rank": 449.1,
+        "last_updated_time": "2026-08-29 03:40:01 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 16:19:15 +00:00"
+      }
+    },
+    {
+      "keyword": "invoice requirements by country",
+      "keyword_info": {
+        "last_updated_time": "2026-06-18 08:24:53 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "core_keyword": "invoicing requirements by country",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 01:52:04 +00:00"
+      }
+    },
+    {
+      "keyword": "isf 5",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 05:46:31 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10016,
+          10141,
+          10754
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 110,
+          "2026-03": 70,
+          "2026-02": 70,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -29,
+          "quarterly": -29,
+          "yearly": -29
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 433,
+        "dofollow": 319.8,
+        "referring_pages": 381.7,
+        "referring_domains": 73.6,
+        "referring_main_domains": 67.3,
+        "rank": 87.7,
+        "main_domain_rank": 425,
+        "last_updated_time": "2026-09-23 12:18:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 16:57:49 +00:00"
+      }
+    },
+    {
+      "keyword": "isf penalty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:06:25 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "cpc": 3.21,
+        "search_volume": 50,
+        "categories": [
+          10018,
+          10163,
+          10861,
+          12125,
+          13736
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 70,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 50,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": -57,
+          "quarterly": -25,
+          "yearly": -73
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 664.8,
+        "dofollow": 20.6,
+        "referring_pages": 657.2,
+        "referring_domains": 8.4,
+        "referring_main_domains": 6.9,
+        "rank": 33,
+        "main_domain_rank": 291.4,
+        "last_updated_time": "2026-09-27 22:22:31 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 00:25:54 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 12:39:21 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 2.98,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.36,
+        "high_top_of_page_bid": 2.93,
+        "categories": [
+          10015,
+          10135,
+          10719
+        ],
+        "monthly_searches": {
+          "2026-08": 1600,
+          "2026-07": 1300,
+          "2026-06": 1600,
+          "2026-05": 2900,
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 2400,
+          "2025-10": 2900,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "yearly": -16
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 72,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1028.1,
+        "dofollow": 738.5,
+        "referring_pages": 860.2,
+        "referring_domains": 241.8,
+        "referring_main_domains": 219.5,
+        "rank": 257.4,
+        "main_domain_rank": 616.2,
+        "last_updated_time": "2026-07-31 11:41:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 02:18:02 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:44:32 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 30,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "quarterly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 01:57:45 +00:00"
+      }
+    },
+    {
+      "keyword": "japan customs import",
+      "keyword_info": {
+        "last_updated_time": "2026-06-18 04:56:55 +00:00",
+        "categories": [
+          10004,
+          13841
+        ]
+      },
+      "keyword_properties": {
+        "core_keyword": "japan import customs",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 09:30:34 +00:00"
+      }
+    },
+    {
+      "keyword": "japan import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 23:37:55 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 170,
+        "categories": [
+          10004,
+          10015,
+          10135,
+          10719,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 110,
+          "2026-06": 90,
+          "2026-05": 140,
+          "2026-04": 140,
+          "2026-03": 110,
+          "2026-02": 110,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 210,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -36,
+          "quarterly": -22,
+          "yearly": -82
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import taxes from japan",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 21.2,
+        "dofollow": 16,
+        "referring_pages": 18.2,
+        "referring_domains": 8.2,
+        "referring_main_domains": 7.9,
+        "rank": 82.6,
+        "main_domain_rank": 540.8,
+        "last_updated_time": "2026-09-11 18:50:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 20:43:28 +00:00"
+      }
+    },
+    {
+      "keyword": "japan invoice requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 09:38:42 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-06": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 47,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 19:16:46 +00:00"
+      }
+    },
+    {
+      "keyword": "korea customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:42:43 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 170,
+        "categories": [
+          10013,
+          10109,
+          13560,
+          13563
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 140,
+          "2026-05": 210,
+          "2026-04": 170,
+          "2026-03": 210,
+          "2026-02": 140,
+          "2026-01": 140,
+          "2025-12": 170,
+          "2025-11": 210,
+          "2025-10": 210,
+          "2025-09": 210
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs korea",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 29,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3018.4,
+        "dofollow": 2857.5,
+        "referring_pages": 2934.4,
+        "referring_domains": 143,
+        "referring_main_domains": 116,
+        "rank": 184,
+        "main_domain_rank": 529.1,
+        "last_updated_time": "2026-07-13 06:03:53 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 13:23:49 +00:00"
+      }
+    },
+    {
+      "keyword": "korea customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 10:09:28 +00:00",
+        "competition": 0.24,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 20
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 16:36:24 +00:00"
+      }
+    },
+    {
+      "keyword": "kyc india customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 12:05:33 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "kyc customs india",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 49,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 14:12:47 +00:00"
+      }
+    },
+    {
+      "keyword": "letter of indemnity",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 03:10:25 +00:00",
+        "competition": 0.03,
+        "competition_level": "LOW",
+        "cpc": 1.13,
+        "search_volume": 2400,
+        "low_top_of_page_bid": 0.66,
+        "high_top_of_page_bid": 3.06,
+        "categories": [
+          10018,
+          10163,
+          10856
+        ],
+        "monthly_searches": {
+          "2026-08": 1900,
+          "2026-07": 1900,
+          "2026-06": 1900,
+          "2026-05": 1900,
+          "2026-04": 2400,
+          "2026-03": 2400,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2400,
+          "2025-11": 1900,
+          "2025-10": 2400,
+          "2025-09": 2400
+        },
+        "search_volume_trend": {
+          "yearly": -21
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.8,
+        "dofollow": 3.2,
+        "referring_pages": 3.7,
+        "referring_domains": 1.7,
+        "referring_main_domains": 1.6,
+        "rank": 23.6,
+        "main_domain_rank": 536.3,
+        "last_updated_time": "2026-07-31 11:38:48 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 15:18:48 +00:00"
+      }
+    },
+    {
+      "keyword": "letter of indemnity shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 12:45:40 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10305,
+          11327
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 50,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 0.2,
+        "dofollow": 0.2,
+        "referring_pages": 0.2,
+        "referring_domains": 0.1,
+        "referring_main_domains": 0.1,
+        "rank": 5,
+        "main_domain_rank": 379.1,
+        "last_updated_time": "2026-01-11 11:26:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:42:26 +00:00"
+      }
+    },
+    {
+      "keyword": "max pallet height",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 05:04:31 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 50,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 70,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "quarterly": 25
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 4.2,
+        "dofollow": 2.1,
+        "referring_pages": 2.9,
+        "referring_domains": 1,
+        "referring_main_domains": 1,
+        "rank": 14.4,
+        "main_domain_rank": 388.2,
+        "last_updated_time": "2026-09-27 11:44:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 18:46:48 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 11:01:34 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "cpc": 0.46,
+        "search_volume": 1900,
+        "low_top_of_page_bid": 0.06,
+        "high_top_of_page_bid": 0.3,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 720,
+          "2026-06": 1000,
+          "2026-05": 1900,
+          "2026-04": 1600,
+          "2026-03": 1600,
+          "2026-02": 1600,
+          "2026-01": 2400,
+          "2025-12": 1900,
+          "2025-11": 1900,
+          "2025-10": 3600,
+          "2025-09": 3600
+        },
+        "search_volume_trend": {
+          "monthly": 81,
+          "quarterly": 30,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs of mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 34.2,
+        "dofollow": 28.2,
+        "referring_pages": 31.2,
+        "referring_domains": 12.9,
+        "referring_main_domains": 11.5,
+        "rank": 78.4,
+        "main_domain_rank": 526.1,
+        "last_updated_time": "2026-07-31 11:27:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:37:09 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico customs clearance",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 12:23:39 +00:00",
+        "competition": 0.26,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "low_top_of_page_bid": 1.87,
+        "high_top_of_page_bid": 4.28,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 10,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 20,
+          "2025-11": 30,
+          "2025-10": 50,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "quarterly": 100,
+          "yearly": -71
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "customs clearance mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 39,
+        "dofollow": 23,
+        "referring_pages": 30.1,
+        "referring_domains": 9.4,
+        "referring_main_domains": 8.2,
+        "rank": 53.5,
+        "main_domain_rank": 388.7,
+        "last_updated_time": "2026-08-15 01:54:09 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:34:19 +00:00"
+      }
+    },
+    {
+      "keyword": "mexico import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 12:40:55 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 70,
+          "2026-02": 40,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": -20,
+          "quarterly": -20,
+          "yearly": -43
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import taxes mexico",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10.8,
+        "dofollow": 7.6,
+        "referring_pages": 8.4,
+        "referring_domains": 4.2,
+        "referring_main_domains": 3.6,
+        "rank": 33.6,
+        "main_domain_rank": 489.6,
+        "last_updated_time": "2026-09-23 00:19:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:13:36 +00:00"
+      }
+    },
+    {
+      "keyword": "nafta",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 00:43:55 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "cpc": 5.15,
+        "search_volume": 40500,
+        "low_top_of_page_bid": 1.82,
+        "high_top_of_page_bid": 2.34,
+        "categories": [
+          10004,
+          10276,
+          11088,
+          13412
+        ],
+        "monthly_searches": {
+          "2026-08": 22200,
+          "2026-07": 18100,
+          "2026-06": 27100,
+          "2026-05": 74000,
+          "2026-04": 74000,
+          "2026-03": 49500,
+          "2026-02": 40500,
+          "2026-01": 33100,
+          "2025-12": 40500,
+          "2025-11": 33100,
+          "2025-10": 40500,
+          "2025-09": 33100
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 35,
+        "detected_language": "tr",
+        "is_another_language": true
+      },
+      "avg_backlinks_info": {
+        "backlinks": 693.2,
+        "dofollow": 580.3,
+        "referring_pages": 631.3,
+        "referring_domains": 236.8,
+        "referring_main_domains": 220.9,
+        "rank": 192.3,
+        "main_domain_rank": 557.8,
+        "last_updated_time": "2026-07-30 05:09:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 15:43:59 +00:00"
+      }
+    },
+    {
+      "keyword": "negotiable bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 12:16:51 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 40,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 210,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "bill of lading negotiable",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.1,
+        "dofollow": 1.1,
+        "referring_pages": 1.1,
+        "referring_domains": 0.9,
+        "referring_main_domains": 0.3,
+        "rank": 8.6,
+        "main_domain_rank": 558.8,
+        "last_updated_time": "2026-09-27 06:12:37 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 16:08:43 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet height limit",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:43:04 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 5.44,
+        "search_volume": 50,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 40,
+          "2026-01": 70,
+          "2025-12": 50,
+          "2025-11": 30,
+          "2025-10": 70,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "monthly": 67,
+          "quarterly": 25,
+          "yearly": -29
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.7,
+        "dofollow": 4.3,
+        "referring_pages": 6,
+        "referring_domains": 1.8,
+        "referring_main_domains": 1.8,
+        "rank": 37.8,
+        "main_domain_rank": 368.3,
+        "last_updated_time": "2026-09-27 01:42:12 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:27:11 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet weight",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 01:29:44 +00:00",
+        "competition": 0.3,
+        "competition_level": "LOW",
+        "cpc": 21.83,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 38.01,
+        "high_top_of_page_bid": 149.75,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1000,
+          "2026-06": 880,
+          "2026-05": 1000,
+          "2026-04": 1300,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 880,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "quarterly": 14
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 9.7,
+        "dofollow": 6.9,
+        "referring_pages": 7.2,
+        "referring_domains": 2.4,
+        "referring_main_domains": 2.4,
+        "rank": 31.8,
+        "main_domain_rank": 353.2,
+        "last_updated_time": "2026-08-01 10:14:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 23:49:24 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet weight capacity",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 15:47:30 +00:00",
+        "competition": 0.9,
+        "competition_level": "HIGH",
+        "search_volume": 40,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 50,
+          "2026-06": 50,
+          "2026-05": 40,
+          "2026-04": 50,
+          "2026-03": 30,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 30,
+          "2025-11": 40,
+          "2025-10": 50,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": -20,
+          "quarterly": -20
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 69.8,
+        "dofollow": 37.6,
+        "referring_pages": 37.9,
+        "referring_domains": 2.8,
+        "referring_main_domains": 2.8,
+        "rank": 49.8,
+        "main_domain_rank": 263.4,
+        "last_updated_time": "2026-10-02 10:56:30 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 19:27:12 +00:00"
+      }
+    },
+    {
+      "keyword": "pallet weight limit",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 10:55:25 +00:00",
+        "competition": 0.57,
+        "competition_level": "MEDIUM",
+        "cpc": 16.92,
+        "search_volume": 90,
+        "low_top_of_page_bid": 31.85,
+        "high_top_of_page_bid": 142.88,
+        "categories": [
+          10004,
+          10281,
+          11117,
+          11238,
+          12499,
+          13464
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 70,
+          "2026-06": 90,
+          "2026-05": 90,
+          "2026-04": 110,
+          "2026-03": 90,
+          "2026-02": 90,
+          "2026-01": 70,
+          "2025-12": 70,
+          "2025-11": 90,
+          "2025-10": 110,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 57,
+          "quarterly": 22,
+          "yearly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 42,
+        "dofollow": 24.6,
+        "referring_pages": 24.9,
+        "referring_domains": 2,
+        "referring_main_domains": 2,
+        "rank": 24.6,
+        "main_domain_rank": 423.6,
+        "last_updated_time": "2026-09-19 11:16:28 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-04 20:21:51 +00:00"
+      }
+    },
+    {
+      "keyword": "pccc korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 20:40:53 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10013,
+          10109,
+          13560,
+          13563
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 154.7,
+        "dofollow": 152.5,
+        "referring_pages": 154.6,
+        "referring_domains": 12.7,
+        "referring_main_domains": 12.5,
+        "rank": 32.4,
+        "main_domain_rank": 556.2,
+        "last_updated_time": "2026-04-17 20:00:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 18:42:32 +00:00"
+      }
+    },
+    {
+      "keyword": "personal customs clearance code",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 12:04:08 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 40,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 30,
+          "2026-06": 40,
+          "2026-05": 20,
+          "2026-04": 30,
+          "2026-03": 50,
+          "2026-02": 30,
+          "2026-01": 70,
+          "2025-12": 50,
+          "2025-11": 30,
+          "2025-10": 40,
+          "2025-09": 50
+        },
+        "search_volume_trend": {
+          "monthly": 133,
+          "quarterly": 75,
+          "yearly": 75
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 458.5,
+        "dofollow": 411.3,
+        "referring_pages": 436.8,
+        "referring_domains": 52.4,
+        "referring_main_domains": 36.8,
+        "rank": 73.4,
+        "main_domain_rank": 481.8,
+        "last_updated_time": "2026-10-02 09:56:40 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 18:21:06 +00:00"
+      }
+    },
+    {
+      "keyword": "pi and po",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 16:45:40 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 25.44,
+        "search_volume": 110,
+        "low_top_of_page_bid": 17.5,
+        "high_top_of_page_bid": 33,
+        "categories": [
+          10016,
+          10141,
+          10767
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 110,
+          "2026-06": 90,
+          "2026-05": 70,
+          "2026-04": 110,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 140,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "quarterly": 22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.2,
+        "dofollow": 1,
+        "referring_pages": 1.1,
+        "referring_domains": 0.5,
+        "referring_main_domains": 0.5,
+        "rank": 9.4,
+        "main_domain_rank": 510.4,
+        "last_updated_time": "2026-09-17 02:12:35 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:05:07 +00:00"
+      }
+    },
+    {
+      "keyword": "pi invoice",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:12:11 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10012,
+          11093,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 50,
+          "2026-05": 30,
+          "2026-04": 40,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 10,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "quarterly": -60,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "keyword_difficulty": 12,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1351.4,
+        "dofollow": 1305,
+        "referring_pages": 1307.2,
+        "referring_domains": 9.3,
+        "referring_main_domains": 8.5,
+        "rank": 101.5,
+        "main_domain_rank": 572.8,
+        "last_updated_time": "2026-09-12 04:11:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 21:46:27 +00:00"
+      }
+    },
+    {
+      "keyword": "pi meaning in business",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 17:52:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "categories": [
+          10004,
+          10276
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 140,
+          "2026-06": 140,
+          "2026-05": 140,
+          "2026-04": 210,
+          "2026-03": 170,
+          "2026-02": 110,
+          "2026-01": 110,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 170,
+          "2025-09": 210
+        },
+        "search_volume_trend": {
+          "monthly": -21,
+          "quarterly": -21,
+          "yearly": -48
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 10.5,
+        "dofollow": 6.8,
+        "referring_pages": 9.8,
+        "referring_domains": 7.7,
+        "referring_main_domains": 7.6,
+        "rank": 24,
+        "main_domain_rank": 575.3,
+        "last_updated_time": "2026-09-14 21:32:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:47:49 +00:00"
+      }
+    },
+    {
+      "keyword": "pre shipment inspection",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 13:01:03 +00:00",
+        "competition": 0.35,
+        "competition_level": "MEDIUM",
+        "search_volume": 70,
+        "low_top_of_page_bid": 6.65,
+        "high_top_of_page_bid": 24.49,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 40,
+          "2026-06": 40,
+          "2026-05": 70,
+          "2026-04": 90,
+          "2026-03": 140,
+          "2026-02": 40,
+          "2026-01": 50,
+          "2025-12": 50,
+          "2025-11": 70,
+          "2025-10": 50,
+          "2025-09": 140
+        },
+        "search_volume_trend": {
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 34,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 179.8,
+        "dofollow": 93.7,
+        "referring_pages": 168.8,
+        "referring_domains": 53.4,
+        "referring_main_domains": 40.7,
+        "rank": 186.8,
+        "main_domain_rank": 503.5,
+        "last_updated_time": "2026-09-22 19:57:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 22:48:28 +00:00"
+      }
+    },
+    {
+      "keyword": "pre shipment inspection certificate",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 22:30:36 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "cpc": 7.07,
+        "search_volume": 20,
+        "low_top_of_page_bid": 5.12,
+        "high_top_of_page_bid": 15.44,
+        "categories": [
+          10004,
+          10282,
+          11149
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 30,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 20
+        },
+        "search_volume_trend": {
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "pre-shipment inspection certificate",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 31.4,
+        "dofollow": 29.8,
+        "referring_pages": 30.6,
+        "referring_domains": 8.2,
+        "referring_main_domains": 1.7,
+        "rank": 73.1,
+        "main_domain_rank": 407.9,
+        "last_updated_time": "2026-04-17 13:11:22 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:48:28 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice number",
+      "keyword_info": {
+        "last_updated_time": "2026-09-17 12:11:33 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10012,
+          10019,
+          10168,
+          10537,
+          10885,
+          11093,
+          12209,
+          12388
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 23.8,
+        "dofollow": 18.1,
+        "referring_pages": 19.2,
+        "referring_domains": 7.9,
+        "referring_main_domains": 7.4,
+        "rank": 44,
+        "main_domain_rank": 526.3,
+        "last_updated_time": "2026-04-17 12:45:54 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:41:46 +00:00"
+      }
+    },
+    {
+      "keyword": "proforma invoice validity",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 01:26:56 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-03": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:26:44 +00:00"
+      }
+    },
+    {
+      "keyword": "proof of export",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 00:46:50 +00:00",
+        "competition": 0.06,
+        "competition_level": "LOW",
+        "cpc": 19.51,
+        "search_volume": 40,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 40,
+          "2026-06": 40,
+          "2026-05": 30,
+          "2026-04": 30,
+          "2026-03": 30,
+          "2026-02": 30,
+          "2026-01": 40,
+          "2025-12": 40,
+          "2025-11": 40,
+          "2025-10": 40,
+          "2025-09": 40
+        },
+        "search_volume_trend": {
+          "monthly": -25,
+          "quarterly": -25
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 399.4,
+        "dofollow": 366.5,
+        "referring_pages": 378.5,
+        "referring_domains": 16.5,
+        "referring_main_domains": 15.6,
+        "rank": 37.9,
+        "main_domain_rank": 501.2,
+        "last_updated_time": "2026-09-03 12:09:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 21:10:54 +00:00"
+      }
+    },
+    {
+      "keyword": "proof of export for vat",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:43:27 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-06": 10,
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "proof of export vat",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:39:24 +00:00"
+      }
+    },
+    {
+      "keyword": "returned goods customs",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 20:12:06 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 19:36:42 +00:00"
+      }
+    },
+    {
+      "keyword": "rfc mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-25 09:47:13 +00:00",
+        "competition": 0.05,
+        "competition_level": "LOW",
+        "cpc": 2.72,
+        "search_volume": 5400,
+        "low_top_of_page_bid": 1.63,
+        "high_top_of_page_bid": 2.16,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 5400,
+          "2026-07": 5400,
+          "2026-06": 4400,
+          "2026-05": 4400,
+          "2026-04": 5400,
+          "2026-03": 5400,
+          "2026-02": 5400,
+          "2026-01": 6600,
+          "2025-12": 5400,
+          "2025-11": 5400,
+          "2025-10": 5400,
+          "2025-09": 5400
+        },
+        "search_volume_trend": {
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 29,
+        "dofollow": 13.1,
+        "referring_pages": 24,
+        "referring_domains": 16,
+        "referring_main_domains": 15.4,
+        "rank": 52.4,
+        "main_domain_rank": 469.8,
+        "last_updated_time": "2026-07-30 17:59:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 19:52:51 +00:00"
+      }
+    },
+    {
+      "keyword": "sales contract template",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 00:38:54 +00:00",
+        "competition": 0.99,
+        "competition_level": "HIGH",
+        "cpc": 3.22,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 1.28,
+        "high_top_of_page_bid": 4.23,
+        "categories": [
+          10018,
+          10161,
+          10163,
+          10837
+        ],
+        "monthly_searches": {
+          "2026-08": 720,
+          "2026-07": 720,
+          "2026-06": 590,
+          "2026-05": 1000,
+          "2026-04": 1000,
+          "2026-03": 1000,
+          "2026-02": 880,
+          "2026-01": 1000,
+          "2025-12": 880,
+          "2025-11": 1000,
+          "2025-10": 1300,
+          "2025-09": 2900
+        },
+        "search_volume_trend": {
+          "quarterly": 22,
+          "yearly": -45
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 8,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 107.5,
+        "dofollow": 91.5,
+        "referring_pages": 105.8,
+        "referring_domains": 5,
+        "referring_main_domains": 4.3,
+        "rank": 92.4,
+        "main_domain_rank": 509.3,
+        "last_updated_time": "2026-08-01 09:40:47 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:53:29 +00:00"
+      }
+    },
+    {
+      "keyword": "sea freight from china to usa",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 18:01:07 +00:00",
+        "competition": 0.21,
+        "competition_level": "LOW",
+        "cpc": 14.22,
+        "search_volume": 90,
+        "low_top_of_page_bid": 4.3,
+        "high_top_of_page_bid": 14.53,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12405
+        ],
+        "monthly_searches": {
+          "2026-08": 50,
+          "2026-07": 110,
+          "2026-06": 40,
+          "2026-05": 70,
+          "2026-04": 50,
+          "2026-03": 50,
+          "2026-02": 20,
+          "2026-01": 10,
+          "2025-12": 70,
+          "2025-11": 260,
+          "2025-10": 70,
+          "2025-09": 320
+        },
+        "search_volume_trend": {
+          "monthly": -55,
+          "quarterly": 25,
+          "yearly": -84
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 20,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1063.8,
+        "dofollow": 233.3,
+        "referring_pages": 1029,
+        "referring_domains": 65.5,
+        "referring_main_domains": 51.1,
+        "rank": 163.7,
+        "main_domain_rank": 355,
+        "last_updated_time": "2026-09-19 04:17:43 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-28 22:14:33 +00:00"
+      }
+    },
+    {
+      "keyword": "sea waybill vs bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 02:06:40 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          10305,
+          11103,
+          11103,
+          12405
+        ],
+        "monthly_searches": {
+          "2026-08": 40,
+          "2026-07": 40,
+          "2026-06": 30,
+          "2026-05": 20,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "quarterly": 33
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1.7,
+        "dofollow": 1.3,
+        "referring_pages": 1.6,
+        "referring_domains": 1.1,
+        "referring_main_domains": 1.1,
+        "rank": 19.4,
+        "main_domain_rank": 393.2,
+        "last_updated_time": "2026-04-17 08:12:15 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 20:45:14 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping from china to us",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 18:12:48 +00:00",
+        "competition": 0.29,
+        "competition_level": "LOW",
+        "cpc": 14.05,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 3.55,
+        "high_top_of_page_bid": 9.78,
+        "categories": [
+          10004,
+          10004,
+          10305,
+          11103,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 1000,
+          "2026-07": 1600,
+          "2026-06": 720,
+          "2026-05": 880,
+          "2026-04": 880,
+          "2026-03": 1300,
+          "2026-02": 880,
+          "2026-01": 880,
+          "2025-12": 1000,
+          "2025-11": 1000,
+          "2025-10": 1000,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -38,
+          "quarterly": 39,
+          "yearly": -23
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 370.2,
+        "dofollow": 331,
+        "referring_pages": 356,
+        "referring_domains": 45.4,
+        "referring_main_domains": 35.3,
+        "rank": 80.7,
+        "main_domain_rank": 383.7,
+        "last_updated_time": "2026-08-01 09:34:10 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:36:44 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping from us to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 08:22:01 +00:00",
+        "competition": 0.49,
+        "competition_level": "MEDIUM",
+        "cpc": 3.07,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 4.07,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 390,
+          "2026-07": 320,
+          "2026-06": 390,
+          "2026-05": 480,
+          "2026-04": 480,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 390,
+          "2025-09": 590
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "shipping to mexico from us",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 5,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 45277.9,
+        "dofollow": 25522.7,
+        "referring_pages": 25660.7,
+        "referring_domains": 44.9,
+        "referring_main_domains": 39.3,
+        "rank": 94.7,
+        "main_domain_rank": 469.6,
+        "last_updated_time": "2024-12-11 02:45:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 22:54:59 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping insurance international",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 16:26:38 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "insurance internships",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 3,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 50423,
+        "dofollow": 50333.6,
+        "referring_pages": 50407.6,
+        "referring_domains": 20.1,
+        "referring_main_domains": 25.3,
+        "rank": 79,
+        "main_domain_rank": 436.9,
+        "last_updated_time": "2023-09-27 01:06:24 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-30 01:56:38 +00:00"
+      }
+    },
+    {
+      "keyword": "shipping to mexico",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 09:38:25 +00:00",
+        "competition": 0.37,
+        "competition_level": "MEDIUM",
+        "cpc": 2.88,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.69,
+        "high_top_of_page_bid": 4.26,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 590,
+          "2026-07": 590,
+          "2026-06": 590,
+          "2026-05": 480,
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 590,
+          "2025-10": 590,
+          "2025-09": 720
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 28971.5,
+        "dofollow": 14516.5,
+        "referring_pages": 14545.1,
+        "referring_domains": 31.8,
+        "referring_main_domains": 27.1,
+        "rank": 84.9,
+        "main_domain_rank": 531.9,
+        "last_updated_time": "2026-09-06 21:29:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 00:04:09 +00:00"
+      }
+    },
+    {
+      "keyword": "single entry bond",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 03:34:13 +00:00",
+        "competition": 0.37,
+        "competition_level": "MEDIUM",
+        "cpc": 12.56,
+        "search_volume": 110,
+        "low_top_of_page_bid": 3.43,
+        "high_top_of_page_bid": 13.02,
+        "categories": [
+          10012
+        ],
+        "monthly_searches": {
+          "2026-08": 90,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 110,
+          "2026-04": 90,
+          "2026-03": 140,
+          "2026-02": 110,
+          "2026-01": 90,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 110,
+          "2025-09": 110
+        },
+        "search_volume_trend": {
+          "monthly": 29,
+          "quarterly": 29,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "single entry bonds",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 43.6,
+        "dofollow": 22.4,
+        "referring_pages": 22.8,
+        "referring_domains": 2.3,
+        "referring_main_domains": 1.9,
+        "rank": 27.4,
+        "main_domain_rank": 279,
+        "last_updated_time": "2026-09-16 20:39:59 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-28 22:09:14 +00:00"
+      }
+    },
+    {
+      "keyword": "south korea import tax",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 19:04:58 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import tax south korea",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 4,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 22:17:47 +00:00"
+      }
+    },
+    {
+      "keyword": "standard box sizes for shipping",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 23:45:44 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 9.18,
+        "search_volume": 1300,
+        "low_top_of_page_bid": 0.62,
+        "high_top_of_page_bid": 23.07,
+        "categories": [
+          10004,
+          10305
+        ],
+        "monthly_searches": {
+          "2026-08": 1300,
+          "2026-07": 1300,
+          "2026-06": 1300,
+          "2026-05": 1300,
+          "2026-04": 1300,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 1300,
+          "2025-09": 1000
+        },
+        "search_volume_trend": {
+          "yearly": 30
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "standard shipping box sizes",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 680.3,
+        "dofollow": 243.5,
+        "referring_pages": 263.4,
+        "referring_domains": 30.2,
+        "referring_main_domains": 29,
+        "rank": 118.1,
+        "main_domain_rank": 462.1,
+        "last_updated_time": "2025-10-23 10:02:57 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 03:44:52 +00:00"
+      }
+    },
+    {
+      "keyword": "standard carton sizes",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 23:14:35 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 7.38,
+        "search_volume": 20,
+        "low_top_of_page_bid": 1.08,
+        "high_top_of_page_bid": 118.12,
+        "categories": [
+          10004,
+          10305,
+          11381
+        ],
+        "monthly_searches": {
+          "2026-08": 30,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 30,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 20,
+          "2025-11": 20,
+          "2025-10": 30,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 200,
+          "quarterly": 50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 3.4,
+        "dofollow": 1.9,
+        "referring_pages": 2.7,
+        "referring_domains": 1.3,
+        "referring_main_domains": 1.2,
+        "rank": 16.3,
+        "main_domain_rank": 403.5,
+        "last_updated_time": "2026-06-17 16:15:29 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:22:41 +00:00"
+      }
+    },
+    {
+      "keyword": "surrender bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 16:26:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 70,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 70,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 70,
+          "2026-01": 70,
+          "2025-12": 90,
+          "2025-11": 70,
+          "2025-10": 50,
+          "2025-09": 70
+        },
+        "search_volume_trend": {
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "surrendered bill of lading",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2.3,
+        "dofollow": 1.9,
+        "referring_pages": 1.9,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.7,
+        "rank": 17.8,
+        "main_domain_rank": 436.4,
+        "last_updated_time": "2026-09-22 00:14:44 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 21:23:14 +00:00"
+      }
+    },
+    {
+      "keyword": "temporary export",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 22:23:06 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 30,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 20,
+          "2026-07": 20,
+          "2026-06": 20,
+          "2026-05": 10,
+          "2026-04": 40,
+          "2026-03": 40,
+          "2026-02": 20,
+          "2026-01": 30,
+          "2025-12": 30,
+          "2025-11": 20,
+          "2025-10": 50,
+          "2025-09": 30
+        },
+        "search_volume_trend": {
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "temporary exportation",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 00:26:25 +00:00"
+      }
+    },
+    {
+      "keyword": "third party inspection",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 04:51:15 +00:00",
+        "competition": 0.38,
+        "competition_level": "MEDIUM",
+        "cpc": 16.05,
+        "search_volume": 390,
+        "low_top_of_page_bid": 3.06,
+        "high_top_of_page_bid": 17,
+        "categories": [
+          10004,
+          10282,
+          11149
+        ],
+        "monthly_searches": {
+          "2026-08": 480,
+          "2026-07": 480,
+          "2026-06": 390,
+          "2026-05": 390,
+          "2026-04": 480,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "quarterly": 23
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "third party inspections",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 7.1,
+        "dofollow": 5.5,
+        "referring_pages": 7,
+        "referring_domains": 5.6,
+        "referring_main_domains": 5,
+        "rank": 31.4,
+        "main_domain_rank": 349.7,
+        "last_updated_time": "2026-07-03 12:11:17 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:49:55 +00:00"
+      }
+    },
+    {
+      "keyword": "to order bill of lading",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 17:43:00 +00:00",
+        "competition": 0.25,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10305,
+          11103
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "order bill of lading",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 94.9,
+        "dofollow": 66,
+        "referring_pages": 87,
+        "referring_domains": 52.6,
+        "referring_main_domains": 50.6,
+        "rank": 119.5,
+        "main_domain_rank": 387.6,
+        "last_updated_time": "2023-09-04 04:20:00 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 21:37:48 +00:00"
+      }
+    },
+    {
+      "keyword": "trade.gov country commercial guides",
+      "keyword_info": {
+        "last_updated_time": "2026-09-15 17:20:05 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 22,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 997.3,
+        "dofollow": 810.9,
+        "referring_pages": 929.5,
+        "referring_domains": 252.2,
+        "referring_main_domains": 217.8,
+        "rank": 148.8,
+        "main_domain_rank": 576.7,
+        "last_updated_time": "2024-04-14 20:35:38 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:33:39 +00:00"
+      }
+    },
+    {
+      "keyword": "uk commercial invoice requirements",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 02:44:35 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10537,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:03:56 +00:00"
+      }
+    },
+    {
+      "keyword": "uk customs declaration",
+      "keyword_info": {
+        "last_updated_time": "2026-09-16 01:51:11 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 50,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 50,
+          "2026-06": 40,
+          "2026-05": 50,
+          "2026-04": 40,
+          "2026-03": 70,
+          "2026-02": 30,
+          "2026-01": 30,
+          "2025-12": 50,
+          "2025-11": 50,
+          "2025-10": 70,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": 40,
+          "quarterly": 75,
+          "yearly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 1422.7,
+        "dofollow": 539.8,
+        "referring_pages": 545.9,
+        "referring_domains": 19.6,
+        "referring_main_domains": 18.6,
+        "rank": 121.5,
+        "main_domain_rank": 503.8,
+        "last_updated_time": "2026-09-25 23:16:02 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:37:53 +00:00"
+      }
+    },
+    {
+      "keyword": "uk import duty",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 02:38:32 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "search_volume": 210,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 110,
+          "2026-07": 170,
+          "2026-06": 110,
+          "2026-05": 140,
+          "2026-04": 170,
+          "2026-03": 170,
+          "2026-02": 210,
+          "2026-01": 210,
+          "2025-12": 320,
+          "2025-11": 260,
+          "2025-10": 320,
+          "2025-09": 390
+        },
+        "search_volume_trend": {
+          "monthly": -35,
+          "yearly": -66
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "import duties uk",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 23,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 20538,
+        "dofollow": 11545,
+        "referring_pages": 11588.1,
+        "referring_domains": 96.9,
+        "referring_main_domains": 91.7,
+        "rank": 159.8,
+        "main_domain_rank": 498,
+        "last_updated_time": "2026-09-11 04:03:18 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:30:19 +00:00"
+      }
+    },
+    {
+      "keyword": "unipass korea",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 18:07:00 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10013,
+          10109,
+          13560,
+          13563
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 20,
+          "2026-05": 20,
+          "2026-04": 20,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -50
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "navigational",
+        "last_updated_time": "2026-05-18 22:07:01 +00:00"
+      }
+    },
+    {
+      "keyword": "us export regulations",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 07:43:46 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 6.68,
+        "search_volume": 70,
+        "low_top_of_page_bid": 1.9,
+        "high_top_of_page_bid": 5.9,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 70,
+          "2026-07": 90,
+          "2026-06": 70,
+          "2026-05": 70,
+          "2026-04": 70,
+          "2026-03": 70,
+          "2026-02": 50,
+          "2026-01": 50,
+          "2025-12": 70,
+          "2025-11": 70,
+          "2025-10": 90,
+          "2025-09": 90
+        },
+        "search_volume_trend": {
+          "monthly": -22
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 26,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 120677.111,
+        "dofollow": 289.889,
+        "referring_pages": 120547.889,
+        "referring_domains": 84.333,
+        "referring_main_domains": 74.222,
+        "rank": 166.222,
+        "main_domain_rank": 565.667,
+        "last_updated_time": "2026-09-21 17:41:33 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:37:01 +00:00"
+      }
+    },
+    {
+      "keyword": "vat on exports",
+      "keyword_info": {
+        "last_updated_time": "2026-09-13 16:21:35 +00:00",
+        "competition": 0.09,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 20,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "yearly": -67
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "export vat",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 16,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 2938.1,
+        "dofollow": 1346,
+        "referring_pages": 1400.3,
+        "referring_domains": 245.3,
+        "referring_main_domains": 216,
+        "rank": 151.9,
+        "main_domain_rank": 503,
+        "last_updated_time": "2026-02-27 01:31:16 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:10:20 +00:00"
+      }
+    },
+    {
+      "keyword": "what is a customs entry",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 05:18:25 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 20,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        },
+        "search_volume_trend": {
+          "monthly": 1300,
+          "quarterly": 1300,
+          "yearly": 1300
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "what is customs entry",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 40,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:54:02 +00:00"
+      }
+    },
+    {
+      "keyword": "zero rated exports",
+      "keyword_info": {
+        "last_updated_time": "2026-09-14 23:50:47 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 10,
+          "2026-07": 10,
+          "2026-06": 10,
+          "2026-05": 10,
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 53,
+        "detected_language": "en"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 01:39:31 +00:00"
+      }
+    },
+    {
+      "keyword": "zoll germany",
+      "keyword_info": {
+        "last_updated_time": "2026-09-12 14:41:39 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 140,
+        "categories": [
+          10004,
+          13841
+        ],
+        "monthly_searches": {
+          "2026-08": 140,
+          "2026-07": 140,
+          "2026-06": 170,
+          "2026-05": 170,
+          "2026-04": 140,
+          "2026-03": 170,
+          "2026-02": 140,
+          "2026-01": 170,
+          "2025-12": 140,
+          "2025-11": 140,
+          "2025-10": 210,
+          "2025-09": 170
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "core_keyword": "germany zoll",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 21,
+        "detected_language": "en"
+      },
+      "avg_backlinks_info": {
+        "backlinks": 558.4,
+        "dofollow": 508.4,
+        "referring_pages": 538.1,
+        "referring_domains": 55.8,
+        "referring_main_domains": 48.9,
+        "rank": 145.2,
+        "main_domain_rank": 547.6,
+        "last_updated_time": "2026-09-12 12:17:34 +00:00"
+      },
+      "search_intent_info": {
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 01:00:30 +00:00"
+      }
+    }
+  ]
+}

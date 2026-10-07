@@ -2,6 +2,11 @@
 
 ## Unreleased — 2026-09-06
 
+### Content plan v3 toward 250 pages (D-022)
+
+- Plan of record `docs/research/content-plan-v3-2026-10-07.md`: 161 new public pages in waves A–D (40, 42, 42, 37) on top of the 63 live ones, so 224 pages backed by measured demand or a named conversion role: 75 posts (100 in total), 25 guides, a glossary hub and 38 term pages (threshold 200 a month), an export-documents hub and 10 country pages (threshold 150 a month, five sourced country facts each), 8 free tool pages and 3 use-case pages. Wave E (20 help articles and 6 glossary terms at 100–199 a month) reaches 250 and waits for the owner's choice. Includes routing, exclusions, data-model specs for glossary and country pages, and a 660-row keyword appendix generated from the saved data.
+- DataForSEO: the last 6 calls under D-014 (5 US and 1 UK keyword overviews), responses in `docs/research/dataforseo-2026-10-07/`, excluded from Prettier. A further 12 calls are listed for owner approval.
+
 ### PDF branding, the Pro feature (D-021)
 
 - Pro and Team organizations can add their logo (top left of every page, fitted to 53 × 14 mm)
