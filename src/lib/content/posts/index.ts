@@ -55,6 +55,9 @@ import howToMakeAPackingListFromYourInvoice from './how-to-make-a-packing-list-f
 import howToReadTheHarmonizedTariffSchedule from './how-to-read-the-harmonized-tariff-schedule';
 import packingListExample from './packing-list-example';
 import scheduleBNumber from './schedule-b-number';
+import howMuchDoesAPalletWeigh from './how-much-does-a-pallet-weigh';
+import howToMeasureABoxForShipping from './how-to-measure-a-box-for-shipping';
+import standardBoxSizesForShipping from './standard-box-sizes-for-shipping';
 
 export type Post = ContentArticle;
 
@@ -101,6 +104,9 @@ const ENTRIES: readonly Post[] = [
   howToReadTheHarmonizedTariffSchedule,
   packingListExample,
   scheduleBNumber,
+  howMuchDoesAPalletWeigh,
+  howToMeasureABoxForShipping,
+  standardBoxSizesForShipping,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

@@ -14,6 +14,7 @@ import cbpForm7501 from './cbp-form-7501';
 import commercialInvoiceExample from './commercial-invoice-example';
 import eccnEar99ExportLicence from './eccn-ear99-export-licence';
 import whatIsAProformaInvoice from './what-is-a-proforma-invoice';
+import howToMeasureABoxForShipping from './how-to-measure-a-box-for-shipping';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -43,6 +44,7 @@ export const ARTICLE_SOURCE_FILES = [
   commercialInvoiceExample,
   eccnEar99ExportLicence,
   whatIsAProformaInvoice,
+  howToMeasureABoxForShipping,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

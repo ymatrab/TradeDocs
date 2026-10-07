@@ -179,14 +179,14 @@ const article: ContentArticle = {
     '/blog/commercial-invoice-ups-fedex-dhl',
   ],
   cover: {
-    id: 'gthSas4oYC0',
-    src: 'https://images.unsplash.com/photo-1700165644892-3dd6b67b25bc',
-    width: 6720,
-    height: 4480,
-    alt: 'Rows of open brown cardboard boxes in different sizes, waiting to be packed for shipping',
-    caption: 'Open brown cardboard boxes',
-    photographer: { name: 'Luke Heibert', profile: 'https://unsplash.com/@lukeheibert' },
-    page: 'https://unsplash.com/photos/a-lot-of-brown-boxes-that-are-open-gthSas4oYC0',
+    id: 'RVP3wAw9gJY',
+    src: 'https://images.unsplash.com/photo-1769355104335-acef3aa4c9b6',
+    width: 4096,
+    height: 1736,
+    alt: 'Cardboard shipping boxes of different sizes stacked in a warehouse',
+    caption: 'Cardboard boxes and packaging supplies in a warehouse',
+    photographer: { name: 'Guilherme Mendes', profile: 'https://unsplash.com/@guilhermemendes' },
+    page: 'https://unsplash.com/photos/cardboard-boxes-and-packaging-supplies-in-a-warehouse-RVP3wAw9gJY',
   },
 };
 
