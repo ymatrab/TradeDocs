@@ -2,6 +2,26 @@
 
 ## Unreleased — 2026-09-06
 
+### Glossary, export documents by country, CBM-to-cubic-feet and pallet calculator (D-022 wave A)
+
+- `/glossary` hub (A–Z, in-browser search, DefinedTermSet) and `/glossary/[term]` (DefinedTerm
+  in the hub set, BreadcrumbList, FAQPage) from `src/lib/content/glossary/<slug>.ts`. Wave A
+  terms: cbm, consignor, dunnage, feu, teu, verified-gross-mass, waybill, plus 18 hub-only
+  entries linked to the guide or tool that owns them. Regulated terms stay noindex and out of
+  the sitemap and llms until a review record exists.
+- `/export-documents` and `/export-documents/[country]` (Article, BreadcrumbList, FAQPage) from
+  `src/lib/content/countries/<slug>.ts`: Mexico (ANAM, SAT, ITA guide) and India (CBIC, DGFT,
+  ITA guide), every row sourced, no rates. Always regulated: both pages and the hub are noindex
+  and out of the sitemap and llms.txt until a named review record is added.
+- `/tools/cbm-to-cubic-feet` (m³, ft³, cm³, in³, L, exact decimal factors; new source
+  `nist-si-volume-units`) and `/tools/pallet-calculator` (cartons per layer and pallet, loaded
+  height, gross weight; EPAL and 48 × 40 in presets; `src/lib/trade/pallet.ts`).
+- FedEx and UPS chargeable-weight presets not published: both carriers' live pages refused
+  WebFetch on 2026-10-07, so no divisor could be read with a retrieval date.
+- New source files: teu, dunnage, waybill, consignor, mexico, india. Footer and phone menu link
+  the glossary and the country hub. Tests: vitest `glossary`, `pallet`; e2e additions in
+  `tools.spec.ts`. All pending CI.
+
 ### Three free tools: container loading, unit converter, delivery note
 
 - `/tools/container-loading-calculator`: cartons or pallets per 20ft, 40ft and 40ft HC by

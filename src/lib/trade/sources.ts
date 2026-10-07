@@ -30,6 +30,7 @@ export type CoreSourceId =
   | 'trade-gov-packing-list'
   | 'nist-si-volume'
   | 'nist-si-mass'
+  | 'nist-si-volume-units'
   | 'maersk-fcl-lcl'
   | 'wto-customs-valuation'
   | 'trade-gov-export-documents';
@@ -54,7 +55,10 @@ export type SourceRecord = SourceFields & { id: SourceId };
 const RETRIEVED = '2026-10-05';
 /** The blog round: sources first cited by the blog posts. */
 const RETRIEVED_BLOG = '2026-10-06';
-/** The tools round: the unit converter, container loading calculator and delivery note. */
+/**
+ * The tools rounds: the unit converter, container loading calculator and delivery note, then
+ * the CBM-to-cubic-feet converter and the pallet calculator.
+ */
 const RETRIEVED_TOOLS = '2026-10-07';
 const PENDING = 'pending owner review';
 
@@ -200,6 +204,17 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     retrieved: RETRIEVED_TOOLS,
     reviewer: PENDING,
   },
+  'nist-si-volume-units': {
+    id: 'nist-si-volume-units',
+    authority: 'National Institute of Standards and Technology (NIST)',
+    title: 'NIST Guide to the SI, Appendix B.9: factors for units listed by kind of quantity',
+    url: 'https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9',
+    jurisdiction: 'International (SI unit conversion)',
+    supports:
+      'one cubic inch being 1.638 706 E-05 cubic metres and one litre being exactly 1.0 E-03 cubic metres',
+    retrieved: RETRIEVED_TOOLS,
+    reviewer: PENDING,
+  },
   'maersk-fcl-lcl': {
     id: 'maersk-fcl-lcl',
     authority: 'Maersk',
@@ -281,6 +296,14 @@ export const PAGE_SOURCES = {
   containerLoading: ['maersk-dry-containers'],
   unitConverter: ['nist-si-volume', 'nist-si-mass'],
   deliveryNote: ['trade-gov-export-documents', 'trade-gov-packing-list'],
+  cbmToCubicFeet: ['nist-si-volume', 'nist-si-volume-units', 'maersk-dry-containers'],
+  palletCalculator: [
+    'w4-iso-6780',
+    'w4-epal-euro-pallet',
+    'w4-epal-2-pallet',
+    'w4-usda-gma-pallet',
+    'w4-ippc-ispm-15',
+  ],
 } as const satisfies Record<string, readonly SourceId[]>;
 
 export function sourcesFor(ids: readonly SourceId[]): SourceRecord[] {

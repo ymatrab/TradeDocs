@@ -21,9 +21,9 @@ export const SITE_DESCRIPTION =
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
   'figures agree across the set. It is free while early, and its free tools work without an ' +
   'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
-  'a landed cost calculator, CBM, chargeable weight and container loading calculators, a ' +
-  'CBM-to-cubic-feet and kg-to-lb converter, an Incoterms 2020 guide and a glossary of ' +
-  'shipping terms.';
+  'a landed cost calculator, CBM, chargeable weight, container loading and pallet ' +
+  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an Incoterms 2020 guide and a ' +
+  'glossary of shipping terms.';
 
 export type PublicTool = {
   path: string;
@@ -35,7 +35,10 @@ export type PublicTool = {
   updated?: string;
 };
 
-/** The day the delivery note, container loading and unit converter pages were added. */
+/**
+ * The day the delivery note, container loading and unit converter pages were added, and the
+ * CBM-to-cubic-feet converter and pallet calculator after them.
+ */
 const TOOLS_ROUND = '2026-10-07';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
@@ -95,6 +98,22 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     name: 'CBM to cubic feet and kg to lb converter',
     summary:
       'Cubic metres to cubic feet and kilograms to pounds, both ways, with the exact factors NIST lists.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/cbm-to-cubic-feet',
+    name: 'CBM to cubic feet converter',
+    summary:
+      'A volume in cubic metres, cubic feet, cm³, cubic inches or litres, shown in all five with the exact factors NIST lists.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/pallet-calculator',
+    name: 'Pallet calculator',
+    summary:
+      'Cartons per layer and per pallet, the loaded height and the pallet gross weight, for 48 × 40 in, euro and 1,200 × 1,000 mm pallets.',
     kind: 'application',
     updated: TOOLS_ROUND,
   },

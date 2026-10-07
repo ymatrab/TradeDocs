@@ -17,6 +17,7 @@ const navigation = [
 /** The phone menu has the room the header row does not, so it carries support too. */
 const mobileNavigation = [
   ...navigation,
+  { href: '/glossary', label: 'Glossary' },
   { href: '/help', label: 'Help' },
   { href: '/contact', label: 'Contact' },
 ] as const;
@@ -33,6 +34,8 @@ const footerProduct = [
 const footerResources = [
   { href: '/guides', label: 'Guides' },
   { href: '/blog', label: 'Blog' },
+  { href: '/glossary', label: 'Glossary' },
+  { href: '/export-documents', label: 'Export documents by country' },
   { href: '/help', label: 'Help' },
   { href: '/contact', label: 'Contact' },
 ] as const;
@@ -51,6 +54,8 @@ const footerTools = [
   { href: '/tools/cbm-calculator', label: 'CBM calculator' },
   { href: '/tools/container-loading-calculator', label: 'Container loading' },
   { href: '/tools/unit-converter', label: 'CBM / kg converter' },
+  { href: '/tools/cbm-to-cubic-feet', label: 'CBM to cubic feet' },
+  { href: '/tools/pallet-calculator', label: 'Pallet calculator' },
   { href: '/tools/chargeable-weight', label: 'Dimensional weight' },
   { href: '/tools/landed-cost-calculator', label: 'Landed cost' },
   { href: '/tools/incoterms', label: 'Incoterms 2020' },
