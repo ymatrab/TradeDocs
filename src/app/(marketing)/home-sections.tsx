@@ -182,6 +182,7 @@ const audiences = [
     links: [
       { href: '/tools/cbm-calculator', label: 'CBM calculator' },
       { href: '/tools/chargeable-weight', label: 'Dimensional weight calculator' },
+      { href: '/tools/container-loading-calculator', label: 'Container loading calculator' },
     ],
   },
   {

@@ -99,7 +99,8 @@ Ranked by risk to customers first, then growth.
 6. **Certificate of origin** — stays gated until a recorded legal review (D-008).
 7. **Content backlog with measured demand** (docs/research/content-plan-2026-10-05.md):
    "how to fill out a commercial invoice" guide, certificate of origin explainer, Incodocs
-   comparison page (facts from Incodocs' live pages, dated), container loading calculator.
+   comparison page (facts from Incodocs' live pages, dated). The container loading calculator
+   was built 2026-10-07, with a unit converter and a delivery note generator.
 8. **Analytics** — consent-aware, after the domain; needs a cookie decision. (measurement)
 9. **IndexNow** — after Search Console is live.
 10. **Dependabot backlog** — merge the open dependency PRs through CI (supabase-js + ssr

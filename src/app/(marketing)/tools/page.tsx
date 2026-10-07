@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
+  ArrowLeftRight,
   BookOpen,
   Box,
   Boxes,
   Calculator,
   FileText,
   Handshake,
+  Package,
   Scale,
+  Truck,
   type LucideIcon,
 } from 'lucide-react';
 import { ToolsHubJsonLd } from '@/components/seo/json-ld';
@@ -18,7 +21,7 @@ import { openGraphFor } from '@/lib/seo/social';
 export const metadata: Metadata = {
   title: 'Free trade tools — document generators and shipping calculators',
   description:
-    'Free tools for people who ship: commercial invoice, proforma invoice and packing list generators, CBM, dimensional weight and landed cost calculators, and a guide to all eleven Incoterms 2020 rules.',
+    'Free tools for people who ship: commercial invoice, proforma invoice, packing list and delivery note generators, CBM, dimensional weight, container loading and landed cost calculators, a CBM and kg converter, and a guide to all eleven Incoterms 2020 rules.',
   alternates: { canonical: '/tools' },
   openGraph: openGraphFor(
     'Free trade tools: document generators, calculators and Incoterms',
@@ -32,8 +35,11 @@ const ICONS: Record<string, LucideIcon> = {
   '/tools/invoice-generator': FileText,
   '/tools/proforma-invoice-generator': FileText,
   '/tools/packing-list-generator': Boxes,
+  '/tools/delivery-note-generator': Truck,
   '/tools/cbm-calculator': Box,
   '/tools/chargeable-weight': Scale,
+  '/tools/container-loading-calculator': Package,
+  '/tools/unit-converter': ArrowLeftRight,
   '/tools/landed-cost-calculator': Calculator,
   '/tools/incoterms': Handshake,
 };

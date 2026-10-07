@@ -2,6 +2,23 @@
 
 ## Unreleased — 2026-09-06
 
+### Three free tools: container loading, unit converter, delivery note
+
+- `/tools/container-loading-calculator`: cartons or pallets per 20ft, 40ft and 40ft HC by
+  volume and by weight (Maersk figures in `CONTAINERS`), an optional usable-volume share and
+  the containers a quantity needs; labelled an estimate, not a stow plan. Exact decimal
+  arithmetic in `src/lib/trade/container-loading.ts`.
+- `/tools/unit-converter`: CBM ↔ ft³ and kg ↔ lb both ways with the exact defined factors
+  (`src/lib/trade/conversions.ts`); new source record `nist-si-mass` (NIST SP 811 B.9,
+  retrieved 2026-10-07, pending owner review).
+- `/tools/delivery-note-generator`: the free generator preset to the delivery note.
+- Each has an answer-first intro, visible FAQ (`src/lib/tools/faq.ts`), sources, ToolCta and
+  SoftwareApplication + FAQPage JSON-LD, and is registered in `PUBLIC_TOOLS` (tools hub,
+  related tools, sitemap dated 2026-10-07, llms.txt), the footer and the home page.
+- Tests: vitest `container-loading` (bounds, units, rounding, refusals, sources); e2e
+  `tools.spec.ts` (calculator, converter, delivery note and proforma downloads, registration,
+  axe on the new pages). All pending CI.
+
 ### Buyer reference, proforma validity and payment terms (snapshot schema 6)
 
 - Shipments gain a buyer reference / PO number and a proforma valid-until date (shipment

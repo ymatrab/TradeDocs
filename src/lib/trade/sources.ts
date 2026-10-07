@@ -29,6 +29,7 @@ export type CoreSourceId =
   | 'trade-gov-commercial-invoice'
   | 'trade-gov-packing-list'
   | 'nist-si-volume'
+  | 'nist-si-mass'
   | 'maersk-fcl-lcl'
   | 'wto-customs-valuation'
   | 'trade-gov-export-documents';
@@ -53,6 +54,8 @@ export type SourceRecord = SourceFields & { id: SourceId };
 const RETRIEVED = '2026-10-05';
 /** The blog round: sources first cited by the blog posts. */
 const RETRIEVED_BLOG = '2026-10-06';
+/** The tools round: the unit converter, container loading calculator and delivery note. */
+const RETRIEVED_TOOLS = '2026-10-07';
 const PENDING = 'pending owner review';
 
 const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
@@ -187,6 +190,16 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'nist-si-mass': {
+    id: 'nist-si-mass',
+    authority: 'National Institute of Standards and Technology (NIST)',
+    title: 'NIST Guide to the SI, Appendix B.9: factors for units listed by kind of quantity',
+    url: 'https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9',
+    jurisdiction: 'International (SI unit conversion)',
+    supports: 'one pound (avoirdupois) being 0.453 592 4 kilograms',
+    retrieved: RETRIEVED_TOOLS,
+    reviewer: PENDING,
+  },
   'maersk-fcl-lcl': {
     id: 'maersk-fcl-lcl',
     authority: 'Maersk',
@@ -265,6 +278,9 @@ export const PAGE_SOURCES = {
   proforma: ['trade-gov-proforma-invoice', 'us-cbp-proforma-invoice', 'icc-incoterms-2020'],
   packingList: ['trade-gov-packing-list', 'trade-gov-commercial-invoice'],
   landedCost: ['wto-customs-valuation', 'icc-incoterms-2020'],
+  containerLoading: ['maersk-dry-containers'],
+  unitConverter: ['nist-si-volume', 'nist-si-mass'],
+  deliveryNote: ['trade-gov-export-documents', 'trade-gov-packing-list'],
 } as const satisfies Record<string, readonly SourceId[]>;
 
 export function sourcesFor(ids: readonly SourceId[]): SourceRecord[] {

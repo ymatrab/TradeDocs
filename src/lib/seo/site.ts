@@ -18,8 +18,9 @@ export const SITE_DESCRIPTION =
   'You record a shipment’s parties, goods and terms once, and it prepares the commercial ' +
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
   'figures agree across the set. It is free while early, and its free tools work without an ' +
-  'account: commercial invoice, proforma invoice and packing list generators, a landed cost ' +
-  'calculator, CBM and chargeable weight calculators and an Incoterms 2020 guide.';
+  'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
+  'a landed cost calculator, CBM, chargeable weight and container loading calculators, a ' +
+  'CBM-to-cubic-feet and kg-to-lb converter and an Incoterms 2020 guide.';
 
 export type PublicTool = {
   path: string;
@@ -27,7 +28,12 @@ export type PublicTool = {
   summary: string;
   /** An interactive tool is software; a reference page is not, and is not marked up as one. */
   kind: 'application' | 'reference';
+  /** YYYY-MM-DD the page's content last changed, when later than the redesign round. */
+  updated?: string;
 };
+
+/** The day the delivery note, container loading and unit converter pages were added. */
+const TOOLS_ROUND = '2026-10-07';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
   {
@@ -52,6 +58,14 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     kind: 'application',
   },
   {
+    path: '/tools/delivery-note-generator',
+    name: 'Delivery note generator',
+    summary:
+      'A delivery note with the parties, goods and quantities and no prices, downloaded as a PDF. No account, nothing stored.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
     path: '/tools/cbm-calculator',
     name: 'CBM calculator',
     summary:
@@ -64,6 +78,22 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     summary:
       'Dimensional against actual weight for air, express, road groupage and sea LCL, and which one you will be billed on.',
     kind: 'application',
+  },
+  {
+    path: '/tools/container-loading-calculator',
+    name: 'Container loading calculator',
+    summary:
+      'How many cartons or pallets fit a 20ft, 40ft or high-cube container by volume and weight, and how many containers you need. An estimate, not a stow plan.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
+  },
+  {
+    path: '/tools/unit-converter',
+    name: 'CBM to cubic feet and kg to lb converter',
+    summary:
+      'Cubic metres to cubic feet and kilograms to pounds, both ways, with the exact factors NIST lists.',
+    kind: 'application',
+    updated: TOOLS_ROUND,
   },
   {
     path: '/tools/landed-cost-calculator',
@@ -120,11 +150,11 @@ export type SitemapPage = {
 
 export const SITEMAP_PAGES: readonly SitemapPage[] = [
   { path: '/', lastModified: HOME_ROUND, changeFrequency: 'weekly', priority: 1 },
-  { path: '/tools', lastModified: REDESIGN_ROUND, changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/tools', lastModified: TOOLS_ROUND, changeFrequency: 'monthly', priority: 0.8 },
   { path: '/pricing', lastModified: PRICING_ROUND, changeFrequency: 'monthly', priority: 0.7 },
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,
-    lastModified: REDESIGN_ROUND,
+    lastModified: tool.updated ?? REDESIGN_ROUND,
     changeFrequency: 'monthly' as const,
     priority: tool.path === '/tools/invoice-generator' ? 0.8 : 0.7,
   })),
