@@ -183,14 +183,14 @@ const article: ContentArticle = {
     '/guides/how-to-export-from-the-us',
   ],
   cover: {
-    id: '6Vg8N8u61aI',
-    src: 'https://images.unsplash.com/photo-1571244222371-0b0b60f3c92b',
-    width: 4896,
-    height: 3264,
-    alt: 'Container ship stacked with shipping containers at the port of Los Angeles, ready for export',
-    caption: 'A loaded container ship in the port of Los Angeles, California',
-    photographer: { name: 'Diego Fernandez', profile: 'https://unsplash.com/@diegitane' },
-    page: 'https://unsplash.com/photos/black-and-red-ship-on-body-of-water-at-daytime-6Vg8N8u61aI',
+    id: '37mW7MvAOvU',
+    src: 'https://images.unsplash.com/photo-1769144256227-5185141c3aca',
+    width: 4000,
+    height: 2250,
+    alt: 'Aerial view of stacked export containers being sorted at a port terminal',
+    caption: 'Aerial view of containers being sorted at the Port of Vancouver, Canada',
+    photographer: { name: 'Daniel Miksha', profile: 'https://unsplash.com/@danielmiksha' },
+    page: 'https://unsplash.com/photos/aerial-view-of-stacked-shipping-containers-at-a-port-37mW7MvAOvU',
   },
 };
 

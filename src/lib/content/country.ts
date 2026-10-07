@@ -81,8 +81,13 @@ export const COUNTRY_DISCLAIMER =
   'destination’s customs authority, your buyer’s customs broker and your contract take ' +
   'precedence over anything here.';
 
+/**
+ * Whether a country page is indexed and listed. Per D-015 the owner publishes sourced fact
+ * pages at launch and reviews them afterwards, so every sourced country page is listed; the
+ * `review` record, when present, shows who checked it and when.
+ */
 export function isCountryListed(country: CountryPage): boolean {
-  return country.review !== null;
+  return country.sources.length > 0;
 }
 
 /** The sentences a country page shows, for the word count and the distinctness check. */

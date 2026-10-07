@@ -10,6 +10,10 @@ import india from './india';
 import mexico from './mexico';
 import teu from './teu';
 import waybill from './waybill';
+import cbpForm7501 from './cbp-form-7501';
+import commercialInvoiceExample from './commercial-invoice-example';
+import eccnEar99ExportLicence from './eccn-ear99-export-licence';
+import whatIsAProformaInvoice from './what-is-a-proforma-invoice';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -35,6 +39,10 @@ export const ARTICLE_SOURCE_FILES = [
   mexico,
   teu,
   waybill,
+  cbpForm7501,
+  commercialInvoiceExample,
+  eccnEar99ExportLicence,
+  whatIsAProformaInvoice,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

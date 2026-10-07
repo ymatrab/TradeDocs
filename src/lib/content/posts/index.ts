@@ -45,6 +45,16 @@ import howToShipInternationallySmallBusiness from './how-to-ship-internationally
 import incotermsForImportingFromChina from './incoterms-for-importing-from-china';
 import shippersLetterOfInstruction from './shippers-letter-of-instruction';
 import shippingMarks from './shipping-marks';
+import cbpForm7501 from './cbp-form-7501';
+import commercialInvoiceAndPackingListMustMatch from './commercial-invoice-and-packing-list-must-match';
+import commercialInvoiceExample from './commercial-invoice-example';
+import customsStatusMessagesExplained from './customs-status-messages-explained';
+import deliveryNoteVsPackingList from './delivery-note-vs-packing-list';
+import howToFillOutACommercialInvoice from './how-to-fill-out-a-commercial-invoice';
+import howToMakeAPackingListFromYourInvoice from './how-to-make-a-packing-list-from-your-invoice';
+import howToReadTheHarmonizedTariffSchedule from './how-to-read-the-harmonized-tariff-schedule';
+import packingListExample from './packing-list-example';
+import scheduleBNumber from './schedule-b-number';
 
 export type Post = ContentArticle;
 
@@ -81,6 +91,16 @@ const ENTRIES: readonly Post[] = [
   incotermsForImportingFromChina,
   shippersLetterOfInstruction,
   shippingMarks,
+  cbpForm7501,
+  commercialInvoiceAndPackingListMustMatch,
+  commercialInvoiceExample,
+  customsStatusMessagesExplained,
+  deliveryNoteVsPackingList,
+  howToFillOutACommercialInvoice,
+  howToMakeAPackingListFromYourInvoice,
+  howToReadTheHarmonizedTariffSchedule,
+  packingListExample,
+  scheduleBNumber,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

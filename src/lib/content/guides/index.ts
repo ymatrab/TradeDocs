@@ -37,6 +37,15 @@ import palletSizes from './pallet-sizes';
 import shipperConsigneeNotifyParty from './shipper-consignee-notify-party';
 import shippingContainerSizes from './shipping-container-sizes';
 import whatIsABillOfLading from './what-is-a-bill-of-lading';
+import airWaybill from './air-waybill';
+import cmrNote from './cmr-note';
+import demurrageAndDetention from './demurrage-and-detention';
+import eccnEar99ExportLicence from './eccn-ear99-export-licence';
+import exportPaymentTerms from './export-payment-terms';
+import howToImportIntoTheUs from './how-to-import-into-the-us';
+import importerOfRecord from './importer-of-record';
+import ukCommodityCodes from './uk-commodity-codes';
+import whatIsAProformaInvoice from './what-is-a-proforma-invoice';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -64,6 +73,15 @@ const ENTRIES: readonly Guide[] = [
   shipperConsigneeNotifyParty,
   shippingContainerSizes,
   whatIsABillOfLading,
+  airWaybill,
+  cmrNote,
+  demurrageAndDetention,
+  eccnEar99ExportLicence,
+  exportPaymentTerms,
+  howToImportIntoTheUs,
+  importerOfRecord,
+  ukCommodityCodes,
+  whatIsAProformaInvoice,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);
