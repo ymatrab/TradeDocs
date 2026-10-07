@@ -5,7 +5,12 @@ import {
   DatabaseUnavailableError,
   type TradeDocsClient,
 } from '@/lib/supabase/server';
-import { RENDERER_VERSION, renderTradeDocument } from '@/lib/pdf/trade-document';
+import {
+  RENDERER_VERSION,
+  renderTradeDocument,
+  type BrandingImages,
+} from '@/lib/pdf/trade-document';
+import { loadBrandingImages, needsBranding } from '@/lib/branding/server';
 import { createZip, safeFileName, type ZipEntry } from '@/lib/zip';
 import { documentKindLabel } from '@/lib/labels';
 import { MAX_SET_DOCUMENTS } from '@/lib/limits';
@@ -62,7 +67,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const [{ data: documents }, { data: now }] = await Promise.all([
     client
       .from('documents')
-      .select('id, kind, number, status, shipment_revision, snapshot, created_at')
+      .select('id, org_id, kind, number, status, shipment_revision, snapshot, created_at')
       .eq('shipment_id', id)
       .eq('status', 'final')
       .order('kind'),
@@ -110,9 +115,21 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   // Kept apart from the checksum lines so the manifest still works with `sha256sum -c`.
   const details: string[] = [];
   for (const document of current) {
+    // An issued document is drawn with the branding images it recorded, or not at all.
+    let images: BrandingImages | undefined;
+    if (needsBranding(document.snapshot)) {
+      const loaded = await loadBrandingImages(client, document.org_id, document.snapshot);
+      if (!loaded) {
+        manifest.push(
+          `SKIPPED  ${document.number}  (${documentKindLabel(document.kind)}) — its logo or signature image could not be loaded; try again`,
+        );
+        continue;
+      }
+      images = loaded;
+    }
     let pdf: Uint8Array;
     try {
-      pdf = renderTradeDocument(document.snapshot);
+      pdf = renderTradeDocument(document.snapshot, undefined, images);
     } catch {
       // One unrenderable snapshot is a defect in that document, not grounds to deny the
       // operator the rest of a set they are probably about to send.

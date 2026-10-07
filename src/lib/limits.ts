@@ -20,3 +20,12 @@ export const MAX_SET_DOCUMENTS = 60;
  * refuses a larger file before calling it, and this mirrors it for display.
  */
 export const MAX_IMPORT_ROWS = 2000;
+
+/**
+ * A branding image (logo, signature or stamp): its file size and longest side. Enforced by
+ * the upload action (src/app/(app)/branding-actions.ts) and by the org-branding bucket's own
+ * size limit (supabase/migrations/20261007000100_pdf_branding.sql).
+ */
+export const MAX_BRANDING_BYTES = 1_048_576;
+/** Pixels, either side. The image reader (src/lib/pdf/image.ts) refuses anything larger. */
+export const MAX_BRANDING_SIDE = 2000;

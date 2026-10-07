@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { documentKindLabels } from '@/lib/labels';
 import {
+  MAX_BRANDING_BYTES,
+  MAX_BRANDING_SIDE,
   MAX_IMPORT_ROWS,
   MAX_SET_DOCUMENTS,
   MAX_TOOL_LINES,
@@ -14,8 +16,11 @@ import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
  *
  * Two rules hold here:
  *
- * - A feature is listed only if the code really does it, and its `plans` say who gets it. No
- *   feature is paid-only today, so every feature lists every plan and nothing free is gated.
+ * - A feature is listed only if the code really does it, and its `plans` say who gets it. A
+ *   feature that lists 'free' is never gated. The one paid-only feature is PDF branding
+ *   (D-021), gated by hasEntitlement(org, 'pdf_branding') in src/lib/billing/server.ts and,
+ *   in the database, by private.branding_entitled
+ *   (supabase/migrations/20261007000100_pdf_branding.sql), which mirrors its plans.
  * - No price shows unless the owner has approved the prices (PRICES_APPROVED=true, D-020).
  *   PROPOSED_PRICES below are the marketing proposal, unapproved (P-002 stays open until the
  *   owner confirms). With the flag off every paid plan is "Not available yet": no price, no
@@ -41,11 +46,14 @@ export type Feature = {
   limit?: string;
   /** The plans that include it. A feature that lists 'free' is never gated. */
   plans: readonly PlanId[];
+  /** A short name for running text, such as "PDF branding". Set on paid-only features. */
+  short?: string;
   /** True when it needs an account, so it is absent on a deployment without accounts. */
   needsAccount: boolean;
 };
 
 const EVERY_PLAN: readonly PlanId[] = PLAN_IDS;
+const PAID_PLANS: readonly PlanId[] = PAID_PLAN_IDS;
 
 function listOf(names: string[]): string {
   if (names.length <= 1) return names.join('');
@@ -123,6 +131,15 @@ export const FEATURES = [
     needsAccount: true,
   },
   {
+    key: 'pdf_branding',
+    group: 'Workspace',
+    label: 'PDF branding: your logo and signature',
+    short: 'PDF branding',
+    limit: `Logo top left of every page, signature or stamp above the signatory line; PNG or JPEG, up to ${MAX_BRANDING_BYTES / 1_048_576} MB and ${MAX_BRANDING_SIDE} × ${MAX_BRANDING_SIDE} pixels each`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+  },
+  {
     key: 'team.members',
     group: 'Team',
     label: 'Teammates invited by link, with owner, admin and member roles',
@@ -143,13 +160,23 @@ export function featurePlans(key: string): readonly PlanId[] {
   return FEATURES.find((feature) => feature.key === key)?.plans ?? [];
 }
 
-/** Features no free account has. Empty today; a paid card says so rather than inventing any. */
+/** Features no free account has. A paid card lists them; it never invents any. */
 export function paidOnlyFeatures(plan: PaidPlanId): Feature[] {
   return FEATURES.filter(
     (feature) =>
       (feature.plans as readonly PlanId[]).includes(plan) &&
       !(feature.plans as readonly PlanId[]).includes('free'),
   );
+}
+
+/** The paid-only features of every paid plan, by short name, as running text ("" if none). */
+export function paidOnlySummary(): string {
+  const names = new Set(
+    PAID_PLAN_IDS.flatMap((plan) =>
+      paidOnlyFeatures(plan).map((feature) => feature.short ?? feature.label),
+    ),
+  );
+  return listOf([...names]);
 }
 
 // --- Offers ------------------------------------------------------------------------------
@@ -336,12 +363,17 @@ export const PLAN_NAMES: Record<PlanId, string> = {
   team: 'Team',
 };
 
+function freeSummary(): string {
+  const paid = paidOnlySummary();
+  return `Every generator, calculator and workspace feature${paid ? ` except ${paid}` : ''}, for any organization, while it is early.`;
+}
+
 export function resolvePlans(input: PlanEnvironment, paymentsOpen: boolean): Plan[] {
   return [
     {
       id: 'free',
       name: PLAN_NAMES.free,
-      summary: 'Everything TradeDocs does today, for any organization, while it is early.',
+      summary: freeSummary(),
       offer: { state: 'free' },
     },
     {

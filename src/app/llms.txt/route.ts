@@ -1,6 +1,6 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { currentPlans } from '@/lib/billing/server';
-import { FEATURES, INTERVAL_LABELS, type Plan } from '@/lib/billing/plans';
+import { FEATURES, INTERVAL_LABELS, paidOnlyFeatures, type Plan } from '@/lib/billing/plans';
 import { GUIDES } from '@/lib/content/guides';
 import { POSTS } from '@/lib/content/posts';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
@@ -19,20 +19,27 @@ import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
 // The links name the deployment's canonical origin, so this is resolved per request.
 export const dynamic = 'force-dynamic';
 
+/** What a paid plan adds over Free, as a sentence, or nothing. */
+function adds(plan: Plan): string {
+  if (plan.id === 'free') return '';
+  const extras = paidOnlyFeatures(plan.id).map((feature) => feature.label);
+  return extras.length > 0 ? ` Adds ${extras.join('; ')}.` : '';
+}
+
 /** A plan's status in one line, from the same module the pricing page renders. */
 function planLine(plan: Plan): string {
   if (plan.offer.state === 'free') return `- ${plan.name}: free, no card. ${plan.summary}`;
   if (plan.offer.state === 'purchasable') {
     const term = INTERVAL_LABELS[plan.offer.interval];
-    return `- ${plan.name}: ${plan.offer.price} ${term}. ${plan.summary}`;
+    return `- ${plan.name}: ${plan.offer.price} ${term}. ${plan.summary}${adds(plan)}`;
   }
   if (plan.offer.state === 'listed' && plan.offer.prices.length > 0) {
     const prices = plan.offer.prices
       .map((price) => `${price.month} per month or ${price.year} per year`)
       .join(', or ');
-    return `- ${plan.name}: ${prices}; checkout is not open yet. ${plan.summary}`;
+    return `- ${plan.name}: ${prices}; checkout is not open yet. ${plan.summary}${adds(plan)}`;
   }
-  return `- ${plan.name}: not available yet; no price is set.`;
+  return `- ${plan.name}: not available yet; no price is set.${adds(plan)}`;
 }
 
 /**

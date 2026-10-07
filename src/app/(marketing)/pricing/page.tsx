@@ -10,6 +10,7 @@ import {
   INTERVAL_LABELS,
   listedPrices,
   paidOnlyFeatures,
+  paidOnlySummary,
   PLAN_NAMES,
   type Feature,
   type PaidPlanId,
@@ -39,12 +40,17 @@ function pageState(plans: Plan[]): PageState {
   return 'unpriced';
 }
 
+/** What Pro and Team add over Free, from plans.ts, such as " Pro and Team add PDF branding." */
+const PAID_EXTRAS = paidOnlySummary();
+const ADDS = PAID_EXTRAS ? ` Pro and Team add ${PAID_EXTRAS}.` : '';
+const FREE_SCOPE = PAID_EXTRAS
+  ? `every document generator, calculator and workspace feature except ${PAID_EXTRAS}`
+  : 'every document generator, calculator and workspace feature';
+
 const DESCRIPTIONS: Record<PageState, string> = {
-  unpriced:
-    'TradeDocs is free while it is early: every document generator, calculator and workspace feature, with no card. Paid plans are not open yet; their prices will be published here first.',
-  listed:
-    'TradeDocs is free while it is early, with no card. Pro and Team prices, monthly or yearly in US dollars or euros, are listed here; checkout is not open yet.',
-  open: 'TradeDocs is free while it is early, with no card. Pro and Team prices are listed here and can be bought from your workspace.',
+  unpriced: `TradeDocs is free while it is early: ${FREE_SCOPE}, with no card.${ADDS} Paid plans are not open yet; their prices will be published here first.`,
+  listed: `TradeDocs is free while it is early, with no card.${ADDS} Pro and Team prices, monthly or yearly in US dollars or euros, are listed here; checkout is not open yet.`,
+  open: `TradeDocs is free while it is early, with no card.${ADDS} Pro and Team prices are listed here and can be bought from your workspace.`,
 };
 
 export function generateMetadata(): Metadata {
@@ -86,9 +92,11 @@ function questionsFor(state: PageState, plans: ReturnType<typeof currentPlans>):
   const list: Question[] = [
     {
       q: 'Is TradeDocs free?',
-      a: priced
-        ? 'Yes, while it is early. Every feature listed on this page is in the free plan today. Pro and Team add no paid-only features yet, so nobody needs to pay to use TradeDocs.'
-        : 'Yes, while it is early. Every feature listed on this page is free today, and no paid plan is open, so nobody is charged for anything.',
+      a: PAID_EXTRAS
+        ? `Yes, while it is early: ${FREE_SCOPE} is in the free plan, so nobody needs to pay to prepare and download their documents.${ADDS}${priced ? '' : ' No paid plan is open yet, so nobody is charged for anything.'}`
+        : priced
+          ? 'Yes, while it is early. Every feature listed on this page is in the free plan today. Pro and Team add no paid-only features yet, so nobody needs to pay to use TradeDocs.'
+          : 'Yes, while it is early. Every feature listed on this page is free today, and no paid plan is open, so nobody is charged for anything.',
     },
     {
       q: 'Do I need a card to start?',
@@ -269,12 +277,14 @@ function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boo
   );
 }
 
+const FREE_LEDE = PAID_EXTRAS
+  ? `The generators, calculators and shipment workspace are free, with no card.${ADDS}`
+  : 'Everything TradeDocs does today is free, with no card.';
+
 const LEDES: Record<PageState, string> = {
-  unpriced:
-    'Everything TradeDocs does today is free, with no card. Paid plans are not open yet: when they are, their prices and what they add will be published here first.',
-  listed:
-    'Everything TradeDocs does today is free, with no card. Pro and Team prices are below; checkout is not open yet, so nobody can be charged.',
-  open: 'Everything TradeDocs does today is free, with no card. Pro and Team are open and can be bought from your workspace.',
+  unpriced: `${FREE_LEDE} Paid plans are not open yet: when they are, their prices will be published here first.`,
+  listed: `${FREE_LEDE} Pro and Team prices are below; checkout is not open yet, so nobody can be charged.`,
+  open: `${FREE_LEDE} Pro and Team are open and can be bought from your workspace.`,
 };
 
 export default function PricingPage() {

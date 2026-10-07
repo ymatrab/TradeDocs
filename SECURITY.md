@@ -135,13 +135,40 @@ Only verified, server-side Stripe facts change an entitlement:
   from the event body.
 - Paid checks (`hasEntitlement`) fail closed on a missing row, a query error, an unknown status
   or plan, or an absent `paid_through`. Cancelled keeps access to the end of the paid period; a
-  full refund or a dispute revokes at once. No free feature is gated.
+  full refund or a dispute revokes at once. No free feature is gated; PDF branding (new, D-021)
+  is the only paid-only feature.
 - Logs carry event id, type and outcome only.
 
 Known limits: a refund or dispute revokes every entitlement paid by that Stripe customer (the
 safe direction). A refund that arrives before its checkout is recorded as `unmatched`, and the
 later checkout still grants; reconcile from the Stripe dashboard if that happens. A plan change
 made inside Stripe (Pro to Team) is not reflected; the plan is the one bought at checkout.
+
+## Branding storage (D-021)
+
+PDF branding is the only paid-only feature, and its gate fails closed in three places: the
+upload action (`hasEntitlement(org, 'pdf_branding')`), the database (`private.branding_entitled`
+in the storage insert policy, the `branding_assets` write policies and the snapshot builder),
+and the preview route, which checks the entitlement again before drawing branding. A missing
+entitlement, a failed lookup or an unreadable image renders a preview without branding.
+
+- Bucket `org-branding` is private. Images are read through the caller's session (storage
+  policy: members of the organization in the path) or shown on the settings page through signed
+  URLs that live 120 seconds. CSP `img-src` admits only
+  `<SUPABASE_URL>/storage/v1/object/sign/org-branding/`, nothing else of the storage service.
+- Uploads are bounded twice: 1 MiB by the action (and the bucket), at most 2000 × 2000 pixels.
+  The format is decided from the bytes' signature, never the file name or declared type, and the
+  image is decoded in full before it is stored (`src/lib/pdf/image.ts`, no dependency); SVG,
+  GIF, CMYK or arithmetic JPEGs, interlaced PNGs and anything malformed are refused with a
+  message. Object names are derived only from the organization id and the SHA-256 of the bytes.
+- Owners and admins upload and remove; members only see. Uploads are rate limited per account
+  (`org:branding-upload`, 30 an hour). Removal needs no plan, so a lapsed organization can take
+  its images down.
+- An issued document records each image's path and hash; the renderer verifies the hash before
+  drawing, so swapped or tampered bytes never print. An object is deleted only when no slot and
+  no document of the organization refers to it.
+- A signature image is the organization's own picture of a signature or stamp. Documents keep
+  the mandatory "Prepared with TradeDocs…" statement on every page; nothing implies certification.
 
 ## Contact form, help and platform admin (D-018)
 

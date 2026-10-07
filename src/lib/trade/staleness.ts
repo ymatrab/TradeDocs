@@ -21,6 +21,7 @@ export const staleReasonLabels = {
   consignee: 'Consignee details changed',
   notify: 'Notify party changed',
   issuer: 'Payment terms, bank details or signatory changed',
+  branding: 'Logo or signature image changed',
 } as const;
 
 export type StaleReason = keyof typeof staleReasonLabels;
@@ -128,6 +129,14 @@ const ISSUER_FIELDS = [
   'document_notes',
 ] as const;
 
+function sameBranding(left: unknown, right: unknown): boolean {
+  const a = record(left);
+  const b = record(right);
+  return (['logo', 'signature'] as const).every(
+    (slot) => canonical(record(a?.[slot])?.sha256) === canonical(record(b?.[slot])?.sha256),
+  );
+}
+
 function schemaVersion(snapshot: Json): number {
   const version = snapshot.schema_version;
   return typeof version === 'number' && Number.isInteger(version) ? version : 1;
@@ -167,6 +176,12 @@ export function staleReasons(issued: unknown, current: unknown): StaleReason[] {
   }
   if (schemaVersion(before) >= 4 && !sameFields(before.issuer, now.issuer, ISSUER_FIELDS)) {
     reasons.push('issuer');
+  }
+  // Schema 5 records branding images by hash. Such a document is stale when a re-issue would
+  // carry different images (a new logo, or none because the plan lapsed); a document from
+  // before schema 5 never recorded any to compare.
+  if (schemaVersion(before) >= 5 && !sameBranding(before.branding, now.branding)) {
+    reasons.push('branding');
   }
   return reasons;
 }

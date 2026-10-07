@@ -10,8 +10,8 @@ the competitors' live pages retrieved 2026-10-06.
 | Plan                   | Monthly   | Yearly (2 months free) | Members           | Shipments / documents | Paid-only today |
 | ---------------------- | --------- | ---------------------- | ----------------- | --------------------- | --------------- |
 | **Free (while early)** | $0 / €0   | —                      | No cap (today)    | No cap (today)        | —               |
-| **Pro**                | $19 / €19 | $190 / €190            | Proposed: up to 3 | No cap                | None yet        |
-| **Team**               | $49 / €49 | $490 / €490            | No cap            | No cap                | None yet        |
+| **Pro**                | $19 / €19 | $190 / €190            | Proposed: up to 3 | No cap                | PDF branding    |
+| **Team**               | $49 / €49 | $490 / €490            | No cap            | No cap                | PDF branding    |
 
 In code: `PROPOSED_PRICES` in `src/lib/billing/plans.ts`. They render on `/pricing` and in
 `/llms.txt` only with `PRICES_APPROVED=true`.
@@ -38,8 +38,12 @@ In code: `PROPOSED_PRICES` in `src/lib/billing/plans.ts`. They render on `/prici
 
 - Enforced today, every plan: the limits already in `src/lib/limits.ts` (60 documents per ZIP,
   2,000 rows per CSV import, 30 generator PDFs per 10 minutes per address, line caps).
-- **No paid-only feature exists yet**, so with the flag on, Pro and Team honestly say
-  "Paid-only features: none yet". Nothing free was gated and nothing was reduced.
+- **Update 2026-10-07 (D-021):** the first paid-only feature has shipped: **PDF branding**
+  (the organization's logo top left of every page and its signature or stamp image above the
+  signatory line), `pdf_branding` in `src/lib/billing/plans.ts`, Pro and Team only. Pricing,
+  the comparison table and `/llms.txt` now list it under Pro and Team, and "Paid-only
+  features: none yet" no longer shows. Nothing Free had was gated or reduced: branding is new.
+  The "Prepared with TradeDocs…" statement stays on every branded document.
 - The "up to 3 members" for Pro and the proposed Free limits below are **not enforced and not
   shown**. They need a builder change (count memberships / shipments in the invite and
   create-shipment server actions, behind `hasEntitlement()`), and the owner's approval because
@@ -91,7 +95,7 @@ it must stay on every plan and must **never** be sold as "remove branding".
    any time; the plan runs to the end of the period paid. If you ask within 14 days of your
    first payment, we refund it in full."
 6. **Pro member cap (3) and the Free limits** in 1 — yes/no; both need builder work first.
-7. **Which paid-only feature ships first** (recommendation: logo/letterhead).
+7. **Which paid-only feature ships first** — decided (D-021): PDF branding, now built.
 
 ## 4. Exact environment to flip
 

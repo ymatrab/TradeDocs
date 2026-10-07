@@ -14,7 +14,8 @@ export default function nextConfig(phase: string): NextConfig {
     // The PDF route reads the embedded faces at runtime; tracing cannot infer that from a
     // path built at call time, so the files are named explicitly.
     outputFileTracingIncludes: { '/api/documents/[id]': ['./src/lib/pdf/fonts/*.ttf'] },
-    experimental: { serverActions: { bodySizeLimit: '1mb' } },
+    // A branding image may be 1 MB (MAX_BRANDING_BYTES); the form around it needs headroom.
+    experimental: { serverActions: { bodySizeLimit: '2mb' } },
     async headers() {
       return [
         {
