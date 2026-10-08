@@ -25,7 +25,8 @@ export default {
   },
   'd5-icc-isp98': {
     authority: 'International Chamber of Commerce (ICC), ICC Digital Library',
-    title: 'International Standby Practices (ISP98) that govern the operation of standby letters of credit',
+    title:
+      'International Standby Practices (ISP98) that govern the operation of standby letters of credit',
     url: 'https://library.iccwbo.org/content/tfb/RULES/tfb-isp98-rules.htm',
     jurisdiction: 'International (ICC rules, applied when a standby is made subject to them)',
     supports:
@@ -125,7 +126,8 @@ export default {
     reviewer: PENDING,
   },
   'd5-ear-734-14': {
-    authority: 'Bureau of Industry and Security, Export Administration Regulations (15 CFR 734.14), via Cornell LII',
+    authority:
+      'Bureau of Industry and Security, Export Administration Regulations (15 CFR 734.14), via Cornell LII',
     title: '15 CFR § 734.14 — Reexport',
     url: 'https://www.law.cornell.edu/cfr/text/15/734.14',
     jurisdiction: 'United States (export controls, EAR)',

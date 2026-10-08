@@ -41,7 +41,12 @@ const term: GlossaryTerm = {
         'Customs duty applies because goods cross the border and is set by the tariff. Excise applies because of what the goods are, so domestic production pays it too.',
     },
   ],
-  related: ['/blog/uk-import-duty', '/blog/duty-vs-tariff', '/guides/landed-cost', 'customs-declaration'],
+  related: [
+    '/blog/uk-import-duty',
+    '/blog/duty-vs-tariff',
+    '/guides/landed-cost',
+    'customs-declaration',
+  ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:
     'The landed cost calculator keeps excise as its own line beside freight, customs duty and VAT, so the figure your broker gives you lands in the right place.',

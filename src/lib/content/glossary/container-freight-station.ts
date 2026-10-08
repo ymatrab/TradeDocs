@@ -41,7 +41,12 @@ const term: GlossaryTerm = {
         'A container yard handles full, sealed containers. A CFS handles loose cargo going into or coming out of containers.',
     },
   ],
-  related: ['/guides/lcl-vs-fcl', 'freight-all-kinds', 'nvocc', '/blog/how-many-cbm-fit-in-a-container'],
+  related: [
+    '/guides/lcl-vs-fcl',
+    'freight-all-kinds',
+    'nvocc',
+    '/blog/how-many-cbm-fit-in-a-container',
+  ],
   tool: '/tools/cbm-calculator',
   toolPitch:
     'The CBM calculator works out the cubic metres of your cartons or pallets before the CFS measures them, so the LCL quote and the final bill line up.',
