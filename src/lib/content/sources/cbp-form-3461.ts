@@ -69,4 +69,84 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'c2-cfr-19-151-1': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.1, via the eCFR',
+    title: '19 CFR § 151.1 — Merchandise to be examined',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.1',
+    jurisdiction: 'United States (import)',
+    supports:
+      'the port director examining the packages or quantities of merchandise deemed necessary to determine duties and compliance with the laws CBP enforces',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-2': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.2, via the eCFR',
+    title: '19 CFR § 151.2 — Quantities to be examined',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.2',
+    jurisdiction: 'United States (import)',
+    supports:
+      'not less than one package in every 10 being examined, with fewer allowed for uniform or identical packages but not less than one package per invoice',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-4': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.4, via the eCFR',
+    title: '19 CFR § 151.4 — Time of examination',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.4',
+    jurisdiction: 'United States (import)',
+    supports:
+      'CBP, FDA, APHIS and other agencies examining or sampling goods before entry, and the importer’s application to examine goods before entry to check perishables or to obtain information for a pro forma invoice',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-5': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.5, via the eCFR',
+    title: '19 CFR § 151.5 — Conditions for examination prior to entry',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.5',
+    jurisdiction: 'United States (import)',
+    supports:
+      'an importer’s examination before entry taking place under CBP supervision, with the carrier’s concurrence and with the Government reimbursed for the supervising officer',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-6': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.6, via the eCFR',
+    title: '19 CFR § 151.6 — Place of examination',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.6',
+    jurisdiction: 'United States (import)',
+    supports:
+      'goods being examined at the place of arrival unless another place is required or authorised, and the importer bearing the expense of preparing goods for examination and closing packages',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-7': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.7, via the eCFR',
+    title: '19 CFR § 151.7 — Examination elsewhere than at place of arrival or public stores',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.7',
+    jurisdiction: 'United States (import)',
+    supports:
+      'examination at the importer’s premises or a centralized examination station, sealing of packages, the importer arranging and paying for preparation, and a bond on CBP Form 301 before removal',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-15': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.15, via the eCFR',
+    title: '19 CFR § 151.15 — Movement of merchandise to a centralized examination station',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.15',
+    jurisdiction: 'United States (import)',
+    supports:
+      'CBP Form 3461 being used to request transfer of goods to a centralized examination station, and the transfer taking place under bond',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-151-16': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 151.16, via the eCFR',
+    title: '19 CFR § 151.16 — Detention of merchandise',
+    url: 'https://www.ecfr.gov/current/title-19/section-151.16',
+    jurisdiction: 'United States (import)',
+    supports:
+      'CBP deciding within five business days of presentation whether to release or detain, the notice of detention and its contents, test results on request, the final admissibility determination within 30 days, deemed exclusion and protest, and the section not applying to detentions for other agencies',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
