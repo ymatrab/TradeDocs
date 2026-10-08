@@ -132,4 +132,14 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd4-icc-isbp-discrepancies': {
+    authority: 'International Chamber of Commerce (ICC Academy)',
+    title: 'ISBP Insights: Avoiding common LC discrepancies (21 April 2026)',
+    url: 'https://academy.iccwbo.org/trade-finance/article/isbp-insights-avoiding-common-lc-discrepancies/',
+    jurisdiction: 'International (ICC rules, applied when incorporated into the credit)',
+    supports:
+      'the common discrepancies in invoices, transport and insurance documents, inconsistencies between documents, late presentation, presenting within 21 calendar days of shipment and before expiry, reissuing rather than correcting documents, reviewing the credit’s additional conditions, the invoice being held to more specific standards than other documents, and ISBP 821 not modifying UCP 600',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
