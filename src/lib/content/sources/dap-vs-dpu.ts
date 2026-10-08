@@ -36,7 +36,7 @@ export default {
     url: 'https://www.fmc.gov/resources-services/vessel-operating-common-carriers',
     jurisdiction: 'United States (ocean transportation in the US foreign trades)',
     supports:
-      'all VOCCs having to publish a tariff open for public inspection showing all rates, charges, classifications, rules and practices, and having to give the public free access to their tariff publication system',
+      'all VOCCs having to publish a tariff open for public inspection showing all rates, charges, classifications, rules and practices, and having to give the public free access to their tariff publication system, with carriers able to apply for special permission to waive the notice period under 46 CFR 520.14',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
