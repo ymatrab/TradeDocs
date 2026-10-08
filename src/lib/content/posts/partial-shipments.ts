@@ -65,7 +65,11 @@ const article: ContentArticle = {
           ['Who divides the goods', 'The seller', 'The carrier'],
           ['Transport documents', 'One per lot', 'One for the whole consignment'],
           ['Commercial invoices', 'Usually one per lot', 'One for the consignment'],
-          ['Needs the buyer’s agreement', 'Yes, under the contract', 'Not usually; it is a carrier decision'],
+          [
+            'Needs the buyer’s agreement',
+            'Yes, under the contract',
+            'Not usually; it is a carrier decision',
+          ],
           [
             'US import entry',
             'Each lot entered on arrival',
