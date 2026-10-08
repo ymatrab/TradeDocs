@@ -87,6 +87,9 @@ import fcaVsDap from './fca-vs-dap';
 import fobVsDap from './fob-vs-dap';
 import proformaInvoiceVsQuotation from './proforma-invoice-vs-quotation';
 import shippingInvoiceVsCommercialInvoice from './shipping-invoice-vs-commercial-invoice';
+import shippingToTheUkAndEuDocuments from './shipping-to-the-uk-and-eu-documents';
+import ukExportDeclaration from './uk-export-declaration';
+import zeroRatingExportsVatUk from './zero-rating-exports-vat-uk';
 
 export type Post = ContentArticle;
 
@@ -165,6 +168,9 @@ const ENTRIES: readonly Post[] = [
   fobVsDap,
   proformaInvoiceVsQuotation,
   shippingInvoiceVsCommercialInvoice,
+  shippingToTheUkAndEuDocuments,
+  ukExportDeclaration,
+  zeroRatingExportsVatUk,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
