@@ -292,7 +292,7 @@ export default {
     url: 'https://www.abf.gov.au/imports/Pages/How-to-import/Import-declarations.aspx',
     jurisdiction: 'Australia',
     supports:
-      'importers, or licensed customs brokers acting for them, clearing goods into home consumption by an Import Declaration (N10) or a Self-Assessed Clearance declaration; the ABF encouraging first-time or infrequent importers to use a licensed customs broker; the Import Declaration being a statement about the goods, the importer, how the goods are transported, and the tariff classification and customs value, lodged in the Integrated Cargo System (ICS) or at an ABF counter; the importer’s details, such as its ABN, being part of a declaration; importers of prohibited or restricted goods needing permission from the relevant government agency and proof of it; and the importer keeping all relevant documents for five years',
+      'importers, or licensed customs brokers acting for them, clearing goods into home consumption by an Import Declaration (N10) or a Self-Assessed Clearance declaration; the ABF encouraging first-time or infrequent importers to use a licensed customs broker; the Import Declaration being a statement about the goods, the importer, how the goods are transported, and the tariff classification and customs value, lodged in the Integrated Cargo System (ICS) or at an ABF counter; the importer’s details, such as its ABN, being part of a declaration; importers of prohibited or restricted goods needing permission from the relevant government agency and proof of it; goods being referred to the Department of Agriculture, Fisheries and Forestry (DAFF), with a quarantine inspection location where there are quarantine considerations; and the importer keeping all relevant documents for five years',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
@@ -325,6 +325,16 @@ export default {
     jurisdiction: 'United States (plant health)',
     supports:
       'regulated wood packaging material entering the United States having to be treated under an approved method and marked in a visible location on each article with the IPPC-approved mark, including the country code, producer number and treatment abbreviation, and an inspector being able to order the immediate re-export of unmarked wood packaging material',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b7-gov-uk-export-goods': {
+    authority: 'HM Revenue & Customs and the Department for Business and Trade, GOV.UK',
+    title: 'Export goods from the UK: step by step',
+    url: 'https://www.gov.uk/export-goods',
+    jurisdiction: 'United Kingdom (exports)',
+    supports:
+      'needing an EORI number that starts with GB to export goods from England, Wales or Scotland; making an export declaration and getting the goods cleared by UK customs, either yourself or through someone you hire; preparing the invoice and other documentation; and keeping commercial invoices and any customs paperwork',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
