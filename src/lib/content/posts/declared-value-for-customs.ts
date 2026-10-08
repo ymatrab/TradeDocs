@@ -187,7 +187,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1758351507026-71ad3645cb43',
     width: 3706,
     height: 2779,
-    alt: 'Cardboard shipping box sealed with red fragile tape, ready to be declared and handed to a carrier',
+    alt: 'Cardboard shipping box sealed with red fragile tape, ready for a carrier',
     caption: 'A cardboard box sealed with red fragile tape',
     photographer: { name: 'Ari Sha', profile: 'https://unsplash.com/@46057_ma' },
     page: 'https://unsplash.com/photos/cardboard-box-sealed-with-red-fragile-tape-RqZ-xGRnCYI',

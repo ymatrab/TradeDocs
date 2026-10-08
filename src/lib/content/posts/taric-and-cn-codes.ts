@@ -184,7 +184,7 @@ const article: ContentArticle = {
     src: 'https://images.unsplash.com/photo-1782233541827-987d32e6198d',
     width: 4403,
     height: 2935,
-    alt: 'Road border crossing into the European Union with the French and EU flags flying beside it',
+    alt: 'Road border crossing into the EU with the French and EU flags flying beside it',
     caption: 'A road border crossing with the French and EU flags, below mountains',
     photographer: { name: 'Laura Chouette', profile: 'https://unsplash.com/@laurachouette' },
     page: 'https://unsplash.com/photos/border-crossing-with-french-and-eu-flags-near-mountains-BxihMxFAvZs',
