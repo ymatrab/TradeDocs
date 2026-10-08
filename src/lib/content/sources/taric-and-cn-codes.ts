@@ -119,4 +119,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b3-wco-upu-postal-ead-guidelines': {
+    authority: 'Universal Postal Union (UPU) and World Customs Organization (WCO)',
+    title: 'WCO–UPU Guidelines on the Exchange of Electronic Advance Data and Data Quality (2025, PDF)',
+    url: 'https://www.upu.int/UPU/media/upu/files/postalSolutions/programmesAndServices/postalSupplyChain/customs/wcoPublicationsAndActivities/WcoUpuGuidelinesEadAndDataQuality2025En.pdf',
+    jurisdiction: 'International (UPU Acts, postal items)',
+    supports:
+      'CN 22 for letter-post items with contents under 300 SDR and CN 23 for parcels and letter-post items over 300 SDR, the CP 72 set in place of a CN 23 for parcels, the fields of each form and their status, detailed descriptions, the six-digit HS code for commercial items from 1 September 2025 where the destination requires it, attaching an invoice for commercial items, the SDR (XDR) and the ITMATT message as the electronic equivalent of the forms',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b3-usps-imm-123': {
+    authority: 'United States Postal Service (USPS)',
+    title: 'International Mail Manual, 123: Customs forms',
+    url: 'https://pe.usps.com/text/imm/immc1_009.htm',
+    jurisdiction: 'United States (outbound international mail)',
+    supports:
+      'PS Form 2976 as the CN 22 and PS Form 2976-A as the CP 72, the forms required by mail class (Priority Mail International on 2976-A; First-Class Package International Service limited to $400), electronic transmission of customs data, a detailed description with quantity, net weight and value per item, a six-digit HS code per item unless the country listing says otherwise, and the mailer determining whether the destination needs a commercial invoice',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
