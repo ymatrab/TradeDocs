@@ -64,11 +64,11 @@ export type GlossaryTerm = {
   faq: readonly ArticleFaq[];
   sources: readonly SourceId[];
   /**
-   * Duties, licences, controls, tax and customs procedures. A regulated term stays noindex and
-   * out of the sitemap and llms.txt until `review` is set.
+   * Duties, licences, controls, tax and customs procedures. A regulated term explains the
+   * mechanism only (no rates); it is listed at launch and reviewed afterwards (D-015).
    */
   regulated: boolean;
-  /** A named reviewer's check, required before a regulated term is listed. Not an approval. */
+  /** A named reviewer's check, recorded after launch. Not an approval. */
   review: { reviewer: string; date: string } | null;
   published: string;
   updated: string;
@@ -80,9 +80,13 @@ export const GLOSSARY_DISCLAIMER =
   'legal, customs or tax advice, and the rules of the countries involved, your contract and ' +
   'your carrier’s terms take precedence over anything here.';
 
-/** Whether a term may be indexed, listed in the sitemap and offered to llms.txt. */
+/**
+ * Whether a term is indexed, listed in the sitemap and hub and offered to llms.txt. Per D-015
+ * and the owner's 2026-10-08 decision, sourced terms are published at launch, regulated ones
+ * included, and reviewed afterwards; the `review` record, when present, shows who checked it.
+ */
 export function isTermListed(term: GlossaryTerm): boolean {
-  return !term.regulated || term.review !== null;
+  return term.sources.length > 0;
 }
 
 /** Body words the spec counts: definition, on your documents, example and FAQ. */
