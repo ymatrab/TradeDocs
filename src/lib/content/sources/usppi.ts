@@ -241,6 +241,16 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'c6-kcs-personal-clearance-code': {
+    authority: 'Korea Customs Service (KCS)',
+    title: 'Issuance of personal customs clearance code',
+    url: 'https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10801&cntntsId=5502',
+    jurisdiction: 'Republic of Korea',
+    supports:
+      'the Personal Customs Clearance Code used in place of a resident registration number on import declarations for personal items, required when foreigners import e-commerce goods (foreign registration and passport numbers not accepted), and issued through UNI-PASS',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
   'c6-trade-gov-kr-labeling': {
     authority: 'International Trade Administration, Country Commercial Guide',
     title: 'South Korea — Labeling/Marking Requirements',
