@@ -177,7 +177,7 @@ export default {
     url: 'https://www.zoll.de/EN/Businesses/Movement-of-goods/Import/Duties-and-taxes/EORI-number/eori-number_node.html',
     jurisdiction: 'Germany (European Union customs territory)',
     supports:
-      'the EORI number as an EU-wide operator identification number that replaced the German customs number and is a prerequisite for customs clearance, requested free of charge from the Central Customs Authority through the Customs Portal (mandatory from 1 October 2026), and quoted when lodging customs declarations and entry and exit summary declarations',
+      'the EORI number as an EU-wide operator identification number that replaced the German customs number and is a prerequisite for customs clearance, requested free of charge from the Central Customs Authority through the Customs Portal (mandatory from 1 October 2026), quoted when lodging customs declarations and entry and exit summary declarations, and not to be confused with the VAT identification number, tax number or excise number',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
@@ -198,6 +198,16 @@ export default {
     jurisdiction: 'Germany (European Union customs territory)',
     supports:
       'duty being payable in principle on goods imported from a third country, its level depending on the product’s TARIC code, the Common Customs Tariff nomenclature, and the customs value as the basis for ad valorem duties',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c6-zoll-customs-value': {
+    authority: 'Generalzolldirektion (German Customs, Zoll)',
+    title: 'Customs valuation',
+    url: 'https://www.zoll.de/EN/Businesses/Movement-of-goods/Import/Duties-and-taxes/Normal-customs-clearance/Customs-value/customs-value_node.html',
+    jurisdiction: 'Germany (European Union customs territory)',
+    supports:
+      'the price actually paid or payable for goods sold into the EU as the central question of customs valuation under the Customs Code, with the transaction value method always examined first and five further methods applied in turn',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
