@@ -40,4 +40,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b1-wco-rkc-definitions': {
+    authority: 'World Customs Organization (WCO), Revised Kyoto Convention',
+    title: 'Revised Kyoto Convention, General Annex, Chapter 2: Definitions',
+    url: 'https://www.wcoomd.org/en/topics/facilitation/instrument-and-tools/conventions/pf_revised_kyoto_conv/kyoto_new/gach2.aspx',
+    jurisdiction: 'International (customs procedures)',
+    supports:
+      'clearance as the accomplishment of the customs formalities needed for goods to enter home use, be exported or be placed under another customs procedure; release as customs placing goods undergoing clearance at the disposal of the persons concerned; and the definitions of goods declaration, declarant and customs formalities',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b1-gov-uk-import-step-by-step': {
+    authority: 'HM Revenue & Customs (HMRC), GOV.UK',
+    title: 'Import goods into the UK: step by step',
+    url: 'https://www.gov.uk/import-goods-into-uk',
+    jurisdiction: 'United Kingdom (import)',
+    supports:
+      'the UK import steps: an EORI number, deciding who makes customs declarations, the commodity code and customs value, licences and certificates, making the import declaration to clear the goods, and keeping invoices and records; and most importing businesses using a transporter or customs agent',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
