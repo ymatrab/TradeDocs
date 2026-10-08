@@ -6,7 +6,14 @@ const term: GlossaryTerm = {
   slug: 'advance-shipping-notice',
   term: 'Advance shipping notice (ASN)',
   abbreviation: 'ASN',
-  aliases: ['advance ship notice', 'ship notice', 'despatch advice', 'dispatch advice', 'EDI 856', 'DESADV'],
+  aliases: [
+    'advance ship notice',
+    'ship notice',
+    'despatch advice',
+    'dispatch advice',
+    'EDI 856',
+    'DESADV',
+  ],
   demand: {
     keyword: 'advance shipping notice',
     market: 'US',
@@ -46,7 +53,12 @@ const term: GlossaryTerm = {
         'A delivery note is handed over or signed at delivery to confirm receipt. The ASN arrives before the delivery so the receiver can plan for it.',
     },
   ],
-  related: ['shipping-manifest', 'proof-of-delivery', '/blog/delivery-note-vs-packing-list', '/blog/shipping-marks'],
+  related: [
+    'shipping-manifest',
+    'proof-of-delivery',
+    '/blog/delivery-note-vs-packing-list',
+    '/blog/shipping-marks',
+  ],
   tool: '/tools/packing-list-generator',
   toolPitch:
     'The packing list generator gives you the carton-by-carton contents, weights and marks an ASN repeats.',

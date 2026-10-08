@@ -49,7 +49,12 @@ const term: GlossaryTerm = {
         'The container number identifies the box itself and stays with it; the seal number identifies one sealing and changes when the box is reopened and resealed.',
     },
   ],
-  related: ['shipping-manifest', 'waybill', '/guides/what-is-a-bill-of-lading', '/guides/lcl-vs-fcl'],
+  related: [
+    'shipping-manifest',
+    'waybill',
+    '/guides/what-is-a-bill-of-lading',
+    '/guides/lcl-vs-fcl',
+  ],
   tool: '/tools/packing-list-generator',
   toolPitch:
     'The packing list generator has room for container and seal numbers, so the receiver can match boxes to cartons.',

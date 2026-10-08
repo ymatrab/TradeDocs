@@ -50,7 +50,12 @@ const term: GlossaryTerm = {
         'A pallet is the platform that carries a stack of master cartons. A packing list can count both: so many pallets, holding so many cartons.',
     },
   ],
-  related: ['cbm', '/blog/shipping-marks', '/blog/packing-list-example', '/blog/how-to-measure-a-box-for-shipping'],
+  related: [
+    'cbm',
+    '/blog/shipping-marks',
+    '/blog/packing-list-example',
+    '/blog/how-to-measure-a-box-for-shipping',
+  ],
   tool: '/tools/pallet-calculator',
   toolPitch:
     'The pallet calculator works out how many master cartons fit on a pallet and what the loaded pallet weighs.',

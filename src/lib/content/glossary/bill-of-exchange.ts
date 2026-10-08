@@ -45,7 +45,12 @@ const term: GlossaryTerm = {
         'Under a letter of credit a bank undertakes to pay against compliant documents. In a collection the banks only pass documents and the draft along, without guaranteeing payment.',
     },
   ],
-  related: ['/guides/export-payment-terms', '/blog/tt-payment', '/guides/what-is-a-bill-of-lading', '/guides/what-is-a-proforma-invoice'],
+  related: [
+    '/guides/export-payment-terms',
+    '/blog/tt-payment',
+    '/guides/what-is-a-bill-of-lading',
+    '/guides/what-is-a-proforma-invoice',
+  ],
   tool: '/tools/proforma-invoice-generator',
   toolPitch:
     'The proforma invoice generator records the agreed payment terms, so the draft’s amount and tenor have a document to match.',
@@ -59,7 +64,11 @@ const term: GlossaryTerm = {
       a: 'No. In a documentary collection the banks act as agents: they present the draft and release documents as instructed, but they do not verify the documents or guarantee payment, unlike a letter of credit.',
     },
   ],
-  sources: ['c6-uk-bills-of-exchange-act-s3', 'c6-icc-collections', 'a4-trade-gov-documentary-collections'],
+  sources: [
+    'c6-uk-bills-of-exchange-act-s3',
+    'c6-icc-collections',
+    'a4-trade-gov-documentary-collections',
+  ],
   regulated: false,
   review: null,
   published: ROUND,

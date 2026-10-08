@@ -46,7 +46,12 @@ const term: GlossaryTerm = {
         'Ordinary customs duty applies to every import of a product under the tariff. An anti-dumping duty is an additional charge on that product from the countries an order names.',
     },
   ],
-  related: ['/blog/duty-vs-tariff', '/blog/how-to-calculate-import-duty', '/guides/landed-cost', 'importing'],
+  related: [
+    '/blog/duty-vs-tariff',
+    '/blog/how-to-calculate-import-duty',
+    '/guides/landed-cost',
+    'importing',
+  ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:
     'The landed cost calculator lets you add a duty rate your broker confirms and see the total cost of a shipment before you commit.',

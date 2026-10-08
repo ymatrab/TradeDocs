@@ -46,7 +46,12 @@ const term: GlossaryTerm = {
         'A safeguard restricts imports temporarily when a surge seriously injures a domestic industry, whether or not anything unfair has happened. A CVD requires a subsidy.',
     },
   ],
-  related: ['/blog/duty-vs-tariff', '/blog/how-to-calculate-import-duty', '/guides/landed-cost', 'importing'],
+  related: [
+    '/blog/duty-vs-tariff',
+    '/blog/how-to-calculate-import-duty',
+    '/guides/landed-cost',
+    'importing',
+  ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:
     'The landed cost calculator lets you add a duty rate your broker confirms and see what it does to the total cost of a shipment.',

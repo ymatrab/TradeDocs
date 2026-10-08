@@ -5,7 +5,13 @@ const ROUND = '2026-10-08';
 const term: GlossaryTerm = {
   slug: 'customs-declaration',
   term: 'Customs declaration (goods declaration)',
-  aliases: ['goods declaration', 'import declaration', 'export declaration', 'customs entry', 'SAD'],
+  aliases: [
+    'goods declaration',
+    'import declaration',
+    'export declaration',
+    'customs entry',
+    'SAD',
+  ],
   demand: {
     keyword: 'customs declaration',
     market: 'US',
@@ -45,7 +51,13 @@ const term: GlossaryTerm = {
         'In the EU, an entry summary declaration is a safety and security filing made before goods arrive. The customs declaration places the goods under a procedure such as release for free circulation.',
     },
   ],
-  related: ['/blog/what-is-customs-clearance', '/blog/cbp-form-7501', '/guides/eori-number', 'importing', 'exporting'],
+  related: [
+    '/blog/what-is-customs-clearance',
+    '/blog/cbp-form-7501',
+    '/guides/eori-number',
+    'importing',
+    'exporting',
+  ],
   tool: '/tools/invoice-generator',
   toolPitch:
     'The commercial invoice generator produces the invoice your broker builds the customs declaration from.',

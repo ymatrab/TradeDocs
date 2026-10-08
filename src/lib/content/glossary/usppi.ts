@@ -47,7 +47,12 @@ const term: GlossaryTerm = {
         'The consignor is the party that hands goods to the carrier. It is often the USPPI, but a third-party warehouse can be the consignor while the seller remains the USPPI.',
     },
   ],
-  related: ['/guides/eei-aes-filing-itn', '/guides/how-to-export-from-the-us', 'consignor', 'exporting'],
+  related: [
+    '/guides/eei-aes-filing-itn',
+    '/guides/how-to-export-from-the-us',
+    'consignor',
+    'exporting',
+  ],
   tool: '/tools/invoice-generator',
   toolPitch:
     'The commercial invoice generator puts the seller’s name and address in the place your forwarder looks for the USPPI details.',

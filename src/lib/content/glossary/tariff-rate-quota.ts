@@ -46,7 +46,12 @@ const term: GlossaryTerm = {
         'A TPL is a quantity limit on preferential treatment under a trade agreement, mainly for textiles; CBP administers TPLs like tariff-rate quotas.',
     },
   ],
-  related: ['/blog/duty-vs-tariff', '/blog/how-to-calculate-import-duty', '/guides/landed-cost', 'importing'],
+  related: [
+    '/blog/duty-vs-tariff',
+    '/blog/how-to-calculate-import-duty',
+    '/guides/landed-cost',
+    'importing',
+  ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:
     'The landed cost calculator lets you compare a shipment’s total cost under the duty rate you enter, so you can see the in-quota and over-quota cases side by side.',
