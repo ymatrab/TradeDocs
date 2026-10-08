@@ -38,7 +38,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Chargeable weight',
-      meaning: 'The greater of the actual weight and the volumetric weight, which freight is billed on.',
+      meaning:
+        'The greater of the actual weight and the volumetric weight, which freight is billed on.',
     },
     {
       term: 'Divisor',
@@ -94,7 +95,8 @@ const article: ContentArticle = {
         'Enough to change which weight you pay for. The example below runs one invented consignment through both divisors.',
       ],
       table: {
-        caption: 'Worked example with invented cartons and figures, comparing the 6,000 and 5,000 divisors',
+        caption:
+          'Worked example with invented cartons and figures, comparing the 6,000 and 5,000 divisors',
         head: ['', 'Air cargo, ÷ 6,000', 'Express, ÷ 5,000'],
         rows: [
           ['Four cartons of 50 × 40 × 30 cm', '240,000 cm³', '240,000 cm³'],

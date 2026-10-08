@@ -55,7 +55,8 @@ const country: CountryPage = {
     {
       document: 'Packing list',
       status: 'conditional',
-      condition: 'Included with the entry where appropriate, so CBP can see what each package contains.',
+      condition:
+        'Included with the entry where appropriate, so CBP can see what each package contains.',
       sourceId: 'a3-ecfr-19-cfr-142-3',
       tool: '/tools/packing-list-generator',
     },

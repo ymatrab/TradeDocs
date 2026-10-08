@@ -81,11 +81,31 @@ const article: ContentArticle = {
         caption: 'Freight forwarder and customs broker compared, under US rules',
         head: ['', 'Freight forwarder', 'Customs broker'],
         rows: [
-          ['Works with', 'Carriers: shipping lines, airlines, truckers', 'The customs authority (CBP in the US)'],
-          ['Main job', 'Books space, moves the goods, handles shipping documents', 'Files the entry, declares classification and value, pays duties'],
-          ['US licence (ocean)', 'FMC, as an ocean transportation intermediary', 'CBP, under 19 CFR Part 111'],
-          ['Needs from you', 'Booking details, invoice, packing list, shipping instructions', 'Power of attorney, invoice, packing list, transport document'],
-          ['Typical side', 'Exporter or importer, depending on the Incoterms® rule', 'Usually the importer'],
+          [
+            'Works with',
+            'Carriers: shipping lines, airlines, truckers',
+            'The customs authority (CBP in the US)',
+          ],
+          [
+            'Main job',
+            'Books space, moves the goods, handles shipping documents',
+            'Files the entry, declares classification and value, pays duties',
+          ],
+          [
+            'US licence (ocean)',
+            'FMC, as an ocean transportation intermediary',
+            'CBP, under 19 CFR Part 111',
+          ],
+          [
+            'Needs from you',
+            'Booking details, invoice, packing list, shipping instructions',
+            'Power of attorney, invoice, packing list, transport document',
+          ],
+          [
+            'Typical side',
+            'Exporter or importer, depending on the Incoterms® rule',
+            'Usually the importer',
+          ],
         ],
       },
     },
@@ -157,7 +177,11 @@ const article: ContentArticle = {
     title: 'One packing list for the forwarder and the broker',
     text: 'Build the packing list from your invoice lines, so the carton count, weights and descriptions your forwarder and broker receive are the same figures.',
   },
-  tools: ['/tools/packing-list-generator', '/tools/invoice-generator', '/tools/landed-cost-calculator'],
+  tools: [
+    '/tools/packing-list-generator',
+    '/tools/invoice-generator',
+    '/tools/landed-cost-calculator',
+  ],
   related: [
     '/guides/importer-of-record',
     '/guides/how-to-import-into-the-us',

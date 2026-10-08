@@ -121,7 +121,8 @@ export default {
   },
   'b3-wco-upu-postal-ead-guidelines': {
     authority: 'Universal Postal Union (UPU) and World Customs Organization (WCO)',
-    title: 'WCO–UPU Guidelines on the Exchange of Electronic Advance Data and Data Quality (2025, PDF)',
+    title:
+      'WCO–UPU Guidelines on the Exchange of Electronic Advance Data and Data Quality (2025, PDF)',
     url: 'https://www.upu.int/UPU/media/upu/files/postalSolutions/programmesAndServices/postalSupplyChain/customs/wcoPublicationsAndActivities/WcoUpuGuidelinesEadAndDataQuality2025En.pdf',
     jurisdiction: 'International (UPU Acts, postal items)',
     supports:
@@ -171,7 +172,8 @@ export default {
   },
   'b3-imo-ctu-code': {
     authority: 'International Maritime Organization (IMO), with the ILO and UNECE',
-    title: 'MSC.1/Circ.1497: IMO/ILO/UNECE Code of Practice for Packing of Cargo Transport Units (CTU Code) (PDF)',
+    title:
+      'MSC.1/Circ.1497: IMO/ILO/UNECE Code of Practice for Packing of Cargo Transport Units (CTU Code) (PDF)',
     url: 'https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/1497.pdf',
     jurisdiction: 'International (non-mandatory code of practice)',
     supports:

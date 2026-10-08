@@ -77,11 +77,36 @@ const article: ContentArticle = {
         head: ['Point', 'Purchase order (PO)', 'Proforma invoice (PI)', 'Commercial invoice'],
         rows: [
           ['Issued by', 'Buyer', 'Seller', 'Seller'],
-          ['When', 'When the buyer decides to order', 'Before shipment, often before payment', 'At or after shipment'],
-          ['Purpose', 'Orders the goods', 'Confirms the order and requests payment or arrangements', 'Records the sale and asks for payment due'],
-          ['Reference it carries', 'The buyer’s PO number', 'Its own PI number and the buyer’s PO number', 'Invoice number, PO and often PI numbers'],
-          ['Used for customs', 'No', 'Sometimes, in place of a missing commercial invoice', 'Yes, as the main valuation document'],
-          ['UK VAT invoice', 'No', 'No, under HMRC’s VAT Notice 700', 'Can be, if it carries the details HMRC requires'],
+          [
+            'When',
+            'When the buyer decides to order',
+            'Before shipment, often before payment',
+            'At or after shipment',
+          ],
+          [
+            'Purpose',
+            'Orders the goods',
+            'Confirms the order and requests payment or arrangements',
+            'Records the sale and asks for payment due',
+          ],
+          [
+            'Reference it carries',
+            'The buyer’s PO number',
+            'Its own PI number and the buyer’s PO number',
+            'Invoice number, PO and often PI numbers',
+          ],
+          [
+            'Used for customs',
+            'No',
+            'Sometimes, in place of a missing commercial invoice',
+            'Yes, as the main valuation document',
+          ],
+          [
+            'UK VAT invoice',
+            'No',
+            'No, under HMRC’s VAT Notice 700',
+            'Can be, if it carries the details HMRC requires',
+          ],
         ],
       },
     },
@@ -121,14 +146,20 @@ const article: ContentArticle = {
         'The example shows a change caught in time. The quantity and price moved between the first PO and the PI, so the buyer amended the PO before paying.',
       ],
       table: {
-        caption: 'Worked example with invented parties and figures: one order across three documents',
+        caption:
+          'Worked example with invented parties and figures: one order across three documents',
         head: ['Field', 'PO 7781 (rev. 1)', 'PI-0233', 'Invoice INV-0519'],
         rows: [
           ['Goods', 'Steel shelving units', 'Steel shelving units', 'Steel shelving units'],
           ['Quantity', '240', '240', '240'],
           ['Unit price', 'USD 38.00', 'USD 38.00', 'USD 38.00'],
           ['Incoterms® 2020 rule', 'FOB Felixstowe', 'FOB Felixstowe', 'FOB Felixstowe'],
-          ['Payment terms', '30% deposit, balance before shipment', 'Same', 'Paid in full, USD 9,120'],
+          [
+            'Payment terms',
+            '30% deposit, balance before shipment',
+            'Same',
+            'Paid in full, USD 9,120',
+          ],
         ],
       },
     },
@@ -196,7 +227,10 @@ const article: ContentArticle = {
     height: 4016,
     alt: 'A buyer writing on a printed purchase order on a desk',
     caption: 'A person writing on white paper',
-    photographer: { name: 'Cytonn Photography', profile: 'https://unsplash.com/@cytonn_photography' },
+    photographer: {
+      name: 'Cytonn Photography',
+      profile: 'https://unsplash.com/@cytonn_photography',
+    },
     page: 'https://unsplash.com/photos/person-writing-on-white-paper-GJao3ZTX9gU',
   },
 };

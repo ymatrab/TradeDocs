@@ -74,11 +74,7 @@ const article: ContentArticle = {
             'The actual shipper and the actual consignee',
           ],
           ['Number', 'Airline prefix and serial number', 'The forwarder’s own reference'],
-          [
-            'Goods description',
-            'The consolidation as a whole',
-            'Your goods, as on your invoice',
-          ],
+          ['Goods description', 'The consolidation as a whole', 'Your goods, as on your invoice'],
         ],
       },
     },

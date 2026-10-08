@@ -81,11 +81,19 @@ const article: ContentArticle = {
         head: ['Item', 'US, 19 U.S.C. § 1401a', 'WTO Article 8'],
         rows: [
           ['Packing costs', 'Added if incurred by the buyer', 'Added (packing and containers)'],
-          ['Commissions', 'Selling commissions incurred by the buyer', 'Commissions and brokerage, except buying commissions'],
+          [
+            'Commissions',
+            'Selling commissions incurred by the buyer',
+            'Commissions and brokerage, except buying commissions',
+          ],
           ['Assists', 'Added, apportioned as appropriate', 'Added'],
           ['Royalties and licence fees', 'Added if required as a condition of sale', 'Added'],
           ['Resale proceeds to the seller', 'Added', 'Added'],
-          ['International freight and insurance', 'Excluded from the price', 'Added only on a CIF basis'],
+          [
+            'International freight and insurance',
+            'Excluded from the price',
+            'Added only on a CIF basis',
+          ],
         ],
       },
     },
@@ -116,7 +124,8 @@ const article: ContentArticle = {
         'Start from what the buyer paid and adjust it, line by line, for the importing country’s rules. The example below uses invented figures for one shipment valued two ways.',
       ],
       table: {
-        caption: 'Worked example with invented figures: one CIF-priced shipment valued on a US and a UK basis',
+        caption:
+          'Worked example with invented figures: one CIF-priced shipment valued on a US and a UK basis',
         head: ['Step', 'US basis', 'UK basis'],
         rows: [
           ['Invoice price, CIF port of arrival', '10,000', '10,000'],

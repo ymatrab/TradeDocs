@@ -60,7 +60,8 @@ const country: CountryPage = {
     {
       document: 'Invoice',
       status: 'required',
-      condition: 'One of the standard documents the Chinese importer passes to customs; its values are the basis of the declared customs value.',
+      condition:
+        'One of the standard documents the Chinese importer passes to customs; its values are the basis of the declared customs value.',
       sourceId: 'trade-gov-ccg-cn',
       tool: '/tools/invoice-generator',
     },

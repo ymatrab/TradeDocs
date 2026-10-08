@@ -32,7 +32,8 @@ export default {
   },
   'b1-cfr-7-319-40-3': {
     authority: 'USDA APHIS, 7 CFR 319.40-3, via Cornell LII',
-    title: '7 CFR § 319.40-3 — General permits; articles that may be imported without a specific permit',
+    title:
+      '7 CFR § 319.40-3 — General permits; articles that may be imported without a specific permit',
     url: 'https://www.law.cornell.edu/cfr/text/7/319.40-3',
     jurisdiction: 'United States (import)',
     supports:

@@ -68,11 +68,7 @@ const article: ContentArticle = {
             'The shipper, or its invoice payer',
             'The consignee, or its invoice payer',
           ],
-          [
-            'Usual Incoterms® rules',
-            'CPT, CIP, CFR, CIF, DAP, DPU, DDP',
-            'EXW, FCA, FAS, FOB',
-          ],
+          ['Usual Incoterms® rules', 'CPT, CIP, CFR, CIF, DAP, DPU, DDP', 'EXW, FCA, FAS, FOB'],
           ['Who books the main carriage', 'Usually the seller', 'Usually the buyer'],
           [
             'Seller’s invoice to the buyer',

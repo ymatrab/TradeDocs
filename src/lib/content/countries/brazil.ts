@@ -67,7 +67,8 @@ const country: CountryPage = {
     {
       document: 'Bill of lading or equivalent transport document, original',
       status: 'required',
-      condition: 'The original transport document, or a document with the same effect, supports every import declaration.',
+      condition:
+        'The original transport document, or a document with the same effect, supports every import declaration.',
       sourceId: 'b7-rfb-documentos-instrutivos',
     },
     {

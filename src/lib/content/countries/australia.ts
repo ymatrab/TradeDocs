@@ -182,7 +182,12 @@ const country: CountryPage = {
       a: 'Only with a party in Australia able to act as importer, because local importers are responsible for formal clearance with the Australian Border Force. Otherwise sell on DAP or an earlier rule and let the buyer import.',
     },
   ],
-  sources: ['b7-abf-import-declarations', 'trade-gov-ccg-au', 'b7-abf-customs-value', 'a2-trade-gov-packing-list'],
+  sources: [
+    'b7-abf-import-declarations',
+    'trade-gov-ccg-au',
+    'b7-abf-customs-value',
+    'a2-trade-gov-packing-list',
+  ],
   regulated: true,
   review: null,
   tool: '/tools/invoice-generator',

@@ -37,7 +37,10 @@ const term: GlossaryTerm = {
       head: ['Document', 'What it states'],
       rows: [
         ['Commercial invoice', 'Country of origin: Czech Republic (where the valves were made)'],
-        ['Bill of lading', 'Port of loading Hamburg; port of discharge Callao; transshipment at the hub'],
+        [
+          'Bill of lading',
+          'Port of loading Hamburg; port of discharge Callao; transshipment at the hub',
+        ],
         ['Packing list', 'Same packages, marks and weights as the invoice'],
       ],
     },

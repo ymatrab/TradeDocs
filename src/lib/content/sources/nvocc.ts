@@ -81,7 +81,8 @@ export default {
   // Glossary: transshipment.
   'b7-wco-rkc-transhipment': {
     authority: 'World Customs Organization (WCO), Revised Kyoto Convention, Specific Annex E',
-    title: 'Movement of goods under customs control intended for import (Specific Annex E, Chapters 1 and 2)',
+    title:
+      'Movement of goods under customs control intended for import (Specific Annex E, Chapters 1 and 2)',
     url: 'https://www.wcoomd.org/en/topics/wco-implementing-the-wto-atf/atf/movement-of-goods-under-customs-control-intended-for-import.aspx',
     jurisdiction: 'International (customs convention, applied by contracting parties)',
     supports:
@@ -101,7 +102,8 @@ export default {
   },
   // Glossary: exporting and importing.
   'b7-ear-734-13': {
-    authority: 'Bureau of Industry and Security, Export Administration Regulations, 15 CFR 734.13, via Cornell LII',
+    authority:
+      'Bureau of Industry and Security, Export Administration Regulations, 15 CFR 734.13, via Cornell LII',
     title: '15 CFR § 734.13 — Export',
     url: 'https://www.law.cornell.edu/cfr/text/15/734.13',
     jurisdiction: 'United States (export controls, EAR)',
@@ -265,7 +267,8 @@ export default {
   },
   'b7-trade-gov-cn-labeling': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
-    title: 'China Country Commercial Guide: Labeling/Marking Requirements (last published 25 September 2025)',
+    title:
+      'China Country Commercial Guide: Labeling/Marking Requirements (last published 25 September 2025)',
     url: 'https://www.trade.gov/knowledge-product/china-labelingmarking-requirements',
     jurisdiction: 'China (U.S. government export guidance)',
     supports:
@@ -298,7 +301,8 @@ export default {
   },
   'b7-abf-customs-value': {
     authority: 'Australian Border Force (ABF), Department of Home Affairs',
-    title: 'ICS calculation routines: customs duty calculation, Customs Value (last updated 1 October 2026)',
+    title:
+      'ICS calculation routines: customs duty calculation, Customs Value (last updated 1 October 2026)',
     url: 'https://www.abf.gov.au/help-and-support/ics/integrated-cargo-system-(ics)/software-developers/reference-materials/calculation-routines/customs-duty-calculation',
     jurisdiction: 'Australia',
     supports:
@@ -320,7 +324,8 @@ export default {
   },
   'b7-cfr-7-319-40-3': {
     authority: 'U.S. Department of Agriculture, APHIS, 7 CFR 319.40-3, via Cornell LII',
-    title: '7 CFR § 319.40-3 — General permits; articles that may be imported without a specific permit',
+    title:
+      '7 CFR § 319.40-3 — General permits; articles that may be imported without a specific permit',
     url: 'https://www.law.cornell.edu/cfr/text/7/319.40-3',
     jurisdiction: 'United States (plant health)',
     supports:

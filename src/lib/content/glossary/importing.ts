@@ -49,7 +49,12 @@ const term: GlossaryTerm = {
         'Exporting is the outbound side of the same sale, with its own filings in the seller’s country.',
     },
   ],
-  related: ['/guides/how-to-import-into-the-us', '/guides/importer-of-record', '/guides/landed-cost', 'consignor'],
+  related: [
+    '/guides/how-to-import-into-the-us',
+    '/guides/importer-of-record',
+    '/guides/landed-cost',
+    'consignor',
+  ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:
     'The landed cost calculator adds freight, insurance and the charges you enter to the goods value, so you can price an import before you order.',

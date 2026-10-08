@@ -40,7 +40,8 @@ const article: ContentArticle = {
     },
     {
       term: 'Input tax',
-      meaning: 'VAT a registered business has paid or accounted for and may reclaim, subject to the normal rules.',
+      meaning:
+        'VAT a registered business has paid or accounted for and may reclaim, subject to the normal rules.',
     },
     {
       term: 'C79 certificate',
@@ -79,7 +80,10 @@ const article: ContentArticle = {
         head: ['Line', 'Amount (invented)'],
         rows: [
           ['Customs value of the goods', '£10,000'],
-          ['Transport and insurance to the first UK destination, if not already in the customs value', '£600'],
+          [
+            'Transport and insurance to the first UK destination, if not already in the customs value',
+            '£600',
+          ],
           ['Customs duty at an invented 4% placeholder rate', '£424'],
           ['Value for VAT', '£11,024'],
           ['Import VAT at an invented 20% placeholder rate', '£2,204.80'],

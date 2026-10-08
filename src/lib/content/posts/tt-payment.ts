@@ -84,7 +84,10 @@ const article: ContentArticle = {
           ['Account name', 'Your legal business name, exactly as the bank holds it'],
           ['IBAN or account number', 'As your bank states it (GB00 INVE NTED 0000 0000 00)'],
           ['BIC (SWIFT code)', 'Your bank’s code (INVTGB2X, invented)'],
-          ['Bank name and address', 'The branch or head office your bank gives for incoming payments'],
+          [
+            'Bank name and address',
+            'The branch or head office your bank gives for incoming payments',
+          ],
           ['Currency', 'The currency of the proforma, so the amount arrives as invoiced'],
           ['Payment reference', 'Your proforma number, so you can match the transfer'],
         ],

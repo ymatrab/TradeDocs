@@ -96,7 +96,8 @@ const article: ContentArticle = {
         'For air freight, IATA’s general rule converts volume to weight at 6,000 cm³ per kilogram, and the carrier charges whichever is greater. A tall, light pallet can cost more by volume than by weight, which is why every centimetre of height counts.',
       ],
       table: {
-        caption: 'Worked example with invented figures: chargeable weight of one euro pallet by air',
+        caption:
+          'Worked example with invented figures: chargeable weight of one euro pallet by air',
         head: ['Measure', 'Value'],
         rows: [
           ['Dimensions, floor to top', '120 × 80 × 150 cm (invented load height)'],

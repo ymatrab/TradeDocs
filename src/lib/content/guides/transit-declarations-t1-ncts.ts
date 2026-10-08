@@ -109,7 +109,10 @@ const article: ContentArticle = {
         head: ['Data HMRC asks for', 'Where you usually find it'],
         rows: [
           ['EORI number', 'Your customs registration'],
-          ['Status of the goods (usually T1)', 'Worked out from where the goods are made and cleared'],
+          [
+            'Status of the goods (usually T1)',
+            'Worked out from where the goods are made and cleared',
+          ],
           ['Local reference number (under 22 characters)', 'A reference you create yourself'],
           ['Guarantee reference number', 'Your transit guarantee'],
           [
@@ -121,7 +124,10 @@ const article: ContentArticle = {
             'Offices of departure, transit and destination',
             'HMRC’s office reference list, or your authorised consignor or consignee',
           ],
-          ['Description of the goods and vehicle details', 'The commercial invoice, packing list and haulier'],
+          [
+            'Description of the goods and vehicle details',
+            'The commercial invoice, packing list and haulier',
+          ],
         ],
       },
     },

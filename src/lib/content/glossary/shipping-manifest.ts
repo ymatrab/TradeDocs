@@ -54,7 +54,12 @@ const term: GlossaryTerm = {
         'The bill of lading is the contract and receipt for one consignment; the manifest summarises all the bills of lading for a voyage.',
     },
   ],
-  related: ['/guides/what-is-a-bill-of-lading', '/blog/packing-list-for-shipping', 'nvocc', 'waybill'],
+  related: [
+    '/guides/what-is-a-bill-of-lading',
+    '/blog/packing-list-for-shipping',
+    'nvocc',
+    'waybill',
+  ],
   tool: '/tools/packing-list-generator',
   toolPitch:
     'The packing list generator produces the package counts and weights the carrier copies onto the bill of lading and the manifest.',

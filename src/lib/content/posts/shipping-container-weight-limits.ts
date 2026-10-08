@@ -59,7 +59,8 @@ const article: ContentArticle = {
         'As much as its maximum payload, which is its rated maximum gross mass minus its own tare. The figures differ by container type and by the individual box, so use a carrier’s sheet to plan and the container’s plate to confirm. Maersk’s steel dry equipment sheet gives the figures below; pounds are converted at the NIST factor of 0.453 592 4 kg to the pound.',
       ],
       table: {
-        caption: 'Dry container weights on Maersk’s equipment sheet, with pounds converted at the NIST factor',
+        caption:
+          'Dry container weights on Maersk’s equipment sheet, with pounds converted at the NIST factor',
         head: ['Container', 'Tare', 'Maximum gross', 'Maximum payload'],
         rows: [
           ['20ft standard', '2,280 kg', '30,480 kg (67,197 lb)', '28,200 kg (62,170 lb)'],
