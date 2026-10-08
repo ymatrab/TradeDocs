@@ -56,6 +56,7 @@ import transitDeclarationsT1Ncts from './transit-declarations-t1-ncts';
 import typesOfBillOfLading from './types-of-bill-of-lading';
 import ioss from './ioss';
 import cbmAndWeightOrMeasure from './cbm-and-weight-or-measure';
+import dutyDrawback from './duty-drawback';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -102,6 +103,7 @@ const ENTRIES: readonly Guide[] = [
   typesOfBillOfLading,
   ioss,
   cbmAndWeightOrMeasure,
+  dutyDrawback,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);

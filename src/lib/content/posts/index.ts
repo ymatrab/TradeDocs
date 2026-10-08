@@ -100,6 +100,10 @@ import howToStartAnImportExportBusiness from './how-to-start-an-import-export-bu
 import letterOfIndemnity from './letter-of-indemnity';
 import partialShipments from './partial-shipments';
 import preShipmentInspection from './pre-shipment-inspection';
+import cbpCustomsExam from './cbp-customs-exam';
+import cbpForm3461 from './cbp-form-3461';
+import customsBond from './customs-bond';
+import whoPaysImportDuties from './who-pays-import-duties';
 
 export type Post = ContentArticle;
 
@@ -191,6 +195,10 @@ const ENTRIES: readonly Post[] = [
   letterOfIndemnity,
   partialShipments,
   preShipmentInspection,
+  cbpCustomsExam,
+  cbpForm3461,
+  customsBond,
+  whoPaysImportDuties,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
