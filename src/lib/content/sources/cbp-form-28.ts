@@ -70,4 +70,34 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'e3-ippc-ispm-43': {
+    authority: 'International Plant Protection Convention (IPPC), FAO',
+    title: 'ISPM 43: Requirements for the use of fumigation as a phytosanitary measure (adopted 2019)',
+    url: 'https://assets.ippc.int/static/media/files/publication/en/2019/04/ISPM_43_2019_En_Fumigation_2019-04-29_PostCPM-14.pdf',
+    jurisdiction: 'International (phytosanitary standard)',
+    supports:
+      'fumigation as treatment with chemicals reaching the commodity as a gas, efficacy depending on concentration, minimum temperature and duration, the NPPO of the country where fumigation is conducted or initiated authorizing treatment providers and keeping a list of them, the consignment owner preventing reinfestation after treatment, labelling of fumigated lots, the treatment provider keeping records for at least one year (fumigant, enclosure and provider, commodity, target pest, lot number, date and duration, lowest temperature, dosage and concentration readings), inspection by the exporting and importing NPPOs, and the split of responsibility for fumigation during transport',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'e3-ippc-ispm-12': {
+    authority: 'International Plant Protection Convention (IPPC), FAO',
+    title: 'ISPM 12: Phytosanitary certificates (revision adopted by CPM-16, 2022)',
+    url: 'https://assets.ippc.int/static/media/files/publication/en/2022/05/ISPM_12_2022_En_PCs_2022-04-21_PostCPM-16.pdf',
+    jurisdiction: 'International (phytosanitary standard)',
+    supports:
+      'section III of the phytosanitary certificate, Disinfestation and/or Disinfection Treatment, with its entries for date, treatment, chemical (active ingredient), duration and temperature, concentration and additional information, treatments shown being only those acceptable to the importing country and performed under the supervision or authority of the exporting NPPO, and treatments not being entered in the additional declaration',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'e3-ecfr-7-cfr-305-4': {
+    authority: 'USDA Animal and Plant Health Inspection Service, 7 CFR 305.4, via Cornell LII',
+    title: '7 CFR § 305.4 — Monitoring and certification of treatments',
+    url: 'https://www.law.cornell.edu/cfr/text/7/305.4',
+    jurisdiction: 'United States (plant health, import)',
+    supports:
+      'treatments approved under 7 CFR part 305 being subject to APHIS monitoring and verification, and treatments performed outside the United States being monitored and certified by an inspector or an official authorized by APHIS',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
