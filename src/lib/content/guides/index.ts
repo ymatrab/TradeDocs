@@ -46,6 +46,14 @@ import howToImportIntoTheUs from './how-to-import-into-the-us';
 import importerOfRecord from './importer-of-record';
 import ukCommodityCodes from './uk-commodity-codes';
 import whatIsAProformaInvoice from './what-is-a-proforma-invoice';
+import chargeableWeight from './chargeable-weight';
+import customsValue from './customs-value';
+import freightForwarderVsCustomsBroker from './freight-forwarder-vs-customs-broker';
+import howToExportFromTheUk from './how-to-export-from-the-uk';
+import isf102 from './isf-10-2';
+import ispm15WoodPackaging from './ispm-15-wood-packaging';
+import transitDeclarationsT1Ncts from './transit-declarations-t1-ncts';
+import typesOfBillOfLading from './types-of-bill-of-lading';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -82,6 +90,14 @@ const ENTRIES: readonly Guide[] = [
   importerOfRecord,
   ukCommodityCodes,
   whatIsAProformaInvoice,
+  chargeableWeight,
+  customsValue,
+  freightForwarderVsCustomsBroker,
+  howToExportFromTheUk,
+  isf102,
+  ispm15WoodPackaging,
+  transitDeclarationsT1Ncts,
+  typesOfBillOfLading,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);

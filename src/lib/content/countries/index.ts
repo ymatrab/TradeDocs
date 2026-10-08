@@ -14,11 +14,19 @@ import { isCountryListed, type CountryPage } from '@/lib/content/country';
 
 import india from './india';
 import mexico from './mexico';
+import australia from './australia';
+import brazil from './brazil';
+import china from './china';
+import unitedStates from './united-states';
 
 const ENTRIES: readonly CountryPage[] = [
   // One line per country, alphabetical by slug.
   india,
   mexico,
+  australia,
+  brazil,
+  china,
+  unitedStates,
 ];
 
 /** Every country page, alphabetical by name. */

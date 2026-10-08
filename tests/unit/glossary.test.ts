@@ -219,10 +219,14 @@ describe('country pages', () => {
       expect(country.sources.length, country.slug).toBeGreaterThanOrEqual(3);
       expectSources(country.slug, country.sources);
       expect(country.sources, country.slug).toContain(country.customsAuthority.sourceId);
-      expect(
-        country.sources.some((id) => id.startsWith('trade-gov-ccg-')),
-        country.slug,
-      ).toBe(true);
+      // Each foreign market cites its ITA Country Commercial Guide; the United States has no
+      // guide about itself, so its page rests on CBP and the other US agencies it cites.
+      if (country.slug !== 'united-states') {
+        expect(
+          country.sources.some((id) => id.startsWith('trade-gov-ccg-')),
+          country.slug,
+        ).toBe(true);
+      }
       const rowSources = [
         ...country.documents.map((row) => row.sourceId),
         ...country.invoiceRequirements.map((row) => row.sourceId),

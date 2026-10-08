@@ -60,6 +60,27 @@ import howToMeasureABoxForShipping from './how-to-measure-a-box-for-shipping';
 import standardBoxSizesForShipping from './standard-box-sizes-for-shipping';
 import cargoInsuranceForExporters from './cargo-insurance-for-exporters';
 import importingFromChinaDocuments from './importing-from-china-documents';
+import cn22VsCn23 from './cn22-vs-cn23';
+import containerLoadPlan from './container-load-plan';
+import declaredValueForCustoms from './declared-value-for-customs';
+import deliveryNoteFromPackingList from './delivery-note-from-packing-list';
+import freightPrepaidVsFreightCollect from './freight-prepaid-vs-freight-collect';
+import howManyCbmFitInAContainer from './how-many-cbm-fit-in-a-container';
+import howToCalculateShippingCost from './how-to-calculate-shipping-cost';
+import howToMakeAProformaInvoice from './how-to-make-a-proforma-invoice';
+import howToShipAPalletInternationally from './how-to-ship-a-pallet-internationally';
+import mawbVsHawb from './mawb-vs-hawb';
+import paperlessCommercialInvoice from './paperless-commercial-invoice';
+import piAndPo from './pi-and-po';
+import postponedVatAccounting from './postponed-vat-accounting';
+import proformaInvoiceForCustoms from './proforma-invoice-for-customs';
+import proformaToCommercialInvoice from './proforma-to-commercial-invoice';
+import shippingContainerWeightLimits from './shipping-container-weight-limits';
+import skidVsPallet from './skid-vs-pallet';
+import taricAndCnCodes from './taric-and-cn-codes';
+import ttPayment from './tt-payment';
+import ukImportDuty from './uk-import-duty';
+import whatIsCustomsClearance from './what-is-customs-clearance';
 
 export type Post = ContentArticle;
 
@@ -111,6 +132,27 @@ const ENTRIES: readonly Post[] = [
   standardBoxSizesForShipping,
   cargoInsuranceForExporters,
   importingFromChinaDocuments,
+  cn22VsCn23,
+  containerLoadPlan,
+  declaredValueForCustoms,
+  deliveryNoteFromPackingList,
+  freightPrepaidVsFreightCollect,
+  howManyCbmFitInAContainer,
+  howToCalculateShippingCost,
+  howToMakeAProformaInvoice,
+  howToShipAPalletInternationally,
+  mawbVsHawb,
+  paperlessCommercialInvoice,
+  piAndPo,
+  postponedVatAccounting,
+  proformaInvoiceForCustoms,
+  proformaToCommercialInvoice,
+  shippingContainerWeightLimits,
+  skidVsPallet,
+  taricAndCnCodes,
+  ttPayment,
+  ukImportDuty,
+  whatIsCustomsClearance,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
