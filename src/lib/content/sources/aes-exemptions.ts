@@ -202,4 +202,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd4-gov-uk-trading-ni': {
+    authority: 'HM Revenue & Customs (HMRC), GOV.UK',
+    title: 'Trading and moving goods in and out of Northern Ireland',
+    url: 'https://www.gov.uk/guidance/trading-and-moving-goods-in-and-out-of-northern-ireland',
+    jurisdiction: 'United Kingdom (Northern Ireland, Windsor Framework)',
+    supports:
+      'the Windsor Framework agreed in February 2023, EU VAT rules continuing to apply to goods in Northern Ireland, the free Trader Support Service, XI EORI numbers, no import declarations for qualifying Northern Ireland goods moved to Great Britain, no declarations for goods moving directly from Northern Ireland to the EU, and the SPS steps (export health certificate, CHED through DAERA TRACES NT, declaration)',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-internal-market-movements': {
+    authority: 'HM Revenue & Customs (HMRC), GOV.UK',
+    title: 'Internal Market Movements from Great Britain to Northern Ireland',
+    url: 'https://www.gov.uk/guidance/internal-market-movements-from-great-britain-to-northern-ireland',
+    jurisdiction: 'United Kingdom (Northern Ireland, Windsor Framework)',
+    supports:
+      'UKIMS authorisation before using the simplified processes, the conditions for declaring goods not at risk, Standard and Category 1 and 2 goods, Internal Market Movement Information as a simplified dataset with a Trader Goods Profile, the full customs process for movements that do not qualify, B2B and consumer parcels, NIRMS agri-food goods, and at-risk goods being charged the EU rate of duty',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
