@@ -190,14 +190,14 @@ const article: ContentArticle = {
     '/blog/commercial-invoice-and-packing-list-must-match',
   ],
   cover: {
-    id: 'VnK5iT01HYQ',
-    src: 'https://images.unsplash.com/photo-1632152133952-98b268dc4b86',
-    width: 3515,
-    height: 2344,
-    alt: 'Papers and a pen on a wooden table, like a purchase order waiting for its proforma',
-    caption: 'Papers and a pen on a wooden table',
-    photographer: { name: '2H Media', profile: 'https://unsplash.com/@2hmedia' },
-    page: 'https://unsplash.com/photos/a-wooden-table-topped-with-papers-and-a-pen-VnK5iT01HYQ',
+    id: 'GJao3ZTX9gU',
+    src: 'https://images.unsplash.com/photo-1521791055366-0d553872125f',
+    width: 6016,
+    height: 4016,
+    alt: 'A buyer writing on a printed purchase order on a desk',
+    caption: 'A person writing on white paper',
+    photographer: { name: 'Cytonn Photography', profile: 'https://unsplash.com/@cytonn_photography' },
+    page: 'https://unsplash.com/photos/person-writing-on-white-paper-GJao3ZTX9gU',
   },
 };
 
