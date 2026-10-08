@@ -30,7 +30,8 @@ export default {
     reviewer: PENDING,
   },
   'e3-fr-2026-09221': {
-    authority: 'U.S. Customs and Border Protection, Federal Register notice 2026-09221 (via GovInfo)',
+    authority:
+      'U.S. Customs and Border Protection, Federal Register notice 2026-09221 (via GovInfo)',
     title:
       'Agency Information Collection Activities; Reinstatement; Request for Information (CBP Form 28), 8 May 2026',
     url: 'https://www.govinfo.gov/content/pkg/FR-2026-05-08/html/2026-09221.htm',
@@ -72,7 +73,8 @@ export default {
   },
   'e3-ippc-ispm-43': {
     authority: 'International Plant Protection Convention (IPPC), FAO',
-    title: 'ISPM 43: Requirements for the use of fumigation as a phytosanitary measure (adopted 2019)',
+    title:
+      'ISPM 43: Requirements for the use of fumigation as a phytosanitary measure (adopted 2019)',
     url: 'https://assets.ippc.int/static/media/files/publication/en/2019/04/ISPM_43_2019_En_Fumigation_2019-04-29_PostCPM-14.pdf',
     jurisdiction: 'International (phytosanitary standard)',
     supports:
@@ -132,7 +134,8 @@ export default {
   },
   'e3-cbp-dis-vehicles': {
     authority: 'U.S. Customs and Border Protection (CBP)',
-    title: 'Document Image System Instructional Guide: Used Self-Propelled Vehicles (last modified 27 January 2025)',
+    title:
+      'Document Image System Instructional Guide: Used Self-Propelled Vehicles (last modified 27 January 2025)',
     url: 'https://www.cbp.gov/trade/automated/document-image-system-instructional-guide-used-self-propelled-vehicles',
     jurisdiction: 'United States (export)',
     supports:
@@ -152,7 +155,8 @@ export default {
   },
   'e3-ecfr-15-cfr-30-6-vehicles': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations, 15 CFR 30.6, via Cornell LII',
-    title: '15 CFR § 30.6 — Electronic Export Information data elements (conditional vehicle elements)',
+    title:
+      '15 CFR § 30.6 — Electronic Export Information data elements (conditional vehicle elements)',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.6',
     jurisdiction: 'United States (export)',
     supports:

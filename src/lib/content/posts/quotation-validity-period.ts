@@ -76,10 +76,18 @@ const article: ContentArticle = {
         caption: 'What pushes a validity period shorter or longer',
         head: ['Factor', 'Points to a shorter period', 'Points to a longer period'],
         rows: [
-          ['Freight included in the price', 'Forwarder’s rate expires soon', 'Price excludes freight (EXW, FCA, FOB)'],
+          [
+            'Freight included in the price',
+            'Forwarder’s rate expires soon',
+            'Price excludes freight (EXW, FCA, FOB)',
+          ],
           ['Currency', 'Quote in a currency you do not earn in', 'Quote in your own currency'],
           ['Materials', 'Volatile inputs or supplier prices', 'Stock goods at stable cost'],
-          ['Buyer’s process', 'Buyer can order straight away', 'Buyer needs an import licence or a letter of credit'],
+          [
+            'Buyer’s process',
+            'Buyer can order straight away',
+            'Buyer needs an import licence or a letter of credit',
+          ],
           ['Order type', 'One-off spot order', 'Framework price for repeat orders'],
         ],
       },

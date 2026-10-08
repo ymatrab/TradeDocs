@@ -60,9 +60,17 @@ const article: ContentArticle = {
         caption: 'FCA and DDP compared under Incoterms® 2020',
         head: ['', 'FCA (Free Carrier)', 'DDP (Delivered Duty Paid)'],
         rows: [
-          ['Named place', 'Seller’s country: premises, depot or terminal', 'Buyer’s country: usually the buyer’s premises'],
+          [
+            'Named place',
+            'Seller’s country: premises, depot or terminal',
+            'Buyer’s country: usually the buyer’s premises',
+          ],
           ['Who books the main carriage', 'Buyer', 'Seller'],
-          ['Risk passes', 'At handover to the buyer’s carrier', 'At the named destination, ready for unloading'],
+          [
+            'Risk passes',
+            'At handover to the buyer’s carrier',
+            'At the named destination, ready for unloading',
+          ],
           ['Export clearance', 'Seller', 'Seller'],
           ['Import clearance', 'Buyer', 'Seller'],
           ['Import duties and taxes', 'Buyer', 'Seller'],

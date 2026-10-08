@@ -70,7 +70,11 @@ const article: ContentArticle = {
         head: ['Characters', 'In the sample', 'What it is'],
         rows: [
           ['1–3', 'BIC', 'Owner code: three capital letters for the owner or principal operator'],
-          ['4', 'U', 'Equipment category: U freight container, J related equipment, Z trailer or chassis'],
+          [
+            '4',
+            'U',
+            'Equipment category: U freight container, J related equipment, Z trailer or chassis',
+          ],
           ['5–10', '123456', 'Serial number: six digits chosen by the owner or operator'],
           ['11', '5', 'Check digit: one digit calculated from the ten characters before it'],
         ],
@@ -114,9 +118,19 @@ const article: ContentArticle = {
         head: ['Reference', 'Identifies', 'Issued by', 'Changes each shipment?'],
         rows: [
           ['Container number', 'The physical box', 'The owner, under a BIC-registered code', 'No'],
-          ['Seal number', 'The seal on the doors', 'Printed on the seal; recorded by whoever seals the box', 'Yes'],
+          [
+            'Seal number',
+            'The seal on the doors',
+            'Printed on the seal; recorded by whoever seals the box',
+            'Yes',
+          ],
           ['Booking number', 'Your reservation of space', 'The carrier or forwarder', 'Yes'],
-          ['Bill of lading number', 'The contract and receipt for your goods', 'The carrier or NVOCC', 'Yes'],
+          [
+            'Bill of lading number',
+            'The contract and receipt for your goods',
+            'The carrier or NVOCC',
+            'Yes',
+          ],
         ],
       },
     },

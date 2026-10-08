@@ -102,7 +102,14 @@ const article: ContentArticle = {
       ],
       table: {
         caption: 'Worked example with invented AWB numbers',
-        head: ['AWB number as received', 'Serial', 'Serial ÷ 7', 'Remainder', 'Last digit', 'Result'],
+        head: [
+          'AWB number as received',
+          'Serial',
+          'Serial ÷ 7',
+          'Remainder',
+          'Last digit',
+          'Result',
+        ],
         rows: [
           ['000-12345675', '1234567', '176,366', '5', '5', 'Well formed'],
           ['000-81140743', '8114074', '1,159,153', '3', '3', 'Well formed'],

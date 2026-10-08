@@ -204,7 +204,8 @@ export default {
     reviewer: PENDING,
   },
   'e5-ear-772-1': {
-    authority: 'Bureau of Industry and Security, Export Administration Regulations, 15 CFR 772.1 (eCFR)',
+    authority:
+      'Bureau of Industry and Security, Export Administration Regulations, 15 CFR 772.1 (eCFR)',
     title: '15 CFR § 772.1 — Definitions of terms as used in the Export Administration Regulations',
     url: 'https://www.ecfr.gov/current/title-15/section-772.1',
     jurisdiction: 'United States (export controls)',

@@ -60,8 +60,16 @@ const article: ContentArticle = {
         head: ['', 'CPT (Carriage Paid To)', 'DDP (Delivered Duty Paid)'],
         rows: [
           ['Who books the main carriage', 'Seller', 'Seller'],
-          ['Named place', 'The destination the carriage is paid to', 'The destination where delivery happens'],
-          ['Risk passes', 'On handover to the first carrier, at origin', 'At the named destination, ready for unloading'],
+          [
+            'Named place',
+            'The destination the carriage is paid to',
+            'The destination where delivery happens',
+          ],
+          [
+            'Risk passes',
+            'On handover to the first carrier, at origin',
+            'At the named destination, ready for unloading',
+          ],
           ['Export clearance', 'Seller', 'Seller'],
           ['Import clearance', 'Buyer', 'Seller'],
           ['Import duties and taxes', 'Buyer', 'Seller'],
@@ -142,11 +150,7 @@ const article: ContentArticle = {
       a: 'The buyer. Under DDP the seller delivers the goods on the arriving vehicle, ready for unloading at the named place.',
     },
   ],
-  sources: [
-    'e2-icc-incoterms-2020',
-    'e2-ita-know-your-incoterms',
-    'e2-hmrc-incoterms',
-  ],
+  sources: ['e2-icc-incoterms-2020', 'e2-ita-know-your-incoterms', 'e2-hmrc-incoterms'],
   primaryTool: '/tools/incoterms',
   tools: [
     '/tools/incoterms',

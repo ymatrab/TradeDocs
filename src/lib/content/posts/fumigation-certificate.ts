@@ -173,11 +173,7 @@ const article: ContentArticle = {
     'd4-ippc-ephyto',
   ],
   primaryTool: '/tools/packing-list-generator',
-  tools: [
-    '/tools/packing-list-generator',
-    '/tools/invoice-generator',
-    '/tools/cbm-calculator',
-  ],
+  tools: ['/tools/packing-list-generator', '/tools/invoice-generator', '/tools/cbm-calculator'],
   callout: {
     afterSection: 3,
     tool: '/tools/packing-list-generator',

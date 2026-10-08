@@ -6,12 +6,7 @@ const term: GlossaryTerm = {
   slug: 'temporary-import-bond',
   term: 'Temporary importation under bond (TIB)',
   abbreviation: 'TIB',
-  aliases: [
-    'temporary import bond',
-    'TIB entry',
-    'temporary importation bond',
-    'CBP Form 3173',
-  ],
+  aliases: ['temporary import bond', 'TIB entry', 'temporary importation bond', 'CBP Form 3173'],
   demand: {
     keyword: 'temporary import bond',
     market: 'US',
