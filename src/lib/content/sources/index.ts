@@ -24,6 +24,7 @@ import ttPayment from './tt-payment';
 import nvocc from './nvocc';
 import fcaVsDap from './fca-vs-dap';
 import zeroRatingExportsVatUk from './zero-rating-exports-vat-uk';
+import commercialInvoiceDeclarationStatement from './commercial-invoice-declaration-statement';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -63,6 +64,7 @@ export const ARTICLE_SOURCE_FILES = [
   nvocc,
   fcaVsDap,
   zeroRatingExportsVatUk,
+  commercialInvoiceDeclarationStatement,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

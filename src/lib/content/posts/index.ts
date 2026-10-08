@@ -90,6 +90,11 @@ import shippingInvoiceVsCommercialInvoice from './shipping-invoice-vs-commercial
 import shippingToTheUkAndEuDocuments from './shipping-to-the-uk-and-eu-documents';
 import ukExportDeclaration from './uk-export-declaration';
 import zeroRatingExportsVatUk from './zero-rating-exports-vat-uk';
+import addLogoAndSignatureToExportDocuments from './add-logo-and-signature-to-export-documents';
+import airFreightVsSeaFreight from './air-freight-vs-sea-freight';
+import commercialInvoiceDeclarationStatement from './commercial-invoice-declaration-statement';
+import exportPacking from './export-packing';
+import reuseShipmentDataForRepeatOrders from './reuse-shipment-data-for-repeat-orders';
 
 export type Post = ContentArticle;
 
@@ -171,6 +176,11 @@ const ENTRIES: readonly Post[] = [
   shippingToTheUkAndEuDocuments,
   ukExportDeclaration,
   zeroRatingExportsVatUk,
+  addLogoAndSignatureToExportDocuments,
+  airFreightVsSeaFreight,
+  commercialInvoiceDeclarationStatement,
+  exportPacking,
+  reuseShipmentDataForRepeatOrders,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
