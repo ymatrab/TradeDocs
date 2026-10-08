@@ -15,6 +15,12 @@ import commercialInvoiceExample from './commercial-invoice-example';
 import eccnEar99ExportLicence from './eccn-ear99-export-licence';
 import whatIsAProformaInvoice from './what-is-a-proforma-invoice';
 import howToMeasureABoxForShipping from './how-to-measure-a-box-for-shipping';
+import freightForwarderVsCustomsBroker from './freight-forwarder-vs-customs-broker';
+import howManyCbmFitInAContainer from './how-many-cbm-fit-in-a-container';
+import ispm15WoodPackaging from './ispm-15-wood-packaging';
+import skidVsPallet from './skid-vs-pallet';
+import taricAndCnCodes from './taric-and-cn-codes';
+import ttPayment from './tt-payment';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -45,6 +51,12 @@ export const ARTICLE_SOURCE_FILES = [
   eccnEar99ExportLicence,
   whatIsAProformaInvoice,
   howToMeasureABoxForShipping,
+  freightForwarderVsCustomsBroker,
+  howManyCbmFitInAContainer,
+  ispm15WoodPackaging,
+  skidVsPallet,
+  taricAndCnCodes,
+  ttPayment,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

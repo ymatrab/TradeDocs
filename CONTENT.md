@@ -75,9 +75,3 @@ Ordered by the content plan. Each needs a brief before writing; none is publishe
 | Trade document glossary                                 | not measured                                      | Internal links into tools and Incoterms® pages            |
 
 Excluded keywords stay excluded (see the plan's "Excluded" list): fake or undervalued documents, travel packing lists, packing slips, FOB slang and key fobs, vehicle certificates of origin, carrier-navigational invoice queries, and out-of-scope templates.
-
-## Pending Unsplash download tracking (2026-10-07)
-
-The hourly API limit was reached while these covers were placed; each needs one
-`unsplash_track_download` call (`https://api.unsplash.com/photos/<id>/download`):
-37mW7MvAOvU, RVP3wAw9gJY, 5gSAWojmSpQ, i2I0_u98Rh4, ShNfoSk81co, qO2ztAz5g7A.
