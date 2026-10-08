@@ -142,4 +142,44 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd4-gov-uk-export-plants': {
+    authority: 'Department for Environment, Food & Rural Affairs (Defra) and APHA, GOV.UK',
+    title: 'Export or move plants and plant products from Great Britain and Northern Ireland',
+    url: 'https://www.gov.uk/guidance/export-or-move-plants-and-plant-products-from-great-britain-and-northern-ireland',
+    jurisdiction: 'United Kingdom (plant health, export)',
+    supports:
+      'checking the importing country’s requirements through the IPPC or the UK plant health authority, the goods that may need a phytosanitary certificate and their inspection before certification, APHA, SASA, DAERA and the Forestry Commission as certifying bodies, professional operator registration, the phytosanitary certificate for re-export, and GB to Northern Ireland movements (NI plant health label, CHED-PP)',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-apply-plant-export-certificates': {
+    authority: 'Department for Environment, Food & Rural Affairs (Defra) and APHA, GOV.UK',
+    title: 'Apply for plant export certificates and inspections',
+    url: 'https://www.gov.uk/guidance/apply-for-plant-export-certificates-and-inspections',
+    jurisdiction: 'United Kingdom (England and Wales, plant health)',
+    supports:
+      'the APHA online service for phytosanitary certificates and re-export certificates in England and Wales, checking with the importing country’s IPPC contact first, fees being charged, separate processes for Scotland, Northern Ireland and wood products',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-aphis-export-certification': {
+    authority: 'USDA Animal and Plant Health Inspection Service (APHIS)',
+    title: 'Plant and Plant Product Export Certificates',
+    url: 'https://www.aphis.usda.gov/plant-exports/certification',
+    jurisdiction: 'United States (plant health, export)',
+    supports:
+      'what a phytosanitary certificate attests (inspected, considered free from certain pests, conforming to the importing country’s rules), the re-export certificate for foreign-origin goods, PCIT for applications through an authorized certification official, and PExD for importing-country requirements',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-ippc-ephyto': {
+    authority: 'International Plant Protection Convention (IPPC), FAO',
+    title: 'ePhyto',
+    url: 'https://www.ippc.int/en/ephyto/',
+    jurisdiction: 'International (plant health)',
+    supports:
+      'the ePhyto as the electronic equivalent of the paper phytosanitary certificate produced under ISPM 12, the ePhyto Hub exchanging certificates between national plant protection organizations, and the generic national system',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
