@@ -78,10 +78,7 @@ const article: ContentArticle = {
             'GB to NI, not authorised or goods do not qualify',
             'Full customs process; EU duty applies to “at risk” goods',
           ],
-          [
-            'GB to NI, parcel to a consumer',
-            'No customs declaration, according to HMRC',
-          ],
+          ['GB to NI, parcel to a consumer', 'No customs declaration, according to HMRC'],
           [
             'GB to NI, business-to-business parcel',
             'Simplified only if the sender or receiver is UKIMS-authorised',

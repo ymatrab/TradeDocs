@@ -67,13 +67,25 @@ const article: ContentArticle = {
         caption: 'Common line items on an ocean freight quote',
         head: ['Line item', 'What it covers', 'Usually charged'],
         rows: [
-          ['Base ocean freight', 'Carriage between the port of loading and the port of discharge', 'Per container or per cubic metre'],
+          [
+            'Base ocean freight',
+            'Carriage between the port of loading and the port of discharge',
+            'Per container or per cubic metre',
+          ],
           ['THC, origin', 'Handling the container at the port of loading', 'At origin'],
           ['THC, destination', 'Handling the container at the port of discharge', 'At destination'],
           ['BAF (bunker adjustment factor)', 'Changes in ship fuel costs', 'With the freight'],
           ['CAF (currency adjustment factor)', 'Exchange rate movements', 'With the freight'],
-          ['Congestion surcharge', 'Waiting time at congested ports', 'With the freight, where applied'],
-          ['Demurrage and detention', 'Keeping the container beyond the free time', 'After arrival, if incurred'],
+          [
+            'Congestion surcharge',
+            'Waiting time at congested ports',
+            'With the freight, where applied',
+          ],
+          [
+            'Demurrage and detention',
+            'Keeping the container beyond the free time',
+            'After arrival, if incurred',
+          ],
         ],
       },
     },

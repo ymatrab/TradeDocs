@@ -160,7 +160,11 @@ const article: ContentArticle = {
     'icc-incoterms-2020',
   ],
   primaryTool: '/tools/incoterms',
-  tools: ['/tools/incoterms', '/tools/export-price-calculator', '/tools/proforma-invoice-generator'],
+  tools: [
+    '/tools/incoterms',
+    '/tools/export-price-calculator',
+    '/tools/proforma-invoice-generator',
+  ],
   callout: {
     afterSection: 1,
     tool: '/tools/incoterms',

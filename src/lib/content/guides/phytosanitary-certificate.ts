@@ -87,11 +87,7 @@ const article: ContentArticle = {
             'Forestry Commission',
             'Timber and wood export certificates service',
           ],
-          [
-            'United States',
-            'USDA APHIS',
-            'PCIT, through an authorized certification official',
-          ],
+          ['United States', 'USDA APHIS', 'PCIT, through an authorized certification official'],
         ],
       },
     },

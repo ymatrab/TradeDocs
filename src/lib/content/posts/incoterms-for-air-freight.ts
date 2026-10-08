@@ -60,7 +60,11 @@ const article: ContentArticle = {
         rows: [
           ['EXW', 'Yes', 'Goods made available at the seller’s premises, not loaded'],
           ['FCA', 'Yes', 'Handover to the buyer’s carrier or forwarder at the named place'],
-          ['CPT', 'Yes', 'Handover to the carrier the seller books, carriage paid to the destination'],
+          [
+            'CPT',
+            'Yes',
+            'Handover to the carrier the seller books, carriage paid to the destination',
+          ],
           ['CIP', 'Yes', 'As CPT, plus insurance bought by the seller'],
           ['DAP', 'Yes', 'Arrival at the named place, ready for unloading'],
           ['DPU', 'Yes', 'Arrival at the named place, unloaded'],

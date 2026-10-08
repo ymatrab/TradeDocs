@@ -107,12 +107,30 @@ const article: ContentArticle = {
         caption: 'What to check on each quote before comparing',
         head: ['Check', 'Why it matters'],
         rows: [
-          ['Legs covered: origin, main freight, destination', 'A quote to the port is not comparable with one to the door'],
-          ['Surcharges included or listed separately', 'Fuel, currency and terminal charges can change the total'],
-          ['Basis: chargeable weight, volume or per container', 'Check it matches your measured figures'],
-          ['Services: export clearance, insurance, import clearance', 'Missing services become extra invoices'],
-          ['Validity date and sailing or flight date', 'Rates and surcharges can change after the quote expires'],
-          ['Forwarder’s own handling and documentation fees', 'These belong in your price to the buyer'],
+          [
+            'Legs covered: origin, main freight, destination',
+            'A quote to the port is not comparable with one to the door',
+          ],
+          [
+            'Surcharges included or listed separately',
+            'Fuel, currency and terminal charges can change the total',
+          ],
+          [
+            'Basis: chargeable weight, volume or per container',
+            'Check it matches your measured figures',
+          ],
+          [
+            'Services: export clearance, insurance, import clearance',
+            'Missing services become extra invoices',
+          ],
+          [
+            'Validity date and sailing or flight date',
+            'Rates and surcharges can change after the quote expires',
+          ],
+          [
+            'Forwarder’s own handling and documentation fees',
+            'These belong in your price to the buyer',
+          ],
         ],
       },
     },
