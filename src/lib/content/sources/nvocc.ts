@@ -7,6 +7,9 @@ import type { SourceFields } from '@/lib/trade/sources';
  * never edit the same lines. Each URL was opened on the retrieval date and checked against the
  * claim in `supports`.
  *
+ * The two GACC records (english.customs.gov.cn) were read over plain HTTP on the retrieval date
+ * because the HTTPS endpoint timed out from here; the URLs are recorded in their HTTPS form.
+ *
  * The three ITA country guide records keep the `trade-gov-ccg-<iso2>` pattern the country test
  * looks for (as Mexico and India do); every other id in this file starts with `b7-`.
  */
@@ -232,7 +235,7 @@ export default {
   'b7-gacc-customs-law': {
     authority: 'General Administration of Customs of the People’s Republic of China (GACC)',
     title: 'Customs Law of the People’s Republic of China (GACC English text)',
-    url: 'http://english.customs.gov.cn/Statics/644dcaee-ca91-483a-86f4-bdc23695e3c3.html',
+    url: 'https://english.customs.gov.cn/Statics/644dcaee-ca91-483a-86f4-bdc23695e3c3.html',
     jurisdiction: 'China',
     supports:
       'declarations and duty payment being completed by importers themselves or by a customs clearing agent they entrust (Article 9); importers, exporters and customs clearing agents having to be registered with the Customs to declare, and unregistered enterprises not being allowed to declare (Article 11); the importer making an accurate declaration and submitting licensing documents and relevant papers, restricted goods not being released without them, and declaring imports within 14 days of the declaration of the arrival of the means of transport (Article 24); declarations being made in paper form and by electronic means (Article 25); and the customs value of imports being based on the transaction value and including transport, related charges and insurance before unloading at the point of entry into China (Article 55)',
@@ -243,7 +246,7 @@ export default {
     authority: 'General Administration of Customs of the People’s Republic of China (GACC)',
     title:
       'Registration of a Consignee or Consignor of Imported or Exported Goods (General Import & Export Enterprises), dated 19 August 2005',
-    url: 'http://english.customs.gov.cn/Statics/2923dcd6-3aea-4932-a4c9-fbdc8b3c9ad2.html',
+    url: 'https://english.customs.gov.cn/Statics/2923dcd6-3aea-4932-a4c9-fbdc8b3c9ad2.html',
     jurisdiction: 'China',
     supports:
       'consignees and consignors of imported or exported goods going through registration formalities with their local Customs, supported by business licence, foreign trade dealer record-filing, tax and bank documents',
