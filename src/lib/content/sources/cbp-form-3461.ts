@@ -15,7 +15,7 @@ export default {
     url: 'https://www.cbp.gov/sites/default/files/2025-01/cbp_form_3461.pdf',
     jurisdiction: 'United States (import)',
     supports:
-      'the numbered blocks of the entry/immediate delivery form and CBP’s instructions for them (port of entry, bond type, importer number, 11-digit entry number, entry type codes, bill of lading, line HTS number, value and country of origin), the applicant’s certification, the CBP use block for examination, and the purpose statement that the form lets CBP verify the consignee and shipment, confirm a bond is on file, close out the manifest and establish the obligation to pay estimated duties',
+      'the numbered blocks of the entry/immediate delivery form and CBP’s instructions for them (port of entry, bond type, importer number, surety code of a Treasury-authorised surety, 11-digit entry number, entry type codes, bill of lading, line HTS number, value and country of origin), the applicant’s certification, the CBP use block for examination, and the purpose statement that the form lets CBP verify the consignee and shipment, confirm a bond is on file, close out the manifest and establish the obligation to pay estimated duties',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
@@ -166,6 +166,56 @@ export default {
     jurisdiction: 'United States (import)',
     supports:
       'transaction value not including US customs duties and other Federal taxes payable by reason of importation, nor transport after importation, when identified separately from the price actually paid or payable',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cbp-bond-amounts-guide': {
+    authority: 'U.S. Customs and Border Protection (CBP), Office of Finance – Revenue Division',
+    title: 'A Guide for the Public: How CBP Sets Bond Amounts (February 2024)',
+    url: 'https://www.cbp.gov/sites/default/files/assets/documents/2024-Feb/FINAL_A%20Guide%20for%20the%20Public_How%20CBP%20Sets%20Bond%20Amounts%20%28February%202024%29_0.pdf',
+    jurisdiction: 'United States (import)',
+    supports:
+      'the definitions of bond, single transaction bond and continuous bond, CBP as third-party beneficiary, eBond transmission to ACE and the ACE account prerequisite, the Activity Code 1 continuous bond minimum of $50,000 or 10% of duties, taxes and fees in the previous 12 months and its increments, entry types excluded from that computation, single transaction bond amounts (entered value plus duties, taxes and fees; 10% for unconditionally duty-free goods; three times the value of restricted goods), and drawback bonds being required only for accelerated payment and equal to 100% of the accelerated amount',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-113-11': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 113.11, via the eCFR',
+    title: '19 CFR § 113.11 — Bond application',
+    url: 'https://www.ecfr.gov/current/title-19/section-113.11',
+    jurisdiction: 'United States (import)',
+    supports:
+      'single transaction bond applications identifying the value and nature of the goods, and continuous bond applications to the Revenue Division stating the general character of the goods and the duties and taxes accrued in the preceding calendar year, updated within 30 days of a significant change',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-113-12': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 113.12, via the eCFR',
+    title: '19 CFR § 113.12 — Bond approval',
+    url: 'https://www.ecfr.gov/current/title-19/section-113.12',
+    jurisdiction: 'United States (import)',
+    supports:
+      'single transaction bonds being approved by the Revenue Division or the port director, continuous bonds by the Revenue Division, and only one continuous bond per activity for each principal',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-113-13': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 113.13, via the eCFR',
+    title: '19 CFR § 113.13 — Amount of bond',
+    url: 'https://www.ecfr.gov/current/title-19/section-113.13',
+    jurisdiction: 'United States (import)',
+    supports:
+      'the $100 minimum for any CBP bond, the factors CBP weighs in judging sufficiency, periodic sufficiency review with 15 days to remedy a deficiency, and additional security where the revenue is at risk',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-113-62': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 113.62, via the eCFR',
+    title: '19 CFR § 113.62 — Basic importation and entry bond conditions',
+    url: 'https://www.ecfr.gov/current/title-19/section-113.62',
+    jurisdiction: 'United States (import)',
+    supports:
+      'the basic importation and entry bond being a single transaction or continuous bond, and the principal and surety agreeing jointly and severally to deposit duties, taxes and charges when due, pay additional amounts later found due, and make or complete entry for goods released early',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
