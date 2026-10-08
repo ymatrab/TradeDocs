@@ -219,4 +219,134 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'c2-cbp-drawback-overview': {
+    authority: 'U.S. Customs and Border Protection (CBP)',
+    title: 'Drawback Overview',
+    url: 'https://www.cbp.gov/trade/programs-administration/entry-summary/drawback-overview',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'drawback being the refund of certain duties, internal revenue taxes and fees collected on importation when the goods are exported or destroyed, the rules being in 19 CFR Part 190, and CBP’s published USMCA drawback guidance',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-3': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.3, via the eCFR',
+    title: '19 CFR § 190.3 — Duties, taxes, and fees subject or not subject to drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.3',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'drawback applying to ordinary customs duties, marking duties, internal revenue taxes on importation, merchandise processing fees and harbor maintenance taxes, and not to antidumping and countervailing duties',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-11': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.11, via the eCFR',
+    title: '19 CFR § 190.11 — Valuation of merchandise',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.11',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'the value of exported goods for drawback being the selling price declared in the Electronic Export Information, or the value that would have been declared where no EEI was required',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-21': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.21, via the eCFR',
+    title: '19 CFR § 190.21 — Direct identification manufacturing drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.21',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'drawback under 19 U.S.C. 1313(a) on exported or destroyed articles made in the US from imported merchandise, not used before export, up to 99 percent of the duties, taxes and fees paid',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-22': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.22, via the eCFR',
+    title: '19 CFR § 190.22 — Substitution drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.22',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'substitution manufacturing drawback under 19 U.S.C. 1313(b) using merchandise in the same 8-digit HTSUS subheading within 5 years of importation, capped at 99 percent of the lesser of the duties paid or the duties that would apply to the substituted merchandise',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-31': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.31, via the eCFR',
+    title: '19 CFR § 190.31 — Direct identification unused merchandise drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.31',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'drawback under 19 U.S.C. 1313(j)(1) on imported merchandise exported or destroyed unused within 5 years of importation and before the claim is filed, up to 99 percent of the duties, taxes and fees paid',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-32': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.32, via the eCFR',
+    title: '19 CFR § 190.32 — Substitution unused merchandise drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.32',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'drawback under 19 U.S.C. 1313(j)(2) on substituted merchandise exported or destroyed unused within 5 years of importation, capped at 99 percent of the lesser of the duties paid or the duties that would apply to the exported article',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-35': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.35, via the eCFR',
+    title: '19 CFR § 190.35 — Notice of intent to export or destroy; examination of merchandise',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.35',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'the Notice of Intent to Export on CBP Form 7553 being filed at least 5 working days before export for unused merchandise claims unless waived, and CBP deciding within 2 working days whether to examine',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-42': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.42, via the eCFR',
+    title: '19 CFR § 190.42 — Procedures and supporting documentation (rejected merchandise)',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.42',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'rejected merchandise drawback being denied for goods exported or destroyed after the 5-year period, and the documents showing nonconformity, defect or shipment without consent',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-51': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.51, via the eCFR',
+    title: '19 CFR § 190.51 — Completion of drawback claims',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.51',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'a complete claim consisting of the electronic drawback entry, any CBP Form 7553 notices, import entry data and evidence of export or destruction, claims being filed through a CBP-authorised system, and a claim being timely if transmitted within 5 years of the date of importation',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-71': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.71, via the eCFR',
+    title: '19 CFR § 190.71 — Drawback on articles destroyed under CBP supervision',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.71',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'the Notice of Intent on CBP Form 7553 being filed at least 7 working days before destruction and CBP deciding within 4 working days whether to witness it',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-72': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.72, via the eCFR',
+    title: '19 CFR § 190.72 — Proof of exportation',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.72',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'proof of exportation giving the date of export, exporter, description, quantity and unit, Schedule B or HTSUS number and country of ultimate destination, supported by carrier documents such as a bill of lading or air waybill, or electronic export system records',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-cfr-19-190-82': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 190.82, via the eCFR',
+    title: '19 CFR § 190.82 — Person entitled to claim drawback',
+    url: 'https://www.ecfr.gov/current/title-19/section-190.82',
+    jurisdiction: 'United States (import and export)',
+    supports:
+      'the exporter or destroyer being entitled to claim drawback unless it waives the right by certification and assigns it to the manufacturer, producer, importer or intermediate party',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
