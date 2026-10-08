@@ -43,7 +43,8 @@ export default {
   // invoice-legalization
   'd1-hcch-apostille-convention': {
     authority: 'Hague Conference on Private International Law (HCCH)',
-    title: 'Convention of 5 October 1961 Abolishing the Requirement of Legalisation for Foreign Public Documents (full text)',
+    title:
+      'Convention of 5 October 1961 Abolishing the Requirement of Legalisation for Foreign Public Documents (full text)',
     url: 'https://www.hcch.net/en/instruments/conventions/full-text/?cid=41',
     jurisdiction: 'International (legalisation of documents)',
     supports:
@@ -63,7 +64,8 @@ export default {
   },
   'd1-trade-gov-ccg-eg-import': {
     authority: 'International Trade Administration (ITA), trade.gov',
-    title: 'Egypt: Import Requirements and Documentation (Country Commercial Guide, published 2025-11-21)',
+    title:
+      'Egypt: Import Requirements and Documentation (Country Commercial Guide, published 2025-11-21)',
     url: 'https://www.trade.gov/country-commercial-guides/egypt-import-requirements-documentation',
     jurisdiction: 'Egypt (import)',
     supports:
@@ -138,7 +140,8 @@ export default {
   },
   'd1-gov-uk-returned-goods-relief': {
     authority: 'HM Revenue & Customs (GOV.UK)',
-    title: 'Pay less import duty and VAT when re-importing goods to the UK (updated 26 November 2024)',
+    title:
+      'Pay less import duty and VAT when re-importing goods to the UK (updated 26 November 2024)',
     url: 'https://www.gov.uk/guidance/pay-less-import-duty-and-vat-when-re-importing-goods-to-the-uk-and-eu',
     jurisdiction: 'United Kingdom (import)',
     supports:
@@ -181,7 +184,8 @@ export default {
   },
   'd1-whitehouse-eo-14324': {
     authority: 'The White House',
-    title: 'Executive Order 14324: Suspending Duty-Free De Minimis Treatment for All Countries (30 July 2025)',
+    title:
+      'Executive Order 14324: Suspending Duty-Free De Minimis Treatment for All Countries (30 July 2025)',
     url: 'https://www.whitehouse.gov/presidential-actions/2025/07/suspending-duty-free-de-minimis-treatment-for-all-countries/',
     jurisdiction: 'United States (import)',
     supports:
@@ -211,7 +215,8 @@ export default {
   },
   'd1-ec-eur3-low-value-parcels': {
     authority: 'European Commission',
-    title: 'Ensuring fairness and safety: €3 customs duty on low-value parcels (news, 29 June 2026)',
+    title:
+      'Ensuring fairness and safety: €3 customs duty on low-value parcels (news, 29 June 2026)',
     url: 'https://commission.europa.eu/news-and-media/news/ensuring-fairness-and-safety-eur3-customs-duty-low-value-parcels-2026-06-29_en',
     jurisdiction: 'European Union (import)',
     supports:
@@ -303,7 +308,8 @@ export default {
   },
   'd1-cbp-validating-poa': {
     authority: 'U.S. Customs and Border Protection (CBP)',
-    title: 'Validating the Power of Attorney and Electronic Signatures (last modified 6 March 2024)',
+    title:
+      'Validating the Power of Attorney and Electronic Signatures (last modified 6 March 2024)',
     url: 'https://www.cbp.gov/trade/programs-administration/customs-brokers/validating-power-attorney',
     jurisdiction: 'United States (customs brokers)',
     supports:
@@ -313,7 +319,8 @@ export default {
   },
   'd1-cornell-15-cfr-30-3': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
-    title: '15 CFR § 30.3: Electronic Export Information filer requirements, parties to export transactions, and responsibilities of parties to export transactions',
+    title:
+      '15 CFR § 30.3: Electronic Export Information filer requirements, parties to export transactions, and responsibilities of parties to export transactions',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.3',
     jurisdiction: 'United States (export)',
     supports:

@@ -167,11 +167,7 @@ const article: ContentArticle = {
       a: 'Yes. CBP’s publication describes the documents to submit with an advance ruling request on first sale, and says decisions are based on the evidence submitted.',
     },
   ],
-  sources: [
-    'd1-cbp-icp-bona-fide-sales',
-    'd1-cbp-ruling-h347879',
-    'd1-cornell-19-cfr-152-103',
-  ],
+  sources: ['d1-cbp-icp-bona-fide-sales', 'd1-cbp-ruling-h347879', 'd1-cornell-19-cfr-152-103'],
   primaryTool: '/tools/landed-cost-calculator',
   tools: [
     '/tools/landed-cost-calculator',
