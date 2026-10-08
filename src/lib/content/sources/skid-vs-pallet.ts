@@ -60,4 +60,14 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b1-iata-air-cargo-tariffs': {
+    authority: 'International Air Transport Association (IATA)',
+    title: 'Air cargo tariffs and rules: what you need to know',
+    url: 'https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/air-cargo-tariffs-and-rules-what-you-need-to-know/',
+    jurisdiction: 'International (air cargo)',
+    supports:
+      'air carriers charging by volumetric or actual weight, whichever is higher; the general rule of dividing the volume in cubic centimetres by 6,000; tariffs being set by each carrier or at industry level, with the rate a forwarder pays able to differ; tariffs excluding services such as customs clearance, pick-up and delivery; and accessorial fees such as fuel, security, dangerous goods and handling charges',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
