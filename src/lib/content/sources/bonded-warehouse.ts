@@ -193,6 +193,16 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'e5-cfr-19-4-7a': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 4.7a, via Cornell LII',
+    title: '19 CFR § 4.7a — Inward manifest; information required; alternative forms',
+    url: 'https://www.law.cornell.edu/cfr/text/19/4.7a',
+    jurisdiction: 'United States (vessel arrivals)',
+    supports:
+      'the cargo declaration data in paragraph (c)(4): last foreign port, carrier SCAC and voyage, bill of lading numbers and quantities, a precise cargo description and weight (or the shipper’s declared description and weight for sealed containers), shipper and consignee names and addresses from the bills of lading, container and seal numbers and hazardous material codes; and generic descriptions such as FAK, general cargo and STC not being acceptable',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
   'e5-ear-772-1': {
     authority: 'Bureau of Industry and Security, Export Administration Regulations, 15 CFR 772.1 (eCFR)',
     title: '15 CFR § 772.1 — Definitions of terms as used in the Export Administration Regulations',
