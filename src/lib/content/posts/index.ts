@@ -81,6 +81,12 @@ import taricAndCnCodes from './taric-and-cn-codes';
 import ttPayment from './tt-payment';
 import ukImportDuty from './uk-import-duty';
 import whatIsCustomsClearance from './what-is-customs-clearance';
+import cifVsCip from './cif-vs-cip';
+import exwVsDdp from './exw-vs-ddp';
+import fcaVsDap from './fca-vs-dap';
+import fobVsDap from './fob-vs-dap';
+import proformaInvoiceVsQuotation from './proforma-invoice-vs-quotation';
+import shippingInvoiceVsCommercialInvoice from './shipping-invoice-vs-commercial-invoice';
 
 export type Post = ContentArticle;
 
@@ -153,6 +159,12 @@ const ENTRIES: readonly Post[] = [
   ttPayment,
   ukImportDuty,
   whatIsCustomsClearance,
+  cifVsCip,
+  exwVsDdp,
+  fcaVsDap,
+  fobVsDap,
+  proformaInvoiceVsQuotation,
+  shippingInvoiceVsCommercialInvoice,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
