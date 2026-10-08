@@ -15,6 +15,7 @@ const pages = [
   ['proforma-generator', '/tools/proforma-invoice-generator'],
   ['packing-list-generator', '/tools/packing-list-generator'],
   ['landed-cost', '/tools/landed-cost-calculator'],
+  ['export-price', '/tools/export-price-calculator'],
   ['guides', '/guides'],
   ['guide-lcl-fcl', '/guides/lcl-vs-fcl'],
   ['pricing', '/pricing'],

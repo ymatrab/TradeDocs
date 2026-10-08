@@ -18,6 +18,8 @@ import australia from './australia';
 import brazil from './brazil';
 import china from './china';
 import unitedStates from './united-states';
+import germany from './germany';
+import southKorea from './south-korea';
 
 const ENTRIES: readonly CountryPage[] = [
   // One line per country, alphabetical by slug.
@@ -27,6 +29,8 @@ const ENTRIES: readonly CountryPage[] = [
   brazil,
   china,
   unitedStates,
+  germany,
+  southKorea,
 ];
 
 /** Every country page, alphabetical by name. */

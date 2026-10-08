@@ -23,6 +23,7 @@ import {
 } from '@/lib/content/glossary';
 import { findGuide } from '@/lib/content/guides';
 import { findPost } from '@/lib/content/posts';
+import { findUseCase } from '@/lib/content/use-cases';
 import { findPublicTool } from '@/lib/seo/site';
 import { findIncoterm } from '@/lib/trade/incoterms';
 
@@ -125,6 +126,17 @@ export function PricingJsonLd({ faq }: { faq: readonly QuestionAndAnswer[] }) {
   const base = getPublicBaseUrl();
   const crumbs: Crumb[] = [HOME, { name: 'Pricing', path: '/pricing' }];
   return <JsonLd data={[breadcrumbSchema(base, crumbs), faqPageSchema(faq)]} />;
+}
+
+/** A use-case page: breadcrumbs and its visible FAQ. */
+export function UseCaseJsonLd({ slug }: { slug: string }) {
+  const useCase = findUseCase(slug);
+  if (!useCase) return null;
+  const base = getPublicBaseUrl();
+  const crumbs: Crumb[] = [HOME, { name: useCase.name, path: `/for/${useCase.slug}` }];
+  const data = [breadcrumbSchema(base, crumbs)];
+  if (useCase.faq.length > 0) data.push(faqPageSchema(useCase.faq));
+  return <JsonLd data={data} />;
 }
 
 /** The glossary hub: breadcrumbs and the DefinedTermSet of every term it lists. */

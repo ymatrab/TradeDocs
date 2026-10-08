@@ -81,6 +81,29 @@ import taricAndCnCodes from './taric-and-cn-codes';
 import ttPayment from './tt-payment';
 import ukImportDuty from './uk-import-duty';
 import whatIsCustomsClearance from './what-is-customs-clearance';
+import cifVsCip from './cif-vs-cip';
+import exwVsDdp from './exw-vs-ddp';
+import fcaVsDap from './fca-vs-dap';
+import fobVsDap from './fob-vs-dap';
+import proformaInvoiceVsQuotation from './proforma-invoice-vs-quotation';
+import shippingInvoiceVsCommercialInvoice from './shipping-invoice-vs-commercial-invoice';
+import shippingToTheUkAndEuDocuments from './shipping-to-the-uk-and-eu-documents';
+import ukExportDeclaration from './uk-export-declaration';
+import zeroRatingExportsVatUk from './zero-rating-exports-vat-uk';
+import addLogoAndSignatureToExportDocuments from './add-logo-and-signature-to-export-documents';
+import airFreightVsSeaFreight from './air-freight-vs-sea-freight';
+import commercialInvoiceDeclarationStatement from './commercial-invoice-declaration-statement';
+import exportPacking from './export-packing';
+import reuseShipmentDataForRepeatOrders from './reuse-shipment-data-for-repeat-orders';
+import exportComplianceChecklist from './export-compliance-checklist';
+import howToStartAnImportExportBusiness from './how-to-start-an-import-export-business';
+import letterOfIndemnity from './letter-of-indemnity';
+import partialShipments from './partial-shipments';
+import preShipmentInspection from './pre-shipment-inspection';
+import cbpCustomsExam from './cbp-customs-exam';
+import cbpForm3461 from './cbp-form-3461';
+import customsBond from './customs-bond';
+import whoPaysImportDuties from './who-pays-import-duties';
 
 export type Post = ContentArticle;
 
@@ -153,6 +176,29 @@ const ENTRIES: readonly Post[] = [
   ttPayment,
   ukImportDuty,
   whatIsCustomsClearance,
+  cifVsCip,
+  exwVsDdp,
+  fcaVsDap,
+  fobVsDap,
+  proformaInvoiceVsQuotation,
+  shippingInvoiceVsCommercialInvoice,
+  shippingToTheUkAndEuDocuments,
+  ukExportDeclaration,
+  zeroRatingExportsVatUk,
+  addLogoAndSignatureToExportDocuments,
+  airFreightVsSeaFreight,
+  commercialInvoiceDeclarationStatement,
+  exportPacking,
+  reuseShipmentDataForRepeatOrders,
+  exportComplianceChecklist,
+  howToStartAnImportExportBusiness,
+  letterOfIndemnity,
+  partialShipments,
+  preShipmentInspection,
+  cbpCustomsExam,
+  cbpForm3461,
+  customsBond,
+  whoPaysImportDuties,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

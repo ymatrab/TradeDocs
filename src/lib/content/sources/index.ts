@@ -22,6 +22,13 @@ import skidVsPallet from './skid-vs-pallet';
 import taricAndCnCodes from './taric-and-cn-codes';
 import ttPayment from './tt-payment';
 import nvocc from './nvocc';
+import fcaVsDap from './fca-vs-dap';
+import zeroRatingExportsVatUk from './zero-rating-exports-vat-uk';
+import commercialInvoiceDeclarationStatement from './commercial-invoice-declaration-statement';
+import howToStartAnImportExportBusiness from './how-to-start-an-import-export-business';
+import cbpForm3461 from './cbp-form-3461';
+import usppi from './usppi';
+import ataCarnet from './ata-carnet';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -59,6 +66,13 @@ export const ARTICLE_SOURCE_FILES = [
   taricAndCnCodes,
   ttPayment,
   nvocc,
+  fcaVsDap,
+  zeroRatingExportsVatUk,
+  commercialInvoiceDeclarationStatement,
+  howToStartAnImportExportBusiness,
+  cbpForm3461,
+  usppi,
+  ataCarnet,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

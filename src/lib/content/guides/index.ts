@@ -54,6 +54,10 @@ import isf102 from './isf-10-2';
 import ispm15WoodPackaging from './ispm-15-wood-packaging';
 import transitDeclarationsT1Ncts from './transit-declarations-t1-ncts';
 import typesOfBillOfLading from './types-of-bill-of-lading';
+import ioss from './ioss';
+import cbmAndWeightOrMeasure from './cbm-and-weight-or-measure';
+import dutyDrawback from './duty-drawback';
+import ataCarnet from './ata-carnet';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -98,6 +102,10 @@ const ENTRIES: readonly Guide[] = [
   ispm15WoodPackaging,
   transitDeclarationsT1Ncts,
   typesOfBillOfLading,
+  ioss,
+  cbmAndWeightOrMeasure,
+  dutyDrawback,
+  ataCarnet,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);

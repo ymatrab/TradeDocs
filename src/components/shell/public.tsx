@@ -26,6 +26,9 @@ const footerProduct = [
   { href: '/#how', label: 'How it works' },
   { href: '/#documents', label: 'Documents' },
   { href: '/#checklist', label: 'Export document checklist' },
+  { href: '/for/exporters', label: 'For exporters' },
+  { href: '/for/freight-forwarders', label: 'For freight forwarders' },
+  { href: '/for/trade-consultants', label: 'For trade consultants' },
   { href: '/pricing', label: 'Pricing' },
   // There are no prices yet; this line says so in the words the status band uses.
   { href: '/#status', label: 'Free while early' },
@@ -58,6 +61,7 @@ const footerTools = [
   { href: '/tools/pallet-calculator', label: 'Pallet calculator' },
   { href: '/tools/chargeable-weight', label: 'Dimensional weight' },
   { href: '/tools/landed-cost-calculator', label: 'Landed cost' },
+  { href: '/tools/export-price-calculator', label: 'Export price' },
   { href: '/tools/incoterms', label: 'Incoterms 2020' },
 ] as const;
 

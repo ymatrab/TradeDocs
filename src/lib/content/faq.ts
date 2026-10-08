@@ -1,5 +1,6 @@
 import { LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
+import { USE_CASES } from '@/lib/content/use-cases';
 import { INCOTERMS, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
 
 /**
@@ -153,6 +154,26 @@ export const LANDED_COST_FAQ: readonly FaqEntry[] = [
   },
 ];
 
+/** /tools/export-price-calculator */
+export const EXPORT_PRICE_FAQ: readonly FaqEntry[] = [
+  {
+    q: 'How do I work out a FOB price from an ex-works price?',
+    a: 'Start from the EXW price, the goods at your premises with your margin, and add what it costs to deliver them to the main carrier: inland transport to the port or terminal, export clearance and the origin loading and terminal charges. That sum is the FCA or FOB price. The calculator adds the figures you enter; it has no rates of its own.',
+  },
+  {
+    q: 'How do I calculate a CIF price?',
+    a: 'Add the main freight to the FOB price to get the CFR price, then add the cargo insurance premium to get CIF. The same arithmetic gives CPT and CIP for any mode of transport. Under Incoterms® 2020, CIF needs at least minimum cover and CIP all-risks cover, so ask your insurer for the premium at the level the rule and your contract require.',
+  },
+  {
+    q: 'How is the DDP price estimated?',
+    a: 'From the CIF price, plus the destination charges, the import duty and the import taxes. Duty is the rate you enter applied to the CIF or FOB value, as you choose, and taxes are the rate you enter applied to that value with or without the duty. The importing country decides the real basis and rates, so treat the DDP figure as an estimate to check with a broker there.',
+  },
+  {
+    q: 'Is the result a quotation?',
+    a: 'No. It is arithmetic on the costs and rates you typed. A price you quote a buyer should rest on current quotes from your forwarder, insurer and broker, and on the Incoterms® rule and named place written into the contract.',
+  },
+];
+
 /**
  * The homepage's questions. The homepage still declares its own copy (it is owned by the
  * design round and was not edited here); it should import this list instead, and until it
@@ -223,6 +244,11 @@ function groups(): Group[] {
   return [
     { href: '/help', label: 'Accounts and support', entries: ACCOUNT_FAQ },
     { href: '/', label: 'TradeDocs', entries: HOME_FAQ },
+    ...USE_CASES.map((useCase) => ({
+      href: `/for/${useCase.slug}`,
+      label: useCase.name,
+      entries: useCase.faq,
+    })),
     {
       href: '/tools/invoice-generator',
       label: 'Commercial invoice generator',
@@ -248,6 +274,11 @@ function groups(): Group[] {
       href: '/tools/landed-cost-calculator',
       label: 'Landed cost calculator',
       entries: LANDED_COST_FAQ,
+    },
+    {
+      href: '/tools/export-price-calculator',
+      label: 'Export price calculator',
+      entries: EXPORT_PRICE_FAQ,
     },
     { href: '/tools/incoterms', label: 'Incoterms 2020 guide', entries: INCOTERMS_HUB_FAQ },
     ...INCOTERMS.map((term) => ({
