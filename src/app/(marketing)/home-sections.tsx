@@ -160,6 +160,7 @@ const audiences = [
     detail:
       'Every shipment’s invoice, packing list and delivery note from your own company directory and product catalog, with HS codes and units saved once.',
     links: [
+      { href: '/for/exporters', label: 'TradeDocs for exporters' },
       { href: '/tools/invoice-generator', label: 'Commercial invoice generator' },
       { href: '/tools/incoterms', label: 'Incoterms® 2020 guide' },
     ],
@@ -180,6 +181,7 @@ const audiences = [
     detail:
       'Measure a consignment in cubic metres and chargeable weight before you quote, and point shippers to a packing list they can fill in themselves. It is not a booking or tracking system.',
     links: [
+      { href: '/for/freight-forwarders', label: 'TradeDocs for forwarders' },
       { href: '/tools/cbm-calculator', label: 'CBM calculator' },
       { href: '/tools/chargeable-weight', label: 'Dimensional weight calculator' },
       { href: '/tools/container-loading-calculator', label: 'Container loading calculator' },
@@ -191,6 +193,7 @@ const audiences = [
     detail:
       'Keep each client in its own organization, with its own companies, products and teammates. You prepare the documents; the advice stays yours.',
     links: [
+      { href: '/for/trade-consultants', label: 'TradeDocs for consultants' },
       { href: '/tools/proforma-invoice-generator', label: 'Proforma invoice generator' },
       { href: '/guides', label: 'Trade guides' },
     ],

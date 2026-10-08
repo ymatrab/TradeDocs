@@ -5,6 +5,7 @@ import { COUNTRIES_HUB, LISTED_COUNTRIES } from '@/lib/content/countries';
 import { GLOSSARY_HUB_ENTRIES, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { POSTS } from '@/lib/content/posts';
+import { USE_CASES } from '@/lib/content/use-cases';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
 import { documentKindLabels } from '@/lib/labels';
 import { isLegalApproved } from '@/lib/legal/identity';
@@ -78,6 +79,12 @@ export function GET(): Response {
     '',
     ...FEATURES.filter((feature) => feature.plans.includes('free')).map(
       (feature) => `- ${feature.label}${'limit' in feature ? ` (${feature.limit})` : ''}`,
+    ),
+    '',
+    '## Who it is for',
+    '',
+    ...USE_CASES.map(
+      (useCase) => `- [${useCase.name}](${base}/for/${useCase.slug}): ${useCase.description}`,
     ),
     '',
     '## Free tools (no account)',

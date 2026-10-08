@@ -2,6 +2,7 @@ import { COUNTRIES_UPDATED, LISTED_COUNTRIES } from '@/lib/content/countries';
 import { GLOSSARY_UPDATED, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
 import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
+import { USE_CASES } from '@/lib/content/use-cases';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
 
@@ -185,6 +186,12 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
   { path: '/', lastModified: HOME_ROUND, changeFrequency: 'weekly', priority: 1 },
   { path: '/tools', lastModified: TOOLS_ROUND, changeFrequency: 'monthly', priority: 0.8 },
   { path: '/pricing', lastModified: PRICING_ROUND, changeFrequency: 'monthly', priority: 0.7 },
+  ...USE_CASES.map((useCase) => ({
+    path: `/for/${useCase.slug}`,
+    lastModified: useCase.updated,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  })),
   ...PUBLIC_TOOLS.map((tool) => ({
     path: tool.path,
     lastModified: tool.updated ?? REDESIGN_ROUND,

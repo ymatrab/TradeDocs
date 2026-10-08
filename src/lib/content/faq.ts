@@ -1,5 +1,6 @@
 import { LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
+import { USE_CASES } from '@/lib/content/use-cases';
 import { INCOTERMS, INCOTERMS_HUB_FAQ } from '@/lib/trade/incoterms';
 
 /**
@@ -243,6 +244,11 @@ function groups(): Group[] {
   return [
     { href: '/help', label: 'Accounts and support', entries: ACCOUNT_FAQ },
     { href: '/', label: 'TradeDocs', entries: HOME_FAQ },
+    ...USE_CASES.map((useCase) => ({
+      href: `/for/${useCase.slug}`,
+      label: useCase.name,
+      entries: useCase.faq,
+    })),
     {
       href: '/tools/invoice-generator',
       label: 'Commercial invoice generator',

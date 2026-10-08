@@ -26,6 +26,9 @@ const footerProduct = [
   { href: '/#how', label: 'How it works' },
   { href: '/#documents', label: 'Documents' },
   { href: '/#checklist', label: 'Export document checklist' },
+  { href: '/for/exporters', label: 'For exporters' },
+  { href: '/for/freight-forwarders', label: 'For freight forwarders' },
+  { href: '/for/trade-consultants', label: 'For trade consultants' },
   { href: '/pricing', label: 'Pricing' },
   // There are no prices yet; this line says so in the words the status band uses.
   { href: '/#status', label: 'Free while early' },
