@@ -70,4 +70,35 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b1-cbp-ams-air-features': {
+    authority: 'U.S. Customs and Border Protection (CBP)',
+    title: 'AMS Air Features',
+    url: 'https://www.cbp.gov/trade/acs/ams/air-features',
+    jurisdiction: 'United States (air cargo manifest)',
+    supports:
+      'the incoming air carrier transmitting the master air waybill for consolidated shipments and the house air waybills unless another party sends them, split consolidations needing house-level detail, deconsolidators or bonded ABI filer-forwarders transmitting house shipment information independently of the master, and the air waybill number serving as the in-bond control number',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b1-cfr-19-122-48a': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 122.48a, via Cornell LII',
+    title: '19 CFR § 122.48a — Electronic information for air cargo required in advance of arrival',
+    url: 'https://www.law.cornell.edu/cfr/text/19/122.48a',
+    jurisdiction: 'United States (import, air)',
+    supports:
+      'the master air waybill data (air waybill number, flight, airports, quantity, weight, description, shipper and consignee) and the house air waybill data (master and house numbers, origin, description, quantity, weight, shipper and consignee); other eligible parties transmitting house data; and the data being due no later than four hours before arrival, or at departure from nearby foreign areas',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b1-eeas-ics2-air': {
+    authority: 'European Union (EEAS delegation, reporting a European Commission notice)',
+    title:
+      'ICS2: European Commission invites air cargo operators to adhere to ICS2 filing requirements when sending goods to the EU (10 December 2024)',
+    url: 'https://www.eeas.europa.eu/delegations/china/ics2-european-commission-invites-air-cargo-operators-adhere-ics2-filing-requirements-when-sending_en',
+    jurisdiction: 'European Union (import, air)',
+    supports:
+      'ENS filers providing complete data at master and lowest house level, separate goods items for different HS codes, descriptions such as “unknown” being unacceptable, and the consignor and consignee in the lowest house air waybill having to be the real parties, not the carrier, forwarder, consolidator or customs agent',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
