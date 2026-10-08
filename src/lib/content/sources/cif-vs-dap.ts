@@ -28,6 +28,16 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd2-usc-19-1401a-duties': {
+    authority: 'Legal Information Institute, Cornell Law School (United States Code)',
+    title: '19 U.S. Code § 1401a: Value, subsections (b)(3) and (b)(4)',
+    url: 'https://www.law.cornell.edu/uscode/text/19/1401a',
+    jurisdiction: 'United States (imports)',
+    supports:
+      'transaction value not including, when identified separately, transportation after importation or the customs duties and other Federal taxes payable by reason of importation, and the price actually paid or payable excluding international transportation and insurance',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
   'd2-gov-uk-eori': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
     title: 'Get an EORI number',
