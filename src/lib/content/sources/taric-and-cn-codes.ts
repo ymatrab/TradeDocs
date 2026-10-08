@@ -139,4 +139,34 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b3-gov-uk-method-1-transaction-value': {
+    authority: 'HM Revenue & Customs (HMRC), GOV.UK',
+    title: 'Valuing imported goods using Method 1 (transaction value)',
+    url: 'https://www.gov.uk/guidance/valuing-imported-goods-using-method-1-transaction-value',
+    jurisdiction: 'United Kingdom (import)',
+    supports:
+      'transaction value as the price paid or payable for goods sold for export to the UK, the costs of transport, insurance, loading and handling to the UK border, commissions and some royalties being added, the seller’s invoice serving as evidence, and customs asking for more information and giving a written decision when it doubts a declared value',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b3-cfr-19-152-103': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 152.103, via Cornell LII',
+    title: '19 CFR § 152.103 — Transaction value',
+    url: 'https://www.law.cornell.edu/cfr/text/19/152.103',
+    jurisdiction: 'United States (import)',
+    supports:
+      'the price actually paid or payable as the basis of transaction value, and the regulation’s example in which ocean freight and insurance (C.I.F. charges) are excluded from transaction value',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b3-dhl-express-terms-us': {
+    authority: 'DHL Express',
+    title: 'Terms and Conditions of Carriage (United States)',
+    url: 'https://mydhl.express.dhl/us/en/legal/terms-and-conditions.html',
+    jurisdiction: 'Carrier practice (DHL Express, United States site)',
+    supports:
+      'every shipment travelling on a limited liability basis, liability for air shipments limited by the Montreal or Warsaw Convention or otherwise to the lower of market or declared value or 26 SDR per kilogram, and a shipper who finds the limits insufficient making a special declaration of value and requesting Shipment Value Protection for an additional charge, or arranging its own insurance',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
