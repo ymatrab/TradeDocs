@@ -2,6 +2,19 @@
 
 ## Unreleased — 2026-09-06
 
+### Content wave C, export price calculator, use-case pages (D-022 wave C)
+
+- `/tools/export-price-calculator`: EXW → FCA/FOB → CFR/CPT → CIF/CIP plus a DDP estimate from
+  costs the visitor enters (`src/lib/trade/export-price.ts`, decimal-safe, no rates of our own).
+- `/for/exporters`, `/for/freight-forwarders`, `/for/trade-consultants` from
+  `src/lib/content/use-cases.ts`; claims follow `plans.ts` FEATURES and CTAs follow the live
+  capability flags; the forwarders page says it is document preparation, not a TMS.
+- 26 articles (posts and guides: US customs, Incoterm comparisons, UK/EU VAT and declarations,
+  IOSS, export business, product-led), 9 glossary terms (3 regulated: mechanism only, no
+  rates), Germany and South Korea country pages. ATA carnet pending.
+- Carrier sites (UPS, FedEx, DHL) blocked fetches, so no carrier facts were stated.
+- All pending CI.
+
 ### Glossary, export documents by country, CBM-to-cubic-feet and pallet calculator (D-022 wave A)
 
 - `/glossary` hub (A–Z, in-browser search, DefinedTermSet) and `/glossary/[term]` (DefinedTerm
