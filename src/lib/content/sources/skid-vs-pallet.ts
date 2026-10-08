@@ -122,4 +122,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b1-dcsa-charges-payment-term': {
+    authority: 'Digital Container Shipping Association (DCSA), information model 2024 Q4',
+    title: 'Charges Payment Term',
+    url: 'https://models.dcsa.org/2024Q4/EARoot/EA5/EA2/EA3/EA1/EA2351.htm',
+    jurisdiction: 'International (ocean carrier data standard)',
+    supports:
+      'the payment term indicating whether charges are prepaid (PRE) or collect (COL): prepaid charges being the responsibility of the shipper or an invoice payer on its behalf, collect charges the responsibility of the consignee or an invoice payer on its behalf',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b1-dcsa-charge': {
+    authority: 'Digital Container Shipping Association (DCSA), information model 2024 Q4',
+    title: 'Charge',
+    url: 'https://models.dcsa.org/2024Q4/EARoot/EA5/EA2/EA3/EA1/EA2350.htm',
+    jurisdiction: 'International (ocean carrier data standard)',
+    supports:
+      'a charge being the monetary value of freight and other service charges for a booking, each with its own payment term code of prepaid (PRE) or collect (COL)',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
