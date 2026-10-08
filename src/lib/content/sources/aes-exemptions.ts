@@ -182,4 +182,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd4-gov-uk-get-ehc': {
+    authority: 'Animal and Plant Health Agency (APHA) and Defra, GOV.UK',
+    title: 'Get an export health certificate',
+    url: 'https://www.gov.uk/guidance/get-an-export-health-certificate',
+    jurisdiction: 'United Kingdom (animal and animal product exports)',
+    supports:
+      'an EHC as the official document confirming an export meets the destination’s health requirements, live animals and animal products from Great Britain to the EU, non-EU countries and Northern Ireland, transit EHCs, separate EHCs per product type, certification by an APHA-authorised official veterinarian or local authority inspector, applying through EHC Online, the certifier receiving the EHC 7 working days before export, destination competent authorities setting conditions and granting waivers, and Northern Ireland exports needing an EHC for non-EU countries only',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-find-ehc': {
+    authority: 'Animal and Plant Health Agency (APHA), GOV.UK',
+    title: 'Find an export health certificate',
+    url: 'https://www.gov.uk/export-health-certificates',
+    jurisdiction: 'United Kingdom (animal and animal product exports)',
+    supports:
+      'the APHA finder listing EHCs by destination country, commodity type and status, each with a numbered reference, holding the latest versions, and the need to nominate an official vet or local authority inspector to sign',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
