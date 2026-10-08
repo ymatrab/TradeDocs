@@ -83,7 +83,8 @@ const article: ContentArticle = {
         'Five business days before goods count as detained, and 30 days before a decision is due. The clocks in 19 CFR 151.16 run from the date the goods are presented for examination, which the regulation defines as being in a condition to be viewed and examined by an officer. Presenting a closed container does not count.',
       ],
       table: {
-        caption: 'The detention clock under 19 CFR 151.16 (CBP examinations, not holds for other agencies)',
+        caption:
+          'The detention clock under 19 CFR 151.16 (CBP examinations, not holds for other agencies)',
         head: ['Point', 'What the regulation says happens'],
         rows: [
           [

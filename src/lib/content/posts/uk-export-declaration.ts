@@ -83,7 +83,10 @@ const article: ContentArticle = {
           ['Departure point and destination', 'The invoice and the transport booking'],
           ['Type, amount and packaging of goods', 'Invoice line items and the packing list'],
           ['Transport methods and costs', 'The booking and the freight shown on the invoice'],
-          ['Currencies and valuation methods', 'Invoice currency, prices and the Incoterms® 2020 rule'],
+          [
+            'Currencies and valuation methods',
+            'Invoice currency, prices and the Incoterms® 2020 rule',
+          ],
           ['Certificates and licences', 'Any export licence or certificate the goods need'],
         ],
       },

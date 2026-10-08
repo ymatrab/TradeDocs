@@ -122,8 +122,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
       <section className="section" aria-labelledby="features-title">
         <h2 id="features-title">What the workspace does today</h2>
         <p className="measure">
-          Free while early, with no card. The full list, with what each plan includes, is on
-          the{' '}
+          Free while early, with no card. The full list, with what each plan includes, is on the{' '}
           <Link className="text-link" href="/pricing">
             pricing page
           </Link>

@@ -96,7 +96,8 @@ const country: CountryPage = {
     {
       document: 'Marine insurance policy or certificate',
       status: 'conditional',
-      condition: 'When the Incoterms® rule in the sale makes the exporter responsible for insurance.',
+      condition:
+        'When the Incoterms® rule in the sale makes the exporter responsible for insurance.',
       sourceId: 'trade-gov-ccg-kr',
     },
     {

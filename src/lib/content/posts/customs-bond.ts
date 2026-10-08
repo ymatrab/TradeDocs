@@ -73,7 +73,11 @@ const article: ContentArticle = {
           'Single transaction vs continuous import bonds (19 CFR 113.11–113.13 and CBP’s February 2024 bond guidance)',
         head: ['', 'Single transaction bond', 'Continuous bond'],
         rows: [
-          ['Covers', 'One transaction, such as one entry', 'All covered transactions for a year, renewing automatically'],
+          [
+            'Covers',
+            'One transaction, such as one entry',
+            'All covered transactions for a year, renewing automatically',
+          ],
           [
             'Approved by',
             'The Revenue Division or the port director where filed',
@@ -89,11 +93,7 @@ const article: ContentArticle = {
             'Identifies the value and nature of the goods in the transaction',
             'States the general character of the goods and the duties and taxes accrued in the previous calendar year',
           ],
-          [
-            'Fits',
-            'An occasional or one-off import',
-            'Regular imports through one or more ports',
-          ],
+          ['Fits', 'An occasional or one-off import', 'Regular imports through one or more ports'],
         ],
       },
     },

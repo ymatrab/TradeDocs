@@ -103,7 +103,8 @@ export default {
   },
   'c6-wco-rkc-ch3': {
     authority: 'World Customs Organization (WCO), Revised Kyoto Convention',
-    title: 'Revised Kyoto Convention, General Annex, Chapter 3: Clearance and other Customs formalities',
+    title:
+      'Revised Kyoto Convention, General Annex, Chapter 3: Clearance and other Customs formalities',
     url: 'https://www.wcoomd.org/en/topics/facilitation/instrument-and-tools/conventions/pf_revised_kyoto_conv/kyoto_new/gach3.aspx',
     jurisdiction: 'International (customs procedures)',
     supports:
@@ -153,7 +154,8 @@ export default {
   },
   'c6-trade-gov-adcvd-faq': {
     authority: 'International Trade Administration, Enforcement and Compliance',
-    title: 'FAQs for the Initiation of an Antidumping Duty and/or Countervailing Duty Investigation',
+    title:
+      'FAQs for the Initiation of an Antidumping Duty and/or Countervailing Duty Investigation',
     url: 'https://www.trade.gov/faq/faqs-initiation-antidumping-duty-andor-countervailing-duty-investigation',
     jurisdiction: 'United States (imports)',
     supports:

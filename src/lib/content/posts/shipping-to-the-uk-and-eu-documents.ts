@@ -63,11 +63,19 @@ const article: ContentArticle = {
         caption: 'The same documents serve UK and EU buyers; the numbers on them differ',
         head: ['Item', 'Buyer in Great Britain', 'Buyer in the EU'],
         rows: [
-          ['Commercial invoice', 'Required by the importer’s agent', 'Required by the importer’s agent'],
+          [
+            'Commercial invoice',
+            'Required by the importer’s agent',
+            'Required by the importer’s agent',
+          ],
           ['Packing list', 'Matches invoice quantities', 'Matches invoice quantities'],
           ['Importer’s customs number', 'EORI starting with GB', 'EORI issued by an EU country'],
           ['Tariff for commodity codes', 'UK Trade Tariff', 'EU TARIC'],
-          ['Low-value VAT route', 'Seller charges UK VAT at sale, £135 or less', 'IOSS, up to EUR 150'],
+          [
+            'Low-value VAT route',
+            'Seller charges UK VAT at sale, £135 or less',
+            'IOSS, up to EUR 150',
+          ],
         ],
       },
     },
@@ -159,7 +167,12 @@ const article: ContentArticle = {
     title: 'Make one invoice your UK or EU buyer’s agent can declare from',
     text: 'The commercial invoice generator lays out the parties, EORI numbers, goods lines, commodity codes you enter, values, currency, origin and Incoterms® rule on one page.',
   },
-  tools: ['/tools/invoice-generator', '/tools/packing-list-generator', '/tools/landed-cost-calculator', '/tools/incoterms'],
+  tools: [
+    '/tools/invoice-generator',
+    '/tools/packing-list-generator',
+    '/tools/landed-cost-calculator',
+    '/tools/incoterms',
+  ],
   related: [
     '/blog/uk-import-duty',
     '/guides/eori-number',

@@ -59,9 +59,7 @@ const article: ContentArticle = {
     },
     {
       heading: 'How do the three “shipping invoices” compare?',
-      paragraphs: [
-        'The table sets out who issues each document, who reads it and what it is for.',
-      ],
+      paragraphs: ['The table sets out who issues each document, who reads it and what it is for.'],
       table: {
         caption: 'Three documents called a shipping invoice',
         head: ['', 'Commercial invoice', 'Proforma invoice', 'Freight invoice'],

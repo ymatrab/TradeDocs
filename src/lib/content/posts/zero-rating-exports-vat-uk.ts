@@ -66,7 +66,8 @@ const article: ContentArticle = {
         'The time limits in the notice run from the time of supply, and they differ by type of export.',
       ],
       table: {
-        caption: 'Time limits for exporting and obtaining evidence, from HMRC VAT Notice 703, section 3.5',
+        caption:
+          'Time limits for exporting and obtaining evidence, from HMRC VAT Notice 703, section 3.5',
         head: ['Type of supply', 'Export the goods within', 'Obtain evidence within'],
         rows: [
           ['Direct export', '3 months', '3 months'],
@@ -115,10 +116,16 @@ const article: ContentArticle = {
         caption: 'Worked example with an invented exporter, buyer and figures',
         head: ['Step', 'What happens'],
         rows: [
-          ['Sale', 'Brightwell Ceramics Ltd (invented) invoices an overseas buyer £6,000 on EXW terms'],
+          [
+            'Sale',
+            'Brightwell Ceramics Ltd (invented) invoices an overseas buyer £6,000 on EXW terms',
+          ],
           ['Collection', 'The buyer’s haulier collects the goods from the Brightwell warehouse'],
           ['Evidence', 'Brightwell asks the buyer for the MRN and departure confirmation'],
-          ['Time limit passes', 'No evidence after 3 months, so Brightwell accounts for VAT on the £6,000'],
+          [
+            'Time limit passes',
+            'No evidence after 3 months, so Brightwell accounts for VAT on the £6,000',
+          ],
           ['Evidence arrives', 'The buyer sends it later; Brightwell adjusts in that period'],
         ],
       },

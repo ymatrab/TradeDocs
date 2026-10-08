@@ -64,7 +64,11 @@ const article: ContentArticle = {
         caption: 'Quotation and proforma invoice compared',
         head: ['', 'Quotation', 'Proforma invoice'],
         rows: [
-          ['When it is sent', 'While the buyer compares offers', 'When the buyer is ready to commit'],
+          [
+            'When it is sent',
+            'While the buyer compares offers',
+            'When the buyer is ready to commit',
+          ],
           ['Format', 'Any: email, price list, PDF', 'Laid out like an invoice'],
           [
             'Parties',

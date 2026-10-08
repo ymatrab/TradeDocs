@@ -65,12 +65,32 @@ const article: ContentArticle = {
         caption: 'What a repeat shipment copies and what you set again',
         head: ['Detail', 'In the copy', 'What to do'],
         rows: [
-          ['Exporter, consignee, notify party', 'Copied', 'Check addresses and contacts are still current'],
-          ['Incoterms® rule and place, ports, countries, currency', 'Copied', 'Confirm they match the new order'],
+          [
+            'Exporter, consignee, notify party',
+            'Copied',
+            'Check addresses and contacts are still current',
+          ],
+          [
+            'Incoterms® rule and place, ports, countries, currency',
+            'Copied',
+            'Confirm they match the new order',
+          ],
           ['Marks and numbers', 'Copied', 'Update any order number or carton range in the marks'],
-          ['Product lines: description, code, origin, unit', 'Copied', 'Check each line is still accurate'],
-          ['Quantities and unit prices', 'Copied as they were', 'Change them to this order’s figures'],
-          ['Packing: packages, sizes, weights, contents', 'Copied', 'Re-measure and re-weigh if anything changed'],
+          [
+            'Product lines: description, code, origin, unit',
+            'Copied',
+            'Check each line is still accurate',
+          ],
+          [
+            'Quantities and unit prices',
+            'Copied as they were',
+            'Change them to this order’s figures',
+          ],
+          [
+            'Packing: packages, sizes, weights, contents',
+            'Copied',
+            'Re-measure and re-weigh if anything changed',
+          ],
           ['Shipment reference', 'New, entered by you', 'Must be unique in your organization'],
           ['Buyer’s reference (PO number)', 'Not copied', 'Enter the new order’s number'],
           ['Proforma validity date, shipping date', 'Not copied', 'Set them for this order'],

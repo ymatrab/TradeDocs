@@ -27,14 +27,7 @@ const columns = {
 } as const;
 
 type AmountField =
-  | 'exw'
-  | 'inland'
-  | 'clearance'
-  | 'loading'
-  | 'freight'
-  | 'insurance'
-  | 'destination'
-  | 'units';
+  'exw' | 'inland' | 'clearance' | 'loading' | 'freight' | 'insurance' | 'destination' | 'units';
 type RateField = 'duty' | 'tax';
 
 const AMOUNT_ERROR = 'Enter a number such as 1250.50, or leave it blank.';

@@ -74,7 +74,11 @@ const article: ContentArticle = {
           ['Loading at origin', 'Buyer', 'Seller'],
           ['Export clearance', 'Buyer', 'Seller'],
           ['Main carriage', 'Buyer contracts and pays', 'Seller contracts and pays'],
-          ['Risk passes', 'When goods are at the buyer’s disposal', 'On arrival, cleared for import'],
+          [
+            'Risk passes',
+            'When goods are at the buyer’s disposal',
+            'On arrival, cleared for import',
+          ],
           ['Import clearance', 'Buyer', 'Seller'],
           ['Import duties and taxes', 'Buyer', 'Seller'],
           ['Unloading at destination', 'Buyer', 'Buyer'],

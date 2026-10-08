@@ -68,7 +68,12 @@ const article: ContentArticle = {
         rows: [
           ['Air cargo', '6,000 cm³ per kg', '166.7 kg', 'IATA general rule'],
           ['Express (DHL Express)', '5,000 cm³ per kg', '200 kg', 'Carrier’s published divisor'],
-          ['Road groupage, Europe', '333 kg per m³', '333 kg', 'Common convention; check the tariff'],
+          [
+            'Road groupage, Europe',
+            '333 kg per m³',
+            '333 kg',
+            'Common convention; check the tariff',
+          ],
           ['Sea LCL', '1 tonne per m³', '1,000 kg', 'Common convention; check the tariff'],
         ],
       },
