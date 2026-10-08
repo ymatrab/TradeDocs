@@ -24,6 +24,13 @@ import feu from './feu';
 import teu from './teu';
 import verifiedGrossMass from './verified-gross-mass';
 import waybill from './waybill';
+import exporting from './exporting';
+import freightAllKinds from './freight-all-kinds';
+import importing from './importing';
+import nvocc from './nvocc';
+import proofOfDelivery from './proof-of-delivery';
+import shippingManifest from './shipping-manifest';
+import transshipment from './transshipment';
 
 const ENTRIES: readonly GlossaryTerm[] = [
   // One line per term, alphabetical by slug.
@@ -34,6 +41,13 @@ const ENTRIES: readonly GlossaryTerm[] = [
   teu,
   verifiedGrossMass,
   waybill,
+  exporting,
+  freightAllKinds,
+  importing,
+  nvocc,
+  proofOfDelivery,
+  shippingManifest,
+  transshipment,
 ];
 
 /** Every term page, alphabetical by display name. */

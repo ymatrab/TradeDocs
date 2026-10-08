@@ -21,6 +21,7 @@ import ispm15WoodPackaging from './ispm-15-wood-packaging';
 import skidVsPallet from './skid-vs-pallet';
 import taricAndCnCodes from './taric-and-cn-codes';
 import ttPayment from './tt-payment';
+import nvocc from './nvocc';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -57,6 +58,7 @@ export const ARTICLE_SOURCE_FILES = [
   skidVsPallet,
   taricAndCnCodes,
   ttPayment,
+  nvocc,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;
