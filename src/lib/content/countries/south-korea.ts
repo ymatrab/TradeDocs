@@ -41,7 +41,7 @@ const country: CountryPage = {
   ],
   metaTitle: 'South Korea export documents and UNI-PASS',
   description:
-    'The documents a shipment to South Korea needs: an original commercial invoice with two copies, two packing lists, the bill of lading and the importer’s UNI-PASS declaration, from Korea Customs Service and ITA sources.',
+    'What a shipment to South Korea needs: a commercial invoice with two copies, two packing lists, the bill of lading and the UNI-PASS import declaration, from Korea Customs Service sources.',
   answer:
     'A shipment to South Korea is cleared on an import declaration that a customs broker or the goods’ owner files in the Korea Customs Service’s UNI-PASS system. It rests on an original commercial invoice with two copies, two packing lists, a clean bill of lading or air waybill, and origin evidence where the buyer claims a trade preference.',
   lede: 'What the exporter supplies and what the Korean importer files, with the official source for each line, from the Korea Customs Service’s English pages and the U.S. government’s Country Commercial Guide. It covers documents and labels only: it states no duty or tax rates, and the importer’s customs broker decides what a particular shipment needs.',
