@@ -21,7 +21,7 @@ const term: GlossaryTerm = {
     kd: null,
     dataFile: '04-labs-keyword-overview-us-questions.json',
   },
-  metaTitle: 'Advance shipping notice (ASN): meaning and contents',
+  metaTitle: 'Advance shipping notice (ASN): meaning, contents',
   description:
     'What an advance shipping notice is, what it lists, how it relates to the EDI 856 and DESADV messages, and how it differs from a packing list or delivery note.',
   shortDefinition:

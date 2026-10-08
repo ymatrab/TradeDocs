@@ -44,7 +44,7 @@ const country: CountryPage = {
   description:
     'The documents a shipment to Germany needs: the entry summary declaration, the customs declaration for release for free circulation, the importer’s EORI number and the invoice and packing list behind them, from German Customs (Zoll) sources.',
   answer:
-    'A shipment to Germany needs an entry summary declaration before it reaches the EU, then a customs declaration placing the goods in free circulation, quoting the declarant’s EORI number. The declarant must be established in the EU or represented there. The commercial invoice and packing list supply the values, descriptions and weights both filings use.',
+    'A shipment to Germany needs an entry summary declaration before it reaches the EU, then a customs declaration releasing the goods for free circulation under the declarant’s EORI number. The commercial invoice and packing list supply the values, descriptions and weights both filings use.',
   lede: 'What the exporter supplies and what is filed in Germany, with the official source for each line, mainly the English pages of German Customs (Zoll). Germany applies the EU’s customs rules, so most of this holds across the Union; it states no duty or tax rates, and the importer’s customs broker decides what a particular shipment needs.',
   customsAuthority: {
     name: 'German Customs (Zoll), Generalzolldirektion',
@@ -187,6 +187,7 @@ const country: CountryPage = {
     'c6-zoll-entry-summary',
     'c6-zoll-normal-clearance',
     'c6-zoll-customs-value',
+    'trade-gov-commercial-invoice',
   ],
   regulated: true,
   review: null,

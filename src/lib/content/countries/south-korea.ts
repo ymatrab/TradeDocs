@@ -43,7 +43,7 @@ const country: CountryPage = {
   description:
     'The documents a shipment to South Korea needs: an original commercial invoice with two copies, two packing lists, the bill of lading and the importer’s UNI-PASS declaration, from Korea Customs Service and ITA sources.',
   answer:
-    'A shipment to South Korea is cleared on an import declaration that a customs broker or the goods’ owner files in the Korea Customs Service’s UNI-PASS system. It rests on an original commercial invoice with two copies, two packing lists, a clean bill of lading or air waybill, and a certificate of origin where needed.',
+    'A shipment to South Korea is cleared on an import declaration that a customs broker or the goods’ owner files in the Korea Customs Service’s UNI-PASS system. It rests on an original commercial invoice with two copies, two packing lists, a clean bill of lading or air waybill, and origin evidence where the buyer claims a trade preference.',
   lede: 'What the exporter supplies and what the Korean importer files, with the official source for each line, from the Korea Customs Service’s English pages and the U.S. government’s Country Commercial Guide. It covers documents and labels only: it states no duty or tax rates, and the importer’s customs broker decides what a particular shipment needs.',
   customsAuthority: {
     name: 'Korea Customs Service (KCS)',
@@ -81,7 +81,7 @@ const country: CountryPage = {
       sourceId: 'trade-gov-ccg-kr',
     },
     {
-      document: 'Certificate of origin',
+      document: 'Origin evidence (for a trade preference)',
       status: 'conditional',
       condition:
         'Listed by KCS among the supporting documents; check with the importer which form, if any, the shipment needs, for example to claim a trade preference.',
@@ -182,7 +182,7 @@ const country: CountryPage = {
     {
       heading: 'What should I ask my Korean buyer before shipping?',
       paragraphs: [
-        'Settle five points first: which customs broker files the declaration; whether the buyer wants a certificate of origin, and in which form; whether the product needs quarantine inspection, MFDS registration or a KC Mark; whether Korean labels will be applied before shipment or in a bonded area; and which Incoterms® rule decides who insures the cargo.',
+        'Settle five points first: which customs broker files the declaration; whether the buyer needs origin evidence for a preference, and in which form; whether the product needs quarantine inspection, MFDS registration or a KC Mark; whether Korean labels will be applied before shipment or in a bonded area; and which Incoterms® rule decides who insures the cargo.',
         'Then ask whether the broker wants the invoice descriptions in a particular form, since the declaration is prepared in Korean and the translation starts from your words.',
       ],
     },

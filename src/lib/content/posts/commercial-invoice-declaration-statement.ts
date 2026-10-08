@@ -181,14 +181,14 @@ const article: ContentArticle = {
     '/blog/declared-value-for-customs',
   ],
   cover: {
-    id: 'ZH4FUYiaczY',
-    src: 'https://images.unsplash.com/photo-1635859890085-ec8cb5466806',
-    width: 5472,
-    height: 3648,
-    alt: 'A person at a desk signing a printed document with a ballpoint pen, papers spread around',
-    caption: 'Signing a printed document at a desk',
-    photographer: { name: 'Dimitri Karastelev', profile: 'https://unsplash.com/@dkfra19' },
-    page: 'https://unsplash.com/photos/a-woman-sitting-at-a-table-with-lots-of-papers-ZH4FUYiaczY',
+    id: 'ZKkuYgbTRl8',
+    src: 'https://images.unsplash.com/photo-1643224781823-5a6ed8e0835c',
+    width: 6000,
+    height: 4000,
+    alt: 'A hand writing on a sheet of paper with a pen',
+    caption: 'Writing on a printed sheet',
+    photographer: { name: 'Colynary Media', profile: 'https://unsplash.com/@colynarymedia' },
+    page: 'https://unsplash.com/photos/a-person-writing-on-a-piece-of-paper-with-a-pen-ZKkuYgbTRl8',
   },
 };
 
