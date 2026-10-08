@@ -60,4 +60,76 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd4-gov-uk-strategic-export-controls': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title: 'UK strategic export controls',
+    url: 'https://www.gov.uk/guidance/uk-strategic-export-controls',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'military and dual-use items on the consolidated list needing an ECJU licence, exporting controlled items without a licence being a criminal offence, end-use controls and concerns about the end-user, sanctions licences, the OGEL and goods checker tools and SPIRE advisory services, the legal basis (Export Control Act 2002, Export Control Order 2008), Northern Ireland applying Regulation (EU) 2021/821, and the penalties for breaches',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-dual-use-controls': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title:
+      'Export controls: dual-use items, software and technology, goods for torture and radioactive sources',
+    url: 'https://www.gov.uk/guidance/export-controls-dual-use-items-software-and-technology-goods-for-torture-and-radioactive-sources',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'applying for a SIEL through the GOV.UK “Apply to export controlled goods” service, registering for open licences on SPIRE, and Northern Ireland dual-use rules (licence needed from Northern Ireland to outside the EU, none to the EU or Great Britain)',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-siel': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title: 'Standard individual export licences (SIELs)',
+    url: 'https://www.gov.uk/guidance/standard-individual-export-licences-siels',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'a SIEL covering a stated quantity of specified items to a named consignee or end-user, its usual validity (two years permanent, one year temporary), the online application service and the cases still made on SPIRE, the technical specification and end-user and stockist undertaking, and ECJU’s processing targets in working days',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-lite-notice': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title:
+      'Notice to exporters 2024/25: launch of the ‘Apply for a SIEL’ service (LITE) public beta',
+    url: 'https://www.gov.uk/government/publications/notice-to-exporters-202425-launch-of-the-apply-for-a-siel-service-lite-public-beta',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'ECJU launching the ‘Apply for a SIEL’ service (LITE) for standard individual export licence applications, published 17 September 2024',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-ogels': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title: 'Open general export licences (OGELs)',
+    url: 'https://www.gov.uk/government/collections/open-general-export-licences-ogels',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'OGELs as pre-published licences for specified items and destinations, registering on SPIRE before use, keeping records, annual returns, quoting the SPIRE reference on shipping documents, and compliance visits',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-oiel': {
+    authority: 'Export Control Joint Unit (ECJU), Department for Business and Trade, GOV.UK',
+    title: 'Open individual export licence (OIEL)',
+    url: 'https://www.gov.uk/guidance/open-individual-export-licence-oiel',
+    jurisdiction: 'United Kingdom (export controls)',
+    supports:
+      'an OIEL covering several consignments of specific goods to named destinations for one exporter, applying on SPIRE, its usual validity of three to five years, and ECJU’s aim of deciding within three to six months',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'd4-gov-uk-export-goods-licences': {
+    authority: 'HM Government, GOV.UK',
+    title: 'Export goods from the UK: step by step',
+    url: 'https://www.gov.uk/export-goods',
+    jurisdiction: 'United Kingdom (export)',
+    supports:
+      'the categories of goods that need licences or certificates to export (animals and animal products, plants and plant products, drugs and medicines, chemicals, waste, art and antiques, firearms, military and dual-use items), and buyers possibly needing licences or certificates to receive goods',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
