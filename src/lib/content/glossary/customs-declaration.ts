@@ -19,7 +19,7 @@ const term: GlossaryTerm = {
     kd: 42,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Customs declaration meaning: who files it and what it uses',
+  metaTitle: 'Customs declaration: who files it',
   description:
     'What a customs declaration is, who can make one, how it relates to the commercial invoice and packing list, and what it is called in the EU and the United States.',
   shortDefinition:

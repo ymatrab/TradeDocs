@@ -14,7 +14,7 @@ const term: GlossaryTerm = {
     kd: 29,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Anti-dumping duty: what dumping is and how the duty works',
+  metaTitle: 'Anti-dumping duty: how it works',
   description:
     'What dumping means in trade law, how an anti-dumping investigation leads to an extra import duty, who collects it in the United States, and what it changes for an importer.',
   shortDefinition:

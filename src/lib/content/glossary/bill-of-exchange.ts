@@ -13,7 +13,7 @@ const term: GlossaryTerm = {
     kd: null,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Bill of exchange meaning: sight and time drafts in trade',
+  metaTitle: 'Bill of exchange: sight and time drafts',
   description:
     'What a bill of exchange is, how sight and time drafts work in a documentary collection, and how the draft relates to your commercial invoice and proforma terms.',
   shortDefinition:

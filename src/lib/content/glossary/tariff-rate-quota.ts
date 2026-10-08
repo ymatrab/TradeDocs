@@ -14,7 +14,7 @@ const term: GlossaryTerm = {
     kd: 8,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Tariff-rate quota (TRQ): how in-quota and over-quota duty works',
+  metaTitle: 'Tariff-rate quota (TRQ) explained',
   description:
     'How a tariff-rate quota works: a set quantity enters at a lower duty rate, the rest at a higher one, and how U.S. customs decides which entries count against the quota.',
   shortDefinition:

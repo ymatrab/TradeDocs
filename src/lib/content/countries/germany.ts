@@ -40,7 +40,7 @@ const country: CountryPage = {
       dataFile: '05-labs-keyword-overview-us-posts-countries-2.json',
     },
   ],
-  metaTitle: 'Germany export documents: EORI, customs declaration, Zoll',
+  metaTitle: 'Germany export documents: EORI and Zoll',
   description:
     'The documents a shipment to Germany needs: the entry summary declaration, the customs declaration for release for free circulation, the importer’s EORI number and the invoice and packing list behind them, from German Customs (Zoll) sources.',
   answer:
@@ -188,6 +188,7 @@ const country: CountryPage = {
     'c6-zoll-normal-clearance',
     'c6-zoll-customs-value',
     'trade-gov-commercial-invoice',
+    'trade-gov-packing-list',
   ],
   regulated: true,
   review: null,

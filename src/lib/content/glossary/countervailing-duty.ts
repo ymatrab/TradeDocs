@@ -14,7 +14,7 @@ const term: GlossaryTerm = {
     kd: 15,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Countervailing duty (CVD): how anti-subsidy duties work',
+  metaTitle: 'Countervailing duty (CVD) explained',
   description:
     'What a countervailing duty is, how an investigation decides whether one is imposed, who collects it in the United States, and what it means for your invoice and landed cost.',
   shortDefinition:

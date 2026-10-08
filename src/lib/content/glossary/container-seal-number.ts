@@ -13,7 +13,7 @@ const term: GlossaryTerm = {
     kd: null,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Container seal number: what it is and where it goes',
+  metaTitle: 'Container seal number: what it is',
   description:
     'What a container seal number is, why U.S. customs programmes call for ISO 17712 high-security seals, and where the number belongs on your bill of lading and packing list.',
   shortDefinition:

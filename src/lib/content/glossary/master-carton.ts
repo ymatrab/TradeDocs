@@ -13,7 +13,7 @@ const term: GlossaryTerm = {
     kd: null,
     dataFile: '01-labs-keyword-overview-us-glossary.json',
   },
-  metaTitle: 'Master carton meaning: outer cartons and inner packs',
+  metaTitle: 'Master carton: outer cartons, inner packs',
   description:
     'What a master carton is, how it relates to inner packs and pallets, and how to describe master cartons on a packing list so weights, counts and marks line up.',
   shortDefinition:

@@ -39,7 +39,7 @@ const country: CountryPage = {
       dataFile: '02-labs-keyword-overview-us-countries.json',
     },
   ],
-  metaTitle: 'South Korea export documents: invoice, packing list, UNI-PASS',
+  metaTitle: 'South Korea export documents and UNI-PASS',
   description:
     'The documents a shipment to South Korea needs: an original commercial invoice with two copies, two packing lists, the bill of lading and the importer’s UNI-PASS declaration, from Korea Customs Service and ITA sources.',
   answer:
