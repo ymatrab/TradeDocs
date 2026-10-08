@@ -95,6 +95,11 @@ import airFreightVsSeaFreight from './air-freight-vs-sea-freight';
 import commercialInvoiceDeclarationStatement from './commercial-invoice-declaration-statement';
 import exportPacking from './export-packing';
 import reuseShipmentDataForRepeatOrders from './reuse-shipment-data-for-repeat-orders';
+import exportComplianceChecklist from './export-compliance-checklist';
+import howToStartAnImportExportBusiness from './how-to-start-an-import-export-business';
+import letterOfIndemnity from './letter-of-indemnity';
+import partialShipments from './partial-shipments';
+import preShipmentInspection from './pre-shipment-inspection';
 
 export type Post = ContentArticle;
 
@@ -181,6 +186,11 @@ const ENTRIES: readonly Post[] = [
   commercialInvoiceDeclarationStatement,
   exportPacking,
   reuseShipmentDataForRepeatOrders,
+  exportComplianceChecklist,
+  howToStartAnImportExportBusiness,
+  letterOfIndemnity,
+  partialShipments,
+  preShipmentInspection,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);
