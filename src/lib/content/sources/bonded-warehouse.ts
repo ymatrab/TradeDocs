@@ -209,7 +209,7 @@ export default {
     url: 'https://www.ecfr.gov/current/title-15/section-772.1',
     jurisdiction: 'United States (export controls)',
     supports:
-      'the exporter being the person in the United States who has the authority of a principal party in interest to determine and control the sending of items out of the United States, and principal parties in interest being those who receive the primary benefit of the transaction, generally the seller and the buyer, with the forwarding or other agent in most cases not one of them',
+      'the exporter being the person in the United States who has the authority of a principal party in interest to determine and control the sending of items out of the United States, and principal parties in interest being those who receive the primary benefit of the transaction, generally the seller and the buyer, with the forwarding or other agent in most cases not one of them; exporter of record is not among the terms the section defines',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
