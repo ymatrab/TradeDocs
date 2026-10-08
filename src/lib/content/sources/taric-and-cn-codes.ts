@@ -169,4 +169,14 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b3-imo-ctu-code': {
+    authority: 'International Maritime Organization (IMO), with the ILO and UNECE',
+    title: 'MSC.1/Circ.1497: IMO/ILO/UNECE Code of Practice for Packing of Cargo Transport Units (CTU Code) (PDF)',
+    url: 'https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/1497.pdf',
+    jurisdiction: 'International (non-mandatory code of practice)',
+    supports:
+      'planning the packing in advance, not exceeding the permitted payload, complying with limits on concentrated loads and centre-of-gravity eccentricity, not stowing heavy goods on light goods, the centre of gravity near mid-length and mid-width and below half the height, the rule of thumb of 60% of the cargo mass in 50% of the container length, filling void spaces, the sum of void spaces in any horizontal direction not exceeding 15 cm, and the consignor describing the goods and the mass of the payload',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
