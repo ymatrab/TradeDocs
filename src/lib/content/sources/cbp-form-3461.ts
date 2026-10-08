@@ -149,4 +149,24 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'c2-cfr-19-141-1': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 141.1, via the eCFR',
+    title: '19 CFR § 141.1 — Liability of importer for duties',
+    url: 'https://www.ecfr.gov/current/title-19/section-141.1',
+    jurisdiction: 'United States (import)',
+    supports:
+      'duties accruing on arrival, duty being a personal debt of the importer not discharged by paying a broker who fails to pay, a bond not relieving the importer, payment directly or through a broker, the lien on imported goods, and no liability for a consignee who refuses unordered goods',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'c2-usc-19-1401a': {
+    authority: 'U.S. Code, 19 U.S.C. 1401a, via Cornell LII',
+    title: '19 U.S. Code § 1401a — Value',
+    url: 'https://www.law.cornell.edu/uscode/text/19/1401a',
+    jurisdiction: 'United States (import)',
+    supports:
+      'transaction value not including US customs duties and other Federal taxes payable by reason of importation, nor transport after importation, when identified separately from the price actually paid or payable',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
