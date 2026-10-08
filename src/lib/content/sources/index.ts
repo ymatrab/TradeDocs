@@ -29,6 +29,10 @@ import howToStartAnImportExportBusiness from './how-to-start-an-import-export-bu
 import cbpForm3461 from './cbp-form-3461';
 import usppi from './usppi';
 import ataCarnet from './ata-carnet';
+import aesExemptions from './aes-exemptions';
+import cifVsDap from './cif-vs-dap';
+import dapVsDpu from './dap-vs-dpu';
+import firstSaleRule from './first-sale-rule';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -73,6 +77,10 @@ export const ARTICLE_SOURCE_FILES = [
   cbpForm3461,
   usppi,
   ataCarnet,
+  aesExemptions,
+  cifVsDap,
+  dapVsDpu,
+  firstSaleRule,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

@@ -104,6 +104,22 @@ import cbpCustomsExam from './cbp-customs-exam';
 import cbpForm3461 from './cbp-form-3461';
 import customsBond from './customs-bond';
 import whoPaysImportDuties from './who-pays-import-duties';
+import aesExemptions from './aes-exemptions';
+import cfrVsCif from './cfr-vs-cif';
+import cifVsDap from './cif-vs-dap';
+import cifVsDdp from './cif-vs-ddp';
+import commercialInvoiceForReturnsAndRepairs from './commercial-invoice-for-returns-and-repairs';
+import dapVsDpu from './dap-vs-dpu';
+import exwVsDap from './exw-vs-dap';
+import firstSaleRule from './first-sale-rule';
+import fobVsCfr from './fob-vs-cfr';
+import freightQuoteChecklist from './freight-quote-checklist';
+import incotermsForAirFreight from './incoterms-for-air-freight';
+import invoiceLegalization from './invoice-legalization';
+import letterOfCreditDocuments from './letter-of-credit-documents';
+import oceanFreightSurcharges from './ocean-freight-surcharges';
+import powerOfAttorneyForCustoms from './power-of-attorney-for-customs';
+import ukExportLicence from './uk-export-licence';
 
 export type Post = ContentArticle;
 
@@ -199,6 +215,22 @@ const ENTRIES: readonly Post[] = [
   cbpForm3461,
   customsBond,
   whoPaysImportDuties,
+  aesExemptions,
+  cfrVsCif,
+  cifVsDap,
+  cifVsDdp,
+  commercialInvoiceForReturnsAndRepairs,
+  dapVsDpu,
+  exwVsDap,
+  firstSaleRule,
+  fobVsCfr,
+  freightQuoteChecklist,
+  incotermsForAirFreight,
+  invoiceLegalization,
+  letterOfCreditDocuments,
+  oceanFreightSurcharges,
+  powerOfAttorneyForCustoms,
+  ukExportLicence,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

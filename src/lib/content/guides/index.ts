@@ -58,6 +58,10 @@ import ioss from './ioss';
 import cbmAndWeightOrMeasure from './cbm-and-weight-or-measure';
 import dutyDrawback from './duty-drawback';
 import ataCarnet from './ata-carnet';
+import deMinimis from './de-minimis';
+import exportHealthCertificate from './export-health-certificate';
+import phytosanitaryCertificate from './phytosanitary-certificate';
+import shippingToNorthernIreland from './shipping-to-northern-ireland';
 
 export type GuideTable = ArticleTable;
 export type GuideSection = ArticleSection;
@@ -106,6 +110,10 @@ const ENTRIES: readonly Guide[] = [
   cbmAndWeightOrMeasure,
   dutyDrawback,
   ataCarnet,
+  deMinimis,
+  exportHealthCertificate,
+  phytosanitaryCertificate,
+  shippingToNorthernIreland,
 ];
 
 export const GUIDES: readonly Guide[] = orderArticles(ENTRIES);

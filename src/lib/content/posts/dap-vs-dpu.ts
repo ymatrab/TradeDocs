@@ -175,14 +175,14 @@ const article: ContentArticle = {
     '/blog/exw-vs-ddp',
   ],
   cover: {
-    id: 'IcB8U3l9Slg',
-    src: 'https://images.unsplash.com/photo-1770827730773-cc7848b2ee61',
-    width: 5635,
-    height: 3757,
-    alt: 'Orange forklift outside an industrial building, the kind of equipment DPU leaves to the seller',
-    caption: 'Forklift parked outside an industrial building',
-    photographer: { name: 'Osmany M Leyva Aldana', profile: 'https://unsplash.com/@ozym' },
-    page: 'https://unsplash.com/photos/orange-forklift-parked-outside-industrial-building-IcB8U3l9Slg',
+    id: 'wLfXSr__uyc',
+    src: 'https://images.unsplash.com/photo-1774929107043-f8cb2bd3ef8e',
+    width: 4608,
+    height: 3456,
+    alt: 'An orange terminal tractor moving shipping containers across a port yard',
+    caption: 'A terminal tractor at a container port',
+    photographer: { name: 'PortCalls Asia', profile: 'https://unsplash.com/@portcalls' },
+    page: 'https://unsplash.com/photos/orange-terminal-tractor-with-shipping-containers-at-port-wLfXSr__uyc',
   },
 };
 
