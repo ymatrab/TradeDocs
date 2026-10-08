@@ -187,6 +187,16 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'd5-cmi-ga-security': {
+    authority: 'Comité Maritime International (CMI)',
+    title: 'CMI General Average Guidelines and Security Forms',
+    url: 'https://comitemaritime.org/work/cmi-general-average-guidelines-and-security-forms/',
+    jurisdiction: 'International (general average practice)',
+    supports:
+      'the CMI publishing recommended standard security forms for general average cases, a GA bond for cargo and a GA guarantee for cargo among them, completed with case details by the shipowner or the appointed average adjuster, and the guidelines and forms being approved by the International Union of Marine Insurance (IUMI) and the International Chamber of Shipping',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
   'd5-ec-sad-form': {
     authority: 'European Commission, Directorate-General for Taxation and Customs Union',
     title: 'The single administrative document (SAD): presentation and use of the form',
