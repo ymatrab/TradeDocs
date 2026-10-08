@@ -40,6 +40,21 @@ import customsDeclaration from './customs-declaration';
 import masterCarton from './master-carton';
 import tariffRateQuota from './tariff-rate-quota';
 import usppi from './usppi';
+import breakBulk from './break-bulk';
+import containerFreightStation from './container-freight-station';
+import countryOfOrigin from './country-of-origin';
+import dutyDefermentAccount from './duty-deferment-account';
+import exciseDuty from './excise-duty';
+import generalAverage from './general-average';
+import gvms from './gvms';
+import ics2 from './ics2';
+import importLicense from './import-license';
+import inBondShipment from './in-bond-shipment';
+import reExport from './re-export';
+import routedExportTransaction from './routed-export-transaction';
+import singleAdministrativeDocument from './single-administrative-document';
+import standbyLetterOfCredit from './standby-letter-of-credit';
+import ultimateConsignee from './ultimate-consignee';
 
 const ENTRIES: readonly GlossaryTerm[] = [
   // One line per term, alphabetical by slug.
@@ -66,6 +81,21 @@ const ENTRIES: readonly GlossaryTerm[] = [
   masterCarton,
   tariffRateQuota,
   usppi,
+  breakBulk,
+  containerFreightStation,
+  countryOfOrigin,
+  dutyDefermentAccount,
+  exciseDuty,
+  generalAverage,
+  gvms,
+  ics2,
+  importLicense,
+  inBondShipment,
+  reExport,
+  routedExportTransaction,
+  singleAdministrativeDocument,
+  standbyLetterOfCredit,
+  ultimateConsignee,
 ];
 
 /** Every term page, alphabetical by display name. */

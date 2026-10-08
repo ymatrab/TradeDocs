@@ -33,6 +33,7 @@ import aesExemptions from './aes-exemptions';
 import cifVsDap from './cif-vs-dap';
 import dapVsDpu from './dap-vs-dpu';
 import firstSaleRule from './first-sale-rule';
+import ics2 from './ics2';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -81,6 +82,7 @@ export const ARTICLE_SOURCE_FILES = [
   cifVsDap,
   dapVsDpu,
   firstSaleRule,
+  ics2,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;
