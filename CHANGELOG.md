@@ -2,6 +2,18 @@
 
 ## Unreleased — 2026-09-06
 
+### Content wave D (D-022 wave D)
+
+- 16 posts and 4 guides: first sale rule, invoice legalization, returns and repairs, de minimis,
+  customs power of attorney, CIF vs DAP, EXW vs DAP, CFR vs CIF, CIF vs DDP, DAP vs DPU, FOB vs
+  CFR, Incoterms for air freight, ocean freight surcharges, freight quote checklist, AES
+  exemptions, UK export licence, letter of credit documents, phytosanitary certificates,
+  export health certificates, shipping to Northern Ireland. The certificate and Northern
+  Ireland guides say TradeDocs does not issue or file them; indexed per D-015.
+- 15 glossary terms (7 regulated: mechanism only) and Japan and Ireland country pages.
+- Carrier sites (Hapag-Lloyd, DHL, Maersk) did not load, so no carrier facts or surcharge
+  amounts are stated. All pending CI.
+
 ### Content wave C, export price calculator, use-case pages (D-022 wave C)
 
 - `/tools/export-price-calculator`: EXW → FCA/FOB → CFR/CPT → CIF/CIP plus a DDP estimate from
