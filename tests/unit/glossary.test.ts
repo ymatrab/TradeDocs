@@ -127,7 +127,9 @@ describe('glossary terms', () => {
     expect(GLOSSARY_DISCLAIMER).toMatch(/not legal, customs or tax advice/);
   });
 
-  it('list the hub and every unregulated or reviewed term in the sitemap, and nothing else', () => {
+  // Owner decision 2026-10-08 (D-015 applied to terms): sourced terms are listed at launch,
+  // regulated or not, and reviewed afterwards.
+  it('list the hub and every sourced term in the sitemap, and nothing else', () => {
     expect(sitemapPaths.get('/glossary')).toBe(GLOSSARY_UPDATED);
     for (const term of GLOSSARY) {
       const path = `/glossary/${term.slug}`;
@@ -135,10 +137,10 @@ describe('glossary terms', () => {
       else expect(sitemapPaths.has(path), term.slug).toBe(false);
     }
     expect(LISTED_GLOSSARY.every(isTermListed)).toBe(true);
+    expect(GLOSSARY.every(isTermListed)).toBe(true);
     const regulated = { ...GLOSSARY[0]!, regulated: true, review: null };
-    expect(isTermListed(regulated)).toBe(false);
-    const reviewed = { ...regulated, review: { reviewer: 'A. Person', date: '2026-10-08' } };
-    expect(isTermListed(reviewed)).toBe(true);
+    expect(isTermListed(regulated)).toBe(true);
+    expect(isTermListed({ ...regulated, sources: [] })).toBe(false);
     expect(sitemap().some((entry) => entry.url.endsWith('/glossary'))).toBe(true);
   });
 
