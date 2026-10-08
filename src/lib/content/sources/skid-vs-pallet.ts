@@ -101,4 +101,25 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b1-csc-msc-355-92': {
+    authority:
+      'International Maritime Organization, Resolution MSC.355(92) amending the International Convention for Safe Containers (CSC), as published in the Dutch Treaty Series (Tractatenblad 2014, 145)',
+    title: 'Amendments to the International Convention for Safe Containers (CSC), 1972',
+    url: 'https://zoek.officielebekendmakingen.nl/trb-2014-145.html',
+    jurisdiction: 'International (container safety)',
+    supports:
+      'maximum operating gross mass (rating, R) as the maximum allowable sum of the mass of the container and its cargo, tare as the empty container’s mass, maximum permissible payload (P) as the difference, the Safety Approval Plate showing the maximum operating gross mass in kg and lb, and all gross mass markings having to be consistent with the plate',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b1-cfr-23-658-17': {
+    authority: 'Federal Highway Administration, 23 CFR 658.17, via Cornell LII',
+    title: '23 CFR § 658.17 — Weight',
+    url: 'https://www.law.cornell.edu/cfr/text/23/658.17',
+    jurisdiction: 'United States (Interstate highways)',
+    supports:
+      'a maximum gross vehicle weight of 80,000 pounds, 20,000 pounds on a single axle and 34,000 pounds on tandem axles, subject to the bridge formula',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
