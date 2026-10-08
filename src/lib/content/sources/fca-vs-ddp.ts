@@ -15,7 +15,7 @@ export default {
     url: 'https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/',
     jurisdiction: 'International (contractual rules, not law)',
     supports:
-      'the eleven three-letter rules published by the ICC for business-to-business sale contracts, in use since 1936 and last updated in 2020; the FCA option for an on-board bill of lading; costs listed together in articles A9/B9',
+      'the eleven three-letter rules published by the ICC for business-to-business sale contracts, in use since 1936 and last updated in 2020; the FCA option for an on-board bill of lading; CIP requiring cover compliant with Institute Cargo Clauses (A) or similar; costs listed together in articles A9/B9',
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
