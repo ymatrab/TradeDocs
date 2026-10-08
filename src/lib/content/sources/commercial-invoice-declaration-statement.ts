@@ -61,4 +61,14 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'c5-trade-gov-shipping-options': {
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Shipping Options',
+    url: 'https://www.trade.gov/shipping-options',
+    jurisdiction: 'United States (export guidance)',
+    supports:
+      'an export shipment needing to be packed correctly so it arrives in good condition, labelled correctly so it is handled properly and reaches the right place, and insured against damage, loss, pilferage or delay, with freight forwarders able to recommend packing methods',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
