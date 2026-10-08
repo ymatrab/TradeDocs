@@ -11,7 +11,7 @@
   capability flags; the forwarders page says it is document preparation, not a TMS.
 - 26 articles (posts and guides: US customs, Incoterm comparisons, UK/EU VAT and declarations,
   IOSS, export business, product-led), 9 glossary terms (3 regulated: mechanism only, no
-  rates), Germany and South Korea country pages. ATA carnet pending.
+  rates), Germany and South Korea country pages, and the ATA carnet guide.
 - Carrier sites (UPS, FedEx, DHL) blocked fetches, so no carrier facts were stated.
 - All pending CI.
 
