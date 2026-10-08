@@ -13,7 +13,8 @@ const PENDING = 'pending owner review';
 export default {
   'e4-ftr-30-4-timing': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.4), via Cornell LII',
-    title: '15 CFR § 30.4 — Electronic Export Information filing procedures, deadlines, and certification statements',
+    title:
+      '15 CFR § 30.4 — Electronic Export Information filing procedures, deadlines, and certification statements',
     url: 'https://www.law.cornell.edu/cfr/text/15/30.4',
     jurisdiction: 'United States (export reporting)',
     supports:
@@ -92,7 +93,8 @@ export default {
     reviewer: PENDING,
   },
   'e4-emsa-unlocode': {
-    authority: 'European Maritime Safety Agency (EMSA), CISE data model, describing UNECE UN/LOCODE',
+    authority:
+      'European Maritime Safety Agency (EMSA), CISE data model, describing UNECE UN/LOCODE',
     title: 'PortLocation: LocationCode attribute',
     url: 'https://emsa.europa.eu/cise-documentation/cise-data-model-1.5.3/model/info/PortLocation_LocationCode.html',
     jurisdiction: 'International (UN/LOCODE, as used in EU maritime data)',
