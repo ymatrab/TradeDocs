@@ -50,4 +50,73 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'b2-gov-uk-import-step-by-step': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'Import goods into the UK: step by step',
+    url: 'https://www.gov.uk/import-goods-into-uk',
+    jurisdiction: 'United Kingdom (imports)',
+    supports:
+      'the import steps: a GB EORI number, deciding who makes the declaration, the commodity code setting the duty rate, trade agreements and reliefs, the declared value setting duty and VAT, reclaiming import VAT with the C79, and keeping invoices and records',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-goods-sent-from-abroad': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'Tax and customs for goods sent from abroad: tax and duty',
+    url: 'https://www.gov.uk/goods-sent-from-abroad/tax-and-duty',
+    jurisdiction: 'United Kingdom (imports, goods sent from abroad)',
+    supports:
+      'no Customs Duty on non-excise goods worth £135 or less sent to Great Britain, duty above £135 at the rate for the goods and their origin, no VAT on gifts worth £39 or less, and different rules for Northern Ireland',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-value-imports': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'How to value your imports for Customs Duty and trade statistics',
+    url: 'https://www.gov.uk/guidance/how-to-value-your-imports-for-customs-duty-and-trade-statistics',
+    jurisdiction: 'United Kingdom (imports)',
+    supports:
+      'the customs value being the basis for Customs Duty, import VAT and trade statistics, the six valuation methods starting with Method 1 (transaction value), and exchange rates for foreign currency amounts',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-vat-on-imports': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'Paying VAT on imports from outside the UK to Great Britain',
+    url: 'https://www.gov.uk/guidance/vat-imports-acquisitions-and-purchases-from-abroad',
+    jurisdiction: 'United Kingdom (import VAT)',
+    supports:
+      'the value for import VAT being the customs value plus incidental costs to the first UK destination and any Customs Duty, postponed VAT accounting on the VAT Return for VAT-registered businesses, and reclaiming import VAT as input tax',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-vat-rates': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'VAT rates',
+    url: 'https://www.gov.uk/vat-rates',
+    jurisdiction: 'United Kingdom (VAT)',
+    supports: 'the standard rate of 20%, the reduced rate of 5% and the zero rate',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-trade-tariff': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'Trade Tariff: look up commodity codes, duty and VAT rates',
+    url: 'https://www.gov.uk/trade-tariff',
+    jurisdiction: 'United Kingdom (imports and exports)',
+    supports:
+      'the Trade Tariff service for finding a commodity code and checking the duty and VAT to pay, including suspensions and reductions',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'b2-gov-uk-preference-agreements': {
+    authority: 'GOV.UK (HM Revenue & Customs)',
+    title: 'Pay less Customs Duty on goods from a country with a UK trade agreement',
+    url: 'https://www.gov.uk/guidance/import-and-export-goods-using-preference-agreements',
+    jurisdiction: 'United Kingdom (imports)',
+    supports:
+      'reduced duty under a UK trade agreement, meeting the rules of origin on every claim, the Trade Tariff showing which proof of origin can be used, and keeping the proof for at least 4 years',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
 } satisfies Record<string, SourceFields>;
