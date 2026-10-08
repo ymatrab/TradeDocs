@@ -62,9 +62,10 @@ describe('glossary terms', () => {
     expect(findTerm('not-a-term')).toBeUndefined();
   });
 
-  it('rest on measured demand of 200 searches a month or more, from a saved file', () => {
+  // Owner decision 2026-10-09 (wave E): the floor for a term page is 100 searches a month.
+  it('rest on measured demand of 100 searches a month or more, from a saved file', () => {
     for (const term of GLOSSARY) {
-      expect(term.demand.volume, term.slug).toBeGreaterThanOrEqual(200);
+      expect(term.demand.volume, term.slug).toBeGreaterThanOrEqual(100);
       expect(existsSync(join(DATA_DIR, term.demand.dataFile)), term.slug).toBe(true);
     }
   });

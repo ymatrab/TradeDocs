@@ -120,6 +120,19 @@ import letterOfCreditDocuments from './letter-of-credit-documents';
 import oceanFreightSurcharges from './ocean-freight-surcharges';
 import powerOfAttorneyForCustoms from './power-of-attorney-for-customs';
 import ukExportLicence from './uk-export-licence';
+import airWaybillVsBillOfLading from './air-waybill-vs-bill-of-lading';
+import billOfLadingNumber from './bill-of-lading-number';
+import cbpForm28 from './cbp-form-28';
+import containerNumberFormat from './container-number-format';
+import cptVsDdp from './cpt-vs-ddp';
+import exportingAVehicleFromTheUs from './exporting-a-vehicle-from-the-us';
+import fcaVsDdp from './fca-vs-ddp';
+import fumigationCertificate from './fumigation-certificate';
+import howToReadAnAwbNumber from './how-to-read-an-awb-number';
+import importDocumentsChecklist from './import-documents-checklist';
+import packingListVsBillOfLading from './packing-list-vs-bill-of-lading';
+import quotationValidityPeriod from './quotation-validity-period';
+import shippingBookingRequest from './shipping-booking-request';
 
 export type Post = ContentArticle;
 
@@ -231,6 +244,19 @@ const ENTRIES: readonly Post[] = [
   oceanFreightSurcharges,
   powerOfAttorneyForCustoms,
   ukExportLicence,
+  airWaybillVsBillOfLading,
+  billOfLadingNumber,
+  cbpForm28,
+  containerNumberFormat,
+  cptVsDdp,
+  exportingAVehicleFromTheUs,
+  fcaVsDdp,
+  fumigationCertificate,
+  howToReadAnAwbNumber,
+  importDocumentsChecklist,
+  packingListVsBillOfLading,
+  quotationValidityPeriod,
+  shippingBookingRequest,
 ];
 
 export const POSTS: readonly Post[] = orderArticles(ENTRIES);

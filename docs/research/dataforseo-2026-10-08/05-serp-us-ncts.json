@@ -1,0 +1,519 @@
+{
+  "id": "10081048-2048-0139-0000-22b935c03ccf",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_group": 1,
+      "rank_absolute": 1,
+      "page": 1,
+      "markdown": "\"NCTS\" can refer to `several different organizations, systems, or entities` depending on the context:\n\n- **New Computerised Transit System (NCTS):** A European-standard electronic customs system used to monitor and streamline the international movement of goods across Common Transit countries, with Phase 5 deployments rolling out through late 2024.[[1]](https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/new-computerised-transit-system-ncts_en)[[2]](https://ncts.ge/)\n- **National Car Testing Service (NCT):** The official compulsory vehicle inspection program in Ireland, managed via the [National Car Testing Service](https://www.ncts.ie/).[[1]](https://www.ncts.ie/)\n- **Naval Computer and Telecommunications Station (NCTS):** U.S. Navy communication commands—such as [NCTS San Diego](https://www.navifor.usff.navy.mil/ncts-sandiego/) or NCTS Sicily—that provide secure tactical and internet communications for fleet operations.[[1]](https://www.navifor.usff.navy.mil/ncts-sandiego/)[[2]](https://www.navy.mil/Press-Office/News-Stories/Article/2250525/ncts-sicily-who-we-are-what-we-do/)\n- **National Ceramic Tile & Stone, Corp. (NCTS Corp):** A large commercial tile and stone contractor operating on the West Coast of the United States.[[1]](https://www.nctscorp.com/)\n- **Nationally Certified Transition Specialist (NCTS):** A professional credential offered by the [Council for Exceptional Children](https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts) for secondary special education transition specialists.[[1]](https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts)\n- **NCTS (Music Artist):** A Brazilian phonk and electronic music artist known for viral tracks like *NEXT!* and *stop!* on streaming platforms like [Spotify](https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG).[[1]](https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG)[[2]](https://m.youtube.com/watch?v=EJfB_zMmqes)[[3]](https://www.youtube.com/watch?v=dT9uBhbTo1k)\n\nWhich specific **NCTS** definition or topic are you looking for more information about?",
+      "items": [
+        {
+          "type": "ai_overview_element",
+          "text": "\"NCTS\" can refer to several different organizations, systems, or entities depending on the context:",
+          "markdown": "\"NCTS\" can refer to `several different organizations, systems, or entities` depending on the context:"
+        },
+        {
+          "type": "ai_overview_element",
+          "text": "New Computerised Transit System (NCTS): A European-standard electronic customs system used to monitor and streamline the international movement of goods across Common Transit countries, with Phase 5 deployments rolling out through late 2024. National Car Testing Service (NCT): The official compulsory vehicle inspection program in Ireland, managed via the National Car Testing Service. Naval Computer and Telecommunications Station (NCTS): U.S. Navy communication commands—such as NCTS San Diego or NCTS Sicily—that provide secure tactical and internet communications for fleet operations. National Ceramic Tile & Stone, Corp. (NCTS Corp): A large commercial tile and stone contractor operating on the West Coast of the United States. Nationally Certified Transition Specialist (NCTS): A professional credential offered by the Council for Exceptional Children for secondary special education transition specialists. NCTS (Music Artist) : A Brazilian phonk and electronic music artist known for viral tracks like NEXT! and stop! on streaming platforms like Spotify.",
+          "markdown": "- **New Computerised Transit System (NCTS):** A European-standard electronic customs system used to monitor and streamline the international movement of goods across Common Transit countries, with Phase 5 deployments rolling out through late 2024.[[1]](https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/new-computerised-transit-system-ncts_en)[[2]](https://ncts.ge/)\n- **National Car Testing Service (NCT):** The official compulsory vehicle inspection program in Ireland, managed via the [National Car Testing Service](https://www.ncts.ie/).[[1]](https://www.ncts.ie/)\n- **Naval Computer and Telecommunications Station (NCTS):** U.S. Navy communication commands—such as [NCTS San Diego](https://www.navifor.usff.navy.mil/ncts-sandiego/) or NCTS Sicily—that provide secure tactical and internet communications for fleet operations.[[1]](https://www.navifor.usff.navy.mil/ncts-sandiego/)[[2]](https://www.navy.mil/Press-Office/News-Stories/Article/2250525/ncts-sicily-who-we-are-what-we-do/)\n- **National Ceramic Tile & Stone, Corp. (NCTS Corp):** A large commercial tile and stone contractor operating on the West Coast of the United States.[[1]](https://www.nctscorp.com/)\n- **Nationally Certified Transition Specialist (NCTS):** A professional credential offered by the [Council for Exceptional Children](https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts) for secondary special education transition specialists.[[1]](https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts)\n- **NCTS (Music Artist):** A Brazilian phonk and electronic music artist known for viral tracks like *NEXT!* and *stop!* on streaming platforms like [Spotify](https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG).[[1]](https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG)[[2]](https://m.youtube.com/watch?v=EJfB_zMmqes)[[3]](https://www.youtube.com/watch?v=dT9uBhbTo1k)",
+          "links": [
+            {
+              "type": "link_element",
+              "title": "National Car Testing Service",
+              "url": "https://www.ncts.ie/",
+              "domain": "www.ncts.ie"
+            },
+            {
+              "type": "link_element",
+              "title": "NCTS San Diego",
+              "url": "https://www.navifor.usff.navy.mil/ncts-sandiego/",
+              "domain": "www.navifor.usff.navy.mil"
+            },
+            {
+              "type": "link_element",
+              "title": "Council for Exceptional Children",
+              "url": "https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts",
+              "domain": "exceptionalchildren.org"
+            },
+            {
+              "type": "link_element",
+              "title": "Spotify",
+              "url": "https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG",
+              "domain": "open.spotify.com"
+            }
+          ],
+          "references": [
+            {
+              "type": "ai_overview_reference",
+              "source": "Taxation and Customs Union",
+              "domain": "taxation-customs.ec.europa.eu",
+              "url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/new-computerised-transit-system-ncts_en",
+              "title": "New Computerised Transit System (NCTS)",
+              "text": "History of NCTS In 1997, the Commission adopted an action plan to reform the transit system in Europe. This reform aimed to recrea..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "ncts.ge",
+              "domain": "ncts.ge",
+              "url": "https://ncts.ge/",
+              "title": "Customs Warehouse & NCTS (T1/T2) Declarations in Georgia",
+              "text": "Customs Warehouse and. NCTS Services. ULC Terminal LLC is a customs warehouse authorized by the Revenue Service of Georgia, offeri..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "NCT",
+              "domain": "www.ncts.ie",
+              "url": "https://www.ncts.ie/",
+              "title": "The only official booking website for all NCT bookings",
+              "text": "The only official booking website for all NCT bookings Statistics Annual Statistics Test Statistics by NCT Centre Test Statistics ..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "navifor (.mil)",
+              "domain": "www.navifor.usff.navy.mil",
+              "url": "https://www.navifor.usff.navy.mil/ncts-sandiego/",
+              "title": "NCTS San Diego",
+              "text": "NCTS San Diego Menu * About Us History Base Level Communications BCO Contact List * Leadership Commanding Officer Executive Office..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "www.navy.mil",
+              "domain": "www.navy.mil",
+              "url": "https://www.navy.mil/Press-Office/News-Stories/Article/2250525/ncts-sicily-who-we-are-what-we-do/",
+              "title": "NCTS Sicily - Who We Are, What We Do",
+              "text": "From PO2 Benjamin Larkin, Technical Support Communications Watch Officer Reliable communications warn allied nations of the advers..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "NCTS Corp",
+              "domain": "www.nctscorp.com",
+              "url": "https://www.nctscorp.com/",
+              "title": "Commercial Tile & Stone Contractor | West Coast | NCTS Corp",
+              "text": "Company: NCTS Corp (West Coast's largest commercial tile and stone contractor, 15+ years in business, NTCA Five-Star member, ICEBA..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "Council for Exceptional Children",
+              "domain": "exceptionalchildren.org",
+              "url": "https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts",
+              "title": "Nationally Certified Transition Specialist (NCTS) | Council for Exceptional Children",
+              "text": "Nationally Certified Transition Specialist (NCTS) The Nationally Certified Transition Specialist (NCTS) credential is the marker o..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "Spotify",
+              "domain": "open.spotify.com",
+              "url": "https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG",
+              "title": "NCTS",
+              "text": "Popular releases * Dreams & NightmaresLatest Release • EP * NEXT!2024 • Album * NEXT UP!2024 • EP * MADRUGADA2025 • Album * GATA N..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "YouTube",
+              "domain": "m.youtube.com",
+              "url": "https://m.youtube.com/watch?v=EJfB_zMmqes",
+              "title": "NCTS - NEXT!",
+              "text": "NCTS - NEXT! - YouTube This content isn't available. \"NEXT!\" by NCTS is a high-octane Brazilian Phonk anthem, engineered with aggr..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "YouTube",
+              "domain": "www.youtube.com",
+              "url": "https://www.youtube.com/watch?v=dT9uBhbTo1k",
+              "title": "ncts - stop! (Official Audios)",
+              "text": "My Playlists: https://open.spotify.c... * https://open.spotify.c... TRACKLIST: * 00:00 ncts - stop! - Original Mix * 01:15 ncts - ..."
+            }
+          ]
+        },
+        {
+          "type": "ai_overview_element",
+          "text": "Which specific NCTS definition or topic are you looking for more information about?",
+          "markdown": "Which specific **NCTS** definition or topic are you looking for more information about?"
+        }
+      ],
+      "references": [
+        {
+          "type": "ai_overview_reference",
+          "source": "NCTS Corp",
+          "domain": "www.nctscorp.com",
+          "url": "https://www.nctscorp.com/",
+          "title": "Commercial Tile & Stone Contractor | West Coast | NCTS Corp",
+          "text": "Company: NCTS Corp (West Coast's largest commercial tile and stone contractor, 15+ years in business, NTCA Five-Star member, ICEBA..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "Taxation and Customs Union",
+          "domain": "taxation-customs.ec.europa.eu",
+          "url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/new-computerised-transit-system-ncts_en",
+          "title": "New Computerised Transit System (NCTS)",
+          "text": "History of NCTS In 1997, the Commission adopted an action plan to reform the transit system in Europe. This reform aimed to recrea..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "navifor (.mil)",
+          "domain": "www.navifor.usff.navy.mil",
+          "url": "https://www.navifor.usff.navy.mil/ncts-sandiego/",
+          "title": "NCTS San Diego",
+          "text": "NCTS San Diego Menu * About Us History Base Level Communications BCO Contact List * Leadership Commanding Officer Executive Office..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "Council for Exceptional Children",
+          "domain": "exceptionalchildren.org",
+          "url": "https://exceptionalchildren.org/nationally-certified-transition-specialist-ncts",
+          "title": "Nationally Certified Transition Specialist (NCTS) | Council for Exceptional Children",
+          "text": "Nationally Certified Transition Specialist (NCTS) The Nationally Certified Transition Specialist (NCTS) credential is the marker o..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "Spotify",
+          "domain": "open.spotify.com",
+          "url": "https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG",
+          "title": "NCTS",
+          "text": "Popular releases * Dreams & NightmaresLatest Release • EP * NEXT!2024 • Album * NEXT UP!2024 • EP * MADRUGADA2025 • Album * GATA N..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "www.navy.mil",
+          "domain": "www.navy.mil",
+          "url": "https://www.navy.mil/Press-Office/News-Stories/Article/2250525/ncts-sicily-who-we-are-what-we-do/",
+          "title": "NCTS Sicily - Who We Are, What We Do",
+          "text": "From PO2 Benjamin Larkin, Technical Support Communications Watch Officer Reliable communications warn allied nations of the advers..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "NCT",
+          "domain": "www.ncts.ie",
+          "url": "https://www.ncts.ie/",
+          "title": "The only official booking website for all NCT bookings",
+          "text": "The only official booking website for all NCT bookings Statistics Annual Statistics Test Statistics by NCT Centre Test Statistics ..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "ncts.ge",
+          "domain": "ncts.ge",
+          "url": "https://ncts.ge/",
+          "title": "Customs Warehouse & NCTS (T1/T2) Declarations in Georgia",
+          "text": "Customs Warehouse and. NCTS Services. ULC Terminal LLC is a customs warehouse authorized by the Revenue Service of Georgia, offeri..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "YouTube",
+          "domain": "www.youtube.com",
+          "url": "https://www.youtube.com/watch?v=dT9uBhbTo1k",
+          "title": "ncts - stop! (Official Audios)",
+          "text": "My Playlists: https://open.spotify.c... * https://open.spotify.c... TRACKLIST: * 00:00 ncts - stop! - Original Mix * 01:15 ncts - ..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "YouTube",
+          "domain": "m.youtube.com",
+          "url": "https://m.youtube.com/watch?v=EJfB_zMmqes",
+          "title": "NCTS - NEXT!",
+          "text": "NCTS - NEXT! - YouTube This content isn't available. \"NEXT!\" by NCTS is a high-octane Brazilian Phonk anthem, engineered with aggr..."
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "rank_group": 1,
+      "rank_absolute": 2,
+      "page": 1,
+      "items": [
+        {
+          "type": "video_element",
+          "source": "YouTube · Kakashi",
+          "title": "NCTS - NEXT!",
+          "timestamp": "2025-08-27 00:00:00 +00:00",
+          "url": "https://www.youtube.com/watch?v=mohavlK82Q8"
+        },
+        {
+          "type": "video_element",
+          "source": "YouTube · broke records",
+          "title": "NCTS - NÁCAR!",
+          "timestamp": "2025-04-12 00:00:00 +00:00",
+          "url": "https://www.youtube.com/watch?v=uLbi6Ne9EYc"
+        },
+        {
+          "type": "video_element",
+          "source": "YouTube · broke records",
+          "title": "NCTS - NEXT!",
+          "timestamp": "2024-07-25 00:00:00 +00:00",
+          "url": "https://www.youtube.com/watch?v=TFizVLexsxU"
+        },
+        {
+          "type": "video_element",
+          "source": "YouTube · Lyrics & Music",
+          "title": "NCTS - Next Up (Long Version) (Official Audio)",
+          "timestamp": "2025-05-20 00:00:00 +00:00",
+          "url": "https://www.youtube.com/watch?v=v8PWS95AU0Q"
+        }
+      ]
+    },
+    {
+      "type": "people_also_ask",
+      "rank_group": 1,
+      "rank_absolute": 3,
+      "page": 1,
+      "items": [
+        {
+          "type": "people_also_ask_element",
+          "title": "What does NCTS stand for?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is the NCTS refund policy?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is NCTs military?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is the NCTS code?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 1,
+      "rank_absolute": 4,
+      "page": 1,
+      "domain": "open.spotify.com",
+      "title": "NEXT! - Single by NCTS",
+      "url": "https://open.spotify.com/album/1k9oQsBjwIhc4vF32zxvY5",
+      "breadcrumb": "https://open.spotify.com › album",
+      "website_name": "Spotify - Web Player: Music for everyone",
+      "description": "Listen to NEXT! on Spotify · single · NCTS · 2024 · 4 songs. ... More by NCTS. NEXT! Single • 2024. NEXT UP! EP • 2024. MADRUGADA. Single • 2025. Read more",
+      "highlighted": [
+        "NEXT! Single • 2024"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://open.spotify.com/album/1k9oQsBjwIhc4vF32zxvY5#:~:text=More%20by%20NCTS,Single%20%E2%80%A2%202025",
+          "domain": "open.spotify.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 2,
+      "rank_absolute": 5,
+      "page": 1,
+      "domain": "www.ncts.co",
+      "title": "ncts-mobile-access",
+      "url": "https://www.ncts.co/ncts-mobile-access/",
+      "breadcrumb": "https://www.ncts.co › ncts-mobile-access",
+      "website_name": "ncts.co",
+      "description": "NCTS. Computer Parts Manufacturing. Home · Contact · Home · Contact ... Copyright © 2023 NCTS LLC Since 2008 | Powered by NCTS Certificates and ... Read more",
+      "highlighted": [
+        "NCTS"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.ncts.co/ncts-mobile-access/#:~:text=Computer%20Parts%20Manufacturing&text=Copyright%20%C2%A9%202023%20NCTS%20LLC,Certificates%20and%20Registration",
+          "domain": "www.ncts.co"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 3,
+      "rank_absolute": 6,
+      "page": 1,
+      "domain": "www.indeed.com",
+      "title": "NCTS Careers and Employment",
+      "url": "https://www.indeed.com/cmp/Ncts",
+      "breadcrumb": "https://www.indeed.com › cmp › Ncts",
+      "website_name": "Indeed",
+      "description": "Find out what works well at NCTS from the people who know best. Get the inside scoop on jobs, salaries, top office locations, and CEO insights.",
+      "highlighted": [
+        "Get the inside scoop on jobs, salaries, top office locations, and CEO insights"
+      ]
+    },
+    {
+      "type": "images",
+      "rank_group": 1,
+      "rank_absolute": 7,
+      "page": 1,
+      "title": "Images",
+      "url": "https://www.google.com/search?sca_esv=e2130cf16db8d2a2&hl=en&gl=US&sxsrf=APpeQnv-MnRSS6Ilni_pTV66xIvN6dl-CQ:1791456517908&q=ncts&udm=2&source=univ&fir=gZAybH7OPhTyJM%252CelrU7hiTRaLyhM%252C_%253BnhzB8YAAH4nBZM%252CoTDWIxPSGa18bM%252C_%253BHyjOAgRu090HmM%252CCeoidYcZ7CBBpM%252C_%253B9kJjiZlQr42iFM%252CLWHAjWN6B6-IOM%252C_%253Bzg2f6NXLBPWB2M%252C_hbrhusET52wCM%252C_%253BjMGAOslrYY6lHM%252CrnAr0SG7xLVhrM%252C_%253BngYJ5YZhWLBIMM%252CnmZrqPA34BDk6M%252C_%253BH_DVQlKYwiBbCM%252C9kLitGXtmdDpyM%252C_%253BytMuS93uQdp5rM%252C6zwL7N813IribM%252C_&usg=AI4_-kQpYTkLqAS2vVEB2tiqwi1GdX459w&sa=X&ved=2ahUKEwjkwYTLn6qXAxWkVfEDHf0fI54Q7Al6BAhFEAU",
+      "items": [
+        {
+          "type": "images_element",
+          "alt": "NCTS | Spotify",
+          "url": "https://open.spotify.com/artist/6BWtcMF39LT5Db5FT54YYG",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDa2UHgmLtp9MUYzwzHMYxp7egnL_mdj2yQPy90DdCU1bporKkAsgqvqA&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "National Center for Transportation Studies – UP Institute of ...",
+          "url": "https://ice.upd.edu.ph/national-center-for-transportation-studies/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU_BzkcXlZoLNmQzhavvoXhejy5lTXeyTvbZkqoo6R_S7jcr68KYXHq0I&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "File:National Center for Theoretical Sciences (NCTS) Logo ...",
+          "url": "https://commons.wikimedia.org/wiki/File:National_Center_for_Theoretical_Sciences_(NCTS)_Logo.jpg",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFNhuc4fee9dRfdFbYOhnt48u7DFWx0HtKIlEgiqvLFuWYKkpC_CfUqdI&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "New Computerised Transit System (NCTS) - Taxation and ...",
+          "url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/new-computerised-transit-system-ncts_en",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHegQSzKbkMjKr3q4Yi3x3luA8yN67veCsm7GcaoSe93aMzR-iKawyG6k&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "NCTS P5: Key Changes in the New Phase 5 Release - Gateway",
+          "url": "https://www.gateway.nl/en/blog/ncts-phase-5-update-2024/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS91BP3cJ9JoAvRI43OG05E7ixyYBhQXOq6gF6WfAKtfUTGoyCNUKAGlxs&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "NCTS (@NCTS.CO) • Facebook",
+          "url": "https://www.facebook.com/NCTS.CO/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrToZRFjjdAJAWdznJMZTrfstLTPf6Bm5G6nRwCYqaHX4vQgwcIMlDOiI&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Trang chủ - NCTS",
+          "url": "https://www.ncts.vn/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxs_JkR2xsZHafBROsFvDfi8TEq002vh-MPZqKRzCbpxK5SIbKMw3EekE&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "NCTS Naples (@NCTSNaplesItaly) • Facebook",
+          "url": "https://www.facebook.com/NCTSNaplesItaly/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUHnCrnPjc088wYDoKu0DddoaLRVvkgINcVe9U2Rn-6-TFU_f5kPV-TR4&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Transit Declaration (NCTS) Ulukom / WiseTech Global Group",
+          "url": "https://www.ulukom.com.tr/en/software-3-pg/customs-procedure-modules-41-pg/transit-declaration-ncts-44-pg.html",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr0wIroG8KM5W_yOzxSfyXM5nw7Jg_ePjSPfmtYPQqBptziqLB9_Wbpt4&s"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 4,
+      "rank_absolute": 8,
+      "page": 1,
+      "domain": "www.youtube.com",
+      "title": "NCTS - NEXT!",
+      "url": "https://www.youtube.com/watch?v=3JpslS4Wf5M&xstg=CAMSBhUDze3xHw%3D%3D",
+      "breadcrumb": "3K+ views  ·  2 years ago",
+      "website_name": "YouTube · Car Bass Music",
+      "is_video": true,
+      "checks": [
+        "is_video"
+      ],
+      "description": "NCTS - NEXT! @CarBassMusic0140 likes2.9K views2 years ago more ... - NCTS | BASS BOOSTED | 8D Audio | Use Headphones. 8D Music's•45K ...",
+      "highlighted": [
+        "NCTS"
+      ],
+      "timestamp": "2024-07-28 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 5,
+      "rank_absolute": 9,
+      "page": 1,
+      "domain": "www.ncts.rs.ge",
+      "title": "GRS NCTS",
+      "url": "https://www.ncts.rs.ge/",
+      "breadcrumb": "https://www.ncts.rs.ge",
+      "website_name": "GRS NCTS",
+      "description": "We're sorry but GRS NCTS UI doesn't work properly without JavaScript enabled. Please enable it to continue. Loading GRS NCTS Please wait! Read more",
+      "highlighted": [
+        "GRS NCTS"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.ncts.rs.ge/#:~:text=Loading,Please%20wait!",
+          "domain": "www.ncts.rs.ge"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 6,
+      "rank_absolute": 10,
+      "page": 1,
+      "domain": "www.ncts.co",
+      "title": "usa | NCTS",
+      "url": "https://www.ncts.co/usa/",
+      "breadcrumb": "https://www.ncts.co › usa",
+      "website_name": "ncts.co",
+      "description": "NCTS. Computer Parts Manufacturing. Home · Contact · Home · Contact ... Copyright © 2023 NCTS LLC Since 2008 | Powered by NCTS Certificates and ... Read more",
+      "highlighted": [
+        "NCTS"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.ncts.co/usa/#:~:text=Computer%20Parts%20Manufacturing&text=Copyright%20%C2%A9%202023%20NCTS%20LLC,Certificates%20and%20Registration",
+          "domain": "www.ncts.co"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 7,
+      "rank_absolute": 11,
+      "page": 1,
+      "domain": "en.wiktionary.org",
+      "title": "NCTs",
+      "url": "https://en.wiktionary.org/wiki/NCTs",
+      "breadcrumb": "https://en.wiktionary.org › wiki › NCTs",
+      "website_name": "Wiktionary, the free dictionary",
+      "description": "Noun. NCTs. plural of NCT. Anagrams. CNTs, CTNs, NCST, NTSC, TNCs, c*nts. Read more",
+      "highlighted": [
+        "plural of NCT"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://en.wiktionary.org/wiki/NCTs#:~:text=Noun,CTNs%2C%20NCST%2C%20NTSC%2C%20TNCs%2C%20c*nts",
+          "domain": "en.wiktionary.org"
+        }
+      ]
+    }
+  ]
+}

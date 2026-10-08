@@ -1,0 +1,468 @@
+{
+  "id": "10081047-2048-0139-0000-77e6d101ee70",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_group": 1,
+      "rank_absolute": 1,
+      "page": 1,
+      "markdown": "ETD most commonly stands for **Estimated Time of Departure** in shipping, travel, and logistics , or **Eustachian Tube Dysfunction** in medicine.[[1]](https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction)[[2]](https://outvio.com/blog/eta-etd/)\n\n### Estimated Time of Departure (Logistics & Travel)\n\n- **Definition:** The planned date and time when a vehicle, ship, aircraft, or cargo shipment is expected to leave its origin or port.\n- **Usage:** Used alongside **ETA** (Estimated Time of Arrival) to track schedules and plan supply chains.\n- **Context:** If a cargo ship has an ETD of 08:00 tomorrow, it is expected to pull away from the dock at that time, though weather or traffic can cause it to change.[[1]](https://outvio.com/blog/eta-etd/)[[2]](https://www.stonex.com/en-us/business/financial-glossary/etd-shipping/)[[3]](https://www.stonex.com/en/business/financial-glossary/etd-shipping/)[[4]](https://ntslogistics.com/glossary/meaning-of-estimated-time-of-departure/)[[5]](https://www.dhl.com/discover/en-hk/logistics-advice/essential-guides/mastering-logistics-terminology)\n\n### Eustachian Tube Dysfunction (Medicine)\n\n- **Definition:** A common ear condition where the tubes connecting your middle ear to your upper throat fail to open or close properly.\n- **Symptoms:** Muffled hearing, ear popping, a feeling of fullness or pressure in the ear, and mild balance issues.\n- **Causes:** Allergies, sinus infections, colds, or sudden changes in altitude.[[1]](https://rkaudiology.com/etd-meaning-what-eustachian-tube-dysfunction-means-for-your-ears/)[[2]](https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction)[[3]](https://www.youtube.com/shorts/tVD6zS3IGjI)\n\nAre you looking for ETD in the context of **shipping and logistics** or **health and medicine** ? I can give you more details on that specific topic.",
+      "items": [
+        {
+          "type": "ai_overview_element",
+          "text": "ETD most commonly stands for Estimated Time of Departure in shipping, travel, and logistics, or Eustachian Tube Dysfunction in medicine.",
+          "markdown": "ETD most commonly stands for **Estimated Time of Departure** in shipping, travel, and logistics , or **Eustachian Tube Dysfunction** in medicine.[[1]](https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction)[[2]](https://outvio.com/blog/eta-etd/)",
+          "references": [
+            {
+              "type": "ai_overview_reference",
+              "source": "Cleveland Clinic",
+              "domain": "my.clevelandclinic.org",
+              "url": "https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction",
+              "title": "Eustachian Tube Dysfunction: Symptoms, Causes & Treatment",
+              "text": "Definition: Eustachian tubes connect middle ears to upper throat, equalizing pressure and draining fluid; dysfunction (ETD) occurs..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "Outvio",
+              "domain": "outvio.com",
+              "url": "https://outvio.com/blog/eta-etd/",
+              "title": "What's the Difference between ETA, ETD and ETC? - Outvio",
+              "text": "Sofia Gomez Jan 6, 2025 What is the estimated time of arrival (ETA)?What is the estimated time of delivery (ETD)?ETA vs ETD, what'"
+            }
+          ]
+        },
+        {
+          "type": "ai_overview_element",
+          "title": "Estimated Time of Departure (Logistics & Travel)",
+          "text": "Definition: The planned date and time when a vehicle, ship, aircraft, or cargo shipment is expected to leave its origin or port. Usage: Used alongside ETA (Estimated Time of Arrival) to track schedules and plan supply chains. Context: If a cargo ship has an ETD of 08:00 tomorrow, it is expected to pull away from the dock at that time, though weather or traffic can cause it to change.",
+          "markdown": "- **Definition:** The planned date and time when a vehicle, ship, aircraft, or cargo shipment is expected to leave its origin or port.\n- **Usage:** Used alongside **ETA** (Estimated Time of Arrival) to track schedules and plan supply chains.\n- **Context:** If a cargo ship has an ETD of 08:00 tomorrow, it is expected to pull away from the dock at that time, though weather or traffic can cause it to change.[[1]](https://outvio.com/blog/eta-etd/)[[2]](https://www.stonex.com/en-us/business/financial-glossary/etd-shipping/)[[3]](https://www.stonex.com/en/business/financial-glossary/etd-shipping/)[[4]](https://ntslogistics.com/glossary/meaning-of-estimated-time-of-departure/)[[5]](https://www.dhl.com/discover/en-hk/logistics-advice/essential-guides/mastering-logistics-terminology)",
+          "references": [
+            {
+              "type": "ai_overview_reference",
+              "source": "Outvio",
+              "domain": "outvio.com",
+              "url": "https://outvio.com/blog/eta-etd/",
+              "title": "What's the Difference between ETA, ETD and ETC? - Outvio",
+              "text": "Sofia Gomez Jan 6, 2025 What is the estimated time of arrival (ETA)?What is the estimated time of delivery (ETD)?ETA vs ETD, what'"
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "www.stonex.com",
+              "domain": "www.stonex.com",
+              "url": "https://www.stonex.com/en-us/business/financial-glossary/etd-shipping/",
+              "title": "What Is ETD in Shipping? | StoneX US",
+              "text": "ETD stands for Estimated Time of Departure. This is the projected time that a vessel, aircraft, or truck is expected to leave its ..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "StoneX",
+              "domain": "www.stonex.com",
+              "url": "https://www.stonex.com/en/business/financial-glossary/etd-shipping/",
+              "title": "What Is ETD in Shipping? | StoneX EN",
+              "text": "Definition: ETD (Estimated Time of Departure) is the projected date and time a transport vessel leaves its origin port. Logistics ..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "Nationwide Transport Services",
+              "domain": "ntslogistics.com",
+              "url": "https://ntslogistics.com/glossary/meaning-of-estimated-time-of-departure/",
+              "title": "Definition Of Estimated Time of Departure (ETD) | NTS",
+              "text": "Definition: Estimated Time of Departure (ETD) denotes the expected time a transport system, vessel, or aircraft leaves its origin,"
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "DHL",
+              "domain": "www.dhl.com",
+              "url": "https://www.dhl.com/discover/en-hk/logistics-advice/essential-guides/mastering-logistics-terminology",
+              "title": "Mastering ETA, ETD, ATD & ATA International Logistics Terms",
+              "text": "International Logistics - A Quick Guide to ETA, ETD, and ATD * What is ETA? ETA Means Estimated Time of Arrival. ETA, or Estimated..."
+            }
+          ]
+        },
+        {
+          "type": "ai_overview_element",
+          "title": "Eustachian Tube Dysfunction (Medicine)",
+          "text": "Definition: A common ear condition where the tubes connecting your middle ear to your upper throat fail to open or close properly. Symptoms: Muffled hearing, ear popping, a feeling of fullness or pressure in the ear, and mild balance issues. Causes: Allergies, sinus infections, colds, or sudden changes in altitude.",
+          "markdown": "- **Definition:** A common ear condition where the tubes connecting your middle ear to your upper throat fail to open or close properly.\n- **Symptoms:** Muffled hearing, ear popping, a feeling of fullness or pressure in the ear, and mild balance issues.\n- **Causes:** Allergies, sinus infections, colds, or sudden changes in altitude.[[1]](https://rkaudiology.com/etd-meaning-what-eustachian-tube-dysfunction-means-for-your-ears/)[[2]](https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction)[[3]](https://www.youtube.com/shorts/tVD6zS3IGjI)",
+          "references": [
+            {
+              "type": "ai_overview_reference",
+              "source": "RK Audiology",
+              "domain": "rkaudiology.com",
+              "url": "https://rkaudiology.com/etd-meaning-what-eustachian-tube-dysfunction-means-for-your-ears/",
+              "title": "ETD Meaning: What Eustachian Tube Dysfunction Means for Your Ears",
+              "text": "ETD Meaning: What Eustachian Tube Dysfunction Means for Your Ears ETD means eustachian tube dysfunction. Your eustachian tubes are..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "Cleveland Clinic",
+              "domain": "my.clevelandclinic.org",
+              "url": "https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction",
+              "title": "Eustachian Tube Dysfunction: Symptoms, Causes & Treatment",
+              "text": "Definition: Eustachian tubes connect middle ears to upper throat, equalizing pressure and draining fluid; dysfunction (ETD) occurs..."
+            },
+            {
+              "type": "ai_overview_reference",
+              "source": "YouTube",
+              "domain": "www.youtube.com",
+              "url": "https://www.youtube.com/shorts/tVD6zS3IGjI",
+              "title": "Eustachian Tube Dysfunction (ETD): Causes, Symptoms & ...",
+              "text": "Eustachian Tube Dysfunction (ETD): Causes, Symptoms & Treatment Options Eustachian Tube Dysfunction (ETD) occurs when the tube bec..."
+            }
+          ]
+        },
+        {
+          "type": "ai_overview_element",
+          "text": "Are you looking for ETD in the context of shipping and logistics or health and medicine ? I can give you more details on that specific topic.",
+          "markdown": "Are you looking for ETD in the context of **shipping and logistics** or **health and medicine** ? I can give you more details on that specific topic."
+        }
+      ],
+      "references": [
+        {
+          "type": "ai_overview_reference",
+          "source": "Cleveland Clinic",
+          "domain": "my.clevelandclinic.org",
+          "url": "https://my.clevelandclinic.org/health/diseases/22527-eustachian-tube-dysfunction",
+          "title": "Eustachian Tube Dysfunction: Symptoms, Causes & Treatment",
+          "text": "Definition: Eustachian tubes connect middle ears to upper throat, equalizing pressure and draining fluid; dysfunction (ETD) occurs..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "Outvio",
+          "domain": "outvio.com",
+          "url": "https://outvio.com/blog/eta-etd/",
+          "title": "What's the Difference between ETA, ETD and ETC? - Outvio",
+          "text": "Sofia Gomez Jan 6, 2025 What is the estimated time of arrival (ETA)?What is the estimated time of delivery (ETD)?ETA vs ETD, what'"
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "DHL",
+          "domain": "www.dhl.com",
+          "url": "https://www.dhl.com/discover/en-hk/logistics-advice/essential-guides/mastering-logistics-terminology",
+          "title": "Mastering ETA, ETD, ATD & ATA International Logistics Terms",
+          "text": "International Logistics - A Quick Guide to ETA, ETD, and ATD * What is ETA? ETA Means Estimated Time of Arrival. ETA, or Estimated..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "RK Audiology",
+          "domain": "rkaudiology.com",
+          "url": "https://rkaudiology.com/etd-meaning-what-eustachian-tube-dysfunction-means-for-your-ears/",
+          "title": "ETD Meaning: What Eustachian Tube Dysfunction Means for Your Ears",
+          "text": "ETD Meaning: What Eustachian Tube Dysfunction Means for Your Ears ETD means eustachian tube dysfunction. Your eustachian tubes are..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "StoneX",
+          "domain": "www.stonex.com",
+          "url": "https://www.stonex.com/en/business/financial-glossary/etd-shipping/",
+          "title": "What Is ETD in Shipping? | StoneX EN",
+          "text": "Definition: ETD (Estimated Time of Departure) is the projected date and time a transport vessel leaves its origin port. Logistics ..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "Nationwide Transport Services",
+          "domain": "ntslogistics.com",
+          "url": "https://ntslogistics.com/glossary/meaning-of-estimated-time-of-departure/",
+          "title": "Definition Of Estimated Time of Departure (ETD) | NTS",
+          "text": "Definition: Estimated Time of Departure (ETD) denotes the expected time a transport system, vessel, or aircraft leaves its origin,"
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "www.stonex.com",
+          "domain": "www.stonex.com",
+          "url": "https://www.stonex.com/en-us/business/financial-glossary/etd-shipping/",
+          "title": "What Is ETD in Shipping? | StoneX US",
+          "text": "ETD stands for Estimated Time of Departure. This is the projected time that a vessel, aircraft, or truck is expected to leave its ..."
+        },
+        {
+          "type": "ai_overview_reference",
+          "source": "YouTube",
+          "domain": "www.youtube.com",
+          "url": "https://www.youtube.com/shorts/tVD6zS3IGjI",
+          "title": "Eustachian Tube Dysfunction (ETD): Causes, Symptoms & ...",
+          "text": "Eustachian Tube Dysfunction (ETD): Causes, Symptoms & Treatment Options Eustachian Tube Dysfunction (ETD) occurs when the tube bec..."
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 1,
+      "rank_absolute": 2,
+      "page": 1,
+      "domain": "keystone-scm.com",
+      "title": "What are ETD,ETA, ATD and ATA Meaning?",
+      "url": "https://keystone-scm.com/what-are-etd-eta-atd-and-ata-meaning/",
+      "breadcrumb": "https://keystone-scm.com › what-are-etd-eta-atd-and-ata...",
+      "website_name": "keystone-scm.com",
+      "description": "ETD in shipping stands for Estimated Time of Departure, referencing the anticipated date and time a shipment is scheduled to leave its point of origin,",
+      "highlighted": [
+        "Estimated Time of Departure"
+      ]
+    },
+    {
+      "type": "people_also_ask",
+      "rank_group": 1,
+      "rank_absolute": 3,
+      "page": 1,
+      "items": [
+        {
+          "type": "people_also_ask_element",
+          "title": "What does ETD stand for?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is ETA and ETD shipping?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is the difference between ETD and ETA?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What does ETD mean in text?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "images",
+      "rank_group": 1,
+      "rank_absolute": 4,
+      "page": 1,
+      "title": "Images",
+      "url": "https://www.google.com/search?sca_esv=e2130cf16db8d2a2&hl=en&gl=US&sxsrf=APpeQntRgfDjVdRC30l0SLFRus5XLnVzsg:1791456481268&q=etd+meaning&udm=2&source=univ&fir=9BLZUPoBdPqiuM%252C9OAhr89eMo0pnM%252C_%253B-ivFxhgv5X7DvM%252CE4vB2L_qvi_SlM%252C_%253BZqnU01vinrR2LM%252CIu8OW4nPhS4hVM%252C_%253BMYkTv0d_d0ETCM%252C7isYrKiQqNf3wM%252C_%253BZepdszWH72njtM%252CEUOQ9I-PxqvJkM%252C_%253BncX2655ZPHfIAM%252CTcOarVNCKeyswM%252C_%253Bu1aSI1HlpUDc0M%252C6JEv8yYWMrbSwM%252C_%253BeqauKprdONN3gM%252CQQubcv0-yOnurM%252C_%253BOl4Tn1K3KwFRdM%252CJFrDgKkBScAGGM%252C_&usg=AI4_-kTGlOU6SWlsnLD86yO7Ql2zGZDr5w&sa=X&ved=2ahUKEwjZnsi5n6qXAxUa9AIHHQviJRMQ7Al6BAglEAU",
+      "items": [
+        {
+          "type": "images_element",
+          "alt": "📦 WHAT IS ETA, ETD, ATA, ATD? 📦 Understanding key shipping ...",
+          "url": "https://www.instagram.com/p/DCjm1X0CZuE/",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081047-2048-0139-0000-77e6d101ee70:0"
+        },
+        {
+          "type": "images_element",
+          "alt": "Shipping Terms Explained: ETA, ETD, ATD & ATA Full Forms and ...",
+          "url": "https://ilsportal.io/blogs/shipping-eta-etd-atd-ata-full-forms-meanings",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081047-2048-0139-0000-77e6d101ee70:1"
+        },
+        {
+          "type": "images_element",
+          "alt": "Understanding ETA & ETD in Maritime Logistics",
+          "url": "https://www.facebook.com/groups/marine.engineers.worldwide/posts/10162883596167376/",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081047-2048-0139-0000-77e6d101ee70:2"
+        },
+        {
+          "type": "images_element",
+          "alt": "ETA vs ETD: What They Are and Why They Matter",
+          "url": "https://www.routific.com/blog/eta-vs-etd",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjyJYC8J9KJaa3V42kedTnh62n3yHnOLI2ezDDQXp9n23XuoisyQ0PAg8&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "What does ETD mean? - Definition of ETD - ETD stands for ...",
+          "url": "http://m.acronymsandslang.com/definition/510064/ETD-meaning.html",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9IkA57e4VU0T5Qxf5C1_d72GXtxIFllfWkg0XIhMvoUHHCZPaQs82rJA&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "What is ETA vs ETD? Understanding the Key Differences ...",
+          "url": "https://www.muscatcargo.com/blogs/what-is-eta-vs-etd-understanding-the-key-differences/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXwR_3RBoH4YrU4DvSdlCtN5gK5uGlGA-hmlr4UKRCXDKZqg6RhwN1xW8&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "reallogistics #real #eta #etd #etb #logisticsinfo #shipping ...",
+          "url": "https://www.linkedin.com/posts/reallogistics_reallogistics-real-eta-activity-7252956211862515712-5JaV",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6P6m-jW4fmlcGgmutaSSR9WBIx7Mv1qnaNXKJxB9_WO7LgKYLpVyXJLk&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "ETA vs ETD Meaning: Complete Logistics Guide for 2026",
+          "url": "https://www.upperinc.com/blog/what-is-eta-etd/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgV2BWhuly3Zje3wHR-m7HcOzO7S7SlXPhdAAsgTSGNXUFArbasHKCJMc&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Understanding ETD & ETA: The Acronyms of Logistics ...",
+          "url": "https://www.linkedin.com/posts/muhammad-ahsan-khan-b686b02b2_logistics-supplychain-freightforwarding-activity-7385547764635435009-heli",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA56Q6Rg4wv4ricmKAyLhICYItTG18V8ZjIHx2Pi1CL4bZ41Nkv5ni9po&s"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 2,
+      "rank_absolute": 5,
+      "page": 1,
+      "domain": "www.oxfordlearnersdictionaries.com",
+      "title": "ETD abbreviation - Definition, pictures, pronunciation and ...",
+      "url": "https://www.oxfordlearnersdictionaries.com/us/definition/american_english/etd",
+      "breadcrumb": "https://www.oxfordlearnersdictionaries.com › definition",
+      "website_name": "Oxford Learner's Dictionaries",
+      "description": "estimated time of departure (the time at which an aircraft, a ship, etc. is expected to leave)",
+      "highlighted": [
+        "estimated time of departure"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 3,
+      "rank_absolute": 6,
+      "page": 1,
+      "domain": "www.ambitionbox.com",
+      "title": "What does ETD mean?",
+      "url": "https://www.ambitionbox.com/interviews/question/what-does-etd-mean-blRT3ORP0",
+      "breadcrumb": "https://www.ambitionbox.com › Interviews",
+      "website_name": "AmbitionBox",
+      "description": "ETD commonly stands for Estimated Time of Departure — the predicted time a vehicle, shipment or flight will leave a location. It's used in logistics, ... Read more",
+      "highlighted": [
+        "Estimated Time of Departure"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.ambitionbox.com/interviews/question/what-does-etd-mean-blRT3ORP0#:~:text=ETD%20commonly%20stands%20for%20Estimated,schedules%20to%20plan%20downstream%20acti...",
+          "domain": "www.ambitionbox.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 4,
+      "rank_absolute": 7,
+      "page": 1,
+      "domain": "hongocean.com",
+      "title": "Understanding ETD in Shipping: What It Means and Why It ...",
+      "url": "https://hongocean.com/etd-meaning-in-shipping/",
+      "breadcrumb": "https://hongocean.com › Blog",
+      "website_name": "Hong Ocean",
+      "description": "ETD, or Estimated Time of Departure, refers to the projected time when a shipment or vessel is expected to leave a port or shipping location. It is a critical ... Read more",
+      "highlighted": [
+        "Estimated Time of Departure"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://hongocean.com/etd-meaning-in-shipping/#:~:text=ETD%2C%20or%20Estimated%20Time%20of,location.%20It%20is%20a%20critical",
+          "domain": "hongocean.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 5,
+      "rank_absolute": 8,
+      "page": 1,
+      "domain": "www.importvista.com",
+      "title": "ETA vs ETD: Meaning & Difference in Logistics | ImportVista",
+      "url": "https://www.importvista.com/blogs/logistics-guides/eta-vs-etd-meaning-difference-track-excel?srsltid=AU7gw4WKH6B2K1cgnPsati9tMQx2-c7N6OBWbUt8McqaGfMzBW5WwIbw",
+      "breadcrumb": "https://www.importvista.com › Logistics Guides",
+      "website_name": "importvista.com",
+      "description": "4 days ago — ETD means Estimated Time of Departure. It is the expected date or time when a vessel, aircraft, truck or other transport unit is planned to ... Read more",
+      "pre_snippet": "4 days ago",
+      "highlighted": [
+        "Estimated Time of Departure"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.importvista.com/blogs/logistics-guides/eta-vs-etd-meaning-difference-track-excel?srsltid=AU7gw4WKH6B2K1cgnPsati9tMQx2-c7N6OBWbUt8McqaGfMzBW5WwIbw#:~:text=ETD%20means%20Estimated%20Time%20of,to%20leave%20its%20origin%20point.",
+          "domain": "www.importvista.com"
+        }
+      ],
+      "timestamp": "2026-10-04 10:48:01 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 6,
+      "rank_absolute": 9,
+      "page": 1,
+      "domain": "blog.bigship.direct",
+      "title": "ETA & ETD in Shipping: Meaning & Importance - Bigship Blog",
+      "url": "https://blog.bigship.direct/eta-etd-in-shipping/",
+      "breadcrumb": "https://blog.bigship.direct › eta-etd-in-shipping",
+      "website_name": "bigship.direct",
+      "description": "May 7, 2025 — ETD full form in shipping is Estimated Time of Departure. It means the date and time your shipment is expected to leave the port. This helps you ... Read more",
+      "pre_snippet": "05/07/2025 00:00:00",
+      "highlighted": [
+        "Estimated Time of Departure"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://blog.bigship.direct/eta-etd-in-shipping/#:~:text=ETD%20full%20form%20in%20shipping,This%20helps%20you%20plan%20better.",
+          "domain": "blog.bigship.direct"
+        }
+      ],
+      "timestamp": "2025-05-07 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 7,
+      "rank_absolute": 10,
+      "page": 1,
+      "domain": "acronymsandslang.com",
+      "title": "What does ETD mean? - Definition of ETD",
+      "url": "http://acronymsandslang.com/definition/2155159/ETD-meaning.html",
+      "breadcrumb": "http://acronymsandslang.com › definition › ETD-meaning",
+      "website_name": "Acronyms and Slang",
+      "description": "ETD stands for Education Training and Development. ETD as abbreviation means \"Education Training and Development\"",
+      "highlighted": [
+        "Education Training and Development"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 8,
+      "rank_absolute": 11,
+      "page": 1,
+      "domain": "www.linkedin.com",
+      "title": "What Do ETA, ETD, ATD, and ATA Mean in Shipping?",
+      "url": "https://www.linkedin.com/posts/elyxr-freight_what-do-eta-etd-atd-and-ata-mean-in-shipping-activity-7232378552241770496-vCbd",
+      "breadcrumb": "10+ reactions  ·  2 years ago",
+      "website_name": "LinkedIn · Elyxr Freight",
+      "description": "Understanding ETA, ETD, ATD, and ATA in Shipping: The Key to Precision in Container Tracking Timing is everything in maritime logistics.",
+      "highlighted": [
+        "ETD"
+      ]
+    },
+    {
+      "type": "related_searches",
+      "rank_group": 1,
+      "rank_absolute": 12,
+      "page": 1,
+      "items": [
+        "Eta etd meaning",
+        "Etd meaning slang"
+      ]
+    }
+  ]
+}

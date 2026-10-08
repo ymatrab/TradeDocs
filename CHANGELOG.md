@@ -2,6 +2,13 @@
 
 ## Unreleased — 2026-09-06
 
+### Content plan v4 (D-023)
+
+- 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword
+  suggestion sets, 2 competitor ranked-keyword sets); raw responses in
+  `docs/research/dataforseo-2026-10-08/`. Wave E plans 30 demand-backed pages (15 posts,
+  15 glossary terms) in `docs/research/content-plan-v4-2026-10-08.md`.
+
 ### Content wave D (D-022 wave D)
 
 - 16 posts and 4 guides: first sale rule, invoice legalization, returns and repairs, de minimis,

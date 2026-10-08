@@ -1,0 +1,249 @@
+{
+  "id": "10081048-2048-0139-0000-0573386623fa",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_group": 1,
+      "rank_absolute": 1,
+      "page": 1,
+      "asynchronous_ai_overview": true
+    },
+    {
+      "type": "organic",
+      "rank_group": 1,
+      "rank_absolute": 2,
+      "page": 1,
+      "domain": "www.newage-global.com",
+      "title": "How Freight Management Software Drives Success in US ...",
+      "url": "https://www.newage-global.com/blog/how-freight-management-software-drives-success-in-us-freight-forwarding",
+      "breadcrumb": "https://www.newage-global.com › blog › how-freight-...",
+      "website_name": "Newage Software & Solutions",
+      "description": "May 15, 2024 — Freight management software is a digital solution designed to streamline logistics operations, including shipment tracking, carrier selection, ... Read more",
+      "pre_snippet": "05/15/2024 00:00:00",
+      "highlighted": [
+        "Freight management software"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.newage-global.com/blog/how-freight-management-software-drives-success-in-us-freight-forwarding#:~:text=Freight%20management%20software%20is%20a,route%20optimization%2C%20documentation%2C%20and%20compliance.",
+          "domain": "www.newage-global.com"
+        }
+      ],
+      "timestamp": "2024-05-15 00:00:00 +00:00"
+    },
+    {
+      "type": "people_also_ask",
+      "rank_group": 1,
+      "rank_absolute": 3,
+      "page": 1,
+      "items": [
+        {
+          "type": "people_also_ask_element",
+          "title": "What does a freight forwarding company do?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is an ERP in logistics?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What software do freight brokers use?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What is the difference between a carrier and a freight forwarder?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 2,
+      "rank_absolute": 4,
+      "page": 1,
+      "domain": "gofreight.com",
+      "title": "Freight Tracking Software Comparison 2026: Real Time ...",
+      "url": "https://gofreight.com/blog/freight-tracking-software-comparison",
+      "breadcrumb": "https://gofreight.com › blog › freight-tracking-software-...",
+      "website_name": "GoFreight",
+      "description": "Jan 28, 2026 — Compare 8 freight tracking software platforms in 2026 by real time visibility depth, milestone frequency, AI ETA, and pricing.",
+      "pre_snippet": "01/28/2026 00:00:00",
+      "highlighted": [
+        "Compare 8 freight tracking software platforms"
+      ],
+      "timestamp": "2026-01-28 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 3,
+      "rank_absolute": 5,
+      "page": 1,
+      "domain": "www.selectoptimus.com",
+      "title": "Logistics Software for Freight Forwarder Companies",
+      "url": "https://www.selectoptimus.com/en/logistics-software-for-freight-forwarder-companies",
+      "breadcrumb": "https://www.selectoptimus.com › logistics-software-for-...",
+      "website_name": "Select Optimus",
+      "description": "Select Optimus, a cloud-based online logistics software, offers the ideal solutions for Freight Forwarder companies with customer relationship management, ... Read more",
+      "highlighted": [
+        "Select Optimus, a cloud-based online logistics software"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.selectoptimus.com/en/logistics-software-for-freight-forwarder-companies#:~:text=Select%20Optimus%2C%20a%20cloud-based%20online,document%20tracking%20and%20integration%20systems.",
+          "domain": "www.selectoptimus.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 4,
+      "rank_absolute": 6,
+      "page": 1,
+      "domain": "www.capterra.com",
+      "title": "Freight Forwarding Software Pricing, Alternatives & More ...",
+      "url": "https://www.capterra.com/p/106748/Air-Trak/",
+      "breadcrumb": "https://www.capterra.com › Freight Software",
+      "website_name": "Capterra",
+      "description": "Freight Forwarding Software supports Transportation Management, which helps businesses coordinate freight movement across carriers and routes more efficiently. Read more",
+      "highlighted": [
+        "Freight Forwarding Software"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.capterra.com/p/106748/Air-Trak/#:~:text=Freight%20Forwarding%20Software%20supports%20Transportation,carriers%20and%20routes%20more%20efficiently.",
+          "domain": "www.capterra.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 5,
+      "rank_absolute": 7,
+      "page": 1,
+      "domain": "www.gamasuite.com",
+      "title": "freight forwarding software",
+      "url": "https://www.gamasuite.com/category/freight-forwarding-software",
+      "breadcrumb": "https://www.gamasuite.com › category › freight-forwar...",
+      "website_name": "Gamasuite",
+      "description": "FREIGHT FORWARDING SOFTWARE July. Systems Can Help Freight Forwarders Retain Customers? Privacy policy CONTACT +1 469 595-9661 sales@gamasuite.com",
+      "highlighted": [
+        "FREIGHT FORWARDING SOFTWARE"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 6,
+      "rank_absolute": 8,
+      "page": 1,
+      "domain": "www.guideflow.com",
+      "title": "6 best freight management software for 2026",
+      "url": "https://www.guideflow.com/blog/freight-management-software",
+      "breadcrumb": "https://www.guideflow.com › Blog",
+      "website_name": "Guideflow",
+      "description": "Jul 14, 2026 — GoFreight is cloud-based freight forwarding software covering shipment operations, tracking, customer portals, quoting, billing, and accounting. Read more",
+      "pre_snippet": "07/14/2026 00:00:00",
+      "highlighted": [
+        "GoFreight"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.guideflow.com/blog/freight-management-software#:~:text=GoFreight%20is%20cloud-based%20freight%20forwarding,portals%2C%20quoting%2C%20billing%2C%20and%20accounting.",
+          "domain": "www.guideflow.com"
+        }
+      ],
+      "timestamp": "2026-07-14 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 7,
+      "rank_absolute": 9,
+      "page": 1,
+      "domain": "www.freightify.com",
+      "title": "Best Digital Freight Forwarding Platforms for 2024",
+      "url": "https://www.freightify.com/blog/best-digital-freight-forwarding-software",
+      "breadcrumb": "https://www.freightify.com › blog › best-digital-freight-...",
+      "website_name": "Freightify",
+      "description": "Digital freight forwarding platforms streamline freight operations by providing real-time rate procurement, management, and seamless shipping experiences. Read more",
+      "rating": {
+        "rating_type": "Max5",
+        "value": 4.8,
+        "votes_count": 63,
+        "rating_max": 5
+      },
+      "highlighted": [
+        "real-time rate procurement, management, and seamless shipping experiences"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.freightify.com/blog/best-digital-freight-forwarding-software#:~:text=Digital%20freight%20forwarding%20platforms%20streamline,management%2C%20and%20seamless%20shipping%20experiences.",
+          "domain": "www.freightify.com"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 8,
+      "rank_absolute": 10,
+      "page": 1,
+      "domain": "www.freightpop.com",
+      "title": "AI Supply Chain Software | FreightPOP AI",
+      "url": "https://www.freightpop.com/",
+      "breadcrumb": "https://www.freightpop.com",
+      "website_name": "FreightPOP",
+      "description": "FreightPOP is an AI supply chain software platform with seamless ERP integrations that simplifies & optimizes shipping for manufacturers and distributors.",
+      "highlighted": [
+        "FreightPOP"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 9,
+      "rank_absolute": 11,
+      "page": 1,
+      "domain": "www.capterra.com",
+      "title": "Best Free Freight Software Solutions 2026",
+      "url": "https://www.capterra.com/freight-software/s/free/",
+      "breadcrumb": "https://www.capterra.com › Freight Software",
+      "website_name": "Capterra",
+      "description": "Find and compare the 2026 best free Freight software solutions, using our interactive tool to quickly narrow your choices based on businesses like yours.",
+      "highlighted": [
+        "best free Freight software solutions"
+      ]
+    }
+  ]
+}

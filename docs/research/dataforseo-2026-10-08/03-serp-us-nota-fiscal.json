@@ -1,0 +1,253 @@
+{
+  "id": "10081048-2048-0139-0000-4a06d9d5dc17",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "type": "ai_overview",
+      "rank_group": 1,
+      "rank_absolute": 1,
+      "page": 1,
+      "asynchronous_ai_overview": true
+    },
+    {
+      "type": "organic",
+      "rank_group": 1,
+      "rank_absolute": 2,
+      "page": 1,
+      "domain": "www.bora.sp.gov.br",
+      "title": "Prefeitura de Borá - Nota Fiscal Eletrônica",
+      "url": "https://www.bora.sp.gov.br/portal/servicos/32/nota-fiscal-eletronica",
+      "breadcrumb": "https://www.bora.sp.gov.br › portal",
+      "website_name": "Prefeitura de Borá",
+      "description": "- Nota Fiscal Eletrônica. Telefone: (18) 3367-8650 E-mail: gabinete@bora.sp.gov",
+      "highlighted": [
+        "Nota Fiscal"
+      ]
+    },
+    {
+      "type": "people_also_ask",
+      "rank_group": 1,
+      "rank_absolute": 3,
+      "page": 1,
+      "items": [
+        {
+          "type": "people_also_ask_element",
+          "title": "What is a nota fiscal in Brazil?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        },
+        {
+          "type": "people_also_ask_element",
+          "title": "What does nota fiscal mean?",
+          "expanded_element": [
+            {
+              "type": "people_also_ask_ai_overview_expanded_element",
+              "asynchronous_ai_overview": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 2,
+      "rank_absolute": 4,
+      "page": 1,
+      "domain": "www.paranapanema.sp.gov.br",
+      "title": "Prefeitura reestrutura sistema de Nota Fiscal Eletrônica",
+      "url": "https://www.paranapanema.sp.gov.br/portal/noticias/0/3/2264/prefeitura-reestrutura-sistema-de-nota-fiscal-eletronica",
+      "breadcrumb": "https://www.paranapanema.sp.gov.br › ...",
+      "website_name": "paranapanema.sp.gov.br",
+      "description": "Uma reestruturação no sistema de emissão de Nota Fiscal Eletrônica está acontecendo na Prefeitura Municipal, segundo o departamento de T.I. Tecnologia da ... Read more",
+      "highlighted": [
+        "Nota Fiscal"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.paranapanema.sp.gov.br/portal/noticias/0/3/2264/prefeitura-reestrutura-sistema-de-nota-fiscal-eletronica#:~:text=Uma%20reestrutura%C3%A7%C3%A3o%20no%20sistema%20de,e%20a%20Secretaria%20da%20Fazenda.",
+          "domain": "www.paranapanema.sp.gov.br"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 3,
+      "rank_absolute": 5,
+      "page": 1,
+      "domain": "imobiliarias.superlogica.com",
+      "title": "Como emitir nota fiscal utilizando dados da filial",
+      "url": "https://imobiliarias.superlogica.com/hc/pt-br/articles/40973997580951-Como-emitir-nota-fiscal-utilizando-dados-da-filial",
+      "breadcrumb": "https://imobiliarias.superlogica.com › ...",
+      "website_name": "Superlógica",
+      "description": "Jul 21, 2026 — Acesse o sistema com suas credenciais e navegue até o menu de notas fiscais em Receitas > Notas Fiscais. Pré-requisitos (Antes de começar). Read more",
+      "pre_snippet": "07/21/2026 00:00:00",
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://imobiliarias.superlogica.com/hc/pt-br/articles/40973997580951-Como-emitir-nota-fiscal-utilizando-dados-da-filial#:~:text=Acesse%20o%20sistema%20com%20suas,Pr%C3%A9-requisitos%20(Antes%20de%20come%C3%A7ar)",
+          "domain": "imobiliarias.superlogica.com"
+        }
+      ],
+      "timestamp": "2026-07-21 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 4,
+      "rank_absolute": 6,
+      "page": 1,
+      "domain": "www.portoferreira.sp.gov.br",
+      "title": "Nota Fiscal Premiada",
+      "url": "https://www.portoferreira.sp.gov.br/cidadaos/nota-fiscal-premiada",
+      "breadcrumb": "https://www.portoferreira.sp.gov.br › ...",
+      "website_name": "Prefeitura de Porto Ferreira",
+      "description": "A Nota Premiada, sistema de sorteio de prêmios da Prefeitura de Porto Ferreira, foi instituída pela lei municipal 3.478/2018.",
+      "highlighted": [
+        "Nota"
+      ]
+    },
+    {
+      "type": "images",
+      "rank_group": 1,
+      "rank_absolute": 7,
+      "page": 1,
+      "title": "Images",
+      "url": "https://www.google.com/search?sca_esv=e2130cf16db8d2a2&hl=en&gl=US&sxsrf=APpeQnthbeX5Eo71wYwbyz-Zd-p610g29w:1791456511777&q=nota+fiscal&udm=2&source=univ&fir=ezcEVfi62ehfMM%252Cs-hf5fP6U_5NCM%252C_%253B78RMytjlhw795M%252COwkhIMSqrwFwgM%252C_%253BbgIcyQm01Ziv5M%252C4glhTZGOg3OQuM%252C_%253BmiTKxMcChpwQfM%252CKRReyQN-8JeFNM%252C_%253BbZ9h0FsUPPtqoM%252CvLC87P01Brn60M%252C_%253BvKdd14UzTcgoiM%252Cqx1xXAARnCBHcM%252C_%253BjZlHsrSGk23swM%252CkjCD6Bht2YrRPM%252C_%253BVET5-Bz93GFsIM%252C51x3ONvsq5XhHM%252C_%253BD6y_SkNlt5tFGM%252CVSsEbb9xq9ZE4M%252C_&usg=AI4_-kTEeULk3AH_91BemXwpftEvULY1ng&sa=X&ved=2ahUKEwj3vY7In6qXAxXvVKQEHTIjOkwQ7Al6BAhDEAU",
+      "items": [
+        {
+          "type": "images_element",
+          "alt": "Como emitir nota fiscal com o CNPJ de sua empresa - Contador ...",
+          "url": "https://www.contadoragora.com/como-emitir-nota-fiscal-cnpj/",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081048-2048-0139-0000-4a06d9d5dc17:0"
+        },
+        {
+          "type": "images_element",
+          "alt": "Modelo de nota fiscal: venda, serviço e devolução",
+          "url": "https://clicknotas.com.br/modelo-nota-fiscal-exemplos/",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081048-2048-0139-0000-4a06d9d5dc17:1"
+        },
+        {
+          "type": "images_element",
+          "alt": "Quais são os tipos de notas fiscais? Veja a lista completa ...",
+          "url": "https://nsdocs.com.br/blog/tipos-de-notas-fiscais",
+          "image_url": "https://api.dataforseo.com/cdn/i/10081048-2048-0139-0000-4a06d9d5dc17:2"
+        },
+        {
+          "type": "images_element",
+          "alt": "O que muda na emissão de Nota Fiscal a partir de outubro de ...",
+          "url": "https://rmonteirocontabil.com.br/o-que-muda-na-emissao-de-nota-fiscal-a-partir-de-outubro-de-2025/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUw9r9zfj4JX6FbuUfJcCssvpD_NM3Usv_zygToJ8nRFpaGKbs_V-DTDQ&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Nota fiscal: guia completo de emissão do documento",
+          "url": "https://blog.asaas.com/nota-fiscal/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn_HvYWowj6GbdHoBhv74_Eusnm4bo0X7jLTTFdBw-f_SuNxLLkgJD8ig&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Nota Fiscal Fácil - NFF – Apps on Google Play",
+          "url": "https://play.google.com/store/apps/details?id=br.gov.rs.procergs.nff&hl=en_GB",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEvqKVBF8Js3j78QffC04AcLqOZ1q7e72ZtXTLoLdkjifmU5odmGRlTJI&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Nota Fiscal Eletrônica (NF-e): o quê é?",
+          "url": "https://cr.inf.br/blog/nota-fiscal-eletronica-nf-e/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShpQyNHRCk_sNXk66J34Lv360qwvJOCdJO40dE061rpUPqKdxF-aDJHcA&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Nota fiscal de entrada e saída: quais as diferenças?",
+          "url": "https://neon.com.br/aprenda/mei/nota-fiscal-de-entrada-e-saida/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWWT49NxcskCKCeB-hUL2xcPp7GXT5zjRNQQRXm5dFZIBSESJBUi3svuM&s"
+        },
+        {
+          "type": "images_element",
+          "alt": "Nota fiscal MEI: tire suas dúvidas - Nath Finanças",
+          "url": "https://www.nathfinancas.com.br/mei/nota-fiscal-mei-tire-suas-duvidas/",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTifheWB-6zhnpnpHrb_kiKGKHHSN6UdAzveiV3K151qqs8UX7eXUmCKg4&s"
+        }
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 5,
+      "rank_absolute": 8,
+      "page": 1,
+      "domain": "www.contabeis.com.br",
+      "title": "Publicado pacote de schemas da Nota Fiscal de Alienação ...",
+      "url": "https://www.contabeis.com.br/noticias/79182/nfeabi-1-00-pacote-de-schemas-e-publicado/",
+      "breadcrumb": "https://www.contabeis.com.br › nf...",
+      "website_name": "Portal Contabeis",
+      "description": "Sep 2, 2026 — A publicação dos schemas da NFeABI 1.00 disponibiliza a estrutura técnica da Nota Fiscal Eletrônica de Alienação de Bens Imóveis para os ... Read more",
+      "pre_snippet": "09/02/2026 00:00:00",
+      "highlighted": [
+        "Nota Fiscal"
+      ],
+      "links": [
+        {
+          "type": "link_element",
+          "title": "Read more",
+          "url": "https://www.contabeis.com.br/noticias/79182/nfeabi-1-00-pacote-de-schemas-e-publicado/#:~:text=A%20publica%C3%A7%C3%A3o%20dos%20schemas%20da,procedimentos%20que%20dependem%20desse%20leiaute.",
+          "domain": "www.contabeis.com.br"
+        }
+      ],
+      "timestamp": "2026-09-02 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 6,
+      "rank_absolute": 9,
+      "page": 1,
+      "domain": "gestaoclick.com.br",
+      "title": "Emissor de Nota Fiscal Casa Nova",
+      "url": "https://gestaoclick.com.br/nf-e/nota-fiscal-eletronica-casa-nova/",
+      "breadcrumb": "https://gestaoclick.com.br › nf-e › n...",
+      "website_name": "GestãoClick",
+      "description": "Simplifique a emissão da Nota Fiscal Eletrônica em Casa Nova. Conheça as vantagens e obrigações fiscais que impactam sua empresa. Experimente o GestãoClick!",
+      "highlighted": [
+        "Simplifique a emissão da Nota Fiscal Eletrônica em Casa Nova"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 7,
+      "rank_absolute": 10,
+      "page": 1,
+      "domain": "engaged.com.br",
+      "title": "Nota fiscal para curso online: quando emitir - EngagED",
+      "url": "https://engaged.com.br/blog/nota-fiscal-notazz-curso-ead",
+      "breadcrumb": "https://engaged.com.br › Blog",
+      "website_name": "engaged.com.br",
+      "description": "Nov 8, 2024 — Emitir nota fiscal é um requisito legal no Brasil para a venda de produtos e serviços, incluindo infoprodutos e cursos online.",
+      "pre_snippet": "11/08/2024 00:00:00",
+      "highlighted": [
+        "nota fiscal"
+      ],
+      "timestamp": "2024-11-08 00:00:00 +00:00"
+    },
+    {
+      "type": "organic",
+      "rank_group": 8,
+      "rank_absolute": 11,
+      "page": 1,
+      "domain": "www.linguee.com.br",
+      "title": "nota fiscal de importação - Tradução em inglês",
+      "url": "https://www.linguee.com.br/portugues-ingles/traducao/nota+fiscal+de+importa%C3%A7%C3%A3o.html",
+      "breadcrumb": "https://www.linguee.com.br › portugues-ingles › traducao",
+      "website_name": "Linguee",
+      "description": "Muitos exemplos de traduções com \"nota fiscal de importação\" – Dicionário inglês-português e busca em milhões de traduções.",
+      "highlighted": [
+        "nota fiscal"
+      ]
+    }
+  ]
+}

@@ -34,6 +34,12 @@ import cifVsDap from './cif-vs-dap';
 import dapVsDpu from './dap-vs-dpu';
 import firstSaleRule from './first-sale-rule';
 import ics2 from './ics2';
+import bondedWarehouse from './bonded-warehouse';
+import cbpForm28 from './cbp-form-28';
+import dualUseGoods from './dual-use-goods';
+import etd from './etd';
+import fcaVsDdp from './fca-vs-ddp';
+import howToReadAnAwbNumber from './how-to-read-an-awb-number';
 
 /**
  * Sources added by individual articles, merged into SOURCES in lib/trade/sources.
@@ -83,6 +89,12 @@ export const ARTICLE_SOURCE_FILES = [
   dapVsDpu,
   firstSaleRule,
   ics2,
+  bondedWarehouse,
+  cbpForm28,
+  dualUseGoods,
+  etd,
+  fcaVsDdp,
+  howToReadAnAwbNumber,
 ] as const satisfies readonly Readonly<Record<string, SourceFields>>[];
 
 type KeysOf<T> = T extends unknown ? keyof T : never;

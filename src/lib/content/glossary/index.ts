@@ -55,6 +55,21 @@ import routedExportTransaction from './routed-export-transaction';
 import singleAdministrativeDocument from './single-administrative-document';
 import standbyLetterOfCredit from './standby-letter-of-credit';
 import ultimateConsignee from './ultimate-consignee';
+import amsFiling from './ams-filing';
+import arrivalNotice from './arrival-notice';
+import bondedWarehouse from './bonded-warehouse';
+import devanning from './devanning';
+import dualUseGoods from './dual-use-goods';
+import etd from './etd';
+import exporterOfRecord from './exporter-of-record';
+import foreignTradeZone from './foreign-trade-zone';
+import importQuota from './import-quota';
+import inwardProcessing from './inward-processing';
+import mostFavouredNationTariff from './most-favoured-nation-tariff';
+import portOfLoadingAndDischarge from './port-of-loading-and-discharge';
+import temporaryAdmission from './temporary-admission';
+import temporaryImportBond from './temporary-import-bond';
+import unitLoadDevice from './unit-load-device';
 
 const ENTRIES: readonly GlossaryTerm[] = [
   // One line per term, alphabetical by slug.
@@ -96,6 +111,21 @@ const ENTRIES: readonly GlossaryTerm[] = [
   singleAdministrativeDocument,
   standbyLetterOfCredit,
   ultimateConsignee,
+  amsFiling,
+  arrivalNotice,
+  bondedWarehouse,
+  devanning,
+  dualUseGoods,
+  etd,
+  exporterOfRecord,
+  foreignTradeZone,
+  importQuota,
+  inwardProcessing,
+  mostFavouredNationTariff,
+  portOfLoadingAndDischarge,
+  temporaryAdmission,
+  temporaryImportBond,
+  unitLoadDevice,
 ];
 
 /** Every term page, alphabetical by display name. */
