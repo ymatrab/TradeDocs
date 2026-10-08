@@ -293,6 +293,7 @@ export const PAGE_SOURCES = {
   proforma: ['trade-gov-proforma-invoice', 'us-cbp-proforma-invoice', 'icc-incoterms-2020'],
   packingList: ['trade-gov-packing-list', 'trade-gov-commercial-invoice'],
   landedCost: ['wto-customs-valuation', 'icc-incoterms-2020'],
+  exportPrice: ['icc-incoterms-2020', 'wto-customs-valuation'],
   containerLoading: ['maersk-dry-containers'],
   unitConverter: ['nist-si-volume', 'nist-si-mass'],
   deliveryNote: ['trade-gov-export-documents', 'trade-gov-packing-list'],

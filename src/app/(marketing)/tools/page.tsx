@@ -6,6 +6,7 @@ import {
   Box,
   Boxes,
   Calculator,
+  Coins,
   FileText,
   Handshake,
   Layers,
@@ -23,7 +24,7 @@ import { openGraphFor } from '@/lib/seo/social';
 export const metadata: Metadata = {
   title: 'Free trade tools — document generators and shipping calculators',
   description:
-    'Free tools for people who ship: commercial invoice, proforma invoice, packing list and delivery note generators, CBM, dimensional weight, container loading, pallet and landed cost calculators, CBM and kg converters, and a guide to all eleven Incoterms 2020 rules.',
+    'Free tools for people who ship: commercial invoice, proforma invoice, packing list and delivery note generators, CBM, dimensional weight, container loading, pallet, landed cost and export price calculators, CBM and kg converters, and a guide to all eleven Incoterms 2020 rules.',
   alternates: { canonical: '/tools' },
   openGraph: openGraphFor(
     'Free trade tools: document generators, calculators and Incoterms',
@@ -45,6 +46,7 @@ const ICONS: Record<string, LucideIcon> = {
   '/tools/cbm-to-cubic-feet': Ruler,
   '/tools/pallet-calculator': Layers,
   '/tools/landed-cost-calculator': Calculator,
+  '/tools/export-price-calculator': Coins,
   '/tools/incoterms': Handshake,
 };
 

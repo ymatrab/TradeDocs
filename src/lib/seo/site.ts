@@ -21,7 +21,7 @@ export const SITE_DESCRIPTION =
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
   'figures agree across the set. It is free while early, and its free tools work without an ' +
   'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
-  'a landed cost calculator, CBM, chargeable weight, container loading and pallet ' +
+  'landed cost and export price calculators, CBM, chargeable weight, container loading and pallet ' +
   'calculators, CBM-to-cubic-feet and kg-to-lb converters, an Incoterms 2020 guide and a ' +
   'glossary of shipping terms.';
 
@@ -40,6 +40,9 @@ export type PublicTool = {
  * CBM-to-cubic-feet converter and pallet calculator after them.
  */
 const TOOLS_ROUND = '2026-10-07';
+
+/** The export price calculator and the three use-case pages were added this day. */
+const WAVE_C_ROUND = '2026-10-08';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
   {
@@ -123,6 +126,14 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     summary:
       'Goods, freight, insurance, duty and taxes at the rates you enter, as a total and a cost per unit. No tariff lookup, nothing stored.',
     kind: 'application',
+  },
+  {
+    path: '/tools/export-price-calculator',
+    name: 'Export price calculator',
+    summary:
+      'Your ex-works price plus the inland, clearance, loading, freight and insurance costs you enter, as FCA/FOB, CFR/CPT, CIF/CIP and a DDP estimate. No rates of our own.',
+    kind: 'application',
+    updated: WAVE_C_ROUND,
   },
   {
     path: '/tools/incoterms',

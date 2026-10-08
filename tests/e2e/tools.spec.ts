@@ -176,6 +176,42 @@ test('the pallet calculator counts cartons per layer and per pallet', async ({ p
   await expect(page.getByText(/Not even one layer fits/)).toBeVisible();
 });
 
+test('the export price calculator builds FOB, CIF and DDP from the costs entered', async ({
+  page,
+}) => {
+  await page.goto('/tools/export-price-calculator');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Export price calculator');
+  await expect(page.getByRole('heading', { name: 'An estimate, not a quote' })).toBeVisible();
+
+  await page.getByLabel('Ex-works (EXW) price').fill('10000');
+  await page.getByLabel('Inland transport').fill('300');
+  await page.getByLabel('Export clearance').fill('150');
+  await page.getByLabel('Origin loading and terminal charges').fill('250');
+  await page.getByLabel('Main freight').fill('1800');
+  await page.getByLabel('Cargo insurance').fill('41.25');
+  await page.getByLabel('Units in the consignment').fill('500');
+  await page.getByLabel('Destination charges').fill('400');
+  await page.getByLabel('Import duty rate (%)').fill('5');
+  await page.getByLabel('Import taxes (%)').fill('20');
+
+  const prices = page.getByRole('region', { name: 'Export price', exact: true });
+  await expect(prices).toContainText('10,700.00 USD');
+  await expect(prices).toContainText('12,500.00 USD');
+  await expect(prices).toContainText('12,541.25 USD');
+  // Duty 5% of CIF = 627.06; tax 20% of CIF + duty = 2,633.66.
+  await expect(prices).toContainText('16,201.97 USD');
+  const table = page.getByRole('table', { name: /Export price by Incoterms rule/ });
+  await expect(table.getByRole('row', { name: /CIF \/ CIP/ })).toContainText('25.0825 USD');
+
+  // A field that cannot be read is flagged, not silently counted as zero.
+  await page.getByLabel('Main freight').fill('abc');
+  await expect(page.getByText('Enter a number such as 1250.50, or leave it blank.')).toBeVisible();
+
+  // The result is carried by hand: the link goes to the proforma generator, nothing else.
+  const proforma = page.getByRole('link', { name: 'Open the proforma invoice generator' });
+  await expect(proforma).toHaveAttribute('href', '/tools/proforma-invoice-generator');
+});
+
 test('glossary and country pages render and are listed once sourced (D-015)', async ({ page }) => {
   await page.goto('/glossary');
   await page.getByRole('searchbox', { name: 'Search the glossary' }).fill('vgm');
@@ -201,6 +237,7 @@ test('the new tool pages are registered everywhere a tool is listed', async ({ p
     '/tools/delivery-note-generator',
     '/tools/cbm-to-cubic-feet',
     '/tools/pallet-calculator',
+    '/tools/export-price-calculator',
   ];
   await page.goto('/tools');
   for (const path of paths) await expect(page.locator(`main a[href="${path}"]`)).toHaveCount(1);
@@ -235,6 +272,7 @@ test('the public tool pages meet the accessibility bar the rest of the product d
     '/tools/delivery-note-generator',
     '/tools/cbm-to-cubic-feet',
     '/tools/pallet-calculator',
+    '/tools/export-price-calculator',
     '/glossary',
     '/glossary/verified-gross-mass',
     '/export-documents',

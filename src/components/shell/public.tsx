@@ -58,6 +58,7 @@ const footerTools = [
   { href: '/tools/pallet-calculator', label: 'Pallet calculator' },
   { href: '/tools/chargeable-weight', label: 'Dimensional weight' },
   { href: '/tools/landed-cost-calculator', label: 'Landed cost' },
+  { href: '/tools/export-price-calculator', label: 'Export price' },
   { href: '/tools/incoterms', label: 'Incoterms 2020' },
 ] as const;
 
