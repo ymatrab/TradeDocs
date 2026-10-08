@@ -122,6 +122,26 @@ export default {
     retrieved: RETRIEVED,
     reviewer: PENDING,
   },
+  'e5-cfr-19-146-43': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 146.43 (eCFR)',
+    title: '19 CFR § 146.43 — Domestic status',
+    url: 'https://www.ecfr.gov/current/title-19/section-146.43',
+    jurisdiction: 'United States (import)',
+    supports:
+      'domestic status for U.S. goods on which internal-revenue taxes have been paid, goods previously imported with duty and tax paid and goods previously entered free, no permit being needed to admit them in most cases, and their return to Customs territory free of quotas, duty or tax',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
+  'e5-cfr-19-146-63': {
+    authority: 'U.S. Customs and Border Protection, 19 CFR 146.63 (eCFR)',
+    title: '19 CFR § 146.63 — Entry for consumption (from a zone)',
+    url: 'https://www.ecfr.gov/current/title-19/section-146.63',
+    jurisdiction: 'United States (import)',
+    supports:
+      'merchandise in foreign status being entered for consumption from a zone, and the weekly entry on CBP Form 3461 for estimated removals of goods manufactured or changed in the zone, accompanied by a pro forma invoice or schedule showing the units of each type to be removed during the week and their zone and dutiable values, with an additional Form 3461 when removals exceed the estimate',
+    retrieved: RETRIEVED,
+    reviewer: PENDING,
+  },
   'e5-cfr-19-146-62': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.62 (eCFR)',
     title: '19 CFR § 146.62 — Entry (transfer from a zone)',
