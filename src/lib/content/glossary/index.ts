@@ -31,6 +31,15 @@ import nvocc from './nvocc';
 import proofOfDelivery from './proof-of-delivery';
 import shippingManifest from './shipping-manifest';
 import transshipment from './transshipment';
+import advanceShippingNotice from './advance-shipping-notice';
+import antiDumpingDuty from './anti-dumping-duty';
+import billOfExchange from './bill-of-exchange';
+import containerSealNumber from './container-seal-number';
+import countervailingDuty from './countervailing-duty';
+import customsDeclaration from './customs-declaration';
+import masterCarton from './master-carton';
+import tariffRateQuota from './tariff-rate-quota';
+import usppi from './usppi';
 
 const ENTRIES: readonly GlossaryTerm[] = [
   // One line per term, alphabetical by slug.
@@ -48,6 +57,15 @@ const ENTRIES: readonly GlossaryTerm[] = [
   proofOfDelivery,
   shippingManifest,
   transshipment,
+  advanceShippingNotice,
+  antiDumpingDuty,
+  billOfExchange,
+  containerSealNumber,
+  countervailingDuty,
+  customsDeclaration,
+  masterCarton,
+  tariffRateQuota,
+  usppi,
 ];
 
 /** Every term page, alphabetical by display name. */
