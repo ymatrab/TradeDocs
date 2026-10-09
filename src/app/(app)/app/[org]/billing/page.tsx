@@ -9,7 +9,13 @@ import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { LinkButton } from '@/components/primitives/button';
 import { currentPlans, readEntitlement } from '@/lib/billing/server';
 import { summarizeEntitlement, type EntitlementSummary } from '@/lib/billing/entitlements';
-import { INTERVAL_LABELS, paidOnlySummary, PLAN_NAMES, upgradeUrl } from '@/lib/billing/plans';
+import {
+  INTERVAL_LABELS,
+  paidAdditions,
+  paidOnlySummary,
+  PLAN_NAMES,
+  upgradeUrl,
+} from '@/lib/billing/plans';
 
 export const metadata: Metadata = { title: 'Billing' };
 
@@ -102,7 +108,7 @@ export default async function BillingPage({ params }: { params: Promise<{ org: s
           {offers.length === 0 ? (
             <Callout tone="neutral" title="Paid plans aren’t open yet">
               {extras
-                ? `Everything but ${extras} is free while it is early, with no card; Pro and Team add ${extras}.`
+                ? `Everything but ${extras} is free while it is early, with no card; ${paidAdditions()}.`
                 : 'Everything TradeDocs does is free while it is early, with no card.'}{' '}
               When paid plans open, their prices will be on the{' '}
               <Link className="text-link" href="/pricing">

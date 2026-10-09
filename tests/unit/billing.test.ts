@@ -394,12 +394,12 @@ describe('plans and offers', () => {
     );
   });
 
-  it('gates only PDF branding, and invents no other paid-only feature', () => {
+  it('gates only PDF branding and the API, and invents no other paid-only feature', () => {
     const paid = FEATURES.filter((feature) => !featurePlans(feature.key).includes('free'));
-    expect(paid.map((feature) => feature.key)).toEqual(['pdf_branding']);
-    for (const plan of PAID_PLAN_IDS) {
-      expect(paidOnlyFeatures(plan).map((feature) => feature.key)).toEqual(['pdf_branding']);
-    }
+    expect(paid.map((feature) => feature.key)).toEqual(['pdf_branding', 'api']);
+    expect(paidOnlyFeatures('pro').map((feature) => feature.key)).toEqual(['pdf_branding']);
+    expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual(['pdf_branding', 'api']);
+    expect(PAID_PLAN_IDS).toEqual(['pro', 'team']);
     expect(featurePlans('a.feature.that.does.not.exist')).toEqual([]);
   });
 

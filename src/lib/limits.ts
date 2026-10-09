@@ -44,3 +44,15 @@ export const MAX_BRANDING_SIDE = 2000;
 export const MAX_ESIGN_SIGNERS = 5;
 export const MAX_ESIGN_MESSAGE = 2000;
 export const MAX_SIGNED_PDF_BYTES = 26_214_400;
+
+/**
+ * The public REST API (src/app/api/v1). Requests per key per minute, where the deployment
+ * enforces quotas (see /api/ready); POSTs count against both quotas. Lines per shipment
+ * created through the API, page sizes and active keys per organization (the last enforced
+ * by public.create_api_key, supabase/migrations/20261009000400_public_api.sql).
+ */
+export const API_REQUEST_QUOTA = { limit: 120, windowSeconds: 60 } as const;
+export const API_WRITE_QUOTA = { limit: 30, windowSeconds: 60 } as const;
+export const API_MAX_LINES = 200;
+export const API_PAGE_SIZE = { default: 25, max: 100 } as const;
+export const MAX_ACTIVE_API_KEYS = 20;

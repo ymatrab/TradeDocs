@@ -41,11 +41,14 @@ it('configured readiness reflects the real auth dependency result without reveal
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({ internalVersion: 'private' })));
   const response = await readiness();
   expect(response.status).toBe(200);
-  // No service-role key or quota secret here, so quotas are reported as degraded.
+  // No service-role key or quota secret here, so quotas are reported as degraded, and no API
+  // key pepper, so the public API reports itself off (that feature alone).
   expect(await response.json()).toEqual({
     status: 'ready',
     rate_limiting: 'degraded',
     reason: DEGRADED_RATE_LIMIT_REASON,
+    api: 'unavailable',
+    api_reason: 'api_key_pepper_missing',
   });
   vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('outage')));
   expect((await readiness()).status).toBe(503);
@@ -60,6 +63,7 @@ it('readiness reports enforced quotas once the store and key are configured', as
   vi.stubEnv('SUPABASE_PROJECT_REF', 'syntheticproject');
   vi.stubEnv('SUPABASE_ENVIRONMENT', 'test');
   vi.stubEnv('RATE_LIMIT_KEY_SECRET', 'synthetic-rate-test-key-more-than-32-characters');
+  vi.stubEnv('API_KEY_PEPPER', 'synthetic-api-pepper-more-than-32-characters');
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({})));
   expect(await (await readiness()).json()).toEqual({ status: 'ready', rate_limiting: 'enforced' });
 });

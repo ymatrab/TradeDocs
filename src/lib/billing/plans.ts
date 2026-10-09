@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { documentKindGroups, documentKindLabels, type DocumentKindGroup } from '@/lib/labels';
 import {
+  API_REQUEST_QUOTA,
   MAX_BRANDING_BYTES,
   MAX_BRANDING_SIDE,
   MAX_ESIGN_SIGNERS,
@@ -18,10 +19,12 @@ import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
  * Two rules hold here:
  *
  * - A feature is listed only if the code really does it, and its `plans` say who gets it. A
- *   feature that lists 'free' is never gated. The one paid-only feature is PDF branding
- *   (D-021), gated by hasEntitlement(org, 'pdf_branding') in src/lib/billing/server.ts and,
- *   in the database, by private.branding_entitled
- *   (supabase/migrations/20261007000100_pdf_branding.sql), which mirrors its plans.
+ *   feature that lists 'free' is never gated. The paid-only features are PDF branding
+ *   (D-021, Pro and Team), gated by hasEntitlement(org, 'pdf_branding') in
+ *   src/lib/billing/server.ts and, in the database, by private.branding_entitled
+ *   (supabase/migrations/20261007000100_pdf_branding.sql); and the REST API (D-025, Team),
+ *   gated by hasEntitlement(org, 'api') and by private.api_entitled
+ *   (supabase/migrations/20261009000400_public_api.sql). Each SQL function mirrors its plans.
  * - No price shows unless the owner has approved the prices (PRICES_APPROVED=true, D-020).
  *   PROPOSED_PRICES below are the marketing proposal, unapproved (P-002 stays open until the
  *   owner confirms). With the flag off every paid plan is "Not available yet": no price, no
@@ -60,6 +63,7 @@ export type Feature = {
 
 const EVERY_PLAN: readonly PlanId[] = PLAN_IDS;
 const PAID_PLANS: readonly PlanId[] = PAID_PLAN_IDS;
+const TEAM_PLAN: readonly PlanId[] = ['team'];
 
 function listOf(names: string[]): string {
   if (names.length <= 1) return names.join('');
@@ -173,6 +177,16 @@ export const FEATURES = [
     needsAccount: true,
   },
   {
+    key: 'api',
+    group: 'Team',
+    label:
+      'REST API: list and create shipments, generate documents and download their PDFs with organization API keys',
+    short: 'the REST API',
+    limit: `${API_REQUEST_QUOTA.limit} requests per minute per key; keys are created and revoked by owners and administrators`,
+    plans: TEAM_PLAN,
+    needsAccount: true,
+  },
+  {
     key: 'team.members',
     group: 'Team',
     label: 'Teammates invited by link, with owner, admin and member roles',
@@ -229,6 +243,24 @@ export function paidOnlySummary(): string {
     ),
   );
   return listOf([...names]);
+}
+
+/**
+ * What the paid plans add over Free, as one sentence without a final full stop, or "" when
+ * they add nothing. Grouped by the plans that include each feature, so a Team-only feature is
+ * never credited to Pro: "Pro and Team add PDF branding; Team also adds the REST API".
+ */
+export function paidAdditions(): string {
+  const proOnly = paidOnlyFeatures('pro').map((feature) => feature.short ?? feature.label);
+  const teamOnly = paidOnlyFeatures('team')
+    .filter((feature) => !(feature.plans as readonly PlanId[]).includes('pro'))
+    .map((feature) => feature.short ?? feature.label);
+  const parts: string[] = [];
+  if (proOnly.length > 0) parts.push(`Pro and Team add ${listOf(proOnly)}`);
+  if (teamOnly.length > 0) {
+    parts.push(`${proOnly.length > 0 ? 'Team also adds' : 'Team adds'} ${listOf(teamOnly)}`);
+  }
+  return parts.join('; ');
 }
 
 // --- Offers ------------------------------------------------------------------------------
