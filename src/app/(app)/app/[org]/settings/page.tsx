@@ -3,8 +3,12 @@ import { notFound } from 'next/navigation';
 import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Callout, Panel } from '@/components/primitives/feedback';
+import { LinkButton } from '@/components/primitives/button';
 import { SettingsForm } from './settings-form';
 import { BrandingPanel, type BrandingSlotView } from './branding-panel';
+import { ApiKeysPanel, type ApiKeyView } from './api-keys-panel';
+import { apiKeyPepper } from '@/lib/api/keys';
+import { shortDate } from '@/lib/format';
 import { hasEntitlement } from '@/lib/billing/server';
 import {
   BRANDING_BUCKET,
@@ -63,6 +67,41 @@ export default async function SettingsPage({ params }: { params: Promise<{ org: 
     hasEntitlement(org, 'pdf_branding'),
   ]);
   const canManage = membership?.role === 'owner' || membership?.role === 'admin';
+
+  // API keys: owners and administrators only (the row policy returns nothing to anyone else).
+  // Never select key_hash: the column grant refuses it, and the page has no use for it.
+  let keyRows: {
+    id: string;
+    name: string;
+    prefix: string;
+    created_at: string;
+    last_used_at: string | null;
+    revoked_at: string | null;
+  }[] = [];
+  let keysFailed = false;
+  let apiEntitled = false;
+  if (canManage) {
+    const [result, entitled] = await Promise.all([
+      client
+        .from('api_keys')
+        .select('id, name, prefix, created_at, last_used_at, revoked_at')
+        .eq('org_id', org)
+        .order('created_at', { ascending: false })
+        .limit(100),
+      hasEntitlement(org, 'api'),
+    ]);
+    keyRows = result.data ?? [];
+    keysFailed = Boolean(result.error);
+    apiEntitled = entitled;
+  }
+  const keyViews: ApiKeyView[] = keyRows.map((key) => ({
+    id: key.id,
+    name: key.name,
+    prefix: key.prefix,
+    created: shortDate(key.created_at),
+    lastUsed: key.last_used_at ? shortDate(key.last_used_at) : null,
+    revoked: key.revoked_at ? shortDate(key.revoked_at) : null,
+  }));
 
   // Previews through short-lived signed URLs; the bucket itself is private.
   const assets = branding.data ?? [];
@@ -132,6 +171,30 @@ export default async function SettingsPage({ params }: { params: Promise<{ org: 
             maxBytes={MAX_BRANDING_BYTES}
             requirements={REQUIREMENTS}
           />
+        </Panel>
+        {canManage ? (
+          <Panel title="API keys">
+            <ApiKeysPanel
+              org={org}
+              keys={keyViews}
+              entitled={apiEntitled}
+              available={apiKeyPepper() !== null}
+              loadFailed={keysFailed}
+            />
+          </Panel>
+        ) : null}
+        <Panel title="Integrations">
+          <div style={{ display: 'grid', gap: 12 }}>
+            <p className="muted" style={{ margin: 0 }}>
+              Import customers and items from QuickBooks Online or Xero into the company directory
+              and product catalog.
+            </p>
+            <div>
+              <LinkButton href={`/app/${org}/settings/integrations`} tone="secondary" compact>
+                Open integrations
+              </LinkButton>
+            </div>
+          </div>
         </Panel>
       </div>
     </AppShell>

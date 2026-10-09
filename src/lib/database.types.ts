@@ -61,6 +61,85 @@ export type Database = {
         }
         Relationships: []
       }
+      api_idempotency: {
+        Row: {
+          created_at: string
+          idempotency_key: string
+          key_id: string
+          request_hash: string
+          response: Json | null
+        }
+        Insert: {
+          created_at?: string
+          idempotency_key: string
+          key_id: string
+          request_hash: string
+          response?: Json | null
+        }
+        Update: {
+          created_at?: string
+          idempotency_key?: string
+          key_id?: string
+          request_hash?: string
+          response?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_idempotency_key_id_fkey"
+            columns: ["key_id"]
+            isOneToOne: false
+            referencedRelation: "api_keys"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      api_keys: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          key_hash: string
+          last_used_at: string | null
+          name: string
+          org_id: string
+          prefix: string
+          revoked_at: string | null
+          revoked_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          key_hash: string
+          last_used_at?: string | null
+          name: string
+          org_id: string
+          prefix: string
+          revoked_at?: string | null
+          revoked_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          key_hash?: string
+          last_used_at?: string | null
+          name?: string
+          org_id?: string
+          prefix?: string
+          revoked_at?: string | null
+          revoked_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_keys_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       audit_events: {
         Row: {
           action: string
@@ -396,6 +475,257 @@ export type Database = {
             columns: ["org_id"]
             isOneToOne: true
             referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      esign_requests: {
+        Row: {
+          created_at: string
+          document_id: string
+          document_number: string
+          failure_reason: string | null
+          id: string
+          last_event_at: string | null
+          last_event_type: string | null
+          message: string | null
+          org_id: string
+          original_sha256: string
+          provider: string
+          provider_request_id: string | null
+          requested_by: string | null
+          signed_byte_size: number | null
+          signed_object_path: string | null
+          signed_sha256: string | null
+          signed_stored_at: string | null
+          signers: Json
+          status: string
+          test_mode: boolean
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          document_id: string
+          document_number: string
+          failure_reason?: string | null
+          id?: string
+          last_event_at?: string | null
+          last_event_type?: string | null
+          message?: string | null
+          org_id: string
+          original_sha256: string
+          provider?: string
+          provider_request_id?: string | null
+          requested_by?: string | null
+          signed_byte_size?: number | null
+          signed_object_path?: string | null
+          signed_sha256?: string | null
+          signed_stored_at?: string | null
+          signers: Json
+          status?: string
+          test_mode: boolean
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string
+          document_number?: string
+          failure_reason?: string | null
+          id?: string
+          last_event_at?: string | null
+          last_event_type?: string | null
+          message?: string | null
+          org_id?: string
+          original_sha256?: string
+          provider?: string
+          provider_request_id?: string | null
+          requested_by?: string | null
+          signed_byte_size?: number | null
+          signed_object_path?: string | null
+          signed_sha256?: string | null
+          signed_stored_at?: string | null
+          signers?: Json
+          status?: string
+          test_mode?: boolean
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "esign_requests_org_id_document_id_fkey"
+            columns: ["org_id", "document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["org_id", "id"]
+          },
+          {
+            foreignKeyName: "esign_requests_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      integration_connections: {
+        Row: {
+          access_expires_at: string
+          access_token_ciphertext: string
+          connected_at: string
+          connected_by: string | null
+          external_tenant_id: string
+          id: string
+          org_id: string
+          provider: string
+          refresh_expires_at: string | null
+          refresh_token_ciphertext: string
+          scopes: string
+          status: string
+          tenant_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          access_expires_at: string
+          access_token_ciphertext: string
+          connected_at?: string
+          connected_by?: string | null
+          external_tenant_id: string
+          id?: string
+          org_id: string
+          provider: string
+          refresh_expires_at?: string | null
+          refresh_token_ciphertext: string
+          scopes: string
+          status?: string
+          tenant_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          access_expires_at?: string
+          access_token_ciphertext?: string
+          connected_at?: string
+          connected_by?: string | null
+          external_tenant_id?: string
+          id?: string
+          org_id?: string
+          provider?: string
+          refresh_expires_at?: string | null
+          refresh_token_ciphertext?: string
+          scopes?: string
+          status?: string
+          tenant_name?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_connections_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      integration_oauth_states: {
+        Row: {
+          code_verifier_ciphertext: string | null
+          consumed_at: string | null
+          created_at: string
+          expires_at: string
+          nonce_hash: string
+          org_id: string
+          provider: string
+          user_id: string
+        }
+        Insert: {
+          code_verifier_ciphertext?: string | null
+          consumed_at?: string | null
+          created_at?: string
+          expires_at: string
+          nonce_hash: string
+          org_id: string
+          provider: string
+          user_id: string
+        }
+        Update: {
+          code_verifier_ciphertext?: string | null
+          consumed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          nonce_hash?: string
+          org_id?: string
+          provider?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_oauth_states_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      integration_records: {
+        Row: {
+          company_id: string | null
+          entity: string
+          external_id: string
+          first_imported_at: string
+          id: string
+          last_imported_at: string
+          local_hash: string
+          org_id: string
+          product_id: string | null
+          provider: string
+          source_hash: string
+        }
+        Insert: {
+          company_id?: string | null
+          entity: string
+          external_id: string
+          first_imported_at?: string
+          id?: string
+          last_imported_at?: string
+          local_hash: string
+          org_id: string
+          product_id?: string | null
+          provider: string
+          source_hash: string
+        }
+        Update: {
+          company_id?: string | null
+          entity?: string
+          external_id?: string
+          first_imported_at?: string
+          id?: string
+          last_imported_at?: string
+          local_hash?: string
+          org_id?: string
+          product_id?: string | null
+          provider?: string
+          source_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_records_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "integration_records_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "integration_records_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
             referencedColumns: ["id"]
           },
         ]
@@ -873,8 +1203,11 @@ export type Database = {
       }
       shipments: {
         Row: {
+          booking_number: string | null
           buyer_reference: string | null
           consignee_id: string | null
+          container_number: string | null
+          container_type: string | null
           country_of_destination: string | null
           country_of_origin: string | null
           created_at: string
@@ -892,13 +1225,22 @@ export type Database = {
           proforma_valid_until: string | null
           reference: string
           revision: number
+          seal_number: string | null
           shipped_on: string | null
           status: string
           updated_at: string
+          vessel_voyage: string | null
+          vgm_kg: number | null
+          vgm_method: number | null
+          vgm_signatory: string | null
+          vgm_weighed_on: string | null
         }
         Insert: {
+          booking_number?: string | null
           buyer_reference?: string | null
           consignee_id?: string | null
+          container_number?: string | null
+          container_type?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
           created_at?: string
@@ -916,13 +1258,22 @@ export type Database = {
           proforma_valid_until?: string | null
           reference: string
           revision?: number
+          seal_number?: string | null
           shipped_on?: string | null
           status?: string
           updated_at?: string
+          vessel_voyage?: string | null
+          vgm_kg?: number | null
+          vgm_method?: number | null
+          vgm_signatory?: string | null
+          vgm_weighed_on?: string | null
         }
         Update: {
+          booking_number?: string | null
           buyer_reference?: string | null
           consignee_id?: string | null
+          container_number?: string | null
+          container_type?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
           created_at?: string
@@ -940,9 +1291,15 @@ export type Database = {
           proforma_valid_until?: string | null
           reference?: string
           revision?: number
+          seal_number?: string | null
           shipped_on?: string | null
           status?: string
           updated_at?: string
+          vessel_voyage?: string | null
+          vgm_kg?: number | null
+          vgm_method?: number | null
+          vgm_signatory?: string | null
+          vgm_weighed_on?: string | null
         }
         Relationships: [
           {
@@ -998,6 +1355,54 @@ export type Database = {
         Args: { p_limit?: number; p_query: string }
         Returns: Json
       }
+      api_authenticate: { Args: { p_key_hash: string }; Returns: Json }
+      api_create_shipment: {
+        Args: {
+          p_idempotency_key: string
+          p_items: Json
+          p_key_hash: string
+          p_request_hash: string
+          p_shipment: Json
+        }
+        Returns: Json
+      }
+      api_generate_document: {
+        Args: {
+          p_idempotency_key: string
+          p_key_hash: string
+          p_kind: string
+          p_request_hash: string
+          p_shipment: string
+        }
+        Returns: Json
+      }
+      api_get_document: {
+        Args: { p_document: string; p_key_hash: string }
+        Returns: Json
+      }
+      api_get_shipment: {
+        Args: { p_key_hash: string; p_shipment: string }
+        Returns: Json
+      }
+      api_list_documents: {
+        Args: {
+          p_after_created?: string
+          p_after_id?: string
+          p_key_hash: string
+          p_limit: number
+          p_shipment: string
+        }
+        Returns: Json
+      }
+      api_list_shipments: {
+        Args: {
+          p_after_created?: string
+          p_after_id?: string
+          p_key_hash: string
+          p_limit: number
+        }
+        Returns: Json
+      }
       apply_billing_event: {
         Args: { p_action: Json; p_event_id: string; p_event_type: string }
         Returns: string
@@ -1019,6 +1424,15 @@ export type Database = {
           retry_after_seconds: number
         }[]
       }
+      create_api_key: {
+        Args: {
+          key_hash: string
+          key_name: string
+          key_prefix: string
+          target_org: string
+        }
+        Returns: string
+      }
       create_invitation: {
         Args: {
           invitee_email: string
@@ -1036,14 +1450,86 @@ export type Database = {
         Args: { new_reference: string; source_shipment: string }
         Returns: string
       }
+      esign_apply_event: {
+        Args: {
+          p_event_key: string
+          p_event_type: string
+          p_provider_request_id: string
+          p_request: string
+          p_signers: Json
+          p_status: string
+        }
+        Returns: string
+      }
+      esign_attach_signed: {
+        Args: {
+          p_byte_size: number
+          p_object_path: string
+          p_request: string
+          p_sha256: string
+        }
+        Returns: string
+      }
+      esign_create_request: {
+        Args: {
+          p_actor: string
+          p_document: string
+          p_message: string
+          p_org: string
+          p_original_sha256: string
+          p_signers: Json
+          p_test_mode: boolean
+        }
+        Returns: string
+      }
+      esign_event_recorded: { Args: { p_event_key: string }; Returns: boolean }
+      esign_mark_failed: {
+        Args: { p_reason: string; p_request: string }
+        Returns: undefined
+      }
+      esign_mark_sent: {
+        Args: {
+          p_provider_request_id: string
+          p_request: string
+          p_signers: Json
+        }
+        Returns: undefined
+      }
+      esign_record_download: {
+        Args: { p_actor: string; p_request: string }
+        Returns: undefined
+      }
       export_account_data: { Args: never; Returns: Json }
+      generate_certificate_of_origin: {
+        Args: { actor: string; target_shipment: string }
+        Returns: string
+      }
       generate_document: {
         Args: { document_kind: string; target_shipment: string }
         Returns: string
       }
+      import_integration_records: {
+        Args: {
+          dry_run?: boolean
+          record_kind: string
+          rows: Json
+          source: string
+          target_org: string
+        }
+        Returns: Json
+      }
       import_products: {
         Args: { dry_run?: boolean; rows: Json; target_org: string }
         Returns: Json
+      }
+      integration_status: {
+        Args: { target_org: string }
+        Returns: {
+          connected_at: string
+          provider: string
+          status: string
+          tenant_name: string
+        }[]
       }
       peek_rate_limit: {
         Args: { p_key_hash: string; p_window_seconds: number }
@@ -1064,6 +1550,7 @@ export type Database = {
         Returns: undefined
       }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
+      revoke_api_key: { Args: { target_key: string }; Returns: undefined }
       revoke_invitation: {
         Args: { target_invitation: string }
         Returns: undefined

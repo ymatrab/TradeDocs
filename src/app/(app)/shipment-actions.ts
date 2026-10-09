@@ -7,9 +7,12 @@ import { createClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
 import { fieldErrors, summaryOf } from '@/lib/form-errors';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { DOCUMENT_KINDS } from '@/lib/labels';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
+import { generateCertificateOfOrigin } from '@/lib/trade/certificate-of-origin-server';
 import {
   calendarDateField,
+  containerNumberField,
   countryField,
   currencyField,
   decimalField,
@@ -28,14 +31,6 @@ const optionalText = (max: number, message?: string) =>
 
 /** The most lines one shipment holds; shipment_items.position is checked to 999. */
 const MAX_LINES = 999;
-
-const DOCUMENT_KINDS = [
-  'commercial_invoice',
-  'proforma_invoice',
-  'packing_list',
-  'delivery_note',
-  'certificate_of_origin',
-] as const;
 
 function read(formData: FormData, field: string): string {
   const value = formData.get(field);
@@ -127,8 +122,27 @@ export async function updateShipment(
       marks_and_numbers: optionalText(2000),
       buyer_reference: optionalText(60),
       proforma_valid_until: calendarDateField,
+      container_number: containerNumberField,
+      container_type: optionalText(12),
+      seal_number: optionalText(40),
+      booking_number: optionalText(40),
+      vessel_voyage: optionalText(80),
+      vgm_method: z
+        .enum(['', '1', '2'], { message: 'Choose method 1 or method 2.' })
+        .transform((value) => (value === '' ? null : Number(value))),
+      vgm_kg: decimalField({ label: 'verified gross mass', places: 3, positive: true }),
+      vgm_weighed_on: calendarDateField,
+      vgm_signatory: optionalText(80),
     })
     .superRefine((value, context) => {
+      // The database holds a verified gross mass below 1,000 tonnes; no container weighs more.
+      if (value.vgm_kg !== null && Number(value.vgm_kg) >= 1_000_000) {
+        context.addIssue({
+          code: 'custom',
+          path: ['vgm_kg'],
+          message: 'Enter the verified gross mass in kilograms, below 1,000,000.',
+        });
+      }
       // An Incoterms rule without its named place does not say where risk passes.
       if (value.incoterm && !value.incoterm_place) {
         context.addIssue({
@@ -152,21 +166,59 @@ export async function updateShipment(
       marks_and_numbers: read(formData, 'marks_and_numbers'),
       buyer_reference: read(formData, 'buyer_reference'),
       proforma_valid_until: read(formData, 'proforma_valid_until'),
+      container_number: read(formData, 'container_number'),
+      container_type: read(formData, 'container_type'),
+      seal_number: read(formData, 'seal_number'),
+      booking_number: read(formData, 'booking_number'),
+      vessel_voyage: read(formData, 'vessel_voyage'),
+      vgm_method: read(formData, 'vgm_method').trim(),
+      vgm_kg: read(formData, 'vgm_kg'),
+      vgm_weighed_on: read(formData, 'vgm_weighed_on'),
+      vgm_signatory: read(formData, 'vgm_signatory'),
     });
   if (!parsed.success) {
     const fields = fieldErrors(parsed.error);
     return { error: summaryOf(fields, 'Check the details.'), fields };
   }
 
-  const { org, shipment, revision, shipped_on, buyer_reference, proforma_valid_until, ...rest } =
-    parsed.data;
-  // Each only sent when the form has the field, so a form without it never clears it.
-  const fields = {
-    ...rest,
-    ...(formData.has('shipped_on') ? { shipped_on } : {}),
-    ...(formData.has('buyer_reference') ? { buyer_reference } : {}),
-    ...(formData.has('proforma_valid_until') ? { proforma_valid_until } : {}),
+  const {
+    org,
+    shipment,
+    revision,
+    shipped_on,
+    buyer_reference,
+    proforma_valid_until,
+    container_number,
+    container_type,
+    seal_number,
+    booking_number,
+    vessel_voyage,
+    vgm_method,
+    vgm_kg,
+    vgm_weighed_on,
+    vgm_signatory,
+    ...rest
+  } = parsed.data;
+  const optional = {
+    shipped_on,
+    buyer_reference,
+    proforma_valid_until,
+    container_number,
+    container_type,
+    seal_number,
+    booking_number,
+    vessel_voyage,
+    vgm_method,
+    vgm_kg: vgm_kg === null ? null : Number(vgm_kg),
+    vgm_weighed_on,
+    vgm_signatory,
   };
+  // Each only sent when the form has the field, so a form without it never clears it.
+  const sent: Partial<typeof optional> = {};
+  for (const field of Object.keys(optional) as (keyof typeof optional)[]) {
+    if (formData.has(field)) Object.assign(sent, { [field]: optional[field] });
+  }
+  const fields = { ...rest, ...sent };
   const client = await createClient();
   // Scoped to the organization in the form and read back, because a filter that matches
   // nothing is not an error to PostgREST: without the row count a shipment the caller
@@ -321,16 +373,33 @@ export async function generateDocument(
   }
 
   const client = await createClient();
-  const { data: created, error } = await client.rpc('generate_document', {
-    target_shipment: parsed.data.shipment,
-    document_kind: parsed.data.kind,
-  });
-  if (error) {
-    if (says(error, 'at least one line item')) {
-      return { error: 'Add at least one line before generating a document.' };
+  let created: string;
+  if (isRegulatedDocumentKind(parsed.data.kind)) {
+    // The certificate of origin has its own readiness checks and the one database path that
+    // accepts it (src/lib/trade/certificate-of-origin-server.ts).
+    const { org, shipment } = parsed.data;
+    const certificate = await generateCertificateOfOrigin(client, org, shipment);
+    if ('error' in certificate) return { error: certificate.error };
+    created = certificate.created;
+  } else {
+    const { data, error } = await client.rpc('generate_document', {
+      target_shipment: parsed.data.shipment,
+      document_kind: parsed.data.kind,
+    });
+    if (error) {
+      if (says(error, 'at least one line item')) {
+        return { error: 'Add at least one line before generating a document.' };
+      }
+      if (says(error, 'A VGM declaration needs')) {
+        return {
+          error:
+            'A VGM declaration needs the container number, weighing method, verified gross mass and signatory. Add them under Container and VGM, then generate it.',
+        };
+      }
+      if (error.code === '42501') return { error: 'That shipment is not available to you.' };
+      return { error: 'That document could not be generated. Try again.' };
     }
-    if (error.code === '42501') return { error: 'That shipment is not available to you.' };
-    return { error: 'That document could not be generated. Try again.' };
+    created = data;
   }
 
   // The number is what the user will quote, and whether an earlier revision was replaced

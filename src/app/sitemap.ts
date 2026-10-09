@@ -6,7 +6,14 @@ import { BLOG_HUB_COVER, findPost } from '@/lib/content/posts';
 import type { UnsplashPhoto } from '@/lib/content/images';
 import { isLegalApproved } from '@/lib/legal/identity';
 import { getLegalIdentity } from '@/lib/legal/server';
-import { SITEMAP_PAGES, legalSitemapPages } from '@/lib/seo/site';
+import { cslApiKey } from '@/lib/screening/config';
+import { apiConfig } from '@/lib/api/server';
+import {
+  SITEMAP_PAGES,
+  developersSitemapPages,
+  legalSitemapPages,
+  screeningSitemapPages,
+} from '@/lib/seo/site';
 
 // Reads the deployment environment, so it must be resolved per request rather than
 // frozen into the build output.
@@ -29,6 +36,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     ...SITEMAP_PAGES,
     ...legalSitemapPages(isLegalApproved(legal) ? legal.approvedAt : null),
+    // Denied-party screening is listed only while its CSL key is set (D-025).
+    ...screeningSitemapPages(cslApiKey() !== null),
+    // The API reference is listed only while the API can answer (D-025).
+    ...developersSitemapPages(apiConfig() !== null),
   ];
   return pages.map((page) => {
     const images = photosFor(page.path);

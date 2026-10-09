@@ -283,3 +283,146 @@ test('a second shipment reuses the first without touching its documents', async 
   await page.goto(firstUrl);
   await expect(page.getByText(/Replaced by CI-[0-9]{4}-0002/)).toBeVisible();
 });
+
+test('sales and shipping documents come from one shipment, and a VGM needs its facts', async ({
+  page,
+}) => {
+  const org = await startOrganization(page, 'Fulmar Lines');
+  await createShipment(page, org, 'SHP-VGM-1');
+
+  const oneOff = page.getByRole('form', { name: 'Add a one-off line' });
+  await oneOff.getByLabel('Description of goods').fill('Galvanized bracket');
+  await oneOff.getByLabel('Quantity').fill('500');
+  await oneOff.getByLabel('Unit price').fill('1.10');
+  await page.getByRole('button', { name: 'Add line' }).click();
+  await expect(page.getByText('Line added.')).toBeVisible();
+
+  for (const kind of ['Quotation', 'Sales contract draft', 'Bill of lading draft']) {
+    await page.getByLabel('Document type').selectOption({ label: kind });
+    await page.getByRole('button', { name: 'Generate document' }).click();
+    await expect(page.getByText(/Document [A-Z]{2}-[0-9]{4}-[0-9]{4} generated\./)).toBeVisible();
+  }
+
+  // Refused until the shipment states what SOLAS makes the shipper declare.
+  await page.getByLabel('Document type').selectOption({ label: 'VGM declaration' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/A VGM declaration needs the container number/)).toBeVisible();
+
+  // A mistyped container number is caught by its check digit.
+  await page.getByLabel('Container number').fill('CSQU3054384');
+  await page.getByRole('button', { name: 'Save shipment' }).click();
+  await expect(page.getByText(/check digit does not match/).first()).toBeVisible();
+
+  await page.getByLabel('Container number').fill('CSQU3054383');
+  await page.getByLabel('VGM weighing method').selectOption('1');
+  await page.getByLabel('Verified gross mass (kg)').fill('18250.5');
+  await page.getByLabel('VGM signatory').fill('Fern Fulmar');
+  await page.getByRole('button', { name: 'Save shipment' }).click();
+  await expect(
+    page.getByText('Documents generated before a change are marked stale.'),
+  ).toBeVisible();
+
+  await page.getByLabel('Document type').selectOption({ label: 'VGM declaration' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/Document VGM-[0-9]{4}-[0-9]{4} generated\./)).toBeVisible();
+
+  // Survives a reload, and the shipment still works at phone width.
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.reload();
+  await expect(page.getByLabel('Container number')).toHaveValue('CSQU3054383');
+  await expect(page.getByText(/^VGM-[0-9]{4}-[0-9]{4}$/).first()).toBeVisible();
+});
+
+// D-025: the certificate of origin follows its review gate. The database job builds and runs
+// with the gate on (a synthetic review record in ci.yml); a run without it proves the refusal.
+const cooOffered =
+  process.env.ENABLE_REGULATED_DOCUMENTS === 'true' &&
+  process.env.REGULATED_DOCUMENTS_APPROVED === 'true' &&
+  Boolean(process.env.LEGAL_COO_REVIEWED_BY && process.env.LEGAL_COO_REVIEWED_AT);
+
+async function addCompany(page: Page, org: string, kind: string, name: string, city: string) {
+  await page.goto(`/app/${org}/companies/new`);
+  if (kind !== 'own') await page.getByLabel('Kind').selectOption(kind);
+  await page.getByLabel('Trading name').fill(name);
+  await page.getByLabel('City').fill(city);
+  await page.getByLabel('Country').fill(kind === 'own' ? 'GB' : 'NO');
+  await page.getByRole('button', { name: 'Add company' }).click();
+  await page.waitForURL(/\/companies\/[0-9a-f-]{36}$/);
+}
+
+test('a certificate of origin is offered only behind its review gate', async ({ page }) => {
+  const org = await startOrganization(page, 'Gannet Origin');
+  await createShipment(page, org, 'SHP-COO-1');
+  const shipmentUrl = page.url();
+  const shipmentId = new URL(shipmentUrl).pathname.split('/').pop() as string;
+  const previewUrl = `/api/shipments/${shipmentId}/preview?kind=certificate_of_origin`;
+
+  const oneOff = page.getByRole('form', { name: 'Add a one-off line' });
+  await oneOff.getByLabel('Description of goods').fill('Cast iron pan');
+  await oneOff.getByLabel('Quantity').fill('40');
+  await oneOff.getByLabel('Unit price').fill('12.00');
+  await page.getByRole('button', { name: 'Add line' }).click();
+  await expect(page.getByText('Line added.')).toBeVisible();
+
+  const documentType = page.getByLabel('Document type');
+  const option = documentType.locator('option', { hasText: 'Certificate of origin' });
+
+  if (!cooOffered) {
+    await expect(option).toHaveCount(0);
+    await expect(page.getByText(/pending legal and regulatory review/)).toBeVisible();
+    expect((await page.request.get(previewUrl)).status()).toBe(403);
+    return;
+  }
+
+  await expect(option).toHaveCount(1);
+  await expect(page.getByText(/TradeDocs does not certify or issue it/)).toBeVisible();
+
+  // The preview renders with the gate on; it is marked as not issued and carries no number.
+  const preview = await page.request.get(previewUrl);
+  expect(preview.status()).toBe(200);
+  expect(preview.headers()['content-type']).toContain('application/pdf');
+
+  // Without parties, a per-line origin and a signatory it says what is missing, and
+  // nothing is generated.
+  await page.getByLabel('Document type').selectOption({ label: 'Certificate of origin' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/Before a certificate of origin: Choose the exporter/)).toBeVisible();
+  await expect(page.getByText(/Enter the country of origin on 1 line\./)).toBeVisible();
+  await page.reload();
+  await expect(page.getByText(/No documents yet/)).toBeVisible();
+
+  // Complete the shipment: parties, the line's origin, and the signatory.
+  await addCompany(page, org, 'own', 'Gannet Origin Ltd', 'Hull');
+  await addCompany(page, org, 'customer', 'Fjord Kitchen AS', 'Oslo');
+  await page.goto(`/app/${org}/settings`);
+  await page.getByLabel('Signatory name').fill('Gail Gannet');
+  await page.getByRole('button', { name: 'Save settings' }).click();
+  await expect(page.getByText(/Settings saved\./)).toBeVisible();
+
+  await page.goto(shipmentUrl);
+  await page.getByLabel('Exporter').selectOption({ label: 'Gannet Origin Ltd (Hull, GB)' });
+  await page.getByRole('button', { name: 'Set exporter' }).click();
+  await expect(page.getByText('Party updated.')).toBeVisible();
+  await page.getByLabel('Consignee').selectOption({ label: 'Fjord Kitchen AS (Oslo, NO)' });
+  await page.getByRole('button', { name: 'Set consignee' }).click();
+  await expect(page.getByText('Party updated.')).toBeVisible();
+  await oneOff.getByLabel('Description of goods').fill('Cast iron lid');
+  await oneOff.getByLabel(/^Origin/).fill('GB');
+  await oneOff.getByLabel('Quantity').fill('40');
+  await oneOff.getByLabel('Unit price').fill('4.00');
+  await page.getByRole('button', { name: 'Add line' }).click();
+  await expect(page.getByText('Line added.')).toBeVisible();
+
+  // The first line still states no origin, so the certificate is still refused.
+  await page.getByLabel('Document type').selectOption({ label: 'Certificate of origin' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/Enter the country of origin on 1 line\./)).toBeVisible();
+
+  // Without it, every line states its origin and the certificate is generated.
+  await page.getByRole('button', { name: 'Remove Cast iron pan' }).click();
+  await page.getByRole('button', { name: 'Remove the line' }).click();
+  await expect(page.getByText('Line removed.')).toBeVisible();
+  await page.getByLabel('Document type').selectOption({ label: 'Certificate of origin' });
+  await page.getByRole('button', { name: 'Generate document' }).click();
+  await expect(page.getByText(/Document CO-[0-9]{4}-0001 generated\./)).toBeVisible();
+});

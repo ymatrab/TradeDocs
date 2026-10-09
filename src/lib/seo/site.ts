@@ -5,6 +5,7 @@ import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { USE_CASES } from '@/lib/content/use-cases';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
+import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
 
 /**
  * The public surface, described once.
@@ -23,7 +24,8 @@ export const SITE_DESCRIPTION =
   'figures agree across the set. It is free while early, and its free tools work without an ' +
   'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
   'landed cost and export price calculators, CBM, chargeable weight, container loading and pallet ' +
-  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an Incoterms 2020 guide and a ' +
+  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an HS code lookup that searches the ' +
+  'official US and UK tariffs (a lookup, not a classification), an Incoterms 2020 guide and a ' +
   'glossary of shipping terms.';
 
 export type PublicTool = {
@@ -44,6 +46,9 @@ const TOOLS_ROUND = '2026-10-07';
 
 /** The export price calculator and the three use-case pages were added this day. */
 const WAVE_C_ROUND = '2026-10-08';
+
+/** The HS code lookup and denied-party screening pages were added this day (D-025). */
+const LOOKUPS_ROUND = '2026-10-09';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
   {
@@ -137,6 +142,14 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     updated: WAVE_C_ROUND,
   },
   {
+    path: '/tools/hs-code-lookup',
+    name: 'HS code lookup',
+    summary:
+      'Search the official US HTS and UK Trade Tariff by description or code, with a link to each line. A lookup, not a classification; no duty rates.',
+    kind: 'application',
+    updated: LOOKUPS_ROUND,
+  },
+  {
     path: '/tools/incoterms',
     name: 'Incoterms 2020 guide',
     summary:
@@ -145,16 +158,62 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
   },
 ];
 
-export function findPublicTool(path: string): PublicTool | undefined {
-  return PUBLIC_TOOLS.find((tool) => tool.path === path);
+/**
+ * Denied-party screening runs on the trade.gov Consolidated Screening List API, which needs
+ * a subscription key the owner registers (CSL_API_KEY, D-025). Until the key is set the page
+ * says so and points at the official search, and the tool is listed nowhere as available:
+ * not on the hub, in the sitemap, in llms.txt or in the counts of free tools. Callers decide
+ * availability with cslApiKey() from lib/screening/config and pass it to listedTools.
+ */
+export const SCREENING_TOOL: PublicTool = {
+  path: '/tools/denied-party-screening',
+  name: 'Denied party screening',
+  summary:
+    'Search a name against the US Consolidated Screening List (Commerce, State and Treasury lists), with the source list for each match. A screening aid, not a compliance determination.',
+  kind: 'application',
+  updated: LOOKUPS_ROUND,
+};
+
+/** Every tool listed where tools are listed, given whether screening is available. */
+export function listedTools(screeningAvailable: boolean): readonly PublicTool[] {
+  return screeningAvailable ? [...PUBLIC_TOOLS, SCREENING_TOOL] : PUBLIC_TOOLS;
 }
 
-/** Document types offered publicly. Certificate of origin stays out until D-008 is lifted. */
+/** The screening page's sitemap entry, only while the tool works. */
+/** The API reference, listed only while the API can answer (D-025, apiConfig). */
+export function developersSitemapPages(apiAvailable: boolean): SitemapPage[] {
+  if (!apiAvailable) return [];
+  return [
+    { path: '/developers', lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.4 },
+  ];
+}
+
+export function screeningSitemapPages(screeningAvailable: boolean): SitemapPage[] {
+  if (!screeningAvailable) return [];
+  return [
+    {
+      path: SCREENING_TOOL.path,
+      lastModified: SCREENING_TOOL.updated ?? LOOKUPS_ROUND,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ];
+}
+
+export function findPublicTool(path: string): PublicTool | undefined {
+  return [...PUBLIC_TOOLS, SCREENING_TOOL].find((tool) => tool.path === path);
+}
+
 const ALL_DOCUMENT_KINDS = Object.keys(documentKindLabels) as DocumentKind[];
 
-export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS.filter(
-  (kind) => kind !== 'certificate_of_origin',
-);
+/**
+ * Document types offered publicly. A regulated type (the certificate of origin) is listed
+ * only while its gate is on (D-008, D-025): pages pass regulatedDocumentsEnabled() from
+ * src/lib/config/server.ts, so the list follows ENABLE_REGULATED_DOCUMENTS and its review.
+ */
+export function publicDocumentKinds(regulatedOffered: boolean): readonly DocumentKind[] {
+  return ALL_DOCUMENT_KINDS.filter((kind) => regulatedOffered || !isRegulatedDocumentKind(kind));
+}
 
 /**
  * The date each public page's content last changed, as YYYY-MM-DD.

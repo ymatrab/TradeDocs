@@ -82,7 +82,7 @@ export const USE_CASES: readonly UseCase[] = [
       'team.members',
     ],
     boundaries: [
-      'It prepares documents; it does not issue, certify or file them. Export declarations, transport documents and certificates of origin come from your broker, carrier or chamber.',
+      'It prepares documents; it does not issue, certify or file them. Export declarations, transport documents and certified certificates of origin come from your broker, carrier or chamber.',
       'It does not look up tariffs, duty rates or export controls. HS codes and origins are your own declaration.',
     ],
     tools: [
@@ -102,7 +102,7 @@ export const USE_CASES: readonly UseCase[] = [
     faq: [
       {
         q: 'Which export documents does TradeDocs prepare?',
-        a: 'The commercial invoice, proforma invoice, packing list and delivery note, as PDFs from one shipment. The certificate of origin is not offered while it awaits legal review, and transport documents and customs declarations are outside what TradeDocs does.',
+        a: 'From one shipment, as PDFs: the commercial invoice, proforma invoice, packing list and delivery note; the quotation, purchase order, sales confirmation and sales contract draft; and the bill of lading draft, shipper’s letter of instruction and VGM declaration for your carrier and forwarder. A certificate of origin is offered only once its legal review is recorded, and then as your own preparation for the issuing chamber or authority to certify where required. The carrier issues the bill of lading itself, and customs declarations are outside what TradeDocs does.',
       },
       {
         q: 'Can I try it without an account?',
@@ -113,7 +113,7 @@ export const USE_CASES: readonly UseCase[] = [
         a: 'No. It prepares the commercial documents. Filing the export declaration is done by you or your customs broker in the customs system of the exporting country.',
       },
     ],
-    updated: ADDED,
+    updated: '2026-10-09',
   },
   {
     slug: 'freight-forwarders',
@@ -123,7 +123,7 @@ export const USE_CASES: readonly UseCase[] = [
       'TradeDocs prepares commercial invoices, proforma invoices, packing lists and delivery notes for your shippers. It is document preparation only, not a forwarding, booking or tracking system.',
     eyebrow: 'For freight forwarders and agents',
     h1: 'Client document preparation, not a forwarding system.',
-    lede: 'TradeDocs prepares the commercial paperwork that travels with a shipment: commercial invoice, proforma invoice, packing list and delivery note. It does not book freight, rate shipments, track cargo or issue transport documents. If you prepare those commercial documents for shippers, or want them to send you a packing list that adds up, that is what it is for.',
+    lede: 'TradeDocs prepares the paperwork that travels with a shipment: commercial invoice, proforma invoice, packing list and delivery note, plus a bill of lading draft, shipper’s letter of instruction and VGM declaration to hand to the carrier. It does not book freight, rate shipments, track cargo or issue transport documents. If you prepare those commercial documents for shippers, or want them to send you a packing list that adds up, that is what it is for.',
     jobs: [
       {
         title: 'Prepare documents for a shipper',
@@ -175,7 +175,7 @@ export const USE_CASES: readonly UseCase[] = [
     faq: [
       {
         q: 'Is TradeDocs freight forwarding software?',
-        a: 'No. It prepares commercial documents for a shipment: the commercial invoice, proforma invoice, packing list and delivery note. It has no bookings, rates, tracking or transport documents, so it sits beside a forwarding system rather than replacing one.',
+        a: 'No. It prepares documents for a shipment: the commercial invoice, proforma invoice, packing list and delivery note, and the bill of lading draft, shipper’s letter of instruction and VGM declaration the carrier works from. It has no bookings, rates or tracking and issues no transport document, so it sits beside a forwarding system rather than replacing one.',
       },
       {
         q: 'Can I prepare documents for several shippers?',

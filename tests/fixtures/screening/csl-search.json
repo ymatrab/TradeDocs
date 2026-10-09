@@ -1,0 +1,42 @@
+{
+  "total": 3,
+  "sources": [
+    {
+      "value": "Nonproliferation Sanctions (ACN) - State Department",
+      "count": 1
+    }
+  ],
+  "results": [
+    {
+      "source": "Nonproliferation Sanctions (ACN) - State Department",
+      "programs": ["Chemical and Biological Weapons Act"],
+      "name": "Synthetic Fixture Trading Company ",
+      "federal_register_notice": "Vol. 1, No. 1, 01/01/2000",
+      "start_date": "2000-01-01",
+      "remarks": null,
+      "source_list_url": "https://www.state.gov/bureau-of-arms-control-and-nonproliferation/nonproliferation-sanctions",
+      "alt_names": ["Fixture Trade", "Synthetic <b>Co</b>"],
+      "source_information_url": "https://www.state.gov/bureau-of-arms-control-and-nonproliferation/nonproliferation-sanctions",
+      "id": "0000000000000000000000000000000000000000000000000000fix1",
+      "country": "TH",
+      "addresses": [{ "address": "1 Example Road", "city": "Example", "country": "TH" }],
+      "score": 98.5
+    },
+    {
+      "source": "Entity List (EL) - Bureau of Industry and Security",
+      "programs": [],
+      "name": "Fixture Components Ltd",
+      "source_list_url": "http://example.com/not-official",
+      "alt_names": null,
+      "source_information_url": "https://evil.example/phish",
+      "id": "0000000000000000000000000000000000000000000000000000fix2",
+      "country": null,
+      "score": 81
+    },
+    {
+      "source": "Specially Designated Nationals (SDN) - Treasury Department",
+      "name": "",
+      "id": "0000000000000000000000000000000000000000000000000000fix3"
+    }
+  ]
+}

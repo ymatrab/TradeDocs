@@ -249,3 +249,106 @@ Generated types were extended by hand (`organization_settings`, the four documen
   blank checks, schema 6 capture on preview and generation, cross-tenant read and write denied).
   The two columns were added to `src/lib/database.types.ts` by hand; the CI
   `database-evidence` artifact is authoritative. Rollback in the migration header.
+
+### Sales and shipping documents (migration 20261009000100_sales_and_shipping_documents.sql, D-025)
+
+- `public.documents.kind` also accepts `quotation`, `purchase_order`, `sales_confirmation`,
+  `sales_contract`, `bill_of_lading_draft`, `shipper_letter_of_instruction` and
+  `vgm_declaration` (prefixes QT, PO, SC, CT, BL, SLI, VGM). `private.document_kind_known`
+  (private, no client grant) is the one list generate and preview accept; `DOCUMENT_KINDS` in
+  `src/lib/labels.ts` is pinned to it by a unit test.
+- `public.shipments` gains `container_number` (ISO 6346 shape; the app also checks the
+  check digit), `container_type`, `seal_number`, `booking_number`, `vessel_voyage`,
+  `vgm_method` (1 or 2), `vgm_kg` (positive, below 1,000,000), `vgm_weighed_on` and
+  `vgm_signatory`. No new table, policy or grant: the shipments policies cover them, an update
+  bumps the revision, and `duplicate_shipment` does not copy them.
+- Snapshot schema 7 adds those nine fields to `shipment` only when one is stated; every other
+  snapshot is schema 4, 5 or 6 exactly as before. Renderer `tradedocs-pdf/7` draws the seven new
+  kinds; the five older kinds take none of the new branches (unit test renders them byte for byte
+  with and without schema 7 fields). `generate_document` refuses a VGM declaration without
+  container number, method, mass and signatory (IMO MSC.1/Circ.1475 5.1, 6.2).
+- pgTAP: `supabase/tests/sales_and_shipping_documents.test.sql` (prefixes, VGM refusal,
+  column checks, schema 7 capture, cross-tenant read and write denied). Columns added to
+  `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
+  Rollback in the migration header.
+
+## E-signature requests (20261009000600, D-025)
+
+- `public.esign_requests`: one row per Dropbox Sign request for a final document — the exact
+  bytes sent (`original_sha256`), provider request id (write once), `test_mode`, status
+  (`sending`, `sent`, `signed`, `declined`, `cancelled`, `expired`, `error`, `failed`), 1–5
+  signers with their status (jsonb), an optional message, and the signed copy
+  (`signed_object_path`, `signed_sha256`, `signed_byte_size`, `signed_stored_at`, written once,
+  path `org/<org>/esign/<request>/<sha-256>.pdf`). `private.freeze_esign_request` keeps the
+  organization, document, bytes, mode and requester fixed and an end state final. The
+  original `documents` row is never touched: the signed copy is a new linked artifact.
+- `private.esign_events`: the callback ledger (event key = SHA-256 of event hash, type and
+  provider id), so a redelivery is a no-op.
+- Storage bucket `esign-signed`: private, PDF only, 25 MiB. Members of the organization in
+  the path may select (for 60-second signed URLs); nobody but the service role writes.
+- Access: members read their organization's rows; no API role writes directly. The service
+  role reads and writes only through `esign_create_request` (membership, Pro/Team via
+  `private.org_entitled`, final and current document), `esign_mark_sent`,
+  `esign_mark_failed`, `esign_event_recorded`, `esign_apply_event`, `esign_attach_signed` and
+  `esign_record_download`, each writing its audit event (no signer emails in metadata).
+- pgTAP: `supabase/tests/esign_requests.test.sql` (bucket and grants, paid gate, final-only,
+  cross-tenant reads and writes denied, idempotent events, end states, write-once copy). Types
+  added to `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is
+  authoritative. Rollback in the migration header.
+
+## Public API keys (20261009000400, D-025)
+
+- `public.api_keys`: org, name, visible prefix, unique `key_hash` (HMAC-SHA-256 hex), creator,
+  `last_used_at` (touched at most once a minute), `revoked_at`/`revoked_by`. RLS: select for
+  owners/admins of the org, every column except `key_hash`; no direct writes.
+- `public.api_idempotency`: (key, Idempotency-Key) → request fingerprint and stored response,
+  24 hours, no grants to any client role.
+- Routines: `create_api_key`, `revoke_api_key` (authenticated, role-checked, audited);
+  `api_authenticate`, `api_list_shipments`, `api_get_shipment`, `api_create_shipment`,
+  `api_list_documents`, `api_get_document`, `api_generate_document` (service_role only).
+  Helpers in `private`: `api_entitled` (Team, mirrors plans.ts), `api_key_refusal`,
+  `api_principal`, JSON builders, idempotency claim/store.
+- Rollback: drop the routines, then `api_idempotency` and `api_keys`. No existing object is
+  altered.
+
+## Accounting integrations (20261009000500, D-025)
+
+- `integration_connections`: one per organization and provider (`quickbooks`, `xero`), the
+  provider tenant (realmId / tenantId), display name, scopes, status (`active`,
+  `needs_reconnect`) and the access and refresh tokens as AES-256-GCM ciphertext sealed by
+  the application with `INTEGRATION_TOKEN_KEY` (bound to org, provider and token kind). No
+  policy and no grant for `anon` or `authenticated`; `service_role` only.
+- `integration_oauth_states`: the server half of the OAuth state, keyed by SHA-256 of the
+  nonce, with the sealed PKCE verifier; lives at most 15 minutes (check constraint); consumed
+  exactly once by an update guarded on `consumed_at is null`. `service_role` only.
+- `integration_records`: provider id to local company or product (FK `on delete set null`, so
+  a deletion is remembered and not undone), with MD5 fingerprints of the imported values and
+  of the local row after import. Members read; nobody writes except the routine.
+- `integration_status(org)`: provider, display name, status, connected_at; members only; no
+  token, scope or tenant id.
+- `import_integration_records(org, source, record_kind, rows, dry_run)`: owner/admin,
+  `private.integrations_entitled` (Pro/Team), active connection, at most 2000 rows; inserts
+  new ids, updates rows unchanged locally, reports conflicts (edited in TradeDocs, or a product
+  code already in use), skips deleted/archived rows and rows with problems; audits
+  `integration.imported` when applied.
+- Rollback: drop both functions, `private.integrations_entitled`, `private.import_fingerprint`
+  and the three tables. Imported companies and products remain as ordinary rows.
+
+### Certificate of origin path (migration 20261009000200_certificate_of_origin.sql, D-025)
+
+- BEFORE INSERT trigger `documents_certificate_of_origin` on `public.documents`
+  (`private.certificate_of_origin_insert()`, certificate rows only): refuses the row (42501)
+  unless the transaction came through `public.generate_certificate_of_origin`, which closes
+  the direct `generate_document(shipment, 'certificate_of_origin')` call members could make;
+  and adds `snapshot.certificate` = `{ wording_version: 1, invoice_reference }`, the number of
+  the shipment's current final commercial invoice (null when none).
+- `public.generate_certificate_of_origin(target_shipment, actor)`: service role only (revoked
+  from public, anon, authenticated). Runs `generate_document` as `actor`, so membership,
+  numbering, lineage, branding and audit are that routine's own. The app calls it only after
+  its review gate (`ENABLE_REGULATED_DOCUMENTS`, `REGULATED_DOCUMENTS_APPROVED`,
+  `LEGAL_COO_REVIEWED_BY/AT`) is on, for the user it verified. No new table, view or policy.
+- pgTAP: `supabase/tests/certificate_of_origin.test.sql` (direct path refused for members,
+  reviewed path refused to members, membership enforced for the actor, invoice reference,
+  wording version and per-line origin recorded). The function was added to
+  `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
+  Rollback in the migration header.

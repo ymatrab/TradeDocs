@@ -1,0 +1,16 @@
+{
+  "data": {
+    "id": "46785",
+    "type": "heading",
+    "attributes": {
+      "goods_nomenclature_item_id": "7408000000",
+      "description": "Copper wire",
+      "bti_url": "https://www.gov.uk/guidance/check-what-youll-need-to-get-a-legally-binding-decision-on-a-commodity-code",
+      "formatted_description": "Copper wire",
+      "description_plain": "Copper wire",
+      "validity_start_date": "1972-01-01T00:00:00.000Z",
+      "validity_end_date": null,
+      "declarable": false
+    }
+  }
+}

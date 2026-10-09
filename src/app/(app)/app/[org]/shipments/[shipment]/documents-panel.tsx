@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { startTransition, useActionState, useState, type FormEvent } from 'react';
 import { Download, Eye, FolderDown, RefreshCw } from 'lucide-react';
 import { Button, LinkButton } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
@@ -10,9 +10,20 @@ import { DataTable } from '@/components/primitives/table';
 import { ActionResult } from '@/components/primitives/action-result';
 import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { DocumentStatus, type DocumentState } from '@/components/document/status';
-import { documentKindLabel, documentKindLabels } from '@/lib/labels';
+import {
+  DOCUMENT_KINDS,
+  documentKindGroupLabels,
+  documentKindGroups,
+  documentKindLabel,
+  documentKindLabels,
+  type DocumentKindGroup,
+} from '@/lib/labels';
 import { generateDocument, voidDocument } from '@/app/(app)/shipment-actions';
-import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
+import {
+  CERTIFICATE_OF_ORIGIN_NOTICE,
+  isRegulatedDocumentKind,
+  REGULATED_DOCUMENT_LIMITATION,
+} from '@/lib/trade/regulated';
 import type { ActionState } from '@/app/(app)/actions';
 
 export type GeneratedDocument = {
@@ -59,18 +70,32 @@ export function DocumentsPanel({
   canVoid?: boolean;
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(generateDocument, {});
+  // The chosen type stays chosen after a generation: the form dispatches the action itself,
+  // so React's automatic form reset (which would put the select back on its first option)
+  // never runs. Without JavaScript the form still posts through `action`.
+  const [selectedKind, setSelectedKind] = useState<string>('commercial_invoice');
   const [voidState, voidAction, voidPending] = useActionState<ActionState, FormData>(
     voidDocument,
     {},
   );
-  const kinds = Object.entries(documentKindLabels).filter(
-    ([kind]) => regulatedEnabled || !isRegulatedDocumentKind(kind),
+  const kinds = DOCUMENT_KINDS.filter(
+    (kind) => regulatedEnabled || !isRegulatedDocumentKind(kind),
+  ).map((kind) => [kind, documentKindLabels[kind]] as const);
+  // Grouped as a shipment's paperwork runs: the sale, the invoice and packing, the shipping.
+  const groups = (Object.keys(documentKindGroupLabels) as DocumentKindGroup[]).map(
+    (group) => [group, kinds.filter(([kind]) => documentKindGroups[kind] === group)] as const,
   );
   const current = documents.filter((document) => document.status === 'final' && !document.stale);
   const remember = useOutcomeToast(state, (submitted) => {
     const kind = sent(submitted, 'kind');
     return `${kind ? documentKindLabel(kind) : 'The document'} is ready to download.`;
   });
+  const generate = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    remember(event);
+    const data = new FormData(event.currentTarget);
+    startTransition(() => action(data));
+  };
   // A kind regenerated once already has a current copy; its older stale copy needs no
   // second offer to regenerate.
   const currentKinds = new Set(current.map((document) => document.kind));
@@ -97,7 +122,7 @@ export function DocumentsPanel({
         <ActionResult state={{ notice: voidState.notice }} successTitle="Voided" />
         <form
           action={action}
-          onSubmit={remember}
+          onSubmit={generate}
           style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}
         >
           <input type="hidden" name="org" value={org} />
@@ -105,11 +130,20 @@ export function DocumentsPanel({
           <div style={{ minWidth: 220 }}>
             <Field id="kind" label="Document type">
               {({ id }) => (
-                <Select id={id} name="kind" defaultValue="commercial_invoice">
-                  {kinds.map(([kind, label]) => (
-                    <option key={kind} value={kind}>
-                      {label}
-                    </option>
+                <Select
+                  id={id}
+                  name="kind"
+                  value={selectedKind}
+                  onChange={(event) => setSelectedKind(event.target.value)}
+                >
+                  {groups.map(([group, members]) => (
+                    <optgroup key={group} label={documentKindGroupLabels[group]}>
+                      {members.map(([kind, label]) => (
+                        <option key={kind} value={kind}>
+                          {label}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </Select>
               )}
@@ -119,28 +153,32 @@ export function DocumentsPanel({
             Generate document
           </Button>
         </form>
-        <p className="muted" style={{ margin: 0 }}>
-          Preview before you generate:{' '}
-          {kinds.map(([kind, label], index) => (
-            <span key={kind}>
-              {index > 0 ? ' · ' : null}
-              <a
-                className="text-link"
-                href={`/api/shipments/${shipmentId}/preview?kind=${kind}`}
-                target="_blank"
-                rel="noopener"
-              >
-                <Eye size={13} aria-hidden="true" /> {label}
-              </a>
-            </span>
-          ))}
-          . A preview carries no number and is marked as not issued.
-        </p>
-        {regulatedEnabled ? null : (
-          <p className="muted" style={{ margin: 0 }}>
-            {REGULATED_DOCUMENT_LIMITATION}
+        <div className="muted" style={{ display: 'grid', gap: 4 }}>
+          <p style={{ margin: 0 }}>
+            Preview before you generate. A preview carries no number and is marked as not issued.
           </p>
-        )}
+          {groups.map(([group, members]) => (
+            <p key={group} style={{ margin: 0 }}>
+              <span className="caption">{documentKindGroupLabels[group]}:</span>{' '}
+              {members.map(([kind, label], index) => (
+                <span key={kind}>
+                  {index > 0 ? ' · ' : null}
+                  <a
+                    className="text-link"
+                    href={`/api/shipments/${shipmentId}/preview?kind=${kind}`}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Eye size={13} aria-hidden="true" /> {label}
+                  </a>
+                </span>
+              ))}
+            </p>
+          ))}
+        </div>
+        <p className="muted" style={{ margin: 0 }}>
+          {regulatedEnabled ? CERTIFICATE_OF_ORIGIN_NOTICE : REGULATED_DOCUMENT_LIMITATION}
+        </p>
 
         {documents.length > 0 ? (
           <>

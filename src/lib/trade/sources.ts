@@ -33,7 +33,14 @@ export type CoreSourceId =
   | 'nist-si-volume-units'
   | 'maersk-fcl-lcl'
   | 'wto-customs-valuation'
-  | 'trade-gov-export-documents';
+  | 'trade-gov-export-documents'
+  | 'usitc-hts-search'
+  | 'uk-trade-tariff-api'
+  | 'gov-uk-finding-commodity-codes'
+  | 'cbp-rulings'
+  | 'trade-gov-csl'
+  | 'trade-gov-csl-api'
+  | 'imo-msc1-circ1475';
 
 export type SourceId = CoreSourceId | ArticleSourceId;
 
@@ -60,6 +67,10 @@ const RETRIEVED_BLOG = '2026-10-06';
  * the CBM-to-cubic-feet converter and the pallet calculator.
  */
 const RETRIEVED_TOOLS = '2026-10-07';
+/** The HS code lookup and denied-party screening round (D-025). */
+const RETRIEVED_LOOKUPS = '2026-10-09';
+/** The VGM declaration (D-025): the IMO guidelines it prints. */
+const RETRIEVED_VGM = '2026-10-09';
 const PENDING = 'pending owner review';
 
 const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
@@ -247,6 +258,82 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     retrieved: RETRIEVED_BLOG,
     reviewer: PENDING,
   },
+  'usitc-hts-search': {
+    id: 'usitc-hts-search',
+    authority: 'U.S. International Trade Commission (USITC)',
+    title: 'Harmonized Tariff Schedule of the United States — HTS search',
+    url: 'https://hts.usitc.gov/',
+    jurisdiction: 'United States (imports)',
+    supports:
+      'the HTS numbers and article descriptions the lookup searches live through the public REST search at hts.usitc.gov/reststop/search',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'uk-trade-tariff-api': {
+    id: 'uk-trade-tariff-api',
+    authority: 'HM Revenue & Customs, GOV.UK Trade Tariff',
+    title: 'Using the Trade Tariff API',
+    url: 'https://docs.trade-tariff.service.gov.uk/the-trade-tariff-api.html',
+    jurisdiction: 'United Kingdom (imports and exports)',
+    supports:
+      'the public read endpoints the lookup calls without credentials, with the v2 Accept header, and caching responses because the data changes daily',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'gov-uk-finding-commodity-codes': {
+    id: 'gov-uk-finding-commodity-codes',
+    authority: 'HM Revenue & Customs, GOV.UK',
+    title: 'Finding commodity codes for imports or exports',
+    url: 'https://www.gov.uk/guidance/finding-commodity-codes-for-imports-or-exports',
+    jurisdiction: 'United Kingdom',
+    supports: 'the trader being the one who must find the right commodity code for the goods',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'cbp-rulings': {
+    id: 'cbp-rulings',
+    authority: 'U.S. Customs and Border Protection',
+    title: 'Rulings',
+    url: 'https://www.cbp.gov/trade/rulings',
+    jurisdiction: 'United States (imports)',
+    supports: 'binding advance rulings on the tariff classification of merchandise',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'trade-gov-csl': {
+    id: 'trade-gov-csl',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'Consolidated Screening List',
+    url: 'https://www.trade.gov/consolidated-screening-list',
+    jurisdiction: 'United States (export controls and sanctions)',
+    supports:
+      'the CSL consolidating the Commerce, State and Treasury screening lists, its use as an aid to screening, and further due diligence and the official lists being needed when a party appears to match',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'trade-gov-csl-api': {
+    id: 'trade-gov-csl-api',
+    authority: 'International Trade Administration, U.S. Department of Commerce',
+    title: 'ITA developer portal — Consolidated Screening List API',
+    url: 'https://developer.trade.gov/',
+    jurisdiction: 'United States (export controls and sanctions)',
+    supports:
+      'the CSL search API at data.trade.gov/consolidated_screening_list/v1/search, which needs a subscription key from a registered application',
+    retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'imo-msc1-circ1475': {
+    id: 'imo-msc1-circ1475',
+    authority: 'International Maritime Organization (IMO)',
+    title:
+      'MSC.1/Circ.1475: Guidelines regarding the verified gross mass of a container carrying cargo (PDF)',
+    url: 'https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/MSC.1%20Circ.1475.pdf',
+    jurisdiction: 'International (SOLAS chapter VI, regulation 2)',
+    supports:
+      'the VGM declaration: Method No. 1 (weighing the packed and sealed container) and Method No. 2 (weighing all packages and cargo items with pallets, dunnage and securing material and adding the container tare, under a certified method) in paragraph 5.1, the verified gross mass communicated in a shipping document that may be part of the shipping instructions (6.1), and the document signed by a person duly authorized by the shipper, by electronic signature or the name in capitals (6.2)',
+    retrieved: RETRIEVED_VGM,
+    reviewer: PENDING,
+  },
 };
 
 /**
@@ -298,6 +385,13 @@ export const PAGE_SOURCES = {
   unitConverter: ['nist-si-volume', 'nist-si-mass'],
   deliveryNote: ['trade-gov-export-documents', 'trade-gov-packing-list'],
   cbmToCubicFeet: ['nist-si-volume', 'nist-si-volume-units', 'maersk-dry-containers'],
+  hsCodeLookup: [
+    'usitc-hts-search',
+    'uk-trade-tariff-api',
+    'gov-uk-finding-commodity-codes',
+    'cbp-rulings',
+  ],
+  deniedPartyScreening: ['trade-gov-csl', 'trade-gov-csl-api'],
   palletCalculator: [
     'w4-iso-6780',
     'w4-epal-euro-pallet',

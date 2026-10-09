@@ -5,10 +5,13 @@ import { DataTable } from '@/components/primitives/table';
 import { primaryAction } from '@/components/shell/public';
 import { PricingJsonLd } from '@/components/seo/json-ld';
 import { currentPlans } from '@/lib/billing/server';
+import { currentCapabilities } from '@/lib/integrations/server';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import {
-  FEATURES,
   INTERVAL_LABELS,
   listedPrices,
+  offeredFeatures,
+  paidAdditions,
   paidOnlyFeatures,
   paidOnlySummary,
   PLAN_NAMES,
@@ -40,9 +43,13 @@ function pageState(plans: Plan[]): PageState {
   return 'unpriced';
 }
 
-/** What Pro and Team add over Free, from plans.ts, such as " Pro and Team add PDF branding." */
+/**
+ * What Pro and Team add over Free, from plans.ts, such as " Pro and Team add PDF branding;
+ * Team also adds the REST API."
+ */
 const PAID_EXTRAS = paidOnlySummary();
-const ADDS = PAID_EXTRAS ? ` Pro and Team add ${PAID_EXTRAS}.` : '';
+const ADDITIONS = paidAdditions();
+const ADDS = ADDITIONS ? ` ${ADDITIONS}.` : '';
 const FREE_SCOPE = PAID_EXTRAS
   ? `every document generator, calculator and workspace feature except ${PAID_EXTRAS}`
   : 'every document generator, calculator and workspace feature';
@@ -242,9 +249,17 @@ function planTag(plan: Plan): string {
   }
 }
 
-function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boolean }) {
+function FeatureLedger({
+  plan,
+  accountsOpen,
+  features,
+}: {
+  plan: PlanId;
+  accountsOpen: boolean;
+  features: Feature[];
+}) {
   // A paid plan that adds nothing over Free says so instead of repeating Free's list.
-  const extras = FEATURES.filter(
+  const extras = features.filter(
     (feature) => planIncludes(feature, plan) && !planIncludes(feature, 'free'),
   );
   if (plan !== 'free' && extras.length === 0) {
@@ -252,27 +267,29 @@ function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boo
   }
   return (
     <ul className="ledger" aria-label="Included features">
-      {FEATURES.filter((feature) => planIncludes(feature, plan)).map((feature) => {
-        const waiting = feature.needsAccount && !accountsOpen;
-        return (
-          <li key={feature.key}>
-            {waiting ? (
-              <Clock size={17} aria-hidden="true" className="not-yet" />
-            ) : (
-              <Check size={17} aria-hidden="true" className="yes" />
-            )}
-            <span>
-              {feature.label}
-              {'limit' in feature && feature.limit ? (
-                <span className="pricing-limit">{feature.limit}</span>
-              ) : null}
+      {features
+        .filter((feature) => planIncludes(feature, plan))
+        .map((feature) => {
+          const waiting = feature.needsAccount && !accountsOpen;
+          return (
+            <li key={feature.key}>
               {waiting ? (
-                <span className="pricing-limit">Needs an account; not open on this site yet</span>
-              ) : null}
-            </span>
-          </li>
-        );
-      })}
+                <Clock size={17} aria-hidden="true" className="not-yet" />
+              ) : (
+                <Check size={17} aria-hidden="true" className="yes" />
+              )}
+              <span>
+                {feature.label}
+                {'limit' in feature && feature.limit ? (
+                  <span className="pricing-limit">{feature.limit}</span>
+                ) : null}
+                {waiting ? (
+                  <span className="pricing-limit">Needs an account; not open on this site yet</span>
+                ) : null}
+              </span>
+            </li>
+          );
+        })}
     </ul>
   );
 }
@@ -291,6 +308,10 @@ export default function PricingPage() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
   const plans = currentPlans();
+  // Features that need provider credentials are listed only where they are configured, and
+  // the certificate of origin only behind its review gate (D-008, D-025).
+  const capabilities = currentCapabilities();
+  const features = offeredFeatures(capabilities, regulatedDocumentsEnabled());
   const state = pageState(plans);
   const questions = questionsFor(state, plans);
 
@@ -309,7 +330,7 @@ export default function PricingPage() {
         </div>
         <div className="cards pricing-plans">
           {plans.map((plan) => {
-            const paidOnly = plan.id === 'free' ? [] : paidOnlyFeatures(plan.id);
+            const paidOnly = plan.id === 'free' ? [] : paidOnlyFeatures(plan.id, capabilities);
             return (
               <article
                 className="card pricing-plan"
@@ -327,7 +348,7 @@ export default function PricingPage() {
                       : `Paid-only: ${paidOnly.map((feature) => feature.label).join('; ')}.`}
                   </p>
                 ) : null}
-                <FeatureLedger plan={plan.id} accountsOpen={accountsOpen} />
+                <FeatureLedger plan={plan.id} accountsOpen={accountsOpen} features={features} />
                 <div className="card-foot">
                   {plan.offer.state === 'free' ? (
                     <LinkButton href={action.href}>
@@ -384,36 +405,38 @@ export default function PricingPage() {
                   {group}
                 </th>
               </tr>
-              {FEATURES.filter((feature) => feature.group === group).map((feature) => (
-                <tr key={feature.key}>
-                  <th scope="row" className="pricing-feature">
-                    {feature.label}
-                    {'limit' in feature && feature.limit ? (
-                      <span className="pricing-limit">{feature.limit}</span>
-                    ) : null}
-                  </th>
-                  {plans.map((plan) => (
-                    <td key={plan.id}>
-                      {planIncludes(feature, plan.id) && feature.needsAccount && !accountsOpen ? (
-                        <>
-                          <Clock size={17} aria-hidden="true" className="not-yet" />
-                          <span className="sr-only">Not open yet</span>
-                        </>
-                      ) : planIncludes(feature, plan.id) ? (
-                        <>
-                          <Check size={17} aria-hidden="true" className="yes" />
-                          <span className="sr-only">Included</span>
-                        </>
-                      ) : (
-                        <>
-                          <Minus size={17} aria-hidden="true" />
-                          <span className="sr-only">Not included</span>
-                        </>
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
+              {features
+                .filter((feature) => feature.group === group)
+                .map((feature) => (
+                  <tr key={feature.key}>
+                    <th scope="row" className="pricing-feature">
+                      {feature.label}
+                      {'limit' in feature && feature.limit ? (
+                        <span className="pricing-limit">{feature.limit}</span>
+                      ) : null}
+                    </th>
+                    {plans.map((plan) => (
+                      <td key={plan.id}>
+                        {planIncludes(feature, plan.id) && feature.needsAccount && !accountsOpen ? (
+                          <>
+                            <Clock size={17} aria-hidden="true" className="not-yet" />
+                            <span className="sr-only">Not open yet</span>
+                          </>
+                        ) : planIncludes(feature, plan.id) ? (
+                          <>
+                            <Check size={17} aria-hidden="true" className="yes" />
+                            <span className="sr-only">Included</span>
+                          </>
+                        ) : (
+                          <>
+                            <Minus size={17} aria-hidden="true" />
+                            <span className="sr-only">Not included</span>
+                          </>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
             </tbody>
           ))}
         </DataTable>

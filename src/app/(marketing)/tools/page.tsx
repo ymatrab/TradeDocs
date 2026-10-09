@@ -13,18 +13,21 @@ import {
   Package,
   Ruler,
   Scale,
+  Search,
+  ShieldCheck,
   Truck,
   type LucideIcon,
 } from 'lucide-react';
 import { ToolsHubJsonLd } from '@/components/seo/json-ld';
 import { GUIDES } from '@/lib/content/guides';
-import { PUBLIC_TOOLS } from '@/lib/seo/site';
+import { cslApiKey } from '@/lib/screening/config';
+import { listedTools } from '@/lib/seo/site';
 import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
   title: 'Free trade tools — document generators and shipping calculators',
   description:
-    'Free tools for people who ship: commercial invoice, proforma invoice, packing list and delivery note generators, CBM, dimensional weight, container loading, pallet, landed cost and export price calculators, CBM and kg converters, and a guide to all eleven Incoterms 2020 rules.',
+    'Free tools for people who ship: commercial invoice, proforma invoice, packing list and delivery note generators, CBM, dimensional weight, container loading, pallet, landed cost and export price calculators, CBM and kg converters, an HS code lookup and a guide to all eleven Incoterms 2020 rules.',
   alternates: { canonical: '/tools' },
   openGraph: openGraphFor(
     'Free trade tools: document generators, calculators and Incoterms',
@@ -47,6 +50,8 @@ const ICONS: Record<string, LucideIcon> = {
   '/tools/pallet-calculator': Layers,
   '/tools/landed-cost-calculator': Calculator,
   '/tools/export-price-calculator': Coins,
+  '/tools/hs-code-lookup': Search,
+  '/tools/denied-party-screening': ShieldCheck,
   '/tools/incoterms': Handshake,
 };
 
@@ -65,7 +70,7 @@ export default function ToolsPage() {
 
       <section className="section">
         <div className="form-grid">
-          {PUBLIC_TOOLS.map((tool) => {
+          {listedTools(cslApiKey() !== null).map((tool) => {
             const Icon = ICONS[tool.path] ?? FileText;
             return (
               <Link key={tool.path} href={tool.path} className="form-cell">

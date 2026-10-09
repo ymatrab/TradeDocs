@@ -119,3 +119,41 @@ export const calendarDateField = z
 export function grossBelowNet(net: string | null, gross: string | null): boolean {
   return net !== null && gross !== null && new Decimal(gross).lessThan(net);
 }
+
+/**
+ * The ISO 6346 check digit of a container number's first ten characters: each letter has a
+ * value from 10 upwards that skips multiples of 11, each character is weighted by 2 to the
+ * power of its position, and the sum modulo 11 (10 counting as 0) is the digit.
+ */
+export function containerCheckDigit(firstTen: string): number {
+  let sum = 0;
+  for (let index = 0; index < firstTen.length; index += 1) {
+    const character = firstTen.charAt(index);
+    let value: number;
+    if (/[0-9]/.test(character)) {
+      value = Number(character);
+    } else {
+      // A=10, then one more per letter, stepping over 11, 22 and 33: K=21, U=32, V=34.
+      const base = 10 + character.charCodeAt(0) - 65;
+      value = base + Math.floor((base - 1) / 10);
+    }
+    sum += value * 2 ** index;
+  }
+  return (sum % 11) % 10;
+}
+
+/** An ISO 6346 container number, such as CSQU3054383; empty means not stated. */
+export const containerNumberField = z
+  .string()
+  .trim()
+  .toUpperCase()
+  .transform((value) => value.replace(/[\s-]/g, ''))
+  .refine(
+    (value) => value === '' || /^[A-Z]{3}[UJZ][0-9]{7}$/.test(value),
+    'Use four letters and seven digits, such as CSQU3054383.',
+  )
+  .refine(
+    (value) => value === '' || containerCheckDigit(value.slice(0, 10)) === Number(value.charAt(10)),
+    'That container number’s check digit does not match. Check it against the container.',
+  )
+  .transform((value) => value || null);

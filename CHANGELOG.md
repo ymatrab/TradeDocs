@@ -2,6 +2,83 @@
 
 ## Unreleased — 2026-09-06
 
+### HS code lookup and denied-party screening (D-025)
+
+- `/tools/hs-code-lookup`: live server-side search of the USITC HTS and the GOV.UK Trade Tariff
+  (`src/lib/tariff/`), code, description and official link only; never a duty rate; "a lookup,
+  not a classification" callout; per-tariff unavailable state; 24 h cache; quota 60/10 min.
+- `/tools/denied-party-screening`: trade.gov Consolidated Screening List search
+  (`src/lib/screening/`) behind `CSL_API_KEY`; without it an honest not-available state with
+  the official CSL search, noindex and unlisted. Names are not stored or logged; quota 30/10 min.
+- Six retrieval-dated sources (2026-10-09, pending owner review); RUNBOOK section; unit tests
+  with recorded/synthetic fixtures and e2e smoke + axe. All pending CI.
+
+### Sales and shipping documents (D-025)
+
+- Seven more workspace documents from the shipment record, on every plan including Free:
+  quotation, purchase order, sales confirmation, sales contract draft (neutral fill-in headings,
+  "Draft — not legal advice" on every page), bill of lading draft ("the carrier issues the bill
+  of lading" on every page), shipper's letter of instruction and VGM declaration (SOLAS VI/2,
+  IMO MSC.1/Circ.1475). Container, seal, booking, vessel and VGM fields on the shipment with ISO
+  6346 check-digit validation. Snapshot schema 7, renderer `tradedocs-pdf/7`; older documents
+  render unchanged. Migration `20261009000100_sales_and_shipping_documents.sql`.
+
+### E-signature through Dropbox Sign (D-025)
+
+- Org members send a current final document to 1–5 signers from
+  `/app/<org>/documents/<id>/signature` (Pro and Team; `hasEntitlement(org, 'esign')`, checked
+  again in SQL). Dropbox Sign API v3 over fetch + FormData, no new dependency
+  (`src/lib/esign/`). Test mode everywhere but production.
+- Callback `/api/esign/dropbox-sign/callback`: event_hash HMAC verified, state re-read live,
+  idempotent ledger; the signed PDF is stored as a new private object linked to the immutable
+  original and downloaded through a 60-second authorized link. Audited, rate limited.
+- Off until the owner sets `DROPBOX_SIGN_API_KEY` (RUNBOOK.md, "E-signature"); without it the
+  page says "E-signature not available yet" and no public page claims it.
+- Migration `20261009000600_esign_requests.sql`, pgTAP, unit and e2e tests: pending CI.
+
+### Public REST API v1 (D-025)
+
+- `/api/v1`: list/create shipments (with lines), get a shipment, list a shipment's documents,
+  generate a document of any kind in `documentKindLabels`, stream a document's PDF. Bearer
+  organization API keys (HMAC-SHA-256 under `API_KEY_PEPPER`), per-key quotas, Idempotency-Key
+  on POSTs, keyset pagination, one JSON error shape.
+- Team-only feature `api` in `plans.ts` (hasEntitlement + `private.api_entitled`); pricing and
+  billing copy derive from FEATURES (`paidAdditions()`).
+- Settings → API keys for owners/admins (shown once, revocable, audited). `/developers`
+  reference, in the footer and sitemap. `/api/ready` reports the API off without a pepper.
+- Migration `20261009000400_public_api.sql` with pgTAP `public_api.test.sql`;
+  `database.types.ts` hand-edited until the CI artifact regenerates it. Nothing run locally:
+  format, lint, typecheck, unit, integration, pgTAP and e2e are pending CI.
+
+### QuickBooks Online and Xero import (D-025)
+
+- Settings, Integrations: connect QuickBooks Online or Xero (owner/admin, Pro and Team),
+  check then import customers into the company directory and items into the product catalog,
+  disconnect (revokes and deletes). Records are matched by provider id; edits made in
+  TradeDocs are kept and reported as conflicts; problems are listed per record.
+- Off on every deployment until the owner registers the developer apps (RUNBOOK.md); until
+  then each provider reads "Not connected — not available yet" and is not claimed on pricing.
+- Migration `20261009000500_accounting_integrations.sql`, pgTAP, unit and e2e tests. All
+  pending CI.
+
+### Certificate of origin, launch-ready behind its gate (D-025)
+
+- Off by default. `ENABLE_REGULATED_DOCUMENTS` now also needs a review record,
+  `LEGAL_COO_REVIEWED_BY` and `LEGAL_COO_REVIEWED_AT`; anything missing fails the feature
+  closed and `/api/ready` reports `regulated_documents: misconfigured` (RUNBOOK.md).
+- Migration `20261009000200_certificate_of_origin.sql`: the database refuses a certificate
+  unless it comes through the service-role-only `generate_certificate_of_origin` (members
+  could previously finalize one by calling `generate_document` directly), and records the
+  commercial invoice number and wording version.
+- PDF: "Preparation template - not an issued certificate" label on every page, exporter,
+  consignee, origin per line, ports, destination, shipping date, invoice number, gross weight,
+  the exporter's declaration, an empty box for the issuing body and the signature line;
+  branding when entitled. The ZIP manifest carries the label.
+- Every public claim follows the gate: `publicDocumentKinds()`, `offeredFeatures()`, home
+  page, checklist, pricing, use-case pages, llms.txt and the share image. Content tests keep
+  forbidding the phrase through a shared helper while it is off.
+- Unit, pgTAP and e2e (database job runs with the gate on, synthetic review record) pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

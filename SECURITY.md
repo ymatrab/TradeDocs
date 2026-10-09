@@ -170,6 +170,54 @@ entitlement, a failed lookup or an unreadable image renders a preview without br
 - A signature image is the organization's own picture of a signature or stamp. Documents keep
   the mandatory "Prepared with TradeDocs…" statement on every page; nothing implies certification.
 
+## E-signature (Dropbox Sign, D-025)
+
+Sources (retrieved 2026-10-09): https://developers.hellosign.com/api/reference/authentication/,
+https://developers.hellosign.com/api/reference/operation/signatureRequestSend/,
+https://developers.hellosign.com/api/reference/operation/signatureRequestFiles/,
+https://developers.hellosign.com/docs/events/walkthrough/ and the official OpenAPI document
+and curl example in https://github.com/hellosign/hellosign-openapi.
+
+- `DROPBOX_SIGN_API_KEY` is server-only (Basic auth, key as user name) and is the HMAC key of
+  callback `event_hash` = HMAC-SHA256(event_time + event_type), compared in constant time.
+- The hash does not cover the payload, so the callback never trusts the payload's state: it
+  re-reads the request from the API with its own key and checks the live metadata names the
+  same TradeDocs row and the live mode matches the row. A replayed event can only trigger a
+  fresh read of the truth; the event ledger makes a redelivery a no-op. Bodies are bounded
+  (512 KiB) and signed copies too (25 MiB, must start `%PDF-`).
+- Non-production environments always send `test_mode` requests, so a preview can never send a
+  binding request. The paid gate is enforced in the action and in `esign_create_request`.
+- Only a current final document is sent, rendered from its immutable snapshot; its SHA-256 is
+  recorded before sending. The signed PDF is a new object in the private `esign-signed`
+  bucket, written by the service role only, downloaded through a 60-second signed URL created
+  as the member; every download is audited.
+- Sends are rate limited (20 per account per hour, 100 per organization per day) and refused
+  when quotas cannot be enforced. Logs carry outcomes and status codes only: no signer, email
+  address, document number or content. TradeDocs does not verify signer identity beyond the
+  provider; the UI says so.
+
+## Public REST API and API keys (D-025)
+
+- Keys are `tdk_` + 48 base62 characters from `crypto.randomBytes` (rejection-sampled), shown
+  once and never stored or logged. The database keeps HMAC-SHA-256(`API_KEY_PEPPER`, key) and a
+  12-character visible prefix; a database copy alone yields no usable key. Clients never read
+  `key_hash` (column grant), not even owners.
+- Only owners and administrators create (Team plan) and revoke (any plan) keys, through
+  `create_api_key` / `revoke_api_key`, both audited (`api_key.created`, `api_key.revoked`).
+  Refused uses of a known key are audited as `api_key.use_failed` with the reason, at most once
+  per key per five minutes.
+- A key works only while its creator is still an owner or administrator of its organization
+  and the organization holds a current Team entitlement (`private.api_entitled`, mirrored by
+  `hasEntitlement(org, 'api')` in the route, fail closed).
+- Every `/api/v1` operation is a service_role-only routine that resolves the key from its hash
+  itself and scopes every row to that key's organization; no organization id comes from the
+  request. Generation calls `generate_document` unchanged, with the transaction's JWT subject
+  set to the key's creator for that call only and restored afterwards. pgTAP:
+  `supabase/tests/public_api.test.sql`.
+- Quotas: 120 requests/minute per key, 30 POSTs/minute per key, 30 failed authentications per
+  attested address per 15 minutes. POSTs accept an Idempotency-Key (24-hour, per-key records).
+- Logs carry routine names and SQLSTATE codes only: no key, hash, body or shipment content.
+
 ## Contact form, help and platform admin (D-018)
 
 - `contact_messages` has RLS enabled, no policies and no grant to `anon` or `authenticated`
@@ -191,3 +239,23 @@ entitlement, a failed lookup or an unreadable image renders a preview without br
   in robots.txt, the sitemap or llms.txt.
 - The help panel has no third-party chat and makes no AI calls (`CHAT_PROVIDER` only accepts
   `none`). Search runs in the browser over `/api/help/faq`; queries are never sent or stored.
+
+## Accounting integrations (D-025)
+
+- OAuth 2.0 authorization code flow to Intuit and Xero with `fetch` only; endpoints from the
+  providers' discovery documents (cited in `src/lib/integrations/providers.ts`). Client
+  authentication is HTTP Basic; the secret never leaves the server.
+- State: HMAC-SHA-256 over {nonce, org, provider, user, expiry} with a key HKDF-derived from
+  `INTEGRATION_TOKEN_KEY`, 10-minute expiry, plus a server row consumed once. The callback
+  also requires the same signed-in user, then re-checks owner/admin and the plan before
+  exchanging the code. Replays and refreshes of the callback exchange nothing. PKCE S256 for
+  Xero (Intuit publishes none).
+- Tokens: AES-256-GCM, random IV, AAD `org:provider:kind`, separate HKDF key from state
+  signing; tables unreachable by client roles (pgTAP `accounting_integrations.test.sql`).
+  Refresh rotates and re-seals; a refused refresh marks the connection `needs_reconnect`.
+  Disconnect revokes at the provider, then deletes the row whatever the provider answered.
+- Provider calls: fixed hosts, 15 s timeout, `redirect: 'error'`, 5 MB body cap, at most
+  2000 records (21 requests) per read, quotas per user (`org:integration-connect`,
+  `org:integration-import`). Error details shown to the owner/admin are trimmed and scrubbed
+  of anything token-shaped; logs carry error codes and statuses, never tokens or trade data.
+- Redirects back to the app carry only a provider id and a result code.

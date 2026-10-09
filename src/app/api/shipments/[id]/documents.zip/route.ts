@@ -15,6 +15,8 @@ import { createZip, safeFileName, type ZipEntry } from '@/lib/zip';
 import { documentKindLabel } from '@/lib/labels';
 import { MAX_SET_DOCUMENTS } from '@/lib/limits';
 import { freshnessOf } from '@/lib/trade/staleness';
+import { COO_TEMPLATE_LABEL } from '@/lib/trade/certificate-of-origin';
+import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -146,6 +148,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     details.push(
       `${document.number}  ${documentKindLabel(document.kind)} · shipment revision ${document.shipment_revision} · generated ${new Date(document.created_at).toISOString()}`,
     );
+    // The certificate of origin's required label travels with it into the archive's metadata.
+    if (isRegulatedDocumentKind(document.kind)) details.push(`  ${COO_TEMPLATE_LABEL}`);
     schemas.add(schemaVersionOf(document.snapshot));
   }
 

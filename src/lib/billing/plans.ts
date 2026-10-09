@@ -1,14 +1,16 @@
 import { z } from 'zod';
-import { documentKindLabels } from '@/lib/labels';
+import { documentKindGroups, documentKindLabels, type DocumentKindGroup } from '@/lib/labels';
 import {
+  API_REQUEST_QUOTA,
   MAX_BRANDING_BYTES,
   MAX_BRANDING_SIDE,
+  MAX_ESIGN_SIGNERS,
   MAX_IMPORT_ROWS,
   MAX_SET_DOCUMENTS,
   MAX_TOOL_LINES,
   TOOL_DOCUMENT_QUOTA,
 } from '@/lib/limits';
-import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
+import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
 
 /**
  * Plans, features and prices: the one source for every public claim about what TradeDocs
@@ -17,10 +19,15 @@ import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
  * Two rules hold here:
  *
  * - A feature is listed only if the code really does it, and its `plans` say who gets it. A
- *   feature that lists 'free' is never gated. The one paid-only feature is PDF branding
- *   (D-021), gated by hasEntitlement(org, 'pdf_branding') in src/lib/billing/server.ts and,
- *   in the database, by private.branding_entitled
- *   (supabase/migrations/20261007000100_pdf_branding.sql), which mirrors its plans.
+ *   feature that lists 'free' is never gated. The paid-only features are PDF branding
+ *   (D-021, Pro and Team), gated by hasEntitlement(org, 'pdf_branding') in
+ *   src/lib/billing/server.ts and, in the database, by private.branding_entitled
+ *   (supabase/migrations/20261007000100_pdf_branding.sql); QuickBooks and Xero import
+ *   (D-025, Pro and Team), gated by hasEntitlement(org, 'integrations.<provider>') and by
+ *   private.integrations_entitled (20261009000500_accounting_integrations.sql); and the REST
+ *   API (D-025, Team), gated by hasEntitlement(org, 'api') and by private.api_entitled
+ *   (supabase/migrations/20261009000400_public_api.sql). Each SQL function mirrors its plans.
+ *   A feature with a `capability` is listed only where it is configured.
  * - No price shows unless the owner has approved the prices (PRICES_APPROVED=true, D-020).
  *   PROPOSED_PRICES below are the marketing proposal, unapproved (P-002 stays open until the
  *   owner confirms). With the flag off every paid plan is "Not available yet": no price, no
@@ -38,6 +45,15 @@ export const PAID_PLAN_IDS = ['pro', 'team'] as const satisfies readonly PaidPla
 
 export type FeatureGroup = 'Free tools' | 'Workspace' | 'Team';
 
+/**
+ * Capabilities a deployment has only once the owner configures them (provider credentials).
+ * A feature that names one is offered, on every page and in llms.txt, only where it is on;
+ * with no capabilities passed, nothing that needs one is claimed (fail closed).
+ */
+export const CAPABILITIES = ['quickbooks_import', 'xero_import', 'rest_api'] as const;
+export type Capability = (typeof CAPABILITIES)[number];
+export type Capabilities = Partial<Record<Capability, boolean>>;
+
 export type Feature = {
   key: string;
   group: FeatureGroup;
@@ -50,10 +66,18 @@ export type Feature = {
   short?: string;
   /** True when it needs an account, so it is absent on a deployment without accounts. */
   needsAccount: boolean;
+  /**
+   * An outside provider the feature cannot work without. Such a feature is gated like any
+   * other but kept out of FEATURES, the public claims, until the owner has connected it.
+   */
+  provider?: 'dropbox_sign';
+  /** Offered only where this capability is configured (src/lib/integrations/server.ts). */
+  capability?: Capability;
 };
 
 const EVERY_PLAN: readonly PlanId[] = PLAN_IDS;
 const PAID_PLANS: readonly PlanId[] = PAID_PLAN_IDS;
+const TEAM_PLAN: readonly PlanId[] = ['team'];
 
 function listOf(names: string[]): string {
   if (names.length <= 1) return names.join('');
@@ -62,10 +86,24 @@ function listOf(names: string[]): string {
 
 const generatorCount = PUBLIC_TOOLS.filter((tool) => tool.path.endsWith('-generator')).length;
 const calculatorCount = PUBLIC_TOOLS.length - generatorCount;
-const documentNames = PUBLIC_DOCUMENT_KINDS.map((kind, index) => {
-  const label: string = documentKindLabels[kind];
-  return index === 0 ? label : label.toLowerCase();
-});
+/** A label inside running text: lower-case, except an initialism such as VGM. */
+function inSentence(label: string): string {
+  return /^[A-Z]{2}/.test(label) ? label : label.charAt(0).toLowerCase() + label.slice(1);
+}
+
+/**
+ * The public document names of one group, the first capitalized, as running text. A
+ * regulated type (the certificate of origin) joins its group only while its gate is on.
+ */
+function documentsIn(group: DocumentKindGroup, regulatedOffered = false): string {
+  const names = publicDocumentKinds(regulatedOffered)
+    .filter((kind) => documentKindGroups[kind] === group)
+    .map((kind, index) => {
+      const label: string = documentKindLabels[kind];
+      return index === 0 ? label : inSentence(label);
+    });
+  return listOf(names);
+}
 const quotaMinutes = TOOL_DOCUMENT_QUOTA.windowSeconds / 60;
 
 export const FEATURES = [
@@ -95,7 +133,23 @@ export const FEATURES = [
   {
     key: 'workspace.documents',
     group: 'Workspace',
-    label: `${listOfDocuments()} from one shipment revision, as PDFs`,
+    label: documentsFeatureLabel(false),
+    plans: EVERY_PLAN,
+    needsAccount: true,
+  },
+  {
+    key: 'workspace.sales_documents',
+    group: 'Workspace',
+    label: `Sales documents from the same record: ${inSentence(documentsIn('sales'))}`,
+    limit: 'The sales contract is a draft of fill-in headings, labelled as not legal advice',
+    plans: EVERY_PLAN,
+    needsAccount: true,
+  },
+  {
+    key: 'workspace.shipping_documents',
+    group: 'Workspace',
+    label: `Shipping documents for your carrier and forwarder: ${inSentence(documentsIn('shipping'))}`,
+    limit: 'The carrier issues the bill of lading; the VGM is the mass you declare',
     plans: EVERY_PLAN,
     needsAccount: true,
   },
@@ -140,6 +194,38 @@ export const FEATURES = [
     needsAccount: true,
   },
   {
+    key: 'integrations.quickbooks',
+    group: 'Workspace',
+    label: 'Customer and product import from QuickBooks Online',
+    short: 'QuickBooks import',
+    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in TradeDocs are kept and reported, never overwritten`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    capability: 'quickbooks_import',
+  },
+  {
+    key: 'integrations.xero',
+    group: 'Workspace',
+    label: 'Customer and product import from Xero',
+    short: 'Xero import',
+    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in TradeDocs are kept and reported, never overwritten`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    capability: 'xero_import',
+  },
+  {
+    key: 'api',
+    group: 'Team',
+    label:
+      'REST API: list and create shipments, generate documents and download their PDFs with organization API keys',
+    short: 'the REST API',
+    limit: `${API_REQUEST_QUOTA.limit} requests per minute per key; keys are created and revoked by owners and administrators`,
+    plans: TEAM_PLAN,
+    needsAccount: true,
+    // Claimed only where the API can answer: API_KEY_PEPPER and the service connection set.
+    capability: 'rest_api',
+  },
+  {
     key: 'team.members',
     group: 'Team',
     label: 'Teammates invited by link, with owner, admin and member roles',
@@ -149,34 +235,107 @@ export const FEATURES = [
   },
 ] as const satisfies readonly Feature[];
 
-export type FeatureKey = (typeof FEATURES)[number]['key'];
+/**
+ * Paid features that need an outside provider (D-025). Gated by hasEntitlement exactly like
+ * the features above, but not in FEATURES, so no public page (pricing, llms.txt, use cases)
+ * claims them: e-signature stays unclaimed until the owner connects a Dropbox Sign account
+ * and decides to list it (RUNBOOK.md, "E-signature").
+ */
+export const PROVIDER_FEATURES = [
+  {
+    key: 'esign',
+    group: 'Workspace',
+    label: 'E-signature of finalized documents through Dropbox Sign',
+    short: 'E-signature',
+    limit: `Up to ${MAX_ESIGN_SIGNERS} signers per request; the signature is provided by Dropbox Sign`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    provider: 'dropbox_sign',
+  },
+] as const satisfies readonly Feature[];
 
-function listOfDocuments(): string {
-  return listOf(documentNames);
+const GATED_FEATURES: readonly Feature[] = [...FEATURES, ...PROVIDER_FEATURES];
+
+export type FeatureKey =
+  (typeof FEATURES)[number]['key'] | (typeof PROVIDER_FEATURES)[number]['key'];
+
+/**
+ * The workspace documents feature, as the deployment offers it. With the certificate of
+ * origin's gate on (D-025) it joins the invoicing documents, described as the exporter's
+ * preparation.
+ */
+export function documentsFeatureLabel(regulatedOffered: boolean): string {
+  const label = `${documentsIn('invoicing', regulatedOffered)} from one shipment revision, as PDFs`;
+  return regulatedOffered
+    ? `${label}; the certificate of origin is your own preparation, for the issuing chamber or authority to certify where required`
+    : label;
 }
 
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */
 export function featurePlans(key: string): readonly PlanId[] {
-  return FEATURES.find((feature) => feature.key === key)?.plans ?? [];
+  return GATED_FEATURES.find((feature) => feature.key === key)?.plans ?? [];
+}
+
+/** Whether this deployment offers a feature: it needs no capability, or its capability is on. */
+export function featureOffered(feature: Feature, capabilities: Capabilities = {}): boolean {
+  return feature.capability === undefined || capabilities[feature.capability] === true;
+}
+
+/**
+ * The features this deployment can truthfully list: those whose capability is configured,
+ * with the documents feature naming the certificate of origin only while its gate is on.
+ * Every page that shows the feature list reads this, passing currentCapabilities() and
+ * regulatedDocumentsEnabled(); FEATURES itself leaves every regulated type out and stays the
+ * source of keys and plans.
+ */
+export function offeredFeatures(
+  capabilities: Capabilities = {},
+  regulatedOffered = false,
+): Feature[] {
+  return (FEATURES as readonly Feature[])
+    .filter((feature) => featureOffered(feature, capabilities))
+    .map((feature) =>
+      feature.key === 'workspace.documents'
+        ? { ...feature, label: documentsFeatureLabel(regulatedOffered) }
+        : feature,
+    );
 }
 
 /** Features no free account has. A paid card lists them; it never invents any. */
-export function paidOnlyFeatures(plan: PaidPlanId): Feature[] {
-  return FEATURES.filter(
-    (feature) =>
-      (feature.plans as readonly PlanId[]).includes(plan) &&
-      !(feature.plans as readonly PlanId[]).includes('free'),
+export function paidOnlyFeatures(plan: PaidPlanId, capabilities: Capabilities = {}): Feature[] {
+  return offeredFeatures(capabilities).filter(
+    (feature) => feature.plans.includes(plan) && !feature.plans.includes('free'),
   );
 }
 
 /** The paid-only features of every paid plan, by short name, as running text ("" if none). */
-export function paidOnlySummary(): string {
+export function paidOnlySummary(capabilities: Capabilities = {}): string {
   const names = new Set(
     PAID_PLAN_IDS.flatMap((plan) =>
-      paidOnlyFeatures(plan).map((feature) => feature.short ?? feature.label),
+      paidOnlyFeatures(plan, capabilities).map((feature) => feature.short ?? feature.label),
     ),
   );
   return listOf([...names]);
+}
+
+/**
+ * What the paid plans add over Free, as one sentence without a final full stop, or "" when
+ * they add nothing. Grouped by the plans that include each feature, so a Team-only feature is
+ * never credited to Pro: "Pro and Team add PDF branding; Team also adds the REST API".
+ */
+export function paidAdditions(capabilities: Capabilities = {}): string {
+  const proOnly = paidOnlyFeatures('pro', capabilities).map(
+    (feature) => feature.short ?? feature.label,
+  );
+  const teamOnly = paidOnlyFeatures('team', capabilities)
+    .filter((feature) => !(feature.plans as readonly PlanId[]).includes('pro'))
+    .map((feature) => feature.short ?? feature.label);
+  const parts: string[] = [];
+  if (proOnly.length > 0) parts.push(`Pro and Team add ${listOf(proOnly)}`);
+  if (teamOnly.length > 0) {
+    parts.push(`${proOnly.length > 0 ? 'Team also adds' : 'Team adds'} ${listOf(teamOnly)}`);
+  }
+  return parts.join('; ');
 }
 
 // --- Offers ------------------------------------------------------------------------------

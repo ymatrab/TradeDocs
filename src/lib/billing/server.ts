@@ -108,19 +108,30 @@ export async function readEntitlement(
   return { row: data, failed: false };
 }
 
+/** Reads an organization's entitlement row; `failed` when it could not be read. */
+export type EntitlementRead = (
+  orgId: string,
+) => Promise<{ row: EntitlementRow | null; failed: boolean }>;
+
 /**
  * Whether an organization may use a feature. A feature every plan includes, the free plan
- * among them, is never gated. A paid feature needs a current, unrevoked entitlement read as
- * the signed-in caller; a missing table, a query error, an unknown feature or no session all
- * answer false.
+ * among them, is never gated. A paid feature needs a current, unrevoked entitlement, read as
+ * the signed-in caller unless another reader is given (the public API passes one that reads
+ * with the service role for the organization its verified key belongs to); a missing table,
+ * a query error, an unknown feature or no session all answer false.
  */
-export async function hasEntitlement(orgId: string, feature: FeatureKey): Promise<boolean> {
+export async function hasEntitlement(
+  orgId: string,
+  feature: FeatureKey,
+  read?: EntitlementRead,
+): Promise<boolean> {
   const plans = featurePlans(feature);
   if (plans.length === 0) return false;
   if (plans.includes('free')) return true;
   try {
-    const client = await createClient();
-    const { row, failed } = await readEntitlement(client, orgId);
+    const { row, failed } = read
+      ? await read(orgId)
+      : await readEntitlement(await createClient(), orgId);
     if (failed) return false;
     return entitlementGrants(row, plans, new Date());
   } catch {

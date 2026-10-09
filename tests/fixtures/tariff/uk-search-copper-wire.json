@@ -1,0 +1,264 @@
+{
+  "data": {
+    "id": "1",
+    "type": "fuzzy_search",
+    "attributes": {
+      "type": "fuzzy_match",
+      "goods_nomenclature_match": {
+        "chapters": [],
+        "headings": [
+          {
+            "_index": "tariff-headings-uk",
+            "_id": "46785",
+            "_score": 7.1541114,
+            "_source": {
+              "id": 46785,
+              "goods_nomenclature_item_id": "7408000000",
+              "producline_suffix": "80",
+              "validity_start_date": "1972-01-01T00:00:00.000Z",
+              "validity_end_date": null,
+              "description": "Copper wire",
+              "description_indexed": "copper wire",
+              "number_indents": 0,
+              "chapter": {
+                "goods_nomenclature_sid": 46740,
+                "goods_nomenclature_item_id": "7400000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1971-12-31T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper and articles thereof",
+                "guides": []
+              },
+              "section": {
+                "numeral": "XV",
+                "title": "Base metals and articles of base metal",
+                "position": 15
+              }
+            }
+          }
+        ],
+        "commodities": [
+          {
+            "_index": "tariff-commodities-uk",
+            "_id": "46791",
+            "_score": 8.474062,
+            "_source": {
+              "id": 46791,
+              "goods_nomenclature_item_id": "7408210000",
+              "producline_suffix": "10",
+              "validity_start_date": "1972-01-01T00:00:00.000Z",
+              "validity_end_date": null,
+              "description": "Of copper alloys",
+              "description_indexed": "of copper alloys copper wire copper and articles thereof",
+              "number_indents": 1,
+              "declarable": false,
+              "ancestor_descriptions": [
+                "COPPER AND ARTICLES THEREOF",
+                "Copper wire",
+                "Of copper alloys"
+              ],
+              "section": {
+                "numeral": "XV",
+                "title": "Base metals and articles of base metal",
+                "position": 15
+              },
+              "chapter": {
+                "goods_nomenclature_sid": 46740,
+                "goods_nomenclature_item_id": "7400000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1971-12-31T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper and articles thereof",
+                "guides": []
+              },
+              "heading": {
+                "goods_nomenclature_sid": 46785,
+                "goods_nomenclature_item_id": "7408000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1972-01-01T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper wire",
+                "number_indents": 0
+              }
+            }
+          },
+          {
+            "_index": "tariff-commodities-uk",
+            "_id": "46786",
+            "_score": 8.425756,
+            "_source": {
+              "id": 46786,
+              "goods_nomenclature_item_id": "7408110000",
+              "producline_suffix": "10",
+              "validity_start_date": "1972-01-01T00:00:00.000Z",
+              "validity_end_date": null,
+              "description": "Of refined copper",
+              "description_indexed": "of refined copper copper wire copper and articles thereof",
+              "number_indents": 1,
+              "declarable": false,
+              "ancestor_descriptions": [
+                "COPPER AND ARTICLES THEREOF",
+                "Copper wire",
+                "Of refined copper"
+              ],
+              "section": {
+                "numeral": "XV",
+                "title": "Base metals and articles of base metal",
+                "position": 15
+              },
+              "chapter": {
+                "goods_nomenclature_sid": 46740,
+                "goods_nomenclature_item_id": "7400000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1971-12-31T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper and articles thereof",
+                "guides": []
+              },
+              "heading": {
+                "goods_nomenclature_sid": 46785,
+                "goods_nomenclature_item_id": "7408000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1972-01-01T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper wire",
+                "number_indents": 0
+              }
+            }
+          },
+          {
+            "_index": "tariff-commodities-uk",
+            "_id": "46788",
+            "_score": 8.266803,
+            "_source": {
+              "id": 46788,
+              "goods_nomenclature_item_id": "7408190000",
+              "producline_suffix": "80",
+              "validity_start_date": "1972-01-01T00:00:00.000Z",
+              "validity_end_date": null,
+              "description": "Other",
+              "description_indexed": "other of refined copper copper wire copper and articles thereof",
+              "number_indents": 2,
+              "declarable": false,
+              "ancestor_descriptions": [
+                "COPPER AND ARTICLES THEREOF",
+                "Copper wire",
+                "Of refined copper",
+                "Other"
+              ],
+              "section": {
+                "numeral": "XV",
+                "title": "Base metals and articles of base metal",
+                "position": 15
+              },
+              "chapter": {
+                "goods_nomenclature_sid": 46740,
+                "goods_nomenclature_item_id": "7400000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1971-12-31T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper and articles thereof",
+                "guides": []
+              },
+              "heading": {
+                "goods_nomenclature_sid": 46785,
+                "goods_nomenclature_item_id": "7408000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1972-01-01T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper wire",
+                "number_indents": 0
+              }
+            }
+          },
+          {
+            "_index": "tariff-commodities-uk",
+            "_id": "46796",
+            "_score": 8.266803,
+            "_source": {
+              "id": 46796,
+              "goods_nomenclature_item_id": "7408290000",
+              "producline_suffix": "80",
+              "validity_start_date": "1972-01-01T00:00:00.000Z",
+              "validity_end_date": null,
+              "description": "Other",
+              "description_indexed": "other of copper alloys copper wire copper and articles thereof",
+              "number_indents": 2,
+              "declarable": true,
+              "ancestor_descriptions": [
+                "COPPER AND ARTICLES THEREOF",
+                "Copper wire",
+                "Of copper alloys",
+                "Other"
+              ],
+              "section": {
+                "numeral": "XV",
+                "title": "Base metals and articles of base metal",
+                "position": 15
+              },
+              "chapter": {
+                "goods_nomenclature_sid": 46740,
+                "goods_nomenclature_item_id": "7400000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1971-12-31T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper and articles thereof",
+                "guides": []
+              },
+              "heading": {
+                "goods_nomenclature_sid": 46785,
+                "goods_nomenclature_item_id": "7408000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1972-01-01T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper wire",
+                "number_indents": 0
+              }
+            }
+          }
+        ]
+      },
+      "reference_match": {
+        "chapters": [],
+        "headings": [
+          {
+            "_index": "tariff-search_references-uk",
+            "_id": "1472",
+            "_score": 4.978955,
+            "_source": {
+              "title": "copper wire, not electrically insulated",
+              "title_indexed": "copper wire",
+              "reference_class": "Heading",
+              "reference": {
+                "id": 46785,
+                "goods_nomenclature_item_id": "7408000000",
+                "producline_suffix": "80",
+                "validity_start_date": "1972-01-01T00:00:00.000Z",
+                "validity_end_date": null,
+                "description": "Copper wire",
+                "description_indexed": "copper wire",
+                "number_indents": 0,
+                "chapter": {
+                  "goods_nomenclature_sid": 46740,
+                  "goods_nomenclature_item_id": "7400000000",
+                  "producline_suffix": "80",
+                  "validity_start_date": "1971-12-31T00:00:00.000Z",
+                  "validity_end_date": null,
+                  "description": "Copper and articles thereof",
+                  "guides": []
+                },
+                "section": {
+                  "numeral": "XV",
+                  "title": "Base metals and articles of base metal",
+                  "position": 15
+                },
+                "class": "Heading"
+              }
+            }
+          }
+        ],
+        "commodities": []
+      }
+    }
+  }
+}

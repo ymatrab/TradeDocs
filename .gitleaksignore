@@ -1,2 +1,7 @@
 # Synthetic test value in a unit test (not a credential); the file no longer contains it.
 ec483b1a9f134cc632a056cac85c41d3b59109ff:tests/unit/accounts.test.ts:generic-api-key:201
+# Example idempotency keys in API docs (invented values, not credentials); now $(uuidgen).
+ad9f6d61f805bf43db08849f14a712f6c9ce936f:src/app/(marketing)/developers/page.tsx:generic-api-key:263
+ad9f6d61f805bf43db08849f14a712f6c9ce936f:src/app/(marketing)/developers/page.tsx:generic-api-key:304
+# Synthetic JWT in a unit test (not a credential); the test now builds it at runtime.
+a20a677558166aeb2aec84d75d76b97276904844:tests/unit/integrations.test.ts:jwt:427

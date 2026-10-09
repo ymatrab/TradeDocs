@@ -174,6 +174,46 @@ export const EXPORT_PRICE_FAQ: readonly FaqEntry[] = [
   },
 ];
 
+/** /tools/hs-code-lookup */
+export const HS_CODE_LOOKUP_FAQ: readonly FaqEntry[] = [
+  {
+    q: 'How do I find the HS code for my product?',
+    a: 'Search the tariff of the country the goods are entering by what the product is made of and what it does, then read down from the heading to the most specific line that describes it. This lookup searches the US Harmonized Tariff Schedule and the UK Trade Tariff at once and links every line to the official page, where the section and chapter notes that decide between lines are printed.',
+  },
+  {
+    q: 'Is the code this tool finds the right classification?',
+    a: 'Not necessarily. It shows lines whose wording matches your search; it does not decide which line your goods belong in. Classification follows the tariff’s own interpretation rules and legal notes, and the importer, usually with a customs broker, is responsible for the code declared. For certainty, ask the customs authority for a binding ruling.',
+  },
+  {
+    q: 'Why are the US and UK codes different?',
+    a: 'The first six digits are the international Harmonized System and are the same in both. Each country adds its own digits after that: the United States uses ten-digit HTS numbers and the United Kingdom ten-digit commodity codes, and the national lines often split goods differently.',
+  },
+  {
+    q: 'Does the lookup show duty rates?',
+    a: 'No. The rate depends on the exact line, the origin of the goods and any trade preference claimed, and the importing authority decides it. Open the official page for a line to see the measures that apply, or ask your customs broker.',
+  },
+];
+
+/** /tools/denied-party-screening */
+export const DENIED_PARTY_FAQ: readonly FaqEntry[] = [
+  {
+    q: 'What is denied party screening?',
+    a: 'Checking the names of the parties to a transaction (buyer, consignee, end user, agents) against the lists of people and organisations a government restricts trade with. The US Consolidated Screening List brings together the export screening lists of the Departments of Commerce, State and the Treasury in one search.',
+  },
+  {
+    q: 'What should I do if a name matches?',
+    a: 'Do not treat a match as a final answer either way. Compare the address, country and other details with the listing, open the source list it came from, and check the official publication of that list. If the match may be real, stop and take advice from your compliance team or a trade lawyer before you proceed.',
+  },
+  {
+    q: 'Does no match mean I can ship?',
+    a: 'No. A clean search only means the name you typed did not match the consolidated list today. Licensing requirements, end-use rules, embargoes and other countries’ sanctions lists still apply, and names can be spelled many ways. This is a screening aid, not a compliance determination.',
+  },
+  {
+    q: 'Do you keep the names I search?',
+    a: 'No. The name is sent to the trade.gov Consolidated Screening List API to run the search and the results are shown to you. TradeDocs does not store or log the names searched.',
+  },
+];
+
 /**
  * The homepage's questions. The homepage still declares its own copy (it is owned by the
  * design round and was not edited here); it should import this list instead, and until it
@@ -280,6 +320,7 @@ function groups(): Group[] {
       label: 'Export price calculator',
       entries: EXPORT_PRICE_FAQ,
     },
+    { href: '/tools/hs-code-lookup', label: 'HS code lookup', entries: HS_CODE_LOOKUP_FAQ },
     { href: '/tools/incoterms', label: 'Incoterms 2020 guide', entries: INCOTERMS_HUB_FAQ },
     ...INCOTERMS.map((term) => ({
       href: `/tools/incoterms/${term.code.toLowerCase()}`,

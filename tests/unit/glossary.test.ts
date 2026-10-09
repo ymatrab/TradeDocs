@@ -1,6 +1,7 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { expectNoGatedPhrase } from './gated-content';
 import sitemap from '@/app/sitemap';
 import { countWords } from '@/lib/content/article';
 import {
@@ -122,7 +123,7 @@ describe('glossary terms', () => {
   it('state no rates and stay off the certificate of origin', () => {
     for (const term of GLOSSARY) {
       const text = JSON.stringify(term);
-      expect(text, term.slug).not.toMatch(/certificate of origin/i);
+      expectNoGatedPhrase(text, term.slug);
       expect(text, term.slug).not.toMatch(/\d\s?%/);
     }
     expect(GLOSSARY_DISCLAIMER).toMatch(/not legal, customs or tax advice/);
@@ -263,7 +264,7 @@ describe('country pages', () => {
   it('state no duty or tax rates and stay off the certificate of origin', () => {
     for (const country of COUNTRIES) {
       const text = JSON.stringify(country);
-      expect(text, country.slug).not.toMatch(/certificate of origin/i);
+      expectNoGatedPhrase(text, country.slug);
       expect(text, country.slug).not.toMatch(/\d\s?%/);
     }
     expect(COUNTRY_DISCLAIMER).toMatch(/not legal, customs or tax advice/);
