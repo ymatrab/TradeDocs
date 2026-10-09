@@ -14,6 +14,7 @@ import {
 import { createFontSet } from './fonts';
 import { embedImage, fitWithin, type PdfImage } from './image';
 import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
+import { cooWording } from '../trade/certificate-of-origin';
 
 /**
  * Renders a stored document snapshot as a PDF.
@@ -119,6 +120,18 @@ export const snapshotSchema = z.object({
     .object({
       logo: brandingAssetSchema.nullable().optional(),
       signature: brandingAssetSchema.nullable().optional(),
+    })
+    .nullable()
+    .optional(),
+  /**
+   * Certificate of origin only, recorded at generation by
+   * 20261009000200_certificate_of_origin.sql (and by the preview route for a preview): the
+   * wording version it prints and the shipment's commercial invoice number it refers to.
+   */
+  certificate: z
+    .object({
+      wording_version: z.number().int().min(1).optional(),
+      invoice_reference: z.string().nullable().optional(),
     })
     .nullable()
     .optional(),
@@ -443,6 +456,10 @@ function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
       totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
     }
   }
+  // A certificate of origin states the gross weight when the lines do, never a zero.
+  if (snapshot.kind === 'certificate_of_origin' && snapshot.totals.gross_weight_kg != null) {
+    totals.push(['Total gross weight', `${decimal(snapshot.totals.gross_weight_kg, 3)} kg`]);
+  }
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
     totals.push([
       'Total amount',
@@ -490,6 +507,20 @@ function commercialTermsFor(snapshot: DocumentSnapshot): [string, string][] {
   return terms;
 }
 
+/**
+ * Certificate of origin: the second row of term boxes, with the invoice it refers to and the
+ * rest of the transport particulars (the ports are in the first row). Empty for every other
+ * document type.
+ */
+function certificateTermsFor(snapshot: DocumentSnapshot): [string, string][] {
+  if (snapshot.kind !== 'certificate_of_origin') return [];
+  return [
+    ['Invoice No.', snapshot.certificate?.invoice_reference || '—'],
+    ['Country of destination', snapshot.shipment.country_of_destination || '—'],
+    ['Shipped on', snapshot.shipment.shipped_on || '—'],
+  ];
+}
+
 /** The lowest a schema 4 page's content may reach: the disclosure rule sits just below. */
 const CONTENT_BOTTOM = MARGIN + 44;
 
@@ -511,6 +542,11 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   const layout = columns.map((column) =>
     column.width === 0 ? { ...column, width: CONTENT_WIDTH - fixed - 24 } : column,
   );
+
+  // A certificate of origin carries its preparation label on every page and the exporter's
+  // declaration; its wording is the version it was generated with.
+  const coo = snapshot.kind === 'certificate_of_origin';
+  const cooText = cooWording(snapshot.certificate?.wording_version);
 
   const pages: Page[] = [];
   let page = new Page(fonts);
@@ -552,6 +588,10 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
     );
     if (continued) {
       page.text('continued', PAGE_WIDTH - MARGIN, cursor, { size: 7.5, align: 'right' });
+    }
+    if (coo) {
+      cursor -= 11;
+      page.text(cooText.preparationLabel, MARGIN, cursor, { size: 7.5, font: 'bold' });
     }
     cursor -= 10;
     page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 1, 0.15);
@@ -651,6 +691,8 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   // Schema 6: buyer reference and validity, in boxes the width of those above.
   const commercial = commercialTermsFor(snapshot);
   if (commercial.length > 0) drawTerms(commercial);
+  const certificateTerms = certificateTermsFor(snapshot);
+  if (certificateTerms.length > 0) drawTerms(certificateTerms);
 
   // Measured before the tables are drawn, so the last row of the final table can take the
   // totals with it (schema 4): a totals block is never alone at the top of a page.
@@ -828,7 +870,42 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   const signature = branding.signature
     ? { image: branding.signature, ...fitWithin(branding.signature, SIGNATURE_BOX) }
     : null;
-  if (v4 && (snapshot.issuer || signature)) {
+  if (coo) {
+    // The exporter's declaration, the preparation statement, a box left empty for the
+    // issuing body, and the exporter's signature: always drawn, so the certificate is never
+    // complete until the exporter signs it and, where required, the issuing body certifies it.
+    block(cooText.declarationCaption, cooText.declaration);
+    block(cooText.preparationCaption, cooText.preparationStatement);
+
+    const certificationHeight = 64;
+    if (cursor - certificationHeight - 12 < CONTENT_BOTTOM) startPage(true);
+    cursor -= 12;
+    const caption = cooText.certificationCaption;
+    drawBox(page, MARGIN, cursor, CONTENT_WIDTH, certificationHeight, caption);
+    const note = fitLines(fonts, [cooText.certificationNote], CONTENT_WIDTH - 12, 7, 2);
+    note.forEach((line, lineIndex) => {
+      page.text(line, MARGIN + 6, cursor - 24 - lineIndex * 9, { size: 7 });
+    });
+    cursor -= certificationHeight;
+
+    const issuer: NonNullable<DocumentSnapshot['issuer']> = snapshot.issuer ?? {};
+    const imageHeight = signature ? signature.height + 4 : 0;
+    if (cursor - 56 - imageHeight < CONTENT_BOTTOM) startPage(true);
+    cursor -= 30;
+    if (signature) {
+      cursor -= imageHeight;
+      page.image(signature.image, MARGIN, cursor + 3, signature.width, signature.height);
+    }
+    page.line(MARGIN, cursor, MARGIN + 200, cursor, 0.5, 0.35);
+    cursor -= 10;
+    const signatory = [issuer.signatory_name, issuer.signatory_title].filter(Boolean).join(', ');
+    if (signatory) {
+      page.text(signatory, MARGIN, cursor, { size: 8.5 });
+      cursor -= 9;
+    }
+    page.text(cooText.signatureCaption, MARGIN, cursor, { size: 6.5 });
+    cursor -= 8;
+  } else if (v4 && (snapshot.issuer || signature)) {
     const issuer: NonNullable<DocumentSnapshot['issuer']> = snapshot.issuer ?? {};
     const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
     if (invoice && issuer.payment_terms) block('PAYMENT TERMS', issuer.payment_terms);
