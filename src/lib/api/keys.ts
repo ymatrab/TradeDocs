@@ -33,7 +33,7 @@ function randomBase62(length: number, random: (size: number) => Uint8Array): str
   while (out.length < length) {
     for (const byte of random(length * 2)) {
       // 248 = 4 × 62: bytes at or above it would bias the first characters.
-      if (byte < 248) out += BASE62[byte % 62];
+      if (byte < 248) out += BASE62.charAt(byte % 62);
       if (out.length === length) break;
     }
   }
