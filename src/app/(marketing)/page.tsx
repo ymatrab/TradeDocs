@@ -13,6 +13,8 @@ import { openGraphFor } from '@/lib/seo/social';
 import { documentKindLabels, partyRoleLabels, type DocumentKind } from '@/lib/labels';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { CERTIFICATE_OF_ORIGIN_NOTICE } from '@/lib/trade/regulated';
 import {
   AudienceSection,
   ChecklistSection,
@@ -37,9 +39,9 @@ export const metadata: Metadata = {
 };
 
 /**
- * The document types a visitor can produce today. The certificate of origin exists in the
- * schema but is awaiting legal review, so it is deliberately absent here, and every count
- * on the page is derived from this list rather than typed.
+ * The document types a visitor can produce today. The certificate of origin joins them only
+ * behind its review gate (offeredDocuments), and every count on the page is derived from
+ * the offered list rather than typed.
  */
 const documents: { kind: DocumentKind; plate: string; detail: string }[] = [
   {
@@ -163,9 +165,24 @@ const benchIncoterms: BenchIncoterm[] = INCOTERMS.map((rule) => ({
   riskPasses: rule.riskPasses,
 }));
 
+type HomeDocument = (typeof documents)[number];
+
+/** Joins the list only behind its review gate (D-008, D-025). */
+const certificateDocument: HomeDocument = {
+  kind: 'certificate_of_origin',
+  plate: 'TD · CO',
+  detail:
+    'Origin line by line with your declaration, for the issuing chamber or authority to certify where required.',
+};
+
+/** The documents this deployment offers: the certificate of origin only behind its gate. */
+function offeredDocuments(regulatedOffered: boolean): HomeDocument[] {
+  return regulatedOffered ? [...documents, certificateDocument] : documents;
+}
+
 /** "Commercial invoice, proforma invoice, packing list and delivery note", from the data. */
-function listOfDocuments(): string {
-  const names = documents.map((document, index) => {
+function listOfDocuments(offered: readonly HomeDocument[]): string {
+  const names = offered.map((document, index) => {
     const label: string = documentKindLabels[document.kind];
     return index === 0 ? label : label.toLowerCase();
   });
@@ -173,18 +190,22 @@ function listOfDocuments(): string {
   return names.length > 0 ? `${names.join(', ')} and ${last}` : last;
 }
 
-const included = [
-  `${listOfDocuments()}, as PDFs`,
-  'Shipments, companies and products saved to your organization',
-  'Teammates invited by link, with owner, admin and member roles',
-  'A shipment’s current documents as one ZIP with a checksum manifest',
-];
+function includedNow(offered: readonly HomeDocument[]): string[] {
+  return [
+    `${listOfDocuments(offered)}, as PDFs`,
+    'Shipments, companies and products saved to your organization',
+    'Teammates invited by link, with owner, admin and member roles',
+    'A shipment’s current documents as one ZIP with a checksum manifest',
+  ];
+}
 
-const notYet = [
-  'Certificate of origin: awaiting legal review, not offered yet',
-  'Invitations by email: for now you pass the link on yourself',
-  'Paid plans: none yet, and they will come with notice',
-];
+function notYetOffered(regulatedOffered: boolean): string[] {
+  return [
+    ...(regulatedOffered ? [] : ['Certificate of origin: awaiting legal review, not offered yet']),
+    'Invitations by email: for now you pass the link on yourself',
+    'Paid plans: none yet, and they will come with notice',
+  ];
+}
 
 /**
  * Answer-first, so the first sentence is the answer an assistant can quote. The same array
@@ -252,8 +273,11 @@ const pixelOrder = [3, 9, 0, 13, 6, 11, 1, 15, 8, 4, 12, 2, 10, 14, 5, 7];
 export default function Home() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
+  // The certificate of origin is offered, and claimed, only behind its review gate.
+  const regulatedOffered = regulatedDocumentsEnabled();
+  const offered = offeredDocuments(regulatedOffered);
   // Every timeline name the record section declares, so a card can follow the next one.
-  const docTimelines = documents.map((_, index) => `--doc-${index}`).join(', ');
+  const docTimelines = offered.map((_, index) => `--doc-${index}`).join(', ');
 
   return (
     <>
@@ -309,7 +333,7 @@ export default function Home() {
               </FieldBox>
             </BoxGrid>
             <ul className="frame-rail" aria-label="Documents prepared from this record">
-              {documents.map((document, index) => (
+              {offered.map((document, index) => (
                 <li key={document.kind} style={{ '--i': index } as CSSProperties}>
                   <span className="frame-plate">{document.plate}</span>
                   <span className="sr-only">
@@ -363,7 +387,7 @@ export default function Home() {
               the earlier documents are marked stale, never quietly rewritten.
             </p>
           </div>
-          <Stat value={documents.length} label="Document types from 1 entry" />
+          <Stat value={offered.length} label="Document types from 1 entry" />
         </div>
 
         {/*
@@ -392,7 +416,7 @@ export default function Home() {
                   </dd>
                 </div>
               </dl>
-              <p className="record-foot">Example record · prepares {documents.length} documents</p>
+              <p className="record-foot">Example record · prepares {offered.length} documents</p>
             </div>
           </div>
           <div
@@ -402,7 +426,7 @@ export default function Home() {
             tabIndex={0}
           >
             <ol className="doc-stack" style={{ '--scope': docTimelines } as CSSProperties}>
-              {documents.map((document, index) => (
+              {offered.map((document, index) => (
                 <li
                   className="doc"
                   key={document.kind}
@@ -432,7 +456,9 @@ export default function Home() {
           </div>
         </div>
         <p className="note">
-          A certificate of origin template is awaiting legal review and is not offered yet.
+          {regulatedOffered
+            ? CERTIFICATE_OF_ORIGIN_NOTICE
+            : 'A certificate of origin template is awaiting legal review and is not offered yet.'}
         </p>
       </RevealSection>
 
@@ -459,7 +485,7 @@ export default function Home() {
       <TemplatesSection action={action} />
       <CtaBand action={action} />
       <AudienceSection action={action} />
-      <ChecklistSection action={action} />
+      <ChecklistSection action={action} regulatedOffered={regulatedOffered} />
 
       <RevealSection className="section" aria-labelledby="tools-title">
         <div className="section-head split">
@@ -538,7 +564,7 @@ export default function Home() {
           <article className="card">
             <span className="tag">Included now</span>
             <ul className="ledger">
-              {included.map((item) => (
+              {includedNow(offered).map((item) => (
                 <li key={item}>
                   <Check size={17} aria-hidden="true" className="yes" />
                   {item}
@@ -549,7 +575,7 @@ export default function Home() {
           <article className="card">
             <span className="tag">Not yet</span>
             <ul className="ledger">
-              {notYet.map((item) => (
+              {notYetOffered(regulatedOffered).map((item) => (
                 <li key={item}>
                   <Clock size={17} aria-hidden="true" className="not-yet" />
                   {item}

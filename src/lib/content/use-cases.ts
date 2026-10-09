@@ -82,7 +82,7 @@ export const USE_CASES: readonly UseCase[] = [
       'team.members',
     ],
     boundaries: [
-      'It prepares documents; it does not issue, certify or file them. Export declarations, transport documents and certificates of origin come from your broker, carrier or chamber.',
+      'It prepares documents; it does not issue, certify or file them. Export declarations, transport documents and certified certificates of origin come from your broker, carrier or chamber.',
       'It does not look up tariffs, duty rates or export controls. HS codes and origins are your own declaration.',
     ],
     tools: [
@@ -102,7 +102,7 @@ export const USE_CASES: readonly UseCase[] = [
     faq: [
       {
         q: 'Which export documents does TradeDocs prepare?',
-        a: 'The commercial invoice, proforma invoice, packing list and delivery note, as PDFs from one shipment. The certificate of origin is not offered while it awaits legal review, and transport documents and customs declarations are outside what TradeDocs does.',
+        a: 'The commercial invoice, proforma invoice, packing list and delivery note, as PDFs from one shipment. A certificate of origin is offered only once its legal review is recorded, and then as your own preparation for the issuing chamber or authority to certify where required. Transport documents and customs declarations are outside what TradeDocs does.',
       },
       {
         q: 'Can I try it without an account?',
@@ -113,7 +113,7 @@ export const USE_CASES: readonly UseCase[] = [
         a: 'No. It prepares the commercial documents. Filing the export declaration is done by you or your customs broker in the customs system of the exporting country.',
       },
     ],
-    updated: ADDED,
+    updated: '2026-10-09',
   },
   {
     slug: 'freight-forwarders',

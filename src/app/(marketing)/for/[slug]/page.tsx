@@ -6,7 +6,8 @@ import { LinkButton } from '@/components/primitives/button';
 import { Callout } from '@/components/primitives/feedback';
 import { primaryAction } from '@/components/shell/public';
 import { UseCaseJsonLd } from '@/components/seo/json-ld';
-import { FEATURES } from '@/lib/billing/plans';
+import { offeredFeatures } from '@/lib/billing/plans';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { USE_CASES, findUseCase, type UseCase } from '@/lib/content/use-cases';
 import { openGraphFor } from '@/lib/seo/social';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
@@ -39,7 +40,9 @@ export async function generateMetadata({
  */
 function FeatureList({ useCase, accountsOpen }: { useCase: UseCase; accountsOpen: boolean }) {
   const wanted = new Set<string>(useCase.features);
-  const features = FEATURES.filter((feature) => wanted.has(feature.key));
+  const features = offeredFeatures(regulatedDocumentsEnabled()).filter((feature) =>
+    wanted.has(feature.key),
+  );
   return (
     <ul className="ledger" aria-label="What the workspace does">
       {features.map((feature) => {

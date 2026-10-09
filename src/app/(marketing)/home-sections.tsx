@@ -292,7 +292,7 @@ const checklist: {
     status: 'Workspace',
   },
   {
-    name: 'Certificate of origin',
+    name: documentKindLabels.certificate_of_origin,
     purpose: 'States where the goods were produced, where a buyer or route asks for it.',
     who: 'Exporter, certified by a chamber or authority',
     coverage: 'not-yet',
@@ -316,7 +316,26 @@ const checklist: {
 
 const coverageIcon = { prepares: Check, 'not-yet': Clock, outside: Minus } as const;
 
-export function ChecklistSection({ action }: { action: Action }) {
+/** With its review gate on, the certificate of origin is prepared, never certified, here. */
+const certificateOffered: Pick<(typeof checklist)[number], 'who' | 'coverage' | 'status'> = {
+  who: 'Exporter; certified by a chamber or authority where required',
+  coverage: 'prepares',
+  status: 'Workspace: your preparation, not certified by TradeDocs',
+};
+
+export function ChecklistSection({
+  action,
+  regulatedOffered,
+}: {
+  action: Action;
+  /** Whether the certificate of origin's gate is on (regulatedDocumentsEnabled). */
+  regulatedOffered: boolean;
+}) {
+  const rows = checklist.map((row) =>
+    regulatedOffered && row.name === documentKindLabels.certificate_of_origin
+      ? { ...row, ...certificateOffered }
+      : row,
+  );
   return (
     <RevealSection className="section sunken" id="checklist" aria-labelledby="checklist-title">
       <div className="photo-split">
@@ -336,7 +355,7 @@ export function ChecklistSection({ action }: { action: Action }) {
         <SectionPhoto photo={HOME_PHOTOS.truck} ratio={3 / 2} />
       </div>
       <ol className="checklist" aria-label="Export documents and who prepares them">
-        {checklist.map((row) => {
+        {rows.map((row) => {
           const Icon = coverageIcon[row.coverage];
           return (
             <li key={row.name} className={`checklist-row ${row.coverage}`}>

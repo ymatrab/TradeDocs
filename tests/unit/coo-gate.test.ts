@@ -1,7 +1,14 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GET as readiness } from '@/app/api/ready/route';
+import { GET as llms } from '@/app/llms.txt/route';
+import { documentsFeatureLabel, FEATURES, offeredFeatures } from '@/lib/billing/plans';
 import { certificateOfOriginState, regulatedDocumentsEnabled } from '@/lib/config/server';
-import { certificateOfOriginGate, gatedPublicPhrases, readCooReview } from '@/lib/trade/regulated';
+import {
+  CERTIFICATE_OF_ORIGIN_NOTICE,
+  certificateOfOriginGate,
+  gatedPublicPhrases,
+  readCooReview,
+} from '@/lib/trade/regulated';
 
 const NOW = new Date('2026-10-09T12:00:00Z');
 
@@ -98,6 +105,32 @@ describe('certificate of origin gate', () => {
     stub(review);
     const ready = JSON.parse(await (await readiness()).text()) as Record<string, unknown>;
     expect(ready).not.toHaveProperty('regulated_documents');
+  });
+});
+
+describe('public claims follow the gate', () => {
+  const documentsLabel = (offered: boolean) =>
+    offeredFeatures(offered).find((feature) => feature.key === 'workspace.documents')?.label;
+
+  it('names the certificate of origin in the feature list only when offered', () => {
+    expect(documentsLabel(false)).toBe(documentsFeatureLabel(false));
+    expect(documentsLabel(false)).not.toMatch(/certificate of origin/i);
+    expect(documentsLabel(true)).toMatch(/and certificate of origin from one shipment revision/);
+    expect(documentsLabel(true)).toMatch(/your own preparation/);
+    // FEATURES itself, the source of keys and plans, never claims it.
+    const base = FEATURES.find((feature) => feature.key === 'workspace.documents');
+    expect(base?.label).toBe(documentsFeatureLabel(false));
+  });
+
+  it('lists it in llms.txt only with the gate fully on', async () => {
+    stub(switchedOn);
+    const closed = await (await llms()).text();
+    expect(closed).not.toContain('Certificate of origin');
+
+    stub(review);
+    const open = await (await llms()).text();
+    expect(open).toContain('- Certificate of origin');
+    expect(open).toContain(CERTIFICATE_OF_ORIGIN_NOTICE);
   });
 });
 

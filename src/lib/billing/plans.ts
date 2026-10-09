@@ -8,7 +8,7 @@ import {
   MAX_TOOL_LINES,
   TOOL_DOCUMENT_QUOTA,
 } from '@/lib/limits';
-import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
+import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
 
 /**
  * Plans, features and prices: the one source for every public claim about what TradeDocs
@@ -62,10 +62,12 @@ function listOf(names: string[]): string {
 
 const generatorCount = PUBLIC_TOOLS.filter((tool) => tool.path.endsWith('-generator')).length;
 const calculatorCount = PUBLIC_TOOLS.length - generatorCount;
-const documentNames = PUBLIC_DOCUMENT_KINDS.map((kind, index) => {
-  const label: string = documentKindLabels[kind];
-  return index === 0 ? label : label.toLowerCase();
-});
+function documentNames(regulatedOffered: boolean): string[] {
+  return publicDocumentKinds(regulatedOffered).map((kind, index) => {
+    const label: string = documentKindLabels[kind];
+    return index === 0 ? label : label.toLowerCase();
+  });
+}
 const quotaMinutes = TOOL_DOCUMENT_QUOTA.windowSeconds / 60;
 
 export const FEATURES = [
@@ -95,7 +97,7 @@ export const FEATURES = [
   {
     key: 'workspace.documents',
     group: 'Workspace',
-    label: `${listOfDocuments()} from one shipment revision, as PDFs`,
+    label: documentsFeatureLabel(false),
     plans: EVERY_PLAN,
     needsAccount: true,
   },
@@ -151,8 +153,29 @@ export const FEATURES = [
 
 export type FeatureKey = (typeof FEATURES)[number]['key'];
 
-function listOfDocuments(): string {
-  return listOf(documentNames);
+/**
+ * The workspace documents feature, as the deployment offers it. With the certificate of
+ * origin's gate on (D-025) it joins the list, described as the exporter's preparation.
+ */
+export function documentsFeatureLabel(regulatedOffered: boolean): string {
+  const label = `${listOf(documentNames(regulatedOffered))} from one shipment revision, as PDFs`;
+  return regulatedOffered
+    ? `${label}; the certificate of origin is your own preparation, for the issuing chamber or authority to certify where required`
+    : label;
+}
+
+/**
+ * FEATURES as this deployment offers them. Every page that shows the feature list reads
+ * this, passing regulatedDocumentsEnabled() from src/lib/config/server.ts; FEATURES itself
+ * states the list with every regulated document type left out, and stays the source of keys
+ * and plans.
+ */
+export function offeredFeatures(regulatedOffered: boolean): Feature[] {
+  return FEATURES.map((feature) =>
+    feature.key === 'workspace.documents'
+      ? { ...feature, label: documentsFeatureLabel(regulatedOffered) }
+      : feature,
+  );
 }
 
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */

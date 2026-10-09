@@ -5,8 +5,9 @@ import { DataTable } from '@/components/primitives/table';
 import { primaryAction } from '@/components/shell/public';
 import { PricingJsonLd } from '@/components/seo/json-ld';
 import { currentPlans } from '@/lib/billing/server';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import {
-  FEATURES,
+  offeredFeatures,
   INTERVAL_LABELS,
   listedPrices,
   paidOnlyFeatures,
@@ -31,6 +32,11 @@ import { isDatabaseConfigured } from '@/lib/supabase/server';
  * - Approved, checkout not open: the approved prices show, with no button ("listed").
  * - Approved and purchasable: the env price, and the way to buy from the workspace.
  */
+
+/** The feature list as this deployment offers it: regulated documents only behind their gate. */
+function features(): Feature[] {
+  return offeredFeatures(regulatedDocumentsEnabled());
+}
 
 type PageState = 'unpriced' | 'listed' | 'open';
 
@@ -244,7 +250,7 @@ function planTag(plan: Plan): string {
 
 function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boolean }) {
   // A paid plan that adds nothing over Free says so instead of repeating Free's list.
-  const extras = FEATURES.filter(
+  const extras = features().filter(
     (feature) => planIncludes(feature, plan) && !planIncludes(feature, 'free'),
   );
   if (plan !== 'free' && extras.length === 0) {
@@ -252,7 +258,7 @@ function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boo
   }
   return (
     <ul className="ledger" aria-label="Included features">
-      {FEATURES.filter((feature) => planIncludes(feature, plan)).map((feature) => {
+      {features().filter((feature) => planIncludes(feature, plan)).map((feature) => {
         const waiting = feature.needsAccount && !accountsOpen;
         return (
           <li key={feature.key}>
@@ -384,7 +390,7 @@ export default function PricingPage() {
                   {group}
                 </th>
               </tr>
-              {FEATURES.filter((feature) => feature.group === group).map((feature) => (
+              {features().filter((feature) => feature.group === group).map((feature) => (
                 <tr key={feature.key}>
                   <th scope="row" className="pricing-feature">
                     {feature.label}

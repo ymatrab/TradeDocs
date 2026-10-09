@@ -1,6 +1,7 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { expectNoGatedPhrase } from './gated-content';
 import sitemap from '@/app/sitemap';
 import { countWords, orderArticles, type ContentArticle } from '@/lib/content/article';
 import { COUNTRIES } from '@/lib/content/countries';
@@ -146,7 +147,7 @@ describe('blog posts', () => {
 
   it('stay off the certificate of origin while it is gated', () => {
     for (const post of POSTS) {
-      expect(JSON.stringify(post)).not.toMatch(/certificate of origin/i);
+      expectNoGatedPhrase(JSON.stringify(post), post.slug);
     }
   });
 
