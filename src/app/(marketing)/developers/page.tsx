@@ -30,9 +30,7 @@ const METADATA: Metadata = {
 
 /** Indexed only while the API can answer; otherwise the reference says it is not open yet. */
 export function generateMetadata(): Metadata {
-  return apiConfig() === null
-    ? { ...METADATA, robots: { index: false, follow: true } }
-    : METADATA;
+  return apiConfig() === null ? { ...METADATA, robots: { index: false, follow: true } } : METADATA;
 }
 
 /** A placeholder in the documented key format; it is not, and never was, a real key. */
@@ -122,8 +120,8 @@ export default function DevelopersPage() {
         <h1>TradeDocs REST API, version 1</h1>
         {available ? null : (
           <Callout tone="warning" title="The API is not open on this deployment yet" level={2}>
-            This is the reference for the API as built. Requests answer 503 until it is switched
-            on, and no API keys can be created before then.
+            This is the reference for the API as built. Requests answer 503 until it is switched on,
+            and no API keys can be created before then.
           </Callout>
         )}
         <p className="lede">

@@ -405,9 +405,10 @@ describe('plans and offers', () => {
     // The imports and the API need configuration; without it they are not claimed (D-025).
     expect(paidOnlyFeatures('pro').map((feature) => feature.key)).toEqual(['pdf_branding']);
     expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual(['pdf_branding']);
-    expect(
-      paidOnlyFeatures('team', { rest_api: true }).map((feature) => feature.key),
-    ).toEqual(['pdf_branding', 'api']);
+    expect(paidOnlyFeatures('team', { rest_api: true }).map((feature) => feature.key)).toEqual([
+      'pdf_branding',
+      'api',
+    ]);
     const both = { quickbooks_import: true, xero_import: true, rest_api: true };
     expect(paidOnlyFeatures('pro', both).map((feature) => feature.key)).toEqual([
       'pdf_branding',

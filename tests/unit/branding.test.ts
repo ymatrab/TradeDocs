@@ -265,9 +265,10 @@ describe('PDF branding is a Pro and Team feature, gated fail closed', () => {
     expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual(['pdf_branding']);
     expect(paidOnlySummary()).toBe('PDF branding');
     // The API is claimed only where it is configured (rest_api capability, D-025).
-    expect(
-      paidOnlyFeatures('team', { rest_api: true }).map((feature) => feature.key),
-    ).toEqual(['pdf_branding', 'api']);
+    expect(paidOnlyFeatures('team', { rest_api: true }).map((feature) => feature.key)).toEqual([
+      'pdf_branding',
+      'api',
+    ]);
     expect(paidOnlySummary({ rest_api: true })).toBe('PDF branding and the REST API');
     expect(FEATURES.find((feature) => feature.key === 'pdf_branding')?.label).toBe(
       'PDF branding: your logo and signature',
