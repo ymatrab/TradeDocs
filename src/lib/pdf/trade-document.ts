@@ -590,8 +590,11 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
       page.text('continued', PAGE_WIDTH - MARGIN, cursor, { size: 7.5, align: 'right' });
     }
     if (coo) {
-      cursor -= 11;
-      page.text(cooText.preparationLabel, MARGIN, cursor, { size: 7.5, font: 'bold' });
+      const label = fitLines(fonts, [cooText.preparationLabel], CONTENT_WIDTH, 7.5, 2, 'bold');
+      for (const line of label) {
+        cursor -= 10;
+        page.text(line, MARGIN, cursor, { size: 7.5, font: 'bold' });
+      }
     }
     cursor -= 10;
     page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 1, 0.15);

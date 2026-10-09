@@ -3,10 +3,11 @@ import { join } from 'node:path';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { generateDocument } from '@/app/(app)/shipment-actions';
 import { createFontSet } from '@/lib/pdf/fonts';
-import type { PlacedText } from '@/lib/pdf/writer';
+import { PAGE_WIDTH, type PlacedText } from '@/lib/pdf/writer';
 import { columnHeaders, documentLayout, renderTradeDocument } from '@/lib/pdf/trade-document';
 import {
   certificateOfOriginGaps,
+  COO_TEMPLATE_LABEL,
   cooWording,
   CURRENT_COO_WORDING,
 } from '@/lib/trade/certificate-of-origin';
@@ -160,8 +161,12 @@ describe('certificate of origin PDF', () => {
 
   it('says on every page it is the exporter’s preparation, not certified by TradeDocs', () => {
     for (const page of pages) {
-      expect(page.map((placed) => placed.text)).toContain(wording.preparationLabel);
+      // The specification's label, first on the line under the title, inside the margins.
+      const label = page.find((placed) => placed.text.startsWith(COO_TEMPLATE_LABEL));
+      expect(label).toBeDefined();
+      expect((label?.x ?? 0) + (label?.width ?? 0)).toBeLessThanOrEqual(PAGE_WIDTH - 42);
     }
+    expect(joined).toContain(wording.preparationLabel);
     expect(joined).toContain('It is not certified or issued by TradeDocs.');
     expect(all).toContain(wording.certificationCaption);
     // Nothing on it claims a certification or issue by TradeDocs.

@@ -15,6 +15,12 @@
  * Pure: imported by the renderer, the server action and the tests.
  */
 
+/**
+ * The label the specification requires on every certificate of origin preparation (LEGAL.md,
+ * "Product boundaries"): in the workspace, on every PDF page, the preview and the ZIP manifest.
+ */
+export const COO_TEMPLATE_LABEL = 'Preparation template - not an issued certificate';
+
 export type CooWording = {
   /** Under the title on every page. */
   preparationLabel: string;
@@ -30,8 +36,7 @@ export type CooWording = {
 };
 
 const WORDING_1: CooWording = {
-  preparationLabel:
-    'Exporter’s preparation · to be certified by the issuing chamber or authority where required',
+  preparationLabel: `${COO_TEMPLATE_LABEL} · exporter’s preparation, to be certified by the issuing chamber or authority where required`,
   declarationCaption: 'DECLARATION BY THE EXPORTER',
   declaration:
     'The undersigned, as exporter, declares that the details above are correct, and that the goods described originate in the country of origin stated for each line.',

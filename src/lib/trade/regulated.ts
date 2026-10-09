@@ -1,3 +1,5 @@
+import { COO_TEMPLATE_LABEL } from './certificate-of-origin';
+
 /**
  * Document types that make a regulated claim.
  *
@@ -36,8 +38,7 @@ export const REGULATED_DOCUMENT_LIMITATION =
  * Shown beside the document types once the certificate of origin is offered. It is the
  * exporter's own preparation; TradeDocs never certifies or issues it.
  */
-export const CERTIFICATE_OF_ORIGIN_NOTICE =
-  'A certificate of origin is your own preparation as exporter. Where one must be certified, the issuing chamber of commerce or authority certifies it; TradeDocs does not certify or issue it.';
+export const CERTIFICATE_OF_ORIGIN_NOTICE = `Certificate of origin: ${COO_TEMPLATE_LABEL}. It is your own preparation as exporter. Where one must be certified, the issuing chamber of commerce or authority certifies it; TradeDocs does not certify or issue it.`;
 
 /** The review record variables, listed in .env.example and RUNBOOK.md. */
 export const COO_REVIEW_ENV = {
