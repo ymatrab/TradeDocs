@@ -180,6 +180,14 @@ export function listedTools(screeningAvailable: boolean): readonly PublicTool[] 
 }
 
 /** The screening page's sitemap entry, only while the tool works. */
+/** The API reference, listed only while the API can answer (D-025, apiConfig). */
+export function developersSitemapPages(apiAvailable: boolean): SitemapPage[] {
+  if (!apiAvailable) return [];
+  return [
+    { path: '/developers', lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.4 },
+  ];
+}
+
 export function screeningSitemapPages(screeningAvailable: boolean): SitemapPage[] {
   if (!screeningAvailable) return [];
   return [
@@ -299,7 +307,6 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
 
   { path: '/help', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.5 },
   { path: '/contact', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.4 },
-  { path: '/developers', lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.4 },
 ];
 
 /**

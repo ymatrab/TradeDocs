@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Callout } from '@/components/primitives/feedback';
 import { DataTable } from '@/components/primitives/table';
 import { API_DOCUMENT_KINDS } from '@/lib/api/schemas';
-import { API_POLICIES } from '@/lib/api/server';
+import { API_POLICIES, apiConfig } from '@/lib/api/server';
 import { featurePlans, PLAN_NAMES } from '@/lib/billing/plans';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { getPublicBaseUrl } from '@/lib/http/base-url';
@@ -15,7 +16,7 @@ import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
 // from its environment, so the page is resolved per request.
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
+const METADATA: Metadata = {
   title: 'TradeDocs REST API v1 — shipments, documents and PDFs',
   description:
     'Reference for the TradeDocs REST API: authenticate with an organization API key, list and create shipments, generate export documents and download their PDFs.',
@@ -26,6 +27,13 @@ export const metadata: Metadata = {
     '/developers',
   ),
 };
+
+/** Indexed only while the API can answer; otherwise the reference says it is not open yet. */
+export function generateMetadata(): Metadata {
+  return apiConfig() === null
+    ? { ...METADATA, robots: { index: false, follow: true } }
+    : METADATA;
+}
 
 /** A placeholder in the documented key format; it is not, and never was, a real key. */
 const PLACEHOLDER_KEY = 'tdk_YOUR_API_KEY';
@@ -105,12 +113,19 @@ export default function DevelopersPage() {
   const regulatedOn = regulatedDocumentsEnabled();
   const perKey = API_POLICIES.perKey;
   const writes = API_POLICIES.writesPerKey;
+  const available = apiConfig() !== null;
 
   return (
     <>
       <section className="hero">
         <p className="eyebrow">Developers</p>
         <h1>TradeDocs REST API, version 1</h1>
+        {available ? null : (
+          <Callout tone="warning" title="The API is not open on this deployment yet" level={2}>
+            This is the reference for the API as built. Requests answer 503 until it is switched
+            on, and no API keys can be created before then.
+          </Callout>
+        )}
         <p className="lede">
           Create shipments from your own systems, generate commercial invoices, packing lists and
           the other documents from them, and download the PDFs, over HTTPS with an organization API

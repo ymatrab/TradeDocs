@@ -683,7 +683,7 @@ describe('the imports are paid features claimed only where configured', () => {
     expect(offeredFeatures().some((feature) => feature.key.startsWith('integrations.'))).toBe(
       false,
     );
-    expect(paidOnlySummary()).toBe('PDF branding and the REST API');
+    expect(paidOnlySummary()).toBe('PDF branding');
   });
 
   it('are listed per provider once configured', () => {
@@ -691,10 +691,11 @@ describe('the imports are paid features claimed only where configured', () => {
       'pdf_branding',
       'integrations.xero',
     ]);
-    expect(paidOnlySummary({ quickbooks_import: true, xero_import: true })).toBe(
+    const all = { quickbooks_import: true, xero_import: true, rest_api: true };
+    expect(paidOnlySummary(all)).toBe(
       'PDF branding, QuickBooks import, Xero import and the REST API',
     );
-    expect(paidAdditions({ quickbooks_import: true, xero_import: true })).toBe(
+    expect(paidAdditions(all)).toBe(
       'Pro and Team add PDF branding, QuickBooks import and Xero import; Team also adds the REST API',
     );
   });

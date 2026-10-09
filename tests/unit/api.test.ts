@@ -273,8 +273,11 @@ describe('the API is a Team feature, gated fail closed', () => {
     ).resolves.toBe(false);
   });
 
-  it('is credited to Team alone in the pricing copy', () => {
-    expect(paidAdditions()).toBe('Pro and Team add PDF branding; Team also adds the REST API');
-    expect(paidOnlySummary()).toBe('PDF branding and the REST API');
+  it('is credited to Team alone in the pricing copy, and only where it is configured', () => {
+    const on = { rest_api: true };
+    expect(paidAdditions(on)).toBe('Pro and Team add PDF branding; Team also adds the REST API');
+    expect(paidOnlySummary(on)).toBe('PDF branding and the REST API');
+    expect(paidAdditions()).toBe('Pro and Team add PDF branding');
+    expect(paidOnlySummary()).toBe('PDF branding');
   });
 });

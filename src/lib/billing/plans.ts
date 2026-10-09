@@ -50,7 +50,7 @@ export type FeatureGroup = 'Free tools' | 'Workspace' | 'Team';
  * A feature that names one is offered, on every page and in llms.txt, only where it is on;
  * with no capabilities passed, nothing that needs one is claimed (fail closed).
  */
-export const CAPABILITIES = ['quickbooks_import', 'xero_import'] as const;
+export const CAPABILITIES = ['quickbooks_import', 'xero_import', 'rest_api'] as const;
 export type Capability = (typeof CAPABILITIES)[number];
 export type Capabilities = Partial<Record<Capability, boolean>>;
 
@@ -222,6 +222,8 @@ export const FEATURES = [
     limit: `${API_REQUEST_QUOTA.limit} requests per minute per key; keys are created and revoked by owners and administrators`,
     plans: TEAM_PLAN,
     needsAccount: true,
+    // Claimed only where the API can answer: API_KEY_PEPPER and the service connection set.
+    capability: 'rest_api',
   },
   {
     key: 'team.members',

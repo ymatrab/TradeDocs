@@ -1,5 +1,6 @@
 import 'server-only';
 
+import { apiConfig } from '@/lib/api/server';
 import type { Capabilities } from '@/lib/billing/plans';
 import {
   newNonce,
@@ -47,7 +48,11 @@ export function currentProviderConfig(provider: ProviderId): ProviderConfig {
 export function currentCapabilities(): Capabilities {
   try {
     const ready = providerCapabilities(process.env);
-    return { quickbooks_import: ready.quickbooks, xero_import: ready.xero };
+    return {
+      quickbooks_import: ready.quickbooks,
+      xero_import: ready.xero,
+      rest_api: apiConfig() !== null,
+    };
   } catch {
     return {};
   }
