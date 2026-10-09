@@ -238,6 +238,7 @@ test('the new tool pages are registered everywhere a tool is listed', async ({ p
     '/tools/cbm-to-cubic-feet',
     '/tools/pallet-calculator',
     '/tools/export-price-calculator',
+    '/tools/hs-code-lookup',
   ];
   await page.goto('/tools');
   for (const path of paths) await expect(page.locator(`main a[href="${path}"]`)).toHaveCount(1);
@@ -273,6 +274,7 @@ test('the public tool pages meet the accessibility bar the rest of the product d
     '/tools/cbm-to-cubic-feet',
     '/tools/pallet-calculator',
     '/tools/export-price-calculator',
+    '/tools/hs-code-lookup',
     '/glossary',
     '/glossary/verified-gross-mass',
     '/export-documents',
@@ -290,4 +292,120 @@ test('the public tool pages meet the accessibility bar the rest of the product d
 
 test('an unknown Incoterm code is a missing page rather than an empty one', async ({ page }) => {
   expect((await page.goto('/tools/incoterms/dat'))?.status()).toBe(404);
+});
+
+test('the HS code lookup shows official lines and says it is not a classification', async ({
+  page,
+}) => {
+  await page.goto('/tools/hs-code-lookup');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('HS code lookup');
+  await expect(page.getByRole('heading', { name: 'A lookup, not a classification' })).toBeVisible();
+
+  // Validation runs before anything is sent.
+  await page.getByLabel('Goods description or code').fill('a');
+  await page.getByRole('button', { name: 'Search the US and UK tariffs' }).click();
+  await expect(page.getByText('Enter at least two characters.')).toBeVisible();
+
+  // The browser's call to our API is answered here, so no official service is contacted
+  // from CI; the server side is covered by the unit tests with recorded responses.
+  await page.route(/\/api\/tools\/hs-lookup\?/, (route) =>
+    route.fulfill({
+      json: {
+        query: 'copper wire',
+        us: {
+          status: 'ok',
+          searchUrl: 'https://hts.usitc.gov/search?query=copper+wire',
+          results: [
+            {
+              code: '7408.11.30.00',
+              description: 'With a maximum cross-sectional dimension over 9.5 mm',
+              context: 'Copper wire › Of which the maximum cross-sectional dimension exceeds 6 mm',
+              url: 'https://hts.usitc.gov/search?query=7408.11.30.00',
+            },
+          ],
+        },
+        uk: {
+          status: 'unavailable',
+          searchUrl: 'https://www.trade-tariff.service.gov.uk/search?q=copper+wire',
+        },
+      },
+    }),
+  );
+  await page.getByLabel('Goods description or code').fill('copper wire');
+  await page.getByRole('button', { name: 'Search the US and UK tariffs' }).click();
+
+  const us = page.getByRole('region', {
+    name: 'United States — Harmonized Tariff Schedule',
+    exact: true,
+  });
+  await expect(us.getByRole('row', { name: /7408\.11\.30\.00/ })).toBeVisible();
+  await expect(us.getByRole('link', { name: /Open 7408\.11\.30\.00/ })).toHaveAttribute(
+    'href',
+    'https://hts.usitc.gov/search?query=7408.11.30.00',
+  );
+  const uk = page.getByRole('region', { name: 'United Kingdom — UK Trade Tariff', exact: true });
+  await expect(uk.getByText('The official service did not answer')).toBeVisible();
+  // No rate column, ever.
+  await expect(us.getByRole('columnheader')).toHaveText(['Code', 'Description', 'Official page']);
+
+  const violations = (
+    await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()
+  ).violations;
+  expect(violations, 'HS code lookup results have accessibility violations').toEqual([]);
+});
+
+test('the HS code lookup works at phone width', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto('/tools/hs-code-lookup');
+  await expect(page.getByLabel('Goods description or code')).toBeVisible();
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(0);
+});
+
+test('denied-party screening is honest about being unavailable without a CSL key', async ({
+  page,
+}) => {
+  // CI deploys without CSL_API_KEY, so this is the state every visitor sees until the owner
+  // registers the key (D-025). A deployment that has the key is checked for the form instead.
+  await page.goto('/tools/denied-party-screening');
+  const configured = (await page.getByText('Not available yet', { exact: true }).count()) === 0;
+  if (configured) {
+    await expect(page.getByLabel('Company or person name')).toBeVisible();
+    await page.goto('/tools');
+    await expect(page.locator('main a[href="/tools/denied-party-screening"]')).toHaveCount(1);
+    return;
+  }
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Denied party screening');
+  await expect(
+    page.getByRole('heading', { name: 'A screening aid, not a compliance determination' }),
+  ).toBeVisible();
+  await expect(page.getByText('Screening is not available here yet')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open the official CSL search' })).toHaveAttribute(
+    'href',
+    'https://www.trade.gov/data-visualization/csl-search',
+  );
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+
+  // Not listed anywhere as available.
+  await page.goto('/tools');
+  await expect(page.locator('main a[href="/tools/denied-party-screening"]')).toHaveCount(0);
+  const sitemap = await (await page.request.get('/sitemap.xml')).text();
+  const llms = await (await page.request.get('/llms.txt')).text();
+  expect(sitemap).not.toContain('/tools/denied-party-screening');
+  expect(llms).not.toContain('/tools/denied-party-screening');
+
+  // The endpoint refuses rather than pretending.
+  const response = await page.request.post('/api/tools/denied-party', {
+    data: { name: 'Example Trading' },
+  });
+  expect(response.status()).toBe(503);
+  expect(await response.json()).toMatchObject({ code: 'not_configured' });
+
+  await page.goto('/tools/denied-party-screening');
+  const violations = (
+    await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()
+  ).violations;
+  expect(violations, 'denied-party screening has accessibility violations').toEqual([]);
 });
