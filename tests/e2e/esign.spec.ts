@@ -105,8 +105,12 @@ test.describe('in the workspace', () => {
     const outsiderContext = await browser.newContext();
     const outsider = await outsiderContext.newPage();
     await startOrganization(outsider, 'Esign Outsider Ltd');
-    const response = await outsider.goto(`/app/${org}/documents/${documentId}/signature`);
-    expect(response?.status()).toBe(404);
+    // As in identity.spec: the row policy returns nothing, so the streamed page reports a
+    // missing resource. It must not disclose the organization or render the form.
+    await outsider.goto(`/app/${org}/documents/${documentId}/signature`);
+    await expect(outsider.getByRole('heading', { level: 1 })).toContainText('isn’t here');
+    await expect(outsider.getByText('Esign Owner Ltd')).toHaveCount(0);
+    await expect(outsider.getByRole('button', { name: /send for signature/i })).toHaveCount(0);
     await outsiderContext.close();
     await owner.close();
   });

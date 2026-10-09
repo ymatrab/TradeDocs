@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import { Download, Eye, FolderDown, RefreshCw } from 'lucide-react';
 import { Button, LinkButton } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
@@ -70,6 +70,8 @@ export function DocumentsPanel({
   canVoid?: boolean;
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(generateDocument, {});
+  // Controlled, so the chosen type survives React's form reset after each generation.
+  const [selectedKind, setSelectedKind] = useState<string>('commercial_invoice');
   const [voidState, voidAction, voidPending] = useActionState<ActionState, FormData>(
     voidDocument,
     {},
@@ -120,7 +122,12 @@ export function DocumentsPanel({
           <div style={{ minWidth: 220 }}>
             <Field id="kind" label="Document type">
               {({ id }) => (
-                <Select id={id} name="kind" defaultValue="commercial_invoice">
+                <Select
+                  id={id}
+                  name="kind"
+                  value={selectedKind}
+                  onChange={(event) => setSelectedKind(event.target.value)}
+                >
                   {groups.map(([group, members]) => (
                     <optgroup key={group} label={documentKindGroupLabels[group]}>
                       {members.map(([kind, label]) => (

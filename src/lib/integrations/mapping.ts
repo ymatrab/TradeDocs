@@ -127,7 +127,8 @@ function regionNames(): Map<string, string> {
       for (let b = 65; b <= 90; b += 1) {
         const code = String.fromCharCode(a, b);
         const name = names.of(code);
-        if (name && name !== code) map.set(name.toUpperCase(), code);
+        // First code wins: ICU also names the reserved "UK" "United Kingdom"; GB comes first.
+        if (name && name !== code && !map.has(name.toUpperCase())) map.set(name.toUpperCase(), code);
       }
     }
   } catch {

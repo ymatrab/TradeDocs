@@ -405,7 +405,7 @@ test('a certificate of origin is offered only behind its review gate', async ({ 
   await page.getByRole('button', { name: 'Set consignee' }).click();
   await expect(page.getByText('Party updated.')).toBeVisible();
   await oneOff.getByLabel('Description of goods').fill('Cast iron lid');
-  await oneOff.getByLabel('Origin', { exact: true }).fill('GB');
+  await oneOff.getByLabel(/^Origin/).fill('GB');
   await oneOff.getByLabel('Quantity').fill('40');
   await oneOff.getByLabel('Unit price').fill('4.00');
   await page.getByRole('button', { name: 'Add line' }).click();
