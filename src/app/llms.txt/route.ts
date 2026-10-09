@@ -13,10 +13,11 @@ import { getLegalIdentity } from '@/lib/legal/server';
 import {
   LEGAL_PAGES,
   PUBLIC_DOCUMENT_KINDS,
-  PUBLIC_TOOLS,
   SITE_DESCRIPTION,
   SITE_NAME,
+  listedTools,
 } from '@/lib/seo/site';
+import { cslApiKey } from '@/lib/screening/config';
 import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
 
 // The links name the deployment's canonical origin, so this is resolved per request.
@@ -90,7 +91,10 @@ export function GET(): Response {
     '## Free tools (no account)',
     '',
     `- [All free tools](${base}/tools): the index of the tools below.`,
-    ...PUBLIC_TOOLS.map((tool) => `- [${tool.name}](${base}${tool.path}): ${tool.summary}`),
+    // Denied-party screening appears only while its CSL key is set (D-025).
+    ...listedTools(cslApiKey() !== null).map(
+      (tool) => `- [${tool.name}](${base}${tool.path}): ${tool.summary}`,
+    ),
     '',
     '## Guides',
     '',

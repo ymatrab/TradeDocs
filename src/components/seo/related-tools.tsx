@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { PUBLIC_TOOLS } from '@/lib/seo/site';
+import { cslApiKey } from '@/lib/screening/config';
+import { listedTools } from '@/lib/seo/site';
 
 /**
  * The other free tools, linked from each tool page.
@@ -9,7 +10,8 @@ import { PUBLIC_TOOLS } from '@/lib/seo/site';
  * tool appears everywhere at once. Uses the existing grid classes; no styles of its own.
  */
 export function RelatedTools({ current }: { current: string }) {
-  const others = PUBLIC_TOOLS.filter((tool) => tool.path !== current);
+  // Screening is linked only where it runs (D-025).
+  const others = listedTools(cslApiKey() !== null).filter((tool) => tool.path !== current);
   if (others.length === 0) return null;
   return (
     <section className="section" aria-labelledby="related-tools-title">
