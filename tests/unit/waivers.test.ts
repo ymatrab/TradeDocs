@@ -27,6 +27,18 @@ const allWaived: EnvironmentInput = {
   WAIVE_INDEXNOW: 'true',
 };
 
+/** Feature-level variables read outside the strict schema; cleared so CI's env cannot leak in. */
+const FEATURE_ENV = [
+  'API_KEY_PEPPER',
+  'DROPBOX_SIGN_API_KEY',
+  'DROPBOX_SIGN_CLIENT_ID',
+  'QUICKBOOKS_CLIENT_ID',
+  'QUICKBOOKS_CLIENT_SECRET',
+  'XERO_CLIENT_ID',
+  'XERO_CLIENT_SECRET',
+  'INTEGRATION_TOKEN_KEY',
+] as const;
+
 function rejectedFields(input: EnvironmentInput): readonly string[] {
   try {
     parseServerEnv(input);
@@ -91,6 +103,8 @@ describe('deferred service waivers (D-017)', () => {
       vi.stubEnv(name, value ?? '');
     }
     vi.stubEnv('INDEXNOW_KEY', 'synthetic-indexnow-key');
+    // Per-feature providers left off, so only the waivers and the API (no pepper) report.
+    for (const name of FEATURE_ENV) vi.stubEnv(name, '');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({})));
     const response = await readiness();
     expect(response.status).toBe(200);
@@ -99,6 +113,32 @@ describe('deferred service waivers (D-017)', () => {
       status: 'ready',
       rate_limiting: 'enforced',
       degraded: ['turnstile', 'sentry', 'analytics'],
+      api: 'unavailable',
+      api_reason: 'api_key_pepper_missing',
+    });
+    expect(body).not.toContain('synthetic');
+  });
+
+  it('reports each misconfigured feature by reason or variable name, never by value', async () => {
+    for (const [name, value] of Object.entries({ ...production, ...allWaived })) {
+      vi.stubEnv(name, value ?? '');
+    }
+    vi.stubEnv('INDEXNOW_KEY', 'synthetic-indexnow-key');
+    for (const name of FEATURE_ENV) vi.stubEnv(name, '');
+    vi.stubEnv('API_KEY_PEPPER', 'synthetic-pepper-value-more-than-32-characters');
+    vi.stubEnv('DROPBOX_SIGN_API_KEY', 'synthetic-malformed-esign-key');
+    vi.stubEnv('QUICKBOOKS_CLIENT_ID', 'synthetic-quickbooks-client');
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({})));
+    const response = await readiness();
+    expect(response.status).toBe(200);
+    const body = await response.text();
+    expect(JSON.parse(body)).toEqual({
+      status: 'ready',
+      rate_limiting: 'enforced',
+      degraded: ['turnstile', 'sentry', 'analytics'],
+      esign: 'misconfigured',
+      esign_reason: 'api_key_malformed',
+      integrations_incomplete: { quickbooks: ['QUICKBOOKS_CLIENT_SECRET', 'INTEGRATION_TOKEN_KEY'] },
     });
     expect(body).not.toContain('synthetic');
   });

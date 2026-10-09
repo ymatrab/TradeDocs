@@ -40,24 +40,56 @@ select ok(
   'a schema 4 snapshot carries no container_number key at all'
 );
 
--- Each new kind generates under its own prefix.
+-- Each new kind generates under its own prefix. The id is kept first and read in a later
+-- statement: a lookup in the same statement scans a snapshot taken before the insert (and
+-- would call generate_document once per row), so it read NULL.
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'quotation')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'quotation')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^QT-', 'a quotation is numbered QT-');
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'purchase_order')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'purchase_order')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^PO-', 'a purchase order is numbered PO-');
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'sales_confirmation')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'sales_confirmation')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^SC-', 'a sales confirmation is numbered SC-');
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'sales_contract')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'sales_contract')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^CT-', 'a sales contract draft is numbered CT-');
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'bill_of_lading_draft')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'bill_of_lading_draft')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^BL-', 'a bill of lading draft is numbered BL-');
+select set_config(
+  'tests.document',
+  public.generate_document(current_setting('tests.shipment')::uuid, 'shipper_letter_of_instruction')::text,
+  true
+);
 select matches(
-  (select number from public.documents where id = public.generate_document(current_setting('tests.shipment')::uuid, 'shipper_letter_of_instruction')),
+  (select number from public.documents where id = current_setting('tests.document')::uuid),
   '^SLI-', 'a shipper''s letter of instruction is numbered SLI-');
 
 select throws_ok(

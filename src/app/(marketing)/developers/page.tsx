@@ -260,7 +260,7 @@ export default function DevelopersPage() {
   -X POST \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}" \\
   -H "Content-Type: application/json" \\
-  -H "Idempotency-Key: 6f1c2a8e-order-10042" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
   -d '{
     "reference": "PO-10042",
     "currency": "EUR",
@@ -301,7 +301,7 @@ export default function DevelopersPage() {
   -X POST \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}" \\
   -H "Content-Type: application/json" \\
-  -H "Idempotency-Key: 6f1c2a8e-invoice-10042" \\
+  -H "Idempotency-Key: $(uuidgen)" \\
   -d '{ "kind": "commercial_invoice" }'`}</Example>
 
         <h3 id="download-pdf">Download a document’s PDF</h3>

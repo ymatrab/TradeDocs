@@ -26,7 +26,14 @@ import {
 } from '@/lib/esign/callback';
 import { esignConfig } from '@/lib/esign/config';
 import { initialSigners, parseSendForm, requestTexts } from '@/lib/esign/request';
-import { FEATURES, featurePlans, paidOnlySummary, PROVIDER_FEATURES } from '@/lib/billing/plans';
+import {
+  FEATURES,
+  featurePlans,
+  offeredFeatures,
+  paidAdditions,
+  paidOnlySummary,
+  PROVIDER_FEATURES,
+} from '@/lib/billing/plans';
 import { hasEntitlement } from '@/lib/billing/server';
 import { MAX_ESIGN_MESSAGE, MAX_ESIGN_SIGNERS } from '@/lib/limits';
 import {
@@ -368,7 +375,18 @@ describe('plan gating', () => {
   it('is not claimed on any public page until the provider is connected', () => {
     expect(FEATURES.some((feature) => (feature.key as string) === 'esign')).toBe(false);
     expect(PROVIDER_FEATURES.map((feature) => feature.key)).toEqual(['esign']);
-    expect(paidOnlySummary()).toBe('PDF branding');
+    // Independent of the other paid features: whatever else is configured, the public copy
+    // built from plans.ts never names e-signature or its provider.
+    const everything = { quickbooks_import: true, xero_import: true } as const;
+    for (const capabilities of [{}, everything]) {
+      const copy = [
+        paidOnlySummary(capabilities),
+        paidAdditions(capabilities),
+        ...offeredFeatures(capabilities).map((feature) => `${feature.label} ${feature.limit ?? ''}`),
+      ].join(' ');
+      expect(copy).not.toMatch(/e-?signature|dropbox sign/i);
+      expect(offeredFeatures(capabilities).some((feature) => feature.key === 'esign')).toBe(false);
+    }
   });
 
   it('grants a current Pro or Team plan', async () => {
