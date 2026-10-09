@@ -29,3 +29,12 @@ export const MAX_IMPORT_ROWS = 2000;
 export const MAX_BRANDING_BYTES = 1_048_576;
 /** Pixels, either side. The image reader (src/lib/pdf/image.ts) refuses anything larger. */
 export const MAX_BRANDING_SIDE = 2000;
+
+/**
+ * E-signature (D-025): signers per request and the message length, enforced by the send
+ * action and by the esign_requests table (supabase/migrations/20261009000600_esign_requests.sql).
+ * The signed copy's size bound matches the esign-signed bucket's own limit.
+ */
+export const MAX_ESIGN_SIGNERS = 5;
+export const MAX_ESIGN_MESSAGE = 2000;
+export const MAX_SIGNED_PDF_BYTES = 26_214_400;
