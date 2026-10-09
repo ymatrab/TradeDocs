@@ -288,7 +288,7 @@ begin
   update public.esign_requests r set
     provider_request_id = p_provider_request_id,
     status = case when r.status in ('sending', 'failed') then 'sent' else r.status end,
-    signers = coalesce(p_signers, r.signers),
+    signers = coalesce(nullif(p_signers, '[]'::jsonb), r.signers),
     failure_reason = null
   where r.id = p_request;
 
@@ -398,7 +398,7 @@ begin
   update public.esign_requests r set
     provider_request_id = coalesce(r.provider_request_id, p_provider_request_id),
     status = p_status,
-    signers = coalesce(p_signers, r.signers),
+    signers = coalesce(nullif(p_signers, '[]'::jsonb), r.signers),
     failure_reason = null,
     last_event_type = p_event_type,
     last_event_at = now()

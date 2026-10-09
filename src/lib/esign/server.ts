@@ -180,7 +180,7 @@ export function callbackDeps(config: ReadyEsignConfig, fetcher: typeof fetch = f
         ? selectOne(config, `id=eq.${requestId}&provider_request_id=is.null`, fetcher)
         : Promise.resolve(null),
     apply: (input) =>
-      serviceRpc(
+      serviceRpc<'applied' | 'duplicate' | 'ignored' | 'unmatched'>(
         config,
         'esign_apply_event',
         {
@@ -197,7 +197,7 @@ export function callbackDeps(config: ReadyEsignConfig, fetcher: typeof fetch = f
       const sha256 = sha256Hex(bytes);
       const path = signedObjectPath(request.org_id, request.id, sha256);
       await uploadSignedCopy(config, path, bytes, fetcher);
-      return serviceRpc(
+      return serviceRpc<'stored' | 'already'>(
         config,
         'esign_attach_signed',
         { p_request: request.id, p_object_path: path, p_sha256: sha256, p_byte_size: bytes.length },
