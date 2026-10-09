@@ -191,3 +191,23 @@ entitlement, a failed lookup or an unreadable image renders a preview without br
   in robots.txt, the sitemap or llms.txt.
 - The help panel has no third-party chat and makes no AI calls (`CHAT_PROVIDER` only accepts
   `none`). Search runs in the browser over `/api/help/faq`; queries are never sent or stored.
+
+## Accounting integrations (D-025)
+
+- OAuth 2.0 authorization code flow to Intuit and Xero with `fetch` only; endpoints from the
+  providers' discovery documents (cited in `src/lib/integrations/providers.ts`). Client
+  authentication is HTTP Basic; the secret never leaves the server.
+- State: HMAC-SHA-256 over {nonce, org, provider, user, expiry} with a key HKDF-derived from
+  `INTEGRATION_TOKEN_KEY`, 10-minute expiry, plus a server row consumed once. The callback
+  also requires the same signed-in user, then re-checks owner/admin and the plan before
+  exchanging the code. Replays and refreshes of the callback exchange nothing. PKCE S256 for
+  Xero (Intuit publishes none).
+- Tokens: AES-256-GCM, random IV, AAD `org:provider:kind`, separate HKDF key from state
+  signing; tables unreachable by client roles (pgTAP `accounting_integrations.test.sql`).
+  Refresh rotates and re-seals; a refused refresh marks the connection `needs_reconnect`.
+  Disconnect revokes at the provider, then deletes the row whatever the provider answered.
+- Provider calls: fixed hosts, 15 s timeout, `redirect: 'error'`, 5 MB body cap, at most
+  2000 records (21 requests) per read, quotas per user (`org:integration-connect`,
+  `org:integration-import`). Error details shown to the owner/admin are trimmed and scrubbed
+  of anything token-shaped; logs carry error codes and statuses, never tokens or trade data.
+- Redirects back to the app carry only a provider id and a result code.

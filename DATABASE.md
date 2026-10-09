@@ -249,3 +249,26 @@ Generated types were extended by hand (`organization_settings`, the four documen
   blank checks, schema 6 capture on preview and generation, cross-tenant read and write denied).
   The two columns were added to `src/lib/database.types.ts` by hand; the CI
   `database-evidence` artifact is authoritative. Rollback in the migration header.
+
+## Accounting integrations (20261009000500, D-025)
+
+- `integration_connections`: one per organization and provider (`quickbooks`, `xero`), the
+  provider tenant (realmId / tenantId), display name, scopes, status (`active`,
+  `needs_reconnect`) and the access and refresh tokens as AES-256-GCM ciphertext sealed by
+  the application with `INTEGRATION_TOKEN_KEY` (bound to org, provider and token kind). No
+  policy and no grant for `anon` or `authenticated`; `service_role` only.
+- `integration_oauth_states`: the server half of the OAuth state, keyed by SHA-256 of the
+  nonce, with the sealed PKCE verifier; lives at most 15 minutes (check constraint); consumed
+  exactly once by an update guarded on `consumed_at is null`. `service_role` only.
+- `integration_records`: provider id to local company or product (FK `on delete set null`, so
+  a deletion is remembered and not undone), with MD5 fingerprints of the imported values and
+  of the local row after import. Members read; nobody writes except the routine.
+- `integration_status(org)`: provider, display name, status, connected_at; members only; no
+  token, scope or tenant id.
+- `import_integration_records(org, source, record_kind, rows, dry_run)`: owner/admin,
+  `private.integrations_entitled` (Pro/Team), active connection, at most 2000 rows; inserts
+  new ids, updates rows unchanged locally, reports conflicts (edited in TradeDocs, or a product
+  code already in use), skips deleted/archived rows and rows with problems; audits
+  `integration.imported` when applied.
+- Rollback: drop both functions, `private.integrations_entitled`, `private.import_fingerprint`
+  and the three tables. Imported companies and products remain as ordinary rows.

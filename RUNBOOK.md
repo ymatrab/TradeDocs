@@ -131,6 +131,62 @@ entitlement (for example a subscription event that arrived before its checkout; 
 re-reads the live subscription when it lands). `retry` means Stripe or the database was
 unreachable and Stripe will redeliver.
 
+## Accounting integrations: QuickBooks Online and Xero (D-025)
+
+Owner steps; agents never handle the keys. Each provider stays "Not connected — not available
+yet", with no buttons and absent from `/pricing` and `llms.txt`, until its client id, client
+secret, `INTEGRATION_TOKEN_KEY` and `APP_URL` are all set. `/api/ready` names the missing
+variables (never values) under `integrations_incomplete` when one is set but not the rest.
+The import is a Pro and Team feature (`integrations.quickbooks`, `integrations.xero` in
+`src/lib/billing/plans.ts`), so it also needs an entitled organization.
+
+Redirect URIs are exact: `<APP_URL>/api/integrations/quickbooks/callback` and
+`<APP_URL>/api/integrations/xero/callback` (for production, `https://<production domain>/...`;
+for a preview, that preview's stable origin). Register one per environment you will test.
+
+1. **Token key (shared).** Generate 32 random bytes: `openssl rand -base64 32` (or `-hex 32`)
+   and set `INTEGRATION_TOKEN_KEY`, a different value per environment. It seals every stored
+   access and refresh token (AES-256-GCM) and signs the OAuth state. Rotating it makes every
+   stored connection read "Needs reconnecting"; owners then reconnect. Never reuse it for
+   anything else.
+2. **Intuit (QuickBooks Online).** Sign in at https://developer.intuit.com, Dashboard, Create
+   an app, "QuickBooks Online and Payments", scope **Accounting** only
+   (`com.intuit.quickbooks.accounting`; TradeDocs reads Customer and Item and writes nothing).
+   - Development keys work only with sandbox companies: set `QUICKBOOKS_CLIENT_ID` and
+     `QUICKBOOKS_CLIENT_SECRET` from Keys & credentials (Development) and add the redirect
+     URI there. Leave `QUICKBOOKS_ENVIRONMENT` blank (sandbox outside production) or set
+     `sandbox`.
+   - Production keys: complete Intuit's production checklist (app details, EULA and privacy
+     policy URLs — use the published `/terms` and `/privacy`, host domain, launch URL
+     `<APP_URL>/app`, disconnect URL `<APP_URL>/app`, the app assessment questionnaire), then
+     set the production id/secret, add the production redirect URI and set
+     `QUICKBOOKS_ENVIRONMENT=production` (the default when `APP_ENV=production`).
+   - Intuit publishes no PKCE support; the signed, single-use, user-bound state protects the
+     flow. Refresh tokens rotate and their lifetime (`x_refresh_token_expires_in`) is stored.
+3. **Xero.** Sign in at https://developer.xero.com/app/manage, New app, integration type
+   **Web app**, company or application URL `<APP_URL>`, redirect URI as above. Copy the
+   client id to `XERO_CLIENT_ID`, generate a secret into `XERO_CLIENT_SECRET`. Scopes are
+   requested by the app at sign-in: `offline_access accounting.contacts.read
+   accounting.settings.read` (contacts and items, read-only; unaffected by Xero's 2026
+   granular-scope change for apps created after 2 March 2026). PKCE (S256) is used.
+   - **Connection limits and review.** An uncertified Xero app is limited to 25 connected
+     organisations; more needs Xero App Partner certification (partnership application,
+     commercial terms and technical review in the developer portal). Since 2 March 2026
+     Xero also prices developer access in tiers by connections and data volume (Starter,
+     Core, Plus, Advanced, Enterprise; a new app starts on the free Starter tier). Check the
+     current limits at https://developer.xero.com/pricing before opening Xero to customers
+     and record the chosen tier and certification status in DECISIONS.md (P-001).
+4. Redeploy. Verify: `/api/ready` has no `integrations_incomplete`; an entitled owner sees
+   "Connect" on Settings, Integrations; connect a **sandbox/demo** company (Xero Demo
+   Company, a QuickBooks sandbox), "Check customers", then "Import customers", and the same
+   for items; the companies and products appear; "Disconnect" removes the connection and the
+   provider's connected-apps list no longer shows TradeDocs. Never connect a real customer's
+   books from a preview.
+
+Incidents: if tokens may have leaked, rotate the client secret at the provider and
+`INTEGRATION_TOKEN_KEY` (every connection then needs reconnecting); the audit log records
+`integration.connected`, `integration.disconnected` and `integration.imported`.
+
 ## Contact inbox, legal pages and platform admin (D-009, D-018)
 
 - **Chat.** `CHAT_PROVIDER` accepts only `none` today (D-019); any other value is treated as
