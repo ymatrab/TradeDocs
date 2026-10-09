@@ -1,6 +1,10 @@
 import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
-import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
+import {
+  certificateOfOriginState,
+  getServerEnv,
+  hasSupabaseConfiguration,
+} from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
 import {
   DEGRADED_RATE_LIMIT_REASON,
@@ -21,6 +25,9 @@ export async function GET(): Promise<Response> {
   // Payments switched on but unusable fail the billing feature alone; the reason names the gap,
   // never a value. Closed payments are the normal state and are not reported.
   let billing: BillingConfig = { state: 'disabled' };
+  // The certificate of origin switched on without its approval or review record is refused
+  // (fail closed) and reported here by reason, never by value. Off is normal and silent.
+  const certificate = certificateOfOriginState();
   try {
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
@@ -51,6 +58,12 @@ export async function GET(): Promise<Response> {
       ...(degraded.length > 0 ? { degraded } : {}),
       ...(billing.state === 'misconfigured'
         ? { payments: 'misconfigured', payments_reason: billing.reason }
+        : {}),
+      ...(certificate.state === 'misconfigured'
+        ? {
+            regulated_documents: 'misconfigured',
+            regulated_documents_reason: certificate.reason,
+          }
         : {}),
     },
     {
