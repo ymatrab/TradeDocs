@@ -61,6 +61,85 @@ export type Database = {
         }
         Relationships: []
       }
+      api_idempotency: {
+        Row: {
+          created_at: string
+          idempotency_key: string
+          key_id: string
+          request_hash: string
+          response: Json | null
+        }
+        Insert: {
+          created_at?: string
+          idempotency_key: string
+          key_id: string
+          request_hash: string
+          response?: Json | null
+        }
+        Update: {
+          created_at?: string
+          idempotency_key?: string
+          key_id?: string
+          request_hash?: string
+          response?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_idempotency_key_id_fkey"
+            columns: ["key_id"]
+            isOneToOne: false
+            referencedRelation: "api_keys"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      api_keys: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          key_hash: string
+          last_used_at: string | null
+          name: string
+          org_id: string
+          prefix: string
+          revoked_at: string | null
+          revoked_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          key_hash: string
+          last_used_at?: string | null
+          name: string
+          org_id: string
+          prefix: string
+          revoked_at?: string | null
+          revoked_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          key_hash?: string
+          last_used_at?: string | null
+          name?: string
+          org_id?: string
+          prefix?: string
+          revoked_at?: string | null
+          revoked_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_keys_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       audit_events: {
         Row: {
           action: string
@@ -1007,6 +1086,54 @@ export type Database = {
         Returns: boolean
       }
       cancel_account_deletion: { Args: never; Returns: undefined }
+      api_authenticate: { Args: { p_key_hash: string }; Returns: Json }
+      api_create_shipment: {
+        Args: {
+          p_idempotency_key: string
+          p_items: Json
+          p_key_hash: string
+          p_request_hash: string
+          p_shipment: Json
+        }
+        Returns: Json
+      }
+      api_generate_document: {
+        Args: {
+          p_idempotency_key: string
+          p_key_hash: string
+          p_kind: string
+          p_request_hash: string
+          p_shipment: string
+        }
+        Returns: Json
+      }
+      api_get_document: {
+        Args: { p_document: string; p_key_hash: string }
+        Returns: Json
+      }
+      api_get_shipment: {
+        Args: { p_key_hash: string; p_shipment: string }
+        Returns: Json
+      }
+      api_list_documents: {
+        Args: {
+          p_after_created?: string
+          p_after_id?: string
+          p_key_hash: string
+          p_limit: number
+          p_shipment: string
+        }
+        Returns: Json
+      }
+      api_list_shipments: {
+        Args: {
+          p_after_created?: string
+          p_after_id?: string
+          p_key_hash: string
+          p_limit: number
+        }
+        Returns: Json
+      }
       change_member_role: {
         Args: { new_role: string; target_org: string; target_user: string }
         Returns: undefined
@@ -1018,6 +1145,15 @@ export type Database = {
           remaining: number
           retry_after_seconds: number
         }[]
+      }
+      create_api_key: {
+        Args: {
+          key_hash: string
+          key_name: string
+          key_prefix: string
+          target_org: string
+        }
+        Returns: string
       }
       create_invitation: {
         Args: {
@@ -1064,6 +1200,7 @@ export type Database = {
         Returns: undefined
       }
       request_account_deletion: { Args: { grace?: string }; Returns: string }
+      revoke_api_key: { Args: { target_key: string }; Returns: undefined }
       revoke_invitation: {
         Args: { target_invitation: string }
         Returns: undefined

@@ -9,6 +9,7 @@ import {
   FEATURES,
   INTERVAL_LABELS,
   listedPrices,
+  paidAdditions,
   paidOnlyFeatures,
   paidOnlySummary,
   PLAN_NAMES,
@@ -40,9 +41,13 @@ function pageState(plans: Plan[]): PageState {
   return 'unpriced';
 }
 
-/** What Pro and Team add over Free, from plans.ts, such as " Pro and Team add PDF branding." */
+/**
+ * What Pro and Team add over Free, from plans.ts, such as " Pro and Team add PDF branding;
+ * Team also adds the REST API."
+ */
 const PAID_EXTRAS = paidOnlySummary();
-const ADDS = PAID_EXTRAS ? ` Pro and Team add ${PAID_EXTRAS}.` : '';
+const ADDITIONS = paidAdditions();
+const ADDS = ADDITIONS ? ` ${ADDITIONS}.` : '';
 const FREE_SCOPE = PAID_EXTRAS
   ? `every document generator, calculator and workspace feature except ${PAID_EXTRAS}`
   : 'every document generator, calculator and workspace feature';

@@ -2,6 +2,7 @@ import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
+import { apiUnavailableReason } from '@/lib/api/server';
 import {
   DEGRADED_RATE_LIMIT_REASON,
   rateLimitMode,
@@ -21,7 +22,10 @@ export async function GET(): Promise<Response> {
   // Payments switched on but unusable fail the billing feature alone; the reason names the gap,
   // never a value. Closed payments are the normal state and are not reported.
   let billing: BillingConfig = { state: 'disabled' };
+  // The public API off for want of its pepper or the service role fails that feature alone.
+  let api: string | null = null;
   try {
+    api = apiUnavailableReason();
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
     degraded = degradedControls(configuration);
@@ -52,6 +56,7 @@ export async function GET(): Promise<Response> {
       ...(billing.state === 'misconfigured'
         ? { payments: 'misconfigured', payments_reason: billing.reason }
         : {}),
+      ...(api ? { api: 'unavailable', api_reason: api } : {}),
     },
     {
       status: ready ? 200 : 503,
