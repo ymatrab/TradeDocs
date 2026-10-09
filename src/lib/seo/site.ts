@@ -23,7 +23,8 @@ export const SITE_DESCRIPTION =
   'figures agree across the set. It is free while early, and its free tools work without an ' +
   'account: commercial invoice, proforma invoice, packing list and delivery note generators, ' +
   'landed cost and export price calculators, CBM, chargeable weight, container loading and pallet ' +
-  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an Incoterms 2020 guide and a ' +
+  'calculators, CBM-to-cubic-feet and kg-to-lb converters, an HS code lookup that searches the ' +
+  'official US and UK tariffs (a lookup, not a classification), an Incoterms 2020 guide and a ' +
   'glossary of shipping terms.';
 
 export type PublicTool = {
@@ -44,6 +45,9 @@ const TOOLS_ROUND = '2026-10-07';
 
 /** The export price calculator and the three use-case pages were added this day. */
 const WAVE_C_ROUND = '2026-10-08';
+
+/** The HS code lookup and denied-party screening pages were added this day (D-025). */
+const LOOKUPS_ROUND = '2026-10-09';
 
 export const PUBLIC_TOOLS: readonly PublicTool[] = [
   {
@@ -137,6 +141,14 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
     updated: WAVE_C_ROUND,
   },
   {
+    path: '/tools/hs-code-lookup',
+    name: 'HS code lookup',
+    summary:
+      'Search the official US HTS and UK Trade Tariff by description or code, with a link to each line. A lookup, not a classification; no duty rates.',
+    kind: 'application',
+    updated: LOOKUPS_ROUND,
+  },
+  {
     path: '/tools/incoterms',
     name: 'Incoterms 2020 guide',
     summary:
@@ -145,8 +157,42 @@ export const PUBLIC_TOOLS: readonly PublicTool[] = [
   },
 ];
 
+/**
+ * Denied-party screening runs on the trade.gov Consolidated Screening List API, which needs
+ * a subscription key the owner registers (CSL_API_KEY, D-025). Until the key is set the page
+ * says so and points at the official search, and the tool is listed nowhere as available:
+ * not on the hub, in the sitemap, in llms.txt or in the counts of free tools. Callers decide
+ * availability with cslApiKey() from lib/screening/config and pass it to listedTools.
+ */
+export const SCREENING_TOOL: PublicTool = {
+  path: '/tools/denied-party-screening',
+  name: 'Denied party screening',
+  summary:
+    'Search a name against the US Consolidated Screening List (Commerce, State and Treasury lists), with the source list for each match. A screening aid, not a compliance determination.',
+  kind: 'application',
+  updated: LOOKUPS_ROUND,
+};
+
+/** Every tool listed where tools are listed, given whether screening is available. */
+export function listedTools(screeningAvailable: boolean): readonly PublicTool[] {
+  return screeningAvailable ? [...PUBLIC_TOOLS, SCREENING_TOOL] : PUBLIC_TOOLS;
+}
+
+/** The screening page's sitemap entry, only while the tool works. */
+export function screeningSitemapPages(screeningAvailable: boolean): SitemapPage[] {
+  if (!screeningAvailable) return [];
+  return [
+    {
+      path: SCREENING_TOOL.path,
+      lastModified: SCREENING_TOOL.updated ?? LOOKUPS_ROUND,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ];
+}
+
 export function findPublicTool(path: string): PublicTool | undefined {
-  return PUBLIC_TOOLS.find((tool) => tool.path === path);
+  return [...PUBLIC_TOOLS, SCREENING_TOOL].find((tool) => tool.path === path);
 }
 
 /** Document types offered publicly. Certificate of origin stays out until D-008 is lifted. */

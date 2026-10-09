@@ -1,4 +1,6 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { NextRequest } from 'next/server';
+import { GET } from '@/app/api/tools/hs-lookup/route';
 import usSearch from '../fixtures/tariff/usitc-search-7408.json';
 import ukSearch from '../fixtures/tariff/uk-search-copper-wire.json';
 import ukExact from '../fixtures/tariff/uk-search-exact-7408.json';
@@ -181,5 +183,45 @@ describe('live lookup outcomes (stubbed fetch)', () => {
     const outcome = await lookupTariffs('copper wire', fetcher);
     expect(outcome.us.status).toBe('unavailable');
     expect(outcome.uk.status).toBe('unavailable');
+  });
+});
+
+describe('GET /api/tools/hs-lookup', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
+  });
+
+  function get(query: string) {
+    return GET(new NextRequest(`http://127.0.0.1:3000/api/tools/hs-lookup?q=${query}`));
+  }
+
+  it('refuses a query outside the bounds before calling anyone', async () => {
+    vi.stubEnv('APP_ENV', 'test');
+    const fetcher = vi.fn();
+    vi.stubGlobal('fetch', fetcher);
+    const response = await get('a');
+    expect(response.status).toBe(400);
+    expect(response.headers.get('Cache-Control')).toBe('no-store');
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+
+  it('answers with both tariffs and caches only a complete answer', async () => {
+    vi.stubEnv('APP_ENV', 'test');
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (input: URL | RequestInfo) =>
+        String(input).startsWith('https://hts.usitc.gov/')
+          ? new Response(JSON.stringify(usSearch))
+          : new Response(JSON.stringify(ukSearch)),
+      ),
+    );
+    const response = await get('copper%20wire');
+    expect(response.status).toBe(200);
+    expect(response.headers.get('Cache-Control')).toContain('s-maxage');
+    const body = (await response.json()) as { query: string; us: { status: string } };
+    expect(body.query).toBe('copper wire');
+    expect(body.us.status).toBe('ok');
+    expect(JSON.stringify(body)).not.toContain('"general"');
   });
 });

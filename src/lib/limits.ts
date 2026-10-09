@@ -11,6 +11,12 @@ export { MAX_TOOL_LINES } from '@/lib/tools/document-snapshot';
 /** Per network address, where the deployment enforces quotas (see /api/ready). */
 export const TOOL_DOCUMENT_QUOTA = { limit: 30, windowSeconds: 600 } as const;
 
+/** HS code lookups per network address; each one reads two official tariff services. */
+export const HS_LOOKUP_QUOTA = { limit: 60, windowSeconds: 600 } as const;
+
+/** Denied-party screening searches per network address (the CSL key's quota is shared). */
+export const SCREENING_QUOTA = { limit: 30, windowSeconds: 600 } as const;
+
 /** The most current documents one shipment's ZIP set will bundle. */
 export const MAX_SET_DOCUMENTS = 60;
 
