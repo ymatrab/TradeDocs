@@ -425,7 +425,9 @@ describe('provider reads are paged and bounded', () => {
   });
 
   it('never repeats a token in an error detail', () => {
-    const jwt = 'eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.c2lnbmF0dXJlLXNpZ25hdHVyZQ';
+    // Built at runtime so the secret scanner does not read a synthetic token as a leak.
+    const part = (value: object) => Buffer.from(JSON.stringify(value)).toString('base64url');
+    const jwt = [part({ alg: 'RS256' }), part({ sub: 'synthetic' }), 'c2lnbmF0dXJl'].join('.');
     expect(errorDetail(JSON.stringify({ error: 'invalid_token', error_description: jwt }))).toBe(
       'invalid_token: [redacted]',
     );

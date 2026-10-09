@@ -1355,15 +1355,6 @@ export type Database = {
         Args: { p_limit?: number; p_query: string }
         Returns: Json
       }
-      apply_billing_event: {
-        Args: { p_action: Json; p_event_id: string; p_event_type: string }
-        Returns: string
-      }
-      branding_asset_in_use: {
-        Args: { asset_sha256: string; target_org: string }
-        Returns: boolean
-      }
-      cancel_account_deletion: { Args: never; Returns: undefined }
       api_authenticate: { Args: { p_key_hash: string }; Returns: Json }
       api_create_shipment: {
         Args: {
@@ -1412,6 +1403,15 @@ export type Database = {
         }
         Returns: Json
       }
+      apply_billing_event: {
+        Args: { p_action: Json; p_event_id: string; p_event_type: string }
+        Returns: string
+      }
+      branding_asset_in_use: {
+        Args: { asset_sha256: string; target_org: string }
+        Returns: boolean
+      }
+      cancel_account_deletion: { Args: never; Returns: undefined }
       change_member_role: {
         Args: { new_role: string; target_org: string; target_user: string }
         Returns: undefined
@@ -1488,7 +1488,11 @@ export type Database = {
         Returns: undefined
       }
       esign_mark_sent: {
-        Args: { p_provider_request_id: string; p_request: string; p_signers: Json }
+        Args: {
+          p_provider_request_id: string
+          p_request: string
+          p_signers: Json
+        }
         Returns: undefined
       }
       esign_record_download: {

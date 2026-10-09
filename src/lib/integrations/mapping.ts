@@ -146,8 +146,11 @@ export function countryCode(raw: unknown): string | null {
   const value = text(raw);
   if (!value) return null;
   const upper = value.toUpperCase();
+  // Aliases first: "UK" is two letters but not the ISO code (GB).
+  const alias = COUNTRY_ALIASES[upper];
+  if (alias) return alias;
   if (/^[A-Z]{2}$/.test(upper) && isRegionCode(upper)) return upper;
-  return COUNTRY_ALIASES[upper] ?? regionNames().get(upper) ?? null;
+  return regionNames().get(upper) ?? null;
 }
 
 // --- Small validators -------------------------------------------------------------------
