@@ -20,6 +20,10 @@ const PAPER = '#f4f1ea';
 const TAPE = '#f6c945';
 const INK = '#14221f';
 
+/** Four cards fit the card's height; the rest are counted, from the same list. */
+const SHOWN_KINDS = PUBLIC_DOCUMENT_KINDS.slice(0, 4);
+const MORE_KINDS = PUBLIC_DOCUMENT_KINDS.length - SHOWN_KINDS.length;
+
 export default function OpenGraphImage() {
   return new ImageResponse(
     <div
@@ -69,7 +73,7 @@ export default function OpenGraphImage() {
           width: 360,
         }}
       >
-        {PUBLIC_DOCUMENT_KINDS.map((kind, index) => (
+        {SHOWN_KINDS.map((kind, index) => (
           <div
             key={kind}
             style={{
@@ -90,6 +94,11 @@ export default function OpenGraphImage() {
             </div>
           </div>
         ))}
+        {MORE_KINDS > 0 ? (
+          <div style={{ display: 'flex', marginTop: 18, fontSize: 22, color: HULL_MUTED }}>
+            {`+ ${MORE_KINDS} more document types`}
+          </div>
+        ) : null}
       </div>
     </div>,
     size,

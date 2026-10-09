@@ -375,7 +375,10 @@ function vgmFacts(snapshot: DocumentSnapshot): [string, string][] {
   ];
 }
 
-/** The SOLAS basis a VGM declaration states, as the IMO guidelines set it out. */
+/**
+ * The SOLAS basis a VGM declaration states, as the IMO guidelines set it out. Source record:
+ * 'imo-msc1-circ1475' in src/lib/trade/sources.ts (paragraphs 5.1, 6.1 and 6.2).
+ */
 const VGM_BASIS =
   'The shipper provides the verified gross mass of the packed container under SOLAS chapter ' +
   'VI, regulation 2, as set out in IMO MSC.1/Circ.1475. It is signed by a person duly ' +

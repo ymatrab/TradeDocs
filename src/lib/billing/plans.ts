@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { documentKindLabels } from '@/lib/labels';
+import { documentKindGroups, documentKindLabels, type DocumentKindGroup } from '@/lib/labels';
 import {
   MAX_BRANDING_BYTES,
   MAX_BRANDING_SIDE,
@@ -62,10 +62,21 @@ function listOf(names: string[]): string {
 
 const generatorCount = PUBLIC_TOOLS.filter((tool) => tool.path.endsWith('-generator')).length;
 const calculatorCount = PUBLIC_TOOLS.length - generatorCount;
-const documentNames = PUBLIC_DOCUMENT_KINDS.map((kind, index) => {
-  const label: string = documentKindLabels[kind];
-  return index === 0 ? label : label.toLowerCase();
-});
+/** A label inside running text: lower-case, except an initialism such as VGM. */
+function inSentence(label: string): string {
+  return /^[A-Z]{2}/.test(label) ? label : label.charAt(0).toLowerCase() + label.slice(1);
+}
+
+/** The public document names of one group, the first capitalized, as running text. */
+function documentsIn(group: DocumentKindGroup): string {
+  const names = PUBLIC_DOCUMENT_KINDS.filter((kind) => documentKindGroups[kind] === group).map(
+    (kind, index) => {
+      const label: string = documentKindLabels[kind];
+      return index === 0 ? label : inSentence(label);
+    },
+  );
+  return listOf(names);
+}
 const quotaMinutes = TOOL_DOCUMENT_QUOTA.windowSeconds / 60;
 
 export const FEATURES = [
@@ -95,7 +106,23 @@ export const FEATURES = [
   {
     key: 'workspace.documents',
     group: 'Workspace',
-    label: `${listOfDocuments()} from one shipment revision, as PDFs`,
+    label: `${documentsIn('invoicing')} from one shipment revision, as PDFs`,
+    plans: EVERY_PLAN,
+    needsAccount: true,
+  },
+  {
+    key: 'workspace.sales_documents',
+    group: 'Workspace',
+    label: `Sales documents from the same record: ${inSentence(documentsIn('sales'))}`,
+    limit: 'The sales contract is a draft of fill-in headings, labelled as not legal advice',
+    plans: EVERY_PLAN,
+    needsAccount: true,
+  },
+  {
+    key: 'workspace.shipping_documents',
+    group: 'Workspace',
+    label: `Shipping documents for your carrier and forwarder: ${inSentence(documentsIn('shipping'))}`,
+    limit: 'The carrier issues the bill of lading; the VGM is the mass you declare',
     plans: EVERY_PLAN,
     needsAccount: true,
   },
@@ -150,10 +177,6 @@ export const FEATURES = [
 ] as const satisfies readonly Feature[];
 
 export type FeatureKey = (typeof FEATURES)[number]['key'];
-
-function listOfDocuments(): string {
-  return listOf(documentNames);
-}
 
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */
 export function featurePlans(key: string): readonly PlanId[] {
