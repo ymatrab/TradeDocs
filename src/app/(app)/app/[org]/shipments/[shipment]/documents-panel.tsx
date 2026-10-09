@@ -19,7 +19,11 @@ import {
   type DocumentKindGroup,
 } from '@/lib/labels';
 import { generateDocument, voidDocument } from '@/app/(app)/shipment-actions';
-import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
+import {
+  CERTIFICATE_OF_ORIGIN_NOTICE,
+  isRegulatedDocumentKind,
+  REGULATED_DOCUMENT_LIMITATION,
+} from '@/lib/trade/regulated';
 import type { ActionState } from '@/app/(app)/actions';
 
 export type GeneratedDocument = {
@@ -157,11 +161,9 @@ export function DocumentsPanel({
             </p>
           ))}
         </div>
-        {regulatedEnabled ? null : (
-          <p className="muted" style={{ margin: 0 }}>
-            {REGULATED_DOCUMENT_LIMITATION}
-          </p>
-        )}
+        <p className="muted" style={{ margin: 0 }}>
+          {regulatedEnabled ? CERTIFICATE_OF_ORIGIN_NOTICE : REGULATED_DOCUMENT_LIMITATION}
+        </p>
 
         {documents.length > 0 ? (
           <>

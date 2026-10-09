@@ -7,7 +7,7 @@ import {
   type CanonicalHostInput,
 } from '@/lib/http/indexing';
 import { breadcrumbSchema, faqPageSchema, jsonLdScript } from '@/lib/seo/json-ld';
-import { PUBLIC_DOCUMENT_KINDS, SITEMAP_PAGES } from '@/lib/seo/site';
+import { publicDocumentKinds, SITEMAP_PAGES } from '@/lib/seo/site';
 
 const production: CanonicalHostInput = {
   requestHost: 'tradedocs.vercel.app',
@@ -155,10 +155,15 @@ describe('structured data builders', () => {
 });
 
 describe('public surface data', () => {
-  it('never offers the certificate of origin (D-008)', () => {
-    expect(PUBLIC_DOCUMENT_KINDS).not.toContain('certificate_of_origin');
+  it('offers the certificate of origin only behind its review gate (D-008, D-025)', () => {
+    const closed = publicDocumentKinds(false);
+    expect(closed).not.toContain('certificate_of_origin');
     // Four invoicing and packing documents, four sales and three shipping documents (D-025).
-    expect(PUBLIC_DOCUMENT_KINDS).toHaveLength(11);
+    expect(closed).toHaveLength(11);
+    const open = publicDocumentKinds(true);
+    expect(open).toContain('certificate_of_origin');
+    expect(open).toHaveLength(12);
+    expect(open.filter((kind) => kind !== 'certificate_of_origin')).toEqual(closed);
   });
 
   it('lists only public paths, once each, with fixed dates', () => {

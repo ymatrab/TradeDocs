@@ -1,6 +1,10 @@
 import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
-import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
+import {
+  certificateOfOriginState,
+  getServerEnv,
+  hasSupabaseConfiguration,
+} from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
 import { apiUnavailableReason } from '@/lib/api/server';
 import { esignConfig, type EsignConfig } from '@/lib/esign/config';
@@ -30,6 +34,9 @@ export async function GET(): Promise<Response> {
   let esign: EsignConfig = { state: 'disabled' };
   // QuickBooks/Xero credentials set but incomplete: names of the missing variables only.
   let integrations: ReturnType<typeof incompleteProviders> = {};
+  // The certificate of origin switched on without its approval or review record is refused
+  // (fail closed) and reported here by reason, never by value. Off is normal and silent.
+  const certificate = certificateOfOriginState();
   try {
     api = apiUnavailableReason();
     integrations = incompleteProviders(process.env);
@@ -69,6 +76,12 @@ export async function GET(): Promise<Response> {
         ? { esign: 'misconfigured', esign_reason: esign.reason }
         : {}),
       ...(Object.keys(integrations).length > 0 ? { integrations_incomplete: integrations } : {}),
+      ...(certificate.state === 'misconfigured'
+        ? {
+            regulated_documents: 'misconfigured',
+            regulated_documents_reason: certificate.reason,
+          }
+        : {}),
     },
     {
       status: ready ? 200 : 503,

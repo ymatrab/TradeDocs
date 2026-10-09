@@ -10,7 +10,7 @@ import {
   MAX_TOOL_LINES,
   TOOL_DOCUMENT_QUOTA,
 } from '@/lib/limits';
-import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
+import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
 
 /**
  * Plans, features and prices: the one source for every public claim about what TradeDocs
@@ -91,14 +91,17 @@ function inSentence(label: string): string {
   return /^[A-Z]{2}/.test(label) ? label : label.charAt(0).toLowerCase() + label.slice(1);
 }
 
-/** The public document names of one group, the first capitalized, as running text. */
-function documentsIn(group: DocumentKindGroup): string {
-  const names = PUBLIC_DOCUMENT_KINDS.filter((kind) => documentKindGroups[kind] === group).map(
-    (kind, index) => {
+/**
+ * The public document names of one group, the first capitalized, as running text. A
+ * regulated type (the certificate of origin) joins its group only while its gate is on.
+ */
+function documentsIn(group: DocumentKindGroup, regulatedOffered = false): string {
+  const names = publicDocumentKinds(regulatedOffered)
+    .filter((kind) => documentKindGroups[kind] === group)
+    .map((kind, index) => {
       const label: string = documentKindLabels[kind];
       return index === 0 ? label : inSentence(label);
-    },
-  );
+    });
   return listOf(names);
 }
 const quotaMinutes = TOOL_DOCUMENT_QUOTA.windowSeconds / 60;
@@ -130,7 +133,7 @@ export const FEATURES = [
   {
     key: 'workspace.documents',
     group: 'Workspace',
-    label: `${documentsIn('invoicing')} from one shipment revision, as PDFs`,
+    label: documentsFeatureLabel(false),
     plans: EVERY_PLAN,
     needsAccount: true,
   },
@@ -255,6 +258,18 @@ export type FeatureKey =
   | (typeof FEATURES)[number]['key']
   | (typeof PROVIDER_FEATURES)[number]['key'];
 
+/**
+ * The workspace documents feature, as the deployment offers it. With the certificate of
+ * origin's gate on (D-025) it joins the invoicing documents, described as the exporter's
+ * preparation.
+ */
+export function documentsFeatureLabel(regulatedOffered: boolean): string {
+  const label = `${documentsIn('invoicing', regulatedOffered)} from one shipment revision, as PDFs`;
+  return regulatedOffered
+    ? `${label}; the certificate of origin is your own preparation, for the issuing chamber or authority to certify where required`
+    : label;
+}
+
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */
 export function featurePlans(key: string): readonly PlanId[] {
   return GATED_FEATURES.find((feature) => feature.key === key)?.plans ?? [];
@@ -265,9 +280,24 @@ export function featureOffered(feature: Feature, capabilities: Capabilities = {}
   return feature.capability === undefined || capabilities[feature.capability] === true;
 }
 
-/** The features this deployment can truthfully list. */
-export function offeredFeatures(capabilities: Capabilities = {}): Feature[] {
-  return (FEATURES as readonly Feature[]).filter((feature) => featureOffered(feature, capabilities));
+/**
+ * The features this deployment can truthfully list: those whose capability is configured,
+ * with the documents feature naming the certificate of origin only while its gate is on.
+ * Every page that shows the feature list reads this, passing currentCapabilities() and
+ * regulatedDocumentsEnabled(); FEATURES itself leaves every regulated type out and stays the
+ * source of keys and plans.
+ */
+export function offeredFeatures(
+  capabilities: Capabilities = {},
+  regulatedOffered = false,
+): Feature[] {
+  return (FEATURES as readonly Feature[])
+    .filter((feature) => featureOffered(feature, capabilities))
+    .map((feature) =>
+      feature.key === 'workspace.documents'
+        ? { ...feature, label: documentsFeatureLabel(regulatedOffered) }
+        : feature,
+    );
 }
 
 /** Features no free account has. A paid card lists them; it never invents any. */

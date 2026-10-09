@@ -100,8 +100,17 @@ export async function POST(request: Request, { params }: Context): Promise<Respo
         issuesOf(parsed.error),
       );
     }
-    if (isRegulatedDocumentKind(parsed.data.kind) && !regulatedDocumentsEnabled()) {
-      throw new ApiError(403, 'FEATURE_UNAVAILABLE', REGULATED_DOCUMENT_LIMITATION);
+    if (isRegulatedDocumentKind(parsed.data.kind)) {
+      // The certificate of origin is accepted by the database only through its reviewed,
+      // service-role path with the workspace's readiness checks
+      // (20261009000200_certificate_of_origin.sql); the API never takes that path.
+      throw new ApiError(
+        403,
+        'FEATURE_UNAVAILABLE',
+        regulatedDocumentsEnabled()
+          ? 'Certificates of origin are generated in the TradeDocs workspace, not through the API.'
+          : REGULATED_DOCUMENT_LIMITATION,
+      );
     }
     let data: unknown;
     try {

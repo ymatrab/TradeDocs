@@ -1,5 +1,6 @@
 import 'server-only';
 
+import { certificateOfOriginGate, type CooGate } from '@/lib/trade/regulated';
 import { validateDeploymentEnv, type ServerEnv } from './schema';
 
 /**
@@ -29,15 +30,27 @@ export function hasSupabaseConfiguration(): boolean {
 }
 
 /**
- * Whether regulated document types may be generated. Any configuration problem answers
- * no: this gate fails closed, so a broken environment withholds the claim rather than
- * making it without approval.
+ * The certificate of origin's gate (src/lib/trade/regulated.ts): the flag, its approval,
+ * service mode and a recorded legal review. Any configuration problem answers "off": this
+ * gate fails closed, so a broken environment withholds the claim rather than making it
+ * without approval.
  */
-export function regulatedDocumentsEnabled(): boolean {
+export function certificateOfOriginState(): CooGate {
   try {
     const env = getServerEnv();
-    return env.ENABLE_REGULATED_DOCUMENTS && env.REGULATED_DOCUMENTS_APPROVED;
+    if (!env.ENABLE_REGULATED_DOCUMENTS) return { state: 'off' };
+    // The flag combination is validated by the schema above; the review record is read
+    // outside it, so a missing or mistyped record fails this feature alone.
+    return certificateOfOriginGate(process.env);
   } catch {
-    return false;
+    return { state: 'off' };
   }
+}
+
+/**
+ * Whether regulated document types may be generated, and claimed on public pages. True only
+ * when the certificate of origin's gate is fully on.
+ */
+export function regulatedDocumentsEnabled(): boolean {
+  return certificateOfOriginState().state === 'on';
 }

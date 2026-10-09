@@ -333,3 +333,22 @@ Generated types were extended by hand (`organization_settings`, the four documen
   `integration.imported` when applied.
 - Rollback: drop both functions, `private.integrations_entitled`, `private.import_fingerprint`
   and the three tables. Imported companies and products remain as ordinary rows.
+
+### Certificate of origin path (migration 20261009000200_certificate_of_origin.sql, D-025)
+
+- BEFORE INSERT trigger `documents_certificate_of_origin` on `public.documents`
+  (`private.certificate_of_origin_insert()`, certificate rows only): refuses the row (42501)
+  unless the transaction came through `public.generate_certificate_of_origin`, which closes
+  the direct `generate_document(shipment, 'certificate_of_origin')` call members could make;
+  and adds `snapshot.certificate` = `{ wording_version: 1, invoice_reference }`, the number of
+  the shipment's current final commercial invoice (null when none).
+- `public.generate_certificate_of_origin(target_shipment, actor)`: service role only (revoked
+  from public, anon, authenticated). Runs `generate_document` as `actor`, so membership,
+  numbering, lineage, branding and audit are that routine's own. The app calls it only after
+  its review gate (`ENABLE_REGULATED_DOCUMENTS`, `REGULATED_DOCUMENTS_APPROVED`,
+  `LEGAL_COO_REVIEWED_BY/AT`) is on, for the user it verified. No new table, view or policy.
+- pgTAP: `supabase/tests/certificate_of_origin.test.sql` (direct path refused for members,
+  reviewed path refused to members, membership enforced for the actor, invoice reference,
+  wording version and per-line origin recorded). The function was added to
+  `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
+  Rollback in the migration header.

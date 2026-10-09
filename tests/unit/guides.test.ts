@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { expectNoGatedPhrase } from './gated-content';
 import { GUIDES, findGuide, guideWordCount } from '@/lib/content/guides';
 import { PUBLIC_TOOLS, SITEMAP_PAGES } from '@/lib/seo/site';
 import { SOURCES } from '@/lib/trade/sources';
@@ -62,7 +63,7 @@ describe('guides', () => {
 
   it('stay off the certificate of origin while it is gated', () => {
     for (const guide of GUIDES) {
-      expect(JSON.stringify(guide)).not.toMatch(/certificate of origin/i);
+      expectNoGatedPhrase(JSON.stringify(guide), guide.slug);
     }
   });
 });

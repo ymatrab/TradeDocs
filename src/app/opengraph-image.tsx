@@ -1,12 +1,13 @@
 import { ImageResponse } from 'next/og';
 import { documentKindLabels } from '@/lib/labels';
-import { PUBLIC_DOCUMENT_KINDS } from '@/lib/seo/site';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { publicDocumentKinds } from '@/lib/seo/site';
 
 /**
  * The share card, in the Manifest palette (DESIGN_SYSTEM.md): a hull-green ground, the
  * offered documents stacked as paper, and the tape strip behind the two words that matter.
- * Drawn from the same document list as the home page, so the certificate of origin stays
- * off it while D-008 holds.
+ * Drawn from the same document list as the home page, so the certificate of origin joins
+ * it only behind its review gate (D-008, D-025).
  */
 // Literal values, mirrored by SHARE_IMAGE in src/lib/seo/social.ts.
 export const alt = 'TradeDocs: enter a shipment once, get the whole document set';
@@ -20,11 +21,11 @@ const PAPER = '#f4f1ea';
 const TAPE = '#f6c945';
 const INK = '#14221f';
 
-/** Four cards fit the card's height; the rest are counted, from the same list. */
-const SHOWN_KINDS = PUBLIC_DOCUMENT_KINDS.slice(0, 4);
-const MORE_KINDS = PUBLIC_DOCUMENT_KINDS.length - SHOWN_KINDS.length;
-
 export default function OpenGraphImage() {
+  // Four cards fit the card's height; the rest are counted, from the same list.
+  const kinds = publicDocumentKinds(regulatedDocumentsEnabled());
+  const shownKinds = kinds.slice(0, 4);
+  const moreKinds = kinds.length - shownKinds.length;
   return new ImageResponse(
     <div
       style={{
@@ -73,7 +74,7 @@ export default function OpenGraphImage() {
           width: 360,
         }}
       >
-        {SHOWN_KINDS.map((kind, index) => (
+        {shownKinds.map((kind, index) => (
           <div
             key={kind}
             style={{
@@ -82,8 +83,8 @@ export default function OpenGraphImage() {
               alignItems: 'center',
               marginTop: index === 0 ? 0 : 14,
               padding: '22px 24px',
-              background: index === 0 ? TAPE : index === 2 ? PAPER : HULL_RAISED,
-              color: index === 1 || index === 3 ? PAPER : INK,
+              background: index % 4 === 0 ? TAPE : index % 4 === 2 ? PAPER : HULL_RAISED,
+              color: index % 2 === 1 ? PAPER : INK,
               fontSize: 24,
               fontWeight: 700,
             }}
@@ -94,9 +95,9 @@ export default function OpenGraphImage() {
             </div>
           </div>
         ))}
-        {MORE_KINDS > 0 ? (
+        {moreKinds > 0 ? (
           <div style={{ display: 'flex', marginTop: 18, fontSize: 22, color: HULL_MUTED }}>
-            {`+ ${MORE_KINDS} more document types`}
+            {`+ ${moreKinds} more document types`}
           </div>
         ) : null}
       </div>

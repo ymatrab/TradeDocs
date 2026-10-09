@@ -9,6 +9,7 @@ import { fieldErrors, summaryOf } from '@/lib/form-errors';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { DOCUMENT_KINDS } from '@/lib/labels';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
+import { generateCertificateOfOrigin } from '@/lib/trade/certificate-of-origin-server';
 import {
   calendarDateField,
   containerNumberField,
@@ -373,22 +374,33 @@ export async function generateDocument(
   }
 
   const client = await createClient();
-  const { data: created, error } = await client.rpc('generate_document', {
-    target_shipment: parsed.data.shipment,
-    document_kind: parsed.data.kind,
-  });
-  if (error) {
-    if (says(error, 'at least one line item')) {
-      return { error: 'Add at least one line before generating a document.' };
+  let created: string;
+  if (isRegulatedDocumentKind(parsed.data.kind)) {
+    // The certificate of origin has its own readiness checks and the one database path that
+    // accepts it (src/lib/trade/certificate-of-origin-server.ts).
+    const { org, shipment } = parsed.data;
+    const certificate = await generateCertificateOfOrigin(client, org, shipment);
+    if ('error' in certificate) return { error: certificate.error };
+    created = certificate.created;
+  } else {
+    const { data, error } = await client.rpc('generate_document', {
+      target_shipment: parsed.data.shipment,
+      document_kind: parsed.data.kind,
+    });
+    if (error) {
+      if (says(error, 'at least one line item')) {
+        return { error: 'Add at least one line before generating a document.' };
+      }
+      if (says(error, 'A VGM declaration needs')) {
+        return {
+          error:
+            'A VGM declaration needs the container number, weighing method, verified gross mass and signatory. Add them under Container and VGM, then generate it.',
+        };
+      }
+      if (error.code === '42501') return { error: 'That shipment is not available to you.' };
+      return { error: 'That document could not be generated. Try again.' };
     }
-    if (says(error, 'A VGM declaration needs')) {
-      return {
-        error:
-          'A VGM declaration needs the container number, weighing method, verified gross mass and signatory. Add them under Container and VGM, then generate it.',
-      };
-    }
-    if (error.code === '42501') return { error: 'That shipment is not available to you.' };
-    return { error: 'That document could not be generated. Try again.' };
+    created = data;
   }
 
   // The number is what the user will quote, and whether an earlier revision was replaced

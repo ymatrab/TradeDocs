@@ -6,6 +6,7 @@ import { primaryAction } from '@/components/shell/public';
 import { PricingJsonLd } from '@/components/seo/json-ld';
 import { currentPlans } from '@/lib/billing/server';
 import { currentCapabilities } from '@/lib/integrations/server';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import {
   INTERVAL_LABELS,
   listedPrices,
@@ -305,9 +306,10 @@ export default function PricingPage() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
   const plans = currentPlans();
-  // Features that need provider credentials are listed only where they are configured.
+  // Features that need provider credentials are listed only where they are configured, and
+  // the certificate of origin only behind its review gate (D-008, D-025).
   const capabilities = currentCapabilities();
-  const features = offeredFeatures(capabilities);
+  const features = offeredFeatures(capabilities, regulatedDocumentsEnabled());
   const state = pageState(plans);
   const questions = questionsFor(state, plans);
 

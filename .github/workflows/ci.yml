@@ -128,6 +128,14 @@ jobs:
           APPLICATION_MODE: service
           SUPABASE_PROJECT_REF: localtestproject
           SUPABASE_ENVIRONMENT: test
+          # The certificate of origin's gate is proved on here (D-025): a synthetic review
+          # record for this disposable stack only. It is not a legal approval; production
+          # stays off until the owner records the real review (RUNBOOK.md). The foundation
+          # gate above keeps it off and proves the refusal and the public copy without it.
+          ENABLE_REGULATED_DOCUMENTS: 'true'
+          REGULATED_DOCUMENTS_APPROVED: 'true'
+          LEGAL_COO_REVIEWED_BY: CI synthetic review, not a legal approval
+          LEGAL_COO_REVIEWED_AT: '2026-10-09'
       - run: npx playwright install --with-deps chromium
       - name: Prove identity, tenancy and the shipment workspace against the running application
         # The workspace suite belongs here rather than on the foundation gate: it needs a
@@ -141,6 +149,11 @@ jobs:
           SUPABASE_ENVIRONMENT: test
           # A synthetic address the admin e2e signs up with; it exists only in this stack.
           PLATFORM_ADMIN_EMAILS: e2e-admin@example.test
+          # As in the build above: the certificate of origin's gate on, with a synthetic record.
+          ENABLE_REGULATED_DOCUMENTS: 'true'
+          REGULATED_DOCUMENTS_APPROVED: 'true'
+          LEGAL_COO_REVIEWED_BY: CI synthetic review, not a legal approval
+          LEGAL_COO_REVIEWED_AT: '2026-10-09'
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:

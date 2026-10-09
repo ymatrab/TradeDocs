@@ -1496,6 +1496,10 @@ export type Database = {
         Returns: undefined
       }
       export_account_data: { Args: never; Returns: Json }
+      generate_certificate_of_origin: {
+        Args: { actor: string; target_shipment: string }
+        Returns: string
+      }
       generate_document: {
         Args: { document_kind: string; target_shipment: string }
         Returns: string

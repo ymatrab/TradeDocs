@@ -1,7 +1,8 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { currentPlans } from '@/lib/billing/server';
 import { currentCapabilities } from '@/lib/integrations/server';
-import { FEATURES, INTERVAL_LABELS, paidOnlyFeatures, type Plan } from '@/lib/billing/plans';
+import { INTERVAL_LABELS, offeredFeatures, paidOnlyFeatures, type Plan } from '@/lib/billing/plans';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { COUNTRIES_HUB, LISTED_COUNTRIES } from '@/lib/content/countries';
 import { GLOSSARY_HUB_ENTRIES, LISTED_GLOSSARY } from '@/lib/content/glossary';
 import { GUIDES } from '@/lib/content/guides';
@@ -13,13 +14,14 @@ import { isLegalApproved } from '@/lib/legal/identity';
 import { getLegalIdentity } from '@/lib/legal/server';
 import {
   LEGAL_PAGES,
-  PUBLIC_DOCUMENT_KINDS,
+  publicDocumentKinds,
   SITE_DESCRIPTION,
   SITE_NAME,
   listedTools,
 } from '@/lib/seo/site';
 import { cslApiKey } from '@/lib/screening/config';
 import { INCOTERMS, INCOTERMS_DISCLAIMER } from '@/lib/trade/incoterms';
+import { CERTIFICATE_OF_ORIGIN_NOTICE } from '@/lib/trade/regulated';
 
 // The links name the deployment's canonical origin, so this is resolved per request.
 export const dynamic = 'force-dynamic';
@@ -52,7 +54,7 @@ function planLine(plan: Plan): string {
  *
  * Generated from the data the pages render: the tool list, the guides and blog posts (each
  * summarised by its visible short answer), the eleven Incoterms rules and the document
- * types on offer, which leave the certificate of origin out while D-008 holds. The full text
+ * types on offer, which list the certificate of origin only behind its gate. The full text
  * of the guides and posts is at /llms-full.txt. Served on every deployment, because it only
  * restates public pages; whether those pages may be indexed is still decided by robots.txt
  * and X-Robots-Tag.
@@ -61,6 +63,8 @@ export function GET(): Response {
   const base = getPublicBaseUrl();
   // Draft legal pages are not offered to crawlers of any kind until approved (D-009).
   const legalApproved = isLegalApproved(getLegalIdentity());
+  // The certificate of origin is listed only behind its review gate (D-008, D-025).
+  const regulatedOffered = regulatedDocumentsEnabled();
   const lines = [
     `# ${SITE_NAME}`,
     '',
@@ -70,7 +74,8 @@ export function GET(): Response {
     '',
     '## Documents it prepares',
     '',
-    ...PUBLIC_DOCUMENT_KINDS.map((kind) => `- ${documentKindLabels[kind]}`),
+    ...publicDocumentKinds(regulatedOffered).map((kind) => `- ${documentKindLabels[kind]}`),
+    ...(regulatedOffered ? ['', CERTIFICATE_OF_ORIGIN_NOTICE] : []),
     '',
     '## Pricing',
     '',
@@ -79,9 +84,9 @@ export function GET(): Response {
     '',
     'Included in the free plan:',
     '',
-    ...FEATURES.filter((feature) => feature.plans.includes('free')).map(
-      (feature) => `- ${feature.label}${'limit' in feature ? ` (${feature.limit})` : ''}`,
-    ),
+    ...offeredFeatures(currentCapabilities(), regulatedOffered)
+      .filter((feature) => feature.plans.includes('free'))
+      .map((feature) => `- ${feature.label}${feature.limit ? ` (${feature.limit})` : ''}`),
     '',
     '## Who it is for',
     '',

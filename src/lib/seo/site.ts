@@ -5,6 +5,7 @@ import { BLOG_UPDATED, POSTS } from '@/lib/content/posts';
 import { USE_CASES } from '@/lib/content/use-cases';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { documentKindLabels, type DocumentKind } from '@/lib/labels';
+import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
 
 /**
  * The public surface, described once.
@@ -195,12 +196,16 @@ export function findPublicTool(path: string): PublicTool | undefined {
   return [...PUBLIC_TOOLS, SCREENING_TOOL].find((tool) => tool.path === path);
 }
 
-/** Document types offered publicly. Certificate of origin stays out until D-008 is lifted. */
 const ALL_DOCUMENT_KINDS = Object.keys(documentKindLabels) as DocumentKind[];
 
-export const PUBLIC_DOCUMENT_KINDS: readonly DocumentKind[] = ALL_DOCUMENT_KINDS.filter(
-  (kind) => kind !== 'certificate_of_origin',
-);
+/**
+ * Document types offered publicly. A regulated type (the certificate of origin) is listed
+ * only while its gate is on (D-008, D-025): pages pass regulatedDocumentsEnabled() from
+ * src/lib/config/server.ts, so the list follows ENABLE_REGULATED_DOCUMENTS and its review.
+ */
+export function publicDocumentKinds(regulatedOffered: boolean): readonly DocumentKind[] {
+  return ALL_DOCUMENT_KINDS.filter((kind) => regulatedOffered || !isRegulatedDocumentKind(kind));
+}
 
 /**
  * The date each public page's content last changed, as YYYY-MM-DD.

@@ -8,7 +8,7 @@ import { Line } from '@/components/shell/line';
 import { primaryAction } from '@/components/shell/public';
 import { RevealSection } from '@/components/shell/reveal';
 import { HomeJsonLd } from '@/components/seo/json-ld';
-import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
+import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
 import { openGraphFor } from '@/lib/seo/social';
 import {
   documentKindGroups,
@@ -18,6 +18,8 @@ import {
 } from '@/lib/labels';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
+import { regulatedDocumentsEnabled } from '@/lib/config/server';
+import { CERTIFICATE_OF_ORIGIN_NOTICE } from '@/lib/trade/regulated';
 import {
   AudienceSection,
   ChecklistSection,
@@ -42,9 +44,9 @@ export const metadata: Metadata = {
 };
 
 /**
- * The document types a visitor can produce today. The certificate of origin exists in the
- * schema but is awaiting legal review, so it is deliberately absent here, and every count
- * on the page is derived from this list rather than typed.
+ * The document types a visitor can produce today. The certificate of origin joins them only
+ * behind its review gate (offeredDocuments), and every count on the page is derived from
+ * the offered list rather than typed.
  */
 const documents: { kind: DocumentKind; plate: string; detail: string }[] = [
   {
@@ -168,6 +170,21 @@ const benchIncoterms: BenchIncoterm[] = INCOTERMS.map((rule) => ({
   riskPasses: rule.riskPasses,
 }));
 
+type HomeDocument = (typeof documents)[number];
+
+/** Joins the list only behind its review gate (D-008, D-025). */
+const certificateDocument: HomeDocument = {
+  kind: 'certificate_of_origin',
+  plate: 'TD · CO',
+  detail:
+    'Origin line by line with your declaration, for the issuing chamber or authority to certify where required.',
+};
+
+/** The documents this deployment offers: the certificate of origin only behind its gate. */
+function offeredDocuments(regulatedOffered: boolean): HomeDocument[] {
+  return regulatedOffered ? [...documents, certificateDocument] : documents;
+}
+
 /** A label inside running text: lower-case, except an initialism such as VGM. */
 function inSentence(label: string): string {
   return /^[A-Z]{2}/.test(label) ? label : label.charAt(0).toLowerCase() + label.slice(1);
@@ -185,29 +202,34 @@ function listOf(kinds: readonly DocumentKind[]): string {
 
 /**
  * The public kinds the animated stack does not draw: the sales and shipping documents
- * (D-025), named beside it rather than added as cards.
+ * (D-025), named beside it rather than added as cards. Regulated kinds are left out here;
+ * the certificate of origin joins the stack itself when its gate is on.
  */
-const furtherKinds = PUBLIC_DOCUMENT_KINDS.filter(
+const furtherKinds = publicDocumentKinds(false).filter(
   (kind) => !documents.some((document) => document.kind === kind),
 );
 
 const salesKinds = furtherKinds.filter((kind) => documentKindGroups[kind] === 'sales');
 const shippingKinds = furtherKinds.filter((kind) => documentKindGroups[kind] === 'shipping');
 
-const included = [
-  `${listOf(documents.map((document) => document.kind))}, as PDFs`,
-  `${listOf(salesKinds)}, from the same record`,
-  `${listOf(shippingKinds)}, for your carrier and forwarder`,
-  'Shipments, companies and products saved to your organization',
-  'Teammates invited by link, with owner, admin and member roles',
-  'A shipment’s current documents as one ZIP with a checksum manifest',
-];
+function includedNow(offered: readonly HomeDocument[]): string[] {
+  return [
+    `${listOf(offered.map((document) => document.kind))}, as PDFs`,
+    `${listOf(salesKinds)}, from the same record`,
+    `${listOf(shippingKinds)}, for your carrier and forwarder`,
+    'Shipments, companies and products saved to your organization',
+    'Teammates invited by link, with owner, admin and member roles',
+    'A shipment’s current documents as one ZIP with a checksum manifest',
+  ];
+}
 
-const notYet = [
-  'Certificate of origin: awaiting legal review, not offered yet',
-  'Invitations by email: for now you pass the link on yourself',
-  'Paid plans: none yet, and they will come with notice',
-];
+function notYetOffered(regulatedOffered: boolean): string[] {
+  return [
+    ...(regulatedOffered ? [] : ['Certificate of origin: awaiting legal review, not offered yet']),
+    'Invitations by email: for now you pass the link on yourself',
+    'Paid plans: none yet, and they will come with notice',
+  ];
+}
 
 /**
  * Answer-first, so the first sentence is the answer an assistant can quote. The same array
@@ -275,8 +297,13 @@ const pixelOrder = [3, 9, 0, 13, 6, 11, 1, 15, 8, 4, 12, 2, 10, 14, 5, 7];
 export default function Home() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
+  // The certificate of origin is offered, and claimed, only behind its review gate.
+  const regulatedOffered = regulatedDocumentsEnabled();
+  const offered = offeredDocuments(regulatedOffered);
+  // Every document type this deployment offers, the stack's and those named beside it.
+  const kindCount = publicDocumentKinds(regulatedOffered).length;
   // Every timeline name the record section declares, so a card can follow the next one.
-  const docTimelines = documents.map((_, index) => `--doc-${index}`).join(', ');
+  const docTimelines = offered.map((_, index) => `--doc-${index}`).join(', ');
 
   return (
     <>
@@ -332,7 +359,7 @@ export default function Home() {
               </FieldBox>
             </BoxGrid>
             <ul className="frame-rail" aria-label="Documents prepared from this record">
-              {documents.map((document, index) => (
+              {offered.map((document, index) => (
                 <li key={document.kind} style={{ '--i': index } as CSSProperties}>
                   <span className="frame-plate">{document.plate}</span>
                   <span className="sr-only">
@@ -386,7 +413,7 @@ export default function Home() {
               the earlier documents are marked stale, never quietly rewritten.
             </p>
           </div>
-          <Stat value={PUBLIC_DOCUMENT_KINDS.length} label="Document types from 1 entry" />
+          <Stat value={kindCount} label="Document types from 1 entry" />
         </div>
 
         {/*
@@ -415,9 +442,7 @@ export default function Home() {
                   </dd>
                 </div>
               </dl>
-              <p className="record-foot">
-                Example record · prepares {PUBLIC_DOCUMENT_KINDS.length} documents
-              </p>
+              <p className="record-foot">Example record · prepares {kindCount} documents</p>
             </div>
           </div>
           <div
@@ -427,7 +452,7 @@ export default function Home() {
             tabIndex={0}
           >
             <ol className="doc-stack" style={{ '--scope': docTimelines } as CSSProperties}>
-              {documents.map((document, index) => (
+              {offered.map((document, index) => (
                 <li
                   className="doc"
                   key={document.kind}
@@ -458,8 +483,10 @@ export default function Home() {
         </div>
         <p className="note">
           The same record also prepares a {inSentence(listOf(furtherKinds))}. The sales contract
-          is a draft for both parties to review, and the carrier issues the bill of lading. A
-          certificate of origin template is awaiting legal review and is not offered yet.
+          is a draft for both parties to review, and the carrier issues the bill of lading.{' '}
+          {regulatedOffered
+            ? CERTIFICATE_OF_ORIGIN_NOTICE
+            : 'A certificate of origin template is awaiting legal review and is not offered yet.'}
         </p>
       </RevealSection>
 
@@ -486,7 +513,7 @@ export default function Home() {
       <TemplatesSection action={action} />
       <CtaBand action={action} />
       <AudienceSection action={action} />
-      <ChecklistSection action={action} />
+      <ChecklistSection action={action} regulatedOffered={regulatedOffered} />
 
       <RevealSection className="section" aria-labelledby="tools-title">
         <div className="section-head split">
@@ -565,7 +592,7 @@ export default function Home() {
           <article className="card">
             <span className="tag">Included now</span>
             <ul className="ledger">
-              {included.map((item) => (
+              {includedNow(offered).map((item) => (
                 <li key={item}>
                   <Check size={17} aria-hidden="true" className="yes" />
                   {item}
@@ -576,7 +603,7 @@ export default function Home() {
           <article className="card">
             <span className="tag">Not yet</span>
             <ul className="ledger">
-              {notYet.map((item) => (
+              {notYetOffered(regulatedOffered).map((item) => (
                 <li key={item}>
                   <Clock size={17} aria-hidden="true" className="not-yet" />
                   {item}

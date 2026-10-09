@@ -327,15 +327,19 @@ export default function DevelopersPage() {
           </thead>
           <tbody>
             {API_DOCUMENT_KINDS.map((kind) => {
-              const unavailable = isRegulatedDocumentKind(kind) && !regulatedOn;
+              // A regulated kind is never generated through the API: with its review gate on
+              // it is generated in the workspace only (D-025).
+              const regulated = isRegulatedDocumentKind(kind);
               return (
                 <tr key={kind}>
                   <td className="data">{kind}</td>
                   <td>{documentKindLabel(kind)}</td>
                   <td>
-                    {unavailable
-                      ? 'Not yet: pending legal and regulatory review (403 FEATURE_UNAVAILABLE)'
-                      : 'Yes'}
+                    {!regulated
+                      ? 'Yes'
+                      : regulatedOn
+                        ? 'In the workspace only (403 FEATURE_UNAVAILABLE)'
+                        : 'Not yet: pending legal and regulatory review (403 FEATURE_UNAVAILABLE)'}
                   </td>
                 </tr>
               );

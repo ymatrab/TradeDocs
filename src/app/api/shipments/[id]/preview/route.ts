@@ -16,6 +16,7 @@ import { safeFileName } from '@/lib/zip';
 import { DOCUMENT_KINDS } from '@/lib/labels';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
+import { CURRENT_COO_WORDING } from '@/lib/trade/certificate-of-origin';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -72,6 +73,28 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 
   let rendered: unknown = snapshot;
+  if (kind.data === 'certificate_of_origin') {
+    // What generation records in the database (20261009000200_certificate_of_origin.sql):
+    // the current wording and the shipment's current final commercial invoice, read under
+    // the caller's own access.
+    const { data: invoice } = await client
+      .from('documents')
+      .select('number')
+      .eq('shipment_id', shipment.data)
+      .eq('kind', 'commercial_invoice')
+      .eq('status', 'final')
+      .order('created_at', { ascending: false })
+      .order('number', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    rendered = {
+      ...(snapshot as Record<string, unknown>),
+      certificate: {
+        wording_version: CURRENT_COO_WORDING,
+        invoice_reference: invoice?.number ?? null,
+      },
+    };
+  }
   let images: BrandingImages | undefined;
   if (needsBranding(snapshot)) {
     const { data: owner } = await client
@@ -84,7 +107,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
         ? await loadBrandingImages(client, owner.org_id, snapshot)
         : null;
     if (loaded) images = loaded;
-    else rendered = withoutBranding(snapshot);
+    else rendered = withoutBranding(rendered);
   }
 
   let pdf: Uint8Array;

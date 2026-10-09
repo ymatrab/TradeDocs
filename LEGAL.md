@@ -10,6 +10,8 @@ The specification limits TradeDocs to a shipment workspace and preparation tooli
 
 Certificate of Origin preparation requires the specification's label “Preparation template - not an issued certificate,” no simulated seals/signatures, private evidence attachments and an externally endorsed state supported by issuer/reference/evidence and audit. BOL-style output requires approved shipping-instructions/draft terminology and persistent legal status; it cannot assert carrier receipt, title, negotiability or a contract of carriage. Labels must survive UI, preview, PDF, ZIP metadata and email where applicable; branding cannot remove them.
 
+Implementation status (D-025, 2026-10-09): the certificate of origin carries that label in the workspace notice, on every PDF page (preview and issued) and in the ZIP manifest; its wording is versioned in `src/lib/trade/certificate-of-origin.ts`; the certification box is left empty for the issuing body and nothing simulates a seal. It is offered only with `ENABLE_REGULATED_DOCUMENTS` and a recorded review (`LEGAL_COO_REVIEWED_BY/AT`, RUNBOOK.md). Not built: private evidence attachments and an externally endorsed state; the reviewer decides whether launch needs them.
+
 ## Required source registry
 
 Before enabling a high-risk claim, record source URL and authority, jurisdiction, effective interval, retrieval date, reviewer name, approval status/date, applicable Incoterms edition/licensing notes, affected schema/template/copy versions, test references, rollout owner and next review date. Use official primary sources for trade/customs/origin/privacy/payment/platform rules. Retrieval alone is not approval. This baseline records the product specification, not authoritative regulatory sources.
