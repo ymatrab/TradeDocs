@@ -2,6 +2,24 @@
 
 ## Unreleased — 2026-09-06
 
+### Certificate of origin, launch-ready behind its gate (D-025)
+
+- Off by default. `ENABLE_REGULATED_DOCUMENTS` now also needs a review record,
+  `LEGAL_COO_REVIEWED_BY` and `LEGAL_COO_REVIEWED_AT`; anything missing fails the feature
+  closed and `/api/ready` reports `regulated_documents: misconfigured` (RUNBOOK.md).
+- Migration `20261009000200_certificate_of_origin.sql`: the database refuses a certificate
+  unless it comes through the service-role-only `generate_certificate_of_origin` (members
+  could previously finalize one by calling `generate_document` directly), and records the
+  commercial invoice number and wording version.
+- PDF: "Preparation template - not an issued certificate" label on every page, exporter,
+  consignee, origin per line, ports, destination, shipping date, invoice number, gross weight,
+  the exporter's declaration, an empty box for the issuing body and the signature line;
+  branding when entitled. The ZIP manifest carries the label.
+- Every public claim follows the gate: `publicDocumentKinds()`, `offeredFeatures()`, home
+  page, checklist, pricing, use-case pages, llms.txt and the share image. Content tests keep
+  forbidding the phrase through a shared helper while it is off.
+- Unit, pgTAP and e2e (database job runs with the gate on, synthetic review record) pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

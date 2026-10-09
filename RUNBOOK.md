@@ -157,6 +157,47 @@ unreachable and Stripe will redeliver.
   retention, liability cap.
 - **Account deletion purge.** See "Account purge" below.
 
+## Certificate of origin (D-008, D-025)
+
+Off by default. It is launch-ready behind `ENABLE_REGULATED_DOCUMENTS` and switches on only
+with a recorded legal review; nothing else needs changing.
+
+**What the reviewer reviews.** The wording in `src/lib/trade/certificate-of-origin.ts`
+(version 1: the "Preparation template - not an issued certificate" label, the exporter's
+declaration, the preparation statement, the empty certification box and the signature
+caption), the workspace and public notice `CERTIFICATE_OF_ORIGIN_NOTICE` in
+`src/lib/trade/regulated.ts`, and a preview PDF from a staging shipment. The certificate is
+the exporter's own preparation: TradeDocs never certifies or issues it, and where
+certification is required the issuing chamber of commerce or authority does that. Open items
+for the reviewer (LEGAL.md): private evidence attachments and an "externally endorsed" state
+are not built; the signature/stamp image is the organization's own upload (PDF branding).
+
+**To enable** (Vercel → Project → Settings → Environment Variables, Production; preview only
+with staging data):
+
+1. `LEGAL_COO_REVIEWED_BY` = the reviewer's full name (one line).
+2. `LEGAL_COO_REVIEWED_AT` = the review date, `YYYY-MM-DD` (a real date, not in the future).
+3. `REGULATED_DOCUMENTS_APPROVED` = `true`.
+4. `ENABLE_REGULATED_DOCUMENTS` = `true`.
+5. Redeploy (the public pages are built with the flag), then confirm: `/api/ready` shows no
+   `regulated_documents` key; the home page, `/pricing` and `/llms.txt` list "Certificate of
+   origin"; on a shipment the document type list offers it and the preview opens. Record the
+   name, date and commit in DECISIONS.md D-025.
+
+Requirements already in place: service mode, `SUPABASE_SERVICE_ROLE_KEY` (the certificate is
+generated through the service-role-only `generate_certificate_of_origin`), and migration
+`20261009000200_certificate_of_origin.sql` applied. A shipment needs an exporter, a consignee,
+a country of origin on every line and a signatory name in the document settings; the
+workspace says which is missing.
+
+**If something is wrong.** Any missing or invalid value keeps the certificate refused (fail
+closed) and `/api/ready` answers `regulated_documents: misconfigured` with the reason; the
+rest of the site is unaffected. **To switch off**, set `ENABLE_REGULATED_DOCUMENTS=false` and
+redeploy: the workspace, the preview and the database path refuse it again and the public
+pages drop it. Certificates already generated stay in their shipment's history and still
+download as issued. Changing the wording means a new version in
+`certificate-of-origin.ts` and the migration constant, and a new review.
+
 ## Account purge (owner decision: scheduling)
 
 Accounts whose deletion request is past `purge_after` (30 days) are removed by
