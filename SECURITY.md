@@ -170,6 +170,32 @@ entitlement, a failed lookup or an unreadable image renders a preview without br
 - A signature image is the organization's own picture of a signature or stamp. Documents keep
   the mandatory "Prepared with TradeDocs…" statement on every page; nothing implies certification.
 
+## E-signature (Dropbox Sign, D-025)
+
+Sources (retrieved 2026-10-09): https://developers.hellosign.com/api/reference/authentication/,
+https://developers.hellosign.com/api/reference/operation/signatureRequestSend/,
+https://developers.hellosign.com/api/reference/operation/signatureRequestFiles/,
+https://developers.hellosign.com/docs/events/walkthrough/ and the official OpenAPI document
+and curl example in https://github.com/hellosign/hellosign-openapi.
+
+- `DROPBOX_SIGN_API_KEY` is server-only (Basic auth, key as user name) and is the HMAC key of
+  callback `event_hash` = HMAC-SHA256(event_time + event_type), compared in constant time.
+- The hash does not cover the payload, so the callback never trusts the payload's state: it
+  re-reads the request from the API with its own key and checks the live metadata names the
+  same TradeDocs row and the live mode matches the row. A replayed event can only trigger a
+  fresh read of the truth; the event ledger makes a redelivery a no-op. Bodies are bounded
+  (512 KiB) and signed copies too (25 MiB, must start `%PDF-`).
+- Non-production environments always send `test_mode` requests, so a preview can never send a
+  binding request. The paid gate is enforced in the action and in `esign_create_request`.
+- Only a current final document is sent, rendered from its immutable snapshot; its SHA-256 is
+  recorded before sending. The signed PDF is a new object in the private `esign-signed`
+  bucket, written by the service role only, downloaded through a 60-second signed URL created
+  as the member; every download is audited.
+- Sends are rate limited (20 per account per hour, 100 per organization per day) and refused
+  when quotas cannot be enforced. Logs carry outcomes and status codes only: no signer, email
+  address, document number or content. TradeDocs does not verify signer identity beyond the
+  provider; the UI says so.
+
 ## Contact form, help and platform admin (D-018)
 
 - `contact_messages` has RLS enabled, no policies and no grant to `anon` or `authenticated`

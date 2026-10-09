@@ -271,3 +271,27 @@ Generated types were extended by hand (`organization_settings`, the four documen
   column checks, schema 7 capture, cross-tenant read and write denied). Columns added to
   `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
   Rollback in the migration header.
+
+## E-signature requests (20261009000600, D-025)
+
+- `public.esign_requests`: one row per Dropbox Sign request for a final document — the exact
+  bytes sent (`original_sha256`), provider request id (write once), `test_mode`, status
+  (`sending`, `sent`, `signed`, `declined`, `cancelled`, `expired`, `error`, `failed`), 1–5
+  signers with their status (jsonb), an optional message, and the signed copy
+  (`signed_object_path`, `signed_sha256`, `signed_byte_size`, `signed_stored_at`, written once,
+  path `org/<org>/esign/<request>/<sha-256>.pdf`). `private.freeze_esign_request` keeps the
+  organization, document, bytes, mode and requester fixed and an end state final. The
+  original `documents` row is never touched: the signed copy is a new linked artifact.
+- `private.esign_events`: the callback ledger (event key = SHA-256 of event hash, type and
+  provider id), so a redelivery is a no-op.
+- Storage bucket `esign-signed`: private, PDF only, 25 MiB. Members of the organization in
+  the path may select (for 60-second signed URLs); nobody but the service role writes.
+- Access: members read their organization's rows; no API role writes directly. The service
+  role reads and writes only through `esign_create_request` (membership, Pro/Team via
+  `private.org_entitled`, final and current document), `esign_mark_sent`,
+  `esign_mark_failed`, `esign_event_recorded`, `esign_apply_event`, `esign_attach_signed` and
+  `esign_record_download`, each writing its audit event (no signer emails in metadata).
+- pgTAP: `supabase/tests/esign_requests.test.sql` (bucket and grants, paid gate, final-only,
+  cross-tenant reads and writes denied, idempotent events, end states, write-once copy). Types
+  added to `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is
+  authoritative. Rollback in the migration header.

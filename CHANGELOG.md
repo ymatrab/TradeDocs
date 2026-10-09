@@ -23,6 +23,19 @@
   6346 check-digit validation. Snapshot schema 7, renderer `tradedocs-pdf/7`; older documents
   render unchanged. Migration `20261009000100_sales_and_shipping_documents.sql`.
 
+### E-signature through Dropbox Sign (D-025)
+
+- Org members send a current final document to 1–5 signers from
+  `/app/<org>/documents/<id>/signature` (Pro and Team; `hasEntitlement(org, 'esign')`, checked
+  again in SQL). Dropbox Sign API v3 over fetch + FormData, no new dependency
+  (`src/lib/esign/`). Test mode everywhere but production.
+- Callback `/api/esign/dropbox-sign/callback`: event_hash HMAC verified, state re-read live,
+  idempotent ledger; the signed PDF is stored as a new private object linked to the immutable
+  original and downloaded through a 60-second authorized link. Audited, rate limited.
+- Off until the owner sets `DROPBOX_SIGN_API_KEY` (RUNBOOK.md, "E-signature"); without it the
+  page says "E-signature not available yet" and no public page claims it.
+- Migration `20261009000600_esign_requests.sql`, pgTAP, unit and e2e tests: pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

@@ -3,6 +3,7 @@ import { documentKindGroups, documentKindLabels, type DocumentKindGroup } from '
 import {
   MAX_BRANDING_BYTES,
   MAX_BRANDING_SIDE,
+  MAX_ESIGN_SIGNERS,
   MAX_IMPORT_ROWS,
   MAX_SET_DOCUMENTS,
   MAX_TOOL_LINES,
@@ -50,6 +51,11 @@ export type Feature = {
   short?: string;
   /** True when it needs an account, so it is absent on a deployment without accounts. */
   needsAccount: boolean;
+  /**
+   * An outside provider the feature cannot work without. Such a feature is gated like any
+   * other but kept out of FEATURES, the public claims, until the owner has connected it.
+   */
+  provider?: 'dropbox_sign';
 };
 
 const EVERY_PLAN: readonly PlanId[] = PLAN_IDS;
@@ -176,11 +182,34 @@ export const FEATURES = [
   },
 ] as const satisfies readonly Feature[];
 
-export type FeatureKey = (typeof FEATURES)[number]['key'];
+/**
+ * Paid features that need an outside provider (D-025). Gated by hasEntitlement exactly like
+ * the features above, but not in FEATURES, so no public page (pricing, llms.txt, use cases)
+ * claims them: e-signature stays unclaimed until the owner connects a Dropbox Sign account
+ * and decides to list it (RUNBOOK.md, "E-signature").
+ */
+export const PROVIDER_FEATURES = [
+  {
+    key: 'esign',
+    group: 'Workspace',
+    label: 'E-signature of finalized documents through Dropbox Sign',
+    short: 'E-signature',
+    limit: `Up to ${MAX_ESIGN_SIGNERS} signers per request; the signature is provided by Dropbox Sign`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    provider: 'dropbox_sign',
+  },
+] as const satisfies readonly Feature[];
+
+const GATED_FEATURES: readonly Feature[] = [...FEATURES, ...PROVIDER_FEATURES];
+
+export type FeatureKey =
+  | (typeof FEATURES)[number]['key']
+  | (typeof PROVIDER_FEATURES)[number]['key'];
 
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */
 export function featurePlans(key: string): readonly PlanId[] {
-  return FEATURES.find((feature) => feature.key === key)?.plans ?? [];
+  return GATED_FEATURES.find((feature) => feature.key === key)?.plans ?? [];
 }
 
 /** Features no free account has. A paid card lists them; it never invents any. */
