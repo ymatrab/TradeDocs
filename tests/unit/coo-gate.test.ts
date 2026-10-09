@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GET as readiness } from '@/app/api/ready/route';
-import { GET as llms } from '@/app/llms.txt/route';
 import { documentsFeatureLabel, FEATURES, offeredFeatures } from '@/lib/billing/plans';
 import { certificateOfOriginState, regulatedDocumentsEnabled } from '@/lib/config/server';
+import { publicDocumentKinds } from '@/lib/seo/site';
 import {
   CERTIFICATE_OF_ORIGIN_NOTICE,
   certificateOfOriginGate,
@@ -122,15 +122,11 @@ describe('public claims follow the gate', () => {
     expect(base?.label).toBe(documentsFeatureLabel(false));
   });
 
-  it('lists it in llms.txt only with the gate fully on', async () => {
-    stub(switchedOn);
-    const closed = await (await llms()).text();
-    expect(closed).not.toContain('Certificate of origin');
-
-    stub(review);
-    const open = await (await llms()).text();
-    expect(open).toContain('- Certificate of origin');
-    expect(open).toContain(CERTIFICATE_OF_ORIGIN_NOTICE);
+  it('lists it among the public document types only when offered', () => {
+    expect(publicDocumentKinds(false)).not.toContain('certificate_of_origin');
+    expect(publicDocumentKinds(true)).toContain('certificate_of_origin');
+    expect(CERTIFICATE_OF_ORIGIN_NOTICE).toMatch(/not an issued certificate/);
+    expect(CERTIFICATE_OF_ORIGIN_NOTICE).toMatch(/TradeDocs does not certify or issue it/);
   });
 });
 
