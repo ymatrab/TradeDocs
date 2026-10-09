@@ -117,6 +117,14 @@ const COUNTRY_ALIASES: Record<string, string> = {
 
 let namesToCodes: Map<string, string> | null = null;
 
+function canonicalRegion(code: string): string | null {
+  try {
+    return Intl.getCanonicalLocales(`und-${code}`)[0]?.split('-')[1] ?? null;
+  } catch {
+    return null;
+  }
+}
+
 /** English region names from the runtime's own ICU data, keyed upper-case. */
 function regionNames(): Map<string, string> {
   if (namesToCodes) return namesToCodes;
@@ -127,8 +135,11 @@ function regionNames(): Map<string, string> {
       for (let b = 65; b <= 90; b += 1) {
         const code = String.fromCharCode(a, b);
         const name = names.of(code);
-        // First code wins: ICU also names the reserved "UK" "United Kingdom"; GB comes first.
-        if (name && name !== code && !map.has(name.toUpperCase())) map.set(name.toUpperCase(), code);
+        // ICU also names retired or reserved codes after their successor ("DD" is "Germany",
+        // "UK" is "United Kingdom"); keep only canonical codes so a name maps to DE or GB.
+        if (name && name !== code && canonicalRegion(code) === code) {
+          map.set(name.toUpperCase(), code);
+        }
       }
     }
   } catch {

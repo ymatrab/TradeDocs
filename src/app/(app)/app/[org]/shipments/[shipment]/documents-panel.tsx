@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { startTransition, useActionState, useState, type FormEvent } from 'react';
 import { Download, Eye, FolderDown, RefreshCw } from 'lucide-react';
 import { Button, LinkButton } from '@/components/primitives/button';
 import { Field, Input, Select } from '@/components/primitives/form';
@@ -70,7 +70,9 @@ export function DocumentsPanel({
   canVoid?: boolean;
 }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(generateDocument, {});
-  // Controlled, so the chosen type survives React's form reset after each generation.
+  // The chosen type stays chosen after a generation: the form dispatches the action itself,
+  // so React's automatic form reset (which would put the select back on its first option)
+  // never runs. Without JavaScript the form still posts through `action`.
   const [selectedKind, setSelectedKind] = useState<string>('commercial_invoice');
   const [voidState, voidAction, voidPending] = useActionState<ActionState, FormData>(
     voidDocument,
@@ -88,6 +90,12 @@ export function DocumentsPanel({
     const kind = sent(submitted, 'kind');
     return `${kind ? documentKindLabel(kind) : 'The document'} is ready to download.`;
   });
+  const generate = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    remember(event);
+    const data = new FormData(event.currentTarget);
+    startTransition(() => action(data));
+  };
   // A kind regenerated once already has a current copy; its older stale copy needs no
   // second offer to regenerate.
   const currentKinds = new Set(current.map((document) => document.kind));
@@ -114,7 +122,7 @@ export function DocumentsPanel({
         <ActionResult state={{ notice: voidState.notice }} successTitle="Voided" />
         <form
           action={action}
-          onSubmit={remember}
+          onSubmit={generate}
           style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}
         >
           <input type="hidden" name="org" value={org} />
