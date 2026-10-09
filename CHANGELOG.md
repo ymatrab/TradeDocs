@@ -50,6 +50,17 @@
   `database.types.ts` hand-edited until the CI artifact regenerates it. Nothing run locally:
   format, lint, typecheck, unit, integration, pgTAP and e2e are pending CI.
 
+### QuickBooks Online and Xero import (D-025)
+
+- Settings, Integrations: connect QuickBooks Online or Xero (owner/admin, Pro and Team),
+  check then import customers into the company directory and items into the product catalog,
+  disconnect (revokes and deletes). Records are matched by provider id; edits made in
+  TradeDocs are kept and reported as conflicts; problems are listed per record.
+- Off on every deployment until the owner registers the developer apps (RUNBOOK.md); until
+  then each provider reads "Not connected — not available yet" and is not claimed on pricing.
+- Migration `20261009000500_accounting_integrations.sql`, pgTAP, unit and e2e tests. All
+  pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

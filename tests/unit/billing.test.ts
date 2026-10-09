@@ -394,11 +394,29 @@ describe('plans and offers', () => {
     );
   });
 
-  it('gates only PDF branding and the API, and invents no other paid-only feature', () => {
+  it('gates PDF branding, the accounting imports and the API, and invents no other paid-only feature', () => {
     const paid = FEATURES.filter((feature) => !featurePlans(feature.key).includes('free'));
-    expect(paid.map((feature) => feature.key)).toEqual(['pdf_branding', 'api']);
+    expect(paid.map((feature) => feature.key)).toEqual([
+      'pdf_branding',
+      'integrations.quickbooks',
+      'integrations.xero',
+      'api',
+    ]);
+    // The imports need provider credentials; without them they are not claimed (D-025).
     expect(paidOnlyFeatures('pro').map((feature) => feature.key)).toEqual(['pdf_branding']);
     expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual(['pdf_branding', 'api']);
+    const both = { quickbooks_import: true, xero_import: true };
+    expect(paidOnlyFeatures('pro', both).map((feature) => feature.key)).toEqual([
+      'pdf_branding',
+      'integrations.quickbooks',
+      'integrations.xero',
+    ]);
+    expect(paidOnlyFeatures('team', both).map((feature) => feature.key)).toEqual([
+      'pdf_branding',
+      'integrations.quickbooks',
+      'integrations.xero',
+      'api',
+    ]);
     expect(PAID_PLAN_IDS).toEqual(['pro', 'team']);
     expect(featurePlans('a.feature.that.does.not.exist')).toEqual([]);
   });

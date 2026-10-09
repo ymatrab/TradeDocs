@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Callout, Panel } from '@/components/primitives/feedback';
+import { LinkButton } from '@/components/primitives/button';
 import { SettingsForm } from './settings-form';
 import { BrandingPanel, type BrandingSlotView } from './branding-panel';
 import { ApiKeysPanel, type ApiKeyView } from './api-keys-panel';
@@ -182,6 +183,19 @@ export default async function SettingsPage({ params }: { params: Promise<{ org: 
             />
           </Panel>
         ) : null}
+        <Panel title="Integrations">
+          <div style={{ display: 'grid', gap: 12 }}>
+            <p className="muted" style={{ margin: 0 }}>
+              Import customers and items from QuickBooks Online or Xero into the company directory
+              and product catalog.
+            </p>
+            <div>
+              <LinkButton href={`/app/${org}/settings/integrations`} tone="secondary" compact>
+                Open integrations
+              </LinkButton>
+            </div>
+          </div>
+        </Panel>
       </div>
     </AppShell>
   );

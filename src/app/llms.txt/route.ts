@@ -1,5 +1,6 @@
 import { BOUNDARY_STATEMENT } from '@/components/shell/public';
 import { currentPlans } from '@/lib/billing/server';
+import { currentCapabilities } from '@/lib/integrations/server';
 import { FEATURES, INTERVAL_LABELS, paidOnlyFeatures, type Plan } from '@/lib/billing/plans';
 import { COUNTRIES_HUB, LISTED_COUNTRIES } from '@/lib/content/countries';
 import { GLOSSARY_HUB_ENTRIES, LISTED_GLOSSARY } from '@/lib/content/glossary';
@@ -26,7 +27,7 @@ export const dynamic = 'force-dynamic';
 /** What a paid plan adds over Free, as a sentence, or nothing. */
 function adds(plan: Plan): string {
   if (plan.id === 'free') return '';
-  const extras = paidOnlyFeatures(plan.id).map((feature) => feature.label);
+  const extras = paidOnlyFeatures(plan.id, currentCapabilities()).map((feature) => feature.label);
   return extras.length > 0 ? ` Adds ${extras.join('; ')}.` : '';
 }
 

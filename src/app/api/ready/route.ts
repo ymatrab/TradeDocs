@@ -3,6 +3,8 @@ import type { WaivableControl } from '@/lib/config/schema';
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
 import { apiUnavailableReason } from '@/lib/api/server';
+import { esignConfig, type EsignConfig } from '@/lib/esign/config';
+import { incompleteProviders } from '@/lib/integrations/providers';
 import {
   DEGRADED_RATE_LIMIT_REASON,
   rateLimitMode,
@@ -24,12 +26,18 @@ export async function GET(): Promise<Response> {
   let billing: BillingConfig = { state: 'disabled' };
   // The public API off for want of its pepper or the service role fails that feature alone.
   let api: string | null = null;
+  // A Dropbox Sign key set but unusable fails e-signature alone; reason names the gap only.
+  let esign: EsignConfig = { state: 'disabled' };
+  // QuickBooks/Xero credentials set but incomplete: names of the missing variables only.
+  let integrations: ReturnType<typeof incompleteProviders> = {};
   try {
     api = apiUnavailableReason();
+    integrations = incompleteProviders(process.env);
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
     degraded = degradedControls(configuration);
     billing = billingConfig(configuration);
+    esign = esignConfig(configuration, process.env);
     if (hasSupabaseConfiguration()) {
       const env = getServerEnv();
       if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
@@ -57,6 +65,10 @@ export async function GET(): Promise<Response> {
         ? { payments: 'misconfigured', payments_reason: billing.reason }
         : {}),
       ...(api ? { api: 'unavailable', api_reason: api } : {}),
+      ...(esign.state === 'misconfigured'
+        ? { esign: 'misconfigured', esign_reason: esign.reason }
+        : {}),
+      ...(Object.keys(integrations).length > 0 ? { integrations_incomplete: integrations } : {}),
     },
     {
       status: ready ? 200 : 503,

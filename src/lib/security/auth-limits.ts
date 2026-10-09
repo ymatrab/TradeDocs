@@ -40,6 +40,9 @@ export const AUTH_LIMITS = {
   brandingUpload: { namespace: 'org:branding-upload', limit: 30, windowSeconds: 3600 },
   /** API keys created and revoked, per account. */
   apiKeyChange: { namespace: 'org:api-key-change', limit: 20, windowSeconds: 3600 },
+  /** QuickBooks/Xero: starting a connection, and each check or import (each reads the provider). */
+  integrationConnect: { namespace: 'org:integration-connect', limit: 20, windowSeconds: 3600 },
+  integrationImport: { namespace: 'org:integration-import', limit: 60, windowSeconds: 3600 },
 } as const satisfies Record<string, RateLimitPolicy>;
 
 export type Quota = readonly [RateLimitPolicy, string];
