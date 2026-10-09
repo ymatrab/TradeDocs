@@ -227,6 +227,48 @@ describe('shipment terms', () => {
     expect(result.fields?.proforma_valid_until).toBeTruthy();
     expect(state.calls).toEqual([]);
   });
+
+  it('saves the container and VGM fields, normalized, when the form carries them', async () => {
+    state.rows = [{ id: SHIPMENT }];
+    await updateShipment(
+      {},
+      form({
+        org: ORG,
+        shipment: SHIPMENT,
+        container_number: 'csqu 305438 3',
+        seal_number: ' SL-889 ',
+        vgm_method: '2',
+        vgm_kg: '18250.5',
+        vgm_signatory: 'Cleo Owner',
+      }),
+    );
+    const update = state.calls.find((call) => call[0] === 'update');
+    expect(update?.[1]).toMatchObject({
+      container_number: 'CSQU3054383',
+      seal_number: 'SL-889',
+      vgm_method: 2,
+      vgm_kg: 18250.5,
+      vgm_signatory: 'Cleo Owner',
+    });
+    expect(update?.[1]).not.toHaveProperty('booking_number');
+  });
+
+  it('refuses a wrong container check digit, a third VGM method and a zero mass', async () => {
+    const result = await updateShipment(
+      {},
+      form({
+        org: ORG,
+        shipment: SHIPMENT,
+        container_number: 'CSQU3054384',
+        vgm_method: '3',
+        vgm_kg: '0',
+      }),
+    );
+    expect(result.fields?.container_number).toBeTruthy();
+    expect(result.fields?.vgm_method).toBeTruthy();
+    expect(result.fields?.vgm_kg).toBeTruthy();
+    expect(state.calls).toEqual([]);
+  });
 });
 
 describe('lines', () => {

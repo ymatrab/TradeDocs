@@ -13,19 +13,14 @@ import {
 import { hasEntitlement } from '@/lib/billing/server';
 import { loadBrandingImages, needsBranding } from '@/lib/branding/server';
 import { safeFileName } from '@/lib/zip';
+import { DOCUMENT_KINDS } from '@/lib/labels';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-const kinds = z.enum([
-  'commercial_invoice',
-  'proforma_invoice',
-  'packing_list',
-  'delivery_note',
-  'certificate_of_origin',
-]);
+const kinds = z.enum(DOCUMENT_KINDS);
 
 /**
  * Renders the document a shipment would produce right now, without finalizing it: no number
