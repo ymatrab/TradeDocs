@@ -157,7 +157,8 @@ describe('structured data builders', () => {
 describe('public surface data', () => {
   it('never offers the certificate of origin (D-008)', () => {
     expect(PUBLIC_DOCUMENT_KINDS).not.toContain('certificate_of_origin');
-    expect(PUBLIC_DOCUMENT_KINDS).toHaveLength(4);
+    // Four invoicing and packing documents, four sales and three shipping documents (D-025).
+    expect(PUBLIC_DOCUMENT_KINDS).toHaveLength(11);
   });
 
   it('lists only public paths, once each, with fixed dates', () => {

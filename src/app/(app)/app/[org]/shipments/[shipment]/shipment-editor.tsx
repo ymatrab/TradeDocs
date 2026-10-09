@@ -253,7 +253,7 @@ export function ShipmentEditor({
               id="buyer_reference"
               label="Buyer reference / PO number"
               requirement="Optional"
-              hint="Printed on the commercial and proforma invoice."
+              hint="Printed on the invoices, the sales confirmation and the sales contract."
               error={detailState.fields?.buyer_reference}
             >
               {({ id, describedBy, invalid }) => (
@@ -269,9 +269,9 @@ export function ShipmentEditor({
             </Field>
             <Field
               id="proforma_valid_until"
-              label="Proforma valid until"
+              label="Offer valid until"
               requirement="Optional"
-              hint="The last day the proforma's prices and terms stand."
+              hint="The last day the proforma's or quotation's prices and terms stand."
               error={detailState.fields?.proforma_valid_until}
             >
               {({ id, describedBy, invalid }) => (
@@ -286,6 +286,189 @@ export function ShipmentEditor({
               )}
             </Field>
           </div>
+          <fieldset style={{ display: 'grid', gap: 16, border: 0, padding: 0, margin: 0 }}>
+            <legend className="caption">Container and VGM</legend>
+            <p className="muted" style={{ margin: 0 }}>
+              For the bill of lading draft, the shipper&rsquo;s letter of instruction and the VGM
+              declaration. Under SOLAS the shipper declares the verified gross mass of a packed
+              container; TradeDocs prints what you enter and does not weigh or check it.
+            </p>
+            <div
+              style={{
+                display: 'grid',
+                gap: 16,
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              }}
+            >
+              <Field
+                id="container_number"
+                label="Container number"
+                requirement="Optional"
+                hint="Four letters and seven digits, such as CSQU3054383."
+                error={detailState.fields?.container_number}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="container_number"
+                    maxLength={13}
+                    autoCapitalize="characters"
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.container_number ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="container_type"
+                label="Container type"
+                requirement="Optional"
+                hint="Such as 20GP or 40HC."
+                error={detailState.fields?.container_type}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="container_type"
+                    maxLength={12}
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.container_type ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="seal_number"
+                label="Seal number"
+                requirement="Optional"
+                hint="The carrier or shipper seal on the doors."
+                error={detailState.fields?.seal_number}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="seal_number"
+                    maxLength={40}
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.seal_number ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="booking_number"
+                label="Booking number"
+                requirement="Optional"
+                hint="The carrier’s booking reference."
+                error={detailState.fields?.booking_number}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="booking_number"
+                    maxLength={40}
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.booking_number ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="vessel_voyage"
+                label="Vessel and voyage"
+                requirement="Optional"
+                hint="Such as NORDIC STAR 042E."
+                error={detailState.fields?.vessel_voyage}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="vessel_voyage"
+                    maxLength={80}
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.vessel_voyage ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="vgm_method"
+                label="VGM weighing method"
+                requirement="Optional"
+                hint="Method 1 weighs the packed container; method 2 adds the weighed contents to the tare."
+                error={detailState.fields?.vgm_method}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Select
+                    id={id}
+                    name="vgm_method"
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.vgm_method ?? '')}
+                  >
+                    <option value="">Not stated</option>
+                    <option value="1">Method 1: packed container weighed</option>
+                    <option value="2">Method 2: contents weighed, tare added</option>
+                  </Select>
+                )}
+              </Field>
+              <Field
+                id="vgm_kg"
+                label="Verified gross mass (kg)"
+                requirement="Optional"
+                hint="Cargo, packing, pallets, dunnage and securing material, plus the container tare."
+                error={detailState.fields?.vgm_kg}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="vgm_kg"
+                    type="number"
+                    step="0.001"
+                    min="0.001"
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.vgm_kg ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="vgm_weighed_on"
+                label="Date of weighing"
+                requirement="Optional"
+                error={detailState.fields?.vgm_weighed_on}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="vgm_weighed_on"
+                    type="date"
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.vgm_weighed_on ?? '')}
+                  />
+                )}
+              </Field>
+              <Field
+                id="vgm_signatory"
+                label="VGM signatory"
+                requirement="Optional"
+                hint="The person the shipper authorizes to sign; printed in capitals."
+                error={detailState.fields?.vgm_signatory}
+              >
+                {({ id, describedBy, invalid }) => (
+                  <Input
+                    id={id}
+                    name="vgm_signatory"
+                    maxLength={80}
+                    invalid={invalid}
+                    aria-describedby={describedBy}
+                    defaultValue={String(shipment.vgm_signatory ?? '')}
+                  />
+                )}
+              </Field>
+            </div>
+          </fieldset>
           <Field
             id="marks_and_numbers"
             label="Marks and numbers"

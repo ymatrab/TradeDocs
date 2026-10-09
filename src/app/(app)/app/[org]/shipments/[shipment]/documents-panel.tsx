@@ -10,7 +10,14 @@ import { DataTable } from '@/components/primitives/table';
 import { ActionResult } from '@/components/primitives/action-result';
 import { sent, useOutcomeToast } from '@/components/primitives/use-outcome-toast';
 import { DocumentStatus, type DocumentState } from '@/components/document/status';
-import { documentKindLabel, documentKindLabels } from '@/lib/labels';
+import {
+  DOCUMENT_KINDS,
+  documentKindGroupLabels,
+  documentKindGroups,
+  documentKindLabel,
+  documentKindLabels,
+  type DocumentKindGroup,
+} from '@/lib/labels';
 import { generateDocument, voidDocument } from '@/app/(app)/shipment-actions';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 import type { ActionState } from '@/app/(app)/actions';
@@ -63,8 +70,12 @@ export function DocumentsPanel({
     voidDocument,
     {},
   );
-  const kinds = Object.entries(documentKindLabels).filter(
-    ([kind]) => regulatedEnabled || !isRegulatedDocumentKind(kind),
+  const kinds = DOCUMENT_KINDS.filter(
+    (kind) => regulatedEnabled || !isRegulatedDocumentKind(kind),
+  ).map((kind) => [kind, documentKindLabels[kind]] as const);
+  // Grouped as a shipment's paperwork runs: the sale, the invoice and packing, the shipping.
+  const groups = (Object.keys(documentKindGroupLabels) as DocumentKindGroup[]).map(
+    (group) => [group, kinds.filter(([kind]) => documentKindGroups[kind] === group)] as const,
   );
   const current = documents.filter((document) => document.status === 'final' && !document.stale);
   const remember = useOutcomeToast(state, (submitted) => {
@@ -106,10 +117,14 @@ export function DocumentsPanel({
             <Field id="kind" label="Document type">
               {({ id }) => (
                 <Select id={id} name="kind" defaultValue="commercial_invoice">
-                  {kinds.map(([kind, label]) => (
-                    <option key={kind} value={kind}>
-                      {label}
-                    </option>
+                  {groups.map(([group, members]) => (
+                    <optgroup key={group} label={documentKindGroupLabels[group]}>
+                      {members.map(([kind, label]) => (
+                        <option key={kind} value={kind}>
+                          {label}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </Select>
               )}
@@ -119,23 +134,29 @@ export function DocumentsPanel({
             Generate document
           </Button>
         </form>
-        <p className="muted" style={{ margin: 0 }}>
-          Preview before you generate:{' '}
-          {kinds.map(([kind, label], index) => (
-            <span key={kind}>
-              {index > 0 ? ' · ' : null}
-              <a
-                className="text-link"
-                href={`/api/shipments/${shipmentId}/preview?kind=${kind}`}
-                target="_blank"
-                rel="noopener"
-              >
-                <Eye size={13} aria-hidden="true" /> {label}
-              </a>
-            </span>
+        <div className="muted" style={{ display: 'grid', gap: 4 }}>
+          <p style={{ margin: 0 }}>
+            Preview before you generate. A preview carries no number and is marked as not issued.
+          </p>
+          {groups.map(([group, members]) => (
+            <p key={group} style={{ margin: 0 }}>
+              <span className="caption">{documentKindGroupLabels[group]}:</span>{' '}
+              {members.map(([kind, label], index) => (
+                <span key={kind}>
+                  {index > 0 ? ' · ' : null}
+                  <a
+                    className="text-link"
+                    href={`/api/shipments/${shipmentId}/preview?kind=${kind}`}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Eye size={13} aria-hidden="true" /> {label}
+                  </a>
+                </span>
+              ))}
+            </p>
           ))}
-          . A preview carries no number and is marked as not issued.
-        </p>
+        </div>
         {regulatedEnabled ? null : (
           <p className="muted" style={{ margin: 0 }}>
             {REGULATED_DOCUMENT_LIMITATION}

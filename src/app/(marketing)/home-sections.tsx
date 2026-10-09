@@ -303,7 +303,14 @@ const checklist: {
     purpose: 'The transport document for the goods carried.',
     who: 'Carrier or forwarder',
     coverage: 'outside',
-    status: 'Not prepared by TradeDocs',
+    status: 'Issued by the carrier; the workspace prepares a draft of your shipping instructions',
+  },
+  {
+    name: documentKindLabels.vgm_declaration,
+    purpose: 'The verified gross mass of a packed container, before it is loaded on a ship.',
+    who: 'Shipper',
+    coverage: 'prepares',
+    status: 'Workspace: you declare the mass, TradeDocs lays it out',
   },
   {
     name: 'Export or import declaration',

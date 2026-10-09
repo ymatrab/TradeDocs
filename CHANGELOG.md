@@ -13,6 +13,16 @@
 - Six retrieval-dated sources (2026-10-09, pending owner review); RUNBOOK section; unit tests
   with recorded/synthetic fixtures and e2e smoke + axe. All pending CI.
 
+### Sales and shipping documents (D-025)
+
+- Seven more workspace documents from the shipment record, on every plan including Free:
+  quotation, purchase order, sales confirmation, sales contract draft (neutral fill-in headings,
+  "Draft — not legal advice" on every page), bill of lading draft ("the carrier issues the bill
+  of lading" on every page), shipper's letter of instruction and VGM declaration (SOLAS VI/2,
+  IMO MSC.1/Circ.1475). Container, seal, booking, vessel and VGM fields on the shipment with ISO
+  6346 check-digit validation. Snapshot schema 7, renderer `tradedocs-pdf/7`; older documents
+  render unchanged. Migration `20261009000100_sales_and_shipping_documents.sql`.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

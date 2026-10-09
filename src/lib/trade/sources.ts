@@ -39,7 +39,8 @@ export type CoreSourceId =
   | 'gov-uk-finding-commodity-codes'
   | 'cbp-rulings'
   | 'trade-gov-csl'
-  | 'trade-gov-csl-api';
+  | 'trade-gov-csl-api'
+  | 'imo-msc1-circ1475';
 
 export type SourceId = CoreSourceId | ArticleSourceId;
 
@@ -68,6 +69,8 @@ const RETRIEVED_BLOG = '2026-10-06';
 const RETRIEVED_TOOLS = '2026-10-07';
 /** The HS code lookup and denied-party screening round (D-025). */
 const RETRIEVED_LOOKUPS = '2026-10-09';
+/** The VGM declaration (D-025): the IMO guidelines it prints. */
+const RETRIEVED_VGM = '2026-10-09';
 const PENDING = 'pending owner review';
 
 const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
@@ -317,6 +320,18 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the CSL search API at data.trade.gov/consolidated_screening_list/v1/search, which needs a subscription key from a registered application',
     retrieved: RETRIEVED_LOOKUPS,
+    reviewer: PENDING,
+  },
+  'imo-msc1-circ1475': {
+    id: 'imo-msc1-circ1475',
+    authority: 'International Maritime Organization (IMO)',
+    title:
+      'MSC.1/Circ.1475: Guidelines regarding the verified gross mass of a container carrying cargo (PDF)',
+    url: 'https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/MSC.1%20Circ.1475.pdf',
+    jurisdiction: 'International (SOLAS chapter VI, regulation 2)',
+    supports:
+      'the VGM declaration: Method No. 1 (weighing the packed and sealed container) and Method No. 2 (weighing all packages and cargo items with pallets, dunnage and securing material and adding the container tare, under a certified method) in paragraph 5.1, the verified gross mass communicated in a shipping document that may be part of the shipping instructions (6.1), and the document signed by a person duly authorized by the shipper, by electronic signature or the name in capitals (6.2)',
+    retrieved: RETRIEVED_VGM,
     reviewer: PENDING,
   },
 };

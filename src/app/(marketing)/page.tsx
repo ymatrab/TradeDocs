@@ -8,9 +8,14 @@ import { Line } from '@/components/shell/line';
 import { primaryAction } from '@/components/shell/public';
 import { RevealSection } from '@/components/shell/reveal';
 import { HomeJsonLd } from '@/components/seo/json-ld';
-import { PUBLIC_TOOLS } from '@/lib/seo/site';
+import { PUBLIC_DOCUMENT_KINDS, PUBLIC_TOOLS } from '@/lib/seo/site';
 import { openGraphFor } from '@/lib/seo/social';
-import { documentKindLabels, partyRoleLabels, type DocumentKind } from '@/lib/labels';
+import {
+  documentKindGroups,
+  documentKindLabels,
+  partyRoleLabels,
+  type DocumentKind,
+} from '@/lib/labels';
 import { INCOTERMS } from '@/lib/trade/incoterms';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
 import {
@@ -163,18 +168,36 @@ const benchIncoterms: BenchIncoterm[] = INCOTERMS.map((rule) => ({
   riskPasses: rule.riskPasses,
 }));
 
+/** A label inside running text: lower-case, except an initialism such as VGM. */
+function inSentence(label: string): string {
+  return /^[A-Z]{2}/.test(label) ? label : label.charAt(0).toLowerCase() + label.slice(1);
+}
+
 /** "Commercial invoice, proforma invoice, packing list and delivery note", from the data. */
-function listOfDocuments(): string {
-  const names = documents.map((document, index) => {
-    const label: string = documentKindLabels[document.kind];
-    return index === 0 ? label : label.toLowerCase();
+function listOf(kinds: readonly DocumentKind[]): string {
+  const names = kinds.map((kind, index) => {
+    const label: string = documentKindLabels[kind];
+    return index === 0 ? label : inSentence(label);
   });
   const last = names.pop() ?? '';
   return names.length > 0 ? `${names.join(', ')} and ${last}` : last;
 }
 
+/**
+ * The public kinds the animated stack does not draw: the sales and shipping documents
+ * (D-025), named beside it rather than added as cards.
+ */
+const furtherKinds = PUBLIC_DOCUMENT_KINDS.filter(
+  (kind) => !documents.some((document) => document.kind === kind),
+);
+
+const salesKinds = furtherKinds.filter((kind) => documentKindGroups[kind] === 'sales');
+const shippingKinds = furtherKinds.filter((kind) => documentKindGroups[kind] === 'shipping');
+
 const included = [
-  `${listOfDocuments()}, as PDFs`,
+  `${listOf(documents.map((document) => document.kind))}, as PDFs`,
+  `${listOf(salesKinds)}, from the same record`,
+  `${listOf(shippingKinds)}, for your carrier and forwarder`,
   'Shipments, companies and products saved to your organization',
   'Teammates invited by link, with owner, admin and member roles',
   'A shipment’s current documents as one ZIP with a checksum manifest',
@@ -363,7 +386,7 @@ export default function Home() {
               the earlier documents are marked stale, never quietly rewritten.
             </p>
           </div>
-          <Stat value={documents.length} label="Document types from 1 entry" />
+          <Stat value={PUBLIC_DOCUMENT_KINDS.length} label="Document types from 1 entry" />
         </div>
 
         {/*
@@ -392,7 +415,9 @@ export default function Home() {
                   </dd>
                 </div>
               </dl>
-              <p className="record-foot">Example record · prepares {documents.length} documents</p>
+              <p className="record-foot">
+                Example record · prepares {PUBLIC_DOCUMENT_KINDS.length} documents
+              </p>
             </div>
           </div>
           <div
@@ -432,7 +457,9 @@ export default function Home() {
           </div>
         </div>
         <p className="note">
-          A certificate of origin template is awaiting legal review and is not offered yet.
+          The same record also prepares a {inSentence(listOf(furtherKinds))}. The sales contract
+          is a draft for both parties to review, and the carrier issues the bill of lading. A
+          certificate of origin template is awaiting legal review and is not offered yet.
         </p>
       </RevealSection>
 

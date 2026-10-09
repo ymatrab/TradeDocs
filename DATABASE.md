@@ -249,3 +249,25 @@ Generated types were extended by hand (`organization_settings`, the four documen
   blank checks, schema 6 capture on preview and generation, cross-tenant read and write denied).
   The two columns were added to `src/lib/database.types.ts` by hand; the CI
   `database-evidence` artifact is authoritative. Rollback in the migration header.
+
+### Sales and shipping documents (migration 20261009000100_sales_and_shipping_documents.sql, D-025)
+
+- `public.documents.kind` also accepts `quotation`, `purchase_order`, `sales_confirmation`,
+  `sales_contract`, `bill_of_lading_draft`, `shipper_letter_of_instruction` and
+  `vgm_declaration` (prefixes QT, PO, SC, CT, BL, SLI, VGM). `private.document_kind_known`
+  (private, no client grant) is the one list generate and preview accept; `DOCUMENT_KINDS` in
+  `src/lib/labels.ts` is pinned to it by a unit test.
+- `public.shipments` gains `container_number` (ISO 6346 shape; the app also checks the
+  check digit), `container_type`, `seal_number`, `booking_number`, `vessel_voyage`,
+  `vgm_method` (1 or 2), `vgm_kg` (positive, below 1,000,000), `vgm_weighed_on` and
+  `vgm_signatory`. No new table, policy or grant: the shipments policies cover them, an update
+  bumps the revision, and `duplicate_shipment` does not copy them.
+- Snapshot schema 7 adds those nine fields to `shipment` only when one is stated; every other
+  snapshot is schema 4, 5 or 6 exactly as before. Renderer `tradedocs-pdf/7` draws the seven new
+  kinds; the five older kinds take none of the new branches (unit test renders them byte for byte
+  with and without schema 7 fields). `generate_document` refuses a VGM declaration without
+  container number, method, mass and signatory (IMO MSC.1/Circ.1475 5.1, 6.2).
+- pgTAP: `supabase/tests/sales_and_shipping_documents.test.sql` (prefixes, VGM refusal,
+  column checks, schema 7 capture, cross-tenant read and write denied). Columns added to
+  `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
+  Rollback in the migration header.

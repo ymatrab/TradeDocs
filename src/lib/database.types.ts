@@ -873,8 +873,11 @@ export type Database = {
       }
       shipments: {
         Row: {
+          booking_number: string | null
           buyer_reference: string | null
           consignee_id: string | null
+          container_number: string | null
+          container_type: string | null
           country_of_destination: string | null
           country_of_origin: string | null
           created_at: string
@@ -892,13 +895,22 @@ export type Database = {
           proforma_valid_until: string | null
           reference: string
           revision: number
+          seal_number: string | null
           shipped_on: string | null
           status: string
           updated_at: string
+          vessel_voyage: string | null
+          vgm_kg: number | null
+          vgm_method: number | null
+          vgm_signatory: string | null
+          vgm_weighed_on: string | null
         }
         Insert: {
+          booking_number?: string | null
           buyer_reference?: string | null
           consignee_id?: string | null
+          container_number?: string | null
+          container_type?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
           created_at?: string
@@ -916,13 +928,22 @@ export type Database = {
           proforma_valid_until?: string | null
           reference: string
           revision?: number
+          seal_number?: string | null
           shipped_on?: string | null
           status?: string
           updated_at?: string
+          vessel_voyage?: string | null
+          vgm_kg?: number | null
+          vgm_method?: number | null
+          vgm_signatory?: string | null
+          vgm_weighed_on?: string | null
         }
         Update: {
+          booking_number?: string | null
           buyer_reference?: string | null
           consignee_id?: string | null
+          container_number?: string | null
+          container_type?: string | null
           country_of_destination?: string | null
           country_of_origin?: string | null
           created_at?: string
@@ -940,9 +961,15 @@ export type Database = {
           proforma_valid_until?: string | null
           reference?: string
           revision?: number
+          seal_number?: string | null
           shipped_on?: string | null
           status?: string
           updated_at?: string
+          vessel_voyage?: string | null
+          vgm_kg?: number | null
+          vgm_method?: number | null
+          vgm_signatory?: string | null
+          vgm_weighed_on?: string | null
         }
         Relationships: [
           {
