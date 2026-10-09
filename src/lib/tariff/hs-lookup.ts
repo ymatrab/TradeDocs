@@ -299,11 +299,13 @@ export function parseUkSearch(data: unknown): UkSearchResult {
   }
 
   const seen = new Set<string>();
-  const results = scored
-    .sort((a, b) => b.score - a.score)
-    .map((item) => item.entry)
-    .filter((entry) => (seen.has(entry.url) ? false : (seen.add(entry.url), true)))
-    .slice(0, HS_MAX_RESULTS);
+  const results: TariffEntry[] = [];
+  for (const { entry } of scored.sort((a, b) => b.score - a.score)) {
+    if (seen.has(entry.url)) continue;
+    seen.add(entry.url);
+    results.push(entry);
+    if (results.length === HS_MAX_RESULTS) break;
+  }
   return { kind: 'results', results };
 }
 
