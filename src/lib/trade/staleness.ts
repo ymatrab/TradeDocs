@@ -17,6 +17,7 @@ export const staleReasonLabels = {
   lines: 'Lines changed',
   packing: 'Packing changed',
   terms: 'Shipment terms changed',
+  transport: 'Container, booking or VGM details changed',
   exporter: 'Exporter details changed',
   consignee: 'Consignee details changed',
   notify: 'Notify party changed',
@@ -97,6 +98,22 @@ const TERM_FIELDS = [
   'proforma_valid_until',
 ] as const;
 
+/**
+ * Schema 7: the container, booking and VGM facts. Absent from older snapshots and from a
+ * shipment that states none, which compare as equal.
+ */
+const TRANSPORT_FIELDS = [
+  'container_number',
+  'container_type',
+  'seal_number',
+  'booking_number',
+  'vessel_voyage',
+  'vgm_method',
+  'vgm_kg',
+  'vgm_weighed_on',
+  'vgm_signatory',
+] as const;
+
 const LINE_FIELDS = [
   'position',
   'description',
@@ -175,6 +192,7 @@ export function staleReasons(issued: unknown, current: unknown): StaleReason[] {
     reasons.push('packing');
   }
   if (!sameFields(before.shipment, now.shipment, TERM_FIELDS)) reasons.push('terms');
+  if (!sameFields(before.shipment, now.shipment, TRANSPORT_FIELDS)) reasons.push('transport');
   for (const role of ['exporter', 'consignee', 'notify'] as const) {
     if (!sameFields(before[role], now[role], PARTY_FIELDS)) reasons.push(role);
   }

@@ -14,6 +14,7 @@ import {
 import { createFontSet } from './fonts';
 import { embedImage, fitWithin, type PdfImage } from './image';
 import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
+import { DOCUMENT_KINDS } from '@/lib/labels';
 
 /**
  * Renders a stored document snapshot as a PDF.
@@ -28,7 +29,7 @@ import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/6';
+export const RENDERER_VERSION = 'tradedocs-pdf/7';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -72,8 +73,11 @@ export const snapshotSchema = z.object({
    * logo, drawn at the top left of every page, and its signature or stamp image, drawn above
    * the signatory line. Schema 6 adds the shipment's `buyer_reference` (printed on
    * commercial and proforma invoices) and `proforma_valid_until` (on proforma invoices), in
-   * a second row of term boxes. Each change applies only from the schema that introduced it,
-   * so a document issued under an older schema re-renders exactly as it was issued.
+   * a second row of term boxes. Schema 7 adds the container, seal, booking, vessel and VGM
+   * fields to `shipment`. Renderer 7 adds seven kinds (quotation to VGM declaration) whose
+   * layout is new and touches no older kind. Each change applies only from the schema that
+   * introduced it, so a document issued under an older schema re-renders exactly as it was
+   * issued.
    */
   schema_version: z.number().int().min(1).optional(),
   /**
@@ -81,13 +85,7 @@ export const snapshotSchema = z.object({
    * re-render never depends on today's currency tables. Schema 1 documents used two.
    */
   money_places: z.number().int().min(0).max(4).optional(),
-  kind: z.enum([
-    'commercial_invoice',
-    'proforma_invoice',
-    'packing_list',
-    'delivery_note',
-    'certificate_of_origin',
-  ]),
+  kind: z.enum(DOCUMENT_KINDS),
   number: z.string(),
   generated_at: z.string(),
   /**
@@ -137,6 +135,17 @@ export const snapshotSchema = z.object({
     buyer_reference: z.string().nullable().optional(),
     /** Schema 6: the last day a proforma's offer stands, YYYY-MM-DD. */
     proforma_valid_until: z.string().nullable().optional(),
+    /** Schema 7: the container and booking the goods travel under, and the VGM facts. */
+    container_number: z.string().nullable().optional(),
+    container_type: z.string().nullable().optional(),
+    seal_number: z.string().nullable().optional(),
+    booking_number: z.string().nullable().optional(),
+    vessel_voyage: z.string().nullable().optional(),
+    /** SOLAS VI/2 weighing method, 1 or 2 (IMO MSC.1/Circ.1475 paragraph 5.1). */
+    vgm_method: z.number().int().min(1).max(2).nullable().optional(),
+    vgm_kg: numeric.nullable().optional(),
+    vgm_weighed_on: z.string().nullable().optional(),
+    vgm_signatory: z.string().nullable().optional(),
     revision: z.number(),
   }),
   exporter: partySchema,
@@ -219,7 +228,159 @@ const titles: Record<DocumentSnapshot['kind'], string> = {
   packing_list: 'Packing List',
   delivery_note: 'Delivery Note',
   certificate_of_origin: 'Certificate of Origin',
+  quotation: 'Quotation',
+  purchase_order: 'Purchase Order',
+  sales_confirmation: 'Sales Confirmation',
+  sales_contract: 'Sales Contract (Draft)',
+  bill_of_lading_draft: 'Bill of Lading Draft',
+  shipper_letter_of_instruction: 'Shipper’s Letter of Instruction',
+  vgm_declaration: 'Verified Gross Mass Declaration',
 };
+
+type Kind = DocumentSnapshot['kind'];
+
+/**
+ * The kinds renderer 6 and earlier drew. Their layout is evidence and does not change; every
+ * branch for a newer kind below is taken only when the kind is not one of these.
+ */
+const LEGACY_KINDS: ReadonlySet<Kind> = new Set<Kind>([
+  'commercial_invoice',
+  'proforma_invoice',
+  'packing_list',
+  'delivery_note',
+  'certificate_of_origin',
+]);
+
+function isLegacyKind(kind: Kind): boolean {
+  return LEGACY_KINDS.has(kind);
+}
+
+/** Renderer 7 kinds that price the goods, and so print a total amount. */
+const PRICED_KINDS: ReadonlySet<Kind> = new Set<Kind>([
+  'quotation',
+  'purchase_order',
+  'sales_confirmation',
+  'sales_contract',
+  'shipper_letter_of_instruction',
+]);
+
+/** Renderer 7 kinds a carrier or forwarder reads: container, booking and weights. */
+const SHIPPING_KINDS: ReadonlySet<Kind> = new Set<Kind>([
+  'bill_of_lading_draft',
+  'shipper_letter_of_instruction',
+  'vgm_declaration',
+]);
+
+/** The two party boxes' captions: who the exporter and the consignee are on this document. */
+const partyCaptions: Partial<Record<Kind, [string, string]>> = {
+  quotation: ['Seller', 'Buyer'],
+  purchase_order: ['Supplier / Seller', 'Buyer'],
+  sales_confirmation: ['Seller', 'Buyer'],
+  sales_contract: ['Seller', 'Buyer'],
+  bill_of_lading_draft: ['Shipper', 'Consignee'],
+  shipper_letter_of_instruction: ['Shipper / Exporter', 'Ultimate consignee'],
+  vgm_declaration: ['Shipper (responsible for the VGM)', 'Consignee'],
+};
+
+/**
+ * What a renderer 7 document is not, printed under the header of every page. Not
+ * configurable: a draft contract must never read as advice, a draft bill of lading never as
+ * the carrier's, and a declared mass never as one TradeDocs verified.
+ */
+const kindNotices: Partial<Record<Kind, string>> = {
+  sales_contract: 'DRAFT — NOT LEGAL ADVICE. BOTH PARTIES SHOULD REVIEW EVERY TERM BEFORE SIGNING.',
+  bill_of_lading_draft:
+    'DRAFT SHIPPING INSTRUCTIONS FOR YOUR CARRIER — THE CARRIER ISSUES THE BILL OF LADING.',
+  shipper_letter_of_instruction:
+    'INSTRUCTIONS FROM THE SHIPPER TO ITS FORWARDER. NOT A CUSTOMS OR EXPORT FILING.',
+  vgm_declaration:
+    'DECLARED BY THE SHIPPER. TRADEDOCS DOES NOT WEIGH OR VERIFY THE MASS STATED HERE.',
+};
+
+/** A line to write on: what a draft prints where the record states nothing. */
+const BLANK = '________________________________________';
+
+/**
+ * The sales contract's headings, each filled from the record where it can be and otherwise
+ * left blank for the parties. Neutral by design: headings and the parties' own data, never
+ * contract wording TradeDocs proposes.
+ */
+function contractClauses(snapshot: DocumentSnapshot): [string, string][] {
+  const { shipment, issuer } = snapshot;
+  const moneyPlaces = snapshot.money_places ?? 2;
+  const term = [shipment.incoterm, shipment.incoterm_place].filter(Boolean).join(' ');
+  const total = `${decimal(snapshot.totals.value, moneyPlaces)} ${shipment.currency}`;
+  return [
+    ['1. GOODS AND QUANTITY', 'As listed above.'],
+    [
+      '2. PRICE AND DELIVERY TERM',
+      term
+        ? `Total ${total}, ${term} (Incoterms® 2020).`
+        : `Total ${total}. Delivery term: ${BLANK}`,
+    ],
+    ['3. PAYMENT', issuer?.payment_terms || BLANK],
+    ['4. TIME OF SHIPMENT', shipment.shipped_on || BLANK],
+    ['5. PACKING AND MARKING', shipment.marks_and_numbers || BLANK],
+    ['6. INSPECTION AND ACCEPTANCE', BLANK],
+    ['7. INSURANCE', BLANK],
+    ['8. GOVERNING LAW AND DISPUTES', `To be agreed by the parties: ${BLANK}`],
+    ['9. OTHER TERMS', BLANK],
+  ];
+}
+
+/** The fill-in lines a draft bill of lading or letter of instruction leaves to the shipper. */
+function shippingInstructions(kind: Kind): [string, string][] {
+  if (kind === 'bill_of_lading_draft') {
+    return [
+      ['FREIGHT PAYABLE AT', BLANK],
+      ['NUMBER OF ORIGINAL BILLS REQUESTED', BLANK],
+      ['PLACE AND DATE OF ISSUE', 'Stated by the carrier on the bill of lading it issues.'],
+    ];
+  }
+  if (kind === 'shipper_letter_of_instruction') {
+    return [
+      ['FORWARDER', BLANK],
+      ['FREIGHT (PREPAID OR COLLECT)', BLANK],
+      ['INSURANCE', BLANK],
+      ['EXPORT FILING, IF ANY, BY', BLANK],
+      ['SPECIAL INSTRUCTIONS', BLANK],
+    ];
+  }
+  return [];
+}
+
+/** IMO MSC.1/Circ.1475 paragraphs 5.1.1 and 5.1.2, in a phrase each. */
+const VGM_METHODS: Record<1 | 2, string> = {
+  1: 'Method No. 1: the packed and sealed container was weighed',
+  2:
+    'Method No. 2: all packages and cargo items, with pallets, dunnage and securing ' +
+    'material, were weighed and the container tare added (certified method)',
+};
+
+/** The VGM declaration's facts, as caption and value, in the order it prints them. */
+function vgmFacts(snapshot: DocumentSnapshot): [string, string][] {
+  const { shipment } = snapshot;
+  const container = [shipment.container_number, shipment.container_type]
+    .filter(Boolean)
+    .join(' · ');
+  const method = shipment.vgm_method === 1 || shipment.vgm_method === 2 ? shipment.vgm_method : 0;
+  return [
+    ['Container number / type', container || '—'],
+    ['Seal number', shipment.seal_number || '—'],
+    ['Booking number', shipment.booking_number || '—'],
+    ['Weighing method', method ? VGM_METHODS[method] : '—'],
+    ['VERIFIED GROSS MASS', shipment.vgm_kg == null ? '—' : `${decimal(shipment.vgm_kg, 3)} kg`],
+    ['Date of weighing', shipment.vgm_weighed_on || '—'],
+    ['Authorized person (name in capitals)', (shipment.vgm_signatory ?? '—').toUpperCase()],
+  ];
+}
+
+/** The SOLAS basis a VGM declaration states, as the IMO guidelines set it out. */
+const VGM_BASIS =
+  'The shipper provides the verified gross mass of the packed container under SOLAS chapter ' +
+  'VI, regulation 2, as set out in IMO MSC.1/Circ.1475. It is signed by a person duly ' +
+  'authorized by the shipper; the name in capitals may stand in place of a signature ' +
+  '(paragraph 6.2).';
 
 /**
  * The statement of what this document is, and is not. It is rendered on every page of every
@@ -379,6 +540,40 @@ function columnsFor(
   if (kind === 'certificate_of_origin') {
     return [description, hs, origin, quantity];
   }
+  // Renderer 7 kinds. A carrier reads packages and gross weight, not prices.
+  const packages: Column = {
+    header: 'Packages',
+    width: 66,
+    align: 'right',
+    value: (item) =>
+      item.package_count ? `${item.package_count} ${item.package_kind ?? ''}`.trim() : '—',
+  };
+  const gross: Column = {
+    header: 'Gross kg',
+    width: 62,
+    align: 'right',
+    value: (item) => (item.gross_weight_kg == null ? '—' : decimal(item.gross_weight_kg, 3)),
+  };
+  if (kind === 'bill_of_lading_draft') {
+    return [description, hs, packages, gross];
+  }
+  if (kind === 'vgm_declaration') {
+    return [description, packages, gross];
+  }
+  if (kind === 'shipper_letter_of_instruction') {
+    return [
+      description,
+      hs,
+      quantity,
+      gross,
+      {
+        header: 'Value',
+        width: 84,
+        align: 'right',
+        value: (item) => decimal(item.line_total, moneyPlaces),
+      },
+    ];
+  }
   return [
     description,
     hs,
@@ -421,6 +616,7 @@ function drawBox(page: Page, x: number, y: number, width: number, height: number
 
 /** The totals block, as label and printed value, in the order the document prints them. */
 function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
+  if (!isLegacyKind(snapshot.kind)) return renderer7TotalsFor(snapshot);
   const schema = schemaOf(snapshot);
   const moneyPlaces = snapshot.money_places ?? 2;
   const packing = snapshot.kind === 'packing_list' ? (snapshot.packages ?? []) : [];
@@ -444,6 +640,32 @@ function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
     }
   }
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
+    totals.push([
+      'Total amount',
+      `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
+    ]);
+  }
+  return totals;
+}
+
+/**
+ * Totals for the renderer 7 kinds: the amount on those that price the goods, and packages
+ * and gross weight on those a carrier reads. Described packages take precedence over the
+ * per-line counts, as on the packing list; a weight nothing states is left out, not zero.
+ */
+function renderer7TotalsFor(snapshot: DocumentSnapshot): [string, string][] {
+  const moneyPlaces = snapshot.money_places ?? 2;
+  const totals: [string, string][] = [['Total quantity', decimal(snapshot.totals.quantity, 3)]];
+  if (SHIPPING_KINDS.has(snapshot.kind)) {
+    const packed = (snapshot.packages ?? []).length > 0 ? snapshot.packing_totals : undefined;
+    totals.push(['Total packages', decimal(packed?.packages ?? snapshot.totals.packages, 0)]);
+    const gross = packed?.gross_weight_kg ?? snapshot.totals.gross_weight_kg;
+    if (gross != null) totals.push(['Total gross weight', `${decimal(gross, 3)} kg`]);
+    if (packed && Number(packed.volume_m3) > 0) {
+      totals.push(['Total volume', `${decimal(packed.volume_m3, 3)} m³`]);
+    }
+  }
+  if (PRICED_KINDS.has(snapshot.kind)) {
     totals.push([
       'Total amount',
       `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
@@ -480,6 +702,7 @@ function fitLines(
  * and value. Empty for every older snapshot and for documents that are not invoices.
  */
 function commercialTermsFor(snapshot: DocumentSnapshot): [string, string][] {
+  if (!isLegacyKind(snapshot.kind)) return renderer7TermsFor(snapshot);
   if (schemaOf(snapshot) < 6) return [];
   const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
   if (!invoice) return [];
@@ -487,6 +710,32 @@ function commercialTermsFor(snapshot: DocumentSnapshot): [string, string][] {
   const { buyer_reference: buyerReference, proforma_valid_until: validUntil } = snapshot.shipment;
   if (buyerReference) terms.push(['Buyer reference / PO', buyerReference]);
   if (snapshot.kind === 'proforma_invoice' && validUntil) terms.push(['Valid until', validUntil]);
+  return terms;
+}
+
+/**
+ * The second row of term boxes on a renderer 7 kind: the offer's validity on a quotation,
+ * the buyer's reference on a confirmation or contract, and the container and booking on a
+ * shipping document. A box whose value the record does not state is left out.
+ */
+function renderer7TermsFor(snapshot: DocumentSnapshot): [string, string][] {
+  const { shipment, kind } = snapshot;
+  const terms: [string, string][] = [];
+  if (kind === 'quotation' && shipment.proforma_valid_until) {
+    terms.push(['Valid until', shipment.proforma_valid_until]);
+  }
+  if ((kind === 'sales_confirmation' || kind === 'sales_contract') && shipment.buyer_reference) {
+    terms.push(['Buyer reference / PO', shipment.buyer_reference]);
+  }
+  if (SHIPPING_KINDS.has(kind) && kind !== 'vgm_declaration') {
+    const container = [shipment.container_number, shipment.container_type]
+      .filter(Boolean)
+      .join(' · ');
+    terms.push(['Vessel / voyage', shipment.vessel_voyage || '—']);
+    terms.push(['Booking number', shipment.booking_number || '—']);
+    terms.push(['Container / type', container || '—']);
+    terms.push(['Seal number', shipment.seal_number || '—']);
+  }
   return terms;
 }
 
@@ -511,6 +760,8 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   const layout = columns.map((column) =>
     column.width === 0 ? { ...column, width: CONTENT_WIDTH - fixed - 24 } : column,
   );
+
+  const notice = isLegacyKind(snapshot.kind) ? undefined : kindNotices[snapshot.kind];
 
   const pages: Page[] = [];
   let page = new Page(fonts);
@@ -556,6 +807,14 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
     cursor -= 10;
     page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 1, 0.15);
     cursor -= 16;
+    // Renderer 7: what this kind is not, on every page, before anything else is read.
+    if (notice) {
+      for (const line of wrap(fonts, notice, CONTENT_WIDTH, 7.5, 'bold')) {
+        page.text(line, MARGIN, cursor, { size: 7.5, font: 'bold' });
+        cursor -= 10;
+      }
+      cursor -= 8;
+    }
   };
 
   const drawTableHeader = (): void => {
@@ -579,9 +838,13 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
 
   // Parties, in the boxed arrangement trade paperwork uses.
   const boxWidth = (CONTENT_WIDTH - 10) / 2;
+  const [exporterCaption, consigneeCaption] = partyCaptions[snapshot.kind] ?? [
+    'Exporter / Consignor',
+    'Consignee',
+  ];
   const parties: [string, DocumentSnapshot['exporter']][] = [
-    ['Exporter / Consignor', snapshot.exporter],
-    ['Consignee', snapshot.consignee],
+    [exporterCaption, snapshot.exporter],
+    [consigneeCaption, snapshot.consignee],
   ];
   const boxHeight = 78;
   parties.forEach(([caption, party], index) => {
@@ -656,7 +919,10 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   // totals with it (schema 4): a totals block is never alone at the top of a page.
   const totals = totalsFor(snapshot);
   const totalsHeight = 6 + totals.length * 12;
-  const packedOn = snapshot.kind === 'packing_list' || snapshot.kind === 'delivery_note';
+  const packedOn =
+    snapshot.kind === 'packing_list' ||
+    snapshot.kind === 'delivery_note' ||
+    snapshot.kind === 'bill_of_lading_draft';
   const packing = packedOn ? (snapshot.packages ?? []) : [];
 
   drawTableHeader();
@@ -821,9 +1087,81 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
     }
   };
 
-  if (snapshot.shipment.marks_and_numbers) {
+  const legacy = isLegacyKind(snapshot.kind);
+  // The contract states its marks in its own packing clause.
+  if (snapshot.shipment.marks_and_numbers && snapshot.kind !== 'sales_contract') {
     block('MARKS AND NUMBERS', snapshot.shipment.marks_and_numbers);
   }
+
+  /** Renderer 7: the VGM facts, the SOLAS basis, and the authorized person's line. */
+  const drawVgm = (): void => {
+    const labelWidth = 200;
+    const rows = vgmFacts(snapshot).map(([caption, value]) => ({
+      caption,
+      strong: caption === 'VERIFIED GROSS MASS',
+      lines: fitLines(fonts, [value], CONTENT_WIDTH - labelWidth - 6, 8.5, 3),
+    }));
+    const height = rows.reduce((sum, row) => sum + row.lines.length * 10 + 8, 0);
+    if (cursor - 24 - height < CONTENT_BOTTOM) startPage(true);
+    cursor -= 14;
+    page.text('VERIFIED GROSS MASS OF THE PACKED CONTAINER', MARGIN, cursor, {
+      size: 6.5,
+      font: 'bold',
+    });
+    cursor -= 6;
+    page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.8, 0.35);
+    for (const row of rows) {
+      page.text(row.caption.toUpperCase(), MARGIN + 6, cursor - 12, { size: 6.5, font: 'bold' });
+      row.lines.forEach((line, index) => {
+        page.text(line, MARGIN + labelWidth, cursor - 12 - index * 10, {
+          size: row.strong ? 10 : 8.5,
+          font: row.strong ? 'bold' : 'regular',
+        });
+      });
+      cursor -= row.lines.length * 10 + 8;
+      page.line(MARGIN, cursor, PAGE_WIDTH - MARGIN, cursor, 0.4, 0.82);
+    }
+    block('BASIS', VGM_BASIS);
+    if (cursor - 48 < CONTENT_BOTTOM) startPage(true);
+    cursor -= 30;
+    page.line(MARGIN, cursor, MARGIN + 200, cursor, 0.5, 0.35);
+    cursor -= 10;
+    const name = (snapshot.shipment.vgm_signatory ?? '').toUpperCase();
+    page.text(`Signature of the authorized person${name ? `: ${name}` : ''}`, MARGIN, cursor, {
+      size: 8.5,
+    });
+    cursor -= 8;
+  };
+
+  /** Renderer 7: a line for each party of a contract to sign on, side by side. */
+  const drawPartySignatures = (): void => {
+    const nameOf = (party: DocumentSnapshot['exporter']): string =>
+      party?.legal_name || party?.name || '';
+    const sides: [string, string][] = [
+      ['For the seller', nameOf(snapshot.exporter)],
+      ['For the buyer', nameOf(snapshot.consignee)],
+    ];
+    if (cursor - 64 < CONTENT_BOTTOM) startPage(true);
+    cursor -= 40;
+    sides.forEach(([caption, name], index) => {
+      const x = MARGIN + index * (boxWidth + 10);
+      page.line(x, cursor, x + 200, cursor, 0.5, 0.35);
+      const [line] = fitLines(fonts, [name ? `${caption}: ${name}` : caption], boxWidth, 8.5, 1);
+      page.text(line ?? caption, x, cursor - 10, { size: 8.5 });
+      page.text('Name, title and date', x, cursor - 20, { size: 7 });
+    });
+    cursor -= 28;
+  };
+
+  if (!legacy) {
+    if (snapshot.kind === 'sales_contract') {
+      for (const [caption, text] of contractClauses(snapshot)) block(caption, text);
+    }
+    for (const [caption, text] of shippingInstructions(snapshot.kind)) block(caption, text);
+    if (snapshot.kind === 'vgm_declaration') drawVgm();
+  }
+  // The contract and the VGM declaration carry their own signature lines.
+  const ownSignatures = snapshot.kind === 'sales_contract' || snapshot.kind === 'vgm_declaration';
 
   const signature = branding.signature
     ? { image: branding.signature, ...fitWithin(branding.signature, SIGNATURE_BOX) }
@@ -831,10 +1169,15 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
   if (v4 && (snapshot.issuer || signature)) {
     const issuer: NonNullable<DocumentSnapshot['issuer']> = snapshot.issuer ?? {};
     const invoice = snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice';
-    if (invoice && issuer.payment_terms) block('PAYMENT TERMS', issuer.payment_terms);
+    // Renderer 7: the offer, the order and its confirmation state the issuer's payment terms.
+    const offer =
+      snapshot.kind === 'quotation' ||
+      snapshot.kind === 'purchase_order' ||
+      snapshot.kind === 'sales_confirmation';
+    if ((invoice || offer) && issuer.payment_terms) block('PAYMENT TERMS', issuer.payment_terms);
     if (invoice && issuer.bank_details) block('BANK DETAILS', issuer.bank_details);
     if (issuer.document_notes) block('NOTES', issuer.document_notes);
-    if (issuer.signatory_name || signature) {
+    if (!ownSignatures && (issuer.signatory_name || signature)) {
       // A place to sign and the name it is signed for. Without an uploaded signature image
       // it is not a signature: the document stays a preparation until a person signs it.
       // Schema 5 draws the organization's own signature or stamp image above the line.
@@ -856,6 +1199,7 @@ function layoutTradeDocument(input: unknown, fonts: FontSet, images?: BrandingIm
       cursor -= 8;
     }
   }
+  if (snapshot.kind === 'sales_contract') drawPartySignatures();
 
   // The disclosure and page numbers go on every page, added once the count is known.
   const disclosure = snapshot.preview

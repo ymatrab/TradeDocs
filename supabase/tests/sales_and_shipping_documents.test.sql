@@ -92,7 +92,7 @@ select throws_ok(
   '23514', null, 'a blank signatory is refused; absent is null');
 
 update public.shipments
-set container_number = 'MSCU1234565', container_type = '40HC', seal_number = 'SL-889',
+set container_number = 'MSCU1234566', container_type = '40HC', seal_number = 'SL-889',
     booking_number = 'BK-77', vgm_method = 1, vgm_kg = 18250.5, vgm_weighed_on = '2026-10-08',
     vgm_signatory = 'CLEO OWNER'
 where id = current_setting('tests.shipment')::uuid;
@@ -121,7 +121,7 @@ select is(
 select is(
   (select snapshot -> 'shipment' ->> 'container_number' from public.documents
    where id = current_setting('tests.vgm')::uuid),
-  'MSCU1234565',
+  'MSCU1234566',
   'the VGM declaration records the container number'
 );
 
