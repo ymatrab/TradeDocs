@@ -2,6 +2,17 @@
 
 ## Unreleased — 2026-09-06
 
+### HS code lookup and denied-party screening (D-025)
+
+- `/tools/hs-code-lookup`: live server-side search of the USITC HTS and the GOV.UK Trade Tariff
+  (`src/lib/tariff/`), code, description and official link only; never a duty rate; "a lookup,
+  not a classification" callout; per-tariff unavailable state; 24 h cache; quota 60/10 min.
+- `/tools/denied-party-screening`: trade.gov Consolidated Screening List search
+  (`src/lib/screening/`) behind `CSL_API_KEY`; without it an honest not-available state with
+  the official CSL search, noindex and unlisted. Names are not stored or logged; quota 30/10 min.
+- Six retrieval-dated sources (2026-10-09, pending owner review); RUNBOOK section; unit tests
+  with recorded/synthetic fixtures and e2e smoke + axe. All pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

@@ -182,6 +182,42 @@ returns `{ purged, blocked, ran_at }`; 503 means `CRON_SECRET` is unset, 401 a w
 Rollback: unschedule (remove the cron entry / `select cron.unschedule('purge-accounts')`).
 Purged accounts cannot be restored except from a database backup.
 
+## Official lookups: HS codes and denied-party screening (D-025)
+
+Both tools call official services from the server; neither stores or logs what is searched.
+
+**HS code lookup** (`/tools/hs-code-lookup`, `GET /api/tools/hs-lookup?q=`) needs no key. It
+calls the USITC HTS REST search (`https://hts.usitc.gov/reststop/search?keyword=`) and the
+GOV.UK Trade Tariff public read API (`https://www.trade-tariff.service.gov.uk/uk/api/search?q=`,
+`Accept: application/vnd.hmrc.2.0+json`; detail reads under `/uk/api/{headings|subheadings|
+commodities|chapters}/{id}` for an exact code). Calls time out after 6 s, refuse redirects,
+cap the response at 3 MB and are cached for 24 hours (the UK documentation asks
+unauthenticated callers to cache). A failing service shows "The official service did not
+answer" for that tariff only. Logs carry `hs-lookup: <us|uk> tariff unavailable (<status>)`
+and never the query. If the UK unauthenticated rate limit starts refusing (429 in the log),
+register on the Trade Tariff developer portal and move to `api.trade-tariff.service.gov.uk`
+with OAuth client credentials (code change; not built). Quota: 60 lookups per address per 10
+minutes where quotas are enforced (`src/lib/limits.ts`).
+
+**Denied-party screening** (`/tools/denied-party-screening`, `POST /api/tools/denied-party`)
+needs `CSL_API_KEY`, the trade.gov subscription key:
+
+1. At https://developer.trade.gov/ register and obtain a subscription key that covers the
+   Consolidated Screening List API (the API answers 401 "missing subscription key" without
+   one).
+2. In Vercel, add `CSL_API_KEY` (Sensitive) to Production (and Preview if wanted), then
+   redeploy so the hub, related-tools blocks and static pages pick it up.
+3. Check: the page shows the search form, `/tools` lists it, `/sitemap.xml` and `/llms.txt`
+   include it, and a test search returns results.
+
+Without the key (or with a malformed one) the page says it is not available, links the
+official CSL search (https://www.trade.gov/data-visualization/csl-search), is noindex and is
+listed nowhere; the API answers 503 `not_configured`. A key trade.gov refuses logs
+`denied-party: CSL refused the subscription key (401|403)`; rotate it in the portal and
+Vercel. Other failures log `denied-party: CSL unavailable (<status>)`. Calls are `no-store`,
+time out after 8 s and send the key only as the `subscription-key` header. Quota: 30 searches
+per address per 10 minutes. Rollback: remove `CSL_API_KEY` and redeploy.
+
 ## Auth settings on the hosted project (owner, Supabase dashboard)
 
 Local and CI read `supabase/config.toml`; the hosted project must be set by hand to match:
