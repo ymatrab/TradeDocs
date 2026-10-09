@@ -9,6 +9,7 @@ import { DataTable } from '@/components/primitives/table';
 import { DocumentStatus, type DocumentState } from '@/components/document/status';
 import { LinkButton } from '@/components/primitives/button';
 import { documentKindLabel } from '@/lib/labels';
+import { currentEsignConfig } from '@/lib/esign/server';
 
 export const metadata: Metadata = { title: 'Documents' };
 
@@ -81,6 +82,8 @@ export default async function DocumentsPage({
         : true,
   );
   const base = `/app/${org}/documents`;
+  // E-signature is offered only once a provider is connected; until then nothing claims it.
+  const esignAvailable = currentEsignConfig().state === 'ready';
 
   return (
     <AppShell title="Documents" current="Documents" orgId={org}>
@@ -156,6 +159,15 @@ export default async function DocumentsPage({
                             compact
                           >
                             Review<span className="sr-only"> {document.number}</span>
+                          </LinkButton>
+                        ) : null}
+                        {esignAvailable && document.shown === 'final' ? (
+                          <LinkButton
+                            href={`${base}/${document.id}/signature`}
+                            tone="quiet"
+                            compact
+                          >
+                            E-sign<span className="sr-only"> {document.number}</span>
                           </LinkButton>
                         ) : null}
                         <LinkButton

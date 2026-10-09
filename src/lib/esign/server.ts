@@ -41,7 +41,22 @@ export function signedObjectPath(orgId: string, requestId: string, sha256: strin
   return `org/${orgId}/esign/${requestId}/${sha256}.pdf`;
 }
 
-function serviceHeaders(config: ReadyEsignConfig): Record<string, string> {
+/** What the service-role calls need: a signed copy stays downloadable without the API key. */
+export type ServiceConnection = Pick<ReadyEsignConfig, 'supabaseUrl' | 'serviceRoleKey'>;
+
+/** The service-role connection on its own, or null when this deployment has none. */
+export function serviceConnection(): ServiceConnection | null {
+  try {
+    const env = getServerEnv();
+    return env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY
+      ? { supabaseUrl: env.SUPABASE_URL, serviceRoleKey: env.SUPABASE_SERVICE_ROLE_KEY }
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+function serviceHeaders(config: ServiceConnection): Record<string, string> {
   return {
     apikey: config.serviceRoleKey,
     Authorization: `Bearer ${config.serviceRoleKey}`,
@@ -50,7 +65,7 @@ function serviceHeaders(config: ReadyEsignConfig): Record<string, string> {
 
 /** Calls a service-role routine. Throws on any failure, with the status only. */
 export async function serviceRpc<T>(
-  config: ReadyEsignConfig,
+  config: ServiceConnection,
   name: string,
   args: Record<string, unknown>,
   fetcher: typeof fetch = fetch,
