@@ -91,7 +91,9 @@ describe('CSL response parsing', () => {
 describe('screening outcomes (stubbed fetch)', () => {
   it('names a refused key as an operator problem without logging the name', async () => {
     const errors = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-    const fetcher = vi.fn(async () => new Response('{}', { status: 401 })) as unknown as typeof fetch;
+    const fetcher = vi.fn(
+      async () => new Response('{}', { status: 401 }),
+    ) as unknown as typeof fetch;
     const outcome = await screenName({ name: 'Fixture Trading', fuzzy: true }, KEY, fetcher);
     expect(outcome).toEqual({ status: 'unavailable', reason: 'rejected_key' });
     expect(JSON.stringify(errors.mock.calls)).not.toContain('Fixture');

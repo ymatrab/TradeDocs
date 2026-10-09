@@ -29,7 +29,11 @@ import {
   revokeToken,
   xeroTenant,
 } from '@/lib/integrations/oauth';
-import { providerCapabilities, providerConfig, type ProviderConfig } from '@/lib/integrations/providers';
+import {
+  providerCapabilities,
+  providerConfig,
+  type ProviderConfig,
+} from '@/lib/integrations/providers';
 import {
   featureOffered,
   featurePlans,
@@ -82,8 +86,10 @@ function recorder(responses: (() => Response)[]) {
   return { calls, fetcher };
 }
 
-const json = (body: unknown, status = 200) => () =>
-  new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
+const json =
+  (body: unknown, status = 200) =>
+  () =>
+    new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
 
 // --- Encryption -------------------------------------------------------------------------
 
@@ -224,7 +230,9 @@ describe('a provider is available only with complete configuration', () => {
     expect(ready('quickbooks').redirectUri).toBe(
       'https://tradedocs.example/api/integrations/quickbooks/callback',
     );
-    expect(ready('xero').redirectUri).toBe('https://tradedocs.example/api/integrations/xero/callback');
+    expect(ready('xero').redirectUri).toBe(
+      'https://tradedocs.example/api/integrations/xero/callback',
+    );
   });
 
   it('uses the QuickBooks sandbox outside production unless told otherwise', () => {
@@ -289,12 +297,19 @@ describe('the authorization code flow', () => {
   it('records the QuickBooks refresh token lifetime it states', () => {
     const now = new Date('2026-10-09T12:00:00Z');
     const set = readTokenSet(
-      { access_token: 'a', refresh_token: 'r', expires_in: 3600, x_refresh_token_expires_in: 8_726_400 },
+      {
+        access_token: 'a',
+        refresh_token: 'r',
+        expires_in: 3600,
+        x_refresh_token_expires_in: 8_726_400,
+      },
       now,
     );
     expect(set.refreshExpiresAt?.toISOString()).toBe('2027-01-18T12:00:00.000Z');
     expect(() => readTokenSet({ access_token: 'a', expires_in: 3600 }, now)).toThrow(ProviderError);
-    expect(() => readTokenSet({ refresh_token: 'r', expires_in: 3600 }, now)).toThrow(ProviderError);
+    expect(() => readTokenSet({ refresh_token: 'r', expires_in: 3600 }, now)).toThrow(
+      ProviderError,
+    );
   });
 
   it('keeps the old refresh token when a refresh does not rotate it', async () => {
@@ -313,7 +328,9 @@ describe('the authorization code flow', () => {
   it('revokes at each provider in the form it documents', async () => {
     const quickbooks = recorder([() => new Response(null, { status: 200 })]);
     await revokeToken(ready('quickbooks'), 'RT', quickbooks.fetcher);
-    expect(quickbooks.calls[0]?.url).toBe('https://developer.api.intuit.com/v2/oauth2/tokens/revoke');
+    expect(quickbooks.calls[0]?.url).toBe(
+      'https://developer.api.intuit.com/v2/oauth2/tokens/revoke',
+    );
     expect(JSON.parse(quickbooks.calls[0]?.init.body as string)).toEqual({ token: 'RT' });
 
     const xero = recorder([() => new Response(null, { status: 200 })]);
@@ -329,8 +346,22 @@ describe('the authorization code flow', () => {
     const token = `header.${claims}.signature`;
     const { calls, fetcher } = recorder([
       json([
-        { id: 'c1', authEventId: 'evt-1', tenantId: 't-old', tenantType: 'ORGANISATION', tenantName: 'Old Ltd', createdDateUtc: '2026-10-09T12:00:00' },
-        { id: 'c2', authEventId: 'evt-2', tenantId: 't-new', tenantType: 'ORGANISATION', tenantName: 'New Ltd', createdDateUtc: '2026-01-01T00:00:00' },
+        {
+          id: 'c1',
+          authEventId: 'evt-1',
+          tenantId: 't-old',
+          tenantType: 'ORGANISATION',
+          tenantName: 'Old Ltd',
+          createdDateUtc: '2026-10-09T12:00:00',
+        },
+        {
+          id: 'c2',
+          authEventId: 'evt-2',
+          tenantId: 't-new',
+          tenantType: 'ORGANISATION',
+          tenantName: 'New Ltd',
+          createdDateUtc: '2026-01-01T00:00:00',
+        },
         { id: 'c3', authEventId: 'evt-2', tenantId: 't-practice', tenantType: 'PRACTICEMANAGER' },
       ]),
     ]);
@@ -362,8 +393,12 @@ describe('provider reads are paged and bounded', () => {
     const first = new URL(calls[0]?.url as string);
     expect(first.origin).toBe('https://sandbox-quickbooks.api.intuit.com');
     expect(first.pathname).toBe('/v3/company/9130000000000001/query');
-    expect(first.searchParams.get('query')).toBe('select * from Customer STARTPOSITION 1 MAXRESULTS 100');
-    expect(new URL(calls[1]?.url as string).searchParams.get('query')).toContain('STARTPOSITION 101');
+    expect(first.searchParams.get('query')).toBe(
+      'select * from Customer STARTPOSITION 1 MAXRESULTS 100',
+    );
+    expect(new URL(calls[1]?.url as string).searchParams.get('query')).toContain(
+      'STARTPOSITION 101',
+    );
     expect((calls[0]?.init.headers as Record<string, string>).Authorization).toBe('Bearer AT');
   });
 
@@ -396,7 +431,12 @@ describe('provider reads are paged and bounded', () => {
       json({ Contacts: page(PAGE_SIZE) }),
       json({ Contacts: [] }),
     ]);
-    const result = await fetchXero('company', { accessToken: 'AT', tenantId: 'tenant-1' }, 2000, fetcher);
+    const result = await fetchXero(
+      'company',
+      { accessToken: 'AT', tenantId: 'tenant-1' },
+      2000,
+      fetcher,
+    );
     expect(result.entries).toHaveLength(PAGE_SIZE);
     expect(calls).toHaveLength(2);
     const url = new URL(calls[1]?.url as string);
@@ -486,7 +526,12 @@ describe('QuickBooks records map onto the directory and catalog', () => {
   it('skips inactive customers and leaves unusable values blank with a note', () => {
     const { records, ignored } = mapQuickBooksCustomers([
       { ...customer, Id: '1', Active: false },
-      { Id: '2', DisplayName: 'Narnia Co', PrimaryEmailAddr: { Address: 'not an email' }, BillAddr: { Country: 'Narnia' } },
+      {
+        Id: '2',
+        DisplayName: 'Narnia Co',
+        PrimaryEmailAddr: { Address: 'not an email' },
+        BillAddr: { Country: 'Narnia' },
+      },
       'not an object',
     ]);
     expect(ignored).toBe(1);
@@ -501,7 +546,15 @@ describe('QuickBooks records map onto the directory and catalog', () => {
 
   it('maps items, skipping categories, with exact prices', () => {
     const { records, ignored } = mapQuickBooksItems([
-      { Id: '1', Name: 'Tea towel', Sku: 'TT-50', Description: 'Cotton tea towel, 50 x 70 cm', UnitPrice: 2.4, Type: 'Inventory', Active: true },
+      {
+        Id: '1',
+        Name: 'Tea towel',
+        Sku: 'TT-50',
+        Description: 'Cotton tea towel, 50 x 70 cm',
+        UnitPrice: 2.4,
+        Type: 'Inventory',
+        Active: true,
+      },
       { Id: '2', Name: 'Mug', UnitPrice: 3, Type: 'NonInventory' },
       { Id: '3', Name: 'Kitchen', Type: 'Category' },
       { Id: '4', Name: 'Old', Active: false },
@@ -529,12 +582,30 @@ describe('Xero records map onto the directory and catalog', () => {
         IsSupplier: true,
         IsCustomer: false,
         Addresses: [
-          { AddressType: 'POBOX', AddressLine1: 'Postfach 10', City: 'Hamburg', Country: 'Germany' },
-          { AddressType: 'STREET', AddressLine1: 'Kehrwieder 2', AddressLine2: 'Block D', City: 'Hamburg', Region: 'HH', PostalCode: '20457', Country: 'DE' },
+          {
+            AddressType: 'POBOX',
+            AddressLine1: 'Postfach 10',
+            City: 'Hamburg',
+            Country: 'Germany',
+          },
+          {
+            AddressType: 'STREET',
+            AddressLine1: 'Kehrwieder 2',
+            AddressLine2: 'Block D',
+            City: 'Hamburg',
+            Region: 'HH',
+            PostalCode: '20457',
+            Country: 'DE',
+          },
         ],
         Phones: [
           { PhoneType: 'MOBILE', PhoneNumber: '1700000' },
-          { PhoneType: 'DEFAULT', PhoneCountryCode: '49', PhoneAreaCode: '40', PhoneNumber: '1234567' },
+          {
+            PhoneType: 'DEFAULT',
+            PhoneCountryCode: '49',
+            PhoneAreaCode: '40',
+            PhoneNumber: '1234567',
+          },
         ],
       },
     ]);
@@ -567,7 +638,13 @@ describe('Xero records map onto the directory and catalog', () => {
 
   it('maps items with their code and sales price', () => {
     const { records } = mapXeroItems([
-      { ItemID: 'c8c54d65', Code: '123', Name: 'Strat', Description: 'Guitars Fender Strat', SalesDetails: { UnitPrice: 5000.0 } },
+      {
+        ItemID: 'c8c54d65',
+        Code: '123',
+        Name: 'Strat',
+        Description: 'Guitars Fender Strat',
+        SalesDetails: { UnitPrice: 5000.0 },
+      },
       { ItemID: 'd1', Code: 'NOPRICE', Name: 'Sample' },
     ]);
     expect(records.map((record) => record.values)).toEqual([
@@ -603,7 +680,9 @@ describe('the imports are paid features claimed only where configured', () => {
     expect(featureOffered(quickbooks)).toBe(false);
     expect(featureOffered(quickbooks, { xero_import: true })).toBe(false);
     expect(featureOffered(quickbooks, { quickbooks_import: true })).toBe(true);
-    expect(offeredFeatures().some((feature) => feature.key.startsWith('integrations.'))).toBe(false);
+    expect(offeredFeatures().some((feature) => feature.key.startsWith('integrations.'))).toBe(
+      false,
+    );
     expect(paidOnlySummary()).toBe('PDF branding and the REST API');
   });
 

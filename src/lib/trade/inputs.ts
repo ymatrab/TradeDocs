@@ -153,8 +153,7 @@ export const containerNumberField = z
     'Use four letters and seven digits, such as CSQU3054383.',
   )
   .refine(
-    (value) =>
-      value === '' || containerCheckDigit(value.slice(0, 10)) === Number(value.charAt(10)),
+    (value) => value === '' || containerCheckDigit(value.slice(0, 10)) === Number(value.charAt(10)),
     'That container number’s check digit does not match. Check it against the container.',
   )
   .transform((value) => value || null);

@@ -12,7 +12,11 @@ test('the Dropbox Sign callback does not exist without a provider key', async ({
   const response = await request.post('/api/esign/dropbox-sign/callback', {
     multipart: {
       json: JSON.stringify({
-        event: { event_time: '1700000000', event_type: 'callback_test', event_hash: '0'.repeat(64) },
+        event: {
+          event_time: '1700000000',
+          event_type: 'callback_test',
+          event_hash: '0'.repeat(64),
+        },
       }),
     },
   });
@@ -67,7 +71,10 @@ async function generateInvoice(page: Page, org: string): Promise<string> {
   await expect(page.getByText(/Document CI-[0-9]{4}-0001 generated\./)).toBeVisible();
 
   await page.goto(`/app/${org}/documents`);
-  const href = await page.getByRole('link', { name: /PDF of CI-/ }).first().getAttribute('href');
+  const href = await page
+    .getByRole('link', { name: /PDF of CI-/ })
+    .first()
+    .getAttribute('href');
   const id = href?.split('/').pop();
   expect(id).toMatch(/^[0-9a-f-]{36}$/);
   return id as string;
@@ -84,9 +91,13 @@ test.describe('in the workspace', () => {
     await expect(page.getByRole('link', { name: /^E-sign/ })).toHaveCount(0);
 
     await page.goto(`/app/${org}/documents/${documentId}/signature`);
-    await expect(page.getByRole('heading', { name: 'E-signature not available yet' })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'E-signature not available yet' }),
+    ).toBeVisible();
     // No send form and no provider claim when the feature is off.
-    await expect(page.getByRole('button', { name: /Send (test request|for signature)/ })).toHaveCount(0);
+    await expect(
+      page.getByRole('button', { name: /Send (test request|for signature)/ }),
+    ).toHaveCount(0);
     await expect(page.getByText('Signature provided by Dropbox Sign')).toHaveCount(0);
     await expect(page.getByText('No signature requests for this document yet.')).toBeVisible();
 
@@ -120,7 +131,9 @@ test.describe('in the workspace', () => {
     const org = await startOrganization(page, 'Esign Mobile Ltd');
     const documentId = await generateInvoice(page, org);
     await page.goto(`/app/${org}/documents/${documentId}/signature`);
-    await expect(page.getByRole('heading', { name: 'E-signature not available yet' })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'E-signature not available yet' }),
+    ).toBeVisible();
     const overflow = await page.evaluate(
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
     );

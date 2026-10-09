@@ -152,7 +152,9 @@ describe('request validation', () => {
   });
 
   it('refuses unknown fields instead of dropping them, including org_id', () => {
-    expect(createShipmentSchema.safeParse({ reference: 'PO-4', refrence: 'x' }).success).toBe(false);
+    expect(createShipmentSchema.safeParse({ reference: 'PO-4', refrence: 'x' }).success).toBe(
+      false,
+    );
     expect(createShipmentSchema.safeParse({ reference: 'PO-4', org_id: ORG }).success).toBe(false);
     expect(
       createShipmentSchema.safeParse({
@@ -242,14 +244,23 @@ describe('the API is a Team feature, gated fail closed', () => {
   });
 
   it('is granted to a current Team plan and refused to Pro, Free, a lapsed plan or a failed read', async () => {
-    await expect(hasEntitlement(ORG, 'api', reader({ row: current('team'), failed: false }))).resolves.toBe(true);
-    await expect(hasEntitlement(ORG, 'api', reader({ row: current('pro'), failed: false }))).resolves.toBe(false);
-    await expect(hasEntitlement(ORG, 'api', reader({ row: null, failed: false }))).resolves.toBe(false);
+    await expect(
+      hasEntitlement(ORG, 'api', reader({ row: current('team'), failed: false })),
+    ).resolves.toBe(true);
+    await expect(
+      hasEntitlement(ORG, 'api', reader({ row: current('pro'), failed: false })),
+    ).resolves.toBe(false);
+    await expect(hasEntitlement(ORG, 'api', reader({ row: null, failed: false }))).resolves.toBe(
+      false,
+    );
     await expect(
       hasEntitlement(
         ORG,
         'api',
-        reader({ row: { ...current('team'), paid_through: new Date(Date.now() - 1000).toISOString() }, failed: false }),
+        reader({
+          row: { ...current('team'), paid_through: new Date(Date.now() - 1000).toISOString() },
+          failed: false,
+        }),
       ),
     ).resolves.toBe(false);
     await expect(

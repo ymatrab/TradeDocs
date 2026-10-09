@@ -69,9 +69,7 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   },
   {
     "additionalDuties": null,
@@ -79,9 +77,7 @@
     "effectivePeriod": null,
     "footnotes": [
       {
-        "columns": [
-          "other"
-        ],
+        "columns": ["other"],
         "marker": "1",
         "type": "endnote",
         "value": "See 9903.90.09. "
@@ -104,9 +100,7 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   },
   {
     "additionalDuties": null,
@@ -114,9 +108,7 @@
     "effectivePeriod": null,
     "footnotes": [
       {
-        "columns": [
-          "other"
-        ],
+        "columns": ["other"],
         "marker": "1",
         "type": "endnote",
         "value": "See 9903.90.09. "
@@ -163,9 +155,7 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   },
   {
     "additionalDuties": null,
@@ -189,9 +179,7 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   },
   {
     "additionalDuties": null,
@@ -215,9 +203,7 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   },
   {
     "additionalDuties": null,
@@ -241,8 +227,6 @@
     "tariff": null,
     "type": null,
     "unique": null,
-    "units": [
-      "kg"
-    ]
+    "units": ["kg"]
   }
 ]

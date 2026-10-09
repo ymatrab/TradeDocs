@@ -71,7 +71,11 @@ export async function quickbooksCompanyName(
   fetcher: Fetcher,
 ): Promise<string | null> {
   try {
-    const url = quickbooksUrl(environment, connection.tenantId, `companyinfo/${connection.tenantId}`);
+    const url = quickbooksUrl(
+      environment,
+      connection.tenantId,
+      `companyinfo/${connection.tenantId}`,
+    );
     const { status, body } = await request(fetcher, url.toString(), {
       method: 'GET',
       headers: { Authorization: `Bearer ${connection.accessToken}`, Accept: 'application/json' },
@@ -98,7 +102,10 @@ export async function fetchXero(
   };
   if (entity === 'product') {
     // GET /Items is not paged; the body is read under MAX_RESPONSE_BYTES.
-    const { status, body } = await request(fetcher, `${XERO_API}/Items`, { method: 'GET', headers });
+    const { status, body } = await request(fetcher, `${XERO_API}/Items`, {
+      method: 'GET',
+      headers,
+    });
     if (status !== 200) throw failFor(status, body);
     const parsed = parseJson(body) as { Items?: unknown };
     const items = Array.isArray(parsed.Items) ? parsed.Items : [];

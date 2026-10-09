@@ -156,7 +156,12 @@ describe('importing', () => {
     const result = await importFromProvider({}, form({ entity: 'company', intent: 'preview' }));
     expect(result.previewed).toBe(true);
     expect(state.rpc[0]?.[0]).toBe('import_integration_records');
-    expect(state.rpc[0]?.[1]).toMatchObject({ target_org: ORG, source: 'xero', record_kind: 'company', dry_run: true });
+    expect(state.rpc[0]?.[1]).toMatchObject({
+      target_org: ORG,
+      source: 'xero',
+      record_kind: 'company',
+      dry_run: true,
+    });
   });
 
   it('applies only when asked', async () => {

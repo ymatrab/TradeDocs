@@ -41,12 +41,10 @@ type EsignEnv = Pick<
   'APP_ENV' | 'APPLICATION_MODE' | 'SUPABASE_URL' | 'SUPABASE_SERVICE_ROLE_KEY'
 >;
 
-const blank = (value: string | undefined) => (value === undefined || value.trim() === '' ? undefined : value.trim());
+const blank = (value: string | undefined) =>
+  value === undefined || value.trim() === '' ? undefined : value.trim();
 
-export function esignConfig(
-  env: EsignEnv,
-  input: Record<string, string | undefined>,
-): EsignConfig {
+export function esignConfig(env: EsignEnv, input: Record<string, string | undefined>): EsignConfig {
   const apiKey = blank(input[ESIGN_ENV.apiKey]);
   if (!apiKey) return { state: 'disabled' };
   if (!/^[A-Za-z0-9]{32,128}$/.test(apiKey)) {

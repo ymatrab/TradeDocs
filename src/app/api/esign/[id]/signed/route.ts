@@ -1,7 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { z } from 'zod';
 import { ESIGN_BUCKET, serviceConnection, serviceRpc } from '@/lib/esign/server';
-import { createClient, DatabaseUnavailableError, type TradeDocsClient } from '@/lib/supabase/server';
+import {
+  createClient,
+  DatabaseUnavailableError,
+  type TradeDocsClient,
+} from '@/lib/supabase/server';
 import { safeFileName } from '@/lib/zip';
 
 export const dynamic = 'force-dynamic';
@@ -58,9 +62,13 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   }
 
   const connection = serviceConnection();
-  if (!connection) return refuse(503, 'Signed documents are not available.', { 'Retry-After': '300' });
+  if (!connection)
+    return refuse(503, 'Signed documents are not available.', { 'Retry-After': '300' });
   try {
-    await serviceRpc(connection, 'esign_record_download', { p_request: request.id, p_actor: user.id });
+    await serviceRpc(connection, 'esign_record_download', {
+      p_request: request.id,
+      p_actor: user.id,
+    });
   } catch {
     console.error('esign: download not audited', { request: request.id });
     return refuse(503, 'Try again in a moment.', { 'Retry-After': '30' });

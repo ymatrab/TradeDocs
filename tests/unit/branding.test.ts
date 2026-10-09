@@ -262,10 +262,7 @@ describe('PDF branding is a Pro and Team feature, gated fail closed', () => {
   it('belongs to Pro and Team only, and is the paid-only feature they list', () => {
     expect(featurePlans('pdf_branding')).toEqual(['pro', 'team']);
     expect(paidOnlyFeatures('pro').map((feature) => feature.key)).toEqual(['pdf_branding']);
-    expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual([
-      'pdf_branding',
-      'api',
-    ]);
+    expect(paidOnlyFeatures('team').map((feature) => feature.key)).toEqual(['pdf_branding', 'api']);
     expect(paidOnlySummary()).toBe('PDF branding and the REST API');
     expect(FEATURES.find((feature) => feature.key === 'pdf_branding')?.label).toBe(
       'PDF branding: your logo and signature',

@@ -255,8 +255,7 @@ export const PROVIDER_FEATURES = [
 const GATED_FEATURES: readonly Feature[] = [...FEATURES, ...PROVIDER_FEATURES];
 
 export type FeatureKey =
-  | (typeof FEATURES)[number]['key']
-  | (typeof PROVIDER_FEATURES)[number]['key'];
+  (typeof FEATURES)[number]['key'] | (typeof PROVIDER_FEATURES)[number]['key'];
 
 /**
  * The workspace documents feature, as the deployment offers it. With the certificate of

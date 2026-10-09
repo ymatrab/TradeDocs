@@ -103,7 +103,10 @@ function IssueTable({ caption, issues }: { caption: string; issues: Issue[] }) {
   );
 }
 
-const ENTITY_COPY: Record<Entity, { title: string; source: Record<ProviderKey, string>; target: string }> = {
+const ENTITY_COPY: Record<
+  Entity,
+  { title: string; source: Record<ProviderKey, string>; target: string }
+> = {
   company: {
     title: 'Customers',
     source: { quickbooks: 'customers', xero: 'contacts' },
@@ -143,8 +146,8 @@ export function ImportForm({
         {copy.title}
       </h3>
       <p className="muted" style={{ margin: 0 }}>
-        Reads your {name} {copy.source[provider]} into the {copy.target}. A record imported
-        before is matched by its {name} id and updated only if nobody changed it in TradeDocs.
+        Reads your {name} {copy.source[provider]} into the {copy.target}. A record imported before
+        is matched by its {name} id and updated only if nobody changed it in TradeDocs.
       </p>
       <form action={action} style={{ display: 'grid', gap: 12 }}>
         <input type="hidden" name="org" value={org} />
@@ -167,8 +170,8 @@ export function ImportForm({
         ) : null}
         {state.truncated ? (
           <Callout tone="warning" title="Only the first records were read">
-            {name} holds more than {state.read} {copy.source[provider]}; one import reads the
-            first {state.read}.
+            {name} holds more than {state.read} {copy.source[provider]}; one import reads the first{' '}
+            {state.read}.
           </Callout>
         ) : null}
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -200,10 +203,7 @@ export function ImportForm({
         ) : null}
       </form>
       <IssueTable caption="Records with a problem (not imported)" issues={state.problems ?? []} />
-      <IssueTable
-        caption="Conflicts (TradeDocs version kept)"
-        issues={state.conflicts ?? []}
-      />
+      <IssueTable caption="Conflicts (TradeDocs version kept)" issues={state.conflicts ?? []} />
       <IssueTable caption="Skipped" issues={state.skipped ?? []} />
       <IssueTable caption="Imported with a value left blank" issues={state.notes ?? []} />
     </section>

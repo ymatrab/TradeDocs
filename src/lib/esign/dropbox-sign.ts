@@ -232,17 +232,21 @@ export function verifyEventHash(
 // --- Client ------------------------------------------------------------------------------
 
 export type DropboxSignClient = {
-  send(
-    input: SendInput,
-  ): Promise<{ ok: true; request: SignatureRequest } | ProviderFailure>;
+  send(input: SendInput): Promise<{ ok: true; request: SignatureRequest } | ProviderFailure>;
   get(
     id: string,
-  ): Promise<{ ok: true; request: SignatureRequest } | ProviderFailure | { ok: false; kind: 'gone' }>;
+  ): Promise<
+    { ok: true; request: SignatureRequest } | ProviderFailure | { ok: false; kind: 'gone' }
+  >;
   /** The merged signed PDF; 'not_ready' while the provider is still preparing it (409). */
   signedPdf(
     id: string,
     maxBytes: number,
-  ): Promise<{ ok: true; bytes: Uint8Array } | { ok: false; kind: 'not_ready' | 'too_large' | 'invalid' } | ProviderFailure>;
+  ): Promise<
+    | { ok: true; bytes: Uint8Array }
+    | { ok: false; kind: 'not_ready' | 'too_large' | 'invalid' }
+    | ProviderFailure
+  >;
 };
 
 async function readBounded(response: Response, maxBytes: number): Promise<Uint8Array | null> {

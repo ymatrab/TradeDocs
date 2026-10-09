@@ -63,11 +63,21 @@ async function manages(client: TradeDocsClient, org: string, user: string): Prom
 }
 
 type Authorized =
-  | { ok: true; org: string; provider: ProviderId; user: string; config: ReadyConfig; client: TradeDocsClient }
+  | {
+      ok: true;
+      org: string;
+      provider: ProviderId;
+      user: string;
+      config: ReadyConfig;
+      client: TradeDocsClient;
+    }
   | { ok: false; error: string };
 
 async function authorize(formData: FormData, paid: boolean): Promise<Authorized> {
-  const parsed = target.safeParse({ org: read(formData, 'org'), provider: read(formData, 'provider') });
+  const parsed = target.safeParse({
+    org: read(formData, 'org'),
+    provider: read(formData, 'provider'),
+  });
   if (!parsed.success) return { ok: false, error: 'That integration could not be found.' };
   const { org, provider } = parsed.data;
   const config = currentProviderConfig(provider);
@@ -256,7 +266,8 @@ export async function importFromProvider(
     return { ...shared, error: 'The import could not be completed. Nothing was changed.' };
   }
   const outcome = readOutcome(data);
-  if (!outcome) return { ...shared, error: 'The import could not be completed. Nothing was changed.' };
+  if (!outcome)
+    return { ...shared, error: 'The import could not be completed. Nothing was changed.' };
 
   const counts = {
     inserted: outcome.inserted,

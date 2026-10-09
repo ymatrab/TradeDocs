@@ -129,7 +129,9 @@ describe('UK Trade Tariff search parsing', () => {
   });
 
   it('ignores an exact match pointing anywhere unexpected', () => {
-    const odd = { data: { attributes: { type: 'exact_match', entry: { endpoint: 'x', id: '1' } } } };
+    const odd = {
+      data: { attributes: { type: 'exact_match', entry: { endpoint: 'x', id: '1' } } },
+    };
     expect(parseUkSearch(odd)).toEqual({ kind: 'results', results: [] });
     expect(() => parseUkSearch([])).toThrow(TariffResponseError);
   });

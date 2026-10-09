@@ -32,7 +32,6 @@ const optionalText = (max: number, message?: string) =>
 /** The most lines one shipment holds; shipment_items.position is checked to 999. */
 const MAX_LINES = 999;
 
-
 function read(formData: FormData, field: string): string {
   const value = formData.get(field);
   return typeof value === 'string' ? value : '';

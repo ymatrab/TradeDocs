@@ -138,7 +138,9 @@ describe('deferred service waivers (D-017)', () => {
       degraded: ['turnstile', 'sentry', 'analytics'],
       esign: 'misconfigured',
       esign_reason: 'api_key_malformed',
-      integrations_incomplete: { quickbooks: ['QUICKBOOKS_CLIENT_SECRET', 'INTEGRATION_TOKEN_KEY'] },
+      integrations_incomplete: {
+        quickbooks: ['QUICKBOOKS_CLIENT_SECRET', 'INTEGRATION_TOKEN_KEY'],
+      },
     });
     expect(body).not.toContain('synthetic');
   });

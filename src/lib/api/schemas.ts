@@ -54,7 +54,9 @@ const decimal = (options: Parameters<typeof decimalField>[0]) =>
     .transform((value) => (value === null || value === undefined ? '' : String(value)))
     .pipe(decimalField(options));
 
-const partyId = z.union([z.uuid('Use the id of a company in your directory.'), z.null()]).optional();
+const partyId = z
+  .union([z.uuid('Use the id of a company in your directory.'), z.null()])
+  .optional();
 
 export const apiItemSchema = z
   .strictObject({

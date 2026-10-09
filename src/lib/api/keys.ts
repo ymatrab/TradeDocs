@@ -68,9 +68,7 @@ export function apiKeyMatches(key: string, storedHash: string, pepper: string): 
 }
 
 export type BearerResult =
-  | { kind: 'missing' }
-  | { kind: 'malformed' }
-  | { kind: 'key'; key: string };
+  { kind: 'missing' } | { kind: 'malformed' } | { kind: 'key'; key: string };
 
 /** Reads `Authorization: Bearer tdk_…`. The scheme is case-insensitive, as RFC 7235 says. */
 export function readBearer(header: string | null): BearerResult {

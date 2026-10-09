@@ -232,7 +232,9 @@ export function mapQuickBooksCustomers(entries: unknown[]): Mapped<CompanyValues
       tax_number: null,
       registration_number: null,
       email: email(obj(customer.PrimaryEmailAddr)?.Address, notes),
-      phone: text(obj(customer.PrimaryPhone)?.FreeFormNumber) ?? text(obj(customer.Mobile)?.FreeFormNumber),
+      phone:
+        text(obj(customer.PrimaryPhone)?.FreeFormNumber) ??
+        text(obj(customer.Mobile)?.FreeFormNumber),
       address_line1: text(address.Line1),
       address_line2: joined(address.Line2, address.Line3),
       city: text(address.City),
@@ -283,7 +285,9 @@ export function mapQuickBooksItems(entries: unknown[]): Mapped<ProductValues> {
 // --- Xero -------------------------------------------------------------------------------
 
 function xeroAddress(contact: Raw): Raw {
-  const addresses = list(contact.Addresses).map(obj).filter((a): a is Raw => a !== null);
+  const addresses = list(contact.Addresses)
+    .map(obj)
+    .filter((a): a is Raw => a !== null);
   const filled = (a: Raw) => Boolean(text(a.AddressLine1) || text(a.City) || text(a.Country));
   return (
     addresses.find((a) => a.AddressType === 'STREET' && filled(a)) ??
@@ -293,14 +297,20 @@ function xeroAddress(contact: Raw): Raw {
 }
 
 function xeroPhone(contact: Raw): string | null {
-  const phones = list(contact.Phones).map(obj).filter((p): p is Raw => p !== null);
+  const phones = list(contact.Phones)
+    .map(obj)
+    .filter((p): p is Raw => p !== null);
   const pick =
     phones.find((p) => p.PhoneType === 'DEFAULT' && text(p.PhoneNumber)) ??
     phones.find((p) => p.PhoneType === 'MOBILE' && text(p.PhoneNumber)) ??
     phones.find((p) => text(p.PhoneNumber));
   if (!pick) return null;
   const country = text(pick.PhoneCountryCode);
-  return joined(country ? `+${country.replace(/^\+/, '')}` : null, pick.PhoneAreaCode, pick.PhoneNumber);
+  return joined(
+    country ? `+${country.replace(/^\+/, '')}` : null,
+    pick.PhoneAreaCode,
+    pick.PhoneNumber,
+  );
 }
 
 /** Xero contacts to companies. Archived contacts are not imported. */

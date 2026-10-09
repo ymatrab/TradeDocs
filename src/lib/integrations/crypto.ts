@@ -41,7 +41,9 @@ export function parseTokenKey(raw: string | undefined): Buffer | null {
 }
 
 function derive(root: Buffer, purpose: 'seal' | 'state'): Buffer {
-  return Buffer.from(hkdfSync('sha256', root, Buffer.alloc(0), `tradedocs/integrations/${purpose}`, 32));
+  return Buffer.from(
+    hkdfSync('sha256', root, Buffer.alloc(0), `tradedocs/integrations/${purpose}`, 32),
+  );
 }
 
 function b64url(buffer: Buffer): string {
@@ -75,7 +77,11 @@ export function openToken(root: Buffer, sealed: string, context: string): string
   }
 }
 
-export function tokenContext(org: string, provider: string, kind: 'access' | 'refresh' | 'verifier') {
+export function tokenContext(
+  org: string,
+  provider: string,
+  kind: 'access' | 'refresh' | 'verifier',
+) {
   return `${org}:${provider}:${kind}`;
 }
 

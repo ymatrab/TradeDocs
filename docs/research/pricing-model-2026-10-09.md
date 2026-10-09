@@ -7,12 +7,12 @@ limits. TradeDocs prices are the unapproved proposal (P-002).
 
 ## 1. Competitor prices, re-checked 2026-10-09
 
-| Product                                                           | Model                              | Entry paid                          | Mid                       | Top                                  | Document cap           | Users               | Per-document option                              |
-| ----------------------------------------------------------------- | ---------------------------------- | ----------------------------------- | ------------------------- | ------------------------------------ | ---------------------- | ------------------- | ------------------------------------------------ |
-| [IncoDocs](https://www.incodocs.com/pricing)                      | Monthly/yearly subscription        | Basic $27/mo                        | Professional $62/mo       | Organization $167/mo; Plus custom    | 10 free, 30 / 100 / 300 a month | 1 / 1 / 2 / 5 | None stated                                      |
-| [ovrseas](https://ovrseas.io/pricing)                             | Monthly/yearly subscription        | Starter $20/mo ($192/yr per FAQ)    | Pro $60/mo                | Business $150/mo                     | 30 / 100 / 300 a month | 1 / 3 / 5           | None: documents pause at the cap until reset     |
-| [Shipping Solutions](https://shippingsolutionssoftware.com/pricing) | One payment + yearly maintenance | Classic $1,199 (+$300/yr from yr 2) | Professional $2,999 (+$900/yr) | Enterprise $9,999 per year      | None (per licence)     | $600–1,500 per extra licence | Licence, not per document               |
-| [customs-declarations.uk](https://www.customs-declarations.uk/faqs/pricing/) (adjacent: UK customs filings) | Pay as you go **and** subscription | Up to £25 per CDS declaration, no monthly fee | Subscriptions from £75/mo (50 a year) | £1,400/mo (10,000 a year) | — | — | **Yes**: PAYG per declaration; bulk plans cheaper |
+| Product                                                                                                     | Model                              | Entry paid                                    | Mid                                   | Top                               | Document cap                    | Users                        | Per-document option                               |
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------- | ------------------------------------- | --------------------------------- | ------------------------------- | ---------------------------- | ------------------------------------------------- |
+| [IncoDocs](https://www.incodocs.com/pricing)                                                                | Monthly/yearly subscription        | Basic $27/mo                                  | Professional $62/mo                   | Organization $167/mo; Plus custom | 10 free, 30 / 100 / 300 a month | 1 / 1 / 2 / 5                | None stated                                       |
+| [ovrseas](https://ovrseas.io/pricing)                                                                       | Monthly/yearly subscription        | Starter $20/mo ($192/yr per FAQ)              | Pro $60/mo                            | Business $150/mo                  | 30 / 100 / 300 a month          | 1 / 3 / 5                    | None: documents pause at the cap until reset      |
+| [Shipping Solutions](https://shippingsolutionssoftware.com/pricing)                                         | One payment + yearly maintenance   | Classic $1,199 (+$300/yr from yr 2)           | Professional $2,999 (+$900/yr)        | Enterprise $9,999 per year        | None (per licence)              | $600–1,500 per extra licence | Licence, not per document                         |
+| [customs-declarations.uk](https://www.customs-declarations.uk/faqs/pricing/) (adjacent: UK customs filings) | Pay as you go **and** subscription | Up to £25 per CDS declaration, no monthly fee | Subscriptions from £75/mo (50 a year) | £1,400/mo (10,000 a year)         | —                               | —                            | **Yes**: PAYG per declaration; bulk plans cheaper |
 
 Notes: IncoDocs shows "Save 20%" yearly but no yearly figures; its sign-up link says a 7-day
 trial while plan cards say 14 days. ovrseas lists the same number for monthly and yearly but its
@@ -64,7 +64,8 @@ directional.
   Starter's $192 with no 30-document cap).
 - **Do not sell per document.**
 - **Revisit after 60–90 days of real traffic:** if pricing-page data shows occasional exporters
-  leaving, add one hybrid option, e.g. a one-time "branded shipment pack" (one shipment's full
-  set with logo and signature), priced from data then. Owner decision; not built.
+leaving, add one hybrid option, e.g. a one-time "branded shipment pack" (one shipment's full
+set with logo and signature), priced from data then. Owner decision; not built.
 </content>
+
 </invoke>

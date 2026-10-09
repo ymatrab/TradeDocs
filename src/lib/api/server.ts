@@ -173,7 +173,11 @@ export async function callRpc(
       code: parsed.success ? (parsed.data.code ?? null) : null,
       message: parsed.success ? (parsed.data.message ?? '') : '',
     };
-    console.error('api: routine failed', { routine: name, code: failure.code, status: failure.status });
+    console.error('api: routine failed', {
+      routine: name,
+      code: failure.code,
+      status: failure.status,
+    });
     throw new RpcFailure(failure);
   }
   return body;
@@ -245,9 +249,15 @@ export async function authenticateApiRequest(
 ): Promise<ApiPrincipal> {
   const config = apiConfig();
   if (!config) {
-    throw new ApiError(503, 'API_UNAVAILABLE', 'The API is not available on this deployment.', undefined, {
-      'Retry-After': '3600',
-    });
+    throw new ApiError(
+      503,
+      'API_UNAVAILABLE',
+      'The API is not available on this deployment.',
+      undefined,
+      {
+        'Retry-After': '3600',
+      },
+    );
   }
   const bearer = readBearer(request.headers.get('authorization'));
   if (bearer.kind === 'missing') {
@@ -319,7 +329,11 @@ export function principalHeaders(principal: ApiPrincipal): Record<string, string
 export function rpcErrorToApi(failure: RpcError): ApiError {
   switch (failure.code) {
     case '28000':
-      return new ApiError(401, 'INVALID_API_KEY', 'That API key is not valid. It may have been revoked.');
+      return new ApiError(
+        401,
+        'INVALID_API_KEY',
+        'That API key is not valid. It may have been revoked.',
+      );
     case '23505':
       return new ApiError(409, 'CONFLICT', 'A shipment with that reference already exists.');
     case '23503':

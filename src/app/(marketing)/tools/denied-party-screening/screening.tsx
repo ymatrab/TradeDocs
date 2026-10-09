@@ -2,7 +2,13 @@
 
 import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/primitives/button';
-import { Callout, EmptyState, ErrorState, LoadingBlock, Panel } from '@/components/primitives/feedback';
+import {
+  Callout,
+  EmptyState,
+  ErrorState,
+  LoadingBlock,
+  Panel,
+} from '@/components/primitives/feedback';
 import { Choice, Field, Input } from '@/components/primitives/form';
 import { DataTable } from '@/components/primitives/table';
 import {
@@ -61,7 +67,9 @@ export function DeniedPartyScreening() {
       const body: unknown = await response.json().catch(() => null);
       if (!response.ok || !isAnswer(body)) {
         const message =
-          body && typeof body === 'object' && typeof (body as { error?: unknown }).error === 'string'
+          body &&
+          typeof body === 'object' &&
+          typeof (body as { error?: unknown }).error === 'string'
             ? (body as { error: string }).error
             : 'The screening could not be completed.';
         setState({ kind: 'error', message });
@@ -119,7 +127,11 @@ export function DeniedPartyScreening() {
           <LoadingBlock label="Searching the Consolidated Screening List" lines={3} />
         ) : null}
         {state.kind === 'error' ? (
-          <ErrorState title="The screening did not run" description={state.message} action={OFFICIAL} />
+          <ErrorState
+            title="The screening did not run"
+            description={state.message}
+            action={OFFICIAL}
+          />
         ) : null}
         {state.kind === 'done' && state.answer.results.length === 0 ? (
           <Panel title="No match on the Consolidated Screening List">
@@ -133,9 +145,9 @@ export function DeniedPartyScreening() {
         {state.kind === 'done' && state.answer.results.length > 0 ? (
           <Panel title="Possible matches on the Consolidated Screening List">
             <Callout tone="warning" title="A possible match is not a finding" level={3}>
-              Compare the address, country and other details with the listing and check the
-              source list before you decide anything. If the match may be real, stop and take
-              advice from your compliance team or a trade lawyer.
+              Compare the address, country and other details with the listing and check the source
+              list before you decide anything. If the match may be real, stop and take advice from
+              your compliance team or a trade lawyer.
             </Callout>
             <p className="muted">
               {state.answer.total > state.answer.results.length

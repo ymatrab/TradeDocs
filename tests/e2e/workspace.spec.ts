@@ -318,7 +318,9 @@ test('sales and shipping documents come from one shipment, and a VGM needs its f
   await page.getByLabel('Verified gross mass (kg)').fill('18250.5');
   await page.getByLabel('VGM signatory').fill('Fern Fulmar');
   await page.getByRole('button', { name: 'Save shipment' }).click();
-  await expect(page.getByText('Documents generated before a change are marked stale.')).toBeVisible();
+  await expect(
+    page.getByText('Documents generated before a change are marked stale.'),
+  ).toBeVisible();
 
   await page.getByLabel('Document type').selectOption({ label: 'VGM declaration' });
   await page.getByRole('button', { name: 'Generate document' }).click();

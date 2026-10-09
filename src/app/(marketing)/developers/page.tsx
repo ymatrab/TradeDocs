@@ -113,8 +113,8 @@ export default function DevelopersPage() {
         <h1>TradeDocs REST API, version 1</h1>
         <p className="lede">
           Create shipments from your own systems, generate commercial invoices, packing lists and
-          the other documents from them, and download the PDFs, over HTTPS with an organization
-          API key. The API is part of the {plans.join(' and ')} plan.
+          the other documents from them, and download the PDFs, over HTTPS with an organization API
+          key. The API is part of the {plans.join(' and ')} plan.
         </p>
       </section>
 
@@ -155,9 +155,7 @@ export default function DevelopersPage() {
         <p>Send the key as a bearer token on every request:</p>
         <Example label="Authorization header example">{`curl ${base}/shipments \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}"`}</Example>
-        <p>
-          Keep keys on your server. Never put one in a web page, a mobile app or a repository.
-        </p>
+        <p>Keep keys on your server. Never put one in a web page, a mobile app or a repository.</p>
       </section>
 
       <section className="section" aria-labelledby="conventions">
@@ -173,8 +171,9 @@ export default function DevelopersPage() {
           Lists return <span className="data">{'{ "data": [...], "next_cursor": "…" }'}</span>,
           newest first. Pass <span className="data">?limit=</span> (1 to {API_PAGE_SIZE.max},
           default {API_PAGE_SIZE.default}) and, for the next page,{' '}
-          <span className="data">?cursor=</span> with the previous <span className="data">next_cursor</span>.
-          The last page has <span className="data">next_cursor: null</span>.
+          <span className="data">?cursor=</span> with the previous{' '}
+          <span className="data">next_cursor</span>. The last page has{' '}
+          <span className="data">next_cursor: null</span>.
         </p>
         <h3>Idempotency</h3>
         <p>
@@ -225,19 +224,20 @@ export default function DevelopersPage() {
 
         <h3 id="list-shipments">List shipments</h3>
         <p>
-          <span className="data">GET /api/v1/shipments</span>: the organization’s shipments,
-          newest first, without lines.
+          <span className="data">GET /api/v1/shipments</span>: the organization’s shipments, newest
+          first, without lines.
         </p>
         <Example label="List shipments example">{`curl "${base}/shipments?limit=25" \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}"`}</Example>
 
         <h3 id="create-shipment">Create a shipment</h3>
         <p>
-          <span className="data">POST /api/v1/shipments</span> answers 201 with the shipment and
-          its lines. Only <span className="data">reference</span> (up to 60 characters, unique in
-          the organization) is required. Optional: <span className="data">currency</span> (ISO
-          4217; the organization’s default otherwise), <span className="data">incoterm</span> with{' '}
-          <span className="data">incoterm_place</span>, <span className="data">port_of_loading</span>,{' '}
+          <span className="data">POST /api/v1/shipments</span> answers 201 with the shipment and its
+          lines. Only <span className="data">reference</span> (up to 60 characters, unique in the
+          organization) is required. Optional: <span className="data">currency</span> (ISO 4217; the
+          organization’s default otherwise), <span className="data">incoterm</span> with{' '}
+          <span className="data">incoterm_place</span>,{' '}
+          <span className="data">port_of_loading</span>,{' '}
           <span className="data">port_of_discharge</span>,{' '}
           <span className="data">country_of_origin</span>,{' '}
           <span className="data">country_of_destination</span> (two-letter codes),{' '}
@@ -248,13 +248,12 @@ export default function DevelopersPage() {
           <span className="data">exporter_id</span>, <span className="data">consignee_id</span>,{' '}
           <span className="data">notify_id</span> (companies in your directory), and up to{' '}
           {API_MAX_LINES} <span className="data">items</span>, each with{' '}
-          <span className="data">description</span> and <span className="data">quantity</span>{' '}
-          and optionally <span className="data">unit</span> (default pcs),{' '}
+          <span className="data">description</span> and <span className="data">quantity</span> and
+          optionally <span className="data">unit</span> (default pcs),{' '}
           <span className="data">unit_price</span>, <span className="data">hs_code</span>,{' '}
           <span className="data">country_of_origin</span>,{' '}
-          <span className="data">net_weight_kg</span>,{' '}
-          <span className="data">gross_weight_kg</span> and{' '}
-          <span className="data">package_count</span>. Unknown fields are refused.
+          <span className="data">net_weight_kg</span>, <span className="data">gross_weight_kg</span>{' '}
+          and <span className="data">package_count</span>. Unknown fields are refused.
         </p>
         <Example label="Create a shipment example">{`curl ${base}/shipments \\
   -X POST \\
@@ -276,8 +275,7 @@ export default function DevelopersPage() {
 
         <h3 id="get-shipment">Get a shipment</h3>
         <p>
-          <span className="data">GET /api/v1/shipments/{'{id}'}</span>: one shipment with its
-          lines.
+          <span className="data">GET /api/v1/shipments/{'{id}'}</span>: one shipment with its lines.
         </p>
         <Example label="Get a shipment example">{`curl ${base}/shipments/SHIPMENT_ID \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}"`}</Example>
@@ -307,8 +305,8 @@ export default function DevelopersPage() {
         <h3 id="download-pdf">Download a document’s PDF</h3>
         <p>
           <span className="data">GET /api/v1/documents/{'{id}'}/pdf</span> streams the PDF
-          (application/pdf), drawn from the snapshot recorded when the document was generated, so
-          it shows the document as it was issued.
+          (application/pdf), drawn from the snapshot recorded when the document was generated, so it
+          shows the document as it was issued.
         </p>
         <Example label="Download a PDF example">{`curl ${base}/documents/DOCUMENT_ID/pdf \\
   -H "Authorization: Bearer ${PLACEHOLDER_KEY}" \\

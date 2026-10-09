@@ -112,7 +112,8 @@ export async function sendForSignature(
   let images: BrandingImages | undefined;
   if (needsBranding(document.snapshot)) {
     const loaded = await loadBrandingImages(client, org, document.snapshot);
-    if (!loaded) return { error: 'The document’s logo or signature image could not be loaded. Try again.' };
+    if (!loaded)
+      return { error: 'The document’s logo or signature image could not be loaded. Try again.' };
     images = loaded;
   }
   let pdf: Uint8Array;

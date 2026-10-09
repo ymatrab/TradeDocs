@@ -55,10 +55,7 @@ export type CallbackDeps = {
     status: RequestStatus;
     signers: SignerState[];
   }): Promise<'applied' | 'duplicate' | 'ignored' | 'unmatched'>;
-  storeSigned(input: {
-    request: StoredRequest;
-    bytes: Uint8Array;
-  }): Promise<'stored' | 'already'>;
+  storeSigned(input: { request: StoredRequest; bytes: Uint8Array }): Promise<'stored' | 'already'>;
   nowSeconds(): number;
 };
 

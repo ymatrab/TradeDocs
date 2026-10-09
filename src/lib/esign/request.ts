@@ -16,8 +16,7 @@ export type SendRequest = {
 };
 
 export type SendParse =
-  | { ok: true; value: SendRequest }
-  | { ok: false; error: string; fields?: Record<string, string> };
+  { ok: true; value: SendRequest } | { ok: false; error: string; fields?: Record<string, string> };
 
 const nameSchema = z.string().trim().min(1).max(120);
 const emailSchema = z.email().max(254);
@@ -28,13 +27,12 @@ function read(formData: FormData, field: string): string {
 }
 
 export function parseSendForm(formData: FormData): SendParse {
-  const target = z
-    .object({ org: z.uuid(), document: z.uuid() })
-    .safeParse({
-      org: read(formData, 'org').toLowerCase(),
-      document: read(formData, 'document').toLowerCase(),
-    });
-  if (!target.success) return { ok: false, error: 'That request was not understood. Reload and try again.' };
+  const target = z.object({ org: z.uuid(), document: z.uuid() }).safeParse({
+    org: read(formData, 'org').toLowerCase(),
+    document: read(formData, 'document').toLowerCase(),
+  });
+  if (!target.success)
+    return { ok: false, error: 'That request was not understood. Reload and try again.' };
 
   const fields: Record<string, string> = {};
   const signers: SignerInput[] = [];
@@ -45,7 +43,8 @@ export function parseSendForm(formData: FormData): SendParse {
     if (!rawName && !rawEmail) continue;
     const name = nameSchema.safeParse(rawName);
     const email = emailSchema.safeParse(rawEmail.toLowerCase());
-    if (!name.success) fields[`signer_name_${index}`] = 'Enter the signer’s name (120 characters or fewer).';
+    if (!name.success)
+      fields[`signer_name_${index}`] = 'Enter the signer’s name (120 characters or fewer).';
     if (!email.success) fields[`signer_email_${index}`] = 'Enter a valid email address.';
     if (!name.success || !email.success) continue;
     if (seen.has(email.data)) {

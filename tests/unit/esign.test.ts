@@ -72,37 +72,63 @@ describe('event hash verification', () => {
   const type = 'signature_request_all_signed';
 
   it('accepts the documented HMAC-SHA256 of event_time + event_type, keyed with the API key', () => {
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: hashOf(time, type) }, TEST_API_KEY)).toBe(true);
+    expect(
+      verifyEventHash(
+        { event_time: time, event_type: type, event_hash: hashOf(time, type) },
+        TEST_API_KEY,
+      ),
+    ).toBe(true);
   });
 
   it('accepts the same hash in upper case', () => {
     const upper = hashOf(time, type).toUpperCase();
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: upper }, TEST_API_KEY)).toBe(true);
+    expect(
+      verifyEventHash({ event_time: time, event_type: type, event_hash: upper }, TEST_API_KEY),
+    ).toBe(true);
   });
 
   it('refuses a hash made with another key', () => {
     const other = hashOf(time, type, 'anotheraccountsdropboxsignkeyxxxxx');
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: other }, TEST_API_KEY)).toBe(false);
+    expect(
+      verifyEventHash({ event_time: time, event_type: type, event_hash: other }, TEST_API_KEY),
+    ).toBe(false);
   });
 
   it('refuses an event whose type or time was changed after signing', () => {
     const hash = hashOf(time, 'signature_request_viewed');
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: hash }, TEST_API_KEY)).toBe(false);
     expect(
-      verifyEventHash({ event_time: '1760000001', event_type: type, event_hash: hashOf(time, type) }, TEST_API_KEY),
+      verifyEventHash({ event_time: time, event_type: type, event_hash: hash }, TEST_API_KEY),
+    ).toBe(false);
+    expect(
+      verifyEventHash(
+        { event_time: '1760000001', event_type: type, event_hash: hashOf(time, type) },
+        TEST_API_KEY,
+      ),
     ).toBe(false);
   });
 
   it('refuses malformed hashes and times without comparing', () => {
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: '' }, TEST_API_KEY)).toBe(false);
-    expect(verifyEventHash({ event_time: time, event_type: type, event_hash: 'zz'.repeat(32) }, TEST_API_KEY)).toBe(false);
     expect(
-      verifyEventHash({ event_time: 'yesterday', event_type: type, event_hash: hashOf('yesterday', type) }, TEST_API_KEY),
+      verifyEventHash({ event_time: time, event_type: type, event_hash: '' }, TEST_API_KEY),
+    ).toBe(false);
+    expect(
+      verifyEventHash(
+        { event_time: time, event_type: type, event_hash: 'zz'.repeat(32) },
+        TEST_API_KEY,
+      ),
+    ).toBe(false);
+    expect(
+      verifyEventHash(
+        { event_time: 'yesterday', event_type: type, event_hash: hashOf('yesterday', type) },
+        TEST_API_KEY,
+      ),
     ).toBe(false);
   });
 
   it('refuses to run without a key', () => {
-    expect(() => verifyEventHash({ event_time: time, event_type: type, event_hash: hashOf(time, type) }, '')).toThrow();
+    expect(() =>
+      verifyEventHash({ event_time: time, event_type: type, event_hash: hashOf(time, type) }, ''),
+    ).toThrow();
   });
 
   it('parses the documented callback shape, numeric event_time included', () => {
@@ -157,7 +183,12 @@ describe('request building', () => {
   });
 
   it('sends a live request only when told, and the API app when configured', () => {
-    const form = buildSendForm({ ...base, testMode: false, clientId: 'abcdef0123456789abcdef0123456789', message: null });
+    const form = buildSendForm({
+      ...base,
+      testMode: false,
+      clientId: 'abcdef0123456789abcdef0123456789',
+      message: null,
+    });
     expect(form.get('test_mode')).toBe('0');
     expect(form.get('client_id')).toBe('abcdef0123456789abcdef0123456789');
     expect(form.has('message')).toBe(false);
@@ -188,7 +219,13 @@ describe('the send form', () => {
 
   it('accepts signers, lower-cases emails and skips blank rows', () => {
     const parsed = parseSendForm(
-      form({ signer_name_0: ' Buyer ', signer_email_0: 'Buyer@Example.TEST', signer_name_2: 'Agent', signer_email_2: 'agent@example.test', message: ' Hi ' }),
+      form({
+        signer_name_0: ' Buyer ',
+        signer_email_0: 'Buyer@Example.TEST',
+        signer_name_2: 'Agent',
+        signer_email_2: 'agent@example.test',
+        message: ' Hi ',
+      }),
     );
     expect(parsed).toEqual({
       ok: true,
@@ -242,7 +279,11 @@ describe('the send form', () => {
 
   it('bounds the message and refuses a foreign target', () => {
     const long = parseSendForm(
-      form({ signer_name_0: 'B', signer_email_0: 'b@example.test', message: 'x'.repeat(MAX_ESIGN_MESSAGE + 1) }),
+      form({
+        signer_name_0: 'B',
+        signer_email_0: 'b@example.test',
+        message: 'x'.repeat(MAX_ESIGN_MESSAGE + 1),
+      }),
     );
     expect(long.ok).toBe(false);
     const data = form({ signer_name_0: 'B', signer_email_0: 'b@example.test' });
@@ -287,12 +328,27 @@ describe('status mapping', () => {
 
   it('matches live signers to the recorded ones by email, keeping recorded names', () => {
     const recorded: SignerState[] = [
-      { name: 'Buyer Ltd', email: 'buyer@example.test', status: 'awaiting_signature', signed_at: null },
+      {
+        name: 'Buyer Ltd',
+        email: 'buyer@example.test',
+        status: 'awaiting_signature',
+        signed_at: null,
+      },
       { name: 'Agent', email: 'agent@example.test', status: 'awaiting_signature', signed_at: null },
     ];
     expect(signerStates(recorded, parse())).toEqual([
-      { name: 'Buyer Ltd', email: 'buyer@example.test', status: 'awaiting_signature', signed_at: null },
-      { name: 'Agent', email: 'agent@example.test', status: 'signed', signed_at: new Date(1760000000 * 1000).toISOString() },
+      {
+        name: 'Buyer Ltd',
+        email: 'buyer@example.test',
+        status: 'awaiting_signature',
+        signed_at: null,
+      },
+      {
+        name: 'Agent',
+        email: 'agent@example.test',
+        status: 'signed',
+        signed_at: new Date(1760000000 * 1000).toISOString(),
+      },
     ]);
   });
 
@@ -303,7 +359,11 @@ describe('status mapping', () => {
   });
 
   it('reads the stored signers defensively', () => {
-    expect(parseStoredSigners([{ name: 'A', email: 'a@example.test', status: 'signed', signed_at: null }])).toHaveLength(1);
+    expect(
+      parseStoredSigners([
+        { name: 'A', email: 'a@example.test', status: 'signed', signed_at: null },
+      ]),
+    ).toHaveLength(1);
     expect(parseStoredSigners('nonsense')).toEqual([]);
   });
 });
@@ -324,28 +384,47 @@ describe('configuration', () => {
   });
 
   it('always sends test requests outside production, whatever the flag says', () => {
-    const config = esignConfig(service, { DROPBOX_SIGN_API_KEY: TEST_API_KEY, DROPBOX_SIGN_TEST_MODE: 'false' });
+    const config = esignConfig(service, {
+      DROPBOX_SIGN_API_KEY: TEST_API_KEY,
+      DROPBOX_SIGN_TEST_MODE: 'false',
+    });
     expect(config).toMatchObject({ state: 'ready', testMode: true });
   });
 
   it('sends live requests in production unless the test flag is set', () => {
     const production = { ...service, APP_ENV: 'production' as const };
-    expect(esignConfig(production, { DROPBOX_SIGN_API_KEY: TEST_API_KEY })).toMatchObject({ testMode: false });
+    expect(esignConfig(production, { DROPBOX_SIGN_API_KEY: TEST_API_KEY })).toMatchObject({
+      testMode: false,
+    });
     expect(
-      esignConfig(production, { DROPBOX_SIGN_API_KEY: TEST_API_KEY, DROPBOX_SIGN_TEST_MODE: 'true' }),
+      esignConfig(production, {
+        DROPBOX_SIGN_API_KEY: TEST_API_KEY,
+        DROPBOX_SIGN_TEST_MODE: 'true',
+      }),
     ).toMatchObject({ testMode: true });
   });
 
   it('fails this feature alone when a piece is missing or malformed', () => {
-    expect(esignConfig(service, { DROPBOX_SIGN_API_KEY: 'short' })).toMatchObject({ state: 'misconfigured' });
+    expect(esignConfig(service, { DROPBOX_SIGN_API_KEY: 'short' })).toMatchObject({
+      state: 'misconfigured',
+    });
     expect(
-      esignConfig(service, { DROPBOX_SIGN_API_KEY: TEST_API_KEY, DROPBOX_SIGN_CLIENT_ID: 'bad id!' }),
+      esignConfig(service, {
+        DROPBOX_SIGN_API_KEY: TEST_API_KEY,
+        DROPBOX_SIGN_CLIENT_ID: 'bad id!',
+      }),
     ).toMatchObject({ state: 'misconfigured' });
     expect(
-      esignConfig({ ...service, APPLICATION_MODE: 'foundation' }, { DROPBOX_SIGN_API_KEY: TEST_API_KEY }),
+      esignConfig(
+        { ...service, APPLICATION_MODE: 'foundation' },
+        { DROPBOX_SIGN_API_KEY: TEST_API_KEY },
+      ),
     ).toMatchObject({ state: 'misconfigured' });
     expect(
-      esignConfig({ ...service, SUPABASE_SERVICE_ROLE_KEY: undefined }, { DROPBOX_SIGN_API_KEY: TEST_API_KEY }),
+      esignConfig(
+        { ...service, SUPABASE_SERVICE_ROLE_KEY: undefined },
+        { DROPBOX_SIGN_API_KEY: TEST_API_KEY },
+      ),
     ).toMatchObject({ state: 'misconfigured' });
   });
 });
@@ -382,7 +461,9 @@ describe('plan gating', () => {
       const copy = [
         paidOnlySummary(capabilities),
         paidAdditions(capabilities),
-        ...offeredFeatures(capabilities).map((feature) => `${feature.label} ${feature.limit ?? ''}`),
+        ...offeredFeatures(capabilities).map(
+          (feature) => `${feature.label} ${feature.limit ?? ''}`,
+        ),
       ].join(' ');
       expect(copy).not.toMatch(/e-?signature|dropbox sign/i);
       expect(offeredFeatures(capabilities).some((feature) => feature.key === 'esign')).toBe(false);
@@ -400,7 +481,10 @@ describe('plan gating', () => {
     await expect(hasEntitlement(ORG_ID, 'esign')).resolves.toBe(false);
     entitlement.result = { data: null, error: { message: 'unavailable' } };
     await expect(hasEntitlement(ORG_ID, 'esign')).resolves.toBe(false);
-    entitlement.result = { data: { ...current, paid_through: '2020-01-01T00:00:00Z' }, error: null };
+    entitlement.result = {
+      data: { ...current, paid_through: '2020-01-01T00:00:00Z' },
+      error: null,
+    };
     await expect(hasEntitlement(ORG_ID, 'esign')).resolves.toBe(false);
   });
 });
@@ -434,28 +518,62 @@ describe('the Dropbox Sign client', () => {
     expect(result).toMatchObject({ ok: true, request: { signature_request_id: PROVIDER_ID } });
     expect(calls[0]?.url).toBe(`${DROPBOX_SIGN_API}/signature_request/send`);
     expect(calls[0]?.init.method).toBe('POST');
-    expect(new Headers(calls[0]?.init.headers).get('authorization')).toBe(basicAuthorization(TEST_API_KEY));
+    expect(new Headers(calls[0]?.init.headers).get('authorization')).toBe(
+      basicAuthorization(TEST_API_KEY),
+    );
     expect(calls[0]?.init.body).toBeInstanceOf(FormData);
   });
 
   it('classifies refusals and outages', async () => {
-    const refused = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response('{}', { status: 400 })).fetcher);
-    await expect(refused.get(PROVIDER_ID)).resolves.toEqual({ ok: false, kind: 'rejected', status: 400 });
-    const down = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response('', { status: 503 })).fetcher);
-    await expect(down.get(PROVIDER_ID)).resolves.toEqual({ ok: false, kind: 'unavailable', status: 503 });
-    const gone = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response('', { status: 410 })).fetcher);
+    const refused = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response('{}', { status: 400 })).fetcher,
+    );
+    await expect(refused.get(PROVIDER_ID)).resolves.toEqual({
+      ok: false,
+      kind: 'rejected',
+      status: 400,
+    });
+    const down = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response('', { status: 503 })).fetcher,
+    );
+    await expect(down.get(PROVIDER_ID)).resolves.toEqual({
+      ok: false,
+      kind: 'unavailable',
+      status: 503,
+    });
+    const gone = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response('', { status: 410 })).fetcher,
+    );
     await expect(gone.get(PROVIDER_ID)).resolves.toEqual({ ok: false, kind: 'gone' });
   });
 
   it('downloads the signed PDF, waits on 409 and refuses anything that is not a bounded PDF', async () => {
-    const pdf = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response(SIGNED_PDF as BodyInit)).fetcher);
+    const pdf = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response(SIGNED_PDF as BodyInit)).fetcher,
+    );
     const result = await pdf.signedPdf(PROVIDER_ID, 1024);
     expect(result.ok && isPdf(result.bytes)).toBe(true);
-    const pending = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response('', { status: 409 })).fetcher);
-    await expect(pending.signedPdf(PROVIDER_ID, 1024)).resolves.toEqual({ ok: false, kind: 'not_ready' });
+    const pending = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response('', { status: 409 })).fetcher,
+    );
+    await expect(pending.signedPdf(PROVIDER_ID, 1024)).resolves.toEqual({
+      ok: false,
+      kind: 'not_ready',
+    });
     const html = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response('<html>')).fetcher);
-    await expect(html.signedPdf(PROVIDER_ID, 1024)).resolves.toEqual({ ok: false, kind: 'invalid' });
-    const big = createDropboxSignClient(TEST_API_KEY, fakeFetch(new Response(SIGNED_PDF as BodyInit)).fetcher);
+    await expect(html.signedPdf(PROVIDER_ID, 1024)).resolves.toEqual({
+      ok: false,
+      kind: 'invalid',
+    });
+    const big = createDropboxSignClient(
+      TEST_API_KEY,
+      fakeFetch(new Response(SIGNED_PDF as BodyInit)).fetcher,
+    );
     await expect(big.signedPdf(PROVIDER_ID, 10)).resolves.toEqual({ ok: false, kind: 'too_large' });
   });
 
@@ -501,7 +619,13 @@ describe('a verified callback', () => {
     const deps: CallbackDeps = {
       provider: {
         send: vi.fn(),
-        get: vi.fn(async () => options.live ?? { ok: true as const, request: signatureRequestSchema.parse(liveRequest()) }),
+        get: vi.fn(
+          async () =>
+            options.live ?? {
+              ok: true as const,
+              request: signatureRequestSchema.parse(liveRequest()),
+            },
+        ),
         signedPdf: vi.fn(async () => options.file ?? { ok: true as const, bytes: SIGNED_PDF }),
       },
       recorded: vi.fn(async () => options.recorded ?? false),
@@ -520,12 +644,19 @@ describe('a verified callback', () => {
     return { deps, applies, stores };
   }
 
-  const complete = { ok: true as const, request: signatureRequestSchema.parse(liveRequest({ is_complete: true })) };
+  const complete = {
+    ok: true as const,
+    request: signatureRequestSchema.parse(liveRequest({ is_complete: true })),
+  };
 
   it('acknowledges an event about no signature request (callback_test)', async () => {
     const { deps } = harness({});
     const test = callbackEventSchema.parse({
-      event: { event_time: time, event_type: 'callback_test', event_hash: hashOf(time, 'callback_test') },
+      event: {
+        event_time: time,
+        event_type: 'callback_test',
+        event_hash: hashOf(time, 'callback_test'),
+      },
     });
     await expect(handleVerifiedEvent(test, deps)).resolves.toBe('acknowledged');
     expect(deps.provider.get).not.toHaveBeenCalled();
@@ -533,14 +664,22 @@ describe('a verified callback', () => {
 
   it('applies the live state, never the payload', async () => {
     const { deps, applies } = harness({});
-    await expect(handleVerifiedEvent(event('signature_request_viewed'), deps)).resolves.toBe('applied');
+    await expect(handleVerifiedEvent(event('signature_request_viewed'), deps)).resolves.toBe(
+      'applied',
+    );
     expect(deps.provider.get).toHaveBeenCalledWith(PROVIDER_ID);
-    expect(applies[0]).toMatchObject({ status: 'sent', requestId: ROW_ID, eventKey: eventKey(event('signature_request_viewed')) });
+    expect(applies[0]).toMatchObject({
+      status: 'sent',
+      requestId: ROW_ID,
+      eventKey: eventKey(event('signature_request_viewed')),
+    });
   });
 
   it('treats a redelivered event as a duplicate without calling the provider', async () => {
     const { deps } = harness({ recorded: true });
-    await expect(handleVerifiedEvent(event('signature_request_viewed'), deps)).resolves.toBe('duplicate');
+    await expect(handleVerifiedEvent(event('signature_request_viewed'), deps)).resolves.toBe(
+      'duplicate',
+    );
     expect(deps.provider.get).not.toHaveBeenCalled();
   });
 
@@ -552,37 +691,59 @@ describe('a verified callback', () => {
 
   it('leaves alone a request this deployment never sent', async () => {
     const { deps } = harness({ row: null });
-    await expect(handleVerifiedEvent(event('signature_request_sent'), deps)).resolves.toBe('unmatched');
+    await expect(handleVerifiedEvent(event('signature_request_sent'), deps)).resolves.toBe(
+      'unmatched',
+    );
     expect(deps.apply).not.toHaveBeenCalled();
   });
 
   it('matches an unconfirmed send by our own id, then checks the live metadata agrees', async () => {
-    const { deps } = harness({ row: null, unconfirmed: stored({ provider_request_id: null, status: 'sending' }) });
-    await expect(handleVerifiedEvent(event('signature_request_sent'), deps)).resolves.toBe('applied');
+    const { deps } = harness({
+      row: null,
+      unconfirmed: stored({ provider_request_id: null, status: 'sending' }),
+    });
+    await expect(handleVerifiedEvent(event('signature_request_sent'), deps)).resolves.toBe(
+      'applied',
+    );
     const other = harness({
       row: null,
       unconfirmed: stored({ provider_request_id: null }),
-      live: { ok: true, request: signatureRequestSchema.parse(liveRequest({ metadata: { tradedocs_request_id: ORG_ID } })) },
+      live: {
+        ok: true,
+        request: signatureRequestSchema.parse(
+          liveRequest({ metadata: { tradedocs_request_id: ORG_ID } }),
+        ),
+      },
     });
-    await expect(handleVerifiedEvent(event('signature_request_sent'), other.deps)).resolves.toBe('unmatched');
+    await expect(handleVerifiedEvent(event('signature_request_sent'), other.deps)).resolves.toBe(
+      'unmatched',
+    );
   });
 
   it('refuses a live request in the other mode', async () => {
-    const { deps } = harness({ live: { ok: true, request: signatureRequestSchema.parse(liveRequest({ test_mode: false })) } });
-    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe('mode_mismatch');
+    const { deps } = harness({
+      live: { ok: true, request: signatureRequestSchema.parse(liveRequest({ test_mode: false })) },
+    });
+    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe(
+      'mode_mismatch',
+    );
     expect(deps.apply).not.toHaveBeenCalled();
   });
 
   it('stores the signed copy once the request is complete', async () => {
     const { deps, stores, applies } = harness({ live: complete });
-    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe('stored');
+    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe(
+      'stored',
+    );
     expect(applies[0]?.status).toBe('signed');
     expect(stores).toEqual([SIGNED_PDF]);
   });
 
   it('waits when the provider is still preparing the file', async () => {
     const { deps, stores } = harness({ live: complete, file: { ok: false, kind: 'not_ready' } });
-    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe('file_pending');
+    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe(
+      'file_pending',
+    );
     expect(stores).toHaveLength(0);
   });
 
@@ -593,36 +754,47 @@ describe('a verified callback', () => {
       live: complete,
       applied: 'duplicate',
     });
-    await expect(handleVerifiedEvent(event('signature_request_downloadable'), deps)).resolves.toBe('stored');
+    await expect(handleVerifiedEvent(event('signature_request_downloadable'), deps)).resolves.toBe(
+      'stored',
+    );
     expect(stores).toHaveLength(1);
   });
 
   it('does not fetch again once the copy is stored', async () => {
     const { deps } = harness({
-      row: stored({ status: 'signed', signed_object_path: `org/${ORG_ID}/esign/${ROW_ID}/${'a'.repeat(64)}.pdf` }),
+      row: stored({
+        status: 'signed',
+        signed_object_path: `org/${ORG_ID}/esign/${ROW_ID}/${'a'.repeat(64)}.pdf`,
+      }),
       live: complete,
       applied: 'ignored',
     });
-    await expect(handleVerifiedEvent(event('signature_request_downloadable'), deps)).resolves.toBe('ignored');
+    await expect(handleVerifiedEvent(event('signature_request_downloadable'), deps)).resolves.toBe(
+      'ignored',
+    );
     expect(deps.provider.signedPdf).not.toHaveBeenCalled();
   });
 
   it('acknowledges a signed copy that is not a PDF instead of retrying forever', async () => {
     const { deps } = harness({ live: complete, file: { ok: false, kind: 'invalid' } });
-    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe('copy_refused');
+    await expect(handleVerifiedEvent(event('signature_request_all_signed'), deps)).resolves.toBe(
+      'copy_refused',
+    );
   });
 
   it('asks for a retry when the provider is unreachable', async () => {
     const { deps } = harness({ live: { ok: false, kind: 'unavailable', status: 503 } });
-    await expect(handleVerifiedEvent(event('signature_request_signed'), deps)).rejects.toBeInstanceOf(
-      RetryableCallbackError,
-    );
+    await expect(
+      handleVerifiedEvent(event('signature_request_signed'), deps),
+    ).rejects.toBeInstanceOf(RetryableCallbackError);
     expect(deps.apply).not.toHaveBeenCalled();
   });
 
   it('records a cancellation the provider no longer serves', async () => {
     const { deps, applies } = harness({ live: { ok: false, kind: 'gone' } });
-    await expect(handleVerifiedEvent(event('signature_request_canceled'), deps)).resolves.toBe('applied');
+    await expect(handleVerifiedEvent(event('signature_request_canceled'), deps)).resolves.toBe(
+      'applied',
+    );
     expect(applies[0]?.status).toBe('cancelled');
     // Gone for any other reason: nothing to apply, and a retry could not help.
     const other = harness({ live: { ok: false, kind: 'gone' } });

@@ -267,27 +267,29 @@ function FeatureLedger({
   }
   return (
     <ul className="ledger" aria-label="Included features">
-      {features.filter((feature) => planIncludes(feature, plan)).map((feature) => {
-        const waiting = feature.needsAccount && !accountsOpen;
-        return (
-          <li key={feature.key}>
-            {waiting ? (
-              <Clock size={17} aria-hidden="true" className="not-yet" />
-            ) : (
-              <Check size={17} aria-hidden="true" className="yes" />
-            )}
-            <span>
-              {feature.label}
-              {'limit' in feature && feature.limit ? (
-                <span className="pricing-limit">{feature.limit}</span>
-              ) : null}
+      {features
+        .filter((feature) => planIncludes(feature, plan))
+        .map((feature) => {
+          const waiting = feature.needsAccount && !accountsOpen;
+          return (
+            <li key={feature.key}>
               {waiting ? (
-                <span className="pricing-limit">Needs an account; not open on this site yet</span>
-              ) : null}
-            </span>
-          </li>
-        );
-      })}
+                <Clock size={17} aria-hidden="true" className="not-yet" />
+              ) : (
+                <Check size={17} aria-hidden="true" className="yes" />
+              )}
+              <span>
+                {feature.label}
+                {'limit' in feature && feature.limit ? (
+                  <span className="pricing-limit">{feature.limit}</span>
+                ) : null}
+                {waiting ? (
+                  <span className="pricing-limit">Needs an account; not open on this site yet</span>
+                ) : null}
+              </span>
+            </li>
+          );
+        })}
     </ul>
   );
 }
@@ -403,36 +405,38 @@ export default function PricingPage() {
                   {group}
                 </th>
               </tr>
-              {features.filter((feature) => feature.group === group).map((feature) => (
-                <tr key={feature.key}>
-                  <th scope="row" className="pricing-feature">
-                    {feature.label}
-                    {'limit' in feature && feature.limit ? (
-                      <span className="pricing-limit">{feature.limit}</span>
-                    ) : null}
-                  </th>
-                  {plans.map((plan) => (
-                    <td key={plan.id}>
-                      {planIncludes(feature, plan.id) && feature.needsAccount && !accountsOpen ? (
-                        <>
-                          <Clock size={17} aria-hidden="true" className="not-yet" />
-                          <span className="sr-only">Not open yet</span>
-                        </>
-                      ) : planIncludes(feature, plan.id) ? (
-                        <>
-                          <Check size={17} aria-hidden="true" className="yes" />
-                          <span className="sr-only">Included</span>
-                        </>
-                      ) : (
-                        <>
-                          <Minus size={17} aria-hidden="true" />
-                          <span className="sr-only">Not included</span>
-                        </>
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
+              {features
+                .filter((feature) => feature.group === group)
+                .map((feature) => (
+                  <tr key={feature.key}>
+                    <th scope="row" className="pricing-feature">
+                      {feature.label}
+                      {'limit' in feature && feature.limit ? (
+                        <span className="pricing-limit">{feature.limit}</span>
+                      ) : null}
+                    </th>
+                    {plans.map((plan) => (
+                      <td key={plan.id}>
+                        {planIncludes(feature, plan.id) && feature.needsAccount && !accountsOpen ? (
+                          <>
+                            <Clock size={17} aria-hidden="true" className="not-yet" />
+                            <span className="sr-only">Not open yet</span>
+                          </>
+                        ) : planIncludes(feature, plan.id) ? (
+                          <>
+                            <Check size={17} aria-hidden="true" className="yes" />
+                            <span className="sr-only">Included</span>
+                          </>
+                        ) : (
+                          <>
+                            <Minus size={17} aria-hidden="true" />
+                            <span className="sr-only">Not included</span>
+                          </>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
             </tbody>
           ))}
         </DataTable>

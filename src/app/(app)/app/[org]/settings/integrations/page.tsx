@@ -19,7 +19,10 @@ import { ConnectForm, DisconnectForm, ImportForm } from './integration-forms';
 export const metadata: Metadata = { title: 'Integrations' };
 
 /** What the redirect back from a provider means, by result code. */
-const RESULTS: Record<string, { tone: 'success' | 'warning' | 'danger'; title: string; text: string }> = {
+const RESULTS: Record<
+  string,
+  { tone: 'success' | 'warning' | 'danger'; title: string; text: string }
+> = {
   connected: {
     tone: 'success',
     title: 'Connected',
@@ -74,7 +77,12 @@ const ACCESS: Record<ProviderId, string> = {
   xero: 'TradeDocs asks Xero for read-only access to contacts and to settings, where Xero keeps items.',
 };
 
-type Status = { provider: string; tenant_name: string | null; status: string; connected_at: string };
+type Status = {
+  provider: string;
+  tenant_name: string | null;
+  status: string;
+  connected_at: string;
+};
 
 /**
  * QuickBooks Online and Xero (D-025). A provider without complete credentials on this
@@ -195,7 +203,9 @@ export default async function IntegrationsPage({
                         . You can still disconnect.
                       </Callout>
                     ) : null}
-                    {canManage ? <DisconnectForm org={org} provider={provider} name={name} /> : null}
+                    {canManage ? (
+                      <DisconnectForm org={org} provider={provider} name={name} />
+                    ) : null}
                   </>
                 ) : !canManage ? (
                   <Callout tone="neutral" title="Not connected">

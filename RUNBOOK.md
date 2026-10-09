@@ -234,7 +234,7 @@ for a preview, that preview's stable origin). Register one per environment you w
    **Web app**, company or application URL `<APP_URL>`, redirect URI as above. Copy the
    client id to `XERO_CLIENT_ID`, generate a secret into `XERO_CLIENT_SECRET`. Scopes are
    requested by the app at sign-in: `offline_access accounting.contacts.read
-   accounting.settings.read` (contacts and items, read-only; unaffected by Xero's 2026
+accounting.settings.read` (contacts and items, read-only; unaffected by Xero's 2026
    granular-scope change for apps created after 2 March 2026). PKCE (S256) is used.
    - **Connection limits and review.** An uncertified Xero app is limited to 25 connected
      organisations; more needs Xero App Partner certification (partnership application,

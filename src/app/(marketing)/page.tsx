@@ -482,8 +482,8 @@ export default function Home() {
           </div>
         </div>
         <p className="note">
-          The same record also prepares a {inSentence(listOf(furtherKinds))}. The sales contract
-          is a draft for both parties to review, and the carrier issues the bill of lading.{' '}
+          The same record also prepares a {inSentence(listOf(furtherKinds))}. The sales contract is
+          a draft for both parties to review, and the carrier issues the bill of lading.{' '}
           {regulatedOffered
             ? CERTIFICATE_OF_ORIGIN_NOTICE
             : 'A certificate of origin template is awaiting legal review and is not offered yet.'}

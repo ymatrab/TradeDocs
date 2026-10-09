@@ -71,7 +71,9 @@ export function readTokenSet(body: unknown, now: Date, previousRefresh?: string)
     refreshToken: refresh,
     accessExpiresAt: new Date(now.getTime() + expiresIn * 1000),
     refreshExpiresAt:
-      Number.isFinite(refreshIn) && refreshIn > 0 ? new Date(now.getTime() + refreshIn * 1000) : null,
+      Number.isFinite(refreshIn) && refreshIn > 0
+        ? new Date(now.getTime() + refreshIn * 1000)
+        : null,
     scope: typeof b.scope === 'string' ? b.scope : null,
   };
 }
@@ -184,7 +186,8 @@ export async function xeroTenant(accessToken: string, fetcher: Fetcher): Promise
       typeof (entry as Record<string, unknown>).tenantId === 'string' &&
       (entry as Record<string, unknown>).tenantType === 'ORGANISATION',
   );
-  if (connections.length === 0) throw new ProviderError('forbidden', 'No Xero organisation was connected.');
+  if (connections.length === 0)
+    throw new ProviderError('forbidden', 'No Xero organisation was connected.');
   const event = xeroAuthEvent(accessToken);
   const chosen =
     (event ? connections.find((entry) => entry.authEventId === event) : undefined) ??

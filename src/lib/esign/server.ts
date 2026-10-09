@@ -101,8 +101,7 @@ export class EsignRpcError extends Error {
   }
 }
 
-const REQUEST_COLUMNS =
-  'id,org_id,status,provider_request_id,test_mode,signers,signed_object_path';
+const REQUEST_COLUMNS = 'id,org_id,status,provider_request_id,test_mode,signers,signed_object_path';
 
 async function selectOne(
   config: ReadyEsignConfig,
@@ -128,7 +127,8 @@ async function selectOne(
     id: String(row.id),
     org_id: String(row.org_id),
     status: String(row.status),
-    provider_request_id: typeof row.provider_request_id === 'string' ? row.provider_request_id : null,
+    provider_request_id:
+      typeof row.provider_request_id === 'string' ? row.provider_request_id : null,
     test_mode: row.test_mode === true,
     signers: parseStoredSigners(row.signers),
     signed_object_path: typeof row.signed_object_path === 'string' ? row.signed_object_path : null,
@@ -166,7 +166,10 @@ export async function uploadSignedCopy(
 }
 
 /** The callback's dependencies, wired to the provider, the routines and the bucket. */
-export function callbackDeps(config: ReadyEsignConfig, fetcher: typeof fetch = fetch): CallbackDeps {
+export function callbackDeps(
+  config: ReadyEsignConfig,
+  fetcher: typeof fetch = fetch,
+): CallbackDeps {
   return {
     provider: createDropboxSignClient(config.apiKey, fetcher),
     recorded: (eventKey) =>

@@ -122,14 +122,15 @@ export function HsCodeLookup() {
     setProblem(undefined);
     setState({ kind: 'loading' });
     try {
-      const response = await fetch(
-        `/api/tools/hs-lookup?q=${encodeURIComponent(checked.data)}`,
-        { headers: { Accept: 'application/json' } },
-      );
+      const response = await fetch(`/api/tools/hs-lookup?q=${encodeURIComponent(checked.data)}`, {
+        headers: { Accept: 'application/json' },
+      });
       const body: unknown = await response.json().catch(() => null);
       if (!response.ok) {
         const message =
-          body && typeof body === 'object' && typeof (body as { error?: unknown }).error === 'string'
+          body &&
+          typeof body === 'object' &&
+          typeof (body as { error?: unknown }).error === 'string'
             ? (body as { error: string }).error
             : 'The lookup could not be completed.';
         setState({ kind: 'error', message });

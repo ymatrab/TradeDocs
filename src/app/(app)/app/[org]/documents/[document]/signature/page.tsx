@@ -107,10 +107,10 @@ export default async function SignaturePage({
         {available || history.length > 0 ? (
           <Callout tone="legal" title="Signature provided by Dropbox Sign">
             The electronic signature is provided by Dropbox Sign, which emails each signer, records
-            their signature and produces the signed PDF. TradeDocs prepares the document and
-            passes it to Dropbox Sign; it does not verify a signer’s identity beyond what Dropbox
-            Sign does, and it does not certify the document. This is separate from the signature
-            image (PDF branding) printed on your documents.
+            their signature and produces the signed PDF. TradeDocs prepares the document and passes
+            it to Dropbox Sign; it does not verify a signer’s identity beyond what Dropbox Sign
+            does, and it does not certify the document. This is separate from the signature image
+            (PDF branding) printed on your documents.
           </Callout>
         ) : null}
 
@@ -143,8 +143,8 @@ export default async function SignaturePage({
             <div style={{ display: 'grid', gap: 16 }}>
               {config.testMode ? (
                 <Callout tone="warning" title="Test mode">
-                  Requests from this workspace are sent in Dropbox Sign test mode. A test request
-                  is not legally binding.
+                  Requests from this workspace are sent in Dropbox Sign test mode. A test request is
+                  not legally binding.
                 </Callout>
               ) : null}
               <SendForSignatureForm
@@ -185,16 +185,21 @@ export default async function SignaturePage({
                       <td className="stack-title">{formatTime(request.created_at)}</td>
                       <td data-label="Status">
                         {REQUEST_STATUS[request.status] ?? request.status}
-                        {request.test_mode ? <span className="row-note">Test request, not legally binding</span> : null}
+                        {request.test_mode ? (
+                          <span className="row-note">Test request, not legally binding</span>
+                        ) : null}
                         {request.status === 'signed' && !request.signed_object_path ? (
-                          <span className="row-note">Dropbox Sign is preparing the signed copy.</span>
+                          <span className="row-note">
+                            Dropbox Sign is preparing the signed copy.
+                          </span>
                         ) : null}
                       </td>
                       <td data-label="Signers">
                         <ul style={{ margin: 0, paddingLeft: 16 }}>
                           {signers.map((signer) => (
                             <li key={signer.email}>
-                              {signer.name} ({signer.email}): {SIGNER_STATUS[signer.status] ?? signer.status}
+                              {signer.name} ({signer.email}):{' '}
+                              {SIGNER_STATUS[signer.status] ?? signer.status}
                               {signer.signed_at ? `, ${formatTime(signer.signed_at)}` : ''}
                             </li>
                           ))}
@@ -202,7 +207,11 @@ export default async function SignaturePage({
                       </td>
                       <td className="stack-actions">
                         {request.signed_object_path ? (
-                          <LinkButton href={`/api/esign/${request.id}/signed`} tone="secondary" compact>
+                          <LinkButton
+                            href={`/api/esign/${request.id}/signed`}
+                            tone="secondary"
+                            compact
+                          >
                             <Download size={15} aria-hidden="true" /> Signed PDF
                             <span className="sr-only"> of {document.number}</span>
                           </LinkButton>

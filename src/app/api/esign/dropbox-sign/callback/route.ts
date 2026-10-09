@@ -1,5 +1,9 @@
 import type { NextRequest } from 'next/server';
-import { handleVerifiedEvent, RetryableCallbackError, type CallbackOutcome } from '@/lib/esign/callback';
+import {
+  handleVerifiedEvent,
+  RetryableCallbackError,
+  type CallbackOutcome,
+} from '@/lib/esign/callback';
 import {
   CALLBACK_ACKNOWLEDGEMENT,
   callbackEventSchema,

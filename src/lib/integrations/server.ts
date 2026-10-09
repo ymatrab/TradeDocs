@@ -12,7 +12,12 @@ import {
   tokenContext,
 } from '@/lib/integrations/crypto';
 import { ProviderError, type Fetcher } from '@/lib/integrations/http';
-import { authorizationUrl, refreshTokens, revokeToken, type TokenSet } from '@/lib/integrations/oauth';
+import {
+  authorizationUrl,
+  refreshTokens,
+  revokeToken,
+  type TokenSet,
+} from '@/lib/integrations/oauth';
 import {
   PROVIDER_ENDPOINTS,
   providerCapabilities,
@@ -80,7 +85,8 @@ export async function beginAuthorization(
     created_at: now.toISOString(),
     expires_at: expires.toISOString(),
   });
-  if (error) throw new Error(`Could not record the authorization state (${error.code ?? 'unknown'}).`);
+  if (error)
+    throw new Error(`Could not record the authorization state (${error.code ?? 'unknown'}).`);
 
   const state = signState(config.tokenKey, {
     n: nonce,
@@ -93,8 +99,7 @@ export async function beginAuthorization(
 }
 
 export type ConsumedState =
-  | { ok: true; codeVerifier: string | null }
-  | { ok: false; reason: 'used_or_expired' | 'mismatch' };
+  { ok: true; codeVerifier: string | null } | { ok: false; reason: 'used_or_expired' | 'mismatch' };
 
 /**
  * Marks a state used, exactly once: the update matches only an unconsumed, unexpired row for
@@ -118,7 +123,8 @@ export async function consumeState(
     .is('consumed_at', null)
     .gt('expires_at', now.toISOString())
     .select('code_verifier_ciphertext');
-  if (error) throw new Error(`Could not read the authorization state (${error.code ?? 'unknown'}).`);
+  if (error)
+    throw new Error(`Could not read the authorization state (${error.code ?? 'unknown'}).`);
   const row = data?.[0];
   if (!row) return { ok: false, reason: 'used_or_expired' };
   if (!row.code_verifier_ciphertext) return { ok: true, codeVerifier: null };
@@ -250,7 +256,10 @@ export async function usableAccessToken(
   try {
     tokens = await refreshTokens(config, connection.refreshToken, fetcher, now);
   } catch (error) {
-    if (error instanceof ProviderError && (error.code === 'invalid_grant' || error.code === 'unauthorized')) {
+    if (
+      error instanceof ProviderError &&
+      (error.code === 'invalid_grant' || error.code === 'unauthorized')
+    ) {
       await markNeedsReconnect(config, org);
     }
     throw error;
@@ -320,5 +329,6 @@ async function audit(
     target_id: provider,
     metadata: { provider, ...extra },
   });
-  if (error) console.error('integration audit write failed', { action, provider, code: error.code });
+  if (error)
+    console.error('integration audit write failed', { action, provider, code: error.code });
 }

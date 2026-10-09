@@ -56,10 +56,7 @@ function entitlement(plan: string) {
 }
 
 /** A database that answers each routine with the given handler, and records every call. */
-function database(
-  routines: Record<string, Rpc>,
-  options: { auth?: unknown; plan?: string } = {},
-) {
+function database(routines: Record<string, Rpc>, options: { auth?: unknown; plan?: string } = {}) {
   const calls: { url: string; body: string }[] = [];
   const fetcher = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input);
@@ -68,7 +65,8 @@ function database(
     if (url.endsWith('/rest/v1/rpc/api_authenticate')) {
       return Response.json(options.auth ?? { status: 'ok', key_id: KEY_ID, org_id: ORG });
     }
-    if (url.includes('/rest/v1/entitlements')) return Response.json(entitlement(options.plan ?? 'team'));
+    if (url.includes('/rest/v1/entitlements'))
+      return Response.json(entitlement(options.plan ?? 'team'));
     const name = /\/rest\/v1\/rpc\/([a-z_]+)$/.exec(url)?.[1];
     const handler = name ? routines[name] : undefined;
     if (!handler) throw new Error(`Unexpected request to ${url}`);
@@ -163,11 +161,21 @@ describe('authentication failures', () => {
       api_get_document: () => Response.json(null),
       api_generate_document: () => Response.json(null),
     });
-    expect((await getShipment(request(`/shipments/${OTHER_SHIPMENT}`), params(OTHER_SHIPMENT))).status).toBe(404);
     expect(
-      (await listDocuments(request(`/shipments/${OTHER_SHIPMENT}/documents`), params(OTHER_SHIPMENT))).status,
+      (await getShipment(request(`/shipments/${OTHER_SHIPMENT}`), params(OTHER_SHIPMENT))).status,
     ).toBe(404);
-    expect((await documentPdf(request(`/documents/${OTHER_SHIPMENT}/pdf`), params(OTHER_SHIPMENT))).status).toBe(404);
+    expect(
+      (
+        await listDocuments(
+          request(`/shipments/${OTHER_SHIPMENT}/documents`),
+          params(OTHER_SHIPMENT),
+        )
+      ).status,
+    ).toBe(404);
+    expect(
+      (await documentPdf(request(`/documents/${OTHER_SHIPMENT}/pdf`), params(OTHER_SHIPMENT)))
+        .status,
+    ).toBe(404);
     const generated = await generateDocument(
       json(`/shipments/${OTHER_SHIPMENT}/documents`, { kind: 'commercial_invoice' }),
       params(OTHER_SHIPMENT),
@@ -299,7 +307,11 @@ describe('happy paths', () => {
   it('refuses a body that is not JSON with 415', async () => {
     database({});
     const response = await createShipment(
-      request('/shipments', { method: 'POST', headers: { 'content-type': 'text/plain' }, body: 'x' }),
+      request('/shipments', {
+        method: 'POST',
+        headers: { 'content-type': 'text/plain' },
+        body: 'x',
+      }),
     );
     expect(response.status).toBe(415);
   });
@@ -322,7 +334,10 @@ describe('happy paths', () => {
     const one = await getShipment(request(`/shipments/${SHIPMENT}`), params(SHIPMENT));
     expect(one.status).toBe(200);
     expect((await one.json()).data.reference).toBe('PO-1');
-    const documents = await listDocuments(request(`/shipments/${SHIPMENT}/documents`), params(SHIPMENT));
+    const documents = await listDocuments(
+      request(`/shipments/${SHIPMENT}/documents`),
+      params(SHIPMENT),
+    );
     expect(documents.status).toBe(200);
     expect(await documents.json()).toEqual({
       data: [{ id: KEY_ID, kind: 'packing_list', created_at: shipment(1).created_at }],

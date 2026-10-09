@@ -143,7 +143,12 @@ export function ApiKeysPanel({
             )}
           </Field>
           <div>
-            <Button type="submit" pending={creating} pendingLabel="Creating…" disabled={!canCreate || creating}>
+            <Button
+              type="submit"
+              pending={creating}
+              pendingLabel="Creating…"
+              disabled={!canCreate || creating}
+            >
               Create key
             </Button>
           </div>

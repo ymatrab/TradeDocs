@@ -117,7 +117,10 @@ export async function POST(request: Request, { params }: Context): Promise<Respo
       data = await callRpc(principal.config, 'api_generate_document', {
         p_key_hash: principal.keyHash,
         p_idempotency_key: idempotencyKey,
-        p_request_hash: requestFingerprint(`POST /api/v1/shipments/${id.data}/documents`, parsed.data),
+        p_request_hash: requestFingerprint(
+          `POST /api/v1/shipments/${id.data}/documents`,
+          parsed.data,
+        ),
         p_shipment: id.data,
         p_kind: parsed.data.kind,
       });

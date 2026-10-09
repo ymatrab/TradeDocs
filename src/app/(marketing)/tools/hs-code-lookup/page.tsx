@@ -33,17 +33,17 @@ export default function HsCodeLookupPage() {
         <h1>HS code lookup</h1>
         <p className="lede">
           Search the United States Harmonized Tariff Schedule and the UK Trade Tariff at once, by
-          what the goods are or by a code you already have. Every line links to the official page
-          it came from.
+          what the goods are or by a code you already have. Every line links to the official page it
+          came from.
         </p>
       </section>
 
       <section className="section">
         <Callout tone="legal" title="A lookup, not a classification" level={2}>
-          These are the tariff lines whose wording matches your search, read live from the USITC
-          and HMRC. They are not a classification of your goods and no duty rate is shown. The
-          importer, usually with a customs broker, decides the code declared; the customs
-          authority can confirm it with a binding ruling.
+          These are the tariff lines whose wording matches your search, read live from the USITC and
+          HMRC. They are not a classification of your goods and no duty rate is shown. The importer,
+          usually with a customs broker, decides the code declared; the customs authority can
+          confirm it with a binding ruling.
         </Callout>
       </section>
 
@@ -56,12 +56,12 @@ export default function HsCodeLookupPage() {
         <ul className="measure">
           <li>
             Your search goes from our server to the two official services, the USITC’s HTS search
-            and the GOV.UK Trade Tariff API, and their answers come back as they are, trimmed to
-            the code and description. Nothing is added or ranked by us.
+            and the GOV.UK Trade Tariff API, and their answers come back as they are, trimmed to the
+            code and description. Nothing is added or ranked by us.
           </li>
           <li>
-            The first six digits of a code are the international Harmonized System; the digits
-            after them are national, so the US and UK lines often differ.
+            The first six digits of a code are the international Harmonized System; the digits after
+            them are national, so the US and UK lines often differ.
           </li>
           <li>
             Results are cached for up to a day, the rate at which the tariffs change. Open the
