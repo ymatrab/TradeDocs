@@ -400,6 +400,93 @@ export type Database = {
           },
         ]
       }
+      esign_requests: {
+        Row: {
+          created_at: string
+          document_id: string
+          document_number: string
+          failure_reason: string | null
+          id: string
+          last_event_at: string | null
+          last_event_type: string | null
+          message: string | null
+          org_id: string
+          original_sha256: string
+          provider: string
+          provider_request_id: string | null
+          requested_by: string | null
+          signed_byte_size: number | null
+          signed_object_path: string | null
+          signed_sha256: string | null
+          signed_stored_at: string | null
+          signers: Json
+          status: string
+          test_mode: boolean
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          document_id: string
+          document_number: string
+          failure_reason?: string | null
+          id?: string
+          last_event_at?: string | null
+          last_event_type?: string | null
+          message?: string | null
+          org_id: string
+          original_sha256: string
+          provider?: string
+          provider_request_id?: string | null
+          requested_by?: string | null
+          signed_byte_size?: number | null
+          signed_object_path?: string | null
+          signed_sha256?: string | null
+          signed_stored_at?: string | null
+          signers: Json
+          status?: string
+          test_mode: boolean
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string
+          document_number?: string
+          failure_reason?: string | null
+          id?: string
+          last_event_at?: string | null
+          last_event_type?: string | null
+          message?: string | null
+          org_id?: string
+          original_sha256?: string
+          provider?: string
+          provider_request_id?: string | null
+          requested_by?: string | null
+          signed_byte_size?: number | null
+          signed_object_path?: string | null
+          signed_sha256?: string | null
+          signed_stored_at?: string | null
+          signers?: Json
+          status?: string
+          test_mode?: boolean
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "esign_requests_org_id_document_id_fkey"
+            columns: ["org_id", "document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["org_id", "id"]
+          },
+          {
+            foreignKeyName: "esign_requests_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       invitations: {
         Row: {
           accepted_at: string | null
@@ -1035,6 +1122,51 @@ export type Database = {
       duplicate_shipment: {
         Args: { new_reference: string; source_shipment: string }
         Returns: string
+      }
+      esign_apply_event: {
+        Args: {
+          p_event_key: string
+          p_event_type: string
+          p_provider_request_id: string
+          p_request: string
+          p_signers: Json
+          p_status: string
+        }
+        Returns: string
+      }
+      esign_attach_signed: {
+        Args: {
+          p_byte_size: number
+          p_object_path: string
+          p_request: string
+          p_sha256: string
+        }
+        Returns: string
+      }
+      esign_create_request: {
+        Args: {
+          p_actor: string
+          p_document: string
+          p_message: string
+          p_org: string
+          p_original_sha256: string
+          p_signers: Json
+          p_test_mode: boolean
+        }
+        Returns: string
+      }
+      esign_event_recorded: { Args: { p_event_key: string }; Returns: boolean }
+      esign_mark_failed: {
+        Args: { p_reason: string; p_request: string }
+        Returns: undefined
+      }
+      esign_mark_sent: {
+        Args: { p_provider_request_id: string; p_request: string; p_signers: Json }
+        Returns: undefined
+      }
+      esign_record_download: {
+        Args: { p_actor: string; p_request: string }
+        Returns: undefined
       }
       export_account_data: { Args: never; Returns: Json }
       generate_document: {
