@@ -249,3 +249,19 @@ Generated types were extended by hand (`organization_settings`, the four documen
   blank checks, schema 6 capture on preview and generation, cross-tenant read and write denied).
   The two columns were added to `src/lib/database.types.ts` by hand; the CI
   `database-evidence` artifact is authoritative. Rollback in the migration header.
+
+## Public API keys (20261009000400, D-025)
+
+- `public.api_keys`: org, name, visible prefix, unique `key_hash` (HMAC-SHA-256 hex), creator,
+  `last_used_at` (touched at most once a minute), `revoked_at`/`revoked_by`. RLS: select for
+  owners/admins of the org, every column except `key_hash`; no direct writes.
+- `public.api_idempotency`: (key, Idempotency-Key) → request fingerprint and stored response,
+  24 hours, no grants to any client role.
+- Routines: `create_api_key`, `revoke_api_key` (authenticated, role-checked, audited);
+  `api_authenticate`, `api_list_shipments`, `api_get_shipment`, `api_create_shipment`,
+  `api_list_documents`, `api_get_document`, `api_generate_document` (service_role only).
+  Helpers in `private`: `api_entitled` (Team, mirrors plans.ts), `api_key_refusal`,
+  `api_principal`, JSON builders, idempotency claim/store.
+- Rollback: drop the routines, then `api_idempotency` and `api_keys`. No existing object is
+  altered.
+

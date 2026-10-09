@@ -2,6 +2,20 @@
 
 ## Unreleased — 2026-09-06
 
+### Public REST API v1 (D-025)
+
+- `/api/v1`: list/create shipments (with lines), get a shipment, list a shipment's documents,
+  generate a document of any kind in `documentKindLabels`, stream a document's PDF. Bearer
+  organization API keys (HMAC-SHA-256 under `API_KEY_PEPPER`), per-key quotas, Idempotency-Key
+  on POSTs, keyset pagination, one JSON error shape.
+- Team-only feature `api` in `plans.ts` (hasEntitlement + `private.api_entitled`); pricing and
+  billing copy derive from FEATURES (`paidAdditions()`).
+- Settings → API keys for owners/admins (shown once, revocable, audited). `/developers`
+  reference, in the footer and sitemap. `/api/ready` reports the API off without a pepper.
+- Migration `20261009000400_public_api.sql` with pgTAP `public_api.test.sql`;
+  `database.types.ts` hand-edited until the CI artifact regenerates it. Nothing run locally:
+  format, lint, typecheck, unit, integration, pgTAP and e2e are pending CI.
+
 ### Content plan v4 (D-023)
 
 - 12 approved DataForSEO calls made (5 SERPs, Canada and Australia overviews, 3 keyword

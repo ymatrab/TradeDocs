@@ -131,6 +131,19 @@ entitlement (for example a subscription event that arrived before its checkout; 
 re-reads the live subscription when it lands). `retry` means Stripe or the database was
 unreachable and Stripe will redeliver.
 
+## API keys and the public REST API (D-025)
+
+- Turn on: set `API_KEY_PEPPER` (32+ random characters, `openssl rand -base64 48`) in Vercel
+  for Preview and Production separately (different values), then redeploy. `/api/ready` stops
+  reporting `api_reason: api_key_pepper_missing`.
+- Leaked key: an owner or administrator revokes it in Settings → API keys; it fails on the next
+  request. Audit rows: `api_key.created`, `api_key.revoked`, `api_key.use_failed`,
+  `api.shipment_created`, `api.document_generated`.
+- Leaked pepper or mass revocation: change `API_KEY_PEPPER` and redeploy. Every existing key
+  stops matching at once; organizations create new keys. Optionally mark the old rows revoked:
+  `update public.api_keys set revoked_at = now() where revoked_at is null;`
+- Removing or demoting a key's creator turns that person's keys off; nothing else is needed.
+
 ## Contact inbox, legal pages and platform admin (D-009, D-018)
 
 - **Chat.** `CHAT_PROVIDER` accepts only `none` today (D-019); any other value is treated as

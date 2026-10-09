@@ -170,6 +170,28 @@ entitlement, a failed lookup or an unreadable image renders a preview without br
 - A signature image is the organization's own picture of a signature or stamp. Documents keep
   the mandatory "Prepared with TradeDocs…" statement on every page; nothing implies certification.
 
+## Public REST API and API keys (D-025)
+
+- Keys are `tdk_` + 48 base62 characters from `crypto.randomBytes` (rejection-sampled), shown
+  once and never stored or logged. The database keeps HMAC-SHA-256(`API_KEY_PEPPER`, key) and a
+  12-character visible prefix; a database copy alone yields no usable key. Clients never read
+  `key_hash` (column grant), not even owners.
+- Only owners and administrators create (Team plan) and revoke (any plan) keys, through
+  `create_api_key` / `revoke_api_key`, both audited (`api_key.created`, `api_key.revoked`).
+  Refused uses of a known key are audited as `api_key.use_failed` with the reason, at most once
+  per key per five minutes.
+- A key works only while its creator is still an owner or administrator of its organization
+  and the organization holds a current Team entitlement (`private.api_entitled`, mirrored by
+  `hasEntitlement(org, 'api')` in the route, fail closed).
+- Every `/api/v1` operation is a service_role-only routine that resolves the key from its hash
+  itself and scopes every row to that key's organization; no organization id comes from the
+  request. Generation calls `generate_document` unchanged, with the transaction's JWT subject
+  set to the key's creator for that call only and restored afterwards. pgTAP:
+  `supabase/tests/public_api.test.sql`.
+- Quotas: 120 requests/minute per key, 30 POSTs/minute per key, 30 failed authentications per
+  attested address per 15 minutes. POSTs accept an Idempotency-Key (24-hour, per-key records).
+- Logs carry routine names and SQLSTATE codes only: no key, hash, body or shipment content.
+
 ## Contact form, help and platform admin (D-018)
 
 - `contact_messages` has RLS enabled, no policies and no grant to `anon` or `authenticated`
