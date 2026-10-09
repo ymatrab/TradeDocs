@@ -264,6 +264,8 @@ test('the public tool pages meet the accessibility bar the rest of the product d
   // These pages are the first thing a stranger sees, and they are dense with form
   // controls. Holding them to the same standard as the workspace is the whole point of
   // having a standard.
+  // Fourteen full axe scans outgrow the default 30 s in Firefox; every page is still scanned.
+  test.setTimeout(120_000);
   for (const route of [
     '/tools',
     '/tools/cbm-calculator',
