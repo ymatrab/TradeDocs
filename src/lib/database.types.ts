@@ -400,6 +400,170 @@ export type Database = {
           },
         ]
       }
+      integration_connections: {
+        Row: {
+          access_expires_at: string
+          access_token_ciphertext: string
+          connected_at: string
+          connected_by: string | null
+          external_tenant_id: string
+          id: string
+          org_id: string
+          provider: string
+          refresh_expires_at: string | null
+          refresh_token_ciphertext: string
+          scopes: string
+          status: string
+          tenant_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          access_expires_at: string
+          access_token_ciphertext: string
+          connected_at?: string
+          connected_by?: string | null
+          external_tenant_id: string
+          id?: string
+          org_id: string
+          provider: string
+          refresh_expires_at?: string | null
+          refresh_token_ciphertext: string
+          scopes: string
+          status?: string
+          tenant_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          access_expires_at?: string
+          access_token_ciphertext?: string
+          connected_at?: string
+          connected_by?: string | null
+          external_tenant_id?: string
+          id?: string
+          org_id?: string
+          provider?: string
+          refresh_expires_at?: string | null
+          refresh_token_ciphertext?: string
+          scopes?: string
+          status?: string
+          tenant_name?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_connections_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      integration_oauth_states: {
+        Row: {
+          code_verifier_ciphertext: string | null
+          consumed_at: string | null
+          created_at: string
+          expires_at: string
+          nonce_hash: string
+          org_id: string
+          provider: string
+          user_id: string
+        }
+        Insert: {
+          code_verifier_ciphertext?: string | null
+          consumed_at?: string | null
+          created_at?: string
+          expires_at: string
+          nonce_hash: string
+          org_id: string
+          provider: string
+          user_id: string
+        }
+        Update: {
+          code_verifier_ciphertext?: string | null
+          consumed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          nonce_hash?: string
+          org_id?: string
+          provider?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_oauth_states_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      integration_records: {
+        Row: {
+          company_id: string | null
+          entity: string
+          external_id: string
+          first_imported_at: string
+          id: string
+          last_imported_at: string
+          local_hash: string
+          org_id: string
+          product_id: string | null
+          provider: string
+          source_hash: string
+        }
+        Insert: {
+          company_id?: string | null
+          entity: string
+          external_id: string
+          first_imported_at?: string
+          id?: string
+          last_imported_at?: string
+          local_hash: string
+          org_id: string
+          product_id?: string | null
+          provider: string
+          source_hash: string
+        }
+        Update: {
+          company_id?: string | null
+          entity?: string
+          external_id?: string
+          first_imported_at?: string
+          id?: string
+          last_imported_at?: string
+          local_hash?: string
+          org_id?: string
+          product_id?: string | null
+          provider?: string
+          source_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "integration_records_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "integration_records_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "integration_records_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       invitations: {
         Row: {
           accepted_at: string | null
@@ -1041,9 +1205,28 @@ export type Database = {
         Args: { document_kind: string; target_shipment: string }
         Returns: string
       }
+      import_integration_records: {
+        Args: {
+          dry_run?: boolean
+          record_kind: string
+          rows: Json
+          source: string
+          target_org: string
+        }
+        Returns: Json
+      }
       import_products: {
         Args: { dry_run?: boolean; rows: Json; target_org: string }
         Returns: Json
+      }
+      integration_status: {
+        Args: { target_org: string }
+        Returns: {
+          connected_at: string
+          provider: string
+          status: string
+          tenant_name: string
+        }[]
       }
       peek_rate_limit: {
         Args: { p_key_hash: string; p_window_seconds: number }
