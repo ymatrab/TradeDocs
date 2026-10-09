@@ -306,7 +306,7 @@ export async function authenticateApiRequest(
 }
 
 /** Headers every authenticated response carries. */
-export function principalHeaders(principal: ApiPrincipal): HeadersInit {
+export function principalHeaders(principal: ApiPrincipal): Record<string, string> {
   return principal.remaining === null
     ? {}
     : {

@@ -80,7 +80,7 @@ export async function GET(
 
     return new Response(pdf as BodyInit, {
       headers: {
-        ...Object.fromEntries(new Headers(principalHeaders(principal))),
+        ...principalHeaders(principal),
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${safeFileName(found.number)}.pdf"`,
         'Cache-Control': 'private, no-store',
