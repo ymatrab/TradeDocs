@@ -132,7 +132,7 @@ jobs:
       - name: Prove identity, tenancy and the shipment workspace against the running application
         # The workspace suite belongs here rather than on the foundation gate: it needs a
         # database, so on that gate it would report as skipped and prove nothing.
-        run: npx playwright test tests/e2e/identity.spec.ts tests/e2e/workspace.spec.ts --project=chromium
+        run: npx playwright test tests/e2e/identity.spec.ts tests/e2e/workspace.spec.ts tests/e2e/esign.spec.ts --project=chromium
         env:
           APP_ENV: test
           APP_URL: http://127.0.0.1:3000
