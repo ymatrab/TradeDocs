@@ -2,6 +2,7 @@ import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
 import { getServerEnv, hasSupabaseConfiguration } from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
+import { incompleteProviders } from '@/lib/integrations/providers';
 import {
   DEGRADED_RATE_LIMIT_REASON,
   rateLimitMode,
@@ -21,7 +22,10 @@ export async function GET(): Promise<Response> {
   // Payments switched on but unusable fail the billing feature alone; the reason names the gap,
   // never a value. Closed payments are the normal state and are not reported.
   let billing: BillingConfig = { state: 'disabled' };
+  // QuickBooks/Xero credentials set but incomplete: names of the missing variables only.
+  let integrations: ReturnType<typeof incompleteProviders> = {};
   try {
+    integrations = incompleteProviders(process.env);
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
     degraded = degradedControls(configuration);
@@ -52,6 +56,7 @@ export async function GET(): Promise<Response> {
       ...(billing.state === 'misconfigured'
         ? { payments: 'misconfigured', payments_reason: billing.reason }
         : {}),
+      ...(Object.keys(integrations).length > 0 ? { integrations_incomplete: integrations } : {}),
     },
     {
       status: ready ? 200 : 503,

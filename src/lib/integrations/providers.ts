@@ -194,3 +194,18 @@ export function providerCapabilities(env: Environment): Record<ProviderId, boole
     xero: providerConfig('xero', env).state === 'ready',
   };
 }
+
+/**
+ * Providers the owner started configuring but left incomplete, with the missing variable
+ * names (never values), for /api/ready. An untouched provider is the normal "off" state.
+ */
+export function incompleteProviders(env: Environment): Partial<Record<ProviderId, string[]>> {
+  const report: Partial<Record<ProviderId, string[]>> = {};
+  for (const provider of PROVIDER_IDS) {
+    const names = PROVIDER_ENV[provider];
+    const started = Boolean(present(env[names.clientId]) || present(env[names.clientSecret]));
+    const config = providerConfig(provider, env);
+    if (started && config.state === 'disabled') report[provider] = config.missing;
+  }
+  return report;
+}
