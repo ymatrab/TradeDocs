@@ -40,6 +40,7 @@ const footerResources = [
   { href: '/glossary', label: 'Glossary' },
   { href: '/export-documents', label: 'Export documents by country' },
   { href: '/help', label: 'Help' },
+  { href: '/developers', label: 'API for developers' },
   { href: '/contact', label: 'Contact' },
 ] as const;
 

@@ -248,6 +248,7 @@ export const SITEMAP_PAGES: readonly SitemapPage[] = [
 
   { path: '/help', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.5 },
   { path: '/contact', lastModified: SUPPORT_ROUND, changeFrequency: 'monthly', priority: 0.4 },
+  { path: '/developers', lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.4 },
 ];
 
 /**

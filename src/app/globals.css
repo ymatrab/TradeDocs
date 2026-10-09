@@ -3940,3 +3940,23 @@ a.form-cell:active {
   min-width: 44px;
   min-height: 44px;
 }
+
+/* API reference (/developers): request examples. Scrolls inside itself, never the page. */
+.code-block {
+  margin: 0;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--surface-sunken);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-family: var(--font-data);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  white-space: pre;
+}
+.code-block:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
