@@ -131,6 +131,60 @@ entitlement (for example a subscription event that arrived before its checkout; 
 re-reads the live subscription when it lands). `retry` means Stripe or the database was
 unreachable and Stripe will redeliver.
 
+## E-signature (Dropbox Sign, D-025)
+
+Owner steps; agents never handle the key. Until `DROPBOX_SIGN_API_KEY` is set, every
+signature page says "E-signature not available yet", the documents list offers no E-sign
+link, the callback route answers 404 and no public page (pricing, llms.txt, use cases) claims
+the feature: it lives in `PROVIDER_FEATURES`, not `FEATURES`, in `src/lib/billing/plans.ts`.
+It is a Pro and Team feature (`hasEntitlement(org, 'esign')`, checked again in SQL).
+
+The signature is provided by Dropbox Sign. TradeDocs sends the rendered PDF of a current
+final document and stores the signed PDF it gets back as a new, separate object; it does not
+verify signers' identity beyond what Dropbox Sign does. This is distinct from the "signature
+image" of PDF branding.
+
+1. **Account and plan (owner decision).** Create a Dropbox Sign account for the business. Any
+   API key can send `test_mode` requests (not legally binding) for free; legally binding API
+   requests need a paid Dropbox Sign API plan. Choosing and paying for that plan is the
+   owner's decision; check Dropbox Sign's current API pricing before relying on any figure
+   (TradeDocs states none).
+2. **API key.** Dropbox Sign → Settings → API → create a key. Set `DROPBOX_SIGN_API_KEY` in
+   Vercel for the environment (Preview first). It is server-only and also verifies callbacks.
+3. **Callback URL.** Set the account callback URL (Settings → API → Account callback) to
+   `<APP_URL>/api/esign/dropbox-sign/callback` (HTTPS only). If you use an API app instead,
+   set the same URL on the app and put its client id in `DROPBOX_SIGN_CLIENT_ID`. Use the
+   "Test" button: the route answers 200 "Hello API Event Received" to a verified
+   `callback_test`.
+4. **Test vs production.** Every non-production environment always sends test requests. In
+   production requests are live (binding) unless `DROPBOX_SIGN_TEST_MODE=true`; keep it
+   `true` until the paid API plan is active and one live request has been checked end to end.
+5. **Migration.** Apply `20261009000600_esign_requests.sql` (manual production migration
+   workflow) before setting the key in production, then redeploy.
+6. **Verify (Preview):** as a Pro or Team member, open a current final document → E-sign, send
+   to a test address you control; the request shows "Out for signature"; sign it from the
+   Dropbox Sign email; the request becomes "Signed" and, after Dropbox Sign's
+   `signature_request_downloadable` event, offers "Signed PDF" (a 60-second link). The audit
+   log has `esign.requested`, `esign.sent`, `esign.status_changed`, `esign.signed_stored` and
+   `esign.signed_downloaded`.
+7. **Listing it publicly** (pricing, llms.txt) is a separate owner decision once it works in
+   production; it needs a code change that moves the feature into the public claims.
+
+Rollback: clear `DROPBOX_SIGN_API_KEY` and redeploy. Sending stops and the callback answers
+404 (Dropbox Sign retries up to six times over about 30 hours, and clears the callback URL
+after 10 consecutive failures, so re-set the URL when re-enabling). Stored requests and
+signed copies stay readable and downloadable: the download route needs only the service-role
+connection.
+
+Callback outcomes appear in the platform logs as `esign.callback` lines with the event type
+and outcome only (never a signer, email address or document number). `unmatched`: a request
+this deployment did not send (another integration on the same account) or one deleted at
+Dropbox Sign. `mode_mismatch`: a live event on a test row or the reverse; nothing changes.
+`file_pending`: signed, the PDF is not ready yet; the downloadable event completes it.
+`copy_refused`: the provider returned something that is not a PDF within 25 MiB; investigate
+before re-requesting. `retry`: Dropbox Sign or the database was unreachable; it redelivers.
+Sends are limited to 20 per account per hour and 100 per organization per day.
+
 ## Contact inbox, legal pages and platform admin (D-009, D-018)
 
 - **Chat.** `CHAT_PROVIDER` accepts only `none` today (D-019); any other value is treated as
