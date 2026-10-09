@@ -131,8 +131,8 @@ export async function handleVerifiedEvent(
   if (!live.ok) {
     if (live.kind === 'gone' && event.event.event_type === 'signature_request_canceled') {
       status = 'cancelled';
-    } else if (live.kind === 'rejected') {
-      // A request this key cannot read is not one this deployment sent.
+    } else if (live.kind === 'gone' || live.kind === 'rejected') {
+      // Deleted, or not readable with this key: nothing to apply, and retrying cannot help.
       return 'unmatched';
     } else {
       throw new RetryableCallbackError('provider_unavailable');
