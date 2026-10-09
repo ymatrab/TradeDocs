@@ -34,9 +34,10 @@ export function parseTokenKey(raw: string | undefined): Buffer | null {
     key = Buffer.from(value.replace(/-/g, '+').replace(/_/g, '/'), 'base64');
   }
   if (!key || key.length !== 32) return null;
+  const decoded: Buffer = key;
   // A key of one repeated byte (such as all zeros) is a placeholder, not a secret.
-  if (key.every((byte) => byte === key[0])) return null;
-  return key;
+  if (decoded.every((byte) => byte === decoded[0])) return null;
+  return decoded;
 }
 
 function derive(root: Buffer, purpose: 'seal' | 'state'): Buffer {
