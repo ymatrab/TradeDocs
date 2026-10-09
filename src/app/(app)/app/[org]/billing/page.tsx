@@ -8,6 +8,7 @@ import { Callout, Panel } from '@/components/primitives/feedback';
 import { BoxGrid, FieldBox } from '@/components/document/field-box';
 import { LinkButton } from '@/components/primitives/button';
 import { currentPlans, readEntitlement } from '@/lib/billing/server';
+import { currentCapabilities } from '@/lib/integrations/server';
 import { summarizeEntitlement, type EntitlementSummary } from '@/lib/billing/entitlements';
 import { INTERVAL_LABELS, paidOnlySummary, PLAN_NAMES, upgradeUrl } from '@/lib/billing/plans';
 
@@ -79,7 +80,7 @@ export default async function BillingPage({ params }: { params: Promise<{ org: s
     return href ? [{ id: plan.id, name: plan.name, offer: plan.offer, href }] : [];
   });
   const entitled = summary.kind === 'active' || summary.kind === 'ending';
-  const extras = paidOnlySummary();
+  const extras = paidOnlySummary(currentCapabilities());
 
   return (
     <AppShell title={organization.name} current="Billing" orgId={org}>

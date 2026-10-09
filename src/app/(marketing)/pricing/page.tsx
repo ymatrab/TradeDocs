@@ -5,10 +5,11 @@ import { DataTable } from '@/components/primitives/table';
 import { primaryAction } from '@/components/shell/public';
 import { PricingJsonLd } from '@/components/seo/json-ld';
 import { currentPlans } from '@/lib/billing/server';
+import { currentCapabilities } from '@/lib/integrations/server';
 import {
-  FEATURES,
   INTERVAL_LABELS,
   listedPrices,
+  offeredFeatures,
   paidOnlyFeatures,
   paidOnlySummary,
   PLAN_NAMES,
@@ -242,9 +243,17 @@ function planTag(plan: Plan): string {
   }
 }
 
-function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boolean }) {
+function FeatureLedger({
+  plan,
+  accountsOpen,
+  features,
+}: {
+  plan: PlanId;
+  accountsOpen: boolean;
+  features: Feature[];
+}) {
   // A paid plan that adds nothing over Free says so instead of repeating Free's list.
-  const extras = FEATURES.filter(
+  const extras = features.filter(
     (feature) => planIncludes(feature, plan) && !planIncludes(feature, 'free'),
   );
   if (plan !== 'free' && extras.length === 0) {
@@ -252,7 +261,7 @@ function FeatureLedger({ plan, accountsOpen }: { plan: PlanId; accountsOpen: boo
   }
   return (
     <ul className="ledger" aria-label="Included features">
-      {FEATURES.filter((feature) => planIncludes(feature, plan)).map((feature) => {
+      {features.filter((feature) => planIncludes(feature, plan)).map((feature) => {
         const waiting = feature.needsAccount && !accountsOpen;
         return (
           <li key={feature.key}>
@@ -291,6 +300,9 @@ export default function PricingPage() {
   const accountsOpen = isDatabaseConfigured();
   const action = primaryAction(accountsOpen);
   const plans = currentPlans();
+  // Features that need provider credentials are listed only where they are configured.
+  const capabilities = currentCapabilities();
+  const features = offeredFeatures(capabilities);
   const state = pageState(plans);
   const questions = questionsFor(state, plans);
 
@@ -309,7 +321,7 @@ export default function PricingPage() {
         </div>
         <div className="cards pricing-plans">
           {plans.map((plan) => {
-            const paidOnly = plan.id === 'free' ? [] : paidOnlyFeatures(plan.id);
+            const paidOnly = plan.id === 'free' ? [] : paidOnlyFeatures(plan.id, capabilities);
             return (
               <article
                 className="card pricing-plan"
@@ -327,7 +339,7 @@ export default function PricingPage() {
                       : `Paid-only: ${paidOnly.map((feature) => feature.label).join('; ')}.`}
                   </p>
                 ) : null}
-                <FeatureLedger plan={plan.id} accountsOpen={accountsOpen} />
+                <FeatureLedger plan={plan.id} accountsOpen={accountsOpen} features={features} />
                 <div className="card-foot">
                   {plan.offer.state === 'free' ? (
                     <LinkButton href={action.href}>
@@ -384,7 +396,7 @@ export default function PricingPage() {
                   {group}
                 </th>
               </tr>
-              {FEATURES.filter((feature) => feature.group === group).map((feature) => (
+              {features.filter((feature) => feature.group === group).map((feature) => (
                 <tr key={feature.key}>
                   <th scope="row" className="pricing-feature">
                     {feature.label}
