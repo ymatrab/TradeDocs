@@ -3,6 +3,45 @@
 Written 2026-10-05 after the /elliot launch-readiness run. Decisions referenced are in
 [DECISIONS.md](../DECISIONS.md); the go-live mechanics are in [RUNBOOK.md](../RUNBOOK.md).
 
+## Weekend launch checklist (2026-10-10, D-024/D-025)
+
+Live on production (foundation mode: no database, sign-up closed, indexing closed): 251
+sitemap URLs (113 posts, guides, 50+ glossary terms, 6 country pages, 11 free tools including
+the HS code lookup), and the workspace build from PR #21: 11 document types (quotation,
+purchase order, sales confirmation, sales contract draft, proforma, commercial invoice,
+packing list, delivery note, bill of lading draft, shipper's letter of instruction, VGM
+declaration), certificate of origin behind its review gate, REST API (Team), QuickBooks/Xero
+import and Dropbox Sign e-signature (Pro and Team), each off until configured. Prices approved
+(Pro $19/mo or $190/yr, Team $49/mo or $490/yr), not yet shown.
+
+Owner, in order (details in RUNBOOK.md):
+
+1. Vercel Production env: `PRICES_APPROVED=true`, `APPLICATION_MODE=service`, `APP_ENV`,
+   `APP_URL`, `RATE_LIMIT_KEY_SECRET`, `RESEND_API_KEY`, `EMAIL_FROM`, `PLATFORM_ADMIN_EMAILS`,
+   `WAIVE_TURNSTILE/SENTRY/ANALYTICS/INDEXNOW=true`; redeploy.
+2. Resend account and verified sending domain; Supabase Auth SMTP set to Resend.
+3. Supabase dashboard: confirm email on, minimum password 12, Site URL and redirect
+   `<APP_URL>/**`, the 4 templates from `supabase/templates/`.
+4. Supabase backup, `PRODUCTION_DATABASE_URL` secret in the GitHub `production`
+   environment, then the "Migrate production database" workflow (dry run, then apply). PR #21
+   added migrations 20261009000100, 0200, 0400, 0500 and 0600.
+5. Legal identity (business name, country, address, contact email) and approval of the
+   privacy policy and terms (`LEGAL_*`, `LEGAL_APPROVED_AT`).
+6. Domain attached, `APP_URL` updated; Google Search Console and sitemap submission.
+7. Stripe Payment Links for Pro and Team, webhook secret, `PAYMENTS_APPROVED`,
+   `ENABLE_PAYMENTS`.
+8. `LAUNCH_APPROVED=true`. Agent then runs the post-launch smoke: sign-up and confirmation
+   email, first shipment with every document type, ZIP, cross-tenant isolation.
+
+Optional, each switches on one feature: `API_KEY_PEPPER` (REST API); `LEGAL_COO_REVIEWED_BY`,
+`LEGAL_COO_REVIEWED_AT`, `REGULATED_DOCUMENTS_APPROVED`, `ENABLE_REGULATED_DOCUMENTS`
+(certificate of origin, after a named legal review); `CSL_API_KEY` (denied-party screening);
+Intuit and Xero developer apps plus `QUICKBOOKS_*`, `XERO_*`, `INTEGRATION_TOKEN_KEY`;
+`DROPBOX_SIGN_API_KEY` (e-signature).
+
+Not buildable by agents (D-025): AES filing, chamber-certified certificates of origin,
+dangerous goods declarations, phone support.
+
 ## Where things stand
 
 - **Built on `redesign/manifest` (PR #10), not yet on production:** Manifest design v2
