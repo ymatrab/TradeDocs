@@ -2,6 +2,26 @@
 
 ## Unreleased — 2026-09-06
 
+### Production without hand-set variables, migrations on deploy (D-026)
+
+- `src/lib/config/defaults.ts`: the one place unset values are filled. `APP_ENV` from
+  `VERCEL_ENV`; `APP_URL` from Vercel's production alias or preview host; Supabase–Vercel
+  integration aliases (`NEXT_PUBLIC_SUPABASE_URL`, publishable/secret key names) and the
+  project ref from the URL; `PRICES_APPROVED` and `WAIVE_*` on for deployed environments;
+  `LAUNCH_APPROVED` in production; service mode in production once the Supabase connection,
+  `APP_URL`, `RESEND_API_KEY` and `EMAIL_FROM` all exist. Explicit values always win.
+- `RATE_LIMIT_KEY_SECRET`, `API_KEY_PEPPER`, `INTEGRATION_TOKEN_KEY` derived as
+  HMAC-SHA-256(service-role key, distinct label) when unset in deployed service mode;
+  rotating the service-role key rotates them (RUNBOOK.md, "Configuration defaults").
+- `/api/ready` names `defaults`, `derived` and `service_mode_pending` (names only).
+- `scripts/migrate-on-deploy.mjs` from the Vercel production build: dry run, destructive
+  statement scan with a dated approval marker, `supabase db push`; any failure fails the
+  build. Indexing still opens only on a custom domain (D-007). Instrumentation now loads the
+  configuration in the Node.js runtime only.
+- Tests: `config-defaults` and `migration-safety` suites; updated expectations in
+  `waivers.test.ts` (readiness lists defaults/derived; pepper and token key no longer missing)
+  and `config.test.ts` (production launch approval default). Pending CI.
+
 ### HS code lookup and denied-party screening (D-025)
 
 - `/tools/hs-code-lookup`: live server-side search of the USITC HTS and the GOV.UK Trade Tariff
