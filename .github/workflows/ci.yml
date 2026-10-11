@@ -66,7 +66,7 @@ jobs:
       - name: Fail if formatting drifted
         if: env.FORMAT_DRIFT == '1'
         run: exit 1
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: quality-evidence
@@ -154,7 +154,7 @@ jobs:
           REGULATED_DOCUMENTS_APPROVED: 'true'
           LEGAL_COO_REVIEWED_BY: CI synthetic review, not a legal approval
           LEGAL_COO_REVIEWED_AT: '2026-10-09'
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: database-evidence
