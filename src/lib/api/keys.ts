@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { serverEnvironment } from '@/lib/config/server';
 
 /**
  * Organization API keys (D-025).
@@ -21,8 +22,14 @@ export const VISIBLE_PREFIX_LENGTH = API_KEY_PREFIX.length + 8;
 const KEY_PATTERN = /^tdk_[A-Za-z0-9]{48}$/;
 const BASE62 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-/** The configured pepper, or null when it is missing or shorter than 32 characters. */
-export function apiKeyPepper(raw: string | undefined = process.env.API_KEY_PEPPER): string | null {
+/**
+ * The configured pepper, or null when it is missing or shorter than 32 characters. Unset in a
+ * deployed service environment, it is derived from the service-role key (D-026,
+ * config/defaults.ts), so rotating that key turns every API key off.
+ */
+export function apiKeyPepper(
+  raw: string | undefined = serverEnvironment().API_KEY_PEPPER,
+): string | null {
   const value = raw?.trim();
   return value && value.length >= 32 ? value : null;
 }

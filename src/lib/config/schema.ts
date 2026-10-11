@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { resolveEnvironmentDefaults, type ResolvedEnvironment } from './defaults';
 
 export const applicationEnvironments = [
   'local',
@@ -271,11 +272,14 @@ export function parseServerEnv(input: EnvironmentInput): ServerEnv {
   return result.data;
 }
 
-/** Called by next.config at build and by instrumentation at server startup. */
-export function validateDeploymentEnv(
+/**
+ * The deployment's environment with its identity resolved and D-026's defaults applied
+ * (defaults.ts). Never throws: validation is parseServerEnv's job.
+ */
+export function resolveDeploymentInput(
   input: EnvironmentInput,
   productionRuntime: boolean,
-): ServerEnv {
+): ResolvedEnvironment {
   const explicitEnvironment = input.APP_ENV?.trim() || undefined;
   const vercelEnvironment =
     input.VERCEL_ENV === 'production'
@@ -287,10 +291,18 @@ export function validateDeploymentEnv(
           : undefined;
   const fallbackEnvironment = productionRuntime ? undefined : 'local';
   // VERCEL_ENV is platform-owned and takes precedence over stale project variables.
-  const env = parseServerEnv({
+  return resolveEnvironmentDefaults({
     ...input,
     APP_ENV: vercelEnvironment ?? explicitEnvironment ?? fallbackEnvironment,
   });
+}
+
+/** Called by next.config at build and by instrumentation at server startup. */
+export function validateDeploymentEnv(
+  input: EnvironmentInput,
+  productionRuntime: boolean,
+): ServerEnv {
+  const env = parseServerEnv(resolveDeploymentInput(input, productionRuntime).values);
   if (productionRuntime && env.APP_ENV === 'local') {
     throw new ConfigurationError(['APP_ENV']);
   }

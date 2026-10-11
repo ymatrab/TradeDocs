@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { getServerEnv } from '@/lib/config/server';
+import { getServerEnv, serverEnvironment } from '@/lib/config/server';
 import type { ServerEnv } from '@/lib/config/schema';
 import {
   ENTITLEMENT_COLUMNS,
@@ -91,7 +91,7 @@ export function paymentsOpen(): boolean {
 
 /** The plans as they are offered on this deployment right now. */
 export function currentPlans(): Plan[] {
-  return resolvePlans(process.env, paymentsOpen());
+  return resolvePlans(serverEnvironment(), paymentsOpen());
 }
 
 /** The caller's view of an organization's entitlement, through row level security. */

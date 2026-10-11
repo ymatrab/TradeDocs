@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { apiConfig } from '@/lib/api/server';
+import { serverEnvironment } from '@/lib/config/server';
 import type { Capabilities } from '@/lib/billing/plans';
 import {
   newNonce,
@@ -41,13 +42,13 @@ import { createServiceClient } from '@/lib/supabase/admin';
 export type ReadyConfig = Extract<ProviderConfig, { state: 'ready' }>;
 
 export function currentProviderConfig(provider: ProviderId): ProviderConfig {
-  return providerConfig(provider, process.env);
+  return providerConfig(provider, serverEnvironment());
 }
 
 /** Capability flags for public copy (plans.ts offeredFeatures). Never throws. */
 export function currentCapabilities(): Capabilities {
   try {
-    const ready = providerCapabilities(process.env);
+    const ready = providerCapabilities(serverEnvironment());
     return {
       quickbooks_import: ready.quickbooks,
       xero_import: ready.xero,
