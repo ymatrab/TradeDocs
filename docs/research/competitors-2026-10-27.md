@@ -13,12 +13,12 @@ Anything a page did not state is marked **not stated**. TradeDocs facts come fro
 **ovrseas dropped its document meter.** On 2026-10-09 it sold 30 / 100 / 300 documents a month
 at $20 / $60 / $150. On 2026-10-27 it sells:
 
-| Plan        | Price                   | Documents                      |
-| ----------- | ----------------------- | ------------------------------ |
-| Free        | $0, no card, no end     | One shipment set a month       |
-| 1-week pass | $15 once, never renews  | Unlimited for 7 days           |
-| Monthly     | $20 / month             | Unlimited                      |
-| Yearly      | $192 / year ($16/month) | Unlimited                      |
+| Plan        | Price                   | Documents                |
+| ----------- | ----------------------- | ------------------------ |
+| Free        | $0, no card, no end     | One shipment set a month |
+| 1-week pass | $15 once, never renews  | Unlimited for 7 days     |
+| Monthly     | $20 / month             | Unlimited                |
+| Yearly      | $192 / year ($16/month) | Unlimited                |
 
 Paid adds digital signatures ("type, draw, or upload"), saved exporters/buyers/products, email
 support, and removes the "Prepared with ovrseas.io/doc" line. Team members on paid plans,
@@ -41,21 +41,21 @@ maintenance), Enterprise $9,999/year. Desktop, US-centric (AES filing, dangerous
 
 ## 2. Side by side
 
-| What the customer gets                     | TradeDocs Free                | TradeDocs Pro $19 / Team $49                  | ovrseas $20 ($16 yearly)       | IncoDocs Basic $27                  |
-| ------------------------------------------ | ----------------------------- | --------------------------------------------- | ------------------------------ | ----------------------------------- |
-| Documents per month                        | Unlimited                     | Unlimited                                     | Unlimited (Free: 1 set)        | 30 (Free: 10)                       |
-| Users                                      | Unlimited, with roles         | Unlimited                                     | Not stated (Free: 1)           | 1 (2 at $62, 5 at $167)             |
-| Saved companies and product catalog        | Yes                           | Yes                                           | Paid only                      | Yes                                 |
-| Document types                             | 11, certificate of origin gated | Same                                        | 12 incl. CoO and USMCA CoO     | 30+ templates (CMR, phyto and more) |
-| Logo and signature image on PDFs           | No                            | Yes                                           | Not stated                     | Yes (letterhead)                    |
-| E-signature                                | No                            | Built (Dropbox Sign), **off until connected** | Yes                            | Yes                                 |
-| QuickBooks / Xero import                   | No                            | Built, **off until apps are configured**      | Not stated                     | Yes                                 |
-| API                                        | No                            | Team, **off until configured**                | Not stated                     | Yes (plan not stated)               |
-| Revisions locked, stale marking            | Yes                           | Yes                                           | Not stated                     | "Version control"                   |
-| ZIP of the set with checksum manifest      | Yes                           | Yes                                           | Not stated                     | Not stated                          |
-| Free tools without an account              | 15 (generators, calculators, HS lookup, screening, Incoterms) | — | 5 tools                     | Calculators, templates need account |
-| Trial of paid plan                         | —                             | None configured                               | Free plan instead              | 14 days                             |
-| Short pass                                 | —                             | No                                            | $15 for 7 days                 | No                                  |
+| What the customer gets                | TradeDocs Free                                                | TradeDocs Pro $19 / Team $49                  | ovrseas $20 ($16 yearly)   | IncoDocs Basic $27                  |
+| ------------------------------------- | ------------------------------------------------------------- | --------------------------------------------- | -------------------------- | ----------------------------------- |
+| Documents per month                   | Unlimited                                                     | Unlimited                                     | Unlimited (Free: 1 set)    | 30 (Free: 10)                       |
+| Users                                 | Unlimited, with roles                                         | Unlimited                                     | Not stated (Free: 1)       | 1 (2 at $62, 5 at $167)             |
+| Saved companies and product catalog   | Yes                                                           | Yes                                           | Paid only                  | Yes                                 |
+| Document types                        | 11, certificate of origin gated                               | Same                                          | 12 incl. CoO and USMCA CoO | 30+ templates (CMR, phyto and more) |
+| Logo and signature image on PDFs      | No                                                            | Yes                                           | Not stated                 | Yes (letterhead)                    |
+| E-signature                           | No                                                            | Built (Dropbox Sign), **off until connected** | Yes                        | Yes                                 |
+| QuickBooks / Xero import              | No                                                            | Built, **off until apps are configured**      | Not stated                 | Yes                                 |
+| API                                   | No                                                            | Team, **off until configured**                | Not stated                 | Yes (plan not stated)               |
+| Revisions locked, stale marking       | Yes                                                           | Yes                                           | Not stated                 | "Version control"                   |
+| ZIP of the set with checksum manifest | Yes                                                           | Yes                                           | Not stated                 | Not stated                          |
+| Free tools without an account         | 15 (generators, calculators, HS lookup, screening, Incoterms) | —                                             | 5 tools                    | Calculators, templates need account |
+| Trial of paid plan                    | —                                                             | None configured                               | Free plan instead          | 14 days                             |
+| Short pass                            | —                                                             | No                                            | $15 for 7 days             | No                                  |
 
 ## 3. Honest verdict
 

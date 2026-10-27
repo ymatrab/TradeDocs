@@ -26,12 +26,7 @@ import {
 } from '@/lib/esign/callback';
 import { esignConfig } from '@/lib/esign/config';
 import { initialSigners, parseSendForm, requestTexts } from '@/lib/esign/request';
-import {
-  featurePlans,
-  offeredFeatures,
-  paidAdditions,
-  paidOnlySummary,
-} from '@/lib/billing/plans';
+import { featurePlans, offeredFeatures, paidAdditions, paidOnlySummary } from '@/lib/billing/plans';
 import { hasEntitlement } from '@/lib/billing/server';
 import { MAX_ESIGN_MESSAGE, MAX_ESIGN_SIGNERS } from '@/lib/limits';
 import {
@@ -450,9 +445,9 @@ describe('plan gating', () => {
   });
 
   it('is claimed on public pages only once the provider is connected (D-027)', () => {
-    expect(offeredFeatures({ esign: true }).find((feature) => feature.key === 'esign')?.capability).toBe(
-      'esign',
-    );
+    expect(
+      offeredFeatures({ esign: true }).find((feature) => feature.key === 'esign')?.capability,
+    ).toBe('esign');
     // Whatever else is configured, the public copy built from plans.ts names e-signature or
     // its provider only where the esign capability is on.
     const everything = { quickbooks_import: true, xero_import: true } as const;

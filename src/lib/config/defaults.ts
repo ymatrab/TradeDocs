@@ -101,7 +101,10 @@ export function hostedProjectRef(url: string | undefined): string | undefined {
 /** `https://<host>` from a bare platform host, or undefined when it is not a bare host. */
 function originFromHost(host: string | undefined): string | undefined {
   if (!present(host)) return undefined;
-  const bare = host.trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+  const bare = host
+    .trim()
+    .replace(/^https?:\/\//, '')
+    .replace(/\/+$/, '');
   return /^[A-Za-z0-9.-]+(:\d+)?$/.test(bare) ? `https://${bare.toLowerCase()}` : undefined;
 }
 

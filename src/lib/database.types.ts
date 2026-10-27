@@ -1500,6 +1500,14 @@ export type Database = {
         Returns: undefined
       }
       export_account_data: { Args: never; Returns: Json }
+      free_shipment_usage: {
+        Args: { target_org: string }
+        Returns: {
+          entitled: boolean
+          quota: number
+          used: number
+        }[]
+      }
       generate_certificate_of_origin: {
         Args: { actor: string; target_shipment: string }
         Returns: string
@@ -1553,6 +1561,10 @@ export type Database = {
       revoke_api_key: { Args: { target_key: string }; Returns: undefined }
       revoke_invitation: {
         Args: { target_invitation: string }
+        Returns: undefined
+      }
+      sync_free_plan_limits: {
+        Args: { p_shipments_per_month: number }
         Returns: undefined
       }
       void_document: {
