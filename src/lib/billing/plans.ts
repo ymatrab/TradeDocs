@@ -4,6 +4,7 @@ import {
   API_REQUEST_QUOTA,
   MAX_BRANDING_BYTES,
   MAX_BRANDING_SIDE,
+  FREE_SHIPMENTS_PER_MONTH,
   MAX_ESIGN_SIGNERS,
   MAX_IMPORT_ROWS,
   MAX_SET_DOCUMENTS,
@@ -26,8 +27,11 @@ import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
  *   (D-025, Pro and Team), gated by hasEntitlement(org, 'integrations.<provider>') and by
  *   private.integrations_entitled (20261009000500_accounting_integrations.sql); and the REST
  *   API (D-025, Team), gated by hasEntitlement(org, 'api') and by private.api_entitled
- *   (supabase/migrations/20261009000400_public_api.sql). Each SQL function mirrors its plans.
- *   A feature with a `capability` is listed only where it is configured.
+ *   (supabase/migrations/20261009000400_public_api.sql); e-signature (D-025, Pro and Team),
+ *   gated by hasEntitlement(org, 'esign') and in SQL; and unlimited saved shipments (D-027,
+ *   Pro and Team), enforced by the shipments_free_limit trigger
+ *   (supabase/migrations/20261027000100_free_shipment_limit.sql). Each SQL function mirrors
+ *   its plans. A feature with a `capability` is listed only where it is configured.
  * - No price shows unless the owner has approved the prices (PRICES_APPROVED=true, D-020).
  *   PROPOSED_PRICES below are the marketing proposal, unapproved (P-002 stays open until the
  *   owner confirms). With the flag off every paid plan is "Not available yet": no price, no
@@ -50,7 +54,14 @@ export type FeatureGroup = 'Free tools' | 'Workspace' | 'Team';
  * A feature that names one is offered, on every page and in llms.txt, only where it is on;
  * with no capabilities passed, nothing that needs one is claimed (fail closed).
  */
-export const CAPABILITIES = ['quickbooks_import', 'xero_import', 'rest_api'] as const;
+export const CAPABILITIES = [
+  'quickbooks_import',
+  'xero_import',
+  'rest_api',
+  'esign',
+  /** The Free shipment limit applies: a paid plan can be bought (D-027). */
+  'free_shipment_limit',
+] as const;
 export type Capability = (typeof CAPABILITIES)[number];
 export type Capabilities = Partial<Record<Capability, boolean>>;
 
@@ -66,11 +77,6 @@ export type Feature = {
   short?: string;
   /** True when it needs an account, so it is absent on a deployment without accounts. */
   needsAccount: boolean;
-  /**
-   * An outside provider the feature cannot work without. Such a feature is gated like any
-   * other but kept out of FEATURES, the public claims, until the owner has connected it.
-   */
-  provider?: 'dropbox_sign';
   /** Offered only where this capability is configured (src/lib/integrations/server.ts). */
   capability?: Capability;
 };
@@ -106,6 +112,12 @@ function documentsIn(group: DocumentKindGroup, regulatedOffered = false): string
 }
 const quotaMinutes = TOOL_DOCUMENT_QUOTA.windowSeconds / 60;
 
+const SHIPMENTS_UNCAPPED = 'No cap on the number of shipments';
+/** The shipments feature's limit while the Free limit applies (D-027). */
+export function shipmentsLimited(): string {
+  return `Free: ${FREE_SHIPMENTS_PER_MONTH} new shipments a month (UTC calendar month); Pro and Team: no cap`;
+}
+
 export const FEATURES = [
   {
     key: 'tools.generators',
@@ -126,9 +138,20 @@ export const FEATURES = [
     key: 'workspace.shipments',
     group: 'Workspace',
     label: 'Shipments with parties, goods, packing, route and Incoterm, saved to your organization',
-    limit: 'No cap on the number of shipments',
+    limit: SHIPMENTS_UNCAPPED,
     plans: EVERY_PLAN,
     needsAccount: true,
+  },
+  {
+    key: 'workspace.unlimited_shipments',
+    group: 'Workspace',
+    label: 'Unlimited saved shipments',
+    short: 'unlimited saved shipments',
+    limit: `Free saves ${FREE_SHIPMENTS_PER_MONTH} new shipments a month; shipments already saved stay editable`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    // Claimed only while the Free limit applies, which is only while a paid plan can be bought.
+    capability: 'free_shipment_limit',
   },
   {
     key: 'workspace.documents',
@@ -214,6 +237,17 @@ export const FEATURES = [
     capability: 'xero_import',
   },
   {
+    key: 'esign',
+    group: 'Workspace',
+    label: 'E-signature of finalized documents through Dropbox Sign',
+    short: 'e-signature',
+    limit: `Up to ${MAX_ESIGN_SIGNERS} signers per request; the signature is provided by Dropbox Sign`,
+    plans: PAID_PLANS,
+    needsAccount: true,
+    // Claimed only where DROPBOX_SIGN_API_KEY and the service connection are set.
+    capability: 'esign',
+  },
+  {
     key: 'api',
     group: 'Team',
     label:
@@ -235,29 +269,7 @@ export const FEATURES = [
   },
 ] as const satisfies readonly Feature[];
 
-/**
- * Paid features that need an outside provider (D-025). Gated by hasEntitlement exactly like
- * the features above, but not in FEATURES, so no public page (pricing, llms.txt, use cases)
- * claims them: e-signature stays unclaimed until the owner connects a Dropbox Sign account
- * and decides to list it (RUNBOOK.md, "E-signature").
- */
-export const PROVIDER_FEATURES = [
-  {
-    key: 'esign',
-    group: 'Workspace',
-    label: 'E-signature of finalized documents through Dropbox Sign',
-    short: 'E-signature',
-    limit: `Up to ${MAX_ESIGN_SIGNERS} signers per request; the signature is provided by Dropbox Sign`,
-    plans: PAID_PLANS,
-    needsAccount: true,
-    provider: 'dropbox_sign',
-  },
-] as const satisfies readonly Feature[];
-
-const GATED_FEATURES: readonly Feature[] = [...FEATURES, ...PROVIDER_FEATURES];
-
-export type FeatureKey =
-  (typeof FEATURES)[number]['key'] | (typeof PROVIDER_FEATURES)[number]['key'];
+export type FeatureKey = (typeof FEATURES)[number]['key'];
 
 /**
  * The workspace documents feature, as the deployment offers it. With the certificate of
@@ -273,7 +285,7 @@ export function documentsFeatureLabel(regulatedOffered: boolean): string {
 
 /** The plans that include a feature. An unknown key includes none, so a check on it fails. */
 export function featurePlans(key: string): readonly PlanId[] {
-  return GATED_FEATURES.find((feature) => feature.key === key)?.plans ?? [];
+  return (FEATURES as readonly Feature[]).find((feature) => feature.key === key)?.plans ?? [];
 }
 
 /** Whether this deployment offers a feature: it needs no capability, or its capability is on. */
@@ -283,7 +295,8 @@ export function featureOffered(feature: Feature, capabilities: Capabilities = {}
 
 /**
  * The features this deployment can truthfully list: those whose capability is configured,
- * with the documents feature naming the certificate of origin only while its gate is on.
+ * with the documents feature naming the certificate of origin only while its gate is on, and
+ * the shipments feature stating the Free limit only while it applies.
  * Every page that shows the feature list reads this, passing currentCapabilities() and
  * regulatedDocumentsEnabled(); FEATURES itself leaves every regulated type out and stays the
  * source of keys and plans.
@@ -294,11 +307,15 @@ export function offeredFeatures(
 ): Feature[] {
   return (FEATURES as readonly Feature[])
     .filter((feature) => featureOffered(feature, capabilities))
-    .map((feature) =>
-      feature.key === 'workspace.documents'
-        ? { ...feature, label: documentsFeatureLabel(regulatedOffered) }
-        : feature,
-    );
+    .map((feature) => {
+      if (feature.key === 'workspace.documents') {
+        return { ...feature, label: documentsFeatureLabel(regulatedOffered) };
+      }
+      if (feature.key === 'workspace.shipments' && capabilities.free_shipment_limit === true) {
+        return { ...feature, limit: shipmentsLimited() };
+      }
+      return feature;
+    });
 }
 
 /** Features no free account has. A paid card lists them; it never invents any. */

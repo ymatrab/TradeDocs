@@ -2,6 +2,24 @@
 
 ## Unreleased — 2026-09-06
 
+### Free saved-shipment limit and e-signature on the pricing page (D-027)
+
+- Migration `20261027000100_free_shipment_limit.sql`: `private.plan_limits` (off by default),
+  a `private.shipment_creations` ledger, the `shipments_free_limit` trigger (SQLSTATE 54000,
+  per-organization lock, Pro/Team exempt) on every insert path, `sync_free_plan_limits`
+  (service role) and `free_shipment_usage` (members).
+- `syncFreePlanLimits` (src/lib/billing/server.ts) writes 3 while a paid plan is purchasable
+  and 0 otherwise, before a shipment is created or the Shipments page renders. The create and
+  reuse actions explain the limit; the Shipments page shows "n of 3 used this month" with a
+  Billing link.
+- Plans: `workspace.unlimited_shipments` (Pro, Team; capability `free_shipment_limit`) and
+  `esign` moved into the public features behind capability `esign`; `PROVIDER_FEATURES`
+  removed. Pricing copy states the Free limit only while it applies.
+- Tests: `supabase/tests/free_shipment_limit.test.sql` (16), `free-shipment-limit.test.ts`,
+  updated `billing`, `esign` and `shipment-actions` suites. Pending CI; database types need the
+  CI artifact for the two new routines.
+- docs/research/competitors-2026-10-27.md: live competitor re-check.
+
 ### Production without hand-set variables, migrations on deploy (D-026)
 
 - `src/lib/config/defaults.ts`: the one place unset values are filled. `APP_ENV` from

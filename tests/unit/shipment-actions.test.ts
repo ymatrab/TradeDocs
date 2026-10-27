@@ -33,6 +33,7 @@ const state = vi.hoisted(() => ({
 
 vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }));
 vi.mock('next/navigation', () => ({ redirect: state.redirect }));
+vi.mock('@/lib/billing/server', () => ({ syncFreePlanLimits: async () => undefined }));
 vi.mock('@/lib/supabase/server', () => {
   const next = (single: boolean) => {
     const queued = state.queue.shift();
@@ -388,6 +389,20 @@ describe('reusing a shipment', () => {
       form({ org: ORG, shipment: SHIPMENT, reference: 'KES-1' }),
     );
     expect(result.fields?.reference).toBe('A shipment with that reference already exists.');
+    expect(state.redirect).not.toHaveBeenCalled();
+  });
+
+  it('explains the Free limit when the database refuses a new shipment (D-027)', async () => {
+    state.rpc.mockResolvedValue({
+      data: null,
+      error: { code: '54000', message: 'The Free plan includes 3 new shipments a month.' },
+    });
+    const result = await duplicateShipment(
+      {},
+      form({ org: ORG, shipment: SHIPMENT, reference: 'KES-3' }),
+    );
+    expect(result.error).toMatch(/^The Free plan includes 3 new shipments a month/);
+    expect(result.error).toContain('Upgrade to Pro or Team');
     expect(state.redirect).not.toHaveBeenCalled();
   });
 });

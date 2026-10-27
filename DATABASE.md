@@ -352,3 +352,23 @@ Generated types were extended by hand (`organization_settings`, the four documen
   wording version and per-line origin recorded). The function was added to
   `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
   Rollback in the migration header.
+
+## Free saved-shipment limit (20261027000100, D-027)
+
+- `private.plan_limits`: one row, `free_shipments_per_month` (NULL: no limit; the default).
+  Written only through `public.sync_free_plan_limits(n)` (service role; 0 means NULL), which
+  the server calls with 3 while a paid plan is purchasable and 0 otherwise.
+- `private.shipment_creations`: one ledger row per shipment inserted, written by the trigger.
+  Not reachable by any API role. Usage counts the ledger since the start of the UTC month, so
+  deleting or back-dating a shipment returns no quota.
+- Trigger `shipments_free_limit` (before insert on `public.shipments`, security definer): for
+  an organization without a current Pro or Team entitlement (`private.org_entitled`), locks
+  the organization row and refuses with SQLSTATE 54000 at the limit. Covers the app insert,
+  `duplicate_shipment`, `api_create_shipment` and direct PostgREST inserts.
+- `public.free_shipment_usage(org)`: `used`, `quota`, `entitled` for members (42501 for
+  anyone else); executable by authenticated only.
+- pgTAP: `supabase/tests/free_shipment_limit.test.sql` (off by default, cap, ledger not rewound
+  by delete or back-dating, reuse counted, month rollover, Pro exempt, lapsed Pro limited,
+  cross-org usage refused, member cannot change the limit).
+- Rollback: drop the trigger, the four functions and the two private tables; no existing row
+  is changed.

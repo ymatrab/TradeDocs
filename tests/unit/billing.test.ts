@@ -394,12 +394,14 @@ describe('plans and offers', () => {
     );
   });
 
-  it('gates PDF branding, the accounting imports and the API, and invents no other paid-only feature', () => {
+  it('gates PDF branding, unlimited shipments, the accounting imports, e-signature and the API, and invents no other paid-only feature', () => {
     const paid = FEATURES.filter((feature) => !featurePlans(feature.key).includes('free'));
     expect(paid.map((feature) => feature.key)).toEqual([
+      'workspace.unlimited_shipments',
       'pdf_branding',
       'integrations.quickbooks',
       'integrations.xero',
+      'esign',
       'api',
     ]);
     // The imports and the API need configuration; without it they are not claimed (D-025).

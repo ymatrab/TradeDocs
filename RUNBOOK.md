@@ -180,6 +180,17 @@ webhook route answers 404 until payments are enabled.
    Cancel the test subscription: the plan stays until the period end. Refund it in full: the
    plan ends at once.
 
+**The Free shipment limit turns on with checkout (D-027).** As soon as a paid plan is
+purchasable, Free organizations may create `FREE_SHIPMENTS_PER_MONTH` (3) new shipments per
+UTC calendar month; Pro and Team have no cap, and the no-account generators are never
+limited. The next shipment created writes the limit to the database (`sync_free_plan_limits`,
+service role); the `shipments_free_limit` trigger enforces it on every path and counts a
+ledger that deletion cannot rewind. Pricing, llms.txt and the workspace state the limit only
+while it applies. Check after step 7: a Free test organization sees "Free plan: 0 of 3 new
+shipments used this month" on its Shipments page, and the 4th new shipment is refused with the
+upgrade message. When checkout closes again (rollback below), the limit lifts on the next
+shipment created.
+
 Rollback: set `ENABLE_PAYMENTS=false` and redeploy. The webhook answers 404 (Stripe retries for
 up to three days, so re-enabling within that window replays the backlog idempotently); stored
 entitlements remain and keep their dates.
@@ -195,8 +206,9 @@ unreachable and Stripe will redeliver.
 Owner steps; agents never handle the key. Until `DROPBOX_SIGN_API_KEY` is set, every
 signature page says "E-signature not available yet", the documents list offers no E-sign
 link, the callback route answers 404 and no public page (pricing, llms.txt, use cases) claims
-the feature: it lives in `PROVIDER_FEATURES`, not `FEATURES`, in `src/lib/billing/plans.ts`.
-It is a Pro and Team feature (`hasEntitlement(org, 'esign')`, checked again in SQL).
+the feature. Once the key and the service connection are set, the `esign` capability turns
+on and pricing, llms.txt and the use-case pages list it for Pro and Team (D-027). It is a Pro
+and Team feature (`hasEntitlement(org, 'esign')`, checked again in SQL).
 
 The signature is provided by Dropbox Sign. TradeDocs sends the rendered PDF of a current
 final document and stores the signed PDF it gets back as a new, separate object; it does not
@@ -218,16 +230,16 @@ image" of PDF branding.
 4. **Test vs production.** Every non-production environment always sends test requests. In
    production requests are live (binding) unless `DROPBOX_SIGN_TEST_MODE=true`; keep it
    `true` until the paid API plan is active and one live request has been checked end to end.
-5. **Migration.** Apply `20261009000600_esign_requests.sql` (manual production migration
-   workflow) before setting the key in production, then redeploy.
+5. **Migration.** `20261009000600_esign_requests.sql` applies on the production deploy
+   (D-026, "Migrations on deploy"); nothing to run by hand.
 6. **Verify (Preview):** as a Pro or Team member, open a current final document → E-sign, send
    to a test address you control; the request shows "Out for signature"; sign it from the
    Dropbox Sign email; the request becomes "Signed" and, after Dropbox Sign's
    `signature_request_downloadable` event, offers "Signed PDF" (a 60-second link). The audit
    log has `esign.requested`, `esign.sent`, `esign.status_changed`, `esign.signed_stored` and
    `esign.signed_downloaded`.
-7. **Listing it publicly** (pricing, llms.txt) is a separate owner decision once it works in
-   production; it needs a code change that moves the feature into the public claims.
+7. **Listing it publicly** is automatic once the key is set (D-027). Set the key in
+   Production only after step 6 passed on a preview.
 
 Rollback: clear `DROPBOX_SIGN_API_KEY` and redeploy. Sending stops and the callback answers
 404 (Dropbox Sign retries up to six times over about 30 hours, and clears the callback URL

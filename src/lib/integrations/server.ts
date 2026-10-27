@@ -3,6 +3,8 @@ import 'server-only';
 import { apiConfig } from '@/lib/api/server';
 import { serverEnvironment } from '@/lib/config/server';
 import type { Capabilities } from '@/lib/billing/plans';
+import { freeShipmentLimitActive } from '@/lib/billing/server';
+import { currentEsignConfig } from '@/lib/esign/server';
 import {
   newNonce,
   nonceHash,
@@ -53,6 +55,8 @@ export function currentCapabilities(): Capabilities {
       quickbooks_import: ready.quickbooks,
       xero_import: ready.xero,
       rest_api: apiConfig() !== null,
+      esign: currentEsignConfig().state === 'ready',
+      free_shipment_limit: freeShipmentLimitActive(),
     };
   } catch {
     return {};
