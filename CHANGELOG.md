@@ -2,6 +2,14 @@
 
 ## Unreleased — 2026-09-06
 
+### Security: Next.js 16.4.3 and zod 4.6.7
+
+- Next.js 16.3.8 → 16.4.3 (GHSA-2464-fhr4-w9xw and GHSA-673q-mjm6-r5xr, unauthenticated
+  remote code execution; GHSA-p3m5-59mp-jv5r, Server Actions denial of service) and zod
+  4.5.4 → 4.6.7 (GHSA-mrhx-c7xc-m3w5), flagged by the CI `npm audit` gate on PR #34.
+  Lockfile entries written from the npm registry's published integrity hashes (no local
+  install); verified by `npm ci` in CI. Supersedes Dependabot PRs #29 and #31.
+
 ### Free saved-shipment limit and e-signature on the pricing page (D-027)
 
 - Migration `20261027000100_free_shipment_limit.sql`: `private.plan_limits` (off by default),
