@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
 
   const snapshot = buildToolSnapshot(input);
   // A discount larger than the invoice would print a negative total (D-029).
-  if ('invoice_totals' in snapshot && Number(snapshot.invoice_totals.total) < 0) {
+  if (snapshot.invoice_totals && Number(snapshot.invoice_totals.total) < 0) {
     return refuse('The discount is larger than the invoice. Check the amounts.', 400);
   }
 

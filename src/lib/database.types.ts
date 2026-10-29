@@ -244,6 +244,7 @@ export type Database = {
           country_code: string | null
           created_at: string
           email: string | null
+          eori_number: string | null
           id: string
           kind: string
           legal_name: string | null
@@ -266,6 +267,7 @@ export type Database = {
           country_code?: string | null
           created_at?: string
           email?: string | null
+          eori_number?: string | null
           id?: string
           kind?: string
           legal_name?: string | null
@@ -288,6 +290,7 @@ export type Database = {
           country_code?: string | null
           created_at?: string
           email?: string | null
+          eori_number?: string | null
           id?: string
           kind?: string
           legal_name?: string | null
@@ -1055,6 +1058,57 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      shipment_charges: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          included_in_price: boolean
+          kind: string
+          label: string | null
+          org_id: string
+          position: number
+          shipment_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          included_in_price?: boolean
+          kind: string
+          label?: string | null
+          org_id: string
+          position: number
+          shipment_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          included_in_price?: boolean
+          kind?: string
+          label?: string | null
+          org_id?: string
+          position?: number
+          shipment_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipment_charges_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shipment_charges_org_id_shipment_id_fkey"
+            columns: ["org_id", "shipment_id"]
+            isOneToOne: false
+            referencedRelation: "shipments"
+            referencedColumns: ["org_id", "id"]
+          },
+        ]
       }
       shipment_items: {
         Row: {
