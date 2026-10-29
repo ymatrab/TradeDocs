@@ -2,6 +2,20 @@
 
 ## Unreleased — 2026-09-06
 
+### Invoice charges, discounts, EORI and required signatory (D-029)
+
+- Migration `20261029000100_invoice_charges_and_eori.sql`: `public.shipment_charges` (members
+  only, composite tenant key, revision bump), `companies.eori_number`, party snapshots carry the
+  EORI when set, snapshot schema 8 adds `charges` and `invoice_totals` to commercial and
+  proforma invoices of shipments with charges; a discount larger than the invoice is refused.
+- Renderer `tradedocs-pdf/8`: goods value, each charge and discount by name, then the total;
+  "EORI" under the tax ID. Staleness flags changed charges on invoices and a changed EORI.
+- Workspace: "Charges and discounts" panel on the shipment, EORI on the company form, and a
+  commercial invoice is refused until the signatory is set (19 CFR 141.86(j)).
+- Free generator: freight, insurance, discount, EORI and responsible person.
+- Tests: pgTAP `invoice_charges` (15), unit `invoice-charges`, verification pack example D,
+  updated `shipment-actions`, `branding` and e2e flows (signatory set before invoices).
+
 ### Owner approval of the certificate of origin and sources; verification pack (D-028)
 
 - The certificate of origin turns on in production service mode by default

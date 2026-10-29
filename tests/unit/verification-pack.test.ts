@@ -58,8 +58,7 @@ const buyer = {
  *   Gross kg   195.5 + 140.25 + 27           =   362.750
  *   Packages   24 + 14 + 1                   =    39
  */
-const exampleA = (kind: 'commercial_invoice' | 'packing_list') =>
-  toolRequestSchema.parse({
+const rawExampleA = (kind: 'commercial_invoice' | 'packing_list') => ({
     kind,
     number: 'INV-2026-0042',
     issued_on: '2026-10-29',
@@ -106,6 +105,8 @@ const exampleA = (kind: 'commercial_invoice' | 'packing_list') =>
       },
     ],
   });
+const exampleA = (kind: 'commercial_invoice' | 'packing_list') =>
+  toolRequestSchema.parse(rawExampleA(kind));
 
 describe('verification pack: example A, a three-line EUR shipment', () => {
   const invoice = buildToolSnapshot(exampleA('commercial_invoice'), GENERATED_AT);
@@ -157,6 +158,52 @@ describe('verification pack: example A, a three-line EUR shipment', () => {
       ['Total net weight', '328.000 kg'],
       ['Total gross weight', '362.750 kg'],
     ]);
+  });
+});
+
+describe('verification pack: example D, charges, discount, EORI and signatory (D-029)', () => {
+  /**
+   *   Goods value (example A)                 5,224.15
+   *   Freight                               +   450.00
+   *   Insurance  25.505 → 25.51 (half up)   +    25.51
+   *   Discount                              -   100.00
+   *   Total amount                          = 5,599.66 EUR
+   */
+  const request = {
+    ...rawExampleA('commercial_invoice'),
+    freight: 450,
+    insurance: 25.505,
+    discount: 100,
+    signatory_name: 'Amina Berrada',
+    seller: { ...seller, eori_number: 'GB123456789000' },
+  };
+  const invoice = buildToolSnapshot(toolRequestSchema.parse(request), GENERATED_AT);
+
+  it('itemizes each charge and the discount and totals them as by hand', () => {
+    expect(invoice.schema_version).toBe(8);
+    expect(documentTotals(invoice)).toEqual([
+      ['Total quantity', '1,575.500'],
+      ['Goods value', '5,224.15 EUR'],
+      ['Freight', '450.00 EUR'],
+      ['Insurance', '25.51 EUR'],
+      ['Discount', '-100.00 EUR'],
+      ['Total amount', '5,599.66 EUR'],
+    ]);
+  });
+
+  it('prints the EORI and the responsible person', () => {
+    const text = printed(invoice);
+    expect(text).toContain('EORI GB123456789000');
+    expect(text).toContain('Amina Berrada');
+  });
+
+  it('leaves a packing list of the same shipment without charges', () => {
+    const packing = buildToolSnapshot(
+      toolRequestSchema.parse({ ...request, kind: 'packing_list' }),
+      GENERATED_AT,
+    );
+    expect('charges' in packing).toBe(false);
+    expect(packing.schema_version).toBe(4);
   });
 });
 

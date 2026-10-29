@@ -325,6 +325,7 @@ describe('regulated document gate', () => {
   });
 
   it('still generates an unregulated document', async () => {
+    state.queue = [{ data: { signatory_name: 'Ada Auk' }, error: null }];
     const result = await generateDocument(
       {},
       form({ org: ORG, shipment: SHIPMENT, kind: 'commercial_invoice' }),
@@ -334,8 +335,30 @@ describe('regulated document gate', () => {
   });
 });
 
+describe('responsible person on a commercial invoice (D-029)', () => {
+  it('refuses a commercial invoice until the signatory is set, and generates nothing', async () => {
+    state.queue = [{ data: { signatory_name: null }, error: null }];
+    const result = await generateDocument(
+      {},
+      form({ org: ORG, shipment: SHIPMENT, kind: 'commercial_invoice' }),
+    );
+    expect(result.error).toMatch(/19 CFR 141\.86\(j\)/);
+    expect(state.rpc).not.toHaveBeenCalled();
+  });
+
+  it('does not ask for a signatory on a packing list', async () => {
+    const result = await generateDocument(
+      {},
+      form({ org: ORG, shipment: SHIPMENT, kind: 'packing_list' }),
+    );
+    expect(result.notice).toMatch(/generated/i);
+    expect(state.rpc).toHaveBeenCalledOnce();
+  });
+});
+
 describe('document lifecycle', () => {
   it('names the new number and says the earlier revision was superseded', async () => {
+    state.queue = [{ data: { signatory_name: 'Ada Auk' }, error: null }];
     state.rows = [{ number: 'CI-2026-0002', supersedes_id: ROW }];
     const result = await generateDocument(
       {},

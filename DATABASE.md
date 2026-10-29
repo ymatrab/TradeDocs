@@ -372,3 +372,18 @@ Generated types were extended by hand (`organization_settings`, the four documen
   cross-org usage refused, member cannot change the limit).
 - Rollback: drop the trigger, the four functions and the two private tables; no existing row
   is changed.
+
+## Invoice charges and EORI (20261029000100, D-029)
+
+- `public.shipment_charges`: up to 20 per shipment (`position` 1–20, unique per shipment);
+  `kind` freight, insurance, packing, commission, other (needs `label`), discount; `amount`
+  numeric(14,3) above zero; `included_in_price`. Composite FK (org_id, shipment_id) to
+  shipments. RLS: members of the organization read, insert, update and delete; anon has no
+  grant. A change bumps the shipment revision (`private.bump_shipment_revision`).
+- `public.companies.eori_number`: `^[A-Z]{2}[A-Z0-9]{1,15}$`, nullable.
+- Snapshot schema 8: invoices of shipments with charges add `charges` and `invoice_totals`
+  (goods + charges not in prices - discounts not in prices); refused when negative.
+- pgTAP: `supabase/tests/invoice_charges.test.sql` (access, cross-tenant insert and delete,
+  anon, constraints, revision bump, totals by hand, packing list unchanged, EORI).
+- Rollback: re-create `private.document_snapshot` (20261009000100) and `private.party_snapshot`
+  (20261006000300), drop `public.shipment_charges` and `companies.eori_number`.
