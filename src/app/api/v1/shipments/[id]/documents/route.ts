@@ -133,6 +133,20 @@ export async function POST(request: Request, { params }: Context): Promise<Respo
             'Add at least one line to the shipment before generating a document.',
           );
         }
+        if (error.failure.message.includes('must name the person responsible')) {
+          throw new ApiError(
+            422,
+            'SIGNATORY_REQUIRED',
+            'A commercial invoice must name the person responsible for it (19 CFR 141.86(j)). Set the signatory name in the TradeDocs document settings, then retry.',
+          );
+        }
+        if (error.failure.message.includes('discounts are larger than the invoice')) {
+          throw new ApiError(
+            422,
+            'VALIDATION_FAILED',
+            'The discounts are larger than the invoice. Check the shipment charges.',
+          );
+        }
         if (error.failure.message.includes('document type is not available')) {
           throw new ApiError(422, 'VALIDATION_FAILED', 'That document type is not available.');
         }

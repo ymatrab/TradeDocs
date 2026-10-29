@@ -89,6 +89,12 @@ const ERRORS: { status: number; code: string; meaning: string }[] = [
     meaning: 'The shipment has no lines, so no document can be generated from it.',
   },
   {
+    status: 422,
+    code: 'SIGNATORY_REQUIRED',
+    meaning:
+      'A commercial invoice names a responsible person: set the signatory in the document settings first.',
+  },
+  {
     status: 429,
     code: 'RATE_LIMITED',
     meaning: 'Too many requests; wait for the Retry-After seconds.',

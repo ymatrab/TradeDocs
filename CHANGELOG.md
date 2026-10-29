@@ -4,6 +4,9 @@
 
 ### Invoice charges, discounts, EORI and required signatory (D-029)
 
+- REST API: migration `20261029000200_api_invoice_signatory.sql` refuses a commercial invoice
+  until the organization names a signatory (422 `SIGNATORY_REQUIRED`, listed on /developers);
+  pgTAP `public_api` (50) and the API integration suite cover it.
 - Migration `20261029000100_invoice_charges_and_eori.sql`: `public.shipment_charges` (members
   only, composite tenant key, revision bump), `companies.eori_number`, party snapshots carry the
   EORI when set, snapshot schema 8 adds `charges` and `invoice_totals` to commercial and
