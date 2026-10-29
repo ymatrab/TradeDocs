@@ -10,6 +10,8 @@ import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { DOCUMENT_KINDS } from '@/lib/labels';
 import { isRegulatedDocumentKind, REGULATED_DOCUMENT_LIMITATION } from '@/lib/trade/regulated';
 import { generateCertificateOfOrigin } from '@/lib/trade/certificate-of-origin-server';
+import { syncFreePlanLimits } from '@/lib/billing/server';
+import { FREE_SHIPMENTS_PER_MONTH } from '@/lib/limits';
 import {
   calendarDateField,
   containerNumberField,
@@ -36,6 +38,13 @@ function read(formData: FormData, field: string): string {
   const value = formData.get(field);
   return typeof value === 'string' ? value : '';
 }
+
+/** Shown when a commercial invoice is generated before the organization names a signatory. */
+const SIGNATORY_REQUIRED =
+  'A commercial invoice must name the person responsible for it (US rule 19 CFR 141.86(j)). Add the signatory name in Settings, under Documents, then generate it.';
+
+/** The database refused a new shipment over the Free plan's monthly limit (D-027). */
+const FREE_LIMIT_REACHED = `The Free plan includes ${FREE_SHIPMENTS_PER_MONTH} new shipments a month, and this month's are used. Upgrade to Pro or Team on the Billing page for unlimited shipments, or wait until the 1st.`;
 
 /** Whether a database error carries this routine message, so it can be shown as written. */
 function says(error: { message?: string } | null | undefined, text: string): boolean {
@@ -78,6 +87,7 @@ export async function createShipment(
     currency = settings?.default_currency ?? 'EUR';
   }
 
+  await syncFreePlanLimits();
   const { data, error } = await client
     .from('shipments')
     .insert({ org_id: parsed.data.org, reference: parsed.data.reference, currency })
@@ -92,6 +102,7 @@ export async function createShipment(
     if (error?.code === '42501') {
       return { error: 'You are not a member of this organization.' };
     }
+    if (error?.code === '54000') return { error: FREE_LIMIT_REACHED };
     return { error: 'That shipment could not be created. Try again.' };
   }
   revalidatePath(`/app/${parsed.data.org}/shipments`);
@@ -382,6 +393,16 @@ export async function generateDocument(
     if ('error' in certificate) return { error: certificate.error };
     created = certificate.created;
   } else {
+    // A US commercial invoice names a responsible person of the exporter (19 CFR 141.86(j),
+    // D-029): the signatory in the document settings, printed under the signature line.
+    if (parsed.data.kind === 'commercial_invoice') {
+      const { data: settings } = await client
+        .from('organization_settings')
+        .select('signatory_name')
+        .eq('org_id', parsed.data.org)
+        .maybeSingle();
+      if (!settings?.signatory_name?.trim()) return { error: SIGNATORY_REQUIRED };
+    }
     const { data, error } = await client.rpc('generate_document', {
       target_shipment: parsed.data.shipment,
       document_kind: parsed.data.kind,
@@ -389,6 +410,12 @@ export async function generateDocument(
     if (error) {
       if (says(error, 'at least one line item')) {
         return { error: 'Add at least one line before generating a document.' };
+      }
+      if (says(error, 'discounts are larger than the invoice')) {
+        return {
+          error:
+            'The discounts are larger than the invoice. Check the amounts under Charges and discounts.',
+        };
       }
       if (says(error, 'A VGM declaration needs')) {
         return {
@@ -497,6 +524,7 @@ export async function duplicateShipment(
   }
 
   const client = await createClient();
+  await syncFreePlanLimits();
   const { data: created, error } = await client.rpc('duplicate_shipment', {
     source_shipment: parsed.data.shipment,
     new_reference: parsed.data.reference,
@@ -507,6 +535,7 @@ export async function duplicateShipment(
       return { error: message, fields: { reference: message } };
     }
     if (error?.code === '42501') return { error: 'That shipment is not available to you.' };
+    if (error?.code === '54000') return { error: FREE_LIMIT_REACHED };
     return { error: 'That shipment could not be copied. Try again.' };
   }
   revalidatePath(`/app/${parsed.data.org}/shipments`);

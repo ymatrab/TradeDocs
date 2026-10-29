@@ -27,7 +27,7 @@ export default async function CompanyPage({
   const { data: record } = await client
     .from('companies')
     .select(
-      'id, kind, name, legal_name, contact_name, tax_number, registration_number, email, phone, address_line1, address_line2, city, region, postal_code, country_code, notes, archived_at',
+      'id, kind, name, legal_name, contact_name, tax_number, eori_number, registration_number, email, phone, address_line1, address_line2, city, region, postal_code, country_code, notes, archived_at',
     )
     .eq('id', company)
     .eq('org_id', org)

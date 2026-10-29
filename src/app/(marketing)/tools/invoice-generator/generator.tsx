@@ -28,6 +28,7 @@ type Party = {
   postal_code: string;
   country_code: string;
   tax_number: string;
+  eori_number: string;
 };
 
 const emptyParty: Party = {
@@ -37,6 +38,7 @@ const emptyParty: Party = {
   postal_code: '',
   country_code: '',
   tax_number: '',
+  eori_number: '',
 };
 
 function emptyLine(key: number): Line {
@@ -108,6 +110,10 @@ export function DocumentGenerator({
   const [buyerReference, setBuyerReference] = useState('');
   const [validUntil, setValidUntil] = useState('');
   const [paymentTerms, setPaymentTerms] = useState('');
+  const [freight, setFreight] = useState('');
+  const [insurance, setInsurance] = useState('');
+  const [discount, setDiscount] = useState('');
+  const [signatory, setSignatory] = useState('');
   const [seller, setSeller] = useState<Party>(emptyParty);
   const [buyer, setBuyer] = useState<Party>(emptyParty);
   const [lines, setLines] = useState<Line[]>([emptyLine(1)]);
@@ -152,6 +158,23 @@ export function DocumentGenerator({
                 maxLength={100}
                 className="input data"
                 onChange={(event) => onChange({ ...value, tax_number: event.target.value })}
+              />
+            )}
+          </Field>
+          <Field
+            id={`${prefix}-eori`}
+            label="EORI number"
+            requirement="Optional"
+            hint="For EU and UK customs, such as DE123456789012345."
+          >
+            {({ id, describedBy }) => (
+              <Input
+                id={id}
+                value={value.eori_number}
+                maxLength={17}
+                className="input data"
+                aria-describedby={describedBy}
+                onChange={(event) => onChange({ ...value, eori_number: event.target.value })}
               />
             )}
           </Field>
@@ -249,6 +272,11 @@ export function DocumentGenerator({
           buyer_reference: isInvoice(kind) ? buyerReference : '',
           valid_until: kind === 'proforma_invoice' ? validUntil : '',
           payment_terms: isInvoice(kind) ? paymentTerms : '',
+          // Invoices only (D-029); blank means not stated.
+          freight: isInvoice(kind) && freight.trim() ? number(freight) : undefined,
+          insurance: isInvoice(kind) && insurance.trim() ? number(insurance) : undefined,
+          discount: isInvoice(kind) && discount.trim() ? number(discount) : undefined,
+          signatory_name: isInvoice(kind) ? signatory : '',
           currency,
           incoterm,
           incoterm_place: incotermPlace,
@@ -458,6 +486,71 @@ export function DocumentGenerator({
                   rows={2}
                   aria-describedby={describedBy}
                   onChange={(event) => setPaymentTerms(event.target.value)}
+                />
+              )}
+            </Field>
+          </div>
+        ) : null}
+        {isInvoice(kind) ? (
+          <div className="form-row roomy" style={{ marginTop: 14 }}>
+            <Field
+              id="freight"
+              label={`Freight (${currency})`}
+              hint="Added to the goods value and printed by name, as for CIF, CIP or DAP sales."
+              requirement="Optional"
+            >
+              {({ id, describedBy }) => (
+                <Input
+                  id={id}
+                  value={freight}
+                  inputMode="decimal"
+                  className="input data numeric"
+                  aria-describedby={describedBy}
+                  onChange={(event) => setFreight(event.target.value)}
+                />
+              )}
+            </Field>
+            <Field id="insurance" label={`Insurance (${currency})`} requirement="Optional">
+              {({ id }) => (
+                <Input
+                  id={id}
+                  value={insurance}
+                  inputMode="decimal"
+                  className="input data numeric"
+                  onChange={(event) => setInsurance(event.target.value)}
+                />
+              )}
+            </Field>
+            <Field
+              id="discount"
+              label={`Discount (${currency})`}
+              hint="Deducted from the total and printed by name."
+              requirement="Optional"
+            >
+              {({ id, describedBy }) => (
+                <Input
+                  id={id}
+                  value={discount}
+                  inputMode="decimal"
+                  className="input data numeric"
+                  aria-describedby={describedBy}
+                  onChange={(event) => setDiscount(event.target.value)}
+                />
+              )}
+            </Field>
+            <Field
+              id="signatory"
+              label="Responsible person"
+              hint="Printed under the signature line. A US commercial invoice must name one."
+              requirement="Optional"
+            >
+              {({ id, describedBy }) => (
+                <Input
+                  id={id}
+                  value={signatory}
+                  maxLength={80}
+                  aria-describedby={describedBy}
+                  onChange={(event) => setSignatory(event.target.value)}
                 />
               )}
             </Field>

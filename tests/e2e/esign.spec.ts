@@ -55,7 +55,16 @@ async function startOrganization(page: Page, name: string): Promise<string> {
   return new URL(page.url()).pathname.split('/')[2] as string;
 }
 
+/** A commercial invoice names a responsible person (19 CFR 141.86(j), D-029). */
+async function setSignatory(page: Page, org: string): Promise<void> {
+  await page.goto(`/app/${org}/settings`);
+  await page.getByLabel('Signatory name').fill('Sam Signer');
+  await page.getByRole('button', { name: 'Save settings' }).click();
+  await expect(page.getByText(/Settings saved\./)).toBeVisible();
+}
+
 async function generateInvoice(page: Page, org: string): Promise<string> {
+  await setSignatory(page, org);
   await page.goto(`/app/${org}/shipments`);
   await page.getByLabel('Shipment reference').fill(`SHP-ESIGN-${sequence}`);
   await page.getByRole('button', { name: 'Create shipment' }).click();

@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'era-eurostat-teu': {
@@ -17,7 +17,7 @@ export default {
     supports:
       'the TEU as a statistical unit based on a 20-foot-long (6.10 m) ISO container, used to describe the capacity of container ships and terminals, with a 20-foot container counted as 1 TEU, a 40-foot container as 2 TEU, a container between 20 and 40 feet as 1.50 TEU and one over 40 feet as 2.25 TEU',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'unctad-containerised-transport': {
     authority: 'UN Trade and Development (UNCTAD), SDG Pulse glossary',
@@ -27,6 +27,6 @@ export default {
     supports:
       'containerised transport using intermodal containers of standard dimensions that move between ships, trucks and trains, with the TEU and the FEU (forty-foot equivalent unit), based on 20-foot and 40-foot containers, as the main units of measure',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

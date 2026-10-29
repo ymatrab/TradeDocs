@@ -54,41 +54,100 @@ Restore approved backup into an isolated environment; disable customer email, li
 
 ## Production go-live (service mode)
 
-Order matters; each step is the owner's unless marked agent.
+Since D-026 (owner, 2026-10-11) production needs no hand-set mode, environment, URL,
+approval, waiver or quota secret: `src/lib/config/defaults.ts` fills them (see
+"Configuration defaults" below) and the production build applies migrations itself (see
+"Migrations on deploy"). Each step is the owner's unless marked agent.
 
-1. Merge the release to `main` after CI and preview sign-off.
-2. GitHub → Settings → Environments → `production` → add secret `PRODUCTION_DATABASE_URL`
-   (Supabase session-pooler URI). Agents never handle the value.
-3. Actions → "Migrate production database" → confirm `migrate production`, first with
-   dry run on (lists pending migrations), then with dry run off.
-4. Vercel → Production environment variables (Production target only, D-011):
-   `APP_ENV=production`, `APPLICATION_MODE=service`, `APP_URL=https://<custom domain>`,
-   `SUPABASE_PROJECT_REF` and `PRODUCTION_SUPABASE_PROJECT_REF` (the project ref from the
-   Supabase URL), `SUPABASE_ENVIRONMENT=production`, `RATE_LIMIT_KEY_SECRET` (32+ random
-   characters), `LAUNCH_APPROVED=true` only after the launch checklist is signed.
-   The schema (`src/lib/config/schema.ts`) also refuses production service mode without
-   `RESEND_API_KEY` and `EMAIL_FROM` (always required), and without `TURNSTILE_SITE_KEY` +
-   `TURNSTILE_SECRET_KEY`, `SENTRY_DSN`, `ANALYTICS_SITE_ID` and `INDEXNOW_KEY` unless the
-   matching waiver is set. Per D-017 (sign-up launch), set `WAIVE_TURNSTILE=true`,
-   `WAIVE_SENTRY=true`, `WAIVE_ANALYTICS=true` and `WAIVE_INDEXNOW=true`. Adding a service's
-   key later re-enables it whatever its waiver says; remove the waiver at the same time.
-   `/api/ready` lists the waived controls under `degraded`. `SUPABASE_URL`,
-   `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` already come from the Vercel Supabase
-   integration (D-011).
-   Supabase → Authentication → SMTP Settings → enable custom SMTP with Resend: host
+1. Resend: verify the sending domain, then in Vercel (Production target only, D-011) set
+   `RESEND_API_KEY` and `EMAIL_FROM` (for example `TradeDocs <no-reply@<domain>>`). These are
+   the only variables service mode still needs; until both exist production stays in
+   foundation mode and `/api/ready` names them under `service_mode_pending`.
+2. Supabase → Authentication → SMTP Settings → enable custom SMTP with Resend: host
    `smtp.resend.com`, port `465`, username `resend`, password = the Resend API key, sender =
    the `EMAIL_FROM` address. Without it, sign-up confirmation emails hit Supabase's built-in
-   email rate limit. The owner sets this in the Supabase dashboard; agents never handle the
-   key.
-5. Redeploy production. Agent: verify `/api/ready` is 200, sign-up works end to end,
-   `/design-system` is 404, robots and sitemap match the indexing decision (D-007).
+   email rate limit. Then the dashboard auth settings ("Auth settings on the hosted project").
+   Agents never handle the key.
+3. Merge the release to `main` after CI. The production build runs `next build`, then
+   applies pending migrations (refusing destructive ones without their marker); a failure
+   leaves the previous deployment live.
+4. Agent: verify `/api/ready` is 200 and reports no `service_mode_pending`, sign-up works end
+   to end, `/design-system` is 404, and robots/X-Robots-Tag stay closed while the host is
+   `*.vercel.app` (D-007).
+
+Optional, any time: `PLATFORM_ADMIN_EMAILS` for `/admin`; the custom domain (attaching it in
+Vercel moves the defaulted `APP_URL` to it and opens indexing, see below); Stripe ("Opening
+paid plans"); feature keys (CSL, Dropbox Sign, QuickBooks/Xero, Turnstile, Sentry, analytics,
+IndexNow). The manual "Migrate production database" workflow stays available for a dry run or
+a re-run; it uses the `PRODUCTION_DATABASE_URL` GitHub secret.
+
+## Configuration defaults (D-026)
+
+Every default applies only while its variable is unset or blank; any explicit value,
+including `false`, wins. `/api/ready` lists defaulted names under `defaults` and derived ones
+under `derived`, never values. Local and test environments get no defaults beyond the
+Supabase aliases, so CI keeps proving both states.
+
+- `APP_ENV`: from `VERCEL_ENV` (production, preview; development is local).
+- `APP_URL`: production `https://$VERCEL_PROJECT_PRODUCTION_URL`, preview
+  `https://$VERCEL_URL`.
+- Supabase–Vercel integration aliases: `SUPABASE_URL` from `NEXT_PUBLIC_SUPABASE_URL`;
+  `SUPABASE_ANON_KEY` from `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_PUBLISHABLE_KEY` or
+  `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, in that order; `SUPABASE_SERVICE_ROLE_KEY` from
+  `SUPABASE_SECRET_KEY`. `SUPABASE_PROJECT_REF` is the `<ref>` of `https://<ref>.supabase.co`.
+- Production only: `SUPABASE_ENVIRONMENT=production`, `PRODUCTION_SUPABASE_PROJECT_REF` = the
+  project ref, `LAUNCH_APPROVED=true` (D-026), and `APPLICATION_MODE=service` when the
+  Supabase URL, anon and service-role keys, `APP_URL`, `RESEND_API_KEY` and `EMAIL_FROM` are
+  all present (otherwise `foundation`). Previews stay foundation (D-011).
+- Deployed environments: `PRICES_APPROVED=true` (D-024) and `WAIVE_TURNSTILE`,
+  `WAIVE_SENTRY`, `WAIVE_ANALYTICS`, `WAIVE_INDEXNOW` = `true` (D-017). A configured key still
+  re-enables its control and `/api/ready` still lists waived controls under `degraded`.
+- Deployed service mode, derived: `RATE_LIMIT_KEY_SECRET`, `API_KEY_PEPPER` and
+  `INTEGRATION_TOKEN_KEY` = HMAC-SHA-256(service-role key, `tradedocs:rate-limit:v1`,
+  `tradedocs:api-key-pepper:v1`, `tradedocs:integration-token-key:v1` respectively), as hex.
+
+Derived secrets follow the service-role key. **Rotating the service-role key (or the
+integration replacing `SUPABASE_SERVICE_ROLE_KEY` with only `SUPABASE_SECRET_KEY`) rotates
+all three:** every organization API key stops working (organizations create new ones), every
+stored QuickBooks/Xero connection must be reconnected, and quota counters restart. Setting a
+variable pins it independently of the key (`openssl rand -hex 32`); setting it the first time
+has the same one-off effects as a rotation.
+
+Indexing keys off the host, not a flag: robots and `X-Robots-Tag` open only in production
+service mode with an `APP_URL` that is not `*.vercel.app` (`src/lib/http/indexing.ts`).
+Vercel's `VERCEL_PROJECT_PRODUCTION_URL` is the shortest attached custom domain once there is
+one, so attaching the domain moves the defaulted `APP_URL` to it and opens indexing, and the
+vercel.app alias then redirects there (308). Re-register the QuickBooks/Xero redirect URIs
+and the Supabase auth redirect URLs for the new origin at the same time.
+
+## Migrations on deploy (D-026)
+
+`vercel.json` builds with `npm run build && node scripts/migrate-on-deploy.mjs`. The script
+runs only when `VERCEL=1` and `VERCEL_ENV=production`; previews, CI and local builds skip it.
+It reads the Supabase integration's `POSTGRES_URL_NON_POOLING` (never printed; failure output
+is redacted) and, when that is unset, skips with a log line (the deployment stays foundation).
+
+1. `supabase db push --dry-run` lists pending files; it prints names and a count only.
+2. Each pending file is scanned (`scripts/migration-safety.mjs`): `drop table`,
+   `drop column`, `drop schema`, `truncate`, `delete` without `where` and `alter … type` are
+   refused unless the file carries
+   `-- tradedocs: destructive-approved <YYYY-MM-DD> <reason>`. Add the marker only after a
+   backup, with rollout and rollback notes in the migration header.
+3. `supabase db push` applies them. Any failure, an unreadable pending list or a refusal
+   fails the build, so the previous deployment stays live and nothing further is applied.
+
+Migrations apply after the build and before the new deployment takes traffic, so the live
+release briefly runs against the new schema: keep migrations additive (expand, then contract
+in a later release). Emergency deploy without migrating: set `MIGRATE_ON_DEPLOY=false`,
+redeploy, then remove it.
 
 ## Opening paid plans (Stripe Payment Links)
 
 Owner steps; agents never handle the keys. Prices are the owner's decision (P-002). The
 team's proposal is `PROPOSED_PRICES` in `src/lib/billing/plans.ts`
-(docs/research/pricing-proposal-2026-10-06.md); it shows only with `PRICES_APPROVED=true`.
-Without it `/pricing` shows each paid plan as "Not available yet". With it, and before the
+(docs/research/pricing-proposal-2026-10-06.md); it shows only with `PRICES_APPROVED=true`,
+which deployed environments default to since the owner approved the prices (D-024, D-026;
+set `PRICES_APPROVED=false` to hide them). Without it `/pricing` shows each paid plan as "Not available yet". With it, and before the
 steps below, each paid plan shows its approved prices and "Checkout is not open yet". The
 webhook route answers 404 until payments are enabled.
 
@@ -121,6 +180,17 @@ webhook route answers 404 until payments are enabled.
    Cancel the test subscription: the plan stays until the period end. Refund it in full: the
    plan ends at once.
 
+**The Free shipment limit turns on with checkout (D-027).** As soon as a paid plan is
+purchasable, Free organizations may create `FREE_SHIPMENTS_PER_MONTH` (3) new shipments per
+UTC calendar month; Pro and Team have no cap, and the no-account generators are never
+limited. The next shipment created writes the limit to the database (`sync_free_plan_limits`,
+service role); the `shipments_free_limit` trigger enforces it on every path and counts a
+ledger that deletion cannot rewind. Pricing, llms.txt and the workspace state the limit only
+while it applies. Check after step 7: a Free test organization sees "Free plan: 0 of 3 new
+shipments used this month" on its Shipments page, and the 4th new shipment is refused with the
+upgrade message. When checkout closes again (rollback below), the limit lifts on the next
+shipment created.
+
 Rollback: set `ENABLE_PAYMENTS=false` and redeploy. The webhook answers 404 (Stripe retries for
 up to three days, so re-enabling within that window replays the backlog idempotently); stored
 entitlements remain and keep their dates.
@@ -136,8 +206,9 @@ unreachable and Stripe will redeliver.
 Owner steps; agents never handle the key. Until `DROPBOX_SIGN_API_KEY` is set, every
 signature page says "E-signature not available yet", the documents list offers no E-sign
 link, the callback route answers 404 and no public page (pricing, llms.txt, use cases) claims
-the feature: it lives in `PROVIDER_FEATURES`, not `FEATURES`, in `src/lib/billing/plans.ts`.
-It is a Pro and Team feature (`hasEntitlement(org, 'esign')`, checked again in SQL).
+the feature. Once the key and the service connection are set, the `esign` capability turns
+on and pricing, llms.txt and the use-case pages list it for Pro and Team (D-027). It is a Pro
+and Team feature (`hasEntitlement(org, 'esign')`, checked again in SQL).
 
 The signature is provided by Dropbox Sign. TradeDocs sends the rendered PDF of a current
 final document and stores the signed PDF it gets back as a new, separate object; it does not
@@ -159,16 +230,16 @@ image" of PDF branding.
 4. **Test vs production.** Every non-production environment always sends test requests. In
    production requests are live (binding) unless `DROPBOX_SIGN_TEST_MODE=true`; keep it
    `true` until the paid API plan is active and one live request has been checked end to end.
-5. **Migration.** Apply `20261009000600_esign_requests.sql` (manual production migration
-   workflow) before setting the key in production, then redeploy.
+5. **Migration.** `20261009000600_esign_requests.sql` applies on the production deploy
+   (D-026, "Migrations on deploy"); nothing to run by hand.
 6. **Verify (Preview):** as a Pro or Team member, open a current final document → E-sign, send
    to a test address you control; the request shows "Out for signature"; sign it from the
    Dropbox Sign email; the request becomes "Signed" and, after Dropbox Sign's
    `signature_request_downloadable` event, offers "Signed PDF" (a 60-second link). The audit
    log has `esign.requested`, `esign.sent`, `esign.status_changed`, `esign.signed_stored` and
    `esign.signed_downloaded`.
-7. **Listing it publicly** (pricing, llms.txt) is a separate owner decision once it works in
-   production; it needs a code change that moves the feature into the public claims.
+7. **Listing it publicly** is automatic once the key is set (D-027). Set the key in
+   Production only after step 6 passed on a preview.
 
 Rollback: clear `DROPBOX_SIGN_API_KEY` and redeploy. Sending stops and the callback answers
 404 (Dropbox Sign retries up to six times over about 30 hours, and clears the callback URL
@@ -187,9 +258,11 @@ Sends are limited to 20 per account per hour and 100 per organization per day.
 
 ## API keys and the public REST API (D-025)
 
-- Turn on: set `API_KEY_PEPPER` (32+ random characters, `openssl rand -base64 48`) in Vercel
-  for Preview and Production separately (different values), then redeploy. `/api/ready` stops
-  reporting `api_reason: api_key_pepper_missing`.
+- Turn on: nothing to do in production service mode. Unset, `API_KEY_PEPPER` is derived from
+  the service-role key (D-026, "Configuration defaults"), so rotating that key revokes every
+  API key. To pin it, set `API_KEY_PEPPER` (32+ random characters,
+  `openssl rand -base64 48`) in Vercel, then redeploy; `/api/ready` no longer lists it under
+  `derived`.
 - Leaked key: an owner or administrator revokes it in Settings → API keys; it fails on the next
   request. Audit rows: `api_key.created`, `api_key.revoked`, `api_key.use_failed`,
   `api.shipment_created`, `api.document_generated`.
@@ -211,7 +284,9 @@ Redirect URIs are exact: `<APP_URL>/api/integrations/quickbooks/callback` and
 `<APP_URL>/api/integrations/xero/callback` (for production, `https://<production domain>/...`;
 for a preview, that preview's stable origin). Register one per environment you will test.
 
-1. **Token key (shared).** Generate 32 random bytes: `openssl rand -base64 32` (or `-hex 32`)
+1. **Token key (shared).** Optional in production service mode: unset, it is derived from the
+   service-role key (D-026), so rotating that key means every connection must reconnect. To
+   pin it, generate 32 random bytes: `openssl rand -base64 32` (or `-hex 32`)
    and set `INTEGRATION_TOKEN_KEY`, a different value per environment. It seals every stored
    access and refresh token (AES-256-GCM) and signs the OAuth state. Rotating it makes every
    stored connection read "Needs reconnecting"; owners then reconnect. Never reuse it for
@@ -282,8 +357,12 @@ Incidents: if tokens may have leaked, rotate the client secret at the provider a
 
 ## Certificate of origin (D-008, D-025)
 
-Off by default. It is launch-ready behind `ENABLE_REGULATED_DOCUMENTS` and switches on only
-with a recorded legal review; nothing else needs changing.
+**On by default in production service mode since D-028 (2026-10-29):** the owner accepted
+Claude's review as the approval, recorded in `COO_OWNER_APPROVAL` (`src/lib/config/defaults.ts`)
+as an owner approval, not an independent legal review. Nothing to set. To hold it, set
+`ENABLE_REGULATED_DOCUMENTS=false` and redeploy. A later professional review is recorded by
+setting `LEGAL_COO_REVIEWED_BY` and `LEGAL_COO_REVIEWED_AT`, which override the defaults.
+Previews and foundation mode keep it off.
 
 **What the reviewer reviews.** The wording in `src/lib/trade/certificate-of-origin.ts`
 (version 1: the "Preparation template - not an issued certificate" label, the exporter's
@@ -295,8 +374,8 @@ certification is required the issuing chamber of commerce or authority does that
 for the reviewer (LEGAL.md): private evidence attachments and an "externally endorsed" state
 are not built; the signature/stamp image is the organization's own upload (PDF branding).
 
-**To enable** (Vercel → Project → Settings → Environment Variables, Production; preview only
-with staging data):
+**To enable by hand** (a deployment without the D-028 default, such as staging; Vercel →
+Project → Settings → Environment Variables):
 
 1. `LEGAL_COO_REVIEWED_BY` = the reviewer's full name (one line).
 2. `LEGAL_COO_REVIEWED_AT` = the review date, `YYYY-MM-DD` (a real date, not in the future).

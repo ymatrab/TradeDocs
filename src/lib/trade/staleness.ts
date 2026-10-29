@@ -21,6 +21,7 @@ export const staleReasonLabels = {
   exporter: 'Exporter details changed',
   consignee: 'Consignee details changed',
   notify: 'Notify party changed',
+  charges: 'Charges or discounts changed',
   issuer: 'Payment terms, bank details or signatory changed',
   branding: 'Logo or signature image changed',
 } as const;
@@ -79,6 +80,8 @@ const PARTY_FIELDS = [
   'postal_code',
   'country_code',
   'tax_number',
+  // Absent unless the company has one (20261029000100); absent and null compare as equal.
+  'eori_number',
 ] as const;
 
 const TERM_FIELDS = [
@@ -142,6 +145,10 @@ const PACKAGE_FIELDS = [
 
 const CONTENT_FIELDS = ['position', 'description', 'quantity', 'unit'] as const;
 
+/** Schema 8, invoices only. A snapshot without charges compares as an empty list. */
+const CHARGE_FIELDS = ['position', 'kind', 'label', 'amount', 'included_in_price'] as const;
+const CHARGED_KINDS: readonly unknown[] = ['commercial_invoice', 'proforma_invoice'];
+
 const ISSUER_FIELDS = [
   'payment_terms',
   'bank_details',
@@ -193,6 +200,12 @@ export function staleReasons(issued: unknown, current: unknown): StaleReason[] {
   }
   if (!sameFields(before.shipment, now.shipment, TERM_FIELDS)) reasons.push('terms');
   if (!sameFields(before.shipment, now.shipment, TRANSPORT_FIELDS)) reasons.push('transport');
+  if (
+    CHARGED_KINDS.includes(before.kind) &&
+    !sameList(before.charges, now.charges, (a, b) => sameFields(a, b, CHARGE_FIELDS))
+  ) {
+    reasons.push('charges');
+  }
   for (const role of ['exporter', 'consignee', 'notify'] as const) {
     if (!sameFields(before[role], now[role], PARTY_FIELDS)) reasons.push(role);
   }

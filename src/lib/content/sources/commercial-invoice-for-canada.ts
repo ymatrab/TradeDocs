@@ -7,7 +7,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * claim checked on the retrieval date.
  */
 const RETRIEVED = '2026-10-06';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'w2-cornell-19-usc-1401a': {
@@ -18,7 +18,7 @@ export default {
     supports:
       'the price actually paid or payable for US customs value excluding international freight, insurance and related services from the country of exportation',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-cbp-importer-tips': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -28,7 +28,7 @@ export default {
     supports:
       'the importer of record being ultimately responsible for the entry documentation and all duties, taxes and fees, and many first-time importers using a licensed customs broker',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-cbp-samples': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -39,7 +39,7 @@ export default {
     supports:
       'the HTSUS 9811.00.60 provision for samples valued not over $1 each or marked or mutilated so they are unsuitable for sale, the “SAMPLE” marking, temporary importation and carnets for samples, and the importer’s duty of reasonable care to classify and value',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-cbsa-d1-4-1': {
     authority: 'Canada Border Services Agency (CBSA)',
@@ -49,7 +49,7 @@ export default {
     supports:
       'a commercial invoice carrying the Appendix A fields being accepted in place of Form CI1, the CAD 2,500 value-for-duty exception, English or French, the field descriptions, copies and the CBSA withholding release when documentation is missing',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-fedex-customs-documents': {
     authority: 'FedEx',
@@ -59,7 +59,7 @@ export default {
     supports:
       'the commercial invoice being required for all international commodity shipments, the three ways to complete and submit it including upload through FedEx Electronic Trade Documents, and FedEx’s guidance on specific descriptions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-ups-commercial-invoice': {
     authority: 'UPS',
@@ -69,7 +69,7 @@ export default {
     supports:
       'UPS Paperless Invoice for account holders, and otherwise three signed copies (one original and two copies) included with the shipment',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-dhl-commercial-invoice': {
     authority: 'DHL',
@@ -79,7 +79,7 @@ export default {
     supports:
       'the details DHL asks for on each line and for the shipment, the reason for export and type of export fields, the air waybill number, and MyDHL+ generating the invoice during booking',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w2-ita-labeling': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -89,6 +89,6 @@ export default {
     supports:
       'the markings export cartons carry: shipper’s mark, country of origin, weight in pounds and kilograms, number of packages and case size, handling and cautionary marks, port of entry and hazardous-materials labels, usually specified by the buyer',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

@@ -2,6 +2,82 @@
 
 ## Unreleased — 2026-09-06
 
+### Invoice charges, discounts, EORI and required signatory (D-029)
+
+- REST API: migration `20261029000200_api_invoice_signatory.sql` refuses a commercial invoice
+  until the organization names a signatory (422 `SIGNATORY_REQUIRED`, listed on /developers);
+  pgTAP `public_api` (50) and the API integration suite cover it.
+- Migration `20261029000100_invoice_charges_and_eori.sql`: `public.shipment_charges` (members
+  only, composite tenant key, revision bump), `companies.eori_number`, party snapshots carry the
+  EORI when set, snapshot schema 8 adds `charges` and `invoice_totals` to commercial and
+  proforma invoices of shipments with charges; a discount larger than the invoice is refused.
+- Renderer `tradedocs-pdf/8`: goods value, each charge and discount by name, then the total;
+  "EORI" under the tax ID. Staleness flags changed charges on invoices and a changed EORI.
+- Workspace: "Charges and discounts" panel on the shipment, EORI on the company form, and a
+  commercial invoice is refused until the signatory is set (19 CFR 141.86(j)).
+- Free generator: freight, insurance, discount, EORI and responsible person.
+- Tests: pgTAP `invoice_charges` (15), unit `invoice-charges`, verification pack example D,
+  updated `shipment-actions`, `branding` and e2e flows (signatory set before invoices).
+
+### Owner approval of the certificate of origin and sources; verification pack (D-028)
+
+- The certificate of origin turns on in production service mode by default
+  (`COO_OWNER_APPROVAL` in src/lib/config/defaults.ts); `ENABLE_REGULATED_DOCUMENTS=false`
+  still holds it. Every source record reads "accepted by the owner on 29 October 2026
+  (AI-assisted review, D-028)". Recorded as owner approval, not professional review.
+- `tests/unit/verification-pack.test.ts`: hand-worked examples (three-line EUR invoice and
+  packing list, JPY and half-cent rounding, CBM, chargeable weight, unit conversions, landed
+  cost EU and US style) checked through to the printed page.
+- docs/research/document-requirements-2026-10-29.md: the commercial invoice against
+  19 CFR 141.86 and EU VAT invoice rules, and competitors' terms. Gaps found: itemized
+  charges, discounts, EORI, required responsible person.
+
+### Security: Next.js 16.4.3 and zod 4.6.7
+
+- Next.js 16.3.8 → 16.4.3 (GHSA-2464-fhr4-w9xw and GHSA-673q-mjm6-r5xr, unauthenticated
+  remote code execution; GHSA-p3m5-59mp-jv5r, Server Actions denial of service) and zod
+  4.5.4 → 4.6.7 (GHSA-mrhx-c7xc-m3w5), flagged by the CI `npm audit` gate on PR #34.
+  Lockfile entries written from the npm registry's published integrity hashes (no local
+  install); verified by `npm ci` in CI. Supersedes Dependabot PRs #29 and #31.
+
+### Free saved-shipment limit and e-signature on the pricing page (D-027)
+
+- Migration `20261027000100_free_shipment_limit.sql`: `private.plan_limits` (off by default),
+  a `private.shipment_creations` ledger, the `shipments_free_limit` trigger (SQLSTATE 54000,
+  per-organization lock, Pro/Team exempt) on every insert path, `sync_free_plan_limits`
+  (service role) and `free_shipment_usage` (members).
+- `syncFreePlanLimits` (src/lib/billing/server.ts) writes 3 while a paid plan is purchasable
+  and 0 otherwise, before a shipment is created or the Shipments page renders. The create and
+  reuse actions explain the limit; the Shipments page shows "n of 3 used this month" with a
+  Billing link.
+- Plans: `workspace.unlimited_shipments` (Pro, Team; capability `free_shipment_limit`) and
+  `esign` moved into the public features behind capability `esign`; `PROVIDER_FEATURES`
+  removed. Pricing copy states the Free limit only while it applies.
+- Tests: `supabase/tests/free_shipment_limit.test.sql` (16), `free-shipment-limit.test.ts`,
+  updated `billing`, `esign` and `shipment-actions` suites. Pending CI; database types need the
+  CI artifact for the two new routines.
+- docs/research/competitors-2026-10-27.md: live competitor re-check.
+
+### Production without hand-set variables, migrations on deploy (D-026)
+
+- `src/lib/config/defaults.ts`: the one place unset values are filled. `APP_ENV` from
+  `VERCEL_ENV`; `APP_URL` from Vercel's production alias or preview host; Supabase–Vercel
+  integration aliases (`NEXT_PUBLIC_SUPABASE_URL`, publishable/secret key names) and the
+  project ref from the URL; `PRICES_APPROVED` and `WAIVE_*` on for deployed environments;
+  `LAUNCH_APPROVED` in production; service mode in production once the Supabase connection,
+  `APP_URL`, `RESEND_API_KEY` and `EMAIL_FROM` all exist. Explicit values always win.
+- `RATE_LIMIT_KEY_SECRET`, `API_KEY_PEPPER`, `INTEGRATION_TOKEN_KEY` derived as
+  HMAC-SHA-256(service-role key, distinct label) when unset in deployed service mode;
+  rotating the service-role key rotates them (RUNBOOK.md, "Configuration defaults").
+- `/api/ready` names `defaults`, `derived` and `service_mode_pending` (names only).
+- `scripts/migrate-on-deploy.mjs` from the Vercel production build: dry run, destructive
+  statement scan with a dated approval marker, `supabase db push`; any failure fails the
+  build. Indexing still opens only on a custom domain (D-007). Instrumentation now loads the
+  configuration in the Node.js runtime only.
+- Tests: `config-defaults` and `migration-safety` suites; updated expectations in
+  `waivers.test.ts` (readiness lists defaults/derived; pepper and token key no longer missing)
+  and `config.test.ts` (production launch approval default). Pending CI.
+
 ### HS code lookup and denied-party screening (D-025)
 
 - `/tools/hs-code-lookup`: live server-side search of the USITC HTS and the GOV.UK Trade Tariff

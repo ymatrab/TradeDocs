@@ -1,7 +1,7 @@
 import type { SourceFields } from '@/lib/trade/sources';
 
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 /**
  * Sources first cited by the wave D Incoterms and freight batch: dap-vs-dpu, fob-vs-cfr,
@@ -18,7 +18,7 @@ export default {
     supports:
       'common carriers and conferences keeping open for public inspection, in automated tariff systems, tariffs showing all their rates, charges, classifications, rules and practices, and being able to use publishers to do so',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd3-cfr-46-520-8': {
     authority: 'Legal Information Institute, Cornell Law School (Code of Federal Regulations)',
@@ -28,7 +28,7 @@ export default {
     supports:
       'a new or changed rate or charge that increases a shipper’s cost not taking effect earlier than thirty calendar days after publication, and a change that decreases cost being able to take effect on publication',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd3-fmc-voccs': {
     authority: 'Federal Maritime Commission (FMC)',
@@ -38,7 +38,7 @@ export default {
     supports:
       'all VOCCs having to publish a tariff open for public inspection showing all rates, charges, classifications, rules and practices, and having to give the public free access to their tariff publication system, with carriers able to apply for special permission to waive the notice period under 46 CFR 520.14',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd3-wko-seafreight-terms': {
     authority: 'Austrian Federal Economic Chamber (WKO), Fachverband Spedition und Logistik',
@@ -48,7 +48,7 @@ export default {
     supports:
       'BAF as the bunker adjustment factor balancing changing fuel costs, CAF as the currency adjustment factor, THC as the terminal handling charge for handling the container, the congestion surcharge for waiting time in ports, and demurrage and detention as separate container charges',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd3-trade-gov-shipping-options': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -58,6 +58,6 @@ export default {
     supports:
       'freight forwarders helping exporters prepare price quotations by advising on freight costs, port charges, consular fees, special documentation and insurance; their handling fees belonging in the price charged to the customer; their reserving space on a vessel, aircraft, train or truck; and their licensing by IATA for air freight and by the FMC for ocean freight',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

@@ -33,6 +33,14 @@ async function startOrganization(page: Page, name: string): Promise<string> {
   return createOrganization(page, name);
 }
 
+/** A commercial invoice names a responsible person (19 CFR 141.86(j), D-029). */
+async function setSignatory(page: Page, org: string): Promise<void> {
+  await page.goto(`/app/${org}/settings`);
+  await page.getByLabel('Signatory name').fill('Sam Signer');
+  await page.getByRole('button', { name: 'Save settings' }).click();
+  await expect(page.getByText(/Settings saved\./)).toBeVisible();
+}
+
 async function createShipment(page: Page, org: string, reference: string): Promise<void> {
   await page.goto(`/app/${org}/shipments`);
   await page.getByLabel('Shipment reference').fill(reference);
@@ -189,6 +197,7 @@ test('parties are chosen once and packing is reconciled against the lines', asyn
 
 test('a document set downloads as a ZIP of current revisions with a manifest', async ({ page }) => {
   const org = await startOrganization(page, 'Dunlin Shipping');
+  await setSignatory(page, org);
   await createShipment(page, org, 'SHP-SET-1');
 
   const oneOff = page.getByRole('form', { name: 'Add a one-off line' });
@@ -250,6 +259,7 @@ test('an archived product leaves the picker but its documents stay readable', as
 
 test('a second shipment reuses the first without touching its documents', async ({ page }) => {
   const org = await startOrganization(page, 'Fulmar Trading');
+  await setSignatory(page, org);
   await createShipment(page, org, 'SHP-REUSE-1');
   const firstUrl = page.url();
 

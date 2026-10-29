@@ -13,7 +13,7 @@ export default {
     supports:
       'zero rating of exports, direct and indirect exports, the 3-month and 6-month time limits, official and commercial evidence of export, chain sales, postal and courier evidence and the 6-year record rule (page last updated 4 March 2026)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-full-export-declaration': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -23,7 +23,7 @@ export default {
     supports:
       'who submits an export declaration, the data it needs, the DUCR, arrived declarations, minimum lodging times, departure messages, C1602 and amendments (page last updated 13 May 2025)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-export-customs-declaration': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -33,7 +33,7 @@ export default {
     supports:
       'the GB EORI requirement, systems and software, hiring an agent, and what the transporter needs at the border, including the master reference number and invoice',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-cds-access': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -43,7 +43,7 @@ export default {
     supports:
       'subscribing to the Customs Declaration Service to submit export declarations with software, one subscription covering imports and exports, and what you need to subscribe (page last updated 6 July 2026)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-simplified-export-declarations': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -53,7 +53,7 @@ export default {
     supports:
       'the simplified declaration procedure, supplementary declaration deadlines, authorisation by form C&E48, and entry in the declarant’s records (page last updated 6 February 2025)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-appoint-customs-agent': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -63,7 +63,7 @@ export default {
     supports:
       'written instructions to a customs representative, direct or indirect representation, and the trader’s continuing due diligence for declarations (page last updated 6 February 2025)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-export-goods': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -73,7 +73,7 @@ export default {
     supports:
       'the order of steps for exporting from Great Britain, including deciding who makes export declarations, classifying goods and preparing the invoice',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-import-goods': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -83,7 +83,7 @@ export default {
     supports:
       'the importer’s GB EORI number, checking the seller can export, the commodity code, customs value, who makes the import declaration, and keeping invoices and customs records',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-overseas-goods-sold-to-uk-customers': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -93,7 +93,7 @@ export default {
     supports:
       'UK supply VAT charged at the point of sale on consignments of £135 or less sold to Great Britain, the reverse charge for business buyers with a UK VAT number, and normal import rules above £135 (page last updated 13 May 2022)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-gov-uk-goods-sent-from-abroad': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -103,7 +103,7 @@ export default {
     supports:
       'no Customs Duty on non-excise goods worth £135 or less sent to Great Britain, and VAT collected by the delivery company on goods worth more than £135',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-eori': {
     authority: 'European Commission, Taxation and Customs Union',
@@ -113,7 +113,7 @@ export default {
     supports:
       'who needs an EU EORI number, including operators not established in the EU that lodge customs declarations, and which EU country assigns it',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-low-value-consignments': {
     authority: 'European Commission, Taxation and Customs Union',
@@ -123,7 +123,7 @@ export default {
     supports:
       'the end of the EUR 22 VAT exemption on 1 July 2021, a customs declaration for all goods entering the EU, and IOSS and the special arrangements as ways to collect VAT on consignments up to EUR 150',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-oss-schemes': {
     authority: 'European Commission, Taxation and Customs Union (VAT One Stop Shop portal)',
@@ -133,7 +133,7 @@ export default {
     supports:
       'the import scheme’s scope (distance sales of imported goods in consignments up to EUR 150, excise goods excluded), the intermediary rule for sellers outside the EU, registration in one Member State, and a separate IOSS number for each seller an intermediary represents',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-oss-declare-and-pay': {
     authority: 'European Commission, Taxation and Customs Union (VAT One Stop Shop portal)',
@@ -143,7 +143,7 @@ export default {
     supports:
       'the import scheme’s monthly tax period, the return and payment deadline at the end of the following month, nil returns and returns in euro',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-oss-records': {
     authority: 'European Commission, Taxation and Customs Union (VAT One Stop Shop portal)',
@@ -153,7 +153,7 @@ export default {
     supports:
       'keeping scheme records for 10 years from the end of the year of the transaction, and no general invoicing obligation under the import scheme',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-lvc-guidance': {
     authority: 'European Commission, Directorate-General for Taxation and Customs Union',
@@ -163,7 +163,7 @@ export default {
     supports:
       'the IOSS VAT identification number being provided in the customs declaration and checked electronically (section 3.1.3)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'c4-ec-eur3-duty-low-value-parcels': {
     authority: 'European Commission',
@@ -173,6 +173,6 @@ export default {
     supports:
       'a temporary €3 customs duty from 1 July 2026 on low-value parcels worth up to €150 imported from outside the EU, charged per item by tariff classification and declared and paid by the seller or importer',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

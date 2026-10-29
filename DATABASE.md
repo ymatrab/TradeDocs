@@ -352,3 +352,38 @@ Generated types were extended by hand (`organization_settings`, the four documen
   wording version and per-line origin recorded). The function was added to
   `src/lib/database.types.ts` by hand; the CI `database-evidence` artifact is authoritative.
   Rollback in the migration header.
+
+## Free saved-shipment limit (20261027000100, D-027)
+
+- `private.plan_limits`: one row, `free_shipments_per_month` (NULL: no limit; the default).
+  Written only through `public.sync_free_plan_limits(n)` (service role; 0 means NULL), which
+  the server calls with 3 while a paid plan is purchasable and 0 otherwise.
+- `private.shipment_creations`: one ledger row per shipment inserted, written by the trigger.
+  Not reachable by any API role. Usage counts the ledger since the start of the UTC month, so
+  deleting or back-dating a shipment returns no quota.
+- Trigger `shipments_free_limit` (before insert on `public.shipments`, security definer): for
+  an organization without a current Pro or Team entitlement (`private.org_entitled`), locks
+  the organization row and refuses with SQLSTATE 54000 at the limit. Covers the app insert,
+  `duplicate_shipment`, `api_create_shipment` and direct PostgREST inserts.
+- `public.free_shipment_usage(org)`: `used`, `quota`, `entitled` for members (42501 for
+  anyone else); executable by authenticated only.
+- pgTAP: `supabase/tests/free_shipment_limit.test.sql` (off by default, cap, ledger not rewound
+  by delete or back-dating, reuse counted, month rollover, Pro exempt, lapsed Pro limited,
+  cross-org usage refused, member cannot change the limit).
+- Rollback: drop the trigger, the four functions and the two private tables; no existing row
+  is changed.
+
+## Invoice charges and EORI (20261029000100, D-029)
+
+- `public.shipment_charges`: up to 20 per shipment (`position` 1–20, unique per shipment);
+  `kind` freight, insurance, packing, commission, other (needs `label`), discount; `amount`
+  numeric(14,3) above zero; `included_in_price`. Composite FK (org_id, shipment_id) to
+  shipments. RLS: members of the organization read, insert, update and delete; anon has no
+  grant. A change bumps the shipment revision (`private.bump_shipment_revision`).
+- `public.companies.eori_number`: `^[A-Z]{2}[A-Z0-9]{1,15}$`, nullable.
+- Snapshot schema 8: invoices of shipments with charges add `charges` and `invoice_totals`
+  (goods + charges not in prices - discounts not in prices); refused when negative.
+- pgTAP: `supabase/tests/invoice_charges.test.sql` (access, cross-tenant insert and delete,
+  anon, constraints, revision bump, totals by hand, packing list unchanged, EORI).
+- Rollback: re-create `private.document_snapshot` (20261009000100) and `private.party_snapshot`
+  (20261006000300), drop `public.shipment_charges` and `companies.eori_number`.

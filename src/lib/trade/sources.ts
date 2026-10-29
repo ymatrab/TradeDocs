@@ -3,8 +3,9 @@
  *
  * One registry, so every page that states a rule, a divisor or a capacity cites the same
  * record, and a review updates every page at once. Each URL was opened and checked against
- * the claim it supports on the retrieval date. `reviewer` stays "pending owner review" until
- * a named person has checked the record; that is not an approval and must not be shown as one.
+ * the claim it supports on the retrieval date. `reviewer` records who accepted the record:
+ * since 2026-10-29 the owner, on the basis of Claude's review (D-028). That is an owner
+ * acceptance, not an independent professional review, and must not be shown as one.
  *
  * Pages render these through the tools' SourcesBlock; nothing here is fetched at runtime.
  *
@@ -71,7 +72,7 @@ const RETRIEVED_TOOLS = '2026-10-07';
 const RETRIEVED_LOOKUPS = '2026-10-09';
 /** The VGM declaration (D-025): the IMO guidelines it prints. */
 const RETRIEVED_VGM = '2026-10-09';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
   'icc-incoterms-2020': {
@@ -82,7 +83,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'International (contractual rules, not law)',
     supports: 'the eleven rules, their delivery points and the 2020 changes',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'iata-volumetric': {
     id: 'iata-volumetric',
@@ -92,7 +93,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'International air cargo',
     supports: 'the general 6,000 cm³ per kilogram volumetric rule for air freight',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'dhl-express-volumetric': {
     id: 'dhl-express-volumetric',
@@ -102,7 +103,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'Carrier practice (DHL Express)',
     supports: 'DHL Express dividing by 5,000 for volumetric weight',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'fedex-dimensional': {
     id: 'fedex-dimensional',
@@ -112,7 +113,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'Carrier practice (FedEx international)',
     supports: 'FedEx dividing by 5,000 for dimensional weight in centimetres',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'ups-dimensional': {
     id: 'ups-dimensional',
@@ -122,7 +123,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'Carrier practice (UPS, United Kingdom site)',
     supports: 'UPS dividing by 5,000 for dimensional weight in centimetres',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'maersk-dry-containers': {
     id: 'maersk-dry-containers',
@@ -132,7 +133,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'Carrier equipment (one carrier’s fleet; other carriers differ)',
     supports: 'typical internal volumes and maximum payloads of dry containers',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'us-cbp-invoice-contents': {
     id: 'us-cbp-invoice-contents',
@@ -142,7 +143,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United States (imports)',
     supports: 'the information a commercial invoice for a U.S. import must state',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'eu-union-customs-code': {
     id: 'eu-union-customs-code',
@@ -152,7 +153,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'European Union',
     supports: 'the EU customs framework and its guidance documents',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'us-cbp-proforma-invoice': {
     id: 'us-cbp-proforma-invoice',
@@ -163,7 +164,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the importer’s pro forma invoice filed when the commercial invoice is not available at entry',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-proforma-invoice': {
     id: 'trade-gov-proforma-invoice',
@@ -173,7 +174,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United States (export guidance)',
     supports: 'what a proforma invoice is for and the details it usually carries',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-commercial-invoice': {
     id: 'trade-gov-commercial-invoice',
@@ -183,7 +184,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United States (export guidance)',
     supports: 'the commercial invoice as the document customs assesses duties and taxes from',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-packing-list': {
     id: 'trade-gov-packing-list',
@@ -193,7 +194,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United States (export guidance)',
     supports: 'what a packing list itemises and who relies on it',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'nist-si-volume': {
     id: 'nist-si-volume',
@@ -203,7 +204,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'International (SI unit conversion)',
     supports: 'one cubic foot being 0.028 316 85 cubic metres',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'nist-si-mass': {
     id: 'nist-si-mass',
@@ -213,7 +214,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'International (SI unit conversion)',
     supports: 'one pound (avoirdupois) being 0.453 592 4 kilograms',
     retrieved: RETRIEVED_TOOLS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'nist-si-volume-units': {
     id: 'nist-si-volume-units',
@@ -224,7 +225,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'one cubic inch being 1.638 706 E-05 cubic metres and one litre being exactly 1.0 E-03 cubic metres',
     retrieved: RETRIEVED_TOOLS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'maersk-fcl-lcl': {
     id: 'maersk-fcl-lcl',
@@ -234,7 +235,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'Carrier practice (one carrier; others differ)',
     supports: 'how LCL and FCL bookings differ and LCL being charged on the cubic metres used',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'wto-customs-valuation': {
     id: 'wto-customs-valuation',
@@ -245,7 +246,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'transaction value as the main basis of customs value, and freight and insurance being added where a member values on a CIF basis',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-export-documents': {
     id: 'trade-gov-export-documents',
@@ -256,7 +257,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the documents a typical export uses, the bill of lading as the carrier contract, and Electronic Export Information being filed in AES when a Schedule B line is over $2,500 or another mandatory filing requirement applies',
     retrieved: RETRIEVED_BLOG,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'usitc-hts-search': {
     id: 'usitc-hts-search',
@@ -267,7 +268,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the HTS numbers and article descriptions the lookup searches live through the public REST search at hts.usitc.gov/reststop/search',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'uk-trade-tariff-api': {
     id: 'uk-trade-tariff-api',
@@ -278,7 +279,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the public read endpoints the lookup calls without credentials, with the v2 Accept header, and caching responses because the data changes daily',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'gov-uk-finding-commodity-codes': {
     id: 'gov-uk-finding-commodity-codes',
@@ -288,7 +289,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United Kingdom',
     supports: 'the trader being the one who must find the right commodity code for the goods',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'cbp-rulings': {
     id: 'cbp-rulings',
@@ -298,7 +299,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     jurisdiction: 'United States (imports)',
     supports: 'binding advance rulings on the tariff classification of merchandise',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-csl': {
     id: 'trade-gov-csl',
@@ -309,7 +310,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the CSL consolidating the Commerce, State and Treasury screening lists, its use as an aid to screening, and further due diligence and the official lists being needed when a party appears to match',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-csl-api': {
     id: 'trade-gov-csl-api',
@@ -320,7 +321,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the CSL search API at data.trade.gov/consolidated_screening_list/v1/search, which needs a subscription key from a registered application',
     retrieved: RETRIEVED_LOOKUPS,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'imo-msc1-circ1475': {
     id: 'imo-msc1-circ1475',
@@ -332,7 +333,7 @@ const CORE_SOURCES: Record<CoreSourceId, SourceRecord> = {
     supports:
       'the VGM declaration: Method No. 1 (weighing the packed and sealed container) and Method No. 2 (weighing all packages and cargo items with pallets, dunnage and securing material and adding the container tare, under a certified method) in paragraph 5.1, the verified gross mass communicated in a shipping document that may be part of the shipping instructions (6.1), and the document signed by a person duly authorized by the shipper, by electronic signature or the name in capitals (6.2)',
     retrieved: RETRIEVED_VGM,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 };
 

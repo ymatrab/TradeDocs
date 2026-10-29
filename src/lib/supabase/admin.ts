@@ -6,10 +6,11 @@ import type { Database } from '@/lib/database.types';
 import { DatabaseUnavailableError, type TradeDocsClient } from './server';
 
 /**
- * The service-role client. It bypasses row level security, so it is reached for in exactly
- * two places: the contact form's insert (anonymous visitors hold no grant on that table) and
- * the platform admin pages, after `requirePlatformAdmin` has verified the caller. It carries
- * no user session and persists nothing.
+ * The service-role client. It bypasses row level security, so it is reached for in few
+ * places: the contact form's insert (anonymous visitors hold no grant on that table), the
+ * platform admin pages after `requirePlatformAdmin` has verified the caller, and
+ * syncFreePlanLimits (src/lib/billing/server.ts), which only writes the Free shipment limit.
+ * It carries no user session and persists nothing.
  */
 export function createServiceClient(): TradeDocsClient {
   const env = getServerEnv();

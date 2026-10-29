@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * cmr-note, air-waybill and export-payment-terms. One file for the five guides, ids prefixed `a4-`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'a4-cbp-importer-tips': {
@@ -16,7 +16,7 @@ export default {
     supports:
       'CBP not requiring an import licence while other agencies may, the importer number being an IRS business registration number or a social security number, and the Importer Security Filing for vessel cargo',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-cfr-19-142-3': {
     authority: 'U.S. Customs and Border Protection, via the Legal Information Institute (Cornell)',
@@ -26,7 +26,7 @@ export default {
     supports:
       'the entry documents: CBP Form 3461 or its electronic equivalent, evidence of the right to make entry, a commercial invoice (or a pro forma invoice where 141.83(d) allows), a packing list where appropriate, and other agencies’ documents',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-cfr-19-142-4': {
     authority: 'U.S. Customs and Border Protection, via the Legal Information Institute (Cornell)',
@@ -36,7 +36,7 @@ export default {
     supports:
       'goods not being released at entry unless a single entry or continuous bond on CBP Form 301 has been filed, with stated exceptions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-cfr-19-142-12': {
     authority: 'U.S. Customs and Border Protection, via the Legal Information Institute (Cornell)',
@@ -46,7 +46,7 @@ export default {
     supports:
       'the entry summary being filed, with estimated duties attached, within 10 working days after the time of entry',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-cfr-19-149-2': {
     authority: 'U.S. Customs and Border Protection, via the Legal Information Institute (Cornell)',
@@ -56,7 +56,7 @@ export default {
     supports:
       'the ISF importer or its agent submitting the Importer Security Filing no later than 24 hours before the cargo is laden aboard the vessel at the foreign port',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-cmr-convention': {
     authority:
@@ -67,7 +67,7 @@ export default {
     supports:
       'the Convention’s scope and exclusions, the consignment note being made out in three signed originals, its required particulars (Article 6), its evidential value (Article 9), the sender’s responsibility for inaccurate particulars (Article 7), the per-kilogram liability limit and higher declared value (Articles 23 and 24), notice periods for damage and delay (Article 30) and the limitation period (Article 32)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-gov-uk-e-cmr-protocol': {
     authority: 'Foreign & Commonwealth Office (GOV.UK)',
@@ -78,7 +78,7 @@ export default {
     supports:
       'the existence of an Additional Protocol to the CMR Convention for an electronic consignment note, laid before the UK Parliament in July 2019',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-iata-e-awb': {
     authority: 'International Air Transport Association (IATA)',
@@ -88,7 +88,7 @@ export default {
     supports:
       'the air waybill being the contract of carriage between shipper and airline, and the Multilateral e-AWB Agreement (IATA Resolution 672) removing the need for a paper air waybill',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-montreal-convention': {
     authority:
@@ -99,7 +99,7 @@ export default {
     supports:
       'an air waybill being delivered for cargo or replaced by another record (Article 4), its minimum contents (Article 5), the three original parts (Article 7), its evidential value (Article 11) and the per-kilogram liability limit (Article 22)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-trade-gov-methods-of-payment': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -109,7 +109,7 @@ export default {
     supports:
       'the five methods of payment (cash in advance, letter of credit, documentary collection, open account, consignment) and the risk each puts on the exporter and the importer, and open account terms of typically 30, 60 or 90 days',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-trade-gov-letter-of-credit': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -119,7 +119,7 @@ export default {
     supports:
       'a letter of credit as the buyer’s bank’s commitment to pay against the required documents, the documents being detailed and prone to discrepancies, bank fees, and when an LC is recommended',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-trade-gov-documentary-collections': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -129,7 +129,7 @@ export default {
     supports:
       'banks exchanging shipping documents for payment, D/P and D/A, banks not verifying documents or guaranteeing payment, and the exporter’s options if the buyer does not pay',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a4-icc-documentary-credits': {
     authority: 'International Chamber of Commerce (ICC Academy)',
@@ -139,6 +139,6 @@ export default {
     supports:
       'UCP 600 as the ICC rules for documentary credits, banks examining documents only, a maximum of five banking days to examine a presentation, ISBP 821, eUCP and URC 522 for collections',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

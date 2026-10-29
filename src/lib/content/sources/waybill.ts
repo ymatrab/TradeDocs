@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'dcsa-sea-waybill': {
@@ -16,7 +16,7 @@ export default {
     supports:
       'a sea waybill being a transport document used as an alternative to the bill of lading that is non-negotiable, cannot be used to transfer title, is not a document of title, only confirms receipt, and needs no original document for cargo release',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'iata-air-waybill': {
     authority: 'International Air Transport Association (IATA)',
@@ -26,6 +26,6 @@ export default {
     supports:
       'the air waybill (AWB) being the air cargo document that constitutes the contract of carriage between the shipper and the carrier (airline), and the electronic air waybill (Resolution 672) removing the need for a paper one',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

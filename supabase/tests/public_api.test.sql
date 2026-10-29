@@ -5,7 +5,7 @@
 create extension if not exists pgtap;
 
 begin;
-select plan(49);
+select plan(50);
 
 -- Fixtures, created as the migration owner before any role switch.
 --   Org A: Team, current.   Org B: Team, current.   Org C: free (no entitlement).
@@ -33,6 +33,9 @@ values
 
 insert into public.companies (id, org_id, kind, name) values
   ('bbbbbbbb-4444-4000-8000-0000000000bb', 'bbbbbbbb-0000-4000-8000-0000000000bb', 'own', 'B Exports Ltd');
+-- A names its responsible person; B does not (D-029).
+insert into public.organization_settings (org_id, signatory_name)
+values ('aaaaaaaa-0000-4000-8000-0000000000aa', 'Ada Auk');
 insert into public.shipments (id, org_id, reference, currency) values
   ('aaaaaaaa-5555-4000-8000-0000000000aa', 'aaaaaaaa-0000-4000-8000-0000000000aa', 'API-A1', 'EUR'),
   ('bbbbbbbb-5555-4000-8000-0000000000bb', 'bbbbbbbb-0000-4000-8000-0000000000bb', 'API-B1', 'USD');
@@ -380,6 +383,15 @@ select is(
      '{"reference":"API-B2"}', '[]') ->> 'status'),
   '201',
   'Idempotency-Keys are per API key: B''s key is not answered with A''s record'
+);
+
+-- A commercial invoice needs the signatory (D-029): B has none, so B's own key is refused.
+select throws_ok(
+  $$select public.api_generate_document(repeat('d', 64), null, repeat('c', 64),
+      'bbbbbbbb-5555-4000-8000-0000000000bb', 'commercial_invoice')$$,
+  '23514',
+  'A commercial invoice must name the person responsible for it. Set the signatory name in the document settings.',
+  'the API refuses a commercial invoice until the organization names a signatory'
 );
 
 -- Generation through the unchanged routine, acting as the key's creator.
