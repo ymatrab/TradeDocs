@@ -10,24 +10,24 @@ on 2026-10-29. Our side was read from the code (`src/lib/pdf/trade-document.ts`,
 Source: eCFR versioner API, title 19, § 141.86, as of 2026-10-01
 (<https://www.ecfr.gov/current/title-19/chapter-I/part-141/subpart-F/section-141.86>).
 
-| Rule | What it requires | TradeDocs commercial invoice | Status |
-| --- | --- | --- | --- |
-| (a)(1) | Port of entry | "Port of discharge" box | Covered |
-| (a)(2) | When, where, by whom and to whom sold | Issue date, Seller/Exporter and Buyer/Consignee boxes, Incoterm place | Covered |
-| (a)(3) | Detailed description, grade/quality, marks and numbers of the packages | Description per line (free text), "Marks and numbers" block | Covered (grade/quality goes in the description) |
-| (a)(4) | Quantities in weights and measures | Quantity + unit per line | Covered |
-| (a)(5) | Purchase price of each item in the currency of purchase | Unit price and amount per line, currency stated | Covered |
-| (a)(6) | Value when not sold (e.g. samples, free of charge) | Unit price per line; no "not sold, value for customs" wording | Partly: the user can state value, but no explicit "no commercial value / value for customs only" option |
-| (a)(7) | Kind of currency | ISO currency code on every amount | Covered |
-| (a)(8) | **All charges itemized by name and amount: freight, insurance, commission, packing** (or identified as included in the price) | **Not supported**: no charge lines; only goods lines and one total. The Incoterm shows what the price covers, but CIF/CIP/DAP invoices cannot itemize freight and insurance | **Gap, fix first** |
-| (a)(9) | Rebates, drawbacks, bounties itemized | Not supported (free-text note only) | Gap, rare |
-| (a)(10) | Country of origin | Shipment box and per-line origin column | Covered |
-| (a)(11) | Assists (dies, molds, tools) not in the price | Not supported (free-text note only) | Gap, rare |
-| (d) | English | All labels in English | Covered |
-| (e) | What each package contains | Packing list | Covered |
-| (g) | **Every discount from list price** | **Not supported**: no discount field | **Gap** |
-| (h) | Invoice and page numbering ("Inv. 1, p. 1") | "Page n of N" on each page | Covered for one invoice; the importer numbers multi-invoice entries |
-| (j) | **Name of a responsible employee of the exporter** | Signatory name, printed when set in document settings | Covered when set; **not required yet** |
+| Rule    | What it requires                                                                                                              | TradeDocs commercial invoice                                                                                                                                                | Status                                                                                                  |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| (a)(1)  | Port of entry                                                                                                                 | "Port of discharge" box                                                                                                                                                     | Covered                                                                                                 |
+| (a)(2)  | When, where, by whom and to whom sold                                                                                         | Issue date, Seller/Exporter and Buyer/Consignee boxes, Incoterm place                                                                                                       | Covered                                                                                                 |
+| (a)(3)  | Detailed description, grade/quality, marks and numbers of the packages                                                        | Description per line (free text), "Marks and numbers" block                                                                                                                 | Covered (grade/quality goes in the description)                                                         |
+| (a)(4)  | Quantities in weights and measures                                                                                            | Quantity + unit per line                                                                                                                                                    | Covered                                                                                                 |
+| (a)(5)  | Purchase price of each item in the currency of purchase                                                                       | Unit price and amount per line, currency stated                                                                                                                             | Covered                                                                                                 |
+| (a)(6)  | Value when not sold (e.g. samples, free of charge)                                                                            | Unit price per line; no "not sold, value for customs" wording                                                                                                               | Partly: the user can state value, but no explicit "no commercial value / value for customs only" option |
+| (a)(7)  | Kind of currency                                                                                                              | ISO currency code on every amount                                                                                                                                           | Covered                                                                                                 |
+| (a)(8)  | **All charges itemized by name and amount: freight, insurance, commission, packing** (or identified as included in the price) | **Not supported**: no charge lines; only goods lines and one total. The Incoterm shows what the price covers, but CIF/CIP/DAP invoices cannot itemize freight and insurance | **Gap, fix first**                                                                                      |
+| (a)(9)  | Rebates, drawbacks, bounties itemized                                                                                         | Not supported (free-text note only)                                                                                                                                         | Gap, rare                                                                                               |
+| (a)(10) | Country of origin                                                                                                             | Shipment box and per-line origin column                                                                                                                                     | Covered                                                                                                 |
+| (a)(11) | Assists (dies, molds, tools) not in the price                                                                                 | Not supported (free-text note only)                                                                                                                                         | Gap, rare                                                                                               |
+| (d)     | English                                                                                                                       | All labels in English                                                                                                                                                       | Covered                                                                                                 |
+| (e)     | What each package contains                                                                                                    | Packing list                                                                                                                                                                | Covered                                                                                                 |
+| (g)     | **Every discount from list price**                                                                                            | **Not supported**: no discount field                                                                                                                                        | **Gap**                                                                                                 |
+| (h)     | Invoice and page numbering ("Inv. 1, p. 1")                                                                                   | "Page n of N" on each page                                                                                                                                                  | Covered for one invoice; the importer numbers multi-invoice entries                                     |
+| (j)     | **Name of a responsible employee of the exporter**                                                                            | Signatory name, printed when set in document settings                                                                                                                       | Covered when set; **not required yet**                                                                  |
 
 ## 2. European Union
 
@@ -37,14 +37,14 @@ an EU seller's invoice must show comes from VAT law (Directive 2006/112/EC, Art.
 sequential number, supplier VAT number, full names and addresses, quantity and nature of goods,
 unit price, discounts, and, for an exempt export, the exemption reference.
 
-| Requirement | TradeDocs | Status |
-| --- | --- | --- |
-| Sequential number, date, names, addresses | Document number, issue date, party boxes | Covered |
-| Quantity, nature of goods, unit price | Lines | Covered |
-| Supplier VAT number | One "Tax ID" per party | Covered (one number only) |
-| **EORI number** (needed on EU export paperwork) | Same single "Tax ID" field: cannot show VAT and EORI together | **Gap** |
-| Discounts and rebates | Not supported | **Gap** (same as US (g)) |
-| Exemption reference for an export ("VAT exempt, Art. 146") | Free-text note only | Gap: add a standard wording option |
+| Requirement                                                | TradeDocs                                                     | Status                             |
+| ---------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------- |
+| Sequential number, date, names, addresses                  | Document number, issue date, party boxes                      | Covered                            |
+| Quantity, nature of goods, unit price                      | Lines                                                         | Covered                            |
+| Supplier VAT number                                        | One "Tax ID" per party                                        | Covered (one number only)          |
+| **EORI number** (needed on EU export paperwork)            | Same single "Tax ID" field: cannot show VAT and EORI together | **Gap**                            |
+| Discounts and rebates                                      | Not supported                                                 | **Gap** (same as US (g))           |
+| Exemption reference for an export ("VAT exempt, Art. 146") | Free-text note only                                           | Gap: add a standard wording option |
 
 ## 3. How competitors handle countries
 

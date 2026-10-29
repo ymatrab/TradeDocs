@@ -164,9 +164,9 @@ describe('service mode', () => {
         reviewedAt: COO_OWNER_APPROVAL.reviewedAt,
       },
     });
-    expect(validateDeploymentEnv({ ...integration, ...email }, true).ENABLE_REGULATED_DOCUMENTS).toBe(
-      true,
-    );
+    expect(
+      validateDeploymentEnv({ ...integration, ...email }, true).ENABLE_REGULATED_DOCUMENTS,
+    ).toBe(true);
     // Foundation mode, a preview, or an explicit "false" keep it off.
     expect(certificateOfOriginGate(resolve(integration).values).state).toBe('off');
     expect(
