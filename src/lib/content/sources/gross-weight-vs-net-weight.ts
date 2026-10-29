@@ -7,7 +7,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * Each URL was opened on the retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-06';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'w4-wco-hs': {
@@ -18,7 +18,7 @@ export default {
     supports:
       'the HS as more than 5,000 commodity groups identified by six-digit codes, used by over 200 countries and economies as the basis of their customs tariffs, maintained by the WCO and updated every 5–6 years, with Explanatory Notes as its official interpretation',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-gov-uk-commodity-codes': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -28,7 +28,7 @@ export default {
     supports:
       'using the Trade Tariff tool to find a commodity code, the code setting the duty and import VAT, and only the first six digits being used worldwide with product decisions particular to each country',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-usitc-hts-search': {
     authority: 'U.S. International Trade Commission (USITC)',
@@ -37,7 +37,7 @@ export default {
     jurisdiction: 'United States (imports)',
     supports: 'the official online search of the Harmonized Tariff Schedule of the United States',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-census-schedule-b': {
     authority: 'U.S. Census Bureau',
@@ -47,7 +47,7 @@ export default {
     supports:
       'the Schedule B Commodity Search Tool for finding an export commodity code (Schedule B number) and the yearly Schedule B files',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-ecfr-15-cfr-30-6': {
     authority: 'U.S. Census Bureau, via the Electronic Code of Federal Regulations',
@@ -57,7 +57,7 @@ export default {
     supports:
       'the EEI reporting the 10-digit Schedule B number, or the 10-digit HTSUSA number except where its headnotes say otherwise, and a commodity description detailed enough to verify it',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-cbp-importer-tips': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -67,7 +67,7 @@ export default {
     supports:
       'the HTS as the source of classification numbers and guidelines, written binding rulings under 19 CFR Part 177, and searching earlier rulings in the Customs Rulings Online Search System (CROSS)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-ecfr-19-cfr-177-1': {
     authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
@@ -77,7 +77,7 @@ export default {
     supports:
       'rulings being requested in writing for prospective transactions, and oral advice not being binding on CBP',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-trade-gov-export-transaction': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -87,7 +87,7 @@ export default {
     supports:
       'the documents varying by destination and shipment, asking the importer what is required, discrepancies causing delays, nonpayment or seizure, and the exporter remaining responsible for the accuracy of documents a forwarder prepares',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-cornell-ucc-1-201': {
     authority: 'Legal Information Institute, Cornell Law School (Uniform Commercial Code)',
@@ -97,7 +97,7 @@ export default {
     supports:
       'a bill of lading being a document evidencing the receipt of goods for shipment, and bills of lading being documents of title',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-cornell-49-usc-80103': {
     authority: 'Legal Information Institute, Cornell Law School (U.S. Code)',
@@ -107,7 +107,7 @@ export default {
     supports:
       'an order bill being negotiable, a straight bill being nonnegotiable and marked so, and a notify party not limiting negotiability',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-iso-668': {
     authority: 'International Organization for Standardization (ISO)',
@@ -117,7 +117,7 @@ export default {
     supports:
       'ISO 668 classifying series 1 containers by external dimensions and ratings, with ISO 1496 as the authority for internal dimensions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-iso-6780': {
     authority: 'International Organization for Standardization (ISO)',
@@ -127,7 +127,7 @@ export default {
     supports:
       'ISO 6780 setting the principal dimensions and tolerances of flat pallets for intercontinental handling, confirmed as current in 2026',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-epal-euro-pallet': {
     authority: 'European Pallet Association (EPAL)',
@@ -137,7 +137,7 @@ export default {
     supports:
       'the EPAL 1 pallet measuring 1,200 × 800 × 144 mm, weighing about 25 kg, with a 1,500 kg safe working load and an IPPC heat-treatment mark',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-epal-2-pallet': {
     authority: 'European Pallet Association (EPAL)',
@@ -147,7 +147,7 @@ export default {
     supports:
       'the EPAL 2 pallet measuring 1,200 × 1,000 × 162 mm, weighing about 35 kg, with a 1,250 kg safe working load',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-usda-gma-pallet': {
     authority: 'USDA Forest Service, Research and Development (Treesearch)',
@@ -158,7 +158,7 @@ export default {
     supports:
       'the 48 × 40 inch GMA-type pallet being the most common wood pallet repaired and remanufactured in the United States',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-ippc-ispm-15': {
     authority: 'International Plant Protection Convention (IPPC), FAO',
@@ -168,7 +168,7 @@ export default {
     supports:
       'ISPM 15 covering wood packaging made from raw wood, including dunnage, and excluding processed wood such as plywood',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w4-imo-solas-vgm': {
     authority: 'International Maritime Organization (IMO)',
@@ -178,6 +178,6 @@ export default {
     supports:
       'SOLAS regulation VI/2 making the shipper (the party named as shipper on the bill of lading, sea waybill or equivalent document, or that concluded the contract of carriage) responsible for the verified gross mass, the two methods of obtaining it (weighing the packed container, or weighing all packages, pallets, dunnage and securing material under a certified method and adding the container tare), VGM being a condition for loading, and entry into force on 1 July 2016',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

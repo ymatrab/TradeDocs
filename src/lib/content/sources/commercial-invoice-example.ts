@@ -8,7 +8,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * checked on the retrieval date.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'a2-cornell-19-cfr-141-86': {
@@ -19,7 +19,7 @@ export default {
     supports:
       'the port of entry, the detailed description with the marks and numbers of the packages, quantities in weights and measures, the English-language rule, each invoice stating what merchandise is in each individual package, and invoice information being allowed on an attachment',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a2-trade-gov-commercial-invoice': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -29,7 +29,7 @@ export default {
     supports:
       'the commercial invoice being used by the importing country’s customs to assess duties and taxes, carrying the proforma details plus HS codes and, where required, the destination control statement, and the seller’s own format being accepted in most countries',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a2-trade-gov-packing-list': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -39,7 +39,7 @@ export default {
     supports:
       'the packing list itemising the contents of each package with weights and measurements, forwarders using it to determine weights and freight costs, and customs using it to check a specific package',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a2-trade-gov-letter-of-credit': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -49,7 +49,7 @@ export default {
     supports:
       'the exporter’s bank checking documents for compliance with the letter of credit, and errors and discrepancies having to be amended and resubmitted',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a2-cbsa-d1-4-1': {
     authority: 'Canada Border Services Agency (CBSA)',
@@ -59,7 +59,7 @@ export default {
     supports:
       'a commercial invoice giving the Appendix A information being accepted, in English or French, with the number of packages and both net and gross weight among its fields',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a2-cornell-15-cfr-758-6': {
     authority: 'Legal Information Institute, Cornell Law School (Code of Federal Regulations)',
@@ -69,6 +69,6 @@ export default {
     supports:
       'the destination control statement being an integral part of the commercial invoice when items on the Commerce Control List are shipped, with stated exceptions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

@@ -14,7 +14,7 @@ export default {
     supports:
       'the definitions of EEI, the Internal Transaction Number, the ultimate and intermediate consignee, the routed export transaction, the 10-digit Schedule B administered by the Census Bureau and the HTSUSA developed by the USITC for imports',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-3': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.3), via Cornell LII',
@@ -25,7 +25,7 @@ export default {
     supports:
       'who the USPPI is, that the USPPI or its authorized agent files the EEI, that the filer must be in the United States, and that invoices may not contain everything needed for the EEI',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-4': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.4), via Cornell LII',
@@ -35,7 +35,7 @@ export default {
     jurisdiction: 'United States (export reporting)',
     supports: 'the predeparture filing deadlines for vessel, air, truck, rail and mail exports',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-6': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.6), via Cornell LII',
@@ -45,7 +45,7 @@ export default {
     supports:
       'the mandatory EEI data elements, including the USPPI, ultimate consignee, country of ultimate destination, commodity classification number, description, quantity, shipping weight, value and licence code',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-7': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.7), via Cornell LII',
@@ -56,7 +56,7 @@ export default {
     supports:
       'the ITN as the AES confirmation number, given to the exporting carrier and shown on the bill of lading, air waybill or other loading document',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-10': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.10), via Cornell LII',
@@ -66,7 +66,7 @@ export default {
     jurisdiction: 'United States (export reporting)',
     supports: 'keeping export shipment documents for five years from the date of export',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-36': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.36), via Cornell LII',
@@ -76,7 +76,7 @@ export default {
     supports:
       'the EEI exemption for exports whose ultimate destination is Canada, and its exceptions for goods stored in or moving through Canada to a third country',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ftr-30-37': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.37), via Cornell LII',
@@ -86,7 +86,7 @@ export default {
     supports:
       'the exemption for a Schedule B or HTSUSA line valued at $2,500 or less, applied line by line regardless of the total shipment value',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-census-aes': {
     authority: 'U.S. Census Bureau',
@@ -96,7 +96,7 @@ export default {
     supports:
       'AES being the export component of ACE, and the ACE AESDirect portal being the primary, free filing tool for EEI',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-census-schedule-b': {
     authority: 'U.S. Census Bureau',
@@ -105,7 +105,7 @@ export default {
     jurisdiction: 'United States (export classification)',
     supports: 'the Census Bureau’s Schedule B search tool for finding an export commodity code',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ita-hs-codes': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -115,7 +115,7 @@ export default {
     supports:
       'the six-digit HS administered by the WCO, the 10-digit US numbers (Schedule B for exports, HTS for imports), the first six digits matching, and the uses of the Schedule B number',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-wco-hs': {
     authority: 'World Customs Organization (WCO)',
@@ -125,7 +125,7 @@ export default {
     supports:
       'the HS as a six-digit nomenclature of more than 5,000 commodity groups, used by more than 200 countries and economies for tariffs and trade statistics',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-bis-classify': {
     authority: 'Bureau of Industry and Security (BIS), U.S. Department of Commerce',
@@ -135,7 +135,7 @@ export default {
     supports:
       'the ECCN as a five-character export control classification unrelated to Schedule B and HTS, and EAR99 items needing a licence only for restricted end users, end uses or destinations',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ita-csl': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -145,7 +145,7 @@ export default {
     supports:
       'the Consolidated Screening List of parties under US export restrictions, combining Commerce, State and Treasury lists',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-cbp-19-cfr-4-7a': {
     authority: 'U.S. Customs and Border Protection (19 CFR 4.7a), via Cornell LII',
@@ -155,7 +155,7 @@ export default {
     supports:
       'the consignee on a bill of lading as the party the cargo is delivered to, the named party on a to-order bill, and other delivery contacts reported as the notify party',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-usc-19-1401a': {
     authority: 'U.S. Code (19 U.S.C. § 1401a), via Cornell LII',
@@ -165,7 +165,7 @@ export default {
     supports:
       'US transaction value as the price paid plus listed additions, with international transportation and insurance excluded from the price actually paid or payable',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-gov-uk-eori': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -175,7 +175,7 @@ export default {
     supports:
       'who may need a UK EORI number, the personal-goods exception, being established, and appointing someone to deal with customs when not eligible',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-gov-uk-eori-apply': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -185,7 +185,7 @@ export default {
     supports:
       'what a GB EORI application needs, the number usually issued immediately or within 5 working days, and the XI number for Northern Ireland requiring a GB number first',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w5-ec-eori': {
     authority: 'European Commission, Taxation and Customs Union',
@@ -195,6 +195,6 @@ export default {
     supports:
       'the EORI being mandatory for EU customs operations, who needs one, which member state assigns it, its format and no expiry date, and the EU validation service',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

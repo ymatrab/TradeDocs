@@ -357,8 +357,12 @@ Incidents: if tokens may have leaked, rotate the client secret at the provider a
 
 ## Certificate of origin (D-008, D-025)
 
-Off by default. It is launch-ready behind `ENABLE_REGULATED_DOCUMENTS` and switches on only
-with a recorded legal review; nothing else needs changing.
+**On by default in production service mode since D-028 (2026-10-29):** the owner accepted
+Claude's review as the approval, recorded in `COO_OWNER_APPROVAL` (`src/lib/config/defaults.ts`)
+as an owner approval, not an independent legal review. Nothing to set. To hold it, set
+`ENABLE_REGULATED_DOCUMENTS=false` and redeploy. A later professional review is recorded by
+setting `LEGAL_COO_REVIEWED_BY` and `LEGAL_COO_REVIEWED_AT`, which override the defaults.
+Previews and foundation mode keep it off.
 
 **What the reviewer reviews.** The wording in `src/lib/trade/certificate-of-origin.ts`
 (version 1: the "Preparation template - not an issued certificate" label, the exporter's
@@ -370,8 +374,8 @@ certification is required the issuing chamber of commerce or authority does that
 for the reviewer (LEGAL.md): private evidence attachments and an "externally endorsed" state
 are not built; the signature/stamp image is the organization's own upload (PDF branding).
 
-**To enable** (Vercel → Project → Settings → Environment Variables, Production; preview only
-with staging data):
+**To enable by hand** (a deployment without the D-028 default, such as staging; Vercel →
+Project → Settings → Environment Variables):
 
 1. `LEGAL_COO_REVIEWED_BY` = the reviewer's full name (one line).
 2. `LEGAL_COO_REVIEWED_AT` = the review date, `YYYY-MM-DD` (a real date, not in the future).

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { controlActive, degradedControls } from '@/lib/config/controls';
 import {
+  COO_OWNER_APPROVAL,
   DERIVED_SECRETS,
   deriveSecret,
   hostedProjectRef,
@@ -15,6 +16,7 @@ import {
 import { isCustomDomainUrl } from '@/lib/http/indexing';
 import { parseTokenKey } from '@/lib/integrations/crypto';
 import { pricesApproved } from '@/lib/billing/plans';
+import { certificateOfOriginGate } from '@/lib/trade/regulated';
 
 /**
  * D-026: production runs without the owner setting PRICES_APPROVED, APPLICATION_MODE,
@@ -151,6 +153,31 @@ describe('service mode', () => {
     const explicit = { ...integration, ...email, APPLICATION_MODE: 'foundation' };
     expect(validateDeploymentEnv(preview, true).APPLICATION_MODE).toBe('foundation');
     expect(validateDeploymentEnv(explicit, true).APPLICATION_MODE).toBe('foundation');
+  });
+
+  it('switches the certificate of origin on in production service mode only (D-028)', () => {
+    const on = resolve({ ...integration, ...email }).values;
+    expect(certificateOfOriginGate(on)).toEqual({
+      state: 'on',
+      review: {
+        reviewedBy: COO_OWNER_APPROVAL.reviewedBy,
+        reviewedAt: COO_OWNER_APPROVAL.reviewedAt,
+      },
+    });
+    expect(validateDeploymentEnv({ ...integration, ...email }, true).ENABLE_REGULATED_DOCUMENTS).toBe(
+      true,
+    );
+    // Foundation mode, a preview, or an explicit "false" keep it off.
+    expect(certificateOfOriginGate(resolve(integration).values).state).toBe('off');
+    expect(
+      certificateOfOriginGate(resolve({ ...integration, ...email, VERCEL_ENV: 'preview' }).values)
+        .state,
+    ).toBe('off');
+    expect(
+      certificateOfOriginGate(
+        resolve({ ...integration, ...email, ENABLE_REGULATED_DOCUMENTS: 'false' }).values,
+      ).state,
+    ).toBe('off');
   });
 
   it('fails the deployment when the owner explicitly holds the launch in service mode', () => {

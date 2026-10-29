@@ -9,7 +9,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * bond amount or fee: the terms describe the mechanism only.
  */
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'e5-cfr-19-19-1': {
@@ -20,7 +20,7 @@ export default {
     supports:
       'the classes of customs warehouses, including importers’ private bonded warehouses (class 2) for the proprietor’s own goods, public bonded warehouses (class 3), bonded yards, sheds and tanks (class 4), manufacturing warehouses solely for exportation (class 6), manipulation warehouses for cleaning, sorting and repacking but not manufacturing (class 8), duty-free stores (class 9) and general order warehouses (class 11)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-19-11': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 19.11 (eCFR)',
@@ -30,7 +30,7 @@ export default {
     supports:
       'warehouse proprietors not allowing manipulation without a prior permit, the application to manipulate on CBP Form 3499 describing whether goods are to be cleaned, sorted, repacked or otherwise changed in condition but not manufactured, and blanket applications of up to one year with a running record of quantities before and after',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-144-1': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 144.1 (eCFR)',
@@ -40,7 +40,7 @@ export default {
     supports:
       'any merchandise subject to duty being eligible for a warehouse entry except perishable merchandise and explosive substances, dangerous and highly flammable goods needing the warehouse insurer’s written consent',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-144-5': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 144.5 (eCFR)',
@@ -50,7 +50,7 @@ export default {
     supports:
       'merchandise not remaining in a bonded warehouse beyond 5 years from the date of importation, or a longer period the Center director permits on request and good cause shown',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-usc-19-1557': {
     authority: 'U.S. Code, 19 U.S.C. 1557 (Tariff Act of 1930, section 557), via Cornell LII',
@@ -60,7 +60,7 @@ export default {
     supports:
       'dutiable merchandise being entered for warehousing at the expense and risk of the owner, a total warehousing period not exceeding 5 years from importation, withdrawal for exportation or for transportation and exportation without the payment of duties, and withdrawal for consumption on payment of the duties and charges accruing',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-144-38': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 144.38, via Cornell LII',
@@ -70,7 +70,7 @@ export default {
     supports:
       'withdrawals for consumption being filed on CBP Form 7501 or its electronic equivalent, with estimated duties on the merchandise withdrawn deposited under 19 CFR Part 141 subpart G',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-gov-uk-customs-warehouse': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -80,7 +80,7 @@ export default {
     supports:
       'a customs warehouse letting a business delay paying duty and import VAT on goods from outside the UK, warehousekeepers needing HMRC authorisation, public warehouses storing depositors’ goods and private warehouses storing the operator’s own, duty and import VAT becoming due when goods are released to free circulation, and no duty on goods re-exported from the warehouse',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cbp-ftz-about': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -90,7 +90,7 @@ export default {
     supports:
       'foreign-trade zones as secure areas under CBP supervision in or near ports of entry, generally treated as outside CBP territory once activated; the Foreign-Trade Zones Board and the Foreign-Trade Zones Act of 1934, administered through the FTZ Regulations (15 CFR Part 400) and CBP Regulations (19 CFR Part 146); formal entry and duty payment not being required on foreign merchandise until it enters CBP territory for consumption; and no retail trade of foreign merchandise in a zone',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-1': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.1 (eCFR)',
@@ -100,7 +100,7 @@ export default {
     supports:
       'the definitions of activation, admit, constructive transfer, Customs territory, domestic and foreign merchandise, operator (a party operating a zone under an agreement with the grantee), subzone (a special-purpose zone for a limited purpose) and transfer',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-32': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.32 (eCFR)',
@@ -110,7 +110,7 @@ export default {
     supports:
       'merchandise being admitted into a zone only on CBP Form 214 (Application for Foreign Trade Zone Admission and/or Status Designation) and a port director’s permit, supported by an examination invoice meeting 19 CFR Part 141 subpart F and evidence of the right to make entry',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-41': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.41 (eCFR)',
@@ -120,7 +120,7 @@ export default {
     supports:
       'privileged foreign status being available, on application on CBP Form 214, to foreign merchandise not yet manipulated or manufactured so as to change its tariff classification, and that status, once granted, being binding even if the goods later change form',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-43': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.43 (eCFR)',
@@ -130,7 +130,7 @@ export default {
     supports:
       'domestic status for U.S. goods on which internal-revenue taxes have been paid, goods previously imported with duty and tax paid and goods previously entered free, no permit being needed to admit them in most cases, and their return to Customs territory free of quotas, duty or tax',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-63': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.63 (eCFR)',
@@ -140,7 +140,7 @@ export default {
     supports:
       'merchandise in foreign status being entered for consumption from a zone, and the weekly entry on CBP Form 3461 for estimated removals of goods manufactured or changed in the zone, accompanied by a pro forma invoice or schedule showing the units of each type to be removed during the week and their zone and dutiable values, with an additional Form 3461 when removals exceed the estimate',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-146-62': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 146.62 (eCFR)',
@@ -150,7 +150,7 @@ export default {
     supports:
       'entry of foreign merchandise transferred from a zone for consumption, warehouse, exportation or transport to another port being made by an in-bond application, CBP Form 3461, CBP Form 7501 or another applicable form, with the entry documentation including invoices',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cbp-tib': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -160,7 +160,7 @@ export default {
     supports:
       'TIB goods not being imported for sale or sale on approval, only goods in the fourteen subheadings 9813.00.05 to 9813.00.75 of the HTSUS qualifying, export or destruction within a period not exceeding three years from importation, and failure to export or destroy resulting in liquidated damages, with the rules in 19 CFR 10.31 to 10.40',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-10-31': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 10.31 (eCFR)',
@@ -170,7 +170,7 @@ export default {
     supports:
       'TIB entry on CBP Form 3461 or 7533 with an entry summary on Form 7501, unless an ATA carnet is used; the entry summary stating the HTSUS subheading claimed, the intended use and a declaration that the articles are not for any other use or for sale; the entry or invoice describing each article in detail with its value and marks or numbers; and a bond on CBP Form 301 with the conditions of 19 CFR 113.62, or a carnet in its place',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-10-37': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 10.37 (eCFR)',
@@ -180,7 +180,7 @@ export default {
     supports:
       'the TIB period being extendable for not more than two further periods of one year each on CBP Form 3173, provided the articles have not been exported or destroyed and liquidated damages have not been assessed before the application is received, and no extension of a carnet’s validity',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-4-7': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 4.7 (eCFR)',
@@ -191,7 +191,7 @@ export default {
     supports:
       'CBP having to receive from the incoming carrier the electronic equivalent of the Cargo Declaration (CBP Form 1302) 24 hours before the cargo is laden aboard the vessel at the foreign port, transmitted through the CBP Automated Manifest System or a CBP-approved replacement; FMC-licensed or registered NVOCCs with an international carrier bond being able to transmit their own cargo declaration or else disclose it to the vessel carrier; freight forwarders not being NVOCCs for this purpose; and the bulk and break-bulk exemptions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-cfr-19-4-7a': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 4.7a, via Cornell LII',
@@ -201,7 +201,7 @@ export default {
     supports:
       'the cargo declaration data in paragraph (c)(4): last foreign port, carrier SCAC and voyage, bill of lading numbers and quantities, a precise cargo description and weight (or the shipper’s declared description and weight for sealed containers), shipper and consignee names and addresses from the bills of lading, container and seal numbers and hazardous material codes; and generic descriptions such as FAK, general cargo and STC not being acceptable',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e5-ear-772-1': {
     authority:
@@ -212,6 +212,6 @@ export default {
     supports:
       'the exporter being the person in the United States who has the authority of a principal party in interest to determine and control the sending of items out of the United States, and principal parties in interest being those who receive the primary benefit of the transaction, generally the seller and the buyer, with the forwarding or other agent in most cases not one of them; exporter of record is not among the terms the section defines',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

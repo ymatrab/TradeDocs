@@ -1,7 +1,7 @@
 import type { SourceFields } from '@/lib/trade/sources';
 
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 /**
  * Sources first cited by the wave E group 2 batch: fca-vs-ddp, cpt-vs-ddp,
@@ -17,7 +17,7 @@ export default {
     supports:
       'the eleven three-letter rules published by the ICC for business-to-business sale contracts, in use since 1936 and last updated in 2020; the FCA option for an on-board bill of lading; CIP requiring cover compliant with Institute Cargo Clauses (A) or similar; costs listed together in articles A9/B9',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-ita-know-your-incoterms': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -27,7 +27,7 @@ export default {
     supports:
       'FCA, CPT and DDP being among the seven rules for any mode of transport; each rule allocating licensing, customs formalities, carriage, insurance and the point where risk passes; the ICC recommending Incoterms® 2020 and the version being identified on the export documents',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-hmrc-incoterms': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -37,7 +37,7 @@ export default {
     supports:
       'FCA risk passing at the handover point, which should be defined precisely; CPT delivery to a carrier with the seller paying transport to the named destination; DDP delivery cleared for import, ready for unloading, with the seller bearing costs and risks, clearing for export and import and paying the duties; the Incoterm not restricting the customs valuation method, so DDP goods can still be valued under method 1',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-usc-19-1401a': {
     authority: 'Legal Information Institute, Cornell Law School (United States Code)',
@@ -47,7 +47,7 @@ export default {
     supports:
       'the price actually paid or payable excluding international transportation, insurance and related services, and transaction value excluding US customs duties and other federal taxes on importation when identified separately from the price',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-trade-gov-proforma-invoice': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -57,7 +57,7 @@ export default {
     supports:
       'the proforma as a quote in invoice format, used for import licences, letters of credit, pre-shipment inspection and currency transfers; its contents, including the Incoterm and delivery point, payment terms, an estimated shipping date and a validity date; the seller not changing it without the buyer’s agreement',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-uncitral-cisg': {
     authority: 'United Nations Commission on International Trade Law (UNCITRAL)',
@@ -67,7 +67,7 @@ export default {
     supports:
       'Part II of the CISG governing formation of the contract by offer and acceptance; the Convention applying to business sales between parties in different contracting states, through private international law or by the parties’ choice, and not to consumer sales',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-imo-solas-vgm': {
     authority: 'International Maritime Organization (IMO)',
@@ -77,7 +77,7 @@ export default {
     supports:
       'SOLAS regulation VI/2, in force since 1 July 2016, making the shipper named on the bill of lading responsible for giving the master and terminal the verified gross mass in time for the stowage plan; the two methods of obtaining it; a container without a verified gross mass not being loaded',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-trade-gov-shipping-options': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -87,7 +87,7 @@ export default {
     supports:
       'freight forwarders booking space on ships, aircraft, trains or trucks, helping prepare price quotations, recommending packing, preparing the bill of lading and filing in AES, and routing documents; the exporter remaining responsible for packing, labelling, documents and insurance',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-cfr-19-4-7a': {
     authority: 'Legal Information Institute, Cornell Law School (Code of Federal Regulations)',
@@ -97,7 +97,7 @@ export default {
     supports:
       'the cargo declaration carrying a precise description or a six-digit HTS number, with generic terms such as FAK, general cargo and STC not acceptable; quantities in the lowest external packaging unit, not containers or pallets; gross weight; shipper and consignee; container and seal numbers',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-cfr-19-149-2': {
     authority: 'Legal Information Institute, Cornell Law School (Code of Federal Regulations)',
@@ -107,7 +107,7 @@ export default {
     supports:
       'the ISF Importer, or its authorised agent, filing the Importer Security Filing for vessel cargo other than bulk no later than 24 hours before the cargo is laden aboard the vessel at the foreign port',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-cfr-19-142-3': {
     authority: 'Legal Information Institute, Cornell Law School (Code of Federal Regulations)',
@@ -117,7 +117,7 @@ export default {
     supports:
       'the documents filed with a US entry: CBP Form 3461 or its electronic equivalent, evidence of the right to make entry, the commercial invoice (or a pro forma invoice where allowed), a packing list where appropriate, other agencies’ documents, and the US buyer or consignee details',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-cbp-importer-tips': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -127,7 +127,7 @@ export default {
     supports:
       'customs brokers being licensed by CBP but not CBP employees, the importer remaining responsible for the accuracy of entry documents and for duties, taxes and fees; the importer number being the IRS business number or a CBP-assigned number; ISF applying to ocean shipments; other agencies’ permits; binding rulings',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e2-gov-uk-import-goods': {
     authority: 'GOV.UK',
@@ -137,6 +137,6 @@ export default {
     supports:
       'the UK import steps: an EORI number, the commodity code, working out duty and VAT from the customs value, licences and certificates for controlled goods, the customs declaration made by the importer or an agent, and keeping invoices, customs paperwork and the C79 import VAT certificate',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

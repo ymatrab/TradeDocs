@@ -8,7 +8,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  */
 
 const RETRIEVED = '2026-10-06';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'w3-census-ftr-30-3': {
@@ -20,7 +20,7 @@ export default {
     supports:
       'the USPPI or its authorized agent filing EEI, the agent needing a power of attorney or written authorization, routed export transactions, and trade terms not deciding the parties to the export',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-census-ftr-30-4': {
     authority: 'U.S. Census Bureau, via the Electronic Code of Federal Regulations',
@@ -30,7 +30,7 @@ export default {
     supports:
       'predeparture EEI deadlines: 24 hours before loading for vessel cargo and 2 hours before departure for air cargo',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-census-ftr-30-6': {
     authority: 'U.S. Census Bureau, via the Electronic Code of Federal Regulations',
@@ -40,7 +40,7 @@ export default {
     supports:
       'the EEI data elements, including ultimate consignee, commodity description, quantity, shipping weight in kilograms and value at the U.S. port of export',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-19-cfr-142-2': {
     authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
@@ -50,7 +50,7 @@ export default {
     supports:
       'entry being made within 15 calendar days after arrival, and entry documents being allowed before arrival',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-19-cfr-127-1': {
     authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
@@ -60,7 +60,7 @@ export default {
     supports:
       'goods going to a general order warehouse at the consignee’s risk and expense when entry is late, duties are unpaid, documents are missing or goods are not correctly invoiced',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-19-cfr-143-21': {
     authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
@@ -70,7 +70,7 @@ export default {
     supports:
       'shipments not exceeding $2,500 in value being eligible for informal entry, with exceptions for certain Chapter 99 articles',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-19-cfr-152-102': {
     authority: 'U.S. Customs and Border Protection, via the Electronic Code of Federal Regulations',
@@ -80,7 +80,7 @@ export default {
     supports:
       'the price actually paid or payable excluding international transportation and insurance to the place of importation in the United States',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-importer-tips': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -90,7 +90,7 @@ export default {
     supports:
       'CBP’s right to examine shipments, the importer bearing exam-related costs, customs brokers being licensed by CBP, the importer of record staying responsible for the entry and duties, and the Importer Security Filing for vessel cargo',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-cbp-duty-rates': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -100,7 +100,7 @@ export default {
     supports:
       'the HTS giving duty rates, the USITC tariff database giving an approximate rate, CBP making the final determination, and binding rulings',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-wto-tariffs': {
     authority: 'World Trade Organization (WTO)',
@@ -110,7 +110,7 @@ export default {
     supports:
       'customs duties on merchandise imports being called tariffs, and bound rates versus applied rates',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-wto-tariff-data': {
     authority: 'World Trade Organization (WTO)',
@@ -120,7 +120,7 @@ export default {
     supports:
       'the WTO’s definitions of ad valorem, applied, bound and MFN tariffs and of a tariff line',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-wco-hs': {
     authority: 'World Customs Organization (WCO)',
@@ -130,7 +130,7 @@ export default {
     supports:
       'the HS six-digit codes and more than 200 countries and economies using it as the basis of their customs tariffs',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-hmrc-delivery-costs': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -140,7 +140,7 @@ export default {
     supports:
       'transport, insurance and related costs up to the place of introduction into the UK being included in the customs value',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-epal-euro-pallet': {
     authority: 'European Pallet Association (EPAL)',
@@ -150,7 +150,7 @@ export default {
     supports:
       'the EPAL Euro pallet measuring 1,200 × 800 × 144 mm with a 1,500 kg safe working load',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'w3-epal-2-pallet': {
     authority: 'European Pallet Association (EPAL)',
@@ -160,6 +160,6 @@ export default {
     supports:
       'the EPAL 2 pallet measuring 1,200 × 1,000 × 162 mm with a 1,250 kg safe working load',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

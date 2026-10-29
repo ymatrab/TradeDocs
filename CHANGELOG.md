@@ -2,6 +2,19 @@
 
 ## Unreleased — 2026-09-06
 
+### Owner approval of the certificate of origin and sources; verification pack (D-028)
+
+- The certificate of origin turns on in production service mode by default
+  (`COO_OWNER_APPROVAL` in src/lib/config/defaults.ts); `ENABLE_REGULATED_DOCUMENTS=false`
+  still holds it. Every source record reads "accepted by the owner on 29 October 2026
+  (AI-assisted review, D-028)". Recorded as owner approval, not professional review.
+- `tests/unit/verification-pack.test.ts`: hand-worked examples (three-line EUR invoice and
+  packing list, JPY and half-cent rounding, CBM, chargeable weight, unit conversions, landed
+  cost EU and US style) checked through to the printed page.
+- docs/research/document-requirements-2026-10-29.md: the commercial invoice against
+  19 CFR 141.86 and EU VAT invoice rules, and competitors' terms. Gaps found: itemized
+  charges, discounts, EORI, required responsible person.
+
 ### Security: Next.js 16.4.3 and zod 4.6.7
 
 - Next.js 16.3.8 → 16.4.3 (GHSA-2464-fhr4-w9xw and GHSA-673q-mjm6-r5xr, unauthenticated

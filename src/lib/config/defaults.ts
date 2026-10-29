@@ -15,6 +15,7 @@ import type { EnvironmentInput } from './schema';
  *   - APP_URL, PRICES_APPROVED, WAIVE_*: deployed environments (preview, staging, production).
  *   - LAUNCH_APPROVED, SUPABASE_ENVIRONMENT, PRODUCTION_SUPABASE_PROJECT_REF and the
  *     service-mode default: production only. Previews carry no database (D-011).
+ *   - The certificate of origin's approval (D-028): production in service mode only.
  *   - Derived secrets: deployed environments in service mode.
  * Local and test environments resolve only what they set, so CI keeps proving both states.
  *
@@ -54,6 +55,16 @@ const DEPLOYED_APPROVALS = [
   'WAIVE_ANALYTICS',
   'WAIVE_INDEXNOW',
 ] as const;
+
+/**
+ * The owner's approval of the certificate of origin (D-028, 2026-10-29): accepted on Claude's
+ * review, recorded as an owner approval, not an independent legal review. It fills the gate's
+ * four variables in production service mode only, which the gate requires.
+ */
+export const COO_OWNER_APPROVAL = {
+  reviewedBy: 'TradeDocs owner (accepted on AI-assisted review, D-028)',
+  reviewedAt: '2026-10-29',
+} as const;
 
 /** What a defaulted service mode needs that has no default of its own. */
 const SERVICE_REQUIREMENTS = [
@@ -153,6 +164,14 @@ export function resolveEnvironmentDefaults(input: EnvironmentInput): ResolvedEnv
       // in foundation mode and is named by /api/ready, rather than failing the deployment.
       if (missing.length === 0) fill('APPLICATION_MODE', 'service');
       else servicePending.push(...missing);
+    }
+
+    if (values.APPLICATION_MODE?.trim() === 'service') {
+      // D-028. An explicit ENABLE_REGULATED_DOCUMENTS=false still keeps it off.
+      fill('ENABLE_REGULATED_DOCUMENTS', 'true');
+      fill('REGULATED_DOCUMENTS_APPROVED', 'true');
+      fill('LEGAL_COO_REVIEWED_BY', COO_OWNER_APPROVAL.reviewedBy);
+      fill('LEGAL_COO_REVIEWED_AT', COO_OWNER_APPROVAL.reviewedAt);
     }
   }
 

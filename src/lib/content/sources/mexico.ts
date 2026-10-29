@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * the retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'trade-gov-ccg-mx': {
@@ -17,7 +17,7 @@ export default {
     supports:
       'the pedimento de importación as the basic Mexican import document, accompanied by a commercial invoice in Spanish, the bill of lading and documentation proving compliance with Mexican product safety regulations; Mexican importers also having to comply with the Complemento Carta Porte from 1 August 2023; all Mexican importers registering in the Padrón de Importadores kept by the Secretariat of Finance and Public Credit, with sector registries such as textiles, apparel and footwear; and goods being cleared by a Mexican customs broker or an authorised legal representative',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'anam-mexico': {
     authority: 'Agencia Nacional de Aduanas de México (ANAM)',
@@ -27,7 +27,7 @@ export default {
     supports:
       'ANAM being Mexico’s national customs agency, responsible for customs clearance, the electronic customs system and the VUCEM single window for foreign trade',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'sat-padron-importadores': {
     authority: 'Servicio de Administración Tributaria (SAT), Mexico',
@@ -37,6 +37,6 @@ export default {
     supports:
       'natural and legal persons who wish to import goods into Mexico registering in the Padrón de Importadores, on condition of being registered and active in the RFC, holding a valid e.firma, being current with tax obligations and having a customs agent, customs representative or legal representative',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

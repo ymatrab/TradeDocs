@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * the retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'cbic-india': {
@@ -15,7 +15,7 @@ export default {
     jurisdiction: 'India',
     supports: 'the Central Board of Indirect Taxes and Customs as India’s customs administration',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'cbic-chennai-import-procedure': {
     authority: 'Chennai Customs Zone, Central Board of Indirect Taxes and Customs (CBIC)',
@@ -25,7 +25,7 @@ export default {
     supports:
       'importers obtaining an Importer-Exporter Code from the DGFT before filing a bill of entry; goods cleared through the EDI system needing a cargo declaration in place of a formal bill of entry; a signed invoice, packing list, bill of lading or delivery order/airway bill and a GATT valuation declaration generally accompanying the bill of entry, with insurance documents and other certificates where applicable; and separate bills of entry for home consumption, warehousing and ex-bond clearance',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'dgft-iec': {
     authority: 'Directorate General of Foreign Trade (DGFT), Government of India',
@@ -35,7 +35,7 @@ export default {
     supports:
       'no export or import being made by any person without an Importer-Exporter Code unless specifically exempted, the IEC being issued by the DGFT and being the same as the firm’s PAN',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'dgft-itchs-policy': {
     authority: 'Directorate General of Foreign Trade (DGFT), Government of India',
@@ -45,7 +45,7 @@ export default {
     supports:
       'the digitised ITC(HS) import policy (Schedule 1) by HS code, with the lists of restricted, prohibited and state trading enterprise (STE) items under the import policy',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'trade-gov-ccg-in': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -56,6 +56,6 @@ export default {
     supports:
       'items on the Open General License being freely importable without a licence, with banned items, restricted items that need a licence and canalised items imported only through government agencies, and import documents having to be accompanied by any import licence the goods need',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;
