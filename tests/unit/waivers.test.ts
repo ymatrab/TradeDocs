@@ -115,7 +115,14 @@ describe('deferred service waivers (D-017)', () => {
       status: 'ready',
       rate_limiting: 'enforced',
       degraded: ['turnstile', 'sentry', 'analytics'],
-      defaults: ['PRICES_APPROVED'],
+      defaults: [
+        'PRICES_APPROVED',
+        // The certificate of origin's owner approval (D-028), named, never valued.
+        'ENABLE_REGULATED_DOCUMENTS',
+        'REGULATED_DOCUMENTS_APPROVED',
+        'LEGAL_COO_REVIEWED_BY',
+        'LEGAL_COO_REVIEWED_AT',
+      ],
       derived: ['API_KEY_PEPPER', 'INTEGRATION_TOKEN_KEY'],
     });
     expect(body).not.toContain('synthetic');
@@ -138,7 +145,14 @@ describe('deferred service waivers (D-017)', () => {
       status: 'ready',
       rate_limiting: 'enforced',
       degraded: ['turnstile', 'sentry', 'analytics'],
-      defaults: ['PRICES_APPROVED'],
+      defaults: [
+        'PRICES_APPROVED',
+        // The certificate of origin's owner approval (D-028), named, never valued.
+        'ENABLE_REGULATED_DOCUMENTS',
+        'REGULATED_DOCUMENTS_APPROVED',
+        'LEGAL_COO_REVIEWED_BY',
+        'LEGAL_COO_REVIEWED_AT',
+      ],
       // The token key is derived (D-026), so only the provider's own secret is missing.
       derived: ['INTEGRATION_TOKEN_KEY'],
       esign: 'misconfigured',
