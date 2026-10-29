@@ -517,6 +517,12 @@ test('a shipment produces a downloadable document set', async ({ page }) => {
   await signUp(page, newEmail());
   const org = await createOrganization(page, 'Kestrel Shipping');
 
+  // A commercial invoice names a responsible person (19 CFR 141.86(j), D-029).
+  await page.goto(`/app/${org}/settings`);
+  await page.getByLabel('Signatory name').fill('Kim Kestrel');
+  await page.getByRole('button', { name: 'Save settings' }).click();
+  await expect(page.getByText(/Settings saved\./)).toBeVisible();
+
   await page.goto(`/app/${org}/shipments`);
   await page.getByLabel('Shipment reference').fill('SHP-2026-0001');
   await page.getByRole('button', { name: 'Create shipment' }).click();

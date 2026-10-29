@@ -34,7 +34,9 @@ describe('staleness for charges and EORI', () => {
   it('treats 180 and "180.00" as the same amount', () => {
     const now = {
       ...base,
-      charges: [{ position: 1, kind: 'freight', label: null, amount: 180, included_in_price: false }],
+      charges: [
+        { position: 1, kind: 'freight', label: null, amount: 180, included_in_price: false },
+      ],
     };
     expect(staleReasons(base, now)).toEqual([]);
   });

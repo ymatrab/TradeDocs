@@ -51,10 +51,9 @@ export function ChargesPanel({
     <Panel title="Charges and discounts" id="charges">
       <div style={{ display: 'grid', gap: 16 }}>
         <p className="muted" style={{ marginBottom: 0 }}>
-          Freight, insurance, packing, commission and discounts print on the commercial and
-          proforma invoices, each by name and amount. Tick &ldquo;included in the prices&rdquo;
-          for a charge your unit prices already contain: it is shown for the record and not added
-          again.
+          Freight, insurance, packing, commission and discounts print on the commercial and proforma
+          invoices, each by name and amount. Tick &ldquo;included in the prices&rdquo; for a charge
+          your unit prices already contain: it is shown for the record and not added again.
         </p>
         <ActionResult state={removeState} successTitle="Removed" />
 
@@ -80,7 +79,9 @@ export function ChargesPanel({
             <tbody>
               {charges.map((charge) => {
                 const name =
-                  charge.kind === 'other' && charge.label ? charge.label : CHARGE_LABELS[charge.kind];
+                  charge.kind === 'other' && charge.label
+                    ? charge.label
+                    : CHARGE_LABELS[charge.kind];
                 return (
                   <tr key={charge.id}>
                     <td className="stack-title">{name}</td>
