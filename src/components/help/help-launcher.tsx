@@ -63,7 +63,7 @@ export function HelpLauncher({ chat = 'none' }: { chat?: ChatProvider }) {
         open={open}
         onClose={() => setOpen(false)}
         title="How can we help?"
-        description="Search the answers from across TradeDocs, or send us a message."
+        description="Search the answers from across ShipDocIt, or send us a message."
         footer={
           <>
             <Link className="btn quiet" href="/help" onClick={() => setOpen(false)}>

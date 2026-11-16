@@ -286,7 +286,7 @@ export async function usableAccessToken(
 
 /**
  * Disconnects: revokes the grant at the provider, then deletes the stored tokens whatever the
- * provider answered, so TradeDocs never keeps a credential the owner asked it to drop. Returns
+ * provider answered, so ShipDocIt never keeps a credential the owner asked it to drop. Returns
  * whether the provider confirmed the revocation, for the message and the audit record.
  */
 export async function removeConnection(

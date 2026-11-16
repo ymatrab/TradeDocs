@@ -128,10 +128,10 @@ const article: ContentArticle = {
       ],
     },
     {
-      heading: 'How does TradeDocs record the packing?',
+      heading: 'How does ShipDocIt record the packing?',
       paragraphs: [
         'The free packing list generator prints the parties, the lines, the package counts and the net and gross weights you enter, plus the marks and numbers, as a PDF. Nothing is stored, so download it before you close the page.',
-        'In the TradeDocs workspace, the shipment’s packing panel records each package or group of identical packages with its kind, count, dimensions in centimetres, net and gross weight and marks, and lets you allocate each line’s quantity to the packages it travels in. It reports any line whose packed quantity differs from its invoiced quantity, and the packing list and commercial invoice are generated from that same shipment record.',
+        'In the ShipDocIt workspace, the shipment’s packing panel records each package or group of identical packages with its kind, count, dimensions in centimetres, net and gross weight and marks, and lets you allocate each line’s quantity to the packages it travels in. It reports any line whose packed quantity differs from its invoiced quantity, and the packing list and commercial invoice are generated from that same shipment record.',
       ],
     },
   ],

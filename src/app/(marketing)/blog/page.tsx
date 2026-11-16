@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: '/blog',
-    types: { 'application/rss+xml': [{ url: '/blog/rss.xml', title: 'TradeDocs blog' }] },
+    types: { 'application/rss+xml': [{ url: '/blog/rss.xml', title: 'ShipDocIt blog' }] },
   },
   openGraph: openGraphFor(title, description, '/blog', unsplashShareImage(BLOG_HUB_COVER)),
   twitter: twitterFor(unsplashShareImage(BLOG_HUB_COVER)),
@@ -79,7 +79,7 @@ export default function BlogPage() {
       <section className="section">
         <h2>How these are written</h2>
         <p className="measure">
-          By the TradeDocs team, from the published rules and official guidance listed at the foot
+          By the ShipDocIt team, from the published rules and official guidance listed at the foot
           of each article, with the date it was last checked. Worked examples use invented parties.
           They explain general practice; they are not legal, customs or tax advice.
         </p>

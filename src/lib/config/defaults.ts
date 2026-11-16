@@ -62,7 +62,7 @@ const DEPLOYED_APPROVALS = [
  * four variables in production service mode only, which the gate requires.
  */
 export const COO_OWNER_APPROVAL = {
-  reviewedBy: 'TradeDocs owner (accepted on AI-assisted review, D-028)',
+  reviewedBy: 'ShipDocIt owner (accepted on AI-assisted review, D-028)',
   reviewedAt: '2026-10-29',
 } as const;
 

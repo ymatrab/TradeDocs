@@ -27,7 +27,7 @@ import {
   type ReadyConfig,
 } from '@/lib/integrations/server';
 import { AUTH_LIMITS, actionContext, consumeQuotas, userSubject } from '@/lib/security/auth-limits';
-import { createClient, getUser, type TradeDocsClient } from '@/lib/supabase/server';
+import { createClient, getUser, type ShipDocItClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
 
 /**
@@ -52,7 +52,7 @@ function read(formData: FormData, field: string): string {
   return typeof value === 'string' ? value : '';
 }
 
-async function manages(client: TradeDocsClient, org: string, user: string): Promise<boolean> {
+async function manages(client: ShipDocItClient, org: string, user: string): Promise<boolean> {
   const { data } = await client
     .from('memberships')
     .select('role')
@@ -69,7 +69,7 @@ type Authorized =
       provider: ProviderId;
       user: string;
       config: ReadyConfig;
-      client: TradeDocsClient;
+      client: ShipDocItClient;
     }
   | { ok: false; error: string };
 
@@ -165,8 +165,8 @@ export async function disconnectProvider(
     if (!removed) return { notice: `${name} was not connected.` };
     return {
       notice: revoked
-        ? `Disconnected. ${name} access was revoked and the stored credentials deleted. Imported records stay in TradeDocs.`
-        : `Disconnected and the stored credentials deleted. ${name} did not confirm the revocation, so also remove TradeDocs from the connected apps in ${name}.`,
+        ? `Disconnected. ${name} access was revoked and the stored credentials deleted. Imported records stay in ShipDocIt.`
+        : `Disconnected and the stored credentials deleted. ${name} did not confirm the revocation, so also remove ShipDocIt from the connected apps in ${name}.`,
     };
   } catch (error) {
     console.error('integration disconnect failed', {

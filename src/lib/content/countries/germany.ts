@@ -157,7 +157,7 @@ const country: CountryPage = {
     {
       heading: 'How is duty on goods entering Germany worked out?',
       paragraphs: [
-        'German Customs explains that duty is payable in principle on goods from outside the EU, at a level set by the product’s TARIC code, with the customs value as the basis for ad valorem duties. It does not depend on anything German alone, because the tariff is the EU’s common customs tariff. TradeDocs states no rates here; the importer’s broker works out the charges from the invoice you supply.',
+        'German Customs explains that duty is payable in principle on goods from outside the EU, at a level set by the product’s TARIC code, with the customs value as the basis for ad valorem duties. It does not depend on anything German alone, because the tariff is the EU’s common customs tariff. ShipDocIt states no rates here; the importer’s broker works out the charges from the invoice you supply.',
       ],
     },
   ],

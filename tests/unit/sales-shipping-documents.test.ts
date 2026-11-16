@@ -142,7 +142,7 @@ describe('renderer 7 kinds', () => {
     const pages = documentLayout(withTransport(kind, 60), createFontSet());
     expect(pages.length).toBeGreaterThan(1);
     for (const page of pages) {
-      expect(page.some((placed) => placed.text.startsWith('Prepared with TradeDocs'))).toBe(true);
+      expect(page.some((placed) => placed.text.startsWith('Prepared with ShipDocIt'))).toBe(true);
     }
     expect(renderTradeDocument(withTransport(kind), createFontSet()).byteLength).toBeGreaterThan(
       2_000,

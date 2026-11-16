@@ -11,7 +11,7 @@ export function generateMetadata(): Metadata {
   return legalMetadata(
     '/cookies',
     'Cookie policy',
-    'The only cookies TradeDocs sets are the ones that keep you signed in. No analytics, advertising or tracking cookies.',
+    'The only cookies ShipDocIt sets are the ones that keep you signed in. No analytics, advertising or tracking cookies.',
   );
 }
 
@@ -26,11 +26,11 @@ export default function CookiesPage() {
   return (
     <LegalPage
       title="Cookie policy"
-      lede="TradeDocs sets only the cookies that keep you signed in. There is nothing to accept or decline."
+      lede="ShipDocIt sets only the cookies that keep you signed in. There is nothing to accept or decline."
       identity={identity}
     >
       <LegalSection id="cookies" number={1} title="Cookies we set">
-        <DataTable caption="Cookies set by TradeDocs" density="compact">
+        <DataTable caption="Cookies set by ShipDocIt" density="compact">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -77,7 +77,7 @@ export default function CookiesPage() {
           <Link className="text-link" href="/privacy">
             privacy policy
           </Link>{' '}
-          lists every service that handles data for TradeDocs.
+          lists every service that handles data for ShipDocIt.
         </p>
       </LegalSection>
 

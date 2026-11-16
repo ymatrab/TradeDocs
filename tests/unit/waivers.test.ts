@@ -16,7 +16,7 @@ const production: EnvironmentInput = {
   PRODUCTION_SUPABASE_PROJECT_REF: 'syntheticproject',
   RATE_LIMIT_KEY_SECRET: 'synthetic-rate-test-key-more-than-32-characters',
   RESEND_API_KEY: 'synthetic-email-test-key',
-  EMAIL_FROM: 'TradeDocs <no-reply@example.com>',
+  EMAIL_FROM: 'ShipDocIt <no-reply@example.com>',
   LAUNCH_APPROVED: 'true',
 };
 

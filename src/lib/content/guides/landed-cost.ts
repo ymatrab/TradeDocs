@@ -114,7 +114,7 @@ const article: ContentArticle = {
     {
       heading: 'Where do the duty and tax rates come from?',
       paragraphs: [
-        'From the importing country’s tariff, applied to the product’s classification there, and from its tax rules. TradeDocs holds no tariff data and does not look up rates; the landed cost calculator works with the rates you enter. Your buyer’s customs broker, or the destination’s official tariff, is the place to get them, together with any trade agreement preference the goods may qualify for.',
+        'From the importing country’s tariff, applied to the product’s classification there, and from its tax rules. ShipDocIt holds no tariff data and does not look up rates; the landed cost calculator works with the rates you enter. Your buyer’s customs broker, or the destination’s official tariff, is the place to get them, together with any trade agreement preference the goods may qualify for.',
       ],
     },
   ],

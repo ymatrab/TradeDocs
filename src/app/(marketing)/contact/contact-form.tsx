@@ -26,7 +26,7 @@ export function ContactForm({
     return (
       <div style={{ display: 'grid', gap: 16 }}>
         <Callout tone="success" title="Message received" live>
-          Thank you. Your message is with the team that runs TradeDocs, and the reply goes to the
+          Thank you. Your message is with the team that runs ShipDocIt, and the reply goes to the
           address you gave.
         </Callout>
         <p className="muted" style={{ margin: 0 }}>

@@ -74,7 +74,7 @@ export default function GuidesPage() {
       <section className="section">
         <h2>How these are written</h2>
         <p className="measure">
-          By the TradeDocs team, from the published rules and official guidance listed at the foot
+          By the ShipDocIt team, from the published rules and official guidance listed at the foot
           of each guide, with the date it was last checked. They explain general practice; they are
           not legal, customs or tax advice.
         </p>

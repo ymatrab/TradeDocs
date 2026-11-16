@@ -160,7 +160,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty, GST and thresholds come from?',
       paragraphs: [
-        'From the ABF and the importer’s broker, at the time of import. Whether duty applies depends on the tariff classification, the origin and any concession, and the value lines and charges change. TradeDocs states no rates or thresholds here so that an old figure never ends up in your quotation.',
+        'From the ABF and the importer’s broker, at the time of import. Whether duty applies depends on the tariff classification, the origin and any concession, and the value lines and charges change. ShipDocIt states no rates or thresholds here so that an old figure never ends up in your quotation.',
       ],
     },
   ],

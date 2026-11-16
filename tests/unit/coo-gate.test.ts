@@ -126,7 +126,7 @@ describe('public claims follow the gate', () => {
     expect(publicDocumentKinds(false)).not.toContain('certificate_of_origin');
     expect(publicDocumentKinds(true)).toContain('certificate_of_origin');
     expect(CERTIFICATE_OF_ORIGIN_NOTICE).toMatch(/not an issued certificate/);
-    expect(CERTIFICATE_OF_ORIGIN_NOTICE).toMatch(/TradeDocs does not certify or issue it/);
+    expect(CERTIFICATE_OF_ORIGIN_NOTICE).toMatch(/ShipDocIt does not certify or issue it/);
   });
 });
 

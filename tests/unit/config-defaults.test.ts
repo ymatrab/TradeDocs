@@ -37,7 +37,7 @@ const integration: EnvironmentInput = {
 /** The owner's one remaining step for service mode: the email sender. */
 const email: EnvironmentInput = {
   RESEND_API_KEY: 'synthetic-email-test-key',
-  EMAIL_FROM: 'TradeDocs <no-reply@example.com>',
+  EMAIL_FROM: 'ShipDocIt <no-reply@example.com>',
 };
 
 const resolve = (input: EnvironmentInput) => resolveDeploymentInput(input, true);

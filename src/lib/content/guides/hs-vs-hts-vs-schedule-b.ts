@@ -125,7 +125,7 @@ const article: ContentArticle = {
     {
       heading: 'Who decides the right code for my product?',
       paragraphs: [
-        'You do, as the party filing, using the official tools; TradeDocs does not suggest codes. The Census Bureau’s Schedule B search and the USITC’s HTS search are the starting points, and the ITA points to the Customs Rulings Online Search System (CROSS) for products that are hard to classify. A wrong code can mean a wrong duty rate for your buyer and a wrong export record for you, so treat classification as a decision you can explain.',
+        'You do, as the party filing, using the official tools; ShipDocIt does not suggest codes. The Census Bureau’s Schedule B search and the USITC’s HTS search are the starting points, and the ITA points to the Customs Rulings Online Search System (CROSS) for products that are hard to classify. A wrong code can mean a wrong duty rate for your buyer and a wrong export record for you, so treat classification as a decision you can explain.',
       ],
     },
   ],

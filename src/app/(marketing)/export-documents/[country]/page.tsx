@@ -77,7 +77,7 @@ export default async function CountryDocumentsPage({
         <h1>Export documents for {country.name}</h1>
         <p className="lede">{country.lede}</p>
         <p className="muted">
-          TradeDocs team · Published{' '}
+          ShipDocIt team · Published{' '}
           <time dateTime={country.published}>{shortDate(country.published)}</time> · Last checked
           against sources <time dateTime={country.reviewed}>{shortDate(country.reviewed)}</time>
         </p>
@@ -187,7 +187,7 @@ export default async function CountryDocumentsPage({
             <a className="text-link" href={country.controlledGoods.officialUrl} rel="noopener">
               {country.controlledGoods.label}
             </a>
-            . TradeDocs does not classify goods or say which list a product is on.
+            . ShipDocIt does not classify goods or say which list a product is on.
           </p>
         </section>
       ) : null}
@@ -242,7 +242,7 @@ export default async function CountryDocumentsPage({
         <h2>Prepare the set once</h2>
         <p className="measure">
           The broker in {country.name} works from your invoice and packing list, so the two have to
-          agree line for line. TradeDocs keeps a shipment’s parties, goods and packages once and
+          agree line for line. ShipDocIt keeps a shipment’s parties, goods and packages once and
           prepares each document from that record.
         </p>
         <ToolCta secondary={{ href: '/export-documents', label: 'All countries' }} />

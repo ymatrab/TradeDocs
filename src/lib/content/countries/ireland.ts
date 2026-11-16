@@ -173,7 +173,7 @@ const country: CountryPage = {
       heading: 'What should I ask my Irish buyer before shipping?',
       paragraphs: [
         'Settle these first: the buyer’s EORI number and the name and address it is registered under; which customs agent will lodge the AIS declaration; the Incoterms® rule, and with it who pays duty and import VAT and how; and whether the goods need a veterinary or plant health certificate or a licence.',
-        'Then send an invoice that matches the packing list, with descriptions the agent can classify, origin per line, and freight and insurance stated, because Revenue’s customs value includes them. TradeDocs states no rates here; the agent works out the charges from what you send.',
+        'Then send an invoice that matches the packing list, with descriptions the agent can classify, origin per line, and freight and insurance stated, because Revenue’s customs value includes them. ShipDocIt states no rates here; the agent works out the charges from what you send.',
       ],
     },
   ],

@@ -2,7 +2,7 @@ import 'server-only';
 
 import { MAX_BRANDING_BYTES } from '@/lib/limits';
 import { brandingAssetsOf, type BrandingImages } from '@/lib/pdf/trade-document';
-import type { TradeDocsClient } from '@/lib/supabase/server';
+import type { ShipDocItClient } from '@/lib/supabase/server';
 import { BRANDING_BUCKET, parseBrandingObjectPath, sha256Hex } from './assets';
 
 /**
@@ -14,7 +14,7 @@ import { BRANDING_BUCKET, parseBrandingObjectPath, sha256Hex } from './assets';
  * falls back to no branding.
  */
 export async function loadBrandingImages(
-  client: TradeDocsClient,
+  client: ShipDocItClient,
   orgId: string,
   snapshot: unknown,
 ): Promise<BrandingImages | null> {

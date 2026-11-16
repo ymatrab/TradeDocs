@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description: HOME_DESCRIPTION,
   alternates: { canonical: '/' },
   openGraph: openGraphFor(
-    'TradeDocs: commercial invoice generator and export documents',
+    'ShipDocIt: commercial invoice generator and export documents',
     HOME_DESCRIPTION,
     '/',
   ),
@@ -238,7 +238,7 @@ function notYetOffered(regulatedOffered: boolean): string[] {
 const questions = [
   {
     q: 'What is a commercial invoice?',
-    a: 'It is the seller’s bill for goods sold and shipped, and the document customs in the importing country assesses duties and taxes from. Its quantities and values have to agree with the packing list, which is why TradeDocs prepares both from one record.',
+    a: 'It is the seller’s bill for goods sold and shipped, and the document customs in the importing country assesses duties and taxes from. Its quantities and values have to agree with the packing list, which is why ShipDocIt prepares both from one record.',
   },
   {
     q: 'What is the difference between a proforma invoice and a commercial invoice?',
@@ -253,12 +253,12 @@ const questions = [
     a: 'Usually a commercial invoice and a packing list, often a proforma invoice before the sale, and a transport document from the carrier. Some goods and routes need more, such as a certificate of origin. The set depends on the goods, the route and the countries involved, so confirm it with your buyer, forwarder or customs authority.',
   },
   {
-    q: 'Who is TradeDocs for?',
+    q: 'Who is ShipDocIt for?',
     a: 'Exporters and the people who prepare their paperwork: in-house shipping teams, and consultants who keep each client in its own organization. Importers and freight forwarders use the free calculators. It is not a customs broker, a carrier or a freight booking system.',
   },
   {
-    q: 'Does TradeDocs issue or certify my documents?',
-    a: 'No. TradeDocs prepares documents from the data you enter. Issuing, endorsing, certifying and clearing are done by carriers, chambers of commerce and customs authorities. Every document says so on its face, and that labelling cannot be removed.',
+    q: 'Does ShipDocIt issue or certify my documents?',
+    a: 'No. ShipDocIt prepares documents from the data you enter. Issuing, endorsing, certifying and clearing are done by carriers, chambers of commerce and customs authorities. Every document says so on its face, and that labelling cannot be removed.',
   },
   {
     q: 'What happens when a shipment changes after I have generated documents?',
@@ -274,7 +274,7 @@ const questions = [
   },
   {
     q: 'What does it cost?',
-    a: 'Nothing today. TradeDocs is free while it is early. Paid plans will be shown on the pricing page, and they will come with notice before anything changes.',
+    a: 'Nothing today. ShipDocIt is free while it is early. Paid plans will be shown on the pricing page, and they will come with notice before anything changes.',
   },
 ];
 
@@ -318,7 +318,7 @@ export default function Home() {
               </Line>
             </h1>
             <p className="lede">
-              Record the parties, goods and terms one time. TradeDocs prepares the commercial
+              Record the parties, goods and terms one time. ShipDocIt prepares the commercial
               invoice, proforma invoice, packing list and delivery note from that one record, so a
               figure you entered once reads the same on every page that carries it.
             </p>
@@ -614,8 +614,8 @@ export default function Home() {
         </div>
         <div className="boundary">
           <p>
-            TradeDocs prepares documents from the data you enter. Carriers, chambers of commerce and
-            customs authorities issue, certify and clear them, and TradeDocs never presents itself
+            ShipDocIt prepares documents from the data you enter. Carriers, chambers of commerce and
+            customs authorities issue, certify and clear them, and ShipDocIt never presents itself
             as one of them.
           </p>
           <LinkButton href={action.href} className="tape">
@@ -659,7 +659,7 @@ export default function Home() {
             </LinkButton>
           </div>
           {/*
-            A stamp is what a document gets when an authority has touched it. TradeDocs is not
+            A stamp is what a document gets when an authority has touched it. ShipDocIt is not
             an authority, so its stamp says exactly that.
           */}
           <p className="stamp">Prepared · not issued</p>

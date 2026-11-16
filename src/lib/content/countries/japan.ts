@@ -151,7 +151,7 @@ const country: CountryPage = {
       heading: 'How is the customs value worked out for Japan?',
       paragraphs: [
         'On a CIF basis. Japan Customs explains that its valuation rules, set in the Customs Tariff Law and based on the WTO Customs Valuation Agreement, start from the transaction value and add transportation-related expenses, including the fare until arrival at the port and insurance. Costs after arrival, and duties and taxes in Japan, are not part of it.',
-        'For an exporter the consequence is practical: if you sell FOB, the broker still needs the ocean or air freight and the insurance to complete the value. TradeDocs states no rates here; the broker works out the charges from the invoice and those figures.',
+        'For an exporter the consequence is practical: if you sell FOB, the broker still needs the ocean or air freight and the insurance to complete the value. ShipDocIt states no rates here; the broker works out the charges from the invoice and those figures.',
       ],
     },
     {

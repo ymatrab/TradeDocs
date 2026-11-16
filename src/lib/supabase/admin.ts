@@ -3,7 +3,7 @@ import 'server-only';
 import { createClient } from '@supabase/supabase-js';
 import { getServerEnv } from '@/lib/config/server';
 import type { Database } from '@/lib/database.types';
-import { DatabaseUnavailableError, type TradeDocsClient } from './server';
+import { DatabaseUnavailableError, type ShipDocItClient } from './server';
 
 /**
  * The service-role client. It bypasses row level security, so it is reached for in few
@@ -12,7 +12,7 @@ import { DatabaseUnavailableError, type TradeDocsClient } from './server';
  * syncFreePlanLimits (src/lib/billing/server.ts), which only writes the Free shipment limit.
  * It carries no user session and persists nothing.
  */
-export function createServiceClient(): TradeDocsClient {
+export function createServiceClient(): ShipDocItClient {
   const env = getServerEnv();
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) throw new DatabaseUnavailableError();
   return createClient<Database>(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {

@@ -73,8 +73,8 @@ const RESULTS: Record<
 /** What each provider's permission covers, stated plainly (scopes in providers.ts). */
 const ACCESS: Record<ProviderId, string> = {
   quickbooks:
-    'QuickBooks grants accounting access as a single permission; TradeDocs uses it only to read customers and items.',
-  xero: 'TradeDocs asks Xero for read-only access to contacts and to settings, where Xero keeps items.',
+    'QuickBooks grants accounting access as a single permission; ShipDocIt uses it only to read customers and items.',
+  xero: 'ShipDocIt asks Xero for read-only access to contacts and to settings, where Xero keeps items.',
 };
 
 type Status = {

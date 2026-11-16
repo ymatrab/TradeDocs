@@ -151,7 +151,7 @@ function Forms() {
         <Field
           id="hs-code"
           label="HS code"
-          error="Enter a 6 to 10 digit code. TradeDocs does not classify goods for you."
+          error="Enter a 6 to 10 digit code. ShipDocIt does not classify goods for you."
         >
           {({ id, describedBy, invalid }) => (
             <Input id={id} aria-describedby={describedBy} invalid={invalid} defaultValue="84713" />
@@ -411,7 +411,7 @@ export function Showcase() {
       <AppShell title="Design system">
         <p className="eyebrow">Internal reference</p>
         <p className="measure muted" style={{ marginBottom: 32 }}>
-          Every component TradeDocs ships, in every state it can reach. This route is not available
+          Every component ShipDocIt ships, in every state it can reach. This route is not available
           in production.
         </p>
         <Controls />

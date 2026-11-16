@@ -77,7 +77,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you choose products and markets?',
       paragraphs: [
-        'Start from a product you can describe and classify precisely, and a market you have researched rather than guessed. Every import and export uses a commodity code built on the Harmonized System, which the World Customs Organization says more than 200 countries and economies use for their tariffs and trade statistics, so check the official tariff for each product before you price it. The post How to find the HS code for your product shows where to look; TradeDocs does not suggest codes.',
+        'Start from a product you can describe and classify precisely, and a market you have researched rather than guessed. Every import and export uses a commodity code built on the Harmonized System, which the World Customs Organization says more than 200 countries and economies use for their tariffs and trade statistics, so check the official tariff for each product before you price it. The post How to find the HS code for your product shows where to look; ShipDocIt does not suggest codes.',
         'Free public help exists for the market side. The ITA’s U.S. Commercial Service offers services for companies new to exporting and market research by country and industry. The SBA points to U.S. Export Assistance Centers and to Small Business Development Centers, whose advisors offer free consulting and low-cost training.',
       ],
     },

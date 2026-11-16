@@ -56,7 +56,7 @@ export default function DeniedPartyScreeningPage() {
           A match is a prompt for due diligence, and no match clears nothing: licensing, end-use
           rules, embargoes and other countries’ lists still apply. Before acting on a result, check
           the official list it came from. Names you search are sent to the trade.gov API to run the
-          search and are not stored or logged by TradeDocs.
+          search and are not stored or logged by ShipDocIt.
         </Callout>
       </section>
 

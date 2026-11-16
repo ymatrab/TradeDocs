@@ -109,7 +109,7 @@ const article: ContentArticle = {
       heading: 'Who is responsible for getting it right?',
       paragraphs: [
         'The party exporting the goods owns the answers, even when others help. A forwarder can file the EEI and a supplier can tell you an ECCN, but the BIS licensing pages frame the check around each transaction: if the item, buyer, destination or end use changes, the answers to the four questions change with it.',
-        'When the answer is unclear, BIS is the authority to ask, and an export compliance adviser can help with the specifics. TradeDocs prepares the invoice and packing list from the details you enter; it does not classify items or decide licensing.',
+        'When the answer is unclear, BIS is the authority to ask, and an export compliance adviser can help with the specifics. ShipDocIt prepares the invoice and packing list from the details you enter; it does not classify items or decide licensing.',
       ],
     },
   ],

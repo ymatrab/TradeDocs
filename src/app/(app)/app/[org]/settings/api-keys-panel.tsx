@@ -71,7 +71,7 @@ export function ApiKeysPanel({
       <p className="muted" style={{ margin: 0 }}>
         A key lets your own software use the{' '}
         <Link className="text-link" href="/developers">
-          TradeDocs REST API
+          ShipDocIt REST API
         </Link>{' '}
         for this organization: list and create shipments, generate documents and download their
         PDFs. A key acts with the rights of the owner or administrator who created it, and stops

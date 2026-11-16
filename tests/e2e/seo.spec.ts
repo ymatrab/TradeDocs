@@ -95,7 +95,7 @@ test('a blog post answers first and its structured data matches the page', async
   const article = items.find((item) => item['@type'] === 'Article') as
     { image?: { '@type': string }; author?: { name?: string } } | undefined;
   expect(article?.image?.['@type']).toBe('ImageObject');
-  expect(article?.author?.name).toBe('TradeDocs');
+  expect(article?.author?.name).toBe('ShipDocIt');
 
   const faq = items.find((item) => item['@type'] === 'FAQPage') as
     { mainEntity: { name: string }[] } | undefined;

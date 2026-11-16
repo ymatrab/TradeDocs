@@ -12,7 +12,7 @@ import {
 } from '@/lib/branding/assets';
 import { MAX_BRANDING_BYTES } from '@/lib/limits';
 import { AUTH_LIMITS, actionContext, consumeQuotas, userSubject } from '@/lib/security/auth-limits';
-import { createClient, type TradeDocsClient } from '@/lib/supabase/server';
+import { createClient, type ShipDocItClient } from '@/lib/supabase/server';
 import type { ActionState } from './actions';
 
 /**
@@ -40,7 +40,7 @@ function read(formData: FormData, field: string): string {
   return typeof value === 'string' ? value : '';
 }
 
-async function manages(client: TradeDocsClient, org: string, user: string): Promise<boolean> {
+async function manages(client: ShipDocItClient, org: string, user: string): Promise<boolean> {
   const { data } = await client
     .from('memberships')
     .select('role')
@@ -52,7 +52,7 @@ async function manages(client: TradeDocsClient, org: string, user: string): Prom
 
 /** Deletes an image nothing needs any more. A failure leaves a harmless orphan, logged. */
 async function deleteIfUnused(
-  client: TradeDocsClient,
+  client: ShipDocItClient,
   org: string,
   previous: { sha256: string; object_path: string },
 ): Promise<void> {

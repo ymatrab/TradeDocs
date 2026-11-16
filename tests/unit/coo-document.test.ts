@@ -159,7 +159,7 @@ describe('certificate of origin PDF', () => {
     expect(all).toContain(wording.signatureCaption);
   });
 
-  it('says on every page it is the exporter’s preparation, not certified by TradeDocs', () => {
+  it('says on every page it is the exporter’s preparation, not certified by ShipDocIt', () => {
     for (const page of pages) {
       // The specification's label, first on the line under the title, inside the margins.
       const label = page.find((placed) => placed.text.startsWith(COO_TEMPLATE_LABEL));
@@ -167,12 +167,12 @@ describe('certificate of origin PDF', () => {
       expect((label?.x ?? 0) + (label?.width ?? 0)).toBeLessThanOrEqual(PAGE_WIDTH - 42);
     }
     expect(joined).toContain(wording.preparationLabel);
-    expect(joined).toContain('It is not certified or issued by TradeDocs.');
+    expect(joined).toContain('It is not certified or issued by ShipDocIt.');
     expect(all).toContain(wording.certificationCaption);
-    // Nothing on it claims a certification or issue by TradeDocs.
-    expect(joined).not.toMatch(/(?<!not )certified by TradeDocs/);
-    expect(joined).not.toMatch(/(?<!not certified or )issued by TradeDocs/);
-    expect(joined).not.toMatch(/TradeDocs (certifies|issues)/);
+    // Nothing on it claims a certification or issue by ShipDocIt.
+    expect(joined).not.toMatch(/(?<!not )certified by ShipDocIt/);
+    expect(joined).not.toMatch(/(?<!not certified or )issued by ShipDocIt/);
+    expect(joined).not.toMatch(/ShipDocIt (certifies|issues)/);
     expect(joined).toMatch(/not issued, endorsed, certified or cleared/);
   });
 

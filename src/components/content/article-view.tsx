@@ -235,7 +235,7 @@ export function ArticleView({ article, hub, disclaimer, related, relatedTitle }:
         <h2>One record, every document</h2>
         <p className="measure">
           The invoice, the proforma and the packing list only agree if they are prepared from the
-          same figures. TradeDocs keeps the parties, goods and terms of a shipment once and prepares
+          same figures. ShipDocIt keeps the parties, goods and terms of a shipment once and prepares
           each document from that record. The free tools work without an account;{' '}
           <Link className="text-link" href="/pricing">
             see pricing

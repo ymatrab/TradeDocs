@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import {
   createClient,
   DatabaseUnavailableError,
-  type TradeDocsClient,
+  type ShipDocItClient,
 } from '@/lib/supabase/server';
 import {
   RENDERER_VERSION,
@@ -46,7 +46,7 @@ const MAX_DOCUMENTS = MAX_SET_DOCUMENTS;
  */
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  let client: TradeDocsClient;
+  let client: ShipDocItClient;
   try {
     client = await createClient();
   } catch (error) {
@@ -107,7 +107,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     `Renderer: ${RENDERER_VERSION}`,
     '',
     'Each line in the next block is the SHA-256 of a file as it appears in this archive. Re-render',
-    'a document from TradeDocs at any time and it produces these same bytes, because a',
+    'a document from ShipDocIt at any time and it produces these same bytes, because a',
     'document is rendered from the snapshot it was generated with and never from the',
     'live shipment.',
     '',

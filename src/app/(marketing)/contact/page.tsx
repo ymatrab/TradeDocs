@@ -13,10 +13,10 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Ask a question, report a problem or make a privacy request. Messages go to the team that runs TradeDocs.',
+    'Ask a question, report a problem or make a privacy request. Messages go to the team that runs ShipDocIt.',
   alternates: { canonical: '/contact' },
   openGraph: openGraphFor(
-    'Contact TradeDocs',
+    'Contact ShipDocIt',
     'Ask a question, report a problem or make a privacy request.',
     '/contact',
   ),
@@ -28,7 +28,7 @@ export default function ContactPage() {
     <>
       <section className="hero">
         <p className="eyebrow">Contact</p>
-        <h1>Talk to the people who run TradeDocs</h1>
+        <h1>Talk to the people who run ShipDocIt</h1>
         <p className="lede">
           A question, something that is not working, or a request about your data: send it here and
           a person reads it. For quick answers, try the{' '}
@@ -56,7 +56,7 @@ export default function ContactPage() {
           </p>
           <p className="caption">Before you write</p>
           <p className="muted">
-            TradeDocs prepares documents; it cannot clear goods, advise on tariffs or speak to
+            ShipDocIt prepares documents; it cannot clear goods, advise on tariffs or speak to
             customs for you. Please leave passwords and payment details out of your message.
           </p>
           <p className="caption">Your data</p>

@@ -192,7 +192,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty and tax figures come from?',
       paragraphs: [
-        'From the importer’s broker, not this page. Brazilian import charges depend on the classification of the goods and on taxes that change over time. TradeDocs states no rates here; what it can do is make sure the invoice gives the broker the values, freight and expenses it needs to work them out.',
+        'From the importer’s broker, not this page. Brazilian import charges depend on the classification of the goods and on taxes that change over time. ShipDocIt states no rates here; what it can do is make sure the invoice gives the broker the values, freight and expenses it needs to work them out.',
       ],
     },
   ],

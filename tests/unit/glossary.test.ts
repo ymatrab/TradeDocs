@@ -87,7 +87,7 @@ describe('glossary terms', () => {
 
   it('keep the rendered title within 60 characters, site suffix included', () => {
     for (const term of [...GLOSSARY, { slug: 'hub', metaTitle: GLOSSARY_HUB.metaTitle }]) {
-      expect(`${term.metaTitle} · TradeDocs`.length, term.slug).toBeLessThanOrEqual(60);
+      expect(`${term.metaTitle} · ShipDocIt`.length, term.slug).toBeLessThanOrEqual(60);
     }
     for (const term of GLOSSARY) expect(term.description.length).toBeLessThanOrEqual(200);
   });
@@ -212,10 +212,10 @@ describe('country pages', () => {
       expect(country.documents.length, country.slug).toBeGreaterThanOrEqual(4);
       expect(country.faq.length, country.slug).toBeGreaterThanOrEqual(3);
       expect(country.faq.length, country.slug).toBeLessThanOrEqual(5);
-      expect(`${country.metaTitle} · TradeDocs`.length, country.slug).toBeLessThanOrEqual(60);
+      expect(`${country.metaTitle} · ShipDocIt`.length, country.slug).toBeLessThanOrEqual(60);
       expect(country.description.length, country.slug).toBeLessThanOrEqual(200);
     }
-    expect(`${COUNTRIES_HUB.metaTitle} · TradeDocs`.length).toBeLessThanOrEqual(60);
+    expect(`${COUNTRIES_HUB.metaTitle} · ShipDocIt`.length).toBeLessThanOrEqual(60);
   });
 
   it('cite the customs authority, the ITA country guide and every row’s source', () => {

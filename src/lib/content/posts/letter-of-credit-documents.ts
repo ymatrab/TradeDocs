@@ -56,7 +56,7 @@ const article: ContentArticle = {
       heading: 'Which documents does a letter of credit require?',
       paragraphs: [
         'Whatever the credit itself lists, and nothing is assumed. trade.gov explains that the importer’s bank drafts the letter of credit from the terms of the sales agreement, so the document list starts in the contract you negotiate with the buyer.',
-        'A typical list has a commercial invoice, a packing list and a transport document: a bill of lading for sea freight or an air waybill for air. Depending on the Incoterms® 2020 rule and the buyer’s market, it may add an insurance document, an inspection certificate, a proof of origin, which TradeDocs does not prepare, or other certificates issued by named bodies. Each one has to be issued by whoever the credit says, in the number of originals and copies it asks for.',
+        'A typical list has a commercial invoice, a packing list and a transport document: a bill of lading for sea freight or an air waybill for air. Depending on the Incoterms® 2020 rule and the buyer’s market, it may add an insurance document, an inspection certificate, a proof of origin, which ShipDocIt does not prepare, or other certificates issued by named bodies. Each one has to be issued by whoever the credit says, in the number of originals and copies it asks for.',
         'The ICC Academy advises agreeing the required documents, their content and who issues or signs them before the credit is issued. That conversation is the cheapest place to remove a document you cannot get or a condition you cannot meet.',
       ],
     },

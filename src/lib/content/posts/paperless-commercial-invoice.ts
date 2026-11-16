@@ -139,7 +139,7 @@ const article: ContentArticle = {
       heading: 'What should the file you upload contain?',
       paragraphs: [
         'Everything a paper commercial invoice would: the exporter and the consignee, the invoice number and date, a specific description of each line with its quantity, unit value and total, the country of origin, the currency, the terms of sale and the reason for export. FedEx’s own advice on descriptions applies equally to uploads: say what it is, how many, what it is made of and what it is for. “Parts” or “Samples” on their own invite a delay.',
-        'The TradeDocs commercial invoice generator produces that document as a PDF with no account and no watermark, which you can upload where a carrier accepts your own invoice. Sign it the way the carrier instructs. In a free TradeDocs workspace, the PDF can print a signatory name and title from your document settings; adding your logo and a signature image to the PDF is part of Pro PDF branding.',
+        'The ShipDocIt commercial invoice generator produces that document as a PDF with no account and no watermark, which you can upload where a carrier accepts your own invoice. Sign it the way the carrier instructs. In a free ShipDocIt workspace, the PDF can print a signatory name and title from your document settings; adding your logo and a signature image to the PDF is part of Pro PDF branding.',
       ],
     },
   ],

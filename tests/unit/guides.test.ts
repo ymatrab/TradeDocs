@@ -23,9 +23,9 @@ describe('guides', () => {
   });
 
   it('keep the rendered title within 60 characters, site suffix included', () => {
-    // The root layout's title template appends " · TradeDocs".
+    // The root layout's title template appends " · ShipDocIt".
     for (const guide of GUIDES) {
-      expect(`${guide.metaTitle} · TradeDocs`.length, guide.slug).toBeLessThanOrEqual(60);
+      expect(`${guide.metaTitle} · ShipDocIt`.length, guide.slug).toBeLessThanOrEqual(60);
     }
   });
 
@@ -40,7 +40,7 @@ describe('guides', () => {
 
   it('carry the team byline, valid dates and a credited Unsplash cover', () => {
     for (const guide of GUIDES) {
-      expect(guide.byline).toBe('TradeDocs team');
+      expect(guide.byline).toBe('ShipDocIt team');
       for (const date of [guide.published, guide.updated, guide.reviewed]) {
         expect(date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       }

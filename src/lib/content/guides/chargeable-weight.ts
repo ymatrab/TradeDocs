@@ -74,10 +74,10 @@ const article: ContentArticle = {
     {
       heading: 'Which divisor applies to air, express and sea freight?',
       paragraphs: [
-        'Each carrier publishes its own, and its rule for your country and service is the one that counts. These are the figures the TradeDocs calculator cites, from each carrier’s or IATA’s page as retrieved.',
+        'Each carrier publishes its own, and its rule for your country and service is the one that counts. These are the figures the ShipDocIt calculator cites, from each carrier’s or IATA’s page as retrieved.',
       ],
       table: {
-        caption: 'Published divisors by mode and carrier, as cited by the TradeDocs calculator',
+        caption: 'Published divisors by mode and carrier, as cited by the ShipDocIt calculator',
         head: ['Mode or carrier', 'Rule', 'Equivalent density'],
         rows: [
           ['General air cargo (IATA)', 'cm³ ÷ 6,000', 'About 167 kg per m³'],

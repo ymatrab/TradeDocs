@@ -294,7 +294,7 @@ export default async function OverviewPage({ params }: { params: Promise<{ org: 
         </Panel>
 
         <Callout tone="legal" title="Preparation only">
-          TradeDocs prepares documents. It does not issue, endorse or clear them.
+          ShipDocIt prepares documents. It does not issue, endorse or clear them.
         </Callout>
       </div>
     </AppShell>

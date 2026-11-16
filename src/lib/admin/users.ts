@@ -1,7 +1,7 @@
 import 'server-only';
 
 import { z } from 'zod';
-import type { TradeDocsClient } from '@/lib/supabase/server';
+import type { ShipDocItClient } from '@/lib/supabase/server';
 
 /**
  * Platform-admin reads of accounts. Every function takes the service-role client that
@@ -32,7 +32,7 @@ export type AdminUserRow = z.infer<typeof userRowSchema>;
 export type SearchOutcome = { ok: true; rows: AdminUserRow[] } | { ok: false; cause: string };
 
 /** Exact or prefix match on the address, at most 25 rows (admin_search_users). */
-export async function searchUsers(client: TradeDocsClient, query: string): Promise<SearchOutcome> {
+export async function searchUsers(client: ShipDocItClient, query: string): Promise<SearchOutcome> {
   const { data, error } = await client.rpc('admin_search_users', { p_query: query, p_limit: 25 });
   if (error) return { ok: false, cause: `${error.code ?? 'unknown'}: ${error.message}` };
   const parsed = z.array(userRowSchema).safeParse(data);
@@ -65,7 +65,7 @@ export type DetailOutcome =
   | { ok: false; missing: true }
   | { ok: false; missing: false; cause: string };
 
-export async function getUserDetail(client: TradeDocsClient, id: string): Promise<DetailOutcome> {
+export async function getUserDetail(client: ShipDocItClient, id: string): Promise<DetailOutcome> {
   const { data, error } = await client.auth.admin.getUserById(id);
   if (error || !data.user) {
     if (!error || error.status === 404) return { ok: false, missing: true };

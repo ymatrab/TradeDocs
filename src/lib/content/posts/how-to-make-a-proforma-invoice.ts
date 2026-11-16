@@ -18,16 +18,16 @@ const article: ContentArticle = {
   title: 'How to make a proforma invoice, step by step',
   metaTitle: 'How to make a proforma invoice, step by step',
   description:
-    'Make a proforma invoice in a few minutes: the details to gather, each field in the free TradeDocs generator, the validity date, and how to keep it for the commercial invoice.',
-  lede: 'A buyer has asked for a proforma invoice, perhaps to open a letter of credit or to apply for an import licence, and wants it today. The document is short, but every figure on it becomes a promise you will be held to when the goods ship. This post shows how to make one in the free TradeDocs generator and, for repeat buyers, in a free account.',
+    'Make a proforma invoice in a few minutes: the details to gather, each field in the free ShipDocIt generator, the validity date, and how to keep it for the commercial invoice.',
+  lede: 'A buyer has asked for a proforma invoice, perhaps to open a letter of credit or to apply for an import licence, and wants it today. The document is short, but every figure on it becomes a promise you will be held to when the goods ship. This post shows how to make one in the free ShipDocIt generator and, for repeat buyers, in a free account.',
   answer:
     'To make a proforma invoice, gather the buyer’s details, the goods with quantities and unit prices, the Incoterms® rule and named place, payment terms and a validity date. Enter them in a proforma template or generator, title the document “Proforma Invoice”, give it its own number, check the totals and send the PDF to the buyer.',
   keyFacts: [
     'The ITA describes a pro forma invoice as a quote in an invoice format.',
     'The ITA lists the buyer’s reference, terms of sale, terms of payment, estimated shipping date and validity date among a proforma’s contents.',
     'The ITA says changes to a proforma should not be made without the buyer’s consent.',
-    'The TradeDocs proforma generator prints a “Valid until” box only on proforma invoices.',
-    'Without an account, the TradeDocs generator takes up to 20 lines per document and stores nothing.',
+    'The ShipDocIt proforma generator prints a “Valid until” box only on proforma invoices.',
+    'Without an account, the ShipDocIt generator takes up to 20 lines per document and stores nothing.',
   ],
   definitions: [
     {
@@ -60,7 +60,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you make a proforma invoice in the free generator?',
       paragraphs: [
-        'The TradeDocs proforma invoice generator is the same form as the commercial invoice generator, opened on the proforma type. It needs no account, and nothing you type is stored.',
+        'The ShipDocIt proforma invoice generator is the same form as the commercial invoice generator, opened on the proforma type. It needs no account, and nothing you type is stored.',
       ],
       steps: [
         'Open the proforma invoice generator; the type is already set to “Proforma invoice”.',
@@ -74,10 +74,10 @@ const article: ContentArticle = {
       ],
     },
     {
-      heading: 'What does the TradeDocs proforma PDF show?',
+      heading: 'What does the ShipDocIt proforma PDF show?',
       paragraphs: [
         'The PDF is titled “Proforma Invoice” and carries your number and issue date at the top. Under the parties it prints the Incoterms® 2020 rule with its named place and the country of origin, then a second row with the buyer reference and the “Valid until” date when you entered them. The line table shows the description, HS code, quantity, unit price and amount, with a per-line origin column if any line has an origin, then the total amount in your currency. The payment terms follow the table.',
-        'Two things it does not do. It prints no weights, because weights are not part of the invoice layout; if the buyer asked for weights and dimensions, switch the same form to “Packing list” and send that PDF alongside. And every page states that the document was prepared with TradeDocs from your own data and is not issued or certified by any customs authority or carrier.',
+        'Two things it does not do. It prints no weights, because weights are not part of the invoice layout; if the buyer asked for weights and dimensions, switch the same form to “Packing list” and send that PDF alongside. And every page states that the document was prepared with ShipDocIt from your own data and is not issued or certified by any customs authority or carrier.',
       ],
     },
     {
@@ -90,7 +90,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you make proformas for repeat buyers?',
       paragraphs: [
-        'In a free TradeDocs account, a proforma is generated from a shipment rather than typed into a form, so a repeat buyer and your regular products come from saved records.',
+        'In a free ShipDocIt account, a proforma is generated from a shipment rather than typed into a form, so a repeat buyer and your regular products come from saved records.',
       ],
       steps: [
         'Add the buyer once to your company directory and your products once to the catalog, or import products from a CSV file.',

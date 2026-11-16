@@ -107,7 +107,7 @@ const article: ContentArticle = {
       paragraphs: [
         'The commercial invoice and the packing list. They are the source of almost everything customs reads, so the importer’s first job is to make sure the seller sends complete ones before the goods arrive.',
         'The invoice should show who sold the goods to whom, what they are in plain words, how many, the price and currency, the Incoterms® rule and the country of origin. The packing list should agree with it on the package count, weights and marks. If you asked for a proforma invoice to arrange payment or an import licence, the final commercial invoice should match it or explain the difference.',
-        'Under the C and D Incoterms® rules the seller books the carriage and passes the transport document on to you. If you are claiming a lower duty rate under a trade agreement, the seller may also need to provide a statement of origin; TradeDocs does not prepare that document, and the agreement itself sets the wording.',
+        'Under the C and D Incoterms® rules the seller books the carriage and passes the transport document on to you. If you are claiming a lower duty rate under a trade agreement, the seller may also need to provide a statement of origin; ShipDocIt does not prepare that document, and the agreement itself sets the wording.',
       ],
     },
     {

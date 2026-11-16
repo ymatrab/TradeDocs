@@ -6,7 +6,7 @@ const ROUND = '2026-10-07';
  * Demand (DataForSEO, Google US, 2026-10-06/07): "isf filing" 880, KD 8; "importer security
  * filing" 880, KD 8; "isf 5" 70; "isf penalty" 50.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave B (v2 guide #25).
- * Describes 19 CFR Part 149 as published; TradeDocs does not file the ISF.
+ * Describes 19 CFR Part 149 as published; ShipDocIt does not file the ISF.
  */
 const article: ContentArticle = {
   slug: 'isf-10-2',

@@ -6,7 +6,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { getServerEnv } from '@/lib/config/server';
 import type { Database } from '@/lib/database.types';
 
-export type TradeDocsClient = SupabaseClient<Database>;
+export type ShipDocItClient = SupabaseClient<Database>;
 
 export class DatabaseUnavailableError extends Error {
   constructor() {
@@ -19,7 +19,7 @@ export class DatabaseUnavailableError extends Error {
  * Request-scoped client carrying the caller's session. Every query it issues is subject to
  * row level security, so this is the only client application code should reach for.
  */
-export async function createClient(): Promise<TradeDocsClient> {
+export async function createClient(): Promise<ShipDocItClient> {
   const env = getServerEnv();
   if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) throw new DatabaseUnavailableError();
   const store = await cookies();

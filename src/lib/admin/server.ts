@@ -5,12 +5,12 @@ import { notFound } from 'next/navigation';
 import type { Json } from '@/lib/database.types';
 import { isPlatformAdmin } from '@/lib/admin/allowlist';
 import { createServiceClient, hasServiceRole } from '@/lib/supabase/admin';
-import { getUser, isDatabaseConfigured, type TradeDocsClient } from '@/lib/supabase/server';
+import { getUser, isDatabaseConfigured, type ShipDocItClient } from '@/lib/supabase/server';
 
 export type AdminIdentity = { id: string; email: string };
 
 export type AdminContext =
-  | { kind: 'ready'; admin: AdminIdentity; client: TradeDocsClient }
+  | { kind: 'ready'; admin: AdminIdentity; client: ShipDocItClient }
   /** The deployment has no database or no service-role key: nothing can be shown. */
   | { kind: 'unavailable' };
 

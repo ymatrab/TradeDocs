@@ -42,7 +42,7 @@ export const INVOICE_GENERATOR_FAQ: readonly FaqEntry[] = [
   },
   {
     q: 'Is the PDF watermarked?',
-    a: 'No. It is produced by the same engine the product uses, so what you download is the real output. Every document carries a line stating that it was prepared from your own data and is not issued or certified by any authority — that line is on every TradeDocs document and cannot be removed.',
+    a: 'No. It is produced by the same engine the product uses, so what you download is the real output. Every document carries a line stating that it was prepared from your own data and is not issued or certified by any authority — that line is on every ShipDocIt document and cannot be removed.',
   },
 ];
 
@@ -210,7 +210,7 @@ export const DENIED_PARTY_FAQ: readonly FaqEntry[] = [
   },
   {
     q: 'Do you keep the names I search?',
-    a: 'No. The name is sent to the trade.gov Consolidated Screening List API to run the search and the results are shown to you. TradeDocs does not store or log the names searched.',
+    a: 'No. The name is sent to the trade.gov Consolidated Screening List API to run the search and the results are shown to you. ShipDocIt does not store or log the names searched.',
   },
 ];
 
@@ -221,8 +221,8 @@ export const DENIED_PARTY_FAQ: readonly FaqEntry[] = [
  */
 export const HOME_FAQ: readonly FaqEntry[] = [
   {
-    q: 'Does TradeDocs issue or certify my documents?',
-    a: 'No. TradeDocs prepares documents from the data you enter. Issuing, endorsing, certifying and clearing are done by carriers, chambers of commerce and customs authorities. Every document says so on its face, and that labelling cannot be removed.',
+    q: 'Does ShipDocIt issue or certify my documents?',
+    a: 'No. ShipDocIt prepares documents from the data you enter. Issuing, endorsing, certifying and clearing are done by carriers, chambers of commerce and customs authorities. Every document says so on its face, and that labelling cannot be removed.',
   },
   {
     q: 'What happens when a shipment changes after I have generated documents?',
@@ -238,7 +238,7 @@ export const HOME_FAQ: readonly FaqEntry[] = [
   },
   {
     q: 'What does it cost?',
-    a: 'Nothing today. TradeDocs is free while it is early, and paid plans will arrive later with clear notice.',
+    a: 'Nothing today. ShipDocIt is free while it is early, and paid plans will arrive later with clear notice.',
   },
 ];
 
@@ -265,7 +265,7 @@ export const ACCOUNT_FAQ: readonly FaqEntry[] = [
   },
   {
     q: 'How do I reach a person?',
-    a: 'Use the contact form. Messages go to the team that runs TradeDocs; there is no live chat today.',
+    a: 'Use the contact form. Messages go to the team that runs ShipDocIt; there is no live chat today.',
   },
 ];
 
@@ -283,7 +283,7 @@ type Group = { href: string; label: string; entries: readonly FaqEntry[] };
 function groups(): Group[] {
   return [
     { href: '/help', label: 'Accounts and support', entries: ACCOUNT_FAQ },
-    { href: '/', label: 'TradeDocs', entries: HOME_FAQ },
+    { href: '/', label: 'ShipDocIt', entries: HOME_FAQ },
     ...USE_CASES.map((useCase) => ({
       href: `/for/${useCase.slug}`,
       label: useCase.name,

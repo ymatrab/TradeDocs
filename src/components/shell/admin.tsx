@@ -43,7 +43,7 @@ export function AdminShell({
       <aside className="app-sidebar">
         <Link href="/admin" className="wordmark">
           <span className="rule" aria-hidden="true" />
-          TradeDocs
+          ShipDocIt
         </Link>
         <div>
           <p className="caption nav-caption">Platform admin</p>

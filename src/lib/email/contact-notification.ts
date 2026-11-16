@@ -50,7 +50,7 @@ export async function sendContactNotification(
     '',
     message.message,
     '',
-    '— Sent by the TradeDocs contact form. Reply to answer the sender directly.',
+    '— Sent by the ShipDocIt contact form. Reply to answer the sender directly.',
   ].join('\n');
 
   try {
@@ -65,7 +65,7 @@ export async function sendContactNotification(
         from: env.EMAIL_FROM,
         to: [recipient.to],
         reply_to: message.email,
-        subject: `TradeDocs contact: ${topicLabel(message.topic)}`,
+        subject: `ShipDocIt contact: ${topicLabel(message.topic)}`,
         text: body,
       }),
       cache: 'no-store',

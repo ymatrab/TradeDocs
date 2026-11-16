@@ -152,7 +152,7 @@ const article: ContentArticle = {
       paragraphs: [
         'D1-4-1 says CBSA requires two copies of the non-warehouse documents and three copies of the warehouse documents, and that the importer or owner needs one copy for their records. Your Canadian customs broker or the carrier will tell you how they want the invoice delivered.',
         'If information is inaccurate or supporting documents are not provided when requested, the memorandum says CBSA may withhold release until it receives them. The importer, owner or agent normally has seven days from the request to provide supporting documentation. A complete invoice at the start avoids that wait.',
-        'Preferential tariff treatment under a trade agreement is a separate question, with its own proof of origin, which TradeDocs does not prepare. D1-4-1 points to Memorandum D11-4-2 for it.',
+        'Preferential tariff treatment under a trade agreement is a separate question, with its own proof of origin, which ShipDocIt does not prepare. D1-4-1 points to Memorandum D11-4-2 for it.',
       ],
     },
   ],

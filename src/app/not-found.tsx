@@ -15,7 +15,7 @@ export default function NotFound() {
             destination that works on every deployment, with or without an account. */}
         <div className="cta-row" style={{ marginTop: 0 }}>
           <Link className="btn" href="/">
-            Return to TradeDocs
+            Return to ShipDocIt
           </Link>
           <Link className="text-link" href="/tools">
             Free trade tools

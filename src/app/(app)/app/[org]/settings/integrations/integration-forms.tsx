@@ -67,7 +67,7 @@ export function DisconnectForm({
           trigger={`Disconnect ${name}`}
           tone="secondary"
           title={`Disconnect ${name}?`}
-          description={`TradeDocs revokes its access at ${name} and deletes the stored credentials. Companies and products already imported stay in TradeDocs.`}
+          description={`ShipDocIt revokes its access at ${name} and deletes the stored credentials. Companies and products already imported stay in ShipDocIt.`}
           confirm="Disconnect"
           pending={pending}
           error={state.error}
@@ -147,7 +147,7 @@ export function ImportForm({
       </h3>
       <p className="muted" style={{ margin: 0 }}>
         Reads your {name} {copy.source[provider]} into the {copy.target}. A record imported before
-        is matched by its {name} id and updated only if nobody changed it in TradeDocs.
+        is matched by its {name} id and updated only if nobody changed it in ShipDocIt.
       </p>
       <form action={action} style={{ display: 'grid', gap: 12 }}>
         <input type="hidden" name="org" value={org} />
@@ -203,7 +203,7 @@ export function ImportForm({
         ) : null}
       </form>
       <IssueTable caption="Records with a problem (not imported)" issues={state.problems ?? []} />
-      <IssueTable caption="Conflicts (TradeDocs version kept)" issues={state.conflicts ?? []} />
+      <IssueTable caption="Conflicts (ShipDocIt version kept)" issues={state.conflicts ?? []} />
       <IssueTable caption="Skipped" issues={state.skipped ?? []} />
       <IssueTable caption="Imported with a value left blank" issues={state.notes ?? []} />
     </section>

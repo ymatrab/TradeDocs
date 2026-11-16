@@ -148,7 +148,7 @@ const country: CountryPage = {
       heading: 'Do my goods need an import licence for India?',
       paragraphs: [
         'It depends on how India’s import policy treats them. The ITA’s country guide explains that goods on the Open General License can be imported freely without a licence, while banned goods cannot be imported, restricted goods need a licence and canalised goods are imported only through government agencies.',
-        'The DGFT publishes the ITC(HS) import policy by HS code, with the lists of restricted, prohibited and state trading items. Your buyer or its broker checks the goods against it; TradeDocs does not classify goods or say which list a product is on. Where a licence is needed, the ITA notes that the import documents must be accompanied by it.',
+        'The DGFT publishes the ITC(HS) import policy by HS code, with the lists of restricted, prohibited and state trading items. Your buyer or its broker checks the goods against it; ShipDocIt does not classify goods or say which list a product is on. Where a licence is needed, the ITA notes that the import documents must be accompanied by it.',
       ],
     },
     {
@@ -168,7 +168,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty rates come from?',
       paragraphs: [
-        'Not from this page. Customs duty and other charges on an import into India depend on the classification and value of the goods and on the rules in force at the time, and the importer’s broker works them out. TradeDocs states no rates here because they change and a wrong figure in a quotation is worse than none.',
+        'Not from this page. Customs duty and other charges on an import into India depend on the classification and value of the goods and on the rules in force at the time, and the importer’s broker works them out. ShipDocIt states no rates here because they change and a wrong figure in a quotation is worse than none.',
       ],
     },
   ],

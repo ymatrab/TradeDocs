@@ -58,7 +58,7 @@ export default async function GlossaryTermPage({ params }: { params: Promise<{ t
         <p className="lede">{term.shortDefinition}</p>
         {term.aliases.length > 0 ? <p className="muted">Also: {term.aliases.join(' · ')}</p> : null}
         <p className="muted">
-          TradeDocs team · Published{' '}
+          ShipDocIt team · Published{' '}
           <time dateTime={term.published}>{shortDate(term.published)}</time> · Last reviewed{' '}
           <time dateTime={term.reviewed}>{shortDate(term.reviewed)}</time>
         </p>
@@ -136,7 +136,7 @@ export default async function GlossaryTermPage({ params }: { params: Promise<{ t
         <h2>One record, every document</h2>
         <p className="measure">
           Terms like this one turn up across the invoice, the packing list and the transport
-          documents, and they only agree if they come from the same figures. TradeDocs keeps a
+          documents, and they only agree if they come from the same figures. ShipDocIt keeps a
           shipment’s parties, goods and packages once and prepares each document from that record.
         </p>
         <ToolCta secondary={{ href: '/glossary', label: 'All glossary terms' }} />

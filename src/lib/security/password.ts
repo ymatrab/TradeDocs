@@ -48,7 +48,7 @@ export async function isBreachedPassword(
   const suffix = digest.slice(5);
   try {
     const response = await fetcher(`https://api.pwnedpasswords.com/range/${prefix}`, {
-      headers: { 'Add-Padding': 'true', 'User-Agent': 'TradeDocs-password-check' },
+      headers: { 'Add-Padding': 'true', 'User-Agent': 'ShipDocIt-password-check' },
       cache: 'no-store',
       redirect: 'error',
       signal: AbortSignal.timeout(1_500),

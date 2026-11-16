@@ -33,7 +33,7 @@ export function LegalPage({
           <p className="caption legal-stamp">Effective {identity.approvedAt}</p>
         ) : (
           <Callout tone="warning" title="Draft — pending owner approval" level={2}>
-            This text describes what TradeDocs does today, but the business behind it has not
+            This text describes what ShipDocIt does today, but the business behind it has not
             approved it yet. Details marked “{shown(null)}” are still missing. It is not final and
             is not a statement of legal compliance.
           </Callout>

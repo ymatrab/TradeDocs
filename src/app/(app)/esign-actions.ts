@@ -32,7 +32,7 @@ import type { ActionState } from './actions';
  *    account and per organization.
  * 5. Only a final document that still matches its shipment is sent, never a preview.
  * 6. The exact bytes are rendered from the immutable snapshot and their SHA-256 recorded
- *    with the request (lineage) before anything leaves TradeDocs. The row's id travels in
+ *    with the request (lineage) before anything leaves ShipDocIt. The row's id travels in
  *    the request metadata, so the callback can match a request whose confirmation failed.
  *
  * Nothing about the document or the signers is logged.

@@ -100,7 +100,7 @@ const article: ContentArticle = {
       paragraphs: [
         'The transport document comes from the carrier. For sea freight it is the bill of lading, which the ITA describes as a contract between the owner of the goods and the carrier. It can be negotiable, and the buyer usually needs an original to take the goods. For air freight it is the air waybill.',
         'In the United States, Electronic Export Information (EEI) is filed through the Automated Export System. The ITA states it is required when the value of the goods under a single Schedule B number is over $2,500, or when another mandatory filing requirement applies, such as goods that need a licence. Other countries have their own export declaration, usually lodged by the exporter or its forwarder.',
-        'Some goods need an export licence: a government document authorising specific goods, in specific quantities, to a particular destination. Controlled goods may also need a destination control statement on the invoice. Where a trade agreement, the buyer’s bank or the importing country asks for proof of origin, that is a separate document with its own issuing rules. TradeDocs does not prepare licences or origin documents.',
+        'Some goods need an export licence: a government document authorising specific goods, in specific quantities, to a particular destination. Controlled goods may also need a destination control statement on the invoice. Where a trade agreement, the buyer’s bank or the importing country asks for proof of origin, that is a separate document with its own issuing rules. ShipDocIt does not prepare licences or origin documents.',
       ],
     },
     {

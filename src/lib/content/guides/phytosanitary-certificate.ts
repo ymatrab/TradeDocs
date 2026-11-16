@@ -5,7 +5,7 @@ const ROUND = '2026-10-08';
 /**
  * Demand (DataForSEO, 2026-10-06): "phytosanitary certificate" US 2,400, KD 7; UK 1,600.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave D, review gate: this guide describes
- * an official certificate TradeDocs does not issue, and stays noindex until a review record
+ * an official certificate ShipDocIt does not issue, and stays noindex until a review record
  * exists (rules/seo-content.md). Every rule is from IPPC, GOV.UK (Defra/APHA) or USDA APHIS
  * pages opened 2026-10-08. No fee amounts are given; example parties are invented.
  */
@@ -14,10 +14,10 @@ const article: ContentArticle = {
   title: 'Phytosanitary certificate: who issues it and when you need one',
   metaTitle: 'Phytosanitary certificate: who issues it',
   description:
-    'What a phytosanitary certificate is, which plant goods need one, who issues it in the UK and US, and how to apply. TradeDocs does not issue phytosanitary certificates.',
-  lede: 'Plants, fresh produce, seeds, grain and some wood products often cannot enter another country without a phytosanitary certificate from the exporting country’s plant health authority. It is an official government certificate. TradeDocs does not issue it; it comes from a government plant health authority, and this guide explains who does and how the process works.',
+    'What a phytosanitary certificate is, which plant goods need one, who issues it in the UK and US, and how to apply. ShipDocIt does not issue phytosanitary certificates.',
+  lede: 'Plants, fresh produce, seeds, grain and some wood products often cannot enter another country without a phytosanitary certificate from the exporting country’s plant health authority. It is an official government certificate. ShipDocIt does not issue it; it comes from a government plant health authority, and this guide explains who does and how the process works.',
   answer:
-    'A phytosanitary certificate is an official document from the exporting country’s plant protection organization confirming that plants or plant products were inspected and meet the importing country’s plant health rules. In England and Wales APHA issues it; in the US, USDA APHIS. TradeDocs does not issue phytosanitary certificates.',
+    'A phytosanitary certificate is an official document from the exporting country’s plant protection organization confirming that plants or plant products were inspected and meet the importing country’s plant health rules. In England and Wales APHA issues it; in the US, USDA APHIS. ShipDocIt does not issue phytosanitary certificates.',
   keyFacts: [
     'USDA APHIS says a phytosanitary certificate shows a product was inspected, is considered free from certain pests and conforms to the importing country’s rules.',
     'GOV.UK says APHA certifies plant exports from England and Wales, SASA from Scotland and DAERA from Northern Ireland, with the Forestry Commission for wood.',
@@ -51,7 +51,7 @@ const article: ContentArticle = {
       heading: 'What is a phytosanitary certificate?',
       paragraphs: [
         'A government certificate about plant health. USDA APHIS describes it as attesting that a plant or plant product has been inspected according to appropriate procedures, is considered free from certain pests and conforms to the importing country’s current phytosanitary regulations.',
-        'Only the exporting country’s plant protection organization can issue one. TradeDocs does not issue, file or apply for phytosanitary certificates, and nothing our tools produce can stand in for one. Our role ends at the commercial documents that travel with the same shipment, such as the invoice and packing list.',
+        'Only the exporting country’s plant protection organization can issue one. ShipDocIt does not issue, file or apply for phytosanitary certificates, and nothing our tools produce can stand in for one. Our role ends at the commercial documents that travel with the same shipment, such as the invoice and packing list.',
       ],
     },
     {
@@ -121,8 +121,8 @@ const article: ContentArticle = {
   ],
   faq: [
     {
-      q: 'Can TradeDocs issue a phytosanitary certificate?',
-      a: 'No. Only the exporting country’s plant protection organization, such as APHA or USDA APHIS, can issue one. TradeDocs prepares commercial documents such as invoices and packing lists, not official certificates.',
+      q: 'Can ShipDocIt issue a phytosanitary certificate?',
+      a: 'No. Only the exporting country’s plant protection organization, such as APHA or USDA APHIS, can issue one. ShipDocIt prepares commercial documents such as invoices and packing lists, not official certificates.',
     },
     {
       q: 'Do I need a phytosanitary certificate for processed food?',

@@ -6,7 +6,7 @@ const ROUND = '2026-10-07';
  * Demand (DataForSEO, Google US, 2026-10-06/07): "what is a freight forwarder" 2,900, KD 11;
  * "freight forwarder meaning" 1,600; "what is a customs broker" 880, KD 21.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave B (v2 guide #20).
- * TradeDocs is neither a forwarder nor a broker; it prepares the invoice and packing list both use.
+ * ShipDocIt is neither a forwarder nor a broker; it prepares the invoice and packing list both use.
  */
 const article: ContentArticle = {
   slug: 'freight-forwarder-vs-customs-broker',

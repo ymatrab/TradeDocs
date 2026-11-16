@@ -68,7 +68,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you classify a product for export?',
       paragraphs: [
-        'Start with the Schedule B number. The ITA explains that the United States uses a 10-digit Schedule B number to classify exports, administered by the Census Bureau, and that its first six digits are the international HS code your buyer’s customs will also recognise. The Census Bureau’s free Schedule B search tool is where to look it up, and TradeDocs does not suggest codes.',
+        'Start with the Schedule B number. The ITA explains that the United States uses a 10-digit Schedule B number to classify exports, administered by the Census Bureau, and that its first six digits are the international HS code your buyer’s customs will also recognise. The Census Bureau’s free Schedule B search tool is where to look it up, and ShipDocIt does not suggest codes.',
         'Note the number down with the product. It goes into the export filing, and the ITA lists the commercial invoice among the shipping documents it helps you complete. The guide HS code vs HTS code vs Schedule B explains how the three numbers relate.',
       ],
     },
@@ -97,7 +97,7 @@ const article: ContentArticle = {
       heading: 'Which documents does a US export need?',
       paragraphs: [
         'The core set is the commercial invoice, the packing list and the transport document. The ITA describes the commercial invoice as a bill for the goods from seller to buyer that customs uses to determine duties, and the bill of lading as a contract between the owner of the goods and the carrier. A proforma invoice usually comes first, so the buyer can arrange payment or an import permit.',
-        'The importing country may want more, such as certificates for standards, health or safety, a pre-shipment inspection, or proof of origin, which TradeDocs does not prepare. The ITA’s advice is to ask the foreign buyer at the start which documents its customs will need, and its Country Commercial Guides list requirements by country.',
+        'The importing country may want more, such as certificates for standards, health or safety, a pre-shipment inspection, or proof of origin, which ShipDocIt does not prepare. The ITA’s advice is to ask the foreign buyer at the start which documents its customs will need, and its Country Commercial Guides list requirements by country.',
       ],
     },
     {

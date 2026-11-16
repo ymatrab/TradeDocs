@@ -107,7 +107,7 @@ export default async function SignaturePage({
         {available || history.length > 0 ? (
           <Callout tone="legal" title="Signature provided by Dropbox Sign">
             The electronic signature is provided by Dropbox Sign, which emails each signer, records
-            their signature and produces the signed PDF. TradeDocs prepares the document and passes
+            their signature and produces the signed PDF. ShipDocIt prepares the document and passes
             it to Dropbox Sign; it does not verify a signer’s identity beyond what Dropbox Sign
             does, and it does not certify the document. This is separate from the signature image
             (PDF branding) printed on your documents.

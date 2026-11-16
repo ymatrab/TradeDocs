@@ -53,7 +53,7 @@ const article: ContentArticle = {
       heading: 'What is a fumigation certificate?',
       paragraphs: [
         'It is the document a treatment provider gives you after it has fumigated your goods, stating what was done to which consignment. There is no single international form with that name. ISPM 43, the IPPC standard on fumigation, describes the records a provider should keep for each treatment, and a fumigation certificate is in practice the provider’s statement of those records for one lot.',
-        'TradeDocs does not issue fumigation certificates or treatment records. They come from the provider that did the work, under the oversight of the plant health authority in the country of treatment. What you prepare is the commercial paperwork around them: the invoice, the packing list and the marks that tie the treated lot to the shipment.',
+        'ShipDocIt does not issue fumigation certificates or treatment records. They come from the provider that did the work, under the oversight of the plant health authority in the country of treatment. What you prepare is the commercial paperwork around them: the invoice, the packing list and the marks that tie the treated lot to the shipment.',
       ],
     },
     {
@@ -144,8 +144,8 @@ const article: ContentArticle = {
   ],
   faq: [
     {
-      q: 'Does TradeDocs issue fumigation certificates?',
-      a: 'No. Fumigation certificates come from the authorized treatment provider that did the work, and phytosanitary certificates come from the exporting country’s plant health authority. TradeDocs prepares the invoice and packing list that sit alongside them.',
+      q: 'Does ShipDocIt issue fumigation certificates?',
+      a: 'No. Fumigation certificates come from the authorized treatment provider that did the work, and phytosanitary certificates come from the exporting country’s plant health authority. ShipDocIt prepares the invoice and packing list that sit alongside them.',
     },
     {
       q: 'Is a fumigation certificate needed for heat-treated pallets?',

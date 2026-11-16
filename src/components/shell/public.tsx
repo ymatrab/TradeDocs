@@ -68,7 +68,7 @@ const footerTools = [
 
 /** The boundary statement. Carried verbatim in the header card and the footer. */
 export const BOUNDARY_STATEMENT =
-  'TradeDocs prepares documents. It is not a customs broker, carrier, chamber or issuing authority.';
+  'ShipDocIt prepares documents. It is not a customs broker, carrier, chamber or issuing authority.';
 
 /**
  * Where the primary call to action leads. A deployment without a database has no accounts,
@@ -89,7 +89,7 @@ function Wordmark({ className }: { className?: string }) {
   return (
     <Link href="/" className={['wordmark', className].filter(Boolean).join(' ')}>
       <span className="rule" aria-hidden="true" />
-      TradeDocs
+      ShipDocIt
     </Link>
   );
 }
@@ -160,7 +160,7 @@ export function PublicShell({
           <FooterColumn label="Resources" links={footerResources} />
         </div>
         <div className="footer-base">
-          <span>© {new Date().getFullYear()} TradeDocs</span>
+          <span>© {new Date().getFullYear()} ShipDocIt</span>
           <nav className="footer-legal" aria-label="Legal">
             {footerLegal.map((item) => (
               <Link key={item.href} href={item.href}>

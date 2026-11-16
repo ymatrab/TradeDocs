@@ -2878,7 +2878,7 @@ a.card:active {
 }
 
 /* --- Closing and the stamp ----------------------------------------------- */
-/* A stamp is what a trade document gets when an authority has touched it. TradeDocs is
+/* A stamp is what a trade document gets when an authority has touched it. ShipDocIt is
    not an authority, and the sentence it is obliged to carry says so; that sentence is
    the mark the page is remembered by. */
 .closing .inner {

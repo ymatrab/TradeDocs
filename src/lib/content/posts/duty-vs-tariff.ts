@@ -110,7 +110,7 @@ const article: ContentArticle = {
       heading: 'Where do you find the duty rate for your product?',
       paragraphs: [
         'In the importing country’s official tariff, read for your own goods. For the US, CBP points importers to the US International Trade Commission’s tariff database, the searchable Harmonized Tariff Schedule, and warns that the rate you find is only as good as the information you put in and may not be the rate that finally applies.',
-        'CBP adds that it makes the final determination of the correct rate, not the importer, and that you may request a binding ruling for certainty on a particular item. Other countries publish their tariffs online through their customs authority. TradeDocs does not suggest codes or rates for products; classify against the official tariff, and ask a licensed customs broker or the customs authority when unsure.',
+        'CBP adds that it makes the final determination of the correct rate, not the importer, and that you may request a binding ruling for certainty on a particular item. Other countries publish their tariffs online through their customs authority. ShipDocIt does not suggest codes or rates for products; classify against the official tariff, and ask a licensed customs broker or the customs authority when unsure.',
       ],
     },
     {
@@ -155,7 +155,7 @@ const article: ContentArticle = {
     },
     {
       q: 'Does a free trade agreement remove the tariff?',
-      a: 'It can lower the rate, sometimes to zero, for goods that meet the agreement’s origin rules, when the importer claims the preference. The rules and the proof of origin each agreement requires differ; TradeDocs does not prepare proof of origin.',
+      a: 'It can lower the rate, sometimes to zero, for goods that meet the agreement’s origin rules, when the importer claims the preference. The rules and the proof of origin each agreement requires differ; ShipDocIt does not prepare proof of origin.',
     },
   ],
   sources: [

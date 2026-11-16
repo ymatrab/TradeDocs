@@ -169,7 +169,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty and tariff figures come from?',
       paragraphs: [
-        'From the Harmonized Tariff Schedule and the importer’s broker. U.S. duty depends on classification and origin, and the rates change. TradeDocs states no rates here, and the landed cost calculator works from the figures you enter rather than a lookup.',
+        'From the Harmonized Tariff Schedule and the importer’s broker. U.S. duty depends on classification and origin, and the rates change. ShipDocIt states no rates here, and the landed cost calculator works from the figures you enter rather than a lookup.',
       ],
     },
   ],

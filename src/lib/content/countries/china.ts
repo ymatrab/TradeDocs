@@ -189,7 +189,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty and tax figures come from?',
       paragraphs: [
-        'From the importer’s clearing agent. Chinese import charges depend on the classification, the origin and any agreement claimed, and they change. TradeDocs states no rates here, because a stale figure in a quotation does more harm than none.',
+        'From the importer’s clearing agent. Chinese import charges depend on the classification, the origin and any agreement claimed, and they change. ShipDocIt states no rates here, because a stale figure in a quotation does more harm than none.',
       ],
     },
   ],

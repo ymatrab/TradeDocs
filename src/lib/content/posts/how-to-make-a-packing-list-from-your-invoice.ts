@@ -15,7 +15,7 @@ const article: ContentArticle = {
   title: 'How to make a packing list from your commercial invoice',
   metaTitle: 'How to make a packing list from your invoice',
   description:
-    'Turn a finished commercial invoice into its packing list without retyping: what carries over, what you add, and how TradeDocs does it for free or in the workspace.',
+    'Turn a finished commercial invoice into its packing list without retyping: what carries over, what you add, and how ShipDocIt does it for free or in the workspace.',
   lede: 'Once the commercial invoice is right, most of the packing list is already written: the same parties, the same goods, the same quantities. What it adds is the physical side, meaning packages, weights and sizes, and what it drops is the prices. Here is how to make one from the other, first in the free generator and then in the workspace.',
   answer:
     'To make a packing list from your invoice, keep the parties, invoice reference, descriptions and quantities exactly as invoiced, remove the prices, and add the packages: how many, what each holds, net and gross weights, sizes and marks. The packing list totals must equal the invoice’s quantities, package count and weights.',
@@ -23,14 +23,14 @@ const article: ContentArticle = {
     'The ITA says a packing list itemises the contents of each package, with weights, measurements and detailed lists of the goods.',
     'Under 19 CFR 141.86(e), a US import invoice must state in adequate detail what merchandise is in each individual package.',
     '19 CFR 141.86(i) allows required invoice information to be given on an attachment to the invoice.',
-    'In the TradeDocs free generator, switching the document type keeps the parties and lines already entered while the page stays open.',
-    'A TradeDocs packing list PDF prints packages, quantity and net and gross weight for each line, and no prices.',
+    'In the ShipDocIt free generator, switching the document type keeps the parties and lines already entered while the page stays open.',
+    'A ShipDocIt packing list PDF prints packages, quantity and net and gross weight for each line, and no prices.',
   ],
   definitions: [
     {
       term: 'Allocation',
       meaning:
-        'In the TradeDocs workspace, the quantity of an invoice line placed in a given package.',
+        'In the ShipDocIt workspace, the quantity of an invoice line placed in a given package.',
     },
     {
       term: 'Reconciliation',
@@ -90,7 +90,7 @@ const article: ContentArticle = {
     {
       heading: 'How does the workspace build the packing list from packages?',
       paragraphs: [
-        'In a free TradeDocs account, the goods are entered once on the shipment and every document is generated from that one record. The packing panel adds the physical layer on top of the invoice lines.',
+        'In a free ShipDocIt account, the goods are entered once on the shipment and every document is generated from that one record. The packing panel adds the physical layer on top of the invoice lines.',
       ],
       steps: [
         'Add the goods lines to the shipment, from your product catalog or as one-off lines.',
@@ -136,7 +136,7 @@ const article: ContentArticle = {
   faq: [
     {
       q: 'Can a packing list show prices?',
-      a: 'It can, but it usually does not. Values belong on the commercial invoice, and the TradeDocs packing list leaves them off.',
+      a: 'It can, but it usually does not. Values belong on the commercial invoice, and the ShipDocIt packing list leaves them off.',
     },
     {
       q: 'Does the packing list need the invoice number on it?',

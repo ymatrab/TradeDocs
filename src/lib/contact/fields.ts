@@ -5,7 +5,7 @@
  */
 
 export const CONTACT_TOPICS = [
-  { value: 'question', label: 'A question about TradeDocs' },
+  { value: 'question', label: 'A question about ShipDocIt' },
   { value: 'account', label: 'My account or signing in' },
   { value: 'problem', label: 'Something is not working' },
   { value: 'privacy', label: 'Privacy or a data request' },

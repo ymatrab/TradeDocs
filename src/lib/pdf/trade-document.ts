@@ -326,7 +326,7 @@ const partyCaptions: Partial<Record<Kind, [string, string]>> = {
 /**
  * What a renderer 7 document is not, printed under the header of every page. Not
  * configurable: a draft contract must never read as advice, a draft bill of lading never as
- * the carrier's, and a declared mass never as one TradeDocs verified.
+ * the carrier's, and a declared mass never as one ShipDocIt verified.
  */
 const kindNotices: Partial<Record<Kind, string>> = {
   sales_contract: 'DRAFT — NOT LEGAL ADVICE. BOTH PARTIES SHOULD REVIEW EVERY TERM BEFORE SIGNING.',
@@ -335,7 +335,7 @@ const kindNotices: Partial<Record<Kind, string>> = {
   shipper_letter_of_instruction:
     'INSTRUCTIONS FROM THE SHIPPER TO ITS FORWARDER. NOT A CUSTOMS OR EXPORT FILING.',
   vgm_declaration:
-    'DECLARED BY THE SHIPPER. TRADEDOCS DOES NOT WEIGH OR VERIFY THE MASS STATED HERE.',
+    'DECLARED BY THE SHIPPER. SHIPDOCIT DOES NOT WEIGH OR VERIFY THE MASS STATED HERE.',
 };
 
 /** A line to write on: what a draft prints where the record states nothing. */
@@ -344,7 +344,7 @@ const BLANK = '________________________________________';
 /**
  * The sales contract's headings, each filled from the record where it can be and otherwise
  * left blank for the parties. Neutral by design: headings and the parties' own data, never
- * contract wording TradeDocs proposes.
+ * contract wording ShipDocIt proposes.
  */
 function contractClauses(snapshot: DocumentSnapshot): [string, string][] {
   const { shipment, issuer } = snapshot;
@@ -431,7 +431,7 @@ const VGM_BASIS =
  * document type and is deliberately not configurable.
  */
 const DISCLOSURE =
-  'Prepared with TradeDocs from the shipper’s own data. This document is not issued, ' +
+  'Prepared with ShipDocIt from the shipper’s own data. This document is not issued, ' +
   'endorsed, certified or cleared by any customs authority, carrier or chamber of commerce.';
 
 const MARGIN = 42;

@@ -137,7 +137,7 @@ const article: ContentArticle = {
       heading: 'What paperwork does the buyer abroad need?',
       paragraphs: [
         'That depends on the importing country, not on CBP. Ask the buyer which documents their customs authority wants before the vehicle sails; proof of ownership, a commercial invoice or bill of sale with the price, and the bill of lading are the usual starting point. Any rules on the vehicle itself are set and checked by the importing country.',
-        'TradeDocs does not file EEI, submit titles to CBP or issue any vehicle document. You can use it to prepare the commercial invoice and packing list that travel with the vehicle, with the VIN in the description so every document identifies the same car.',
+        'ShipDocIt does not file EEI, submit titles to CBP or issue any vehicle document. You can use it to prepare the commercial invoice and packing list that travel with the vehicle, with the VIN in the description so every document identifies the same car.',
       ],
     },
   ],

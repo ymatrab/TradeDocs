@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import {
   createClient,
   DatabaseUnavailableError,
-  type TradeDocsClient,
+  type ShipDocItClient,
 } from '@/lib/supabase/server';
 import { renderTradeDocument, type BrandingImages } from '@/lib/pdf/trade-document';
 import { loadBrandingImages, needsBranding } from '@/lib/branding/server';
@@ -24,7 +24,7 @@ export const runtime = 'nodejs';
  */
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  let client: TradeDocsClient;
+  let client: ShipDocItClient;
   try {
     client = await createClient();
   } catch (error) {

@@ -17,16 +17,16 @@ const article: ContentArticle = {
   title: 'How to add your logo and signature to export documents',
   metaTitle: 'Add a logo and signature to export documents',
   description:
-    'Where a logo and a signature belong on a commercial invoice or packing list, what they do and do not prove, and how PDF branding works in TradeDocs.',
+    'Where a logo and a signature belong on a commercial invoice or packing list, what they do and do not prove, and how PDF branding works in ShipDocIt.',
   lede: 'A commercial invoice on your own letterhead, signed by the person who prepared it, looks like it came from a real business, because it did. Buyers, forwarders and banks see it next to documents from other companies, and the logo and signature tell them at a glance whose figures they are reading. They do not make the document more official than that.',
   answer:
-    'To add your logo and signature to export documents, print the logo in the header of every page and an image of the authorised person’s signature or company stamp above the signatory line, with their printed name and title. In TradeDocs, Pro organizations upload both once in document settings, and every document generated afterwards carries them.',
+    'To add your logo and signature to export documents, print the logo in the header of every page and an image of the authorised person’s signature or company stamp above the signatory line, with their printed name and title. In ShipDocIt, Pro organizations upload both once in document settings, and every document generated afterwards carries them.',
   keyFacts: [
     'For US imports, 19 CFR 141.86(j) requires each invoice to identify by name a responsible employee of the exporter.',
     'The CBSA accepts a commercial invoice prepared by any means for Canadian imports when it gives the information in Appendix A of Memorandum D1-4-1.',
-    'TradeDocs prints the logo at the top left of every page, scaled to fit 53 × 14 mm, and the signature or stamp above the signatory line, scaled to fit 64 × 18 mm.',
-    'TradeDocs accepts PNG or JPEG branding images up to 1 MB and 2,000 × 2,000 pixels; transparent PNGs keep their transparency.',
-    'Every TradeDocs PDF states on each page that it is prepared from the shipper’s own data and not issued, endorsed, certified or cleared by any authority, carrier or chamber of commerce.',
+    'ShipDocIt prints the logo at the top left of every page, scaled to fit 53 × 14 mm, and the signature or stamp above the signatory line, scaled to fit 64 × 18 mm.',
+    'ShipDocIt accepts PNG or JPEG branding images up to 1 MB and 2,000 × 2,000 pixels; transparent PNGs keep their transparency.',
+    'Every ShipDocIt PDF states on each page that it is prepared from the shipper’s own data and not issued, endorsed, certified or cleared by any authority, carrier or chamber of commerce.',
   ],
   definitions: [
     {
@@ -61,16 +61,16 @@ const article: ContentArticle = {
       heading: 'Does a logo or signature make an invoice official?',
       paragraphs: [
         'No. A commercial invoice is the seller’s own document. The CBSA, for example, accepts a commercial invoice prepared by any means for Canadian imports when it gives the required information. No logo, signature or stamp turns it into a document issued or approved by customs, a carrier or a chamber of commerce.',
-        'TradeDocs keeps that line clear. Every PDF it produces carries a statement on each page that the document was prepared with TradeDocs from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. The statement cannot be switched off, with or without branding.',
+        'ShipDocIt keeps that line clear. Every PDF it produces carries a statement on each page that the document was prepared with ShipDocIt from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. The statement cannot be switched off, with or without branding.',
       ],
     },
     {
       heading: 'Where should the logo and signature go?',
       paragraphs: [
-        'The logo in the header, the signature at the end. The table shows where TradeDocs prints each element and what it needs from you.',
+        'The logo in the header, the signature at the end. The table shows where ShipDocIt prints each element and what it needs from you.',
       ],
       table: {
-        caption: 'Branding on a TradeDocs document',
+        caption: 'Branding on a ShipDocIt document',
         head: ['Element', 'Where it prints', 'What you provide', 'Plan'],
         rows: [
           [
@@ -101,7 +101,7 @@ const article: ContentArticle = {
       },
     },
     {
-      heading: 'How do you add a logo and signature in TradeDocs?',
+      heading: 'How do you add a logo and signature in ShipDocIt?',
       paragraphs: [
         'In the workspace’s document settings, once for the whole organization. An owner or administrator of a Pro organization follows these steps:',
       ],
@@ -125,7 +125,7 @@ const article: ContentArticle = {
       paragraphs: [
         'Only owners and administrators can upload, replace or remove branding images; every member can see the settings, because they appear on the documents everyone generates. Uploading needs the Pro plan, which both the application and the database check before any image is stored.',
         'Removing an image needs no plan, so an organization whose plan has ended can still take its images down. Without branding, the documents still print the signatory name, if you have entered one, under a signature line, which becomes a place to sign by hand. Images are kept in private storage and previewed in settings through short-lived links.',
-        'Branding is a workspace feature and needs a TradeDocs account. The free generators produce unbranded documents without an account; see the pricing page for which plans are available today.',
+        'Branding is a workspace feature and needs a ShipDocIt account. The free generators produce unbranded documents without an account; see the pricing page for which plans are available today.',
       ],
     },
   ],
@@ -140,7 +140,7 @@ const article: ContentArticle = {
     },
     {
       q: 'Which file format works best for a logo?',
-      a: 'A PNG with a transparent background, cropped close to the logo. TradeDocs keeps the transparency, so the logo sits cleanly on the page. A wide logo fits the header space better than a tall one.',
+      a: 'A PNG with a transparent background, cropped close to the logo. ShipDocIt keeps the transparency, so the logo sits cleanly on the page. A wide logo fits the header space better than a tall one.',
     },
     {
       q: 'Does the signature print on the packing list too?',
@@ -152,7 +152,7 @@ const article: ContentArticle = {
     },
     {
       q: 'Can a company stamp replace the signature?',
-      a: 'TradeDocs treats them the same: the image slot takes either a signature or a stamp. Whether a stamp alone is enough is for the reader of the document to decide, so check with the buyer or bank when it matters.',
+      a: 'ShipDocIt treats them the same: the image slot takes either a signature or a stamp. Whether a stamp alone is enough is for the reader of the document to decide, so check with the buyer or bank when it matters.',
     },
   ],
   sources: ['c5-cornell-19-cfr-141-86', 'c5-cbsa-d1-4-1'],

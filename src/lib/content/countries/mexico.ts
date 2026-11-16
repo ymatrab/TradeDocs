@@ -162,7 +162,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty rates and thresholds come from?',
       paragraphs: [
-        'Not from this page. Duty, VAT and any other charges on an import into Mexico depend on the tariff classification, the origin of the goods and the trade agreement claimed, and the importer’s broker works them out. TradeDocs states no rates here because they change and because a wrong figure in a quotation is worse than none.',
+        'Not from this page. Duty, VAT and any other charges on an import into Mexico depend on the tariff classification, the origin of the goods and the trade agreement claimed, and the importer’s broker works them out. ShipDocIt states no rates here because they change and because a wrong figure in a quotation is worse than none.',
       ],
     },
   ],

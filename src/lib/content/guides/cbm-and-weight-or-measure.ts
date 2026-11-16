@@ -60,7 +60,7 @@ const article: ContentArticle = {
     {
       heading: 'Why do CBM to kg calculators give different answers?',
       paragraphs: [
-        'Because they apply a carrier’s pricing ratio, not a conversion, and each mode uses a different one. The ratio says how many kilograms a cubic metre is treated as when the carrier compares space with weight. The table lists the ratios TradeDocs’ calculators use.',
+        'Because they apply a carrier’s pricing ratio, not a conversion, and each mode uses a different one. The ratio says how many kilograms a cubic metre is treated as when the carrier compares space with weight. The table lists the ratios ShipDocIt’ calculators use.',
       ],
       table: {
         caption: 'Volume-to-weight ratios by mode',

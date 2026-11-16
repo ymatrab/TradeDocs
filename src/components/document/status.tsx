@@ -51,7 +51,7 @@ const presentation: Record<DocumentState, Presentation> = {
   endorsed: {
     label: 'Endorsed',
     icon: Stamp,
-    meaning: 'Recorded as endorsed outside TradeDocs.',
+    meaning: 'Recorded as endorsed outside ShipDocIt.',
   },
 };
 

@@ -10,7 +10,7 @@ import { SITE_DESCRIPTION, SITE_NAME, type PublicTool } from '@/lib/seo/site';
  * Schema.org builders. Pure: every function takes the canonical origin, so the same data
  * renders against production, a preview or a test without reading the environment.
  *
- * Only facts the page itself shows. No ratings, reviews or counts: TradeDocs has none to
+ * Only facts the page itself shows. No ratings, reviews or counts: ShipDocIt has none to
  * report, and structured data that disagrees with the visible page is spam.
  */
 

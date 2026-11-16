@@ -1,10 +1,10 @@
 import type { ProviderId } from '@/lib/integrations/providers';
 
 /**
- * Provider records to TradeDocs rows, without I/O, so every mapping is tested on fixtures.
+ * Provider records to ShipDocIt rows, without I/O, so every mapping is tested on fixtures.
  *
- * Only fields TradeDocs has a place for are read. Nothing is invented: an absent value stays
- * absent, a value TradeDocs cannot store as given (an unrecognised country, a malformed email)
+ * Only fields ShipDocIt has a place for are read. Nothing is invented: an absent value stays
+ * absent, a value ShipDocIt cannot store as given (an unrecognised country, a malformed email)
  * is left blank with a note that says so, and lengths are left for the database routine to
  * judge so an over-long value is reported against its record rather than cut short.
  *

@@ -12,7 +12,7 @@ export function generateMetadata(): Metadata {
   return legalMetadata(
     '/privacy',
     'Privacy policy',
-    'What personal data TradeDocs handles, why, who processes it for us, how long it is kept and how to use your rights.',
+    'What personal data ShipDocIt handles, why, who processes it for us, how long it is kept and how to use your rights.',
   );
 }
 
@@ -30,12 +30,12 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy policy"
-      lede="What we collect when you use TradeDocs, why, who helps us run it, how long we keep it and what you can ask us to do."
+      lede="What we collect when you use ShipDocIt, why, who helps us run it, how long we keep it and what you can ask us to do."
       identity={identity}
     >
       <LegalSection id="controller" number={1} title="Who is responsible">
         <p>
-          {business} ({shown(identity.country)}) runs TradeDocs and is the controller for the
+          {business} ({shown(identity.country)}) runs ShipDocIt and is the controller for the
           personal data described here: your account, the contact form and the records that keep the
           service secure. Write to{' '}
           {identity.contactEmail ? (
@@ -215,7 +215,7 @@ export default function PrivacyPage() {
       </LegalSection>
 
       <LegalSection id="children" number={8} title="Children">
-        <p>TradeDocs is a business tool and is not meant for anyone under 16.</p>
+        <p>ShipDocIt is a business tool and is not meant for anyone under 16.</p>
       </LegalSection>
 
       <LegalSection id="changes" number={9} title="Changes to this policy">
