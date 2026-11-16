@@ -17,6 +17,7 @@ export type CompanyValues = {
   legal_name: string | null;
   contact_name: string | null;
   tax_number: string | null;
+  eori_number?: string | null;
   registration_number: string | null;
   email: string | null;
   phone: string | null;
@@ -189,6 +190,25 @@ export function CompanyForm({
               name="tax_number"
               maxLength={100}
               defaultValue={value('tax_number')}
+              invalid={invalid}
+              aria-describedby={describedBy}
+              className="input data"
+            />
+          )}
+        </Field>
+        <Field
+          id="eori_number"
+          label="EORI number"
+          requirement="Optional"
+          hint="For customs in the EU and UK, for example DE123456789012345."
+          error={state.fields?.eori_number}
+        >
+          {({ id, describedBy, invalid }) => (
+            <Input
+              id={id}
+              name="eori_number"
+              maxLength={17}
+              defaultValue={value('eori_number')}
               invalid={invalid}
               aria-describedby={describedBy}
               className="input data"

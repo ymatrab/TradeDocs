@@ -45,6 +45,17 @@ const companyShape = z.object({
   legal_name: optional(300),
   contact_name: optional(200),
   tax_number: optional(100),
+  // EORI as issued: country code, then up to 15 letters or digits (D-029).
+  eori_number: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .transform((value) => value.replace(/\s+/g, ''))
+    .refine(
+      (value) => value === '' || /^[A-Z]{2}[A-Z0-9]{1,15}$/.test(value),
+      'Enter the EORI as issued: two-letter country code, then up to 15 letters or digits.',
+    )
+    .transform((value) => value || null),
   registration_number: optional(100),
   email: z
     .string()
@@ -71,6 +82,7 @@ function companyFrom(formData: FormData) {
     legal_name: read(formData, 'legal_name'),
     contact_name: read(formData, 'contact_name'),
     tax_number: read(formData, 'tax_number'),
+    eori_number: read(formData, 'eori_number'),
     registration_number: read(formData, 'registration_number'),
     email: read(formData, 'email'),
     phone: read(formData, 'phone'),

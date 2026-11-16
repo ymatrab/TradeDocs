@@ -13,7 +13,7 @@ export default {
     supports:
       'ISPM 15 describing phytosanitary measures for wood packaging material made from raw wood, including dunnage and excluding wood processed so that it is free from pests, such as plywood',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-wpm': {
     authority: 'Forestry Commission and Defra (GOV.UK)',
@@ -23,7 +23,7 @@ export default {
     supports:
       'what counts as wood packaging material, the exclusions (plywood, raw wood 6mm thick or less), debarking tolerances, heat treatment at 56°C for 30 minutes, dielectric heating at 60°C for one minute, fumigation with methyl bromide or sulphuryl fluoride, the mark replacing certificates, the two-letter country code, and producers needing UKWPMMP membership and Forestry Commission registration',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-wood-packaging-goods': {
     authority: 'Forestry Commission and Defra (GOV.UK)',
@@ -33,7 +33,7 @@ export default {
     supports:
       'non-compliant packaging being rejected or destroyed, exporters checking whether the destination accepts ISPM 15, specifying packaging requirements in contracts, reuse of undamaged packaging, and re-treatment and re-marking after repair or remanufacture',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-export-goods': {
     authority: 'HM Revenue & Customs and Department for Business and Trade (GOV.UK)',
@@ -43,7 +43,7 @@ export default {
     supports:
       'the official export sequence: checking destination rules and licences, a GB EORI number, deciding who makes the declaration, classifying with a commodity code, the invoice travelling with the goods at the selling price with freight and insurance listed separately, possible VAT zero rating, and keeping commercial invoices and customs paperwork',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-full-export-declaration': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -53,7 +53,7 @@ export default {
     supports:
       'clearance before goods leave the UK, the minimum lodging times by road, sea, air and rail, the data the declaration needs (procedure code, commodity code, DUCR), and the departure message that makes the declaration evidence of export',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-transit-check': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -64,7 +64,7 @@ export default {
     supports:
       'what transit is, delaying full declarations and duties until the movement ends, the Common Transit Convention member list, and TIR for road routes outside it',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-transit-set-up': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -74,7 +74,7 @@ export default {
     supports:
       'the set-up steps: an EORI number, a transit guarantee, NCTS access, Customs Declaration Service access and optional authorised consignor or consignee status',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-transit-prepare-gb': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -84,7 +84,7 @@ export default {
     supports:
       'an export declaration normally coming before the transit declaration, movements from Great Britain almost always having T1 status, and the data the NCTS declaration needs (EORI, status, local reference number, guarantee reference, offices, MRN, a time limit of no more than 14 days)',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-gov-uk-ncts': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -94,7 +94,7 @@ export default {
     supports:
       'NCTS as the online system for UK transit declarations, what you need before using it, the Transit Accompanying Document with its MRN barcode, T2L not being submitted through NCTS, TIR legs in the EU being declared to NCTS, and the MRN issued on acceptance',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'b6-ec-customs-transit': {
     authority: 'European Commission, Taxation and Customs Union',
@@ -104,6 +104,6 @@ export default {
     supports:
       'transit suspending import duties and taxes until destination, Union transit versus common transit, the countries in common transit and their joining dates (the UK since 1 January 2021), and the Transit Manual',
     retrieved: '2026-10-07',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

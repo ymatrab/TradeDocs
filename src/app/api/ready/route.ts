@@ -2,8 +2,10 @@ import { degradedControls } from '@/lib/config/controls';
 import type { WaivableControl } from '@/lib/config/schema';
 import {
   certificateOfOriginState,
+  environmentDefaults,
   getServerEnv,
   hasSupabaseConfiguration,
+  serverEnvironment,
 } from '@/lib/config/server';
 import { billingConfig, type BillingConfig } from '@/lib/billing/server';
 import { apiUnavailableReason } from '@/lib/api/server';
@@ -37,9 +39,17 @@ export async function GET(): Promise<Response> {
   // The certificate of origin switched on without its approval or review record is refused
   // (fail closed) and reported here by reason, never by value. Off is normal and silent.
   const certificate = certificateOfOriginState();
+  // Values filled in by D-026's defaults or derived from the service-role key, and what a
+  // connected production still lacks before service mode defaults on. Names only.
+  let configured: ReturnType<typeof environmentDefaults> = {
+    defaulted: [],
+    derived: [],
+    servicePending: [],
+  };
   try {
     api = apiUnavailableReason();
-    integrations = incompleteProviders(process.env);
+    integrations = incompleteProviders(serverEnvironment());
+    configured = environmentDefaults();
     const configuration = getServerEnv();
     rateLimiting = rateLimitMode(configuration);
     degraded = degradedControls(configuration);
@@ -68,6 +78,11 @@ export async function GET(): Promise<Response> {
       rate_limiting: rateLimiting.mode,
       ...(rateLimiting.mode === 'degraded' ? { reason: rateLimiting.reason } : {}),
       ...(degraded.length > 0 ? { degraded } : {}),
+      ...(configured.defaulted.length > 0 ? { defaults: configured.defaulted } : {}),
+      ...(configured.derived.length > 0 ? { derived: configured.derived } : {}),
+      ...(configured.servicePending.length > 0
+        ? { service_mode_pending: configured.servicePending }
+        : {}),
       ...(billing.state === 'misconfigured'
         ? { payments: 'misconfigured', payments_reason: billing.reason }
         : {}),

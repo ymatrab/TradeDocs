@@ -14,7 +14,7 @@ export default {
     supports:
       'F.O.B. the place of shipment and F.O.B. the place of destination as delivery terms, and who bears expense and risk under each',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-cornell-ucc-2-401': {
     authority: 'Legal Information Institute, Cornell Law School',
@@ -24,7 +24,7 @@ export default {
     supports:
       'title passing, unless otherwise agreed, when the seller completes physical delivery: at shipment under a shipment contract, on tender at destination under a destination contract',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-cornell-ucc-2-509': {
     authority: 'Legal Information Institute, Cornell Law School',
@@ -34,7 +34,7 @@ export default {
     supports:
       'risk of loss passing on delivery to the carrier under a shipment contract, and on tender at the destination under a destination contract',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-icc-incoterms-history': {
     authority: 'International Chamber of Commerce (ICC)',
@@ -44,7 +44,7 @@ export default {
     supports:
       'Incoterms® 2010 removing DAF, DES, DEQ and DDU and adding DAT and DAP; the 2020 revision',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-hmrc-incoterms': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -54,7 +54,7 @@ export default {
     supports:
       'what each rule means, including EXW not requiring the seller to load or clear for export, FCA at the seller’s premises, CIF insurance and DDP import clearance and duties; the Incoterm not restricting the valuation method',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-ita-know-your-incoterms': {
     authority: 'International Trade Administration, U.S. Department of Commerce',
@@ -64,7 +64,7 @@ export default {
     supports:
       'the seven any-mode rules and four sea and inland waterway rules, and parties being able to agree an earlier Incoterms® version if they name it',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-ecfr-15-cfr-30-3': {
     authority: 'U.S. Census Bureau, via the Electronic Code of Federal Regulations',
@@ -75,7 +75,7 @@ export default {
     supports:
       'standard and routed export transactions, trade terms not determining the type of transaction, and the USPPI’s duty to give the FPPI’s agent the export information',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-cornell-19-usc-1401a': {
     authority: 'Legal Information Institute, Cornell Law School',
@@ -85,7 +85,7 @@ export default {
     supports:
       'the price actually paid or payable excluding international transportation and insurance costs to the place of importation in the United States',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'w1-gov-uk-register-for-vat': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -95,6 +95,6 @@ export default {
     supports:
       'businesses based outside the UK that supply goods or services in the UK having to register for VAT regardless of turnover',
     retrieved: '2026-10-06',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

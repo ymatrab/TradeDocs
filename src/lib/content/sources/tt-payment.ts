@@ -6,7 +6,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'b4-trade-gov-cash-in-advance': {
@@ -17,7 +17,7 @@ export default {
     supports:
       'cash in advance as the most secure method for the exporter, with the importer paying the full or a significant amount before shipment; wire transfer as the most secure and preferred cash-in-advance option, with clear bank routing instructions from the exporter; credit card and escrow as other options; cash in advance as the least attractive option for the buyer',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-ic3-bec': {
     authority: 'Internet Crime Complaint Center (IC3), Federal Bureau of Investigation',
@@ -27,7 +27,7 @@ export default {
     supports:
       'business email compromise as a scam targeting transfers of funds through compromised email accounts; verifying requests to change account information through a secondary channel; contacting the originating bank as soon as fraud is recognised to request a recall or reversal',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-hmrc-overseas-bank-details': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -37,7 +37,7 @@ export default {
     supports:
       'HMRC asking payers with an overseas account for the Business Identifier Code (BIC), the account number (IBAN) and the account name; some banks charging if the payment is not made in pounds sterling; payments from overseas possibly taking longer',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-hmrc-vat-notice-700': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -47,7 +47,7 @@ export default {
     supports:
       'pro-forma invoices being used to offer goods to potential customers, not being evidence to reclaim input tax, being clearly marked “this is not a VAT invoice”, and a proper VAT invoice being issued once the goods are supplied or payment is received',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-gov-uk-pva': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -57,7 +57,7 @@ export default {
     supports:
       'postponed VAT accounting declaring and recovering import VAT on the same VAT Return; UK VAT registration being required and no approval needed; Great Britain from outside the UK and Northern Ireland from outside the UK and EU; goods for business use with the right to dispose of them and the VAT number on the import declaration (Data Element 3/40); written instructions to agents and suppliers who import on your behalf, and giving the supplier your EORI number; non-established persons needing someone to deal with customs; the choice not being changeable after the declaration is submitted; Royal Mail postal consignments over £135 being excluded; the update of 9 June 2025',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-gov-uk-pva-vat-return': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -67,7 +67,7 @@ export default {
     supports:
       'accounting for postponed import VAT in the return period covering the import date; postponed import VAT in Box 1 and the amount reclaimed in Box 4; the value of imports excluding VAT in Box 7; the normal input tax rules applying; asking an agent to confirm the VAT was allocated to the correct EORI number',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-gov-uk-pva-statement': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -77,7 +77,7 @@ export default {
     supports:
       'monthly postponed import VAT statements in the Customs Declaration Service, usually available by the 10th working day of the month, accessible for 6 months from publication, to be downloaded and kept',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-gov-uk-import-vat': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -88,7 +88,7 @@ export default {
     supports:
       'import VAT normally being charged at the same rate as on a UK supply; the value for VAT being the customs value plus incidental expenses such as packing, transport and insurance up to the first UK destination, and any customs duty and other import charges; VAT-registered businesses choosing postponed VAT accounting or paying at import; businesses not registered for VAT paying import VAT and being unable to reclaim it; duty deferment accounts needing a bank guarantee',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-gov-uk-c79': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -98,7 +98,7 @@ export default {
     supports:
       'the C79 import VAT certificate showing import VAT paid through a duty deferment account, distinct from the postponed import VAT statement used with postponed VAT accounting',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-cornell-ucc-2-206': {
     authority: 'Legal Information Institute, Cornell Law School (Uniform Commercial Code)',
@@ -108,7 +108,7 @@ export default {
     supports:
       'an order or other offer to buy goods for prompt or current shipment being construed as inviting acceptance by a prompt promise to ship or by prompt shipment',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b4-uncitral-cisg': {
     authority: 'United Nations Commission on International Trade Law (UNCITRAL)',
@@ -118,6 +118,6 @@ export default {
     supports:
       'the CISG providing uniform rules for contracts for the international sale of goods, applying when the parties have places of business in contracting states, or by choice of law or the parties’ choice; adopted 11 April 1980, in force 1 January 1988',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

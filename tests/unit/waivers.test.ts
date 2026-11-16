@@ -103,7 +103,9 @@ describe('deferred service waivers (D-017)', () => {
       vi.stubEnv(name, value ?? '');
     }
     vi.stubEnv('INDEXNOW_KEY', 'synthetic-indexnow-key');
-    // Per-feature providers left off, so only the waivers and the API (no pepper) report.
+    // Per-feature providers left off. Since D-026 the pepper and the integration key are
+    // derived from the service-role key (named, never shown), so the API no longer reports
+    // itself off, and the unset price approval is listed as a default.
     for (const name of FEATURE_ENV) vi.stubEnv(name, '');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({})));
     const response = await readiness();
@@ -113,8 +115,15 @@ describe('deferred service waivers (D-017)', () => {
       status: 'ready',
       rate_limiting: 'enforced',
       degraded: ['turnstile', 'sentry', 'analytics'],
-      api: 'unavailable',
-      api_reason: 'api_key_pepper_missing',
+      defaults: [
+        'PRICES_APPROVED',
+        // The certificate of origin's owner approval (D-028), named, never valued.
+        'ENABLE_REGULATED_DOCUMENTS',
+        'REGULATED_DOCUMENTS_APPROVED',
+        'LEGAL_COO_REVIEWED_BY',
+        'LEGAL_COO_REVIEWED_AT',
+      ],
+      derived: ['API_KEY_PEPPER', 'INTEGRATION_TOKEN_KEY'],
     });
     expect(body).not.toContain('synthetic');
   });
@@ -136,10 +145,20 @@ describe('deferred service waivers (D-017)', () => {
       status: 'ready',
       rate_limiting: 'enforced',
       degraded: ['turnstile', 'sentry', 'analytics'],
+      defaults: [
+        'PRICES_APPROVED',
+        // The certificate of origin's owner approval (D-028), named, never valued.
+        'ENABLE_REGULATED_DOCUMENTS',
+        'REGULATED_DOCUMENTS_APPROVED',
+        'LEGAL_COO_REVIEWED_BY',
+        'LEGAL_COO_REVIEWED_AT',
+      ],
+      // The token key is derived (D-026), so only the provider's own secret is missing.
+      derived: ['INTEGRATION_TOKEN_KEY'],
       esign: 'misconfigured',
       esign_reason: 'api_key_malformed',
       integrations_incomplete: {
-        quickbooks: ['QUICKBOOKS_CLIENT_SECRET', 'INTEGRATION_TOKEN_KEY'],
+        quickbooks: ['QUICKBOOKS_CLIENT_SECRET'],
       },
     });
     expect(body).not.toContain('synthetic');

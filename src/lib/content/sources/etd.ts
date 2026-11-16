@@ -8,7 +8,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * EU maritime agency's data model and the UN/EDIFACT message from a public directory mirror.
  */
 const RETRIEVED = '2026-10-09';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'e4-ftr-30-4-timing': {
@@ -20,7 +20,7 @@ export default {
     supports:
       'EEI for vessel cargo filed twenty-four hours before the cargo is loaded on the vessel at the U.S. port of lading, and for air cargo no later than two hours before the scheduled departure time of the aircraft',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-cfr-19-149-2-isf': {
     authority: 'U.S. Customs and Border Protection (19 CFR 149.2), via Cornell LII',
@@ -30,7 +30,7 @@ export default {
     supports:
       'the Importer Security Filing submitted no later than 24 hours before the cargo is laden aboard the vessel at the foreign port',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-iata-uld-ops': {
     authority: 'International Air Transport Association (IATA)',
@@ -40,7 +40,7 @@ export default {
     supports:
       'a ULD as either an aircraft pallet and pallet net combination or an aircraft container; ULDs as removable aircraft parts subject to civil aviation authority requirements that must be structurally capable of restraining the load in flight; the IATA ULD Regulations covering technical and operational standards',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-iata-uldr': {
     authority: 'International Air Transport Association (IATA)',
@@ -50,7 +50,7 @@ export default {
     supports:
       'the ULD as an aircraft container or an aircraft pallet with a pallet net for grouping and restraining cargo, mail and baggage; the ULDR covering the IATA ULD ID Code, registered ULD type codes, pallet and net compatibility and marking of the ULD ID Code',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-imo-ctu-code': {
     authority: 'International Maritime Organization (IMO), with ILO and UNECE',
@@ -60,7 +60,7 @@ export default {
     supports:
       'the CTU Code applying throughout the intermodal transport chain and giving guidance not only to those who pack and secure cargo but also to those who receive and unpack the units',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-cfr-19-118-1-ces': {
     authority: 'U.S. Customs and Border Protection (19 CFR 118.1), via Cornell LII',
@@ -70,7 +70,7 @@ export default {
     supports:
       'a centralized examination station as a privately operated facility, not in the charge of a Customs officer, at which merchandise is made available to Customs officers for physical examination',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-cfr-19-4-7a-ports': {
     authority: 'U.S. Customs and Border Protection (19 CFR 4.7a), via Cornell LII',
@@ -80,7 +80,7 @@ export default {
     supports:
       'the inward cargo declaration listing cargo by U.S. port of discharge and in bill of lading number sequence, and reporting the foreign port where the cargo is laden on board and the first foreign port where the carrier takes possession of the cargo',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-ftr-30-6-ports': {
     authority: 'U.S. Census Bureau, Foreign Trade Regulations (15 CFR 30.6), via Cornell LII',
@@ -90,7 +90,7 @@ export default {
     supports:
       'the port of export as the CBP seaport or airport where the goods are loaded on the carrier taking them out of the United States, reported from Schedule D; and the foreign port of unlading as the foreign port where the goods are removed from the exporting conveyance, which need not be in the country of ultimate destination, reported for vessel exports from Schedule K',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-emsa-unlocode': {
     authority:
@@ -101,7 +101,7 @@ export default {
     supports:
       'the UN/LOCODE five-character code element for a port or location: two letters for the country from ISO 3166 and three characters for the location within the country, for example NOOSL for Oslo',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-unedifact-iftman': {
     authority: 'UN/CEFACT, UN/EDIFACT directory D.17B (via the edifactory.de directory mirror)',
@@ -111,7 +111,7 @@ export default {
     supports:
       'the arrival notice as a message from the party providing forwarding or transport services to the party indicated in the contract, giving notice and details of the arrival of the consignment',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'e4-cfr-19-4-37-general-order': {
     authority: 'U.S. Customs and Border Protection (19 CFR 4.37), via Cornell LII',
@@ -121,6 +121,6 @@ export default {
     supports:
       'unentered cargo remaining at the place of unlading until the fifteenth calendar day after landing, after which the carrier must notify Customs and a bonded warehouse and relinquish custody of the merchandise to a General Order warehouse',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

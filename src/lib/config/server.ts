@@ -1,7 +1,32 @@
 import 'server-only';
 
 import { certificateOfOriginGate, type CooGate } from '@/lib/trade/regulated';
-import { validateDeploymentEnv, type ServerEnv } from './schema';
+import type { ResolvedEnvironment } from './defaults';
+import {
+  resolveDeploymentInput,
+  validateDeploymentEnv,
+  type EnvironmentInput,
+  type ServerEnv,
+} from './schema';
+
+function resolvedProcessEnv(): ResolvedEnvironment {
+  return resolveDeploymentInput(process.env, process.env.NODE_ENV === 'production');
+}
+
+/**
+ * The raw environment with D-026's defaults applied (config/defaults.ts), for the feature
+ * modules that read variables outside the strict schema (prices, API pepper, integration
+ * key, certificate gate). Server-only: it carries the derived secrets.
+ */
+export function serverEnvironment(): EnvironmentInput {
+  return resolvedProcessEnv().values;
+}
+
+/** Which values were defaulted or derived, for /api/ready. Names only, never values. */
+export function environmentDefaults(): Omit<ResolvedEnvironment, 'values'> {
+  const { defaulted, derived, servicePending } = resolvedProcessEnv();
+  return { defaulted, derived, servicePending };
+}
 
 /**
  * Secrets remain in server-only modules; return an explicit public projection if needed.
@@ -41,7 +66,7 @@ export function certificateOfOriginState(): CooGate {
     if (!env.ENABLE_REGULATED_DOCUMENTS) return { state: 'off' };
     // The flag combination is validated by the schema above; the review record is read
     // outside it, so a missing or mistyped record fails this feature alone.
-    return certificateOfOriginGate(process.env);
+    return certificateOfOriginGate(serverEnvironment());
   } catch {
     return { state: 'off' };
   }

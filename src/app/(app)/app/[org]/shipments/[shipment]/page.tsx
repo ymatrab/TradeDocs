@@ -4,12 +4,15 @@ import { createClient, getUser } from '@/lib/supabase/server';
 import { AppShell } from '@/components/shell/app';
 import { Panel, Callout } from '@/components/primitives/feedback';
 import { decimal } from '@/lib/format';
+import Decimal from 'decimal.js';
 import { currencyMinorUnits, sumLineTotals } from '@/lib/money';
+import type { ChargeKind } from '@/lib/trade/charges';
 import { regulatedDocumentsEnabled } from '@/lib/config/server';
 import { freshnessOf } from '@/lib/trade/staleness';
 import { ShipmentEditor } from './shipment-editor';
 import { PartiesPanel } from './parties-panel';
 import { PackingPanel } from './packing-panel';
+import { ChargesPanel } from './charges-panel';
 import { DocumentsPanel } from './documents-panel';
 import { DuplicateShipmentForm } from './duplicate-shipment-form';
 import { packingTotals, unreconciledLines } from './figures';
@@ -43,6 +46,7 @@ export default async function ShipmentPage({
     catalogResult,
     previewResult,
     membershipResult,
+    chargesResult,
   ] = await Promise.all([
     client
       .from('shipment_items')
@@ -85,6 +89,11 @@ export default async function ShipmentPage({
           .eq('user_id', user.id)
           .maybeSingle()
       : Promise.resolve({ data: null }),
+    client
+      .from('shipment_charges')
+      .select('id, position, kind, label, amount, included_in_price')
+      .eq('shipment_id', shipmentId)
+      .order('position', { ascending: true }),
   ]);
   const canVoid =
     membershipResult.data?.role === 'owner' || membershipResult.data?.role === 'admin';
@@ -103,6 +112,24 @@ export default async function ShipmentPage({
     }),
     { quantity: 0, value: sumLineTotals(lines, moneyPlaces).toNumber(), net: 0 },
   );
+
+  // Charges and discounts (D-029), each rounded once to the currency as the invoice does:
+  // the total adds the charges not already in the prices and deducts such discounts.
+  const chargeRows = chargesResult.data ?? [];
+  const goodsValue = sumLineTotals(lines, moneyPlaces);
+  const invoiceTotal = chargeRows.reduce((sum, charge) => {
+    if (charge.included_in_price) return sum;
+    const amount = new Decimal(charge.amount).toDecimalPlaces(moneyPlaces, Decimal.ROUND_HALF_UP);
+    return charge.kind === 'discount' ? sum.minus(amount) : sum.plus(amount);
+  }, goodsValue);
+  const charges = chargeRows.map((charge) => ({
+    id: charge.id,
+    position: charge.position,
+    kind: charge.kind as ChargeKind,
+    label: charge.label,
+    amount: decimal(Number(charge.amount), moneyPlaces),
+    included_in_price: charge.included_in_price,
+  }));
 
   const packages = packageRows.map((row) => ({
     id: row.id,
@@ -290,6 +317,15 @@ export default async function ShipmentPage({
                 unit: product.unit,
                 unit_price: Number(product.unit_price),
               }))}
+            />
+
+            <ChargesPanel
+              org={org}
+              shipmentId={shipmentId}
+              currency={shipment.currency}
+              charges={charges}
+              goodsValue={decimal(goodsValue.toNumber(), moneyPlaces)}
+              total={charges.length > 0 ? decimal(invoiceTotal.toNumber(), moneyPlaces) : null}
             />
 
             <PackingPanel org={org} shipmentId={shipmentId} packages={packages} items={packable} />

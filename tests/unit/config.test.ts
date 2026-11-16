@@ -24,7 +24,10 @@ describe('environment configuration', () => {
     const env = validateDeploymentEnv({ APP_ENV: '', VERCEL_ENV: 'production' }, true);
     expect(env.APP_ENV).toBe('production');
     expect(env.APPLICATION_MODE).toBe('foundation');
-    expect(env.LAUNCH_APPROVED).toBe(false);
+    // D-026: the owner's launch approval is the production default; "false" still holds it.
+    expect(env.LAUNCH_APPROVED).toBe(true);
+    const held = { VERCEL_ENV: 'production', LAUNCH_APPROVED: 'false' };
+    expect(validateDeploymentEnv(held, true).LAUNCH_APPROVED).toBe(false);
   });
 
   it('trusts Vercel deployment identity over a stale application environment', () => {

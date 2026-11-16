@@ -16,7 +16,7 @@ export default {
     supports:
       'the price actually paid or payable being considered without regard to its method of derivation, a related-party transaction value being acceptable where the relationship did not influence the price or it closely approximates a test value, and a transaction value not being disregarded solely because buyer and seller are related',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cbp-icp-bona-fide-sales': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -27,7 +27,7 @@ export default {
     supports:
       'the presumption that transaction value is based on the price paid by the importer and the importer’s burden to rebut it, the Nissho Iwai standard (arm’s length, free of non-market influences, clearly destined for the United States), title and risk of loss as signs of a bona fide sale, the definition of a middleman in a multi-tiered transaction, related parties and test values, evidence that goods were clearly destined (US buyer specifications, labels, stock numbers, direct shipment), the complete paper trail, and information on statutory additions such as assists',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cbp-ruling-h347879': {
     authority: 'U.S. Customs and Border Protection (CBP), CROSS rulings',
@@ -37,7 +37,7 @@ export default {
     supports:
       'CBP restating the Nissho Iwai standard in 2025, presuming that transaction value is based on the price paid by the importer, listing purchase orders, invoices, proof of payment, contracts and correspondence as the evidence it reviews, and finding no bona fide first sale where delivery terms alone did not show the middleman held title or bore risk of loss',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 
   // invoice-legalization
@@ -50,7 +50,7 @@ export default {
     supports:
       'legalisation meaning the formality by which diplomatic or consular agents of the country where a document is produced certify the authenticity of the signature, the signer’s capacity and any seal, and the Convention not applying to administrative documents dealing directly with commercial or customs operations',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-trade-gov-special-documents': {
     authority: 'International Trade Administration (ITA), trade.gov',
@@ -60,7 +60,7 @@ export default {
     supports:
       'a consular invoice being required in some countries, describing the shipment and showing information such as consignor, consignee and value, copies being available from the destination country’s embassy or consulate in the United States, and the cost being potentially significant and worth discussing with the buyer',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-trade-gov-ccg-eg-import': {
     authority: 'International Trade Administration (ITA), trade.gov',
@@ -71,7 +71,7 @@ export default {
     supports:
       'legalization of commercial invoices by the Egyptian consulate in the country of origin being required in most cases',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-trade-gov-ccg-ae-import': {
     authority: 'International Trade Administration (ITA), trade.gov',
@@ -82,7 +82,7 @@ export default {
     supports:
       'attestation of commercial invoices and shipping documents being handled through the UAE Ministry of Foreign Affairs',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-uae-mofa-attestation': {
     authority: 'UAE Ministry of Foreign Affairs',
@@ -92,7 +92,7 @@ export default {
     supports:
       'commercial invoices being attested through the Ministry’s electronic documents attestation system (eDAS 2.0) rather than its general attestation service, and fees depending on factors including whether a document is commercial',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-trade-gov-ccg-sa-import': {
     authority: 'International Trade Administration (ITA), trade.gov',
@@ -103,7 +103,7 @@ export default {
     supports:
       'the Saudi government requiring that US chambers of commerce perform the authentication of shipping documents, and pointing to the National US-Arab Chamber of Commerce for more information',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 
   // commercial-invoice-for-returns-and-repairs
@@ -116,7 +116,7 @@ export default {
     supports:
       'subheading 9801.00.10 covering US products returned after export and other products returned within 3 years, without being advanced in value or improved in condition abroad, no time limit for US-origin products, and CBP possibly requesting a foreign shipper declaration and an importer or owner declaration for shipments valued over $2,500',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-10-1': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -126,7 +126,7 @@ export default {
     supports:
       'the declarations for shipments valued over $2,500 claimed under 9801.00.10 or 9802.00.20: the foreign shipper’s declaration (port and approximate date of export, marks, numbers, quantity, description, value, no advance in value or improvement in condition) and the owner or importer’s declaration (truth of the shipper’s statement, manufacturer, export without drawback)',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-10-8': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -136,7 +136,7 @@ export default {
     supports:
       'the two declarations for goods returned after repair or alteration under 9802.00.40 or 9802.00.50 (by the person who performed the work and by the owner or importer), the fields they carry (marks and numbers, description of articles and of repairs, full cost or value of repairs, total value after repairs), duty limited to the cost or value of the work done abroad, and the possible waiver',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-gov-uk-returned-goods-relief': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -147,7 +147,7 @@ export default {
     supports:
       'Returned Goods Relief for goods previously exported from the UK, the 3-year limit, re-import in an unaltered state apart from maintenance, relief where an intended repair was not carried out, the original export declaration or alternatives such as the export invoice or bill of lading as evidence, the exporter and importer being the same person for VAT relief, procedure codes for freight, and keeping records for at least 4 years',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-gov-uk-outward-processing': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -157,7 +157,7 @@ export default {
     supports:
       'outward processing for goods sent abroad for repair, duty at re-import on charges made for repair or replacement plus inward shipping and insurance, the authorisation number on the export and import declarations, proof the goods were exported under outward processing, and authorisation by declaration for repair and return',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-gov-uk-op-free-of-charge-repairs': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -168,7 +168,7 @@ export default {
     supports:
       'no duty being due on authorised outward processing goods repaired or replaced free of charge under a guarantee, proof of the free-of-charge repair being produced with the import declaration, and VAT being due on the full customs value of free replacement goods',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 
   // de-minimis
@@ -180,7 +180,7 @@ export default {
     supports:
       'the indefinite suspension of the de minimis exemption for merchandise valued at $800 or less arriving by all modes including the international postal network, formal or informal entry being required, informal entry generally allowed for shipments valued at $2,500 or less, the mail informal entry process taking effect on 24 July 2026, and the bona fide gift and traveller exemptions remaining unchanged',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-whitehouse-eo-14324': {
     authority: 'The White House',
@@ -191,7 +191,7 @@ export default {
     supports:
       'the duty-free de minimis exemption under 19 U.S.C. 1321(a)(2)(C) no longer applying to any shipment, on a global basis, from 12:01 a.m. eastern daylight time on 29 August 2025',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cbp-low-value-rules-2026': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -201,7 +201,7 @@ export default {
     supports:
       'CBP issuing rules in June 2026 that indefinitely suspend duty-free de minimis treatment for imports valued at $800 or less, require more detailed information on international mail shipments, and test an electronic entry process for mail',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-gov-uk-goods-sent-from-abroad': {
     authority: 'GOV.UK',
@@ -211,7 +211,7 @@ export default {
     supports:
       'VAT being charged on all goods sent to Great Britain from abroad except gifts worth £39 or less, no customs duty on non-excise goods worth £135 or less, customs duty on excise goods of any value, and sellers including VAT in the price of goods worth £135 or less',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-ec-eur3-low-value-parcels': {
     authority: 'European Commission',
@@ -222,7 +222,7 @@ export default {
     supports:
       'a temporary €3 customs duty from 1 July 2026 on low-value parcels worth up to €150 imported from outside the EU, applied per item by tariff classification rather than quantity, replacing the customs duty exemption',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-ec-low-value-consignments': {
     authority: 'European Commission, Taxation and Customs Union',
@@ -232,7 +232,7 @@ export default {
     supports:
       'an import declaration being required for all goods entering the EU regardless of value from 1 July 2021, and the abolition from that date of the VAT exemption for imported goods below €22',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 
   // power-of-attorney-for-customs
@@ -244,7 +244,7 @@ export default {
     supports:
       'Customs Form 5291 being usable to give power of attorney to transact customs business, another document being acceptable if it is a general power of attorney with unlimited authority or a limited one executed in the same manner, and the sample general power of attorney wording',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-141-34': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -254,7 +254,7 @@ export default {
     supports:
       'powers of attorney issued by a partnership being limited to 2 years from execution, and all others being grantable for an unlimited period',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-141-35': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -264,7 +264,7 @@ export default {
     supports:
       'any power of attorney being revocable at any time by written notice given to and received by CBP, at the port of entry or electronically',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-141-37': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -274,7 +274,7 @@ export default {
     supports:
       'a nonresident corporation not qualified to do business in the state where the agent acts supporting its power of attorney with documentation of the grantor’s authority',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-141-46': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -284,7 +284,7 @@ export default {
     supports:
       'customs brokers retaining powers of attorney with their books and papers and not being required to file them with CBP',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-19-cfr-111-36': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -294,7 +294,7 @@ export default {
     supports:
       'a broker working with a freight forwarder executing the customs power of attorney directly with the importer of record, not through the forwarder or another third party',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cbp-broker-faqs': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -304,7 +304,7 @@ export default {
     supports:
       'a broker executing a power of attorney directly with the importer of record or drawback claimant, who must sign it themselves, a freight forwarder not being able to assign a power of attorney to a broker, and CBP not having changed the standard power of attorney language in 19 CFR 141.32',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cbp-validating-poa': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -315,7 +315,7 @@ export default {
     supports:
       'brokers examining the power of attorney carefully, completing it in person where possible, and checking that the importer’s name, importer number and Employer Identification Number match what is in ACE',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-cornell-15-cfr-30-3': {
     authority: 'Legal Information Institute, Cornell Law School (US Code of Federal Regulations)',
@@ -326,7 +326,7 @@ export default {
     supports:
       'the USPPI giving an authorized agent a power of attorney or written authorization to file the EEI, the agent obtaining one from a principal party in interest, the authorization specifying responsibilities with particularity, and the FPPI giving written authorization in routed export transactions',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'd1-gov-uk-appoint-customs-agent': {
     authority: 'HM Revenue & Customs (GOV.UK)',
@@ -336,6 +336,6 @@ export default {
     supports:
       'a representative not being able to act without written instructions, those instructions showing whether they act directly or indirectly, confirming the terms of representation in writing, HMRC asking for evidence of the authorisation only if needed, and the trader keeping due diligence responsibility',
     retrieved: '2026-10-08',
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

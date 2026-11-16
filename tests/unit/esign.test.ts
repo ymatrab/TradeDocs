@@ -26,14 +26,7 @@ import {
 } from '@/lib/esign/callback';
 import { esignConfig } from '@/lib/esign/config';
 import { initialSigners, parseSendForm, requestTexts } from '@/lib/esign/request';
-import {
-  FEATURES,
-  featurePlans,
-  offeredFeatures,
-  paidAdditions,
-  paidOnlySummary,
-  PROVIDER_FEATURES,
-} from '@/lib/billing/plans';
+import { featurePlans, offeredFeatures, paidAdditions, paidOnlySummary } from '@/lib/billing/plans';
 import { hasEntitlement } from '@/lib/billing/server';
 import { MAX_ESIGN_MESSAGE, MAX_ESIGN_SIGNERS } from '@/lib/limits';
 import {
@@ -451,11 +444,12 @@ describe('plan gating', () => {
     expect(featurePlans('esign')).toEqual(['pro', 'team']);
   });
 
-  it('is not claimed on any public page until the provider is connected', () => {
-    expect(FEATURES.some((feature) => (feature.key as string) === 'esign')).toBe(false);
-    expect(PROVIDER_FEATURES.map((feature) => feature.key)).toEqual(['esign']);
-    // Independent of the other paid features: whatever else is configured, the public copy
-    // built from plans.ts never names e-signature or its provider.
+  it('is claimed on public pages only once the provider is connected (D-027)', () => {
+    expect(
+      offeredFeatures({ esign: true }).find((feature) => feature.key === 'esign')?.capability,
+    ).toBe('esign');
+    // Whatever else is configured, the public copy built from plans.ts names e-signature or
+    // its provider only where the esign capability is on.
     const everything = { quickbooks_import: true, xero_import: true } as const;
     for (const capabilities of [{}, everything]) {
       const copy = [
@@ -468,6 +462,13 @@ describe('plan gating', () => {
       expect(copy).not.toMatch(/e-?signature|dropbox sign/i);
       expect(offeredFeatures(capabilities).some((feature) => feature.key === 'esign')).toBe(false);
     }
+  });
+
+  it('is listed for Pro and Team once Dropbox Sign is connected', () => {
+    const on = { esign: true } as const;
+    expect(offeredFeatures(on).some((feature) => feature.key === 'esign')).toBe(true);
+    expect(paidAdditions(on)).toBe('Pro and Team add PDF branding and e-signature');
+    expect(paidOnlySummary(on)).toBe('PDF branding and e-signature');
   });
 
   it('grants a current Pro or Team plan', async () => {

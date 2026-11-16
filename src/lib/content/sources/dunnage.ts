@@ -5,7 +5,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'ippc-ispm-15-implementation': {
@@ -16,6 +16,6 @@ export default {
     supports:
       'the ISPM 5 definition of dunnage as wood packaging material used to secure or support a commodity but which does not remain associated with the commodity, and wood packaging material (wood or wood products, excluding paper products, used in supporting, protecting or carrying a commodity) including dunnage',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

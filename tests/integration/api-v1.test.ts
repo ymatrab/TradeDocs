@@ -381,6 +381,28 @@ describe('happy paths', () => {
     expect(unknown.status).toBe(422);
   });
 
+  it('maps a missing signatory to 422 SIGNATORY_REQUIRED (D-029)', async () => {
+    database({
+      api_generate_document: () =>
+        Response.json(
+          {
+            code: '23514',
+            message:
+              'A commercial invoice must name the person responsible for it. Set the signatory name in the document settings.',
+          },
+          { status: 400 },
+        ),
+    });
+    const response = await generateDocument(
+      json(`/shipments/${SHIPMENT}/documents`, { kind: 'commercial_invoice' }),
+      params(SHIPMENT),
+    );
+    expect(response.status).toBe(422);
+    const body = await response.json();
+    expect(body.error.code).toBe('SIGNATORY_REQUIRED');
+    expect(body.error.message).toMatch(/19 CFR 141\.86\(j\)/);
+  });
+
   it('refuses a regulated kind while ENABLE_REGULATED_DOCUMENTS is off', async () => {
     const { calls } = database({});
     const response = await generateDocument(

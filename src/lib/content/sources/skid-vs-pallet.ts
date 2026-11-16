@@ -7,7 +7,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * on the retrieval date and checked against the claim in `supports`.
  */
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'b1-fedex-freight-pallets-skids': {
@@ -18,7 +18,7 @@ export default {
     supports:
       'the terms pallet and skid often being used interchangeably, and the difference that a pallet has bottom deck boards and a skid does not',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-cfr-7-319-40-1': {
     authority: 'USDA APHIS, 7 CFR 319.40-1, via Cornell LII',
@@ -28,7 +28,7 @@ export default {
     supports:
       'regulated wood packaging material being wood packaging used with cargo to prevent damage, including dunnage, crating, pallets, packing blocks, drums, cases and skids, and excluding manufactured wood, loose wood packing and pieces under 6 mm thick',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-cfr-7-319-40-3': {
     authority: 'USDA APHIS, 7 CFR 319.40-3, via Cornell LII',
@@ -39,7 +39,7 @@ export default {
     supports:
       'regulated wood packaging material entering the US having to be treated and carry a legible, permanent mark under the IPPC standard (symbol, country code, producer number and treatment code such as HT or MB), and an inspector being able to order the immediate re-export of unmarked material',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-wco-rkc-definitions': {
     authority: 'World Customs Organization (WCO), Revised Kyoto Convention',
@@ -49,7 +49,7 @@ export default {
     supports:
       'clearance as the accomplishment of the customs formalities needed for goods to enter home use, be exported or be placed under another customs procedure; release as customs placing goods undergoing clearance at the disposal of the persons concerned; and the definitions of goods declaration, declarant and customs formalities',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-gov-uk-import-step-by-step': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -59,7 +59,7 @@ export default {
     supports:
       'the UK import steps: an EORI number, deciding who makes customs declarations, the commodity code and customs value, licences and certificates, making the import declaration to clear the goods, and keeping invoices and records; and most importing businesses using a transporter or customs agent',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-iata-air-cargo-tariffs': {
     authority: 'International Air Transport Association (IATA)',
@@ -69,7 +69,7 @@ export default {
     supports:
       'air carriers charging by volumetric or actual weight, whichever is higher; the general rule of dividing the volume in cubic centimetres by 6,000; tariffs being set by each carrier or at industry level, with the rate a forwarder pays able to differ; tariffs excluding services such as customs clearance, pick-up and delivery; and accessorial fees such as fuel, security, dangerous goods and handling charges',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-cbp-ams-air-features': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -79,7 +79,7 @@ export default {
     supports:
       'the incoming air carrier transmitting the master air waybill for consolidated shipments and the house air waybills unless another party sends them, split consolidations needing house-level detail, deconsolidators or bonded ABI filer-forwarders transmitting house shipment information independently of the master, and the air waybill number serving as the in-bond control number',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-cfr-19-122-48a': {
     authority: 'U.S. Customs and Border Protection, 19 CFR 122.48a, via Cornell LII',
@@ -89,7 +89,7 @@ export default {
     supports:
       'the master air waybill data (air waybill number, flight, airports, quantity, weight, description, shipper and consignee) and the house air waybill data (master and house numbers, origin, description, quantity, weight, shipper and consignee); other eligible parties transmitting house data; and the data being due no later than four hours before arrival, or at departure from nearby foreign areas',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-eeas-ics2-air': {
     authority: 'European Union (EEAS delegation, reporting a European Commission notice)',
@@ -100,7 +100,7 @@ export default {
     supports:
       'ENS filers providing complete data at master and lowest house level, separate goods items for different HS codes, descriptions such as “unknown” being unacceptable, and the consignor and consignee in the lowest house air waybill having to be the real parties, not the carrier, forwarder, consolidator or customs agent',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-csc-msc-355-92': {
     authority:
@@ -111,7 +111,7 @@ export default {
     supports:
       'maximum operating gross mass (rating, R) as the maximum allowable sum of the mass of the container and its cargo, tare as the empty container’s mass, maximum permissible payload (P) as the difference, the Safety Approval Plate showing the maximum operating gross mass in kg and lb, and all gross mass markings having to be consistent with the plate',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-cfr-23-658-17': {
     authority: 'Federal Highway Administration, 23 CFR 658.17, via Cornell LII',
@@ -121,7 +121,7 @@ export default {
     supports:
       'a maximum gross vehicle weight of 80,000 pounds, 20,000 pounds on a single axle and 34,000 pounds on tandem axles, subject to the bridge formula',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-dcsa-charges-payment-term': {
     authority: 'Digital Container Shipping Association (DCSA), information model 2024 Q4',
@@ -131,7 +131,7 @@ export default {
     supports:
       'the payment term indicating whether charges are prepaid (PRE) or collect (COL): prepaid charges being the responsibility of the shipper or an invoice payer on its behalf, collect charges the responsibility of the consignee or an invoice payer on its behalf',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b1-dcsa-charge': {
     authority: 'Digital Container Shipping Association (DCSA), information model 2024 Q4',
@@ -141,6 +141,6 @@ export default {
     supports:
       'a charge being the monetary value of freight and other service charges for a booking, each with its own payment term code of prepaid (PRE) or collect (COL)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

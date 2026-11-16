@@ -89,9 +89,15 @@ export async function POST(request: NextRequest) {
     return refuse('That request could not be read.', 400);
   }
 
+  const snapshot = buildToolSnapshot(input);
+  // A discount larger than the invoice would print a negative total (D-029).
+  if (snapshot.invoice_totals && Number(snapshot.invoice_totals.total) < 0) {
+    return refuse('The discount is larger than the invoice. Check the amounts.', 400);
+  }
+
   let pdf: Uint8Array;
   try {
-    pdf = renderTradeDocument(buildToolSnapshot(input));
+    pdf = renderTradeDocument(snapshot);
   } catch {
     return refuse('That document could not be rendered.', 500);
   }

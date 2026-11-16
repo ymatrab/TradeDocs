@@ -17,6 +17,14 @@ export const HS_LOOKUP_QUOTA = { limit: 60, windowSeconds: 600 } as const;
 /** Denied-party screening searches per network address (the CSL key's quota is shared). */
 export const SCREENING_QUOTA = { limit: 30, windowSeconds: 600 } as const;
 
+/**
+ * New shipments a Free organization may save per calendar month (UTC), D-027. Enforced by
+ * the shipments_free_limit trigger (supabase/migrations/20261027000100_free_shipment_limit.sql)
+ * and only while a paid plan can be bought: syncFreePlanLimits in src/lib/billing/server.ts
+ * writes this number to the database then, and 0 (no limit) otherwise.
+ */
+export const FREE_SHIPMENTS_PER_MONTH = 3;
+
 /** The most current documents one shipment's ZIP set will bundle. */
 export const MAX_SET_DOCUMENTS = 60;
 

@@ -16,7 +16,7 @@ export default {
     supports:
       'the air waybill number and the master air waybill number being the IATA standard 11-digit number, and the house air waybill number being up to 12 alphanumeric characters whose letters may not be dropped when transmitted',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-iata-dg-autocheck-awb': {
     authority: 'International Air Transport Association (IATA)',
@@ -26,7 +26,7 @@ export default {
     supports:
       'an IATA standard air waybill number being 11 digits written 000-00000000, with the 11th digit a check digit calculated as an unweighted modulus 7',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-abf-awb-check-digit': {
     authority: 'Australian Border Force (Integrated Cargo System software developers guide)',
@@ -36,7 +36,7 @@ export default {
     supports:
       'the air waybill number being the issuing carrier’s three-digit IATA airline code, a seven-digit serial number and a check digit, the check digit being the remainder when the serial number is divided by 7, with a worked example',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-bic-check-digit': {
     authority: 'Bureau International des Containers (BIC)',
@@ -46,7 +46,7 @@ export default {
     supports:
       'a container number being a three-letter owner prefix, a one-letter equipment category identifier (U for freight containers, J for detachable container-related equipment, Z for trailers and chassis), a six-digit serial number and a check digit calculated from the prefix and serial that validates recording and transmission, recalculated when a container is re-marked with another code',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-bic-codes': {
     authority: 'Bureau International des Containers (BIC)',
@@ -56,7 +56,7 @@ export default {
     supports:
       'the BIC code, also known as the ISO 6346 container prefix, being a three-letter owner or operator code plus a fourth equipment letter, six serial digits and a check digit; the register being originated by BIC, adopted by ISO in 1972 and maintained by BIC; only registered codes being usable as a unique identity marking in international documents; and ISO 6346 also covering size and type codes',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-cfr-19-4-7a': {
     authority: 'U.S. Customs and Border Protection (19 CFR 4.7a), via Cornell LII',
@@ -66,7 +66,7 @@ export default {
     supports:
       'every bill of lading, whether issued by a carrier, freight forwarder or other issuer, carrying a unique identifier of up to 16 characters that starts with the issuer’s four-character SCAC and is not reused for 3 years; the cargo declaration stating the master or house bill numbers, the quantity of the lowest external packaging unit (containers and pallets not acceptable), the weight, a precise description (generic descriptions not acceptable), container numbers and seal numbers',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
   'e1-nmfta-scac': {
     authority: 'National Motor Freight Traffic Association (NMFTA)',
@@ -76,6 +76,6 @@ export default {
     supports:
       'the SCAC being the freight industry’s universal carrier identifier, issued and governed exclusively by the NMFTA',
     retrieved: RETRIEVED,
-    reviewer: 'pending owner review',
+    reviewer: 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)',
   },
 } satisfies Record<string, SourceFields>;

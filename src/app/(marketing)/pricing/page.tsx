@@ -20,7 +20,7 @@ import {
   type Plan,
   type PlanId,
 } from '@/lib/billing/plans';
-import { MAX_IMPORT_ROWS, MAX_SET_DOCUMENTS } from '@/lib/limits';
+import { FREE_SHIPMENTS_PER_MONTH, MAX_IMPORT_ROWS, MAX_SET_DOCUMENTS } from '@/lib/limits';
 import { openGraphFor } from '@/lib/seo/social';
 import { isDatabaseConfigured } from '@/lib/supabase/server';
 
@@ -93,14 +93,22 @@ function quotedPrice(plan: PaidPlanId, plans: ReturnType<typeof currentPlans>): 
   return priceSentence(plan);
 }
 
-function questionsFor(state: PageState, plans: ReturnType<typeof currentPlans>): Question[] {
+/** Said wherever the page describes Free, while the Free shipment limit applies (D-027). */
+const FREE_LIMIT_SENTENCE = ` Free saves ${FREE_SHIPMENTS_PER_MONTH} new shipments a month; Pro and Team have no cap, and the free generators have no limit.`;
+
+function questionsFor(
+  state: PageState,
+  plans: ReturnType<typeof currentPlans>,
+  limited: boolean,
+): Question[] {
   const priced = state !== 'unpriced';
+  const limit = limited ? FREE_LIMIT_SENTENCE : '';
   const monthsFree = listedPrices('pro')[0]?.monthsFree ?? 0;
   const list: Question[] = [
     {
       q: 'Is TradeDocs free?',
       a: PAID_EXTRAS
-        ? `Yes, while it is early: ${FREE_SCOPE} is in the free plan, so nobody needs to pay to prepare and download their documents.${ADDS}${priced ? '' : ' No paid plan is open yet, so nobody is charged for anything.'}`
+        ? `Yes, while it is early: ${FREE_SCOPE} is in the free plan, so nobody needs to pay to prepare and download their documents.${limit}${ADDS}${priced ? '' : ' No paid plan is open yet, so nobody is charged for anything.'}`
         : priced
           ? 'Yes, while it is early. Every feature listed on this page is in the free plan today. Pro and Team add no paid-only features yet, so nobody needs to pay to use TradeDocs.'
           : 'Yes, while it is early. Every feature listed on this page is free today, and no paid plan is open, so nobody is charged for anything.',
@@ -155,7 +163,7 @@ function questionsFor(state: PageState, plans: ReturnType<typeof currentPlans>):
 }
 
 /** Facts about TradeDocs only; no other product is named or implied (rules/product.md). */
-const reasons = [
+const reasonsFor = (limited: boolean) => [
   {
     title: 'One shipment record, every document',
     body: 'The commercial invoice, proforma invoice, packing list and delivery note come from the same shipment revision, so parties, goods, totals and weights agree across them.',
@@ -171,11 +179,17 @@ const reasons = [
     body: 'The commercial invoice, proforma and packing list generators work without signing up, and nothing you type is stored.',
     needsAccount: false,
   },
-  {
-    title: 'No cap on shipments or teammates today',
-    body: 'Save as many shipments as you need and invite your team by link, with owner, admin and member roles.',
-    needsAccount: true,
-  },
+  limited
+    ? {
+        title: 'No cap on teammates, no meter on documents',
+        body: `Invite your whole team by link, with owner, admin and member roles, on every plan. Every saved shipment produces as many documents as you need; Free saves ${FREE_SHIPMENTS_PER_MONTH} new shipments a month, Pro and Team have no cap.`,
+        needsAccount: true,
+      }
+    : {
+        title: 'No cap on shipments or teammates today',
+        body: 'Save as many shipments as you need and invite your team by link, with owner, admin and member roles.',
+        needsAccount: true,
+      },
   {
     title: 'Your catalog in, the whole set out',
     body: `Import products from a CSV of up to ${MAX_IMPORT_ROWS.toLocaleString('en')} rows, and download a shipment’s current documents, up to ${MAX_SET_DOCUMENTS}, as one ZIP with a checksum manifest.`,
@@ -313,7 +327,9 @@ export default function PricingPage() {
   const capabilities = currentCapabilities();
   const features = offeredFeatures(capabilities, regulatedDocumentsEnabled());
   const state = pageState(plans);
-  const questions = questionsFor(state, plans);
+  const limited = capabilities.free_shipment_limit === true;
+  const questions = questionsFor(state, plans, limited);
+  const reasons = reasonsFor(limited);
 
   return (
     <>

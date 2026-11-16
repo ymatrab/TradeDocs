@@ -1,5 +1,7 @@
 import { z } from 'zod';
+import Decimal from 'decimal.js';
 import { currencyMinorUnits, lineTotal, sumLineTotals, sumStated } from '@/lib/money';
+import type { ChargeKind } from '@/lib/trade/charges';
 
 /**
  * The free document tool's request, and the snapshot it becomes.
@@ -35,7 +37,23 @@ const party = z.object({
   postal_code: text(40),
   country_code: text(2),
   tax_number: text(100),
+  /** EORI as issued: country code, then up to 15 letters or digits (D-029). */
+  eori_number: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .regex(/^([A-Z]{2}[A-Z0-9]{1,15})?$/)
+    .optional()
+    .transform((value) => value || null),
 });
+
+/** An optional non-negative amount; blank or zero means "not stated". */
+const amount = z.coerce
+  .number()
+  .min(0)
+  .max(100_000_000_000)
+  .optional()
+  .transform((value) => (value ? value : null));
 
 const line = z.object({
   description: z.string().trim().min(1).max(500),
@@ -75,6 +93,15 @@ export const toolRequestSchema = z.object({
   valid_until: calendarDate.optional(),
   /** Printed under the totals of an invoice, as the workspace's own payment terms are. */
   payment_terms: text(1000),
+  /**
+   * Invoices only (D-029): freight, insurance and a discount, each added to (or deducted
+   * from) the goods value and printed by name (19 CFR 141.86(a)(8) and (g)).
+   */
+  freight: amount,
+  insurance: amount,
+  discount: amount,
+  /** The exporter's responsible person, printed under the signature line (141.86(j)). */
+  signatory_name: text(80),
   currency: z
     .string()
     .trim()
@@ -141,6 +168,45 @@ function commercialTerms(input: ToolRequest) {
     buyerReference: invoice ? input.buyer_reference : null,
     validUntil: input.kind === 'proforma_invoice' ? (input.valid_until ?? null) : null,
     paymentTerms: invoice ? input.payment_terms : null,
+    signatory: invoice ? input.signatory_name : null,
+  };
+}
+
+/**
+ * Schema 8 for an invoice that states freight, insurance or a discount: each rounded once to
+ * the currency, and the total the goods value plus the charges minus the discount, exactly as
+ * the workspace's document_snapshot computes it. Null when none is stated.
+ */
+function invoiceCharges(input: ToolRequest, places: number, goods: Decimal) {
+  if (!INVOICE_KINDS.includes(input.kind)) return null;
+  const entries: [ChargeKind, number | null][] = [
+    ['freight', input.freight],
+    ['insurance', input.insurance],
+    ['discount', input.discount],
+  ];
+  const stated = entries.filter((entry): entry is [ChargeKind, number] => entry[1] !== null);
+  if (stated.length === 0) return null;
+  const charges = stated.map(([kind, value], index) => ({
+    position: index + 1,
+    kind,
+    label: null,
+    amount: new Decimal(value).toDecimalPlaces(places, Decimal.ROUND_HALF_UP).toFixed(places),
+    included_in_price: false,
+  }));
+  const added = charges
+    .filter((charge) => charge.kind !== 'discount')
+    .reduce((sum, charge) => sum.plus(charge.amount), new Decimal(0));
+  const deducted = charges
+    .filter((charge) => charge.kind === 'discount')
+    .reduce((sum, charge) => sum.plus(charge.amount), new Decimal(0));
+  return {
+    charges,
+    invoice_totals: {
+      goods: goods.toFixed(places),
+      charges: added.toFixed(places),
+      discounts: deducted.toFixed(places),
+      total: goods.plus(added).minus(deducted).toFixed(places),
+    },
   };
 }
 
@@ -154,11 +220,22 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
   const terms = commercialTerms(input);
   const schema6 = terms.buyerReference !== null || terms.validUntil !== null;
   const items = input.lines.map((entry, index) => toItem(entry, index, places));
+  const goods = sumLineTotals(input.lines, places);
+  const charged = invoiceCharges(input, places, goods);
+  const issuer =
+    terms.paymentTerms || terms.signatory
+      ? {
+          issuer: {
+            ...(terms.paymentTerms ? { payment_terms: terms.paymentTerms } : {}),
+            ...(terms.signatory ? { signatory_name: terms.signatory } : {}),
+          },
+        }
+      : {};
   const gross = sumStated(input.lines.map((entry) => entry.gross_weight_kg));
   const net = sumStated(input.lines.map((entry) => entry.net_weight_kg));
 
   return {
-    schema_version: schema6 ? 6 : 4,
+    schema_version: charged ? 8 : schema6 ? 6 : 4,
     money_places: places,
     kind: input.kind,
     number: input.number,
@@ -182,7 +259,7 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
         : {}),
     },
     // Schema 4's issuer block, holding only what a visitor can state here.
-    ...(terms.paymentTerms ? { issuer: { payment_terms: terms.paymentTerms } } : {}),
+    ...issuer,
     exporter: input.seller,
     consignee: input.buyer,
     notify: null,
@@ -195,7 +272,8 @@ export function buildToolSnapshot(input: ToolRequest, generatedAt: Date = new Da
       // printing a gross weight of zero.
       gross_weight_kg: gross === null ? null : gross.toString(),
       packages: (sumStated(input.lines.map((entry) => entry.package_count)) ?? 0).toString(),
-      value: sumLineTotals(input.lines, places).toFixed(places),
+      value: goods.toFixed(places),
     },
+    ...(charged ?? {}),
   };
 }

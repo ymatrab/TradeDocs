@@ -7,7 +7,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * posts, ids prefixed `b2-`.
  */
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'b2-imo-ctu-code': {
@@ -18,7 +18,7 @@ export default {
     supports:
       'the CTU Code being a non-mandatory 2014 code of practice from the IMO, ILO and UNECE on loading and securing cargo in containers and other cargo transport units',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-fedex-etd': {
     authority: 'FedEx',
@@ -28,7 +28,7 @@ export default {
     supports:
       'ETD transmitting customs documents electronically, the three invoice choices in FedEx Ship Manager at fedex.com (your own uploaded invoice, or a FedEx-created commercial or pro forma invoice with your letterhead and signature), up to four additional documents, and pre-shipment, at-shipment and post-shipment upload',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-dhl-plt-terms': {
     authority: 'DHL Express',
@@ -38,7 +38,7 @@ export default {
     supports:
       'DHL Paperless Trade (PLT) sending documentation electronically instead of printed copies, DHL checking from the shipment details whether PLT is available, PLT not being used where legal or customs rules require hard copies, some documents still being needed on paper, and electronic documents having to be legible',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-dhl-nz-prepare-shipment': {
     authority: 'DHL Express',
@@ -48,7 +48,7 @@ export default {
     supports:
       'MyDHL+ offering “Create Invoice” or “Use My Own Invoice”, uploading the invoice for the digital customs invoice service, and otherwise printing two hard copies to attach',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-import-step-by-step': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -58,7 +58,7 @@ export default {
     supports:
       'the import steps: a GB EORI number, deciding who makes the declaration, the commodity code setting the duty rate, trade agreements and reliefs, the declared value setting duty and VAT, reclaiming import VAT with the C79, and keeping invoices and records',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-goods-sent-from-abroad': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -68,7 +68,7 @@ export default {
     supports:
       'no Customs Duty on non-excise goods worth £135 or less sent to Great Britain, duty above £135 at the rate for the goods and their origin, no VAT on gifts worth £39 or less, and different rules for Northern Ireland',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-value-imports': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -78,7 +78,7 @@ export default {
     supports:
       'the customs value being the basis for Customs Duty, import VAT and trade statistics, the six valuation methods starting with Method 1 (transaction value), and exchange rates for foreign currency amounts',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-vat-on-imports': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -88,7 +88,7 @@ export default {
     supports:
       'the value for import VAT being the customs value plus incidental costs to the first UK destination and any Customs Duty, postponed VAT accounting on the VAT Return for VAT-registered businesses, and reclaiming import VAT as input tax',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-vat-rates': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -97,7 +97,7 @@ export default {
     jurisdiction: 'United Kingdom (VAT)',
     supports: 'the standard rate of 20%, the reduced rate of 5% and the zero rate',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-trade-tariff': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -107,7 +107,7 @@ export default {
     supports:
       'the Trade Tariff service for finding a commodity code and checking the duty and VAT to pay, including suspensions and reductions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'b2-gov-uk-preference-agreements': {
     authority: 'GOV.UK (HM Revenue & Customs)',
@@ -117,6 +117,6 @@ export default {
     supports:
       'reduced duty under a UK trade agreement, meeting the rules of origin on every claim, the Trade Tariff showing which proof of origin can be used, and keeping the proof for at least 4 years',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

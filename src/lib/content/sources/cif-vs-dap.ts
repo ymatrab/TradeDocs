@@ -1,7 +1,7 @@
 import type { SourceFields } from '@/lib/trade/sources';
 
 const RETRIEVED = '2026-10-08';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 /**
  * Sources first cited by the wave D comparison batch: cif-vs-dap, exw-vs-dap, cfr-vs-cif and
@@ -16,7 +16,7 @@ export default {
     supports:
       'a corporation not incorporated in the US customs territory entering goods for consumption only if it has a resident agent authorised to accept service in the state of the port of entry and files a bond with a resident corporate surety',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd2-cbp-importer-exporter-tips': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -26,7 +26,7 @@ export default {
     supports:
       'the importer of record being ultimately responsible for the correctness of the entry documentation, even when a customs broker is used',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd2-usc-19-1401a-duties': {
     authority: 'Legal Information Institute, Cornell Law School (United States Code)',
@@ -36,7 +36,7 @@ export default {
     supports:
       'transaction value not including, when identified separately, transportation after importation or the customs duties and other Federal taxes payable by reason of importation, and the price actually paid or payable excluding international transportation and insurance',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'd2-gov-uk-eori': {
     authority: 'HM Revenue & Customs (HMRC), GOV.UK',
@@ -46,6 +46,6 @@ export default {
     supports:
       'an EORI number being needed to move goods between Great Britain and other countries, businesses not established in the UK usually being unable to apply themselves, and appointing someone to deal with customs on their behalf',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;

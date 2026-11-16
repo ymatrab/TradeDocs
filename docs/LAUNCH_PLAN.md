@@ -12,35 +12,40 @@ purchase order, sales confirmation, sales contract draft, proforma, commercial i
 packing list, delivery note, bill of lading draft, shipper's letter of instruction, VGM
 declaration), certificate of origin behind its review gate, REST API (Team), QuickBooks/Xero
 import and Dropbox Sign e-signature (Pro and Team), each off until configured. Prices approved
-(Pro $19/mo or $190/yr, Team $49/mo or $490/yr), not yet shown.
+(Pro $19/mo or $190/yr, Team $49/mo or $490/yr) and shown by default since D-026.
+
+Since D-026 (2026-10-11) production needs no hand-set `PRICES_APPROVED`, `APPLICATION_MODE`,
+`APP_ENV`, `APP_URL`, `RATE_LIMIT_KEY_SECRET`, `LAUNCH_APPROVED` or `WAIVE_*`, and the
+production build applies pending migrations itself (RUNBOOK.md, "Configuration defaults" and
+"Migrations on deploy"). Service mode switches on by itself once the email sender exists.
 
 Owner, in order (details in RUNBOOK.md):
 
-1. Vercel Production env: `PRICES_APPROVED=true`, `APPLICATION_MODE=service`, `APP_ENV`,
-   `APP_URL`, `RATE_LIMIT_KEY_SECRET`, `RESEND_API_KEY`, `EMAIL_FROM`, `PLATFORM_ADMIN_EMAILS`,
-   `WAIVE_TURNSTILE/SENTRY/ANALYTICS/INDEXNOW=true`; redeploy.
-2. Resend account and verified sending domain; Supabase Auth SMTP set to Resend.
-3. Supabase dashboard: confirm email on, minimum password 12, Site URL and redirect
-   `<APP_URL>/**`, the 4 templates from `supabase/templates/`.
-4. Supabase backup, `PRODUCTION_DATABASE_URL` secret in the GitHub `production`
-   environment, then the "Migrate production database" workflow (dry run, then apply). PR #21
-   added migrations 20261009000100, 0200, 0400, 0500 and 0600.
-5. Legal identity (business name, country, address, contact email) and approval of the
-   privacy policy and terms (`LEGAL_*`, `LEGAL_APPROVED_AT`).
-6. Domain attached, `APP_URL` updated; Google Search Console and sitemap submission.
-7. Stripe Payment Links for Pro and Team, webhook secret, `PAYMENTS_APPROVED`,
+1. Resend account and verified sending domain; Vercel Production env `RESEND_API_KEY` and
+   `EMAIL_FROM`; Supabase Auth SMTP set to Resend.
+2. Supabase dashboard auth settings: confirm email on, minimum password 12, Site URL and
+   redirect `<APP_URL>/**`, the 4 templates from `supabase/templates/`. (Recommended: a
+   Supabase backup before the first deploy that migrates.)
+3. `PLATFORM_ADMIN_EMAILS`, only if you want `/admin`.
+4. Domain: attach it in Vercel; `APP_URL` follows it and indexing opens (D-007). Then Google
+   Search Console and sitemap submission.
+5. Stripe Payment Links for Pro and Team, webhook secret, `PAYMENTS_APPROVED`,
    `ENABLE_PAYMENTS`.
-8. `LAUNCH_APPROVED=true`. Agent then runs the post-launch smoke: sign-up and confirmation
-   email, first shipment with every document type, ZIP, cross-tenant isolation.
 
-Optional, each switches on one feature: `API_KEY_PEPPER` (REST API); `LEGAL_COO_REVIEWED_BY`,
-`LEGAL_COO_REVIEWED_AT`, `REGULATED_DOCUMENTS_APPROVED`, `ENABLE_REGULATED_DOCUMENTS`
-(certificate of origin, after a named legal review); `CSL_API_KEY` (denied-party screening);
-Intuit and Xero developer apps plus `QUICKBOOKS_*`, `XERO_*`, `INTEGRATION_TOKEN_KEY`;
-`DROPBOX_SIGN_API_KEY` (e-signature).
+Agent after each deploy: `/api/ready` 200 with no `service_mode_pending`, sign-up and
+confirmation email, first shipment with every document type, ZIP, cross-tenant isolation.
+
+Optional, each switches on one feature: `LEGAL_*` and `LEGAL_APPROVED_AT` (legal identity and
+approval of the privacy policy and terms); `LEGAL_COO_REVIEWED_BY`, `LEGAL_COO_REVIEWED_AT`,
+`REGULATED_DOCUMENTS_APPROVED`, `ENABLE_REGULATED_DOCUMENTS` (certificate of origin, after a
+named legal review); `CSL_API_KEY` (denied-party screening); Intuit and Xero developer apps
+plus `QUICKBOOKS_*`, `XERO_*`; `DROPBOX_SIGN_API_KEY` (e-signature). The REST API pepper and
+the integration token key are derived from the service-role key unless set.
 
 Not buildable by agents (D-025): AES filing, chamber-certified certificates of origin,
 dangerous goods declarations, phone support.
+
+The sections below are history: the owner checklists in them predate D-026.
 
 ## Where things stand
 

@@ -14,7 +14,8 @@ function detailOf(record: SourceRecord): string {
  * The sources a tool page rests on, with the date they were last checked.
  *
  * Read from the one registry in lib/trade/sources so a review updates every page at once.
- * The reviewer line is shown as it stands: "pending owner review" is not an approval.
+ * The reviewer line is shown as it stands: an owner acceptance (D-028), never presented as
+ * an independent professional review.
  */
 export function SourcesBlock({ ids }: { ids: readonly SourceId[] }) {
   const records = sourcesFor(ids);

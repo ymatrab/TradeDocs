@@ -15,6 +15,7 @@ import { createFontSet } from './fonts';
 import { embedImage, fitWithin, type PdfImage } from './image';
 import { LOGO_BOX, SIGNATURE_BOX } from './branding-layout';
 import { DOCUMENT_KINDS } from '@/lib/labels';
+import { CHARGE_KINDS, CHARGE_LABELS } from '@/lib/trade/charges';
 import { cooWording } from '../trade/certificate-of-origin';
 
 /**
@@ -30,7 +31,9 @@ import { cooWording } from '../trade/certificate-of-origin';
  * snapshot would change; a change that only affects snapshots of a newer schema version
  * keeps older documents byte-identical and still warrants a bump.
  */
-export const RENDERER_VERSION = 'tradedocs-pdf/7';
+export const RENDERER_VERSION = 'tradedocs-pdf/8';
+
+export { CHARGE_KINDS, CHARGE_LABELS } from '@/lib/trade/charges';
 
 const numeric = z.union([z.number(), z.string()]).transform((value) => Number(value));
 
@@ -45,6 +48,8 @@ const partySchema = z
     postal_code: z.string().nullable().optional(),
     country_code: z.string().nullable().optional(),
     tax_number: z.string().nullable().optional(),
+    /** Present only when the company has one (20261029000100); printed under the tax ID. */
+    eori_number: z.string().nullable().optional(),
     contact_name: z.string().nullable().optional(),
     registration_number: z.string().nullable().optional(),
   })
@@ -76,7 +81,9 @@ export const snapshotSchema = z.object({
    * commercial and proforma invoices) and `proforma_valid_until` (on proforma invoices), in
    * a second row of term boxes. Schema 7 adds the container, seal, booking, vessel and VGM
    * fields to `shipment`. Renderer 7 adds seven kinds (quotation to VGM declaration) whose
-   * layout is new and touches no older kind. Each change applies only from the schema that
+   * layout is new and touches no older kind. Schema 8 adds an invoice's `charges` (freight,
+   * insurance, packing, commission, other, discount) and `invoice_totals`, printed between
+   * the goods value and the total (19 CFR 141.86(a)(8) and (g)). Each change applies only from the schema that
    * introduced it, so a document issued under an older schema re-renders exactly as it was
    * issued.
    */
@@ -229,6 +236,27 @@ export const snapshotSchema = z.object({
       gross_weight_kg: numeric.nullable(),
       net_weight_kg: numeric.nullable(),
       volume_m3: numeric,
+    })
+    .optional(),
+  /** Schema 8, invoices only: named charges and discounts, each rounded to the currency. */
+  charges: z
+    .array(
+      z.object({
+        position: z.number(),
+        kind: z.enum(CHARGE_KINDS),
+        label: z.string().nullable().optional(),
+        amount: numeric,
+        included_in_price: z.boolean(),
+      }),
+    )
+    .optional(),
+  /** Schema 8: goods value + charges not in the prices - discounts not in them = total. */
+  invoice_totals: z
+    .object({
+      goods: numeric,
+      charges: numeric,
+      discounts: numeric,
+      total: numeric,
     })
     .optional(),
 });
@@ -618,6 +646,7 @@ function partyLines(party: NonNullable<DocumentSnapshot['exporter']>): string[] 
     [party.postal_code, party.city].filter(Boolean).join(' '),
     [party.region, party.country_code].filter(Boolean).join(', '),
     party.tax_number ? `Tax ID ${party.tax_number}` : '',
+    party.eori_number ? `EORI ${party.eori_number}` : '',
   ];
   return lines.filter((line) => line.trim().length > 0);
 }
@@ -660,12 +689,38 @@ function totalsFor(snapshot: DocumentSnapshot): [string, string][] {
     totals.push(['Total gross weight', `${decimal(snapshot.totals.gross_weight_kg, 3)} kg`]);
   }
   if (snapshot.kind === 'commercial_invoice' || snapshot.kind === 'proforma_invoice') {
-    totals.push([
-      'Total amount',
-      `${decimal(snapshot.totals.value, moneyPlaces)} ${snapshot.shipment.currency}`,
-    ]);
+    const currency = snapshot.shipment.currency;
+    if (snapshot.invoice_totals && snapshot.charges && snapshot.charges.length > 0) {
+      totals.push(...chargeLines(snapshot.charges, snapshot.invoice_totals, moneyPlaces, currency));
+    } else {
+      totals.push(['Total amount', `${decimal(snapshot.totals.value, moneyPlaces)} ${currency}`]);
+    }
   }
   return totals;
+}
+
+/**
+ * Schema 8: the goods value, each charge and discount by name and amount, and the total. A
+ * charge already in the line prices is shown for the record, marked so, and not added again.
+ */
+function chargeLines(
+  charges: NonNullable<DocumentSnapshot['charges']>,
+  invoiceTotals: NonNullable<DocumentSnapshot['invoice_totals']>,
+  moneyPlaces: number,
+  currency: string,
+): [string, string][] {
+  const lines: [string, string][] = [
+    ['Goods value', `${decimal(invoiceTotals.goods, moneyPlaces)} ${currency}`],
+  ];
+  for (const charge of charges) {
+    const name =
+      charge.kind === 'other' && charge.label ? charge.label : (CHARGE_LABELS[charge.kind] ?? '');
+    const caption = charge.included_in_price ? `${name} (included in prices)` : name;
+    const sign = charge.kind === 'discount' && !charge.included_in_price ? '-' : '';
+    lines.push([caption, `${sign}${decimal(charge.amount, moneyPlaces)} ${currency}`]);
+  }
+  lines.push(['Total amount', `${decimal(invoiceTotals.total, moneyPlaces)} ${currency}`]);
+  return lines;
 }
 
 /**

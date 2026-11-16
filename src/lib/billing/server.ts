@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { getServerEnv } from '@/lib/config/server';
+import { getServerEnv, serverEnvironment } from '@/lib/config/server';
 import type { ServerEnv } from '@/lib/config/schema';
 import {
   ENTITLEMENT_COLUMNS,
@@ -23,6 +23,8 @@ import {
 } from '@/lib/billing/stripe-events';
 import type { StripeReader } from '@/lib/billing/stripe-api';
 import { createClient, type TradeDocsClient } from '@/lib/supabase/server';
+import { createServiceClient, hasServiceRole } from '@/lib/supabase/admin';
+import { FREE_SHIPMENTS_PER_MONTH } from '@/lib/limits';
 
 /**
  * Billing on the server: whether payments are open, the plans as offered right now, the
@@ -91,7 +93,39 @@ export function paymentsOpen(): boolean {
 
 /** The plans as they are offered on this deployment right now. */
 export function currentPlans(): Plan[] {
-  return resolvePlans(process.env, paymentsOpen());
+  return resolvePlans(serverEnvironment(), paymentsOpen());
+}
+
+/**
+ * Whether the Free shipment limit applies (D-027): only while a paid plan can actually be
+ * bought, so no Free organization is capped with nothing to upgrade to.
+ */
+export function freeShipmentLimitActive(): boolean {
+  return currentPlans().some((plan) => plan.offer.state === 'purchasable');
+}
+
+let freeLimitSynced: { value: number; at: number } | null = null;
+const FREE_LIMIT_SYNC_MS = 60_000;
+
+/**
+ * Writes the Free shipment limit the database enforces (private.plan_limits): the limit while
+ * it is active, 0 (none) otherwise. Called before a shipment is created, at most once a
+ * minute per server instance for an unchanged value. A failure leaves the stored value as it
+ * was and never blocks the caller; the database trigger stays the enforcement point.
+ */
+export async function syncFreePlanLimits(): Promise<void> {
+  const value = freeShipmentLimitActive() ? FREE_SHIPMENTS_PER_MONTH : 0;
+  const now = Date.now();
+  if (freeLimitSynced?.value === value && now - freeLimitSynced.at < FREE_LIMIT_SYNC_MS) return;
+  if (!hasServiceRole()) return;
+  try {
+    const { error } = await createServiceClient().rpc('sync_free_plan_limits', {
+      p_shipments_per_month: value,
+    });
+    if (!error) freeLimitSynced = { value, at: now };
+  } catch {
+    // Unreachable database: the stored value stands.
+  }
 }
 
 /** The caller's view of an organization's entitlement, through row level security. */

@@ -7,7 +7,7 @@ import type { SourceFields } from '@/lib/trade/sources';
  * claim checked on the retrieval date.
  */
 const RETRIEVED = '2026-10-07';
-const PENDING = 'pending owner review';
+const OWNER_ACCEPTED = 'accepted by the owner on 29 October 2026 (AI-assisted review, D-028)';
 
 export default {
   'a1-usps-dmm-101': {
@@ -18,7 +18,7 @@ export default {
     supports:
       'length being the longest dimension of a parcel, girth the distance around its thickest part, and the 108 inch combined length and girth maximum (130 inches for USPS Ground Advantage – Retail)',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-usps-dmm-223': {
     authority: 'United States Postal Service (USPS), Domestic Mail Manual',
@@ -28,7 +28,7 @@ export default {
     supports:
       'measuring length, width and height in inches, rounding each up to the whole inch, and dividing cubic inches by 139 for parcels over 1 cubic foot',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-usps-pmi-flat-rate': {
     authority: 'United States Postal Service (USPS)',
@@ -38,7 +38,7 @@ export default {
     supports:
       'the inside and outside dimensions and the 4 lb and 20 lb weight limits of the Priority Mail International Flat Rate Boxes',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-iso-3394': {
     authority: 'International Organization for Standardization (ISO), via AFNOR',
@@ -49,7 +49,7 @@ export default {
     supports:
       'ISO 3394 setting package dimensions based on the 600 × 400 mm, 600 × 500 mm and 550 × 366 mm modules, tied to the ISO 3676 unit load sizes of 1,219 × 1,016, 1,200 × 1,000, 1,200 × 800 and 1,100 × 1,100 mm',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-fefco-code': {
     authority: 'FEFCO (European Federation of Corrugated Board Manufacturers)',
@@ -60,7 +60,7 @@ export default {
     supports:
       'the FEFCO code being the internationally applied system that gives a code number to each common corrugated box design',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-epal-3-pallet': {
     authority: 'European Pallet Association (EPAL)',
@@ -70,7 +70,7 @@ export default {
     supports:
       'the EPAL 3 pallet measuring 1,000 × 1,200 × 144 mm, weighing about 30 kg, with a 1,500 kg safe working load',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-uk-cogsa-1971': {
     authority: 'UK Parliament, via legislation.gov.uk',
@@ -80,7 +80,7 @@ export default {
     supports:
       'carrier liability limited to 666.67 units of account per package or 2 per kilogramme of gross weight, whichever is higher, unless value is declared; suit within one year; the unit being the IMF special drawing right',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cornell-19-cfr-142-3': {
     authority: 'Legal Information Institute, Cornell Law School (19 CFR, CBP)',
@@ -90,7 +90,7 @@ export default {
     supports:
       'the entry documents: CBP Form 3461 or its electronic equivalent, evidence of the right to make entry, a commercial invoice, a packing list where appropriate, and other documents agencies require',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cornell-19-cfr-142-4': {
     authority: 'Legal Information Institute, Cornell Law School (19 CFR, CBP)',
@@ -100,7 +100,7 @@ export default {
     supports:
       'merchandise not being released from CBP custody unless a single entry or continuous bond on CBP Form 301 has been filed, with listed exceptions',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cornell-19-cfr-149-2': {
     authority: 'Legal Information Institute, Cornell Law School (19 CFR, CBP)',
@@ -110,7 +110,7 @@ export default {
     supports:
       'the ISF Importer submitting the Importer Security Filing no later than 24 hours before the cargo is laden aboard the vessel at the foreign port',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cbp-isf': {
     authority: 'U.S. Customs and Border Protection (CBP)',
@@ -120,7 +120,7 @@ export default {
     supports:
       'the 10+2 rule applying to import cargo arriving by vessel, and non-compliance risking penalties, more inspections and delay',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cornell-19-cfr-134-11': {
     authority: 'Legal Information Institute, Cornell Law School (19 CFR, CBP)',
@@ -130,7 +130,7 @@ export default {
     supports:
       'every article of foreign origin, or its container, being marked legibly, indelibly and permanently with the English name of the country of origin',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-cbp-csms-de-minimis': {
     authority: 'U.S. Customs and Border Protection (CBP), CSMS # 66065494',
@@ -140,7 +140,7 @@ export default {
     supports:
       'goods of all countries losing duty-free de minimis treatment from 12:01 a.m. on 29 August 2025, regardless of value, origin or mode, and needing a formal or informal entry in ACE',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-whitehouse-eo-14388': {
     authority: 'The White House',
@@ -150,7 +150,7 @@ export default {
     jurisdiction: 'United States (imports)',
     supports: 'the suspension of duty-free de minimis treatment being continued in February 2026',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
   'a1-ustr-301-china': {
     authority: 'Office of the United States Trade Representative (USTR)',
@@ -159,6 +159,6 @@ export default {
     jurisdiction: 'United States (imports from China)',
     supports: 'the Section 301 tariff actions on products of China, published as Lists 1 to 4',
     retrieved: RETRIEVED,
-    reviewer: PENDING,
+    reviewer: OWNER_ACCEPTED,
   },
 } satisfies Record<string, SourceFields>;
