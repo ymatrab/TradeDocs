@@ -48,6 +48,8 @@ For delivery incidents inspect template/event IDs, provider webhook verification
 
 Verify clean required gates, focused release commit/tag, named approvals, separate environment configuration, current backup and tested migration compatibility. Deploy the approved artifact, apply migrations per reviewed plan, associate telemetry release and run smoke: auth, tenant isolation, generation, sandbox/probe checkout, delivery and history. Roll back the application only if schema/data remain compatible; otherwise follow the tested forward-fix path. Monitor errors, queues and payment mismatch before closing the release.
 
+Deployment checks (build logs, deployment state, runtime errors and logs, env vars) go through the local Vercel MCP `vercel-tradedocs` for team `team_p52r1Akg8ruLvcTa4LAmFAbG`, project `trade-docs` (owner instruction 2026-11-16). On a 403, run its `authorize_team_access` and have the owner approve the link. Never use the local `vercel` CLI: it is signed in to another account.
+
 ## Restore drill
 
 Restore approved backup into an isolated environment; disable customer email, live payment actions, analytics and indexing. Restore/check schema, tenant records, private objects, versions/hashes and queued side effects. Verify counts/constraints/RLS, historical PDF regeneration and a full synthetic journey. Reconcile external payment facts before resuming jobs. Measure actual recovery point/time against approved per-service RPO/RTO and record gaps, owners and dates. Delete the drill environment according to its approved retention policy. Run quarterly and before launch; backup existence alone is insufficient.
