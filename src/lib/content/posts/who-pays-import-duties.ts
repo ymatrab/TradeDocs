@@ -129,7 +129,7 @@ const article: ContentArticle = {
     },
     {
       q: 'Can I find the duty rate for my product here?',
-      a: 'No. TradeDocs does not classify goods or quote rates. The importer looks up the rate in the importing country’s official tariff, which in the US is the Harmonized Tariff Schedule.',
+      a: 'No. ShipDocIt does not classify goods or quote rates. The importer looks up the rate in the importing country’s official tariff, which in the US is the Harmonized Tariff Schedule.',
     },
   ],
   sources: [

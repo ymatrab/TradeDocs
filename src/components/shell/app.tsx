@@ -63,7 +63,7 @@ export function AppShell({
     : [{ href: '/app', label: 'Organizations', icon: LayoutDashboard }];
 
   const account: NavItem[] = [{ href: '/app/account', label: 'Account', icon: UserCog }];
-  const kicker = orgId ? 'Workspace' : 'TradeDocs';
+  const kicker = orgId ? 'Workspace' : 'ShipDocIt';
 
   const links = (items: readonly NavItem[]) =>
     items.map((item) => (
@@ -93,7 +93,7 @@ export function AppShell({
       <aside className="app-sidebar">
         <Link href="/app" className="wordmark">
           <span className="rule" aria-hidden="true" />
-          TradeDocs
+          ShipDocIt
         </Link>
         <div>
           <p className="caption nav-caption">Workspace</p>

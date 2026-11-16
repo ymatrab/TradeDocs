@@ -79,7 +79,7 @@ export function DeniedPartyScreening() {
     } catch {
       setState({
         kind: 'error',
-        message: 'The screening could not reach TradeDocs. Check your connection and try again.',
+        message: 'The screening could not reach ShipDocIt. Check your connection and try again.',
       });
     }
   };

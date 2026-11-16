@@ -6,7 +6,7 @@ export const SHARE_IMAGE = {
   url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'TradeDocs: enter a shipment once, get the whole document set',
+  alt: 'ShipDocIt: enter a shipment once, get the whole document set',
 } as const;
 
 export type ShareImage = { url: string; width: number; height: number; alt: string };

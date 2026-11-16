@@ -60,7 +60,7 @@ export async function sendInvitationEmail(
 
   const expires = new Date(message.expiresAt).toISOString().slice(0, 10);
   const text = [
-    `You have been invited to join ${message.organization} on TradeDocs as ${roleLabel(message.role).toLowerCase()}.`,
+    `You have been invited to join ${message.organization} on ShipDocIt as ${roleLabel(message.role).toLowerCase()}.`,
     '',
     'Accept the invitation:',
     message.link,
@@ -68,7 +68,7 @@ export async function sendInvitationEmail(
     `The link works once, only for ${message.invitee}, and expires on ${expires}.`,
     'If you were not expecting this, ignore the email; nothing happens unless the link is used.',
     '',
-    '— TradeDocs. TradeDocs prepares trade documents; it does not issue or endorse them.',
+    '— ShipDocIt. ShipDocIt prepares trade documents; it does not issue or endorse them.',
   ].join('\n');
 
   try {
@@ -82,7 +82,7 @@ export async function sendInvitationEmail(
       body: JSON.stringify({
         from: env.EMAIL_FROM,
         to: [recipient.to],
-        subject: `Join ${message.organization} on TradeDocs`,
+        subject: `Join ${message.organization} on ShipDocIt`,
         text,
       }),
       cache: 'no-store',

@@ -15,10 +15,10 @@ import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
  * copy; this holds the facts search engines and assistants are given about them.
  */
 
-export const SITE_NAME = 'TradeDocs';
+export const SITE_NAME = 'ShipDocIt';
 
 export const SITE_DESCRIPTION =
-  'TradeDocs is a shipment workspace for exporters and the people who prepare their paperwork. ' +
+  'ShipDocIt is a shipment workspace for exporters and the people who prepare their paperwork. ' +
   'You record a shipment’s parties, goods and terms once, and it prepares the commercial ' +
   'invoice, proforma invoice, packing list and delivery note from that one record, so the ' +
   'figures agree across the set. It is free while early, and its free tools work without an ' +
@@ -318,13 +318,13 @@ export const LEGAL_PAGES: readonly { path: string; name: string; summary: string
   {
     path: '/privacy',
     name: 'Privacy policy',
-    summary: 'What personal data TradeDocs handles, why, who processes it and your rights.',
+    summary: 'What personal data ShipDocIt handles, why, who processes it and your rights.',
   },
   {
     path: '/terms',
     name: 'Terms of use',
     summary:
-      'The agreement for using TradeDocs: what it is and is not, accounts, content, liability.',
+      'The agreement for using ShipDocIt: what it is and is not, accounts, content, liability.',
   },
   {
     path: '/cookies',

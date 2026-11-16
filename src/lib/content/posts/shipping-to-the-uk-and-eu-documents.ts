@@ -94,7 +94,7 @@ const article: ContentArticle = {
       steps: [
         'Name the seller and the buyer in full, with the buyer’s EORI number if they give you one.',
         'Describe each line in plain words a customs officer can classify, with quantity and unit.',
-        'Show the commodity code for each line if you or the buyer have classified it. TradeDocs never suggests a code for a product.',
+        'Show the commodity code for each line if you or the buyer have classified it. ShipDocIt never suggests a code for a product.',
         'State the unit price, line value, total and currency, and show freight and insurance separately.',
         'State the Incoterms® 2020 rule with the named place, such as DAP Leeds or FCA Chicago.',
         'Give the country of origin of the goods and the reason for export, such as sale or sample.',

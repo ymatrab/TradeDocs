@@ -190,7 +190,7 @@ const country: CountryPage = {
     {
       heading: 'Where do duty and tax figures come from?',
       paragraphs: [
-        'Ask the importer’s customs broker; this page gives none. Korean import charges turn on how the goods are classified and where they originate, and a preference claim can change them. TradeDocs helps at the step before: an invoice whose values, quantities and marks the broker can use without coming back to you.',
+        'Ask the importer’s customs broker; this page gives none. Korean import charges turn on how the goods are classified and where they originate, and a preference claim can change them. ShipDocIt helps at the step before: an invoice whose values, quantities and marks the broker can use without coming back to you.',
       ],
     },
   ],

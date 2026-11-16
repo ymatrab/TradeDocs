@@ -17,7 +17,7 @@ const article: ContentArticle = {
   title: 'Delivery note vs invoice, and how to make one from your packing list',
   metaTitle: 'Delivery note vs invoice: make one from a list',
   description:
-    'A delivery note lists what is handed over, without prices; an invoice bills it. How the two differ, and how to make the delivery note from your packing list in TradeDocs.',
+    'A delivery note lists what is handed over, without prices; an invoice bills it. How the two differ, and how to make the delivery note from your packing list in ShipDocIt.',
   lede: 'A delivery note, an invoice and a packing list all describe the same goods, which is why they are so often confused and so often retyped. Each answers a different question for a different reader. This post sets the delivery note against the invoice, then shows how to make it from the packing list you already have, without typing the lines again.',
   answer:
     'A delivery note lists the goods handed over, with quantities and no prices, so the receiver can check the delivery. An invoice states what the buyer owes for those goods, with prices, totals and payment terms. Make the delivery note from the packing list or invoice so the descriptions and quantities are identical.',
@@ -25,8 +25,8 @@ const article: ContentArticle = {
     'A delivery note carries no prices; the commercial invoice carries the prices and is the document the buyer’s customs uses to assess duties and taxes.',
     'The ITA says a packing list itemises the contents of each package, with weights, measurements and detailed lists of the goods.',
     'HMRC’s Notice 703 lists packing lists, advice notes and evidence of the receipt of the goods abroad among records that support a zero-rated export.',
-    'A TradeDocs delivery note PDF prints the description, HS code and quantity of each line, and a total quantity.',
-    'In the TradeDocs workspace, a delivery note from a shipment with described packages also prints each package’s marks and contents.',
+    'A ShipDocIt delivery note PDF prints the description, HS code and quantity of each line, and a total quantity.',
+    'In the ShipDocIt workspace, a delivery note from a shipment with described packages also prints each package’s marks and contents.',
   ],
   definitions: [
     {
@@ -81,7 +81,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you make a delivery note from a packing list in the free generator?',
       paragraphs: [
-        'The free TradeDocs generator is one form for the commercial invoice, proforma, packing list and delivery note. The values stay in the form while the page is open, so you can download one document, switch the type and download the next.',
+        'The free ShipDocIt generator is one form for the commercial invoice, proforma, packing list and delivery note. The values stay in the form while the page is open, so you can download one document, switch the type and download the next.',
       ],
       steps: [
         'Fill in the packing list: the shipper and receiver, the Incoterms® rule and named place, and each line with its description, quantity, unit, weights and packages. Download it.',
@@ -93,10 +93,10 @@ const article: ContentArticle = {
       ],
     },
     {
-      heading: 'What does a TradeDocs delivery note show?',
+      heading: 'What does a ShipDocIt delivery note show?',
       paragraphs: [
         'The PDF is titled “Delivery Note” and carries the number, issue date and both parties, with the Incoterms® 2020 rule, ports and country of origin in the terms row. The line table has three columns: the description of goods, the HS code and the quantity with its unit, followed by the total quantity. There are no prices, because the unit price field on the form is used only when the type is an invoice.',
-        'In a free TradeDocs workspace, the delivery note comes from the same shipment as the invoice and packing list. If you have described the packages in the packing panel, it adds a packing table: each package with its count, dimensions, volume, net and gross weight, its marks and the goods packed in it. That gives the receiver what they need to check carton by carton. The shipment’s marks and numbers and any document notes from your settings print on it too, while payment terms and bank details stay on the invoices.',
+        'In a free ShipDocIt workspace, the delivery note comes from the same shipment as the invoice and packing list. If you have described the packages in the packing panel, it adds a packing table: each package with its count, dimensions, volume, net and gross weight, its marks and the goods packed in it. That gives the receiver what they need to check carton by carton. The shipment’s marks and numbers and any document notes from your settings print on it too, while payment terms and bank details stay on the invoices.',
       ],
     },
     {

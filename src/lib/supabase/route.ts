@@ -4,7 +4,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import type { NextRequest, NextResponse } from 'next/server';
 import { getServerEnv } from '@/lib/config/server';
 import type { Database } from '@/lib/database.types';
-import { DatabaseUnavailableError, type TradeDocsClient } from './server';
+import { DatabaseUnavailableError, type ShipDocItClient } from './server';
 
 type WrittenCookie = { name: string; value: string; options: CookieOptions };
 
@@ -17,7 +17,7 @@ type WrittenCookie = { name: string; value: string; options: CookieOptions };
  * Supabase writes is captured and applied to the response explicitly by `bind`.
  */
 export function createRouteClient(request: NextRequest): {
-  client: TradeDocsClient;
+  client: ShipDocItClient;
   bind: (response: NextResponse) => NextResponse;
 } {
   const env = getServerEnv();

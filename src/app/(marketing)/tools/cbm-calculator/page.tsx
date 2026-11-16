@@ -123,7 +123,7 @@ export default function CbmPage() {
         <h2>Once the cartons are real</h2>
         <p className="measure">
           A calculator is a one-off answer. On a live shipment the same dimensions belong on the
-          packing list, where TradeDocs derives the volume for you, checks that what is packed
+          packing list, where ShipDocIt derives the volume for you, checks that what is packed
           matches what is invoiced, and prints both from the same figures.
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />

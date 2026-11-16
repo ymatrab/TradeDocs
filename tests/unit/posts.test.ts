@@ -74,9 +74,9 @@ describe('blog posts', () => {
   });
 
   it('keep the rendered title within 60 characters, site suffix included', () => {
-    // The root layout's title template appends " · TradeDocs".
+    // The root layout's title template appends " · ShipDocIt".
     for (const post of POSTS) {
-      expect(`${post.metaTitle} · TradeDocs`.length, post.slug).toBeLessThanOrEqual(60);
+      expect(`${post.metaTitle} · ShipDocIt`.length, post.slug).toBeLessThanOrEqual(60);
       expect(post.description.length, post.slug).toBeLessThanOrEqual(200);
     }
   });
@@ -98,7 +98,7 @@ describe('blog posts', () => {
 
   it('carry the team byline, valid dates and a credited Unsplash cover', () => {
     for (const post of POSTS) {
-      expect(post.byline).toBe('TradeDocs team');
+      expect(post.byline).toBe('ShipDocIt team');
       for (const date of [post.published, post.updated, post.reviewed]) {
         expect(date).toMatch(ISO_DATE);
       }

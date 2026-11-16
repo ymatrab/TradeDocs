@@ -3,7 +3,7 @@ import { z } from 'zod';
 import {
   createClient,
   DatabaseUnavailableError,
-  type TradeDocsClient,
+  type ShipDocItClient,
 } from '@/lib/supabase/server';
 import {
   renderTradeDocument,
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     return new NextResponse(REGULATED_DOCUMENT_LIMITATION, { status: 403 });
   }
 
-  let client: TradeDocsClient;
+  let client: ShipDocItClient;
   try {
     client = await createClient();
   } catch (error) {

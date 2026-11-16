@@ -68,7 +68,7 @@ export function TemplatesSection({ action }: { action: Action }) {
               <Line>Commercial invoice, proforma and packing list from one record.</Line>
             </h2>
             <p>
-              A template is a blank page you retype for every shipment. TradeDocs fills all three
+              A template is a blank page you retype for every shipment. ShipDocIt fills all three
               documents from the same parties, goods and terms, so the quantities on the packing
               list are the quantities on the invoice.
             </p>
@@ -160,7 +160,7 @@ const audiences = [
     detail:
       'Every shipment’s invoice, packing list and delivery note from your own company directory and product catalog, with HS codes and units saved once.',
     links: [
-      { href: '/for/exporters', label: 'TradeDocs for exporters' },
+      { href: '/for/exporters', label: 'ShipDocIt for exporters' },
       { href: '/tools/invoice-generator', label: 'Commercial invoice generator' },
       { href: '/tools/incoterms', label: 'Incoterms® 2020 guide' },
     ],
@@ -169,7 +169,7 @@ const audiences = [
     tag: 'Importers',
     title: 'Importers and buyers',
     detail:
-      'Work out what goods cost once delivered before you order, and read the Incoterms® rule your supplier quotes. TradeDocs does not file customs entries.',
+      'Work out what goods cost once delivered before you order, and read the Incoterms® rule your supplier quotes. ShipDocIt does not file customs entries.',
     links: [
       { href: '/tools/landed-cost-calculator', label: 'Landed cost calculator' },
       { href: '/guides/dap-vs-ddp', label: 'DAP vs DDP' },
@@ -181,7 +181,7 @@ const audiences = [
     detail:
       'Measure a consignment in cubic metres and chargeable weight before you quote, and point shippers to a packing list they can fill in themselves. It is not a booking or tracking system.',
     links: [
-      { href: '/for/freight-forwarders', label: 'TradeDocs for forwarders' },
+      { href: '/for/freight-forwarders', label: 'ShipDocIt for forwarders' },
       { href: '/tools/cbm-calculator', label: 'CBM calculator' },
       { href: '/tools/chargeable-weight', label: 'Dimensional weight calculator' },
       { href: '/tools/container-loading-calculator', label: 'Container loading calculator' },
@@ -193,7 +193,7 @@ const audiences = [
     detail:
       'Keep each client in its own organization, with its own companies, products and teammates. You prepare the documents; the advice stays yours.',
     links: [
-      { href: '/for/trade-consultants', label: 'TradeDocs for consultants' },
+      { href: '/for/trade-consultants', label: 'ShipDocIt for consultants' },
       { href: '/tools/proforma-invoice-generator', label: 'Proforma invoice generator' },
       { href: '/guides', label: 'Trade guides' },
     ],
@@ -211,7 +211,7 @@ export function AudienceSection({ action }: { action: Action }) {
               <Line>For the people who prepare the paperwork.</Line>
             </h2>
             <p>
-              TradeDocs is built for whoever types the shipment up: the exporter’s own team, or the
+              ShipDocIt is built for whoever types the shipment up: the exporter’s own team, or the
               consultant doing it for them. Importers and forwarders use the free tools.
             </p>
           </div>
@@ -248,7 +248,7 @@ export function AudienceSection({ action }: { action: Action }) {
 type Coverage = 'prepares' | 'not-yet' | 'outside';
 
 /**
- * The documents a shipment commonly involves, and which of them TradeDocs prepares. The
+ * The documents a shipment commonly involves, and which of them ShipDocIt prepares. The
  * "who" column is a description of the trade's roles, not of any rule; the note says the
  * actual set depends on the goods, the route and the countries.
  */
@@ -310,14 +310,14 @@ const checklist: {
     purpose: 'The verified gross mass of a packed container, before it is loaded on a ship.',
     who: 'Shipper',
     coverage: 'prepares',
-    status: 'Workspace: you declare the mass, TradeDocs lays it out',
+    status: 'Workspace: you declare the mass, ShipDocIt lays it out',
   },
   {
     name: 'Export or import declaration',
     purpose: 'The customs filing for the goods leaving or entering.',
     who: 'Exporter, importer or their customs broker',
     coverage: 'outside',
-    status: 'Not filed by TradeDocs',
+    status: 'Not filed by ShipDocIt',
   },
 ];
 
@@ -327,7 +327,7 @@ const coverageIcon = { prepares: Check, 'not-yet': Clock, outside: Minus } as co
 const certificateOffered: Pick<(typeof checklist)[number], 'who' | 'coverage' | 'status'> = {
   who: 'Exporter; certified by a chamber or authority where required',
   coverage: 'prepares',
-  status: 'Workspace: your preparation, not certified by TradeDocs',
+  status: 'Workspace: your preparation, not certified by ShipDocIt',
 };
 
 export function ChecklistSection({
@@ -350,12 +350,12 @@ export function ChecklistSection({
           <div className="section-head" style={{ marginBottom: 0 }}>
             <p className="eyebrow">Export document checklist</p>
             <h2 id="checklist-title">
-              <Line>What a shipment usually needs, and what TradeDocs prepares.</Line>
+              <Line>What a shipment usually needs, and what ShipDocIt prepares.</Line>
             </h2>
             <p>
               Most export shipments travel with a commercial invoice and a packing list, often after
               a proforma invoice. Transport and customs documents come from the carrier and the
-              customs filing, not from TradeDocs.
+              customs filing, not from ShipDocIt.
             </p>
           </div>
         </div>
@@ -384,7 +384,7 @@ export function ChecklistSection({
                 {row.who}
               </p>
               <p className="checklist-status">
-                <span className="caption">TradeDocs</span>
+                <span className="caption">ShipDocIt</span>
                 {row.status}
               </p>
             </li>

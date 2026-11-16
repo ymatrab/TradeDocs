@@ -5,7 +5,7 @@ const ROUND = '2026-10-07';
 /**
  * Demand (DataForSEO, Google UK, 2026-10-07): "cmr" 2,900, KD 2; "cmr document" 390.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave A.
- * TradeDocs explains the CMR consignment note; it does not issue one. The carrier and the sender
+ * ShipDocIt explains the CMR consignment note; it does not issue one. The carrier and the sender
  * complete and sign it. Convention text cited from the schedule to the UK Carriage of Goods by
  * Road Act 1965.
  */

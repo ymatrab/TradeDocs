@@ -1,7 +1,7 @@
 import 'server-only';
 
 import { createServiceClient, hasServiceRole } from '@/lib/supabase/admin';
-import type { TradeDocsClient } from '@/lib/supabase/server';
+import type { ShipDocItClient } from '@/lib/supabase/server';
 import { certificateOfOriginGaps } from './certificate-of-origin';
 
 export type CertificateResult = { created: string } | { error: string };
@@ -17,7 +17,7 @@ export type CertificateResult = { created: string } | { error: string };
  * and is handed the verified user, whose membership it checks again.
  */
 export async function generateCertificateOfOrigin(
-  client: TradeDocsClient,
+  client: ShipDocItClient,
   org: string,
   shipment: string,
 ): Promise<CertificateResult> {

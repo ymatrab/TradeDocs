@@ -31,7 +31,7 @@ export const runtime = 'nodejs';
  * 5. Success answers 200 with "Hello API Event Received", which Dropbox Sign requires. A
  *    failure it should retry (the provider or the database unreachable) answers 5xx.
  *
- * Logs carry the event type, the outcome and TradeDocs' row-free reason only: never a signer,
+ * Logs carry the event type, the outcome and ShipDocIt' row-free reason only: never a signer,
  * an email address, a document number or any document content.
  */
 

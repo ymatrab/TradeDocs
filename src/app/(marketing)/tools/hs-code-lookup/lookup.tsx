@@ -144,7 +144,7 @@ export function HsCodeLookup() {
     } catch {
       setState({
         kind: 'error',
-        message: 'The lookup could not reach TradeDocs. Check your connection and try again.',
+        message: 'The lookup could not reach ShipDocIt. Check your connection and try again.',
       });
     }
   };

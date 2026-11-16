@@ -23,7 +23,7 @@ test('foundation is accessible, reloadable and responsive', async ({ page }) => 
 test('missing routes have a useful recovery path', async ({ page }) => {
   const response = await page.goto('/not-a-tradedocs-route');
   expect(response?.status()).toBe(404);
-  await page.getByRole('link', { name: 'Return to TradeDocs' }).click();
+  await page.getByRole('link', { name: 'Return to ShipDocIt' }).click();
   await expect(page).toHaveURL('/');
 });
 

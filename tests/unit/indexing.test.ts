@@ -51,7 +51,7 @@ describe('canonical host redirect', () => {
 
   it('serves the canonical host itself', () => {
     expect(canonicalHostRedirect({ ...production, requestHost: 'tradedocs.example' })).toBeNull();
-    expect(canonicalHostRedirect({ ...production, requestHost: 'TradeDocs.Example' })).toBeNull();
+    expect(canonicalHostRedirect({ ...production, requestHost: 'ShipDocIt.Example' })).toBeNull();
   });
 
   it('leaves unrelated hosts alone', () => {

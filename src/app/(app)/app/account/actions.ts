@@ -11,7 +11,7 @@ import {
   newPasswordSchema,
 } from '@/lib/security/password';
 import { callbackUrl } from '@/lib/supabase/auth-links';
-import { createClient, type TradeDocsClient } from '@/lib/supabase/server';
+import { createClient, type ShipDocItClient } from '@/lib/supabase/server';
 
 export type SettingsState = {
   error?: string;
@@ -32,7 +32,7 @@ function invalid(error: z.ZodError): SettingsState {
 }
 
 type Verified =
-  | { ok: true; client: TradeDocsClient; id: string; email: string }
+  | { ok: true; client: ShipDocItClient; id: string; email: string }
   | { ok: false; state: SettingsState };
 
 /**

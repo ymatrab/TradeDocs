@@ -188,7 +188,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
         <h2>Putting {term.code} on a document</h2>
         <p className="measure">
           The rule belongs on the invoice with its named place — {term.code} on its own does not
-          identify a delivery point. TradeDocs carries the term and the place from the shipment onto
+          identify a delivery point. ShipDocIt carries the term and the place from the shipment onto
           every document generated from it, so an invoice and a packing list cannot state different
           terms.
         </p>

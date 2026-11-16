@@ -67,7 +67,7 @@ export type BrandingUpload = {
 const MEGABYTES = MAX_BRANDING_BYTES / 1_048_576;
 
 /**
- * Whether uploaded bytes are an image TradeDocs can print. The format is decided by the
+ * Whether uploaded bytes are an image ShipDocIt can print. The format is decided by the
  * bytes' signature, and the image is decoded in full here, so anything accepted is something
  * the renderer can draw: a file that only claims to be a PNG never reaches storage.
  */

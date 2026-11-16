@@ -28,7 +28,7 @@ export async function generateMetadata({
     description: post.description,
     alternates: {
       canonical: path,
-      types: { 'application/rss+xml': [{ url: '/blog/rss.xml', title: 'TradeDocs blog' }] },
+      types: { 'application/rss+xml': [{ url: '/blog/rss.xml', title: 'ShipDocIt blog' }] },
     },
     // The same fields openGraphFor sets, as an article so the dates are part of the card.
     openGraph: {

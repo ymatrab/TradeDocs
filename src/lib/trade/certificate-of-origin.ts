@@ -9,7 +9,7 @@
  * bumping CURRENT_COO_WORDING and the migration's constant together, and a new review.
  *
  * The certificate is the exporter's own preparation. It never says, or implies, that
- * TradeDocs certifies or issues it; where certification is required, the issuing chamber of
+ * ShipDocIt certifies or issues it; where certification is required, the issuing chamber of
  * commerce or authority does that on its own form or by its own stamp.
  *
  * Pure: imported by the renderer, the server action and the tests.
@@ -42,10 +42,10 @@ const WORDING_1: CooWording = {
     'The undersigned, as exporter, declares that the details above are correct, and that the goods described originate in the country of origin stated for each line.',
   certificationCaption: 'CERTIFICATION BY THE ISSUING BODY, WHERE REQUIRED',
   certificationNote:
-    'Left blank for the chamber of commerce or competent authority that certifies this document. Not completed by TradeDocs.',
-  preparationCaption: 'PREPARED BY THE EXPORTER, NOT CERTIFIED BY TRADEDOCS',
+    'Left blank for the chamber of commerce or competent authority that certifies this document. Not completed by ShipDocIt.',
+  preparationCaption: 'PREPARED BY THE EXPORTER, NOT CERTIFIED BY SHIPDOCIT',
   preparationStatement:
-    'This certificate of origin was prepared by the exporter with TradeDocs from the exporter’s own data. It is not certified or issued by TradeDocs. Where a certified certificate of origin is required, it must be certified by the issuing chamber of commerce or competent authority.',
+    'This certificate of origin was prepared by the exporter with ShipDocIt from the exporter’s own data. It is not certified or issued by ShipDocIt. Where a certified certificate of origin is required, it must be certified by the issuing chamber of commerce or competent authority.',
   signatureCaption: 'Signature of the exporter, place and date',
 };
 

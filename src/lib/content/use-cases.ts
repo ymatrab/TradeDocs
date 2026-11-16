@@ -49,7 +49,7 @@ export const USE_CASES: readonly UseCase[] = [
       'Prepare the commercial invoice, proforma invoice, packing list and delivery note for each shipment from one record, with your companies and products saved once. Free while early.',
     eyebrow: 'For exporters and manufacturers',
     h1: 'Your export paperwork, from one shipment record.',
-    lede: 'Enter the parties, goods, packing and terms of a shipment once. TradeDocs prepares the commercial invoice, proforma invoice, packing list and delivery note from that record, so the quantities and values agree across the set.',
+    lede: 'Enter the parties, goods, packing and terms of a shipment once. ShipDocIt prepares the commercial invoice, proforma invoice, packing list and delivery note from that record, so the quantities and values agree across the set.',
     jobs: [
       {
         title: 'Quote with a proforma',
@@ -101,15 +101,15 @@ export const USE_CASES: readonly UseCase[] = [
     ],
     faq: [
       {
-        q: 'Which export documents does TradeDocs prepare?',
-        a: 'From one shipment, as PDFs: the commercial invoice, proforma invoice, packing list and delivery note; the quotation, purchase order, sales confirmation and sales contract draft; and the bill of lading draft, shipper’s letter of instruction and VGM declaration for your carrier and forwarder. A certificate of origin is offered only once its legal review is recorded, and then as your own preparation for the issuing chamber or authority to certify where required. The carrier issues the bill of lading itself, and customs declarations are outside what TradeDocs does.',
+        q: 'Which export documents does ShipDocIt prepare?',
+        a: 'From one shipment, as PDFs: the commercial invoice, proforma invoice, packing list and delivery note; the quotation, purchase order, sales confirmation and sales contract draft; and the bill of lading draft, shipper’s letter of instruction and VGM declaration for your carrier and forwarder. A certificate of origin is offered only once its legal review is recorded, and then as your own preparation for the issuing chamber or authority to certify where required. The carrier issues the bill of lading itself, and customs declarations are outside what ShipDocIt does.',
       },
       {
         q: 'Can I try it without an account?',
         a: 'Yes. The commercial invoice, proforma invoice, packing list and delivery note generators and the calculators work without an account; nothing you type in them is stored.',
       },
       {
-        q: 'Does TradeDocs file my export declaration?',
+        q: 'Does ShipDocIt file my export declaration?',
         a: 'No. It prepares the commercial documents. Filing the export declaration is done by you or your customs broker in the customs system of the exporting country.',
       },
     ],
@@ -120,10 +120,10 @@ export const USE_CASES: readonly UseCase[] = [
     name: 'For freight forwarders',
     title: 'Document preparation for freight forwarders and their shippers',
     description:
-      'TradeDocs prepares commercial invoices, proforma invoices, packing lists and delivery notes for your shippers. It is document preparation only, not a forwarding, booking or tracking system.',
+      'ShipDocIt prepares commercial invoices, proforma invoices, packing lists and delivery notes for your shippers. It is document preparation only, not a forwarding, booking or tracking system.',
     eyebrow: 'For freight forwarders and agents',
     h1: 'Client document preparation, not a forwarding system.',
-    lede: 'TradeDocs prepares the paperwork that travels with a shipment: commercial invoice, proforma invoice, packing list and delivery note, plus a bill of lading draft, shipper’s letter of instruction and VGM declaration to hand to the carrier. It does not book freight, rate shipments, track cargo or issue transport documents. If you prepare those commercial documents for shippers, or want them to send you a packing list that adds up, that is what it is for.',
+    lede: 'ShipDocIt prepares the paperwork that travels with a shipment: commercial invoice, proforma invoice, packing list and delivery note, plus a bill of lading draft, shipper’s letter of instruction and VGM declaration to hand to the carrier. It does not book freight, rate shipments, track cargo or issue transport documents. If you prepare those commercial documents for shippers, or want them to send you a packing list that adds up, that is what it is for.',
     jobs: [
       {
         title: 'Prepare documents for a shipper',
@@ -156,7 +156,7 @@ export const USE_CASES: readonly UseCase[] = [
     boundaries: [
       'It is not a forwarding TMS: no bookings, rates, quotes, carrier connections, tracking, milestones or invoicing for freight.',
       'It does not issue bills of lading, air waybills or house documents, and it does not file customs declarations, ISF or export filings.',
-      'There is no shipper portal: a shipper works in TradeDocs as a member of an organization, or uses the free generators on their own.',
+      'There is no shipper portal: a shipper works in ShipDocIt as a member of an organization, or uses the free generators on their own.',
     ],
     tools: [
       { href: '/tools/cbm-calculator', label: 'CBM calculator' },
@@ -174,7 +174,7 @@ export const USE_CASES: readonly UseCase[] = [
     ],
     faq: [
       {
-        q: 'Is TradeDocs freight forwarding software?',
+        q: 'Is ShipDocIt freight forwarding software?',
         a: 'No. It prepares documents for a shipment: the commercial invoice, proforma invoice, packing list and delivery note, and the bill of lading draft, shipper’s letter of instruction and VGM declaration the carrier works from. It has no bookings, rates or tracking and issues no transport document, so it sits beside a forwarding system rather than replacing one.',
       },
       {
@@ -228,7 +228,7 @@ export const USE_CASES: readonly UseCase[] = [
       'team.members',
     ],
     boundaries: [
-      'TradeDocs prepares documents from the data entered. Classification, origin, valuation and compliance advice remain your work and your client’s declaration.',
+      'ShipDocIt prepares documents from the data entered. Classification, origin, valuation and compliance advice remain your work and your client’s declaration.',
       'It does not issue, certify or file anything, and it never presents a document as approved by an authority.',
     ],
     tools: [
@@ -252,7 +252,7 @@ export const USE_CASES: readonly UseCase[] = [
         a: 'Yes, if you invite them to their organization. Members can open its shipments and download the documents prepared there.',
       },
       {
-        q: 'Does TradeDocs check classification or compliance?',
+        q: 'Does ShipDocIt check classification or compliance?',
         a: 'No. It prepares documents from the data entered and does not classify goods, look up duty rates or screen export controls. That judgement stays with you and your client.',
       },
     ],

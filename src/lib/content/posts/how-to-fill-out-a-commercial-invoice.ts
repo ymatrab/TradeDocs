@@ -14,7 +14,7 @@ const article: ContentArticle = {
   title: 'How to fill out a commercial invoice, field by field',
   metaTitle: 'How to fill out a commercial invoice',
   description:
-    'A step-by-step walk through a commercial invoice in the order the free TradeDocs generator asks for it: what to enter in each field, what to check and what to leave out.',
+    'A step-by-step walk through a commercial invoice in the order the free ShipDocIt generator asks for it: what to enter in each field, what to check and what to leave out.',
   lede: 'Filling out a commercial invoice is mostly copying facts you already have into the right boxes, in the right form. This walk-through follows the fields of the free commercial invoice generator in order, says what goes in each one and why, and ends with the checks to make before the invoice leaves.',
   answer:
     'To fill out a commercial invoice, give it a unique number and date, enter the seller and buyer with full names and addresses, state the currency and the Incoterms® rule with its named place, then list each product with a precise description, HS code, origin, quantity, unit price and weight. Check that the lines add up to the total.',
@@ -23,7 +23,7 @@ const article: ContentArticle = {
     'Under 19 CFR 141.86, a US import invoice needs a detailed description of the goods and quantities in recognised weights and measures.',
     '19 CFR 141.86(d) requires a US import invoice in English or with an accurate English translation attached.',
     'For US exports of items on the Commerce Control List, 15 CFR 758.6 makes the destination control statement part of the commercial invoice, with stated exceptions.',
-    'The TradeDocs free generator needs a document number, an issuer, an addressee and one described line before it produces a PDF.',
+    'The ShipDocIt free generator needs a document number, an issuer, an addressee and one described line before it produces a PDF.',
   ],
   definitions: [
     {
@@ -112,8 +112,8 @@ const article: ContentArticle = {
       heading: 'What does the free generator not do?',
       paragraphs: [
         'The free generator covers the fields most invoices need and stores nothing you type: the values are gone when you close the page. It takes up to 20 lines. It has no fields for ports, marks and numbers or package dimensions, no signature line, and no field for statements such as the destination control statement, so write those on the printed copy or use the workspace.',
-        'In a free TradeDocs account, the shipment screen adds port of loading and port of discharge, country of destination, shipping date and marks and numbers. Your organisation settings hold payment terms, bank details, a signatory name and title printed under a signature line, and a short document note printed on every document, which can carry a statement your goods need. Documents are generated from the saved shipment, so the next invoice for the same buyer starts from the directory and product catalog. Adding your logo and a signature image to the PDF is PDF branding, a feature of the paid Pro plan.',
-        'Every PDF, free or from the workspace, says it was prepared with TradeDocs from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. The figures are yours to get right.',
+        'In a free ShipDocIt account, the shipment screen adds port of loading and port of discharge, country of destination, shipping date and marks and numbers. Your organisation settings hold payment terms, bank details, a signatory name and title printed under a signature line, and a short document note printed on every document, which can carry a statement your goods need. Documents are generated from the saved shipment, so the next invoice for the same buyer starts from the directory and product catalog. Adding your logo and a signature image to the PDF is PDF branding, a feature of the paid Pro plan.',
+        'Every PDF, free or from the workspace, says it was prepared with ShipDocIt from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. The figures are yours to get right.',
       ],
     },
     {
@@ -145,7 +145,7 @@ const article: ContentArticle = {
     },
     {
       q: 'What if I make a mistake after sending the invoice?',
-      a: 'Issue a corrected invoice and tell everyone who received the first one, including your forwarder or broker. In the TradeDocs workspace, a change to the shipment marks the earlier documents as out of date.',
+      a: 'Issue a corrected invoice and tell everyone who received the first one, including your forwarder or broker. In the ShipDocIt workspace, a change to the shipment marks the earlier documents as out of date.',
     },
   ],
   sources: [

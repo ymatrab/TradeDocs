@@ -2,6 +2,13 @@
 
 ## Unreleased — 2026-09-06
 
+### Renamed to ShipDocIt, domain shipdocit.com (D-030)
+
+- Every visible "TradeDocs" (pages, metadata, Open Graph image, emails, PDF footers and
+  captions, legal drafts, Supabase auth templates) now reads "ShipDocIt"; tests follow.
+- Internal identifiers unchanged so derived secrets, renderer versions and deployed data stay
+  valid. The catalog CSV downloads as `shipdocit-catalog-template.csv`.
+
 ### Invoice charges, discounts, EORI and required signatory (D-029)
 
 - REST API: migration `20261029000200_api_invoice_signatory.sql` refuses a commercial invoice

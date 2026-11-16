@@ -225,7 +225,7 @@ describe('invitation email', () => {
     link: invitationLink('https://app.example.com', 'a'.repeat(64)),
     expiresAt: '2026-10-13T10:00:00Z',
   };
-  const email = { RESEND_API_KEY: 'synthetic-email-test-key', EMAIL_FROM: 'TradeDocs <a@b.test>' };
+  const email = { RESEND_API_KEY: 'synthetic-email-test-key', EMAIL_FROM: 'ShipDocIt <a@b.test>' };
 
   it('is not sent without Resend, and never to a real inbox outside production', () => {
     expect(invitationRecipient(env(), message.invitee)).toEqual({ skip: 'not_configured' });

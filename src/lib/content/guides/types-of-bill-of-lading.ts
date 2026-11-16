@@ -7,7 +7,7 @@ const ROUND = '2026-10-07';
  * "telex release" 320; "surrender bill of lading" 70; "negotiable bill of lading" 50.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave B (v2 guide #16).
  * Companion to /guides/what-is-a-bill-of-lading, which covers the document's three jobs.
- * TradeDocs does not issue bills of lading.
+ * ShipDocIt does not issue bills of lading.
  */
 const article: ContentArticle = {
   slug: 'types-of-bill-of-lading',
@@ -135,8 +135,8 @@ const article: ContentArticle = {
       a: 'Whatever the credit itself states. Read its transport document clause before you book, and ask the carrier for exactly that type.',
     },
     {
-      q: 'Does TradeDocs issue bills of lading?',
-      a: 'No. The carrier or NVOCC issues the bill of lading. TradeDocs prepares the commercial invoice and packing list whose figures the bill should match.',
+      q: 'Does ShipDocIt issue bills of lading?',
+      a: 'No. The carrier or NVOCC issues the bill of lading. ShipDocIt prepares the commercial invoice and packing list whose figures the bill should match.',
     },
   ],
   sources: [

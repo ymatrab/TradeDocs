@@ -34,7 +34,7 @@ import { z } from 'zod';
 
 export const DROPBOX_SIGN_API = 'https://api.hellosign.com/v3';
 export const CALLBACK_ACKNOWLEDGEMENT = 'Hello API Event Received';
-/** The metadata key that carries TradeDocs' own request id to the provider and back. */
+/** The metadata key that carries ShipDocIt' own request id to the provider and back. */
 export const REQUEST_METADATA_KEY = 'tradedocs_request_id';
 
 export function basicAuthorization(apiKey: string): string {
@@ -54,7 +54,7 @@ export type SendInput = {
   signers: readonly SignerInput[];
   testMode: boolean;
   clientId: string | null;
-  /** TradeDocs' own request id, returned in metadata on every response and event. */
+  /** ShipDocIt' own request id, returned in metadata on every response and event. */
   requestId: string;
 };
 
@@ -126,7 +126,7 @@ export type SignerState = {
   signed_at: string | null;
 };
 
-/** One signer's provider status_code, folded into the few states TradeDocs shows. */
+/** One signer's provider status_code, folded into the few states ShipDocIt shows. */
 export function mapSignerStatus(code: string | null | undefined): SignerStatus {
   if (!code) return 'unknown';
   if (code === 'signed') return 'signed';
@@ -151,7 +151,7 @@ export function mapRequestStatus(request: SignatureRequest, nowSeconds: number):
 }
 
 /**
- * Each signer's state, matched to the signers TradeDocs recorded by email so the stored list
+ * Each signer's state, matched to the signers ShipDocIt recorded by email so the stored list
  * keeps the names it was sent with. A signer the provider no longer lists keeps its last
  * state; one it adds (a reassignment) is appended.
  */

@@ -18,7 +18,7 @@ const article: ContentArticle = {
   title: 'From proforma to commercial invoice without retyping',
   metaTitle: 'Proforma to commercial invoice, no retyping',
   description:
-    'How an accepted proforma invoice becomes the commercial invoice: what carries over, what changes, and how TradeDocs makes the second from the first in the free generator or the workspace.',
+    'How an accepted proforma invoice becomes the commercial invoice: what carries over, what changes, and how ShipDocIt makes the second from the first in the free generator or the workspace.',
   lede: 'The buyer has accepted your proforma, the order is confirmed and the goods are being packed. Now you need the commercial invoice, and almost everything on it is already on the proforma. Retyping it is where a quantity slips or a description changes. Here is what carries over, what changes, and how to make one from the other.',
   answer:
     'To turn a proforma into a commercial invoice, keep the parties, descriptions, quantities, prices, currency and Incoterms® rule exactly as accepted, give it a commercial invoice number and the issue date, drop the validity date, and add what only the shipment confirms, such as final weights and packages. Any agreed change should appear on both.',
@@ -27,7 +27,7 @@ const article: ContentArticle = {
     'The ITA says a commercial invoice may add the HS code to the information on the pro forma invoice.',
     'The ITA says changes to a pro forma should not be made without the buyer’s consent.',
     'Under 19 CFR 141.85, a US importer without the seller’s invoice files a pro forma invoice and must file any other invoice it receives.',
-    'In a TradeDocs shipment, the proforma and the commercial invoice are numbered in separate series and generated from the same record.',
+    'In a ShipDocIt shipment, the proforma and the commercial invoice are numbered in separate series and generated from the same record.',
   ],
   definitions: [
     {
@@ -42,12 +42,12 @@ const article: ContentArticle = {
     {
       term: 'Shipment revision',
       meaning:
-        'In TradeDocs, the version number of a shipment, which goes up every time the shipment changes.',
+        'In ShipDocIt, the version number of a shipment, which goes up every time the shipment changes.',
     },
     {
       term: 'Stale document',
       meaning:
-        'In TradeDocs, a document generated from an earlier revision than the shipment’s current one.',
+        'In ShipDocIt, a document generated from an earlier revision than the shipment’s current one.',
     },
   ],
   published: ROUND,
@@ -89,7 +89,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you convert a proforma in the free generator?',
       paragraphs: [
-        'The free TradeDocs generator is one form with a type switch, and the values you have entered stay in the form while the page is open. Nothing is stored, so make the commercial invoice before you close the tab, or keep the proforma PDF to copy from.',
+        'The free ShipDocIt generator is one form with a type switch, and the values you have entered stay in the form while the page is open. Nothing is stored, so make the commercial invoice before you close the tab, or keep the proforma PDF to copy from.',
       ],
       steps: [
         'Open the proforma invoice generator and fill in the proforma, or keep the page you made it on open.',
@@ -103,7 +103,7 @@ const article: ContentArticle = {
     {
       heading: 'How does the workspace keep both invoices in step?',
       paragraphs: [
-        'In a free TradeDocs account, the proforma and the commercial invoice are two documents from one shipment record, so the second needs no retyping at all.',
+        'In a free ShipDocIt account, the proforma and the commercial invoice are two documents from one shipment record, so the second needs no retyping at all.',
       ],
       steps: [
         'Generate the proforma from the shipment. The workspace gives it a number in its PI series and locks it to the shipment revision it came from.',
@@ -142,7 +142,7 @@ const article: ContentArticle = {
     },
     {
       q: 'What if only part of the order ships?',
-      a: 'Issue the commercial invoice for the quantities actually shipped. In TradeDocs, adjust the shipment’s quantities before you generate it, and make a new shipment for the balance.',
+      a: 'Issue the commercial invoice for the quantities actually shipped. In ShipDocIt, adjust the shipment’s quantities before you generate it, and make a new shipment for the balance.',
     },
     {
       q: 'Does the free generator remember my proforma?',

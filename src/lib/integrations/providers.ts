@@ -1,7 +1,7 @@
 import { parseTokenKey } from '@/lib/integrations/crypto';
 
 /**
- * Accounting providers TradeDocs imports from (D-025): their OAuth 2.0 endpoints, scopes and
+ * Accounting providers ShipDocIt imports from (D-025): their OAuth 2.0 endpoints, scopes and
  * API bases, and whether this deployment is configured for each.
  *
  * Pure: it never reads process.env; the server module passes the environment in. A provider

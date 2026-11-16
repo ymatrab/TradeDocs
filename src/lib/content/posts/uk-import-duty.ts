@@ -121,7 +121,7 @@ const article: ContentArticle = {
     {
       heading: 'Which documents does HMRC expect you to keep?',
       paragraphs: [
-        'HMRC’s step-by-step guide asks importers to keep commercial invoices, customs paperwork and the Import VAT Certificate (C79), which a VAT-registered business needs to claim back import VAT. If you claim a preferential rate under a trade agreement, GOV.UK says you must keep the proof of origin, which TradeDocs does not prepare, for at least 4 years, because HMRC may check it.',
+        'HMRC’s step-by-step guide asks importers to keep commercial invoices, customs paperwork and the Import VAT Certificate (C79), which a VAT-registered business needs to claim back import VAT. If you claim a preferential rate under a trade agreement, GOV.UK says you must keep the proof of origin, which ShipDocIt does not prepare, for at least 4 years, because HMRC may check it.',
         'Before any of that you need an EORI number starting with GB for imports into England, Wales or Scotland, and most businesses appoint a customs agent or use their transporter to make the import declaration. The agent works from the commercial invoice and packing list, so the value, origin, description and weights on them must be complete and consistent.',
       ],
     },

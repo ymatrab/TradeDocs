@@ -17,12 +17,12 @@ const article: ContentArticle = {
   title: 'How to reuse shipment data for a repeat order',
   metaTitle: 'Reuse shipment data for repeat export orders',
   description:
-    'Prepare the documents for a repeat export order from the last shipment: what to copy, what must change every time, and how the TradeDocs workspace does it.',
+    'Prepare the documents for a repeat export order from the last shipment: what to copy, what must change every time, and how the ShipDocIt workspace does it.',
   lede: 'The second order from a buyer usually looks like the first: the same consignee, the same Incoterms® rule, mostly the same products, often the same cartons. Retyping all of it is slow and invites small differences between shipments that should match. Starting from the last shipment is faster, as long as you know which details must never be carried over unchecked.',
   answer:
     'To reuse shipment data for a repeat order, start the new shipment from the previous one so the parties, terms, product lines and packing carry over, then change what is new: the reference, the buyer’s order number, quantities, prices, dates and weights. Generate fresh documents with new numbers; never re-send the old invoice with edits.',
   keyFacts: [
-    'In TradeDocs, “Reuse for a new shipment” creates a new draft with the same parties, terms, lines and packing, and leaves the original shipment and its documents unchanged.',
+    'In ShipDocIt, “Reuse for a new shipment” creates a new draft with the same parties, terms, lines and packing, and leaves the original shipment and its documents unchanged.',
     'The copy does not carry the buyer’s reference or the proforma validity date, because a new order has its own purchase order and its own offer.',
     'Line values are copied as they were, so prices and quantities need checking before any document is generated.',
     'Each shipment reference must be unique within the organization, up to 60 characters.',
@@ -98,7 +98,7 @@ const article: ContentArticle = {
       },
     },
     {
-      heading: 'How do you start a repeat shipment in TradeDocs?',
+      heading: 'How do you start a repeat shipment in ShipDocIt?',
       paragraphs: [
         'From the previous shipment’s page. The workspace has a “Reuse for a new shipment” panel that copies the shipment into a new draft. These are the steps:',
       ],
@@ -129,8 +129,8 @@ const article: ContentArticle = {
       heading: 'Why generate new documents rather than edit the old ones?',
       paragraphs: [
         'Because every invoice should describe one shipment and carry its own number. Editing last month’s PDF to change the quantities leaves the old number, the old date or an old PO reference in place more often than anyone intends, and two different shipments then share one invoice number. For a US import, 19 CFR 141.86 asks each invoice to state when, where and between whom the sale was made, which is exactly what an edited old invoice tends to get wrong.',
-        'In TradeDocs, documents are generated from one shipment revision and locked to it. When the shipment changes after a document was generated, that document is marked as out of date, so a copy that no longer matches is not sent by mistake. A shipment’s current documents can also be downloaded together as one ZIP with a checksum manifest.',
-        'The workspace needs a TradeDocs account. If sign-up is not open when you read this, the free generators work without one: fill in the commercial invoice generator, download it, and switch the type to packing list for a matching document. Nothing is stored there, so keep your own copy of the figures for the next order.',
+        'In ShipDocIt, documents are generated from one shipment revision and locked to it. When the shipment changes after a document was generated, that document is marked as out of date, so a copy that no longer matches is not sent by mistake. A shipment’s current documents can also be downloaded together as one ZIP with a checksum manifest.',
+        'The workspace needs a ShipDocIt account. If sign-up is not open when you read this, the free generators work without one: fill in the commercial invoice generator, download it, and switch the type to packing list for a matching document. Nothing is stored there, so keep your own copy of the figures for the next order.',
       ],
     },
   ],

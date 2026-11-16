@@ -14,7 +14,7 @@ import {
 import { PUBLIC_TOOLS, publicDocumentKinds } from '@/lib/seo/site';
 
 /**
- * Plans, features and prices: the one source for every public claim about what TradeDocs
+ * Plans, features and prices: the one source for every public claim about what ShipDocIt
  * costs and what each plan includes (rules/product.md, "One source for capability claims").
  *
  * Two rules hold here:
@@ -221,7 +221,7 @@ export const FEATURES = [
     group: 'Workspace',
     label: 'Customer and product import from QuickBooks Online',
     short: 'QuickBooks import',
-    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in TradeDocs are kept and reported, never overwritten`,
+    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in ShipDocIt are kept and reported, never overwritten`,
     plans: PAID_PLANS,
     needsAccount: true,
     capability: 'quickbooks_import',
@@ -231,7 +231,7 @@ export const FEATURES = [
     group: 'Workspace',
     label: 'Customer and product import from Xero',
     short: 'Xero import',
-    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in TradeDocs are kept and reported, never overwritten`,
+    limit: `Up to ${MAX_IMPORT_ROWS.toLocaleString('en')} records per import, checked before anything is written; edits made in ShipDocIt are kept and reported, never overwritten`,
     plans: PAID_PLANS,
     needsAccount: true,
     capability: 'xero_import',

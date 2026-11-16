@@ -135,8 +135,8 @@ const article: ContentArticle = {
       a: 'Sometimes, but late documents can hold the goods at the destination or delay payment under a letter of credit. Prepare and certify the invoice before shipment where you can.',
     },
     {
-      q: 'Does TradeDocs legalize or stamp invoices?',
-      a: 'No. TradeDocs prepares the commercial invoice you then take to the certifying body. Legalization is done only by the chamber, consulate or ministry the importing country names.',
+      q: 'Does ShipDocIt legalize or stamp invoices?',
+      a: 'No. ShipDocIt prepares the commercial invoice you then take to the certifying body. Legalization is done only by the chamber, consulate or ministry the importing country names.',
     },
   ],
   sources: [

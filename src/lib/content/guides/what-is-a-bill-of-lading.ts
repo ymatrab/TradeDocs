@@ -6,7 +6,7 @@ const ROUND = '2026-10-07';
  * Demand (DataForSEO, Google US, 2026-10-06): "bill of lading" 27,100, KD 28;
  * "what is a bill of lading" 4,400, KD 27; "bill of lading meaning" 2,900.
  * Plan: docs/research/content-plan-v2-2026-10-06.md, batch 1.
- * TradeDocs explains the bill of lading; it does not issue one. The carrier does.
+ * ShipDocIt explains the bill of lading; it does not issue one. The carrier does.
  */
 const article: ContentArticle = {
   slug: 'what-is-a-bill-of-lading',
@@ -60,7 +60,7 @@ const article: ContentArticle = {
     {
       heading: 'Who issues the bill of lading?',
       paragraphs: [
-        'The carrier, or a forwarder acting as carrier, issues it when it receives the goods. You do not prepare it, and neither does TradeDocs. What you do is supply the information it is built from, usually through the booking or the shipping instructions you give the carrier or forwarder.',
+        'The carrier, or a forwarder acting as carrier, issues it when it receives the goods. You do not prepare it, and neither does ShipDocIt. What you do is supply the information it is built from, usually through the booking or the shipping instructions you give the carrier or forwarder.',
         'The shipper named on the bill matters beyond the paperwork. For sea containers, the IMO’s rules on verified gross mass define the shipper as the party named on the bill of lading or sea waybill as shipper, or the party that contracted the carriage, and make that shipper responsible for declaring the container’s verified gross mass.',
       ],
     },
@@ -124,8 +124,8 @@ const article: ContentArticle = {
       a: 'The carrier or forwarder issues it, using details the shipper supplies in the booking or shipping instructions. The shipper should check the draft against the commercial invoice and packing list before it is issued.',
     },
     {
-      q: 'Does TradeDocs create bills of lading?',
-      a: 'No. A bill of lading is issued by the carrier. TradeDocs prepares the commercial invoice and packing list, whose figures the carrier’s document should match.',
+      q: 'Does ShipDocIt create bills of lading?',
+      a: 'No. A bill of lading is issued by the carrier. ShipDocIt prepares the commercial invoice and packing list, whose figures the carrier’s document should match.',
     },
     {
       q: 'What does “to order” mean on a bill of lading?',

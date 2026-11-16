@@ -120,11 +120,11 @@ const article: ContentArticle = {
       ],
     },
     {
-      heading: 'How does TradeDocs keep the two in step?',
+      heading: 'How does ShipDocIt keep the two in step?',
       paragraphs: [
         'By making both documents from the same data. In the free generator, the commercial invoice and the packing list are one form with a type switch, so the parties, descriptions, quantities and weights you entered for the invoice are the ones the packing list prints. Nothing is stored, so make both before you close the page.',
-        'In a free TradeDocs account, the documents are generated from one shipment record. The packing panel lets you allocate each line’s quantity to packages and lists any line whose packed quantity differs from its invoiced quantity, saying whether more or less was packed than invoiced; when every line is fully allocated, it says the packing reconciles. Both documents are generated from the same shipment revision, and editing the shipment marks earlier documents as out of date so a stale copy is not sent by mistake.',
-        'TradeDocs checks that the documents agree with each other. Whether they agree with the goods is for you to check, which is why the first step of any fix is to count what is in the boxes.',
+        'In a free ShipDocIt account, the documents are generated from one shipment record. The packing panel lets you allocate each line’s quantity to packages and lists any line whose packed quantity differs from its invoiced quantity, saying whether more or less was packed than invoiced; when every line is fully allocated, it says the packing reconciles. Both documents are generated from the same shipment revision, and editing the shipment marks earlier documents as out of date so a stale copy is not sent by mistake.',
+        'ShipDocIt checks that the documents agree with each other. Whether they agree with the goods is for you to check, which is why the first step of any fix is to count what is in the boxes.',
       ],
     },
   ],

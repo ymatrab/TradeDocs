@@ -4,7 +4,7 @@ import { ESIGN_BUCKET, serviceConnection, serviceRpc } from '@/lib/esign/server'
 import {
   createClient,
   DatabaseUnavailableError,
-  type TradeDocsClient,
+  type ShipDocItClient,
 } from '@/lib/supabase/server';
 import { safeFileName } from '@/lib/zip';
 
@@ -34,7 +34,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const { id } = await params;
   if (!z.uuid().safeParse(id).success) return refuse(404, 'Not found.');
 
-  let client: TradeDocsClient;
+  let client: ShipDocItClient;
   try {
     client = await createClient();
   } catch (error) {

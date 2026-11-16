@@ -385,7 +385,7 @@ test('a certificate of origin is offered only behind its review gate', async ({ 
   }
 
   await expect(option).toHaveCount(1);
-  await expect(page.getByText(/TradeDocs does not certify or issue it/)).toBeVisible();
+  await expect(page.getByText(/ShipDocIt does not certify or issue it/)).toBeVisible();
 
   // The preview renders with the gate on; it is marked as not issued and carries no number.
   const preview = await page.request.get(previewUrl);

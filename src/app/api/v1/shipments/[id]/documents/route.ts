@@ -108,7 +108,7 @@ export async function POST(request: Request, { params }: Context): Promise<Respo
         403,
         'FEATURE_UNAVAILABLE',
         regulatedDocumentsEnabled()
-          ? 'Certificates of origin are generated in the TradeDocs workspace, not through the API.'
+          ? 'Certificates of origin are generated in the ShipDocIt workspace, not through the API.'
           : REGULATED_DOCUMENT_LIMITATION,
       );
     }
@@ -137,7 +137,7 @@ export async function POST(request: Request, { params }: Context): Promise<Respo
           throw new ApiError(
             422,
             'SIGNATORY_REQUIRED',
-            'A commercial invoice must name the person responsible for it (19 CFR 141.86(j)). Set the signatory name in the TradeDocs document settings, then retry.',
+            'A commercial invoice must name the person responsible for it (19 CFR 141.86(j)). Set the signatory name in the ShipDocIt document settings, then retry.',
           );
         }
         if (error.failure.message.includes('discounts are larger than the invoice')) {

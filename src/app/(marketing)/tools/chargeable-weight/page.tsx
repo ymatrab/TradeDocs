@@ -78,7 +78,7 @@ export default function ChargeableWeightPage() {
         <h2>Quoting a real customer</h2>
         <p className="measure">
           The weights behind this figure are the ones that also have to appear on your packing list
-          and agree with your invoice. TradeDocs holds them once per product and prints every
+          and agree with your invoice. ShipDocIt holds them once per product and prints every
           document in the set from the same numbers.
         </p>
         <ToolCta secondary={{ href: '/tools', label: 'All trade tools' }} />

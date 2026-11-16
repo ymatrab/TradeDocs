@@ -22,7 +22,7 @@ export default async function OrganizationsPage() {
     <AppShell title="Organizations" current="Organizations">
       <div className="app-page">
         <Callout tone="legal" title="Preparation only">
-          TradeDocs prepares documents. It does not issue, endorse or clear them.
+          ShipDocIt prepares documents. It does not issue, endorse or clear them.
         </Callout>
 
         {organizations && organizations.length > 0 ? (

@@ -6,7 +6,7 @@ const ROUND = '2026-10-08';
  * Demand (DataForSEO, Google UK, 2026-10-06): "windsor framework" 1,600, KD 17; "shipping to
  * northern ireland" 210.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave D, review gate: this guide describes
- * official procedures TradeDocs does not carry out (UKIMS, declarations, SPS certification), and
+ * official procedures ShipDocIt does not carry out (UKIMS, declarations, SPS certification), and
  * stays noindex until a review record exists (rules/seo-content.md). Every rule is from GOV.UK
  * Windsor Framework pages opened 2026-10-08. Example parties are invented.
  */
@@ -16,7 +16,7 @@ const article: ContentArticle = {
   metaTitle: 'Windsor Framework: shipping to Northern Ireland',
   description:
     'How goods move from Great Britain to Northern Ireland under the Windsor Framework: UKIMS, “not at risk” goods, simplified declarations, food and plant rules, and NI to GB.',
-  lede: 'Goods sent from Great Britain to Northern Ireland stay inside the UK, yet they cross a customs and regulatory boundary. The Windsor Framework sets how that works: authorised traders moving goods for use in Northern Ireland get simplified processes, and everything else follows full customs rules. TradeDocs does not file declarations, hold UKIMS authorisation or issue certificates for you; this guide explains the official process.',
+  lede: 'Goods sent from Great Britain to Northern Ireland stay inside the UK, yet they cross a customs and regulatory boundary. The Windsor Framework sets how that works: authorised traders moving goods for use in Northern Ireland get simplified processes, and everything else follows full customs rules. ShipDocIt does not file declarations, hold UKIMS authorisation or issue certificates for you; this guide explains the official process.',
   answer:
     'Under the Windsor Framework, businesses moving goods from Great Britain to Northern Ireland can use simplified processes if they hold UK Internal Market Scheme (UKIMS) authorisation and the goods are “not at risk” of moving into the EU. Other movements follow the full customs process. Qualifying Northern Ireland goods moving to Great Britain need no import declaration.',
   keyFacts: [
@@ -107,7 +107,7 @@ const article: ContentArticle = {
     {
       heading: 'How do you send goods to Northern Ireland?',
       paragraphs: [
-        'Settle your status before the first movement, then repeat the same routine. The steps summarise GOV.UK guidance; TradeDocs does not carry out any of them for you.',
+        'Settle your status before the first movement, then repeat the same routine. The steps summarise GOV.UK guidance; ShipDocIt does not carry out any of them for you.',
       ],
       steps: [
         'Get an EORI number; HMRC says one is needed to move goods from Great Britain to Northern Ireland, and you may need one starting with XI.',
@@ -122,7 +122,7 @@ const article: ContentArticle = {
       heading: 'What about food, plants and animal products?',
       paragraphs: [
         'They have their own official checks. GOV.UK lists the steps for live animals and animal-origin products as a vet inspection and export health certificate, pre-notification with a Common Health Entry Document through DAERA’s TRACES NT system, and a customs declaration. APHA’s guidance confirms that an EHC is needed from Great Britain to Northern Ireland.',
-        'HMRC says agri-food goods moved under the Northern Ireland Retail Movement Scheme (NIRMS) can be declared as Standard goods. For plants, GOV.UK says goods staying in Northern Ireland need a Northern Ireland plant health label and goods not staying need a phytosanitary certificate. These certificates come from official bodies; TradeDocs does not issue them.',
+        'HMRC says agri-food goods moved under the Northern Ireland Retail Movement Scheme (NIRMS) can be declared as Standard goods. For plants, GOV.UK says goods staying in Northern Ireland need a Northern Ireland plant health label and goods not staying need a phytosanitary certificate. These certificates come from official bodies; ShipDocIt does not issue them.',
       ],
     },
     {
@@ -135,8 +135,8 @@ const article: ContentArticle = {
   ],
   faq: [
     {
-      q: 'Does TradeDocs make Northern Ireland declarations or hold UKIMS for me?',
-      a: 'No. TradeDocs prepares commercial documents such as invoices and packing lists. Declarations, UKIMS authorisation and SPS certificates go through HMRC, the Trader Support Service, your agent or the official certifying bodies.',
+      q: 'Does ShipDocIt make Northern Ireland declarations or hold UKIMS for me?',
+      a: 'No. ShipDocIt prepares commercial documents such as invoices and packing lists. Declarations, UKIMS authorisation and SPS certificates go through HMRC, the Trader Support Service, your agent or the official certifying bodies.',
     },
     {
       q: 'Is VAT charged on goods sent from Great Britain to Northern Ireland?',

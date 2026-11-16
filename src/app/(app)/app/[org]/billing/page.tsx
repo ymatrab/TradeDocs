@@ -111,7 +111,7 @@ export default async function BillingPage({ params }: { params: Promise<{ org: s
             <Callout tone="neutral" title="Paid plans aren’t open yet">
               {extras
                 ? `Everything but ${extras} is free while it is early, with no card; ${paidAdditions(capabilities)}.`
-                : 'Everything TradeDocs does is free while it is early, with no card.'}{' '}
+                : 'Everything ShipDocIt does is free while it is early, with no card.'}{' '}
               When paid plans open, their prices will be on the{' '}
               <Link className="text-link" href="/pricing">
                 pricing page

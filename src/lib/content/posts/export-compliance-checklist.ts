@@ -80,7 +80,7 @@ const article: ContentArticle = {
         'Work from the item outwards. BIS frames the licence question around what the item is, where it is going, who will receive it and what they will use it for.',
       ],
       steps: [
-        'Classify the item: find its ECCN on the Commerce Control List, or confirm it is EAR99. TradeDocs does not classify items; BIS publishes the classification guidance.',
+        'Classify the item: find its ECCN on the Commerce Control List, or confirm it is EAR99. ShipDocIt does not classify items; BIS publishes the classification guidance.',
         'For a listed item, read the reasons for control in its ECCN entry and check them against the destination on the Commerce Country Chart.',
         'Check end-use and end-user controls; BIS notes that even EAR99 items need a licence for restricted end users, end uses or destinations.',
         'Check whether a licence exception applies before applying.',

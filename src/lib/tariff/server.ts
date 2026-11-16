@@ -31,7 +31,7 @@ import {
 const TIMEOUT_MS = 6_000;
 const CACHE_SECONDS = 86_400;
 const MAX_RESPONSE_BYTES = 3_000_000;
-const USER_AGENT = 'TradeDocs-HS-code-lookup/1.0';
+const USER_AGENT = 'ShipDocIt-HS-code-lookup/1.0';
 
 class UpstreamError extends Error {
   constructor(

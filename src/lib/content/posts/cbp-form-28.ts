@@ -151,8 +151,8 @@ const article: ContentArticle = {
   ],
   faq: [
     {
-      q: 'Does TradeDocs answer or file a CBP Form 28?',
-      a: 'No. TradeDocs prepares commercial invoices, proforma invoices and packing lists. The Form 28 is issued by CBP, and the reply is made by the importer, its broker or the party CBP addressed, usually through ACE.',
+      q: 'Does ShipDocIt answer or file a CBP Form 28?',
+      a: 'No. ShipDocIt prepares commercial invoices, proforma invoices and packing lists. The Form 28 is issued by CBP, and the reply is made by the importer, its broker or the party CBP addressed, usually through ACE.',
     },
     {
       q: 'Does a Form 28 mean my shipment is under investigation?',

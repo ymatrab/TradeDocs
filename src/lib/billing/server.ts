@@ -22,7 +22,7 @@ import {
   type BillingIntent,
 } from '@/lib/billing/stripe-events';
 import type { StripeReader } from '@/lib/billing/stripe-api';
-import { createClient, type TradeDocsClient } from '@/lib/supabase/server';
+import { createClient, type ShipDocItClient } from '@/lib/supabase/server';
 import { createServiceClient, hasServiceRole } from '@/lib/supabase/admin';
 import { FREE_SHIPMENTS_PER_MONTH } from '@/lib/limits';
 
@@ -130,7 +130,7 @@ export async function syncFreePlanLimits(): Promise<void> {
 
 /** The caller's view of an organization's entitlement, through row level security. */
 export async function readEntitlement(
-  client: TradeDocsClient,
+  client: ShipDocItClient,
   orgId: string,
 ): Promise<{ row: EntitlementRow | null; failed: boolean }> {
   const { data, error } = await client

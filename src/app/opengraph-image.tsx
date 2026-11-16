@@ -10,7 +10,7 @@ import { publicDocumentKinds } from '@/lib/seo/site';
  * it only behind its review gate (D-008, D-025).
  */
 // Literal values, mirrored by SHARE_IMAGE in src/lib/seo/social.ts.
-export const alt = 'TradeDocs: enter a shipment once, get the whole document set';
+export const alt = 'ShipDocIt: enter a shipment once, get the whole document set';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
       <div style={{ display: 'flex', flexDirection: 'column', flex: 1, paddingRight: 48 }}>
         <div style={{ display: 'flex', alignItems: 'center', fontSize: 30, fontWeight: 700 }}>
           <div style={{ width: 28, height: 8, background: TAPE, marginRight: 14 }} />
-          TradeDocs
+          ShipDocIt
         </div>
         <div
           style={{

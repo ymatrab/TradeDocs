@@ -12,7 +12,7 @@ export function generateMetadata(): Metadata {
   return legalMetadata(
     '/terms',
     'Terms of use',
-    'The terms for using TradeDocs: what the service is and is not, your account and content, acceptable use, price, liability and ending the agreement.',
+    'The terms for using ShipDocIt: what the service is and is not, your account and content, acceptable use, price, liability and ending the agreement.',
   );
 }
 
@@ -24,18 +24,18 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of use"
-      lede="The agreement between you and the business that runs TradeDocs, in plain language."
+      lede="The agreement between you and the business that runs ShipDocIt, in plain language."
       identity={identity}
     >
       <LegalSection id="agreement" number={1} title="The agreement">
         <p>
           These terms are between you and {business} ({shown(identity.country)}). Using the website,
-          the free tools or an account means you accept them. If you use TradeDocs for an
+          the free tools or an account means you accept them. If you use ShipDocIt for an
           organization, you confirm you may accept them on its behalf.
         </p>
       </LegalSection>
 
-      <LegalSection id="service" number={2} title="What TradeDocs is, and is not">
+      <LegalSection id="service" number={2} title="What ShipDocIt is, and is not">
         <p>
           {BOUNDARY_STATEMENT} It prepares commercial invoices, proforma invoices, packing lists and
           delivery notes from the data you enter. It does not issue, endorse, certify or clear any
@@ -75,7 +75,7 @@ export default function TermsPage() {
       </LegalSection>
 
       <LegalSection id="use" number={5} title="Acceptable use">
-        <p>Do not use TradeDocs to:</p>
+        <p>Do not use ShipDocIt to:</p>
         <ul>
           <li>prepare false, misleading or fraudulent documents, or break any law or sanction;</li>
           <li>
@@ -90,14 +90,14 @@ export default function TermsPage() {
 
       <LegalSection id="price" number={6} title="Price">
         <p>
-          TradeDocs is free while it is early. If paid plans are introduced, they will be announced
+          ShipDocIt is free while it is early. If paid plans are introduced, they will be announced
           with notice before anything is charged, and nothing is charged without your agreement.
         </p>
       </LegalSection>
 
       <LegalSection id="availability" number={7} title="Availability and changes">
         <p>
-          We work to keep TradeDocs available and correct, but it is provided as it is, without a
+          We work to keep ShipDocIt available and correct, but it is provided as it is, without a
           guaranteed level of service. Features may change; when a change removes something you rely
           on, we will give reasonable notice where we can.
         </p>

@@ -98,7 +98,7 @@ const article: ContentArticle = {
       ],
       steps: [
         'Get an EORI number starting with GB, or check the one you have; HMRC needs it to export from England, Wales or Scotland.',
-        'Find the commodity code for each line in the UK Trade Tariff. TradeDocs never suggests a code for a product.',
+        'Find the commodity code for each line in the UK Trade Tariff. ShipDocIt never suggests a code for a product.',
         'Prepare the commercial invoice with the sale price, currency, the Incoterms® 2020 rule and named place, and any freight or insurance included in the price shown separately, as GOV.UK’s export guidance asks.',
         'Prepare the packing list with packages, gross and net weights and dimensions that match the invoice quantities.',
         'Send your written instructions, the invoice, packing list and any licence to the agent, and agree who creates the DUCR.',

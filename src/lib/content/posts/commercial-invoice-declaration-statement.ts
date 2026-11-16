@@ -104,7 +104,7 @@ const article: ContentArticle = {
       paragraphs: [
         'When you export items on the Commerce Control List in tangible form. Under 15 CFR 758.6, the destination control statement must be an integral part of the commercial invoice in that case. Items classified EAR99 are excluded, and so are shipments under License Exceptions BAG and GFT.',
         'The statement says, in substance, that the items are controlled by the US Government, authorised for export only to the stated destination for the named consignee or end user, and may not be passed on without US Government approval. Copy the wording from 15 CFR 758.6 itself rather than from a template, because the regulation is the only version that counts. For some listed ECCNs, the same section also requires the invoice to state the ECCN.',
-        'Whether your goods are on the Commerce Control List is a classification question, and the guide on ECCN, EAR99 and export licences explains where to check it. TradeDocs does not classify goods or decide whether the statement applies.',
+        'Whether your goods are on the Commerce Control List is a classification question, and the guide on ECCN, EAR99 and export licences explains where to check it. ShipDocIt does not classify goods or decide whether the statement applies.',
       ],
     },
     {
@@ -131,7 +131,7 @@ const article: ContentArticle = {
       heading: 'Does a signature or stamp make the invoice official?',
       paragraphs: [
         'No. A signature shows that the person who prepared the invoice stands behind it; it does not mean any authority has checked or approved it. The CBSA, for example, accepts a commercial invoice prepared by any means for Canadian imports when it gives the required information, and its invoice fields ask for the name and address of the company on whose behalf the invoice was completed.',
-        'TradeDocs makes this plain on every PDF: each page states that the document was prepared from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. In the workspace, the signatory name and title in document settings print under a signature line, and a document note can carry a short statement you have written or copied from its source. Pro organizations can also print an uploaded signature or stamp image above that line.',
+        'ShipDocIt makes this plain on every PDF: each page states that the document was prepared from the shipper’s own data and is not issued, endorsed, certified or cleared by any customs authority, carrier or chamber of commerce. In the workspace, the signatory name and title in document settings print under a signature line, and a document note can carry a short statement you have written or copied from its source. Pro organizations can also print an uploaded signature or stamp image above that line.',
       ],
     },
   ],

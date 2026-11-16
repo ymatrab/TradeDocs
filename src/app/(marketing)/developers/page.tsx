@@ -17,12 +17,12 @@ import { isRegulatedDocumentKind } from '@/lib/trade/regulated';
 export const dynamic = 'force-dynamic';
 
 const METADATA: Metadata = {
-  title: 'TradeDocs REST API v1 — shipments, documents and PDFs',
+  title: 'ShipDocIt REST API v1 — shipments, documents and PDFs',
   description:
-    'Reference for the TradeDocs REST API: authenticate with an organization API key, list and create shipments, generate export documents and download their PDFs.',
+    'Reference for the ShipDocIt REST API: authenticate with an organization API key, list and create shipments, generate export documents and download their PDFs.',
   alternates: { canonical: '/developers' },
   openGraph: openGraphFor(
-    'TradeDocs REST API v1',
+    'ShipDocIt REST API v1',
     'Shipments, document generation and PDFs over HTTPS with an organization API key.',
     '/developers',
   ),
@@ -123,7 +123,7 @@ export default function DevelopersPage() {
     <>
       <section className="hero">
         <p className="eyebrow">Developers</p>
-        <h1>TradeDocs REST API, version 1</h1>
+        <h1>ShipDocIt REST API, version 1</h1>
         {available ? null : (
           <Callout tone="warning" title="The API is not open on this deployment yet" level={2}>
             This is the reference for the API as built. Requests answer 503 until it is switched on,
@@ -151,7 +151,7 @@ export default function DevelopersPage() {
           <li>
             Documents are generated exactly as in the app: numbered, locked to the shipment revision
             they came from, and replacing the previous final document of the same kind. They are
-            documents you prepare; TradeDocs does not issue or certify them on behalf of any
+            documents you prepare; ShipDocIt does not issue or certify them on behalf of any
             authority.
           </li>
           <li>
@@ -165,7 +165,7 @@ export default function DevelopersPage() {
         <h2 id="authentication">Authentication</h2>
         <p>
           An owner or administrator creates keys in the organization’s{' '}
-          <strong>Settings → API keys</strong>. The key is shown once; TradeDocs keeps only a hash
+          <strong>Settings → API keys</strong>. The key is shown once; ShipDocIt keeps only a hash
           of it, so a lost key cannot be recovered: revoke it and create another. Up to{' '}
           {MAX_ACTIVE_API_KEYS} keys can be active at once. A key acts with the rights of the person
           who created it and stops working if they leave the organization or stop being an owner or

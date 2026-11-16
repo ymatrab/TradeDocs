@@ -22,7 +22,7 @@ export type CountryDocument = {
   /** When it applies, or what it is for, in a sentence. */
   condition: string;
   sourceId: SourceId;
-  /** A TradeDocs tool that prepares it, a path from PUBLIC_TOOLS. */
+  /** A ShipDocIt tool that prepares it, a path from PUBLIC_TOOLS. */
   tool?: string;
 };
 
@@ -39,7 +39,7 @@ export type CountryPage = {
   iso2: string;
   customsUnion: 'EU' | null;
   demand: readonly TermDemand[];
-  /** The <title>; the layout appends " · TradeDocs". */
+  /** The <title>; the layout appends " · ShipDocIt". */
   metaTitle: string;
   description: string;
   /** Which documents a shipment to the country needs, 40–60 words, answer-first. */

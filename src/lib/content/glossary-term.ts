@@ -43,7 +43,7 @@ export type GlossaryTerm = {
   /** Other phrasings, shown on the hub and matched by its search. */
   aliases: readonly string[];
   demand: TermDemand;
-  /** The <title>; the layout appends " · TradeDocs". */
+  /** The <title>; the layout appends " · ShipDocIt". */
   metaTitle: string;
   description: string;
   /** 25–50 words, answer-first. */

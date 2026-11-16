@@ -64,7 +64,7 @@ export function GET() {
     headers: {
       // The BOM above makes Excel open a UTF-8 file without mangling accented names.
       'content-type': 'text/csv; charset=utf-8',
-      'content-disposition': 'attachment; filename="tradedocs-catalog-template.csv"',
+      'content-disposition': 'attachment; filename="shipdocit-catalog-template.csv"',
       'cache-control': 'public, max-age=3600',
     },
   });

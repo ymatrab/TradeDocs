@@ -26,7 +26,7 @@ import { isDatabaseConfigured } from '@/lib/supabase/server';
 
 /**
  * Pricing, from one source (src/lib/billing/plans.ts). Every plan side by side with its full
- * feature list, the comparison table, why TradeDocs (facts about this product only, no other
+ * feature list, the comparison table, why ShipDocIt (facts about this product only, no other
  * product named), then the questions.
  *
  * Three honest states, decided per plan by the offer:
@@ -55,9 +55,9 @@ const FREE_SCOPE = PAID_EXTRAS
   : 'every document generator, calculator and workspace feature';
 
 const DESCRIPTIONS: Record<PageState, string> = {
-  unpriced: `TradeDocs is free while it is early: ${FREE_SCOPE}, with no card.${ADDS} Paid plans are not open yet; their prices will be published here first.`,
-  listed: `TradeDocs is free while it is early, with no card.${ADDS} Pro and Team prices, monthly or yearly in US dollars or euros, are listed here; checkout is not open yet.`,
-  open: `TradeDocs is free while it is early, with no card.${ADDS} Pro and Team prices are listed here and can be bought from your workspace.`,
+  unpriced: `ShipDocIt is free while it is early: ${FREE_SCOPE}, with no card.${ADDS} Paid plans are not open yet; their prices will be published here first.`,
+  listed: `ShipDocIt is free while it is early, with no card.${ADDS} Pro and Team prices, monthly or yearly in US dollars or euros, are listed here; checkout is not open yet.`,
+  open: `ShipDocIt is free while it is early, with no card.${ADDS} Pro and Team prices are listed here and can be bought from your workspace.`,
 };
 
 export function generateMetadata(): Metadata {
@@ -66,7 +66,7 @@ export function generateMetadata(): Metadata {
     title: 'Pricing — free while early',
     description,
     alternates: { canonical: '/pricing' },
-    openGraph: openGraphFor('TradeDocs pricing: free while early', description, '/pricing'),
+    openGraph: openGraphFor('ShipDocIt pricing: free while early', description, '/pricing'),
   };
 }
 
@@ -106,11 +106,11 @@ function questionsFor(
   const monthsFree = listedPrices('pro')[0]?.monthsFree ?? 0;
   const list: Question[] = [
     {
-      q: 'Is TradeDocs free?',
+      q: 'Is ShipDocIt free?',
       a: PAID_EXTRAS
         ? `Yes, while it is early: ${FREE_SCOPE} is in the free plan, so nobody needs to pay to prepare and download their documents.${limit}${ADDS}${priced ? '' : ' No paid plan is open yet, so nobody is charged for anything.'}`
         : priced
-          ? 'Yes, while it is early. Every feature listed on this page is in the free plan today. Pro and Team add no paid-only features yet, so nobody needs to pay to use TradeDocs.'
+          ? 'Yes, while it is early. Every feature listed on this page is in the free plan today. Pro and Team add no paid-only features yet, so nobody needs to pay to use ShipDocIt.'
           : 'Yes, while it is early. Every feature listed on this page is free today, and no paid plan is open, so nobody is charged for anything.',
     },
     {
@@ -156,13 +156,13 @@ function questionsFor(
     },
     {
       q: 'Who will take the payment?',
-      a: 'Stripe, on its own hosted checkout page. Card details are entered there and never reach TradeDocs.',
+      a: 'Stripe, on its own hosted checkout page. Card details are entered there and never reach ShipDocIt.',
     },
   );
   return list;
 }
 
-/** Facts about TradeDocs only; no other product is named or implied (rules/product.md). */
+/** Facts about ShipDocIt only; no other product is named or implied (rules/product.md). */
 const reasonsFor = (limited: boolean) => [
   {
     title: 'One shipment record, every document',
@@ -310,7 +310,7 @@ function FeatureLedger({
 
 const FREE_LEDE = PAID_EXTRAS
   ? `The generators, calculators and shipment workspace are free, with no card.${ADDS}`
-  : 'Everything TradeDocs does today is free, with no card.';
+  : 'Everything ShipDocIt does today is free, with no card.';
 
 const LEDES: Record<PageState, string> = {
   unpriced: `${FREE_LEDE} Paid plans are not open yet: when they are, their prices will be published here first.`,
@@ -464,7 +464,7 @@ export default function PricingPage() {
 
       <section className="section" aria-labelledby="why-title">
         <div className="section-head">
-          <p className="eyebrow">Why TradeDocs</p>
+          <p className="eyebrow">Why ShipDocIt</p>
           <h2 id="why-title">Built around the shipment, not the blank form.</h2>
         </div>
         <div className="cards">
@@ -479,7 +479,7 @@ export default function PricingPage() {
         </div>
         <p className="note">
           Every point above is in the {PLAN_NAMES.free} plan. Documents are prepared from your own
-          data; TradeDocs does not issue, certify or file them.
+          data; ShipDocIt does not issue, certify or file them.
         </p>
       </section>
 

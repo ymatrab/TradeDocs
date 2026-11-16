@@ -291,7 +291,7 @@ export function ShipmentEditor({
             <p className="muted" style={{ margin: 0 }}>
               For the bill of lading draft, the shipper&rsquo;s letter of instruction and the VGM
               declaration. Under SOLAS the shipper declares the verified gross mass of a packed
-              container; TradeDocs prints what you enter and does not weigh or check it.
+              container; ShipDocIt prints what you enter and does not weigh or check it.
             </p>
             <div
               style={{

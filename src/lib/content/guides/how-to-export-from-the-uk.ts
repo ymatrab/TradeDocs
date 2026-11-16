@@ -80,9 +80,9 @@ const article: ContentArticle = {
     {
       heading: 'How do you classify and invoice the goods?',
       paragraphs: [
-        'Find the commodity code first, using the UK Trade Tariff; HMRC says you must find the right code for the goods you export, and your agent or transporter may be able to help. TradeDocs never suggests a code for a product.',
+        'Find the commodity code first, using the UK Trade Tariff; HMRC says you must find the right code for the goods you export, and your agent or transporter may be able to help. ShipDocIt never suggests a code for a product.',
         'Then prepare the invoice. GOV.UK says the completed invoice and any licences or certificates must travel with the goods. Use the price you are selling the goods for, or their market value if you are not selling them, and list any freight or export insurance included in the price separately. Agree the Incoterms® 2020 rule and named place with the buyer first, because it decides which of those costs sit in your price.',
-        'If the goods qualify for a reduced or zero rate of duty in the destination, GOV.UK says you may need proof of origin, which TradeDocs does not prepare. You may also be able to zero rate the sale for VAT.',
+        'If the goods qualify for a reduced or zero rate of duty in the destination, GOV.UK says you may need proof of origin, which ShipDocIt does not prepare. You may also be able to zero rate the sale for VAT.',
       ],
     },
     {

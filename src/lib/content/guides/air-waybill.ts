@@ -6,7 +6,7 @@ const ROUND = '2026-10-07';
  * Demand (DataForSEO, Google US, 2026-10-06): "air waybill" 5,400, KD 10; "what is an air
  * waybill" 880, KD 6; UK "air waybill" 4,400.
  * Plan: docs/research/content-plan-v2-2026-10-06.md #17, carried into v3 wave A.
- * TradeDocs explains the air waybill; it does not issue one. MAWB vs HAWB has its own planned post.
+ * ShipDocIt explains the air waybill; it does not issue one. MAWB vs HAWB has its own planned post.
  */
 const article: ContentArticle = {
   slug: 'air-waybill',

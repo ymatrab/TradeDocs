@@ -112,7 +112,7 @@ const article: ContentArticle = {
       heading: 'Where does the duty rate come from?',
       paragraphs: [
         'From the importing country’s official tariff, and nowhere else. Most tariffs are built on the World Customs Organization’s six-digit Harmonized System, which the WCO says more than 200 countries and economies use, with national digits added. The rate sits against the full national code.',
-        'For the US, CBP points to the US International Trade Commission’s tariff database and warns that a rate found there is only as good as the information entered. CBP makes the final determination of the rate, and you can request a binding ruling for a specific item. TradeDocs does not suggest codes or rates; look them up in the official tariff or ask a licensed customs broker.',
+        'For the US, CBP points to the US International Trade Commission’s tariff database and warns that a rate found there is only as good as the information entered. CBP makes the final determination of the rate, and you can request a binding ruling for a specific item. ShipDocIt does not suggest codes or rates; look them up in the official tariff or ask a licensed customs broker.',
         'Not every rate is a percentage. A tariff line may state its rate another way, and the line itself shows how it is applied. Rates also change, so check them when you quote, not when the goods arrive.',
       ],
     },

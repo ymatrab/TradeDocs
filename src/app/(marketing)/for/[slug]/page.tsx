@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const useCase = findUseCase(slug);
-  if (!useCase) return { title: 'TradeDocs' };
+  if (!useCase) return { title: 'ShipDocIt' };
   const path = `/for/${useCase.slug}`;
   return {
     title: useCase.title,
@@ -137,7 +137,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
 
       <section className="section">
         {/* The callout's body is a paragraph, so the boundaries read as sentences in it. */}
-        <Callout tone="legal" title="What TradeDocs does not do">
+        <Callout tone="legal" title="What ShipDocIt does not do">
           {useCase.boundaries.join(' ')}
         </Callout>
       </section>

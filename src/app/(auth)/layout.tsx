@@ -28,7 +28,7 @@ function AccountsClosed() {
       </p>
       <h1 style={{ marginBottom: 12 }}>Accounts aren’t open.</h1>
       <p className="lede" style={{ marginBottom: 24 }}>
-        TradeDocs is deployed here without its workspace, so there is nothing to sign in to yet. The
+        ShipDocIt is deployed here without its workspace, so there is nothing to sign in to yet. The
         calculators and the document generators work now and need no account.
       </p>
       <div className="cta-row" style={{ marginTop: 0 }}>
@@ -66,7 +66,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
       <article>
         <Link href="/" className="wordmark" style={{ marginBottom: 24 }}>
           <span className="rule" aria-hidden="true" />
-          TradeDocs
+          ShipDocIt
         </Link>
         {open ? children : <AccountsClosed />}
       </article>

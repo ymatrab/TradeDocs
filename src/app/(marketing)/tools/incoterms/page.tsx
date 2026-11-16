@@ -131,7 +131,7 @@ export default function IncotermsPage() {
         <h2>On the document itself</h2>
         <p className="measure">
           The rule you agree has to appear on the invoice, with the named place beside it — “FCA
-          Rotterdam” means something; “FCA” alone does not. TradeDocs carries the term and its place
+          Rotterdam” means something; “FCA” alone does not. ShipDocIt carries the term and its place
           on every document generated from a shipment, so the set cannot state two different
           answers.
         </p>

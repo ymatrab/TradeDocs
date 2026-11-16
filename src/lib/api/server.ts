@@ -32,7 +32,7 @@ export const API_POLICIES = {
   failuresPerAddress: { namespace: 'api:auth-fail-ip', limit: 30, windowSeconds: 900 },
 } as const;
 
-const WWW_AUTHENTICATE = 'Bearer realm="TradeDocs API"';
+const WWW_AUTHENTICATE = 'Bearer realm="ShipDocIt API"';
 
 export class ApiError extends HttpError {
   constructor(

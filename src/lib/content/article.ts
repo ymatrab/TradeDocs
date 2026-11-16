@@ -51,7 +51,7 @@ export type ContentArticle = {
   slug: string;
   /** The page's H1. */
   title: string;
-  /** The <title>, phrased the way people search for it; the layout appends " · TradeDocs". */
+  /** The <title>, phrased the way people search for it; the layout appends " · ShipDocIt". */
   metaTitle: string;
   description: string;
   lede: string;
@@ -82,7 +82,7 @@ export type ContentArticle = {
   cover: UnsplashPhoto;
 };
 
-export const BYLINE = 'TradeDocs team';
+export const BYLINE = 'ShipDocIt team';
 
 /**
  * The listing order for posts and guides: newest `published` date first. The sort is stable,

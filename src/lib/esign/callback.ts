@@ -19,7 +19,7 @@ import {
  * 1. Events without a signature request (callback_test, account events) are acknowledged.
  * 2. The event key (hash of event hash, type and request id) is checked against the ledger;
  *    a duplicate is acknowledged unless the request is signed and its copy still missing.
- * 3. The request is matched to a TradeDocs row by provider id, or by TradeDocs' own id from
+ * 3. The request is matched to a ShipDocIt row by provider id, or by ShipDocIt' own id from
  *    the metadata when the send was never confirmed. Unknown requests are acknowledged and
  *    left alone (another integration on the same account).
  * 4. The live request is read from the API with this deployment's key: the event payload is

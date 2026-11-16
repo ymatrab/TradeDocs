@@ -5,7 +5,7 @@ const ROUND = '2026-10-08';
 /**
  * Demand (DataForSEO, Google UK, 2026-10-06): "ehc" 2,400, KD 24; "export health certificate" 390.
  * Plan: docs/research/content-plan-v3-2026-10-07.md, wave D, review gate: this guide describes
- * an official certificate TradeDocs does not issue, and stays noindex until a review record
+ * an official certificate ShipDocIt does not issue, and stays noindex until a review record
  * exists (rules/seo-content.md). Every rule is from GOV.UK (APHA/Defra) pages opened 2026-10-08.
  * No fee amounts are given; example parties are invented.
  */
@@ -14,10 +14,10 @@ const article: ContentArticle = {
   title: 'Export health certificate (EHC): how UK exporters get one',
   metaTitle: 'Export health certificate (EHC) in the UK',
   description:
-    'What an export health certificate is, which animal products need one from Great Britain, who signs it, and how EHC Online works. TradeDocs does not issue EHCs.',
-  lede: 'Live animals and animal products leaving Great Britain, from fresh meat and fish to pet food, usually need an export health certificate. It is an official certificate, signed by a vet or inspector authorised by the government. TradeDocs does not issue, sign or apply for EHCs; this guide explains who does and how the process runs.',
+    'What an export health certificate is, which animal products need one from Great Britain, who signs it, and how EHC Online works. ShipDocIt does not issue EHCs.',
+  lede: 'Live animals and animal products leaving Great Britain, from fresh meat and fish to pet food, usually need an export health certificate. It is an official certificate, signed by a vet or inspector authorised by the government. ShipDocIt does not issue, sign or apply for EHCs; this guide explains who does and how the process runs.',
   answer:
-    'An export health certificate (EHC) is an official document confirming that live animals or animal products meet the destination country’s health requirements. In Great Britain, exporters apply to APHA through EHC Online, and an official vet or local authority inspector signs it. TradeDocs does not issue export health certificates.',
+    'An export health certificate (EHC) is an official document confirming that live animals or animal products meet the destination country’s health requirements. In Great Britain, exporters apply to APHA through EHC Online, and an official vet or local authority inspector signs it. ShipDocIt does not issue export health certificates.',
   keyFacts: [
     'GOV.UK says live animals and animal products moved from Great Britain to the EU, non-EU countries or Northern Ireland need an EHC.',
     'APHA says an EHC is signed by an official veterinarian it has authorised or by a local authority inspector.',
@@ -51,7 +51,7 @@ const article: ContentArticle = {
       heading: 'What is an export health certificate?',
       paragraphs: [
         'GOV.UK calls it an official document that confirms your export meets the health requirements of the destination country. The conditions on it are set by that country’s competent authority, and the UK side certifies that the consignment meets them.',
-        'It is a government certificate, not a commercial document. TradeDocs does not issue, sign, file or apply for export health certificates, and nothing our tools produce replaces one. We prepare the commercial invoice and packing list that travel with the same consignment.',
+        'It is a government certificate, not a commercial document. ShipDocIt does not issue, sign, file or apply for export health certificates, and nothing our tools produce replaces one. We prepare the commercial invoice and packing list that travel with the same consignment.',
       ],
     },
     {
@@ -107,8 +107,8 @@ const article: ContentArticle = {
   ],
   faq: [
     {
-      q: 'Can TradeDocs issue or sign an export health certificate?',
-      a: 'No. An EHC is applied for through APHA and signed by an authorised official vet or local authority inspector. TradeDocs prepares commercial documents only, such as invoices and packing lists.',
+      q: 'Can ShipDocIt issue or sign an export health certificate?',
+      a: 'No. An EHC is applied for through APHA and signed by an authorised official vet or local authority inspector. ShipDocIt prepares commercial documents only, such as invoices and packing lists.',
     },
     {
       q: 'Is an EHC the same as a phytosanitary certificate?',

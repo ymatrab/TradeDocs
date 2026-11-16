@@ -5,13 +5,13 @@ import { helpEntries, type HelpEntry } from '@/lib/content/faq';
 import { openGraphFor } from '@/lib/seo/social';
 
 export const metadata: Metadata = {
-  title: 'Help centre — answers about TradeDocs, its documents and tools',
+  title: 'Help centre — answers about ShipDocIt, its documents and tools',
   description:
-    'Search every answer on TradeDocs in one place: accounts, documents, the free generators and calculators, Incoterms and shipping guides.',
+    'Search every answer on ShipDocIt in one place: accounts, documents, the free generators and calculators, Incoterms and shipping guides.',
   alternates: { canonical: '/help' },
   openGraph: openGraphFor(
-    'TradeDocs help centre',
-    'Search every answer on TradeDocs: accounts, documents, free tools, Incoterms and guides.',
+    'ShipDocIt help centre',
+    'Search every answer on ShipDocIt: accounts, documents, free tools, Incoterms and guides.',
     '/help',
   ),
 };
@@ -37,7 +37,7 @@ export default function HelpPage() {
         <p className="eyebrow">Help centre</p>
         <h1>Answers, in one place</h1>
         <p className="lede">
-          Every question answered across TradeDocs — accounts, documents, the free tools, Incoterms®
+          Every question answered across ShipDocIt — accounts, documents, the free tools, Incoterms®
           and the guides — searchable from here. The search runs in your browser.
         </p>
       </section>

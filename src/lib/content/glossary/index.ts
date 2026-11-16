@@ -153,7 +153,7 @@ export const GLOSSARY_HUB = {
     'Shipping and trade terms in plain language: TEU, FEU, CBM, VGM, dunnage, waybill, consignor and the document terms around them, each sourced and linked to a free tool.',
   lede: 'The words on freight quotes, transport documents and packing lists, defined in a sentence or two. Terms with a page of their own open the full explanation, with where the term appears on your documents and a worked example. The rest link to the guide or tool that already explains them.',
   /** The DefinedTermSet's name in structured data. */
-  setName: 'TradeDocs shipping and trade terms glossary',
+  setName: 'ShipDocIt shipping and trade terms glossary',
 } as const;
 
 /**
