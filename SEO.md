@@ -49,6 +49,15 @@ Structured data is emitted by `src/components/seo/json-ld.tsx` from builders in 
 
 Internal links: every tool page and every Incoterm page ends with the shared related-tools block (`src/components/seo/related-tools.tsx`), built from `PUBLIC_TOOLS`.
 
+Contextual links (2026-11-20 audit: about 60 glossary, Incoterms, country and older blog pages were linked from their hub alone):
+
+- **Related reading** (`src/lib/content/related.ts`): an article's hand-picked `related` paths come first, then guides and posts sharing the most topic words (slug and title, stop words dropped), until six. Ties go to the page fewer articles hand-pick, so links spread across the archive. It replaced the "newest articles" fallback.
+- **Terms in this article** (`src/lib/content/link-graph.ts`): each guide and post links the Incoterms® rules (up to 4), listed country pages (up to 2) and listed glossary terms (up to 6) its visible text names. Title matches come first, then the rarest across the archive.
+- **Back-links**: each glossary term page ("Articles that use this term") and each Incoterms® rule page ("<code> compared and explained", head-to-head comparisons first) lists up to six of the articles that link to it.
+- `tests/unit/link-graph.test.ts` fails if any listed glossary term, rule, country page, guide or post has no inbound link from another page.
+
+Keyword split checked in the same audit: tool pages own the "calculator / generator / template" query and the matching guide or post owns the "what is / how / vs" query (chargeable weight, landed cost, delivery note, proforma, letter of credit, HS/HTS/Schedule B). Titles already differed, so none were rewritten.
+
 ## Articles: GEO/AEO structure (2026-10-06)
 
 Guides and blog posts render through one component (`src/components/content/article-view.tsx`) from one data shape (`src/lib/content/article.ts`), so the answer-engine structure is the same everywhere and tested in `tests/unit/posts.test.ts`:

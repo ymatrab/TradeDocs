@@ -13,6 +13,7 @@ import { PAGE_SOURCES } from '@/lib/trade/sources';
 import { SourcesBlock, ToolCta } from '../../page-parts';
 import { IncotermJsonLd } from '@/components/seo/json-ld';
 import { RelatedTools } from '@/components/seo/related-tools';
+import { articlesMentioning } from '@/lib/content/link-graph';
 import { openGraphFor } from '@/lib/seo/social';
 
 /** The eleven codes this route answers on. Anything else is a 404, not an empty page. */
@@ -70,6 +71,7 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
   if (!term) notFound();
 
   const others = INCOTERMS.filter((entry) => entry.mode === term.mode && entry.code !== term.code);
+  const articles = articlesMentioning(`/tools/incoterms/${term.code.toLowerCase()}`);
 
   return (
     <>
@@ -157,6 +159,20 @@ export default async function IncotermPage({ params }: { params: Promise<{ code:
           ))}
         </div>
       </section>
+
+      {articles.length > 0 ? (
+        <section className="section" aria-labelledby="rule-articles-title">
+          <h2 id="rule-articles-title">{term.code} compared and explained</h2>
+          <div className="form-grid">
+            {articles.map((link) => (
+              <Link key={link.href} href={link.href} className="form-cell">
+                <h3>{link.title}</h3>
+                <p>{link.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section">
         <h2>Other {term.mode === 'sea' ? 'maritime' : 'any-mode'} rules</h2>
