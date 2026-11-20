@@ -4,6 +4,7 @@ import { ArticleView } from '@/components/content/article-view';
 import { GuideJsonLd } from '@/components/seo/json-ld';
 import { GUIDES, GUIDE_DISCLAIMER, findGuide } from '@/lib/content/guides';
 import { unsplashShareImage } from '@/lib/content/images';
+import { articleMentions } from '@/lib/content/link-graph';
 import { relatedLinks } from '@/lib/content/related';
 import { openGraphFor, twitterFor } from '@/lib/seo/social';
 
@@ -43,7 +44,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         hub={{ href: '/guides', label: 'Guides', allLabel: 'All guides' }}
         disclaimer={GUIDE_DISCLAIMER}
         related={relatedLinks(guide, 'guides')}
-        relatedTitle="More guides"
+        relatedTitle="Related reading"
+        mentions={articleMentions(guide, 'guides')}
       />
       <GuideJsonLd slug={guide.slug} />
     </>

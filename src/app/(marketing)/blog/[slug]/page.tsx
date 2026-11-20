@@ -4,6 +4,7 @@ import { ArticleView } from '@/components/content/article-view';
 import { PostJsonLd } from '@/components/seo/json-ld';
 import { unsplashShareImage } from '@/lib/content/images';
 import { POSTS, POST_DISCLAIMER, findPost } from '@/lib/content/posts';
+import { articleMentions } from '@/lib/content/link-graph';
 import { relatedLinks } from '@/lib/content/related';
 import { SITE_NAME } from '@/lib/seo/site';
 import { twitterFor } from '@/lib/seo/social';
@@ -58,7 +59,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         hub={{ href: '/blog', label: 'Blog', allLabel: 'All posts' }}
         disclaimer={POST_DISCLAIMER}
         related={relatedLinks(post, 'blog')}
-        relatedTitle="More from the blog"
+        relatedTitle="Related reading"
+        mentions={articleMentions(post, 'blog')}
       />
       <PostJsonLd slug={post.slug} />
     </>

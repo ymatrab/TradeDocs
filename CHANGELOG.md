@@ -2,6 +2,12 @@
 
 ## Unreleased — 2026-09-06
 
+### Internal linking: related reading, terms in each article, back-links (2026-11-20)
+
+- Related reading at the foot of guides and posts now tops up hand-picked links with topic-matched guides and posts, replacing the "newest posts" fallback.
+- Guides and posts list the glossary terms, Incoterms® rules and country pages they mention. Glossary and Incoterms® rule pages list the articles that use them.
+- New unit test: no listed glossary term, Incoterms® rule, country page, guide or post may be left without an inbound link.
+
 ### Renamed to ShipDocIt, domain shipdocit.com (D-030)
 
 - Every visible "TradeDocs" (pages, metadata, Open Graph image, emails, PDF footers and

@@ -53,6 +53,7 @@ const term: GlossaryTerm = {
     '/guides/how-to-import-into-the-us',
     '/blog/cbp-form-3461',
     '/blog/cbp-form-7501',
+    'bonded-warehouse',
   ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:

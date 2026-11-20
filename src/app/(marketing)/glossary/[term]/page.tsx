@@ -7,6 +7,7 @@ import { Callout } from '@/components/primitives/feedback';
 import { GlossaryTermJsonLd } from '@/components/seo/json-ld';
 import { GLOSSARY, findTerm } from '@/lib/content/glossary';
 import { GLOSSARY_DISCLAIMER, isTermListed } from '@/lib/content/glossary-term';
+import { articlesMentioning } from '@/lib/content/link-graph';
 import { resolvePageLinks } from '@/lib/content/page-links';
 import { shortDate } from '@/lib/format';
 import { findPublicTool } from '@/lib/seo/site';
@@ -44,6 +45,7 @@ export default async function GlossaryTermPage({ params }: { params: Promise<{ t
 
   const tool = findPublicTool(term.tool);
   const related = resolvePageLinks(term.related);
+  const mentionedIn = articlesMentioning(`/glossary/${term.slug}`);
   const short = term.abbreviation ?? term.term.toLowerCase();
 
   return (
@@ -141,6 +143,20 @@ export default async function GlossaryTermPage({ params }: { params: Promise<{ t
         </p>
         <ToolCta secondary={{ href: '/glossary', label: 'All glossary terms' }} />
       </section>
+
+      {mentionedIn.length > 0 ? (
+        <section className="section" aria-labelledby="mentioned-in-title">
+          <h2 id="mentioned-in-title">Articles that use this term</h2>
+          <div className="form-grid">
+            {mentionedIn.map((link) => (
+              <Link key={link.href} href={link.href} className="form-cell">
+                <h3>{link.title}</h3>
+                <p>{link.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {related.length > 0 ? (
         <section className="section" aria-labelledby="related-title">

@@ -28,6 +28,8 @@ type ArticleViewProps = {
   /** Other articles to link at the foot, already filtered. */
   related: readonly { href: string; title: string; description: string }[];
   relatedTitle: string;
+  /** Glossary terms, Incoterms® rules and countries the article mentions (lib/content/link-graph). */
+  mentions?: readonly { href: string; title: string }[];
 };
 
 /** Lower-cases a tool name's first letter for use mid-sentence, leaving acronyms (CBM) alone. */
@@ -118,7 +120,14 @@ function SectionView({ section }: { section: ArticleSection }) {
   );
 }
 
-export function ArticleView({ article, hub, disclaimer, related, relatedTitle }: ArticleViewProps) {
+export function ArticleView({
+  article,
+  hub,
+  disclaimer,
+  related,
+  relatedTitle,
+  mentions = [],
+}: ArticleViewProps) {
   const tools = article.tools
     .map((path) => findPublicTool(path))
     .filter((tool): tool is PublicTool => tool !== undefined);
@@ -196,6 +205,21 @@ export function ArticleView({ article, hub, disclaimer, related, relatedTitle }:
           </Fragment>
         ))}
       </article>
+
+      {mentions.length > 0 ? (
+        <section className="section" aria-labelledby="article-mentions-title">
+          <h2 id="article-mentions-title">Terms in this article</h2>
+          <ul className="measure">
+            {mentions.map((entry) => (
+              <li key={entry.href}>
+                <Link className="text-link" href={entry.href}>
+                  {entry.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {tools.length > 0 ? (
         <section className="section" aria-labelledby="article-tools-title">

@@ -51,6 +51,7 @@ const term: GlossaryTerm = {
     '/blog/how-to-calculate-import-duty',
     '/guides/landed-cost',
     'importing',
+    'import-quota',
   ],
   tool: '/tools/landed-cost-calculator',
   toolPitch:

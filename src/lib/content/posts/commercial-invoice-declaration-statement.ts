@@ -179,6 +179,7 @@ const article: ContentArticle = {
     '/guides/eccn-ear99-export-licence',
     '/blog/commercial-invoice-for-canada',
     '/blog/declared-value-for-customs',
+    '/blog/invoice-legalization',
   ],
   cover: {
     id: 'ZKkuYgbTRl8',

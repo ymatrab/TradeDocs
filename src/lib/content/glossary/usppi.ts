@@ -52,6 +52,7 @@ const term: GlossaryTerm = {
     '/guides/how-to-export-from-the-us',
     'consignor',
     'exporting',
+    'exporter-of-record',
   ],
   tool: '/tools/invoice-generator',
   toolPitch:
