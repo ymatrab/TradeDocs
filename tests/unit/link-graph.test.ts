@@ -30,15 +30,18 @@ describe('internal link graph (2026-11-20 audit)', () => {
     for (const { path, links } of mentions) {
       const hrefs = links.map((link) => link.href);
       expect(new Set(hrefs).size, path).toBe(hrefs.length);
-      expect(hrefs.filter((href) => href.startsWith('/tools/incoterms/')).length, path).toBeLessThanOrEqual(
-        MAX_RULE_MENTIONS,
-      );
-      expect(hrefs.filter((href) => href.startsWith('/export-documents/')).length, path).toBeLessThanOrEqual(
-        MAX_COUNTRY_MENTIONS,
-      );
-      expect(hrefs.filter((href) => href.startsWith('/glossary/')).length, path).toBeLessThanOrEqual(
-        MAX_TERM_MENTIONS,
-      );
+      expect(
+        hrefs.filter((href) => href.startsWith('/tools/incoterms/')).length,
+        path,
+      ).toBeLessThanOrEqual(MAX_RULE_MENTIONS);
+      expect(
+        hrefs.filter((href) => href.startsWith('/export-documents/')).length,
+        path,
+      ).toBeLessThanOrEqual(MAX_COUNTRY_MENTIONS);
+      expect(
+        hrefs.filter((href) => href.startsWith('/glossary/')).length,
+        path,
+      ).toBeLessThanOrEqual(MAX_TERM_MENTIONS);
       for (const href of hrefs) {
         if (href.startsWith('/tools/incoterms/')) continue;
         expect(resolvePageLink(href), `${path} → ${href}`).toBeDefined();
@@ -111,7 +114,9 @@ describe('internal link graph (2026-11-20 audit)', () => {
       const code = rule.code.toLowerCase();
       const links = articlesMentioning(`/tools/incoterms/${code}`);
       expect(links.length, code).toBeLessThanOrEqual(MAX_BACKLINKS);
-      const isComparison = links.map((link) => /-vs-/.test(link.href) && link.href.split(/[/-]/).includes(code));
+      const isComparison = links.map(
+        (link) => /-vs-/.test(link.href) && link.href.split(/[/-]/).includes(code),
+      );
       const firstOther = isComparison.indexOf(false);
       if (firstOther !== -1) expect(isComparison.slice(firstOther), code).not.toContain(true);
     }

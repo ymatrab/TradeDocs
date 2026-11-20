@@ -126,7 +126,9 @@ function pick(
   cap: number,
 ): Target[] {
   return targets
-    .filter((target) => target.href !== entry.path && matches(target, `${entry.title}\n${entry.body}`))
+    .filter(
+      (target) => target.href !== entry.path && matches(target, `${entry.title}\n${entry.body}`),
+    )
     .map((target) => ({ target, inTitle: matches(target, entry.title) }))
     .sort(
       (a, b) =>
@@ -168,7 +170,11 @@ function build(): Graph {
     );
     for (const target of picked) {
       const list = backlinks.get(target.href) ?? [];
-      list.push({ href: entry.path, title: entry.article.title, description: entry.article.description });
+      list.push({
+        href: entry.path,
+        title: entry.article.title,
+        description: entry.article.description,
+      });
       backlinks.set(target.href, list);
     }
   }
