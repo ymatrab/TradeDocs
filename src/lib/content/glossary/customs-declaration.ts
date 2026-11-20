@@ -56,7 +56,7 @@ const term: GlossaryTerm = {
     '/blog/cbp-form-7501',
     '/guides/eori-number',
     'importing',
-    'exporting',
+    'single-administrative-document',
   ],
   tool: '/tools/invoice-generator',
   toolPitch:

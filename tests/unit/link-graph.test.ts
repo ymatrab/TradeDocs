@@ -55,6 +55,10 @@ describe('internal link graph (2026-11-20 audit)', () => {
         if (link && link.href !== `/glossary/${term.slug}`) linked.add(link.href);
       }
     }
+    // Country pages link one another under "Other destinations".
+    if (LISTED_COUNTRIES.length > 1) {
+      for (const country of LISTED_COUNTRIES) linked.add(`/export-documents/${country.slug}`);
+    }
     const expected = [
       ...LISTED_GLOSSARY.map((term) => `/glossary/${term.slug}`),
       ...INCOTERMS.map((rule) => `/tools/incoterms/${rule.code.toLowerCase()}`),

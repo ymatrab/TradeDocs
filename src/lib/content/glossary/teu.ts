@@ -55,7 +55,7 @@ const term: GlossaryTerm = {
         'CBM is the volume of your cargo in cubic metres; TEU counts containers regardless of how full they are.',
     },
   ],
-  related: ['feu', 'cbm', '/guides/shipping-container-sizes', '/guides/lcl-vs-fcl'],
+  related: ['feu', 'cbm', '/guides/shipping-container-sizes', '/guides/lcl-vs-fcl', 'unit-load-device'],
   tool: '/tools/container-loading-calculator',
   toolPitch:
     'The container loading calculator estimates how many of your cartons or pallets fit a 20ft, 40ft or high-cube box.',

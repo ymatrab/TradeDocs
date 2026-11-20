@@ -57,7 +57,7 @@ const term: GlossaryTerm = {
         'A re-export sends out goods that were imported first. Transshipped goods are never imported at the hub.',
     },
   ],
-  related: ['/guides/what-is-a-bill-of-lading', '/guides/export-payment-terms', 'consignor', 'teu'],
+  related: ['/guides/what-is-a-bill-of-lading', '/guides/export-payment-terms', 'consignor', 'teu', 'general-average'],
   tool: '/tools/invoice-generator',
   toolPitch:
     'The invoice generator keeps the country of origin on every line, so a multi-leg route never changes what the invoice declares.',

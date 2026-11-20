@@ -50,6 +50,7 @@ const term: GlossaryTerm = {
     '/blog/tt-payment',
     '/guides/what-is-a-bill-of-lading',
     '/guides/what-is-a-proforma-invoice',
+    'standby-letter-of-credit',
   ],
   tool: '/tools/proforma-invoice-generator',
   toolPitch:

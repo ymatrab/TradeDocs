@@ -59,6 +59,7 @@ const term: GlossaryTerm = {
     '/blog/packing-list-for-shipping',
     'nvocc',
     'waybill',
+    'advance-shipping-notice',
   ],
   tool: '/tools/packing-list-generator',
   toolPitch:
