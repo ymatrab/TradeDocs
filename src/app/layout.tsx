@@ -65,8 +65,13 @@ export function generateMetadata(): Metadata {
     robots: indexable
       ? { index: true, follow: true }
       : { index: false, follow: false, nocache: true },
+    // Bing Webmaster Tools ownership; only the indexable production site needs it.
+    ...(indexable ? { verification: { other: { 'msvalidate.01': BING_SITE_VERIFICATION } } } : {}),
   };
 }
+
+/** Public ownership token from Bing Webmaster Tools (www.shipdocit.com), not a secret. */
+const BING_SITE_VERIFICATION = '3A3CD96A324801E10FE17EF579BD3073';
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

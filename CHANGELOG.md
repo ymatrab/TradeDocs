@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-09-06
 
+### Bing Webmaster Tools verification (2026-11-26)
+
+- The production site carries the `msvalidate.01` meta tag so Bing Webmaster Tools can verify www.shipdocit.com. Preview and non-indexable builds leave it out.
+
 ### Internal linking: related reading, terms in each article, back-links (2026-11-20)
 
 - Related reading at the foot of guides and posts now tops up hand-picked links with topic-matched guides and posts, replacing the "newest posts" fallback.
